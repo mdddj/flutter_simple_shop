@@ -1,0 +1,129 @@
+name: demo1
+description: 典典的小卖部,淘客版本 qq群667186542
+version: 2.0.1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.3
+  get: ^4.3.8
+  url_launcher: ^6.0.12
+  supercharged: ^2.1.1
+  flutter_syntax_view: ^4.0.0
+  date_format: ^2.0.4
+  shared_preferences: ^2.0.8
+  flutter_html: ^2.1.5
+  dio: ^4.0.0
+  flutter_spinkit: ^5.1.0
+  tab_indicator_styler: ^2.0.0
+  flutter_swiper_null_safety: ^1.0.2
+  provider: ^6.0.1
+  flutter_easyrefresh: ^2.2.1
+  pull_to_refresh: ^2.0.0
+  fbutton_nullsafety: ^5.0.0
+  fsuper_nullsafety: ^3.0.1
+  flustars: ^2.0.1
+  common_utils: ^2.0.2
+  extended_image: ^5.1.2
+  extended_image_library: ^3.1.0
+  waterfall_flow: ^3.0.1
+  loading_more_list: ^4.1.0
+  extended_list: ^3.0.0
+  pull_to_refresh_notification: ^2.2.0
+  fsearch_nullsafety: ^2.0.0
+  carousel_slider: ^4.0.0
+  shimmer: ^2.0.0
+  flutter_svg: ^0.22.0
+  extended_text_field: ^8.0.0
+  extended_text: ^7.0.0
+  font_awesome_flutter: ^9.1.0
+  animated_text_kit: ^4.2.1
+  html: ^0.15.0
+  image_picker: ^0.8.4+2
+  extended_tabs: ^2.3.0
+  after_layout: ^1.1.0
+  palette_generator: ^0.3.1
+  crypto: ^3.0.1
+  msix: ^2.3.0
+  encrypt: ^5.0.1
+  extended_nested_scroll_view: ^5.0.0
+  sliver_tools: ^0.2.5
+  shelf: ^1.2.0
+  extended_sliver: ^2.0.1
+  dd_taoke_sdk:
+    git:
+      url: git://github.com/mdddj/flutter_dd_dataoke_sdk
+  dd_js_util:
+    git:
+      url: git://github.com/mdddj/dd_js_util
+  fcontrol_nullsafety: ^2.0.0
+  flutter_hooks: ^0.18.0
+  hooks_riverpod: ^0.14.0+5
+  permission_handler: ^8.2.2
+  get_it: ^7.2.0
+  logger: ^1.1.0
+  http: ^0.13.4
+  ai_barcode: ^3.0.1
+  shelf_proxy: ^1.0.1
+  responsive_builder: ^0.4.1
+  bubble_tab_indicator: ^0.1.6
+  badges: ^2.0.1
+  carousel_pro_nullsafety: ^1.0.2
+  flutter_markdown: ^0.6.7
+  zefyrka: ^1.0.10
+  package_info: ^2.0.2
+  show_up_animation: ^2.0.0
+  swipeable_page_route: ^0.2.3
+  black_hole_flutter: ^0.3.2
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+  flutter_blurhash: ^0.6.0
+#  filepicker_windows: ^2.0.0  # 文件选择器
+#  win32: ^2.1.5   # windows 开放api
+#
+  window_size:
+    git:
+      url: git://github.com/google/flutter-desktop-embedding.git  # 修改窗口标题
+      path: plugins/window_size
+      ref: 7812516a5c1fc8ef379e244106953a2b534432b9
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  build_runner: ^2.0.5
+  import_sorter: ^4.6.0
+  flutter_lints: ^1.0.4
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/nav/
+    - assets/icons/
+    - assets/svg/
+    - assets/svg/cate/
+    - assets/json/
+    - assets/images/waimai/hb/
+
+msix_config:
+  display_name: diandianshop
+  publisher_display_name: liandiandian
+  identity_name: shop coupen
+  msix_version: 1.0.0.0
+  certificate_path: D:\key2.jks
+  certificate_password: 123456
+  publisher: CN=My Company, O=My Company, L=Berlin, S=Berlin, C=DE
+  logo_path: D:\logo.png
+  start_menu_icon_path: D:\logo.png
+  tile_icon_path: D:\logo.png
+  vs_generated_images_folder_path: C:\ldd\icons
+  icons_background_color: '#ffffff'
+  architecture: x64
+  capabilities: 'internetClient,location,microphone,webcam'
