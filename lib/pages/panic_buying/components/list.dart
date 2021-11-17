@@ -1,6 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
@@ -11,12 +11,14 @@ import '../../../common/utils.dart';
 class ProductsList extends ConsumerWidget {
   final List<Product> products;
 
-  const ProductsList(this.products,{Key? key}):super(key: key);
+  const ProductsList(this.products, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
     if (products.isEmpty) {
-      return SliverToBoxAdapter(child: Container(),);
+      return SliverToBoxAdapter(
+        child: Container(),
+      );
     }
     return SliverPadding(
         padding: const EdgeInsets.all(8),

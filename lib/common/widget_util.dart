@@ -1,7 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
-import 'package:dd_taoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +34,8 @@ abstract class WidgetUtilService {
 }
 
 class WidgetUtils extends WidgetUtilService {
-  double get kBodyHeight => Get.height - Get.mediaQuery.padding.top - kToolbarHeight;
+  double get kBodyHeight =>
+      Get.height - Get.mediaQuery.padding.top - kToolbarHeight;
 
   @override
   Widget marginTop({double? height}) {
@@ -83,8 +84,8 @@ class WidgetUtils extends WidgetUtilService {
     return WaterfallGoodsCard(product);
   }
 
-
-  Future<T?> to<T>(Widget page)async{
-    return await Get.context!.navigator.push<T>(SwipeablePageRoute(builder: (_)=> page));
+  Future<T?> to<T>(Widget page) async {
+    return await Get.context!.navigator
+        .push<T>(SwipeablePageRoute(builder: (_) => page));
   }
 }

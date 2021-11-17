@@ -1,8 +1,8 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/ddq_result.dart';
-import 'package:dd_taoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/ddq_result.dart';
+import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/material.dart';
 
 import '../common/base_provider.dart';

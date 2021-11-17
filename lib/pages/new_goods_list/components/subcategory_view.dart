@@ -1,6 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/model/category.dart';
+import 'package:dataoke_sdk/model/category.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -10,7 +10,9 @@ class SubCategoryView extends ConsumerWidget {
   final Category category;
   final Subcategory? subcategory;
 
-  const SubCategoryView(this.category, {this.changeSubcategory, this.subcategory,Key? key}): super(key: key);
+  const SubCategoryView(this.category,
+      {this.changeSubcategory, this.subcategory, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context, ScopedReader watch) {
@@ -65,7 +67,11 @@ class SubCategoryView extends ConsumerWidget {
                 ),
                 Text(
                   item.subcname!,
-                  style: TextStyle(color: subcategory != null && subcategory!.subcid == item.subcid ? Colors.pinkAccent : Colors.black),
+                  style: TextStyle(
+                      color: subcategory != null &&
+                              subcategory!.subcid == item.subcid
+                          ? Colors.pinkAccent
+                          : Colors.black),
                 )
               ],
             ),

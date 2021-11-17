@@ -2,11 +2,12 @@
 
 // Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
-import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart' as my_carousel_comp;
+import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart'
+    as my_carousel_comp;
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/carousel_model.dart';
-import 'package:dd_taoke_sdk/params/activity_link_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/carousel_model.dart';
+import 'package:dataoke_sdk/params/activity_link_param.dart';
 import 'package:extended_image/extended_image.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
@@ -24,7 +25,8 @@ import '../new/index_riverpod.dart';
 class IndexTopicComponentCarousel extends StatelessWidget {
   final List<Carousel> list;
 
-  const IndexTopicComponentCarousel({Key? key, required this.list}) : super(key: key);
+  const IndexTopicComponentCarousel({Key? key, required this.list})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +44,14 @@ class IndexTopicComponentCarousel extends StatelessWidget {
           onTap: (int index) async {
             final item = list[index];
             if (item.sourceType == 1) {
-              await context.navigator.push(SwipeablePageRoute(builder: (_) => ActivityViewPage(id: '${item.topicId!}', title: item.topicName!)));
+              await context.navigator.push(SwipeablePageRoute(
+                  builder: (_) => ActivityViewPage(
+                      id: '${item.topicId!}', title: item.topicName!)));
             }
             if (item.sourceType == 2) {
               Get.context!.read(indexRiverpod).changeLoadingState(true);
-              final result = await DdTaokeSdk.instance.getActivityLink(ActivityLinkParam(promotionSceneId: item.activityId!));
+              final result = await DdTaokeSdk.instance.getActivityLink(
+                  ActivityLinkParam(promotionSceneId: item.activityId!));
               if (result != null) {
                 await utils.openTaobao(result.clickUrl);
               }
@@ -97,9 +102,11 @@ class IndexTopicComponentCarousel extends StatelessWidget {
     );
   }
 
-  CarouselSlider buildCarouselSlider(List<Carousel> carousel, BuildContext context) {
+  CarouselSlider buildCarouselSlider(
+      List<Carousel> carousel, BuildContext context) {
     return CarouselSlider(
-      options: CarouselOptions(height: 200, autoPlay: true, enlargeCenterPage: true),
+      options:
+          CarouselOptions(height: 200, autoPlay: true, enlargeCenterPage: true),
       items: carousel.map(renderItem).toList(),
     );
   }

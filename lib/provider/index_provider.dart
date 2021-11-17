@@ -1,10 +1,10 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/brand_list_model.dart';
-import 'package:dd_taoke_sdk/model/carousel_model.dart';
-import 'package:dd_taoke_sdk/model/category.dart';
-import 'package:dd_taoke_sdk/params/brand_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/brand_list_model.dart';
+import 'package:dataoke_sdk/model/carousel_model.dart';
+import 'package:dataoke_sdk/model/category.dart';
+import 'package:dataoke_sdk/params/brand_param.dart';
 import 'package:flutter/material.dart';
 
 // Project imports:
@@ -57,7 +57,9 @@ class IndexProvider extends ChangeNotifier {
 
   /// 获取品牌栏目列表
   Future<void> fetchStores() async {
-    final result = await DdTaokeSdk.instance.getBrandList(param: BrandListParam(cid: categorys[0].cid.toString(), pageId: '1', pageSize: '1'));
+    final result = await DdTaokeSdk.instance.getBrandList(
+        param: BrandListParam(
+            cid: categorys[0].cid.toString(), pageId: '1', pageSize: '1'));
     storeData = result;
     await getBrandBgColors();
     notifyListeners();
@@ -75,5 +77,4 @@ class IndexProvider extends ChangeNotifier {
       }
     }
   }
-
 }

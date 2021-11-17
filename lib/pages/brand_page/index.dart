@@ -1,9 +1,9 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/brand_list_model.dart';
-import 'package:dd_taoke_sdk/model/category.dart';
-import 'package:dd_taoke_sdk/params/brand_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/brand_list_model.dart';
+import 'package:dataoke_sdk/model/category.dart';
+import 'package:dataoke_sdk/params/brand_param.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -40,11 +40,11 @@ class _BrandListPageState extends State<BrandListPage> with LoadingMixin {
   }
 
   Future<void> init({bool onLoad = false}) async {
-    if(!onLoad){
+    if (!onLoad) {
       setLoading(true);
     }
-    final result = await DdTaokeSdk.instance
-        .getBrandList(param: BrandListParam(cid: '$cid', pageId: '$page', pageSize: '$size'));
+    final result = await DdTaokeSdk.instance.getBrandList(
+        param: BrandListParam(cid: '$cid', pageId: '$page', pageSize: '$size'));
     if (result != null) {
       lists.addAll(result.lists ?? []);
     }
@@ -88,7 +88,7 @@ class _BrandListPageState extends State<BrandListPage> with LoadingMixin {
 
   /// 刷新页面
   Future<void> _refresh() async {
-    page  = 1;
+    page = 1;
     await init();
     _easyRefreshController.finishRefresh();
   }

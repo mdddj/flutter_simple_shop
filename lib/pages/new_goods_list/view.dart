@@ -1,8 +1,8 @@
 // Flutter imports:
 // Package imports:
 import 'package:after_layout/after_layout.dart';
-import 'package:dd_taoke_sdk/constant/sort.dart';
-import 'package:dd_taoke_sdk/model/category.dart';
+import 'package:dataoke_sdk/constant/sort.dart';
+import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

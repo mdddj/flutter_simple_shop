@@ -2,7 +2,7 @@
 
 // Package imports:
 import 'package:badges/badges.dart';
-import 'package:dd_taoke_sdk/model/hot_search_worlds_result.dart';
+import 'package:dataoke_sdk/model/hot_search_worlds_result.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -91,7 +91,10 @@ class Suggest extends StatelessWidget {
                         Badge(
                           badgeContent: Text(
                             item.label!,
-                            style: const TextStyle(color: Colors.pink, fontSize: 12, fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                                color: Colors.pink,
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold),
                           ),
                           badgeColor: Colors.white,
                         ),

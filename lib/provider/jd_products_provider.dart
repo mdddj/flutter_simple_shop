@@ -1,6 +1,5 @@
-
-import 'package:dd_taoke_sdk/jd_api.dart';
-import 'package:dd_taoke_sdk/model/jd/jd_req_param.dart';
+import 'package:dataoke_sdk/jd_api.dart';
+import 'package:dataoke_sdk/model/jd/jd_req_param.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
@@ -28,7 +27,7 @@ class JdProductsProviderState extends ChangeNotifier {
           .getProducts(JdReqParam(eliteId: int.parse(selectProductTypeId!)));
       try {
         products.addAll(jdNativeProductCovert(result));
-      } catch (e,s) {
+      } catch (e, s) {
         Logger().e('$e\n$s');
       }
       notifyListeners();

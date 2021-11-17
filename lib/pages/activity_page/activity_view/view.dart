@@ -1,7 +1,6 @@
 // Flutter imports:
-// Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/params/activity_link_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/params/activity_link_param.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +8,8 @@ import 'package:get/get.dart';
 import 'logic.dart';
 
 class ActivityViewPage extends StatefulWidget {
-  const ActivityViewPage({required this.id, required this.title,Key? key}): super(key: key);
+  const ActivityViewPage({required this.id, required this.title, Key? key})
+      : super(key: key);
 
   final String title;
   final String id;
@@ -24,7 +24,8 @@ class _ActivityViewPageState extends State<ActivityViewPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(()=>DdTaokeSdk.instance.getActivityLink(ActivityLinkParam(promotionSceneId: widget.id)));
+    Future.microtask(() => DdTaokeSdk.instance
+        .getActivityLink(ActivityLinkParam(promotionSceneId: widget.id)));
   }
 
   @override
@@ -32,9 +33,7 @@ class _ActivityViewPageState extends State<ActivityViewPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: const [
-
-          ],
+          children: const [],
         ),
       ),
     );

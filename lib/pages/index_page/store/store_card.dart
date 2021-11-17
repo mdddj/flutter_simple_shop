@@ -1,6 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/model/brand_list_model.dart';
+import 'package:dataoke_sdk/model/brand_list_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,7 +21,8 @@ class StoreItemCard extends StatelessWidget {
   }
 
   Widget _buildInfo(BuildContext context) {
-    var bgColor = Provider.of<IndexProvider>(context).brandBgColorMap[storeInfo.brandId];
+    var bgColor =
+        Provider.of<IndexProvider>(context).brandBgColorMap[storeInfo.brandId];
     bgColor = bgColor ?? Colors.grey[200];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -50,11 +51,15 @@ class StoreItemCard extends StatelessWidget {
                     storeInfo.brandName!,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 14, color: Colors.red,fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold),
                   )
                 ],
               ),
-              Text('近期销量${storeInfo.sales}件',style: const TextStyle(color: Colors.black,fontSize: 11))
+              Text('近期销量${storeInfo.sales}件',
+                  style: const TextStyle(color: Colors.black, fontSize: 11))
             ],
           ),
         ],

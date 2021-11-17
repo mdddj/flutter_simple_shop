@@ -3,7 +3,7 @@ import 'dart:ui';
 
 // Package imports:
 import 'package:after_layout/after_layout.dart';
-import 'package:dd_taoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/model/product.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart' hide NestedScrollView;
@@ -42,7 +42,6 @@ class _IndexHomeState extends State<IndexHome>
 
   TabController? tabController;
 
-
   bool carouselISLoaded = false; // 轮播图资源是否准备完毕
   bool categortListIsLoaded = false; // 分类数据是否准备好
   Color? bgColor;
@@ -64,16 +63,14 @@ class _IndexHomeState extends State<IndexHome>
   // 首页商品列表
   Widget _buildGoodsList() {
     return LoadingMoreSliverList(SliverListConfig<Product>(
-      extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12),
+      extendedListDelegate:
+          const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
       itemBuilder: (context, item, index) {
         return WaterfallGoodsCard(item);
       },
       sourceList: indexGoodsRepository,
-      padding: const EdgeInsets.only(
-          left: 12, right: 12),
+      padding: const EdgeInsets.only(left: 12, right: 12),
 //      lastChildLayoutType: LastChildLayoutType.foot,
       indicatorBuilder: (context, state) {
         return LoadingMoreListCostumIndicator(state, isSliver: true);
@@ -113,9 +110,7 @@ class _IndexHomeState extends State<IndexHome>
           child: const Text(
             '随便看看',
             style: TextStyle(
-                fontSize: 14,
-                color: Colors.black,
-                fontWeight: FontWeight.bold),
+                fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ).sliverBox,
 

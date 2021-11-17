@@ -1,6 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/model/product.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flustars/flustars.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,7 +16,7 @@ import 'extended_image.dart';
 class WaterfallGoodsCard extends StatelessWidget {
   final Product product;
 
-  const WaterfallGoodsCard(this.product,{Key? key}): super(key: key);
+  const WaterfallGoodsCard(this.product, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class WaterfallGoodsCard extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(horizontal: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [renderShopType(),renderCals()],
+                    children: [renderShopType(), renderCals()],
                   ),
                 ),
                 const SizedBox(height: 5),
@@ -68,12 +68,14 @@ class WaterfallGoodsCard extends StatelessWidget {
                 /// 领券标签
                 Container(
                   alignment: Alignment.centerLeft,
-                  padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
                   child: FSuper(
                     lightOrientation: FLightOrientation.LeftBottom,
                     text:
                         '领 ${NumUtil.getNumByValueDouble(product.couponPrice, 0)} 元券',
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
                     strokeColor: Colors.pink,
                     corner: FCorner.all(50),
                     style: const TextStyle(color: Colors.pink),
@@ -96,15 +98,12 @@ class WaterfallGoodsCard extends StatelessWidget {
   }
 
   /// 销量
-  Widget renderCals(){
-    return Text('月销${product.monthSales}',
-    style: const TextStyle(
-      fontSize: 12,
-      color: Color.fromRGBO(0, 0, 0, .32)
-    ),
+  Widget renderCals() {
+    return Text(
+      '月销${product.monthSales}',
+      style: const TextStyle(fontSize: 12, color: Color.fromRGBO(0, 0, 0, .32)),
     );
   }
-
 
   /// 店铺类型
   Widget renderShopType() {
@@ -115,7 +114,7 @@ class WaterfallGoodsCard extends StatelessWidget {
           color: Colors.red, borderRadius: BorderRadius.circular(3)),
       child: Text(
         text,
-        style: const TextStyle(color: Colors.white,fontSize: 12),
+        style: const TextStyle(color: Colors.white, fontSize: 12),
       ),
     );
   }

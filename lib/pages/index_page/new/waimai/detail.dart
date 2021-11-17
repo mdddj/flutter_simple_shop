@@ -1,8 +1,8 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/activity_link_result.dart';
-import 'package:dd_taoke_sdk/params/activity_link_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/activity_link_result.dart';
+import 'package:dataoke_sdk/params/activity_link_param.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,10 @@ class _WaimaiDetailState extends State<WaimaiDetail> with LoadingMixin {
     super.initState();
     Future.microtask(() async {
       setLoading(true);
-      final result = await DdTaokeSdk.instance.getActivityLink(ActivityLinkParam(promotionSceneId: widget.type == '1' ? '20150318019998877' : '1585018034441'));
+      final result = await DdTaokeSdk.instance.getActivityLink(
+          ActivityLinkParam(
+              promotionSceneId:
+                  widget.type == '1' ? '20150318019998877' : '1585018034441'));
       if (mounted && result != null) {
         setState(() {
           model = result;
@@ -47,11 +50,20 @@ class _WaimaiDetailState extends State<WaimaiDetail> with LoadingMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: widget.type == '1' ? const Color.fromRGBO(255, 97, 97, 1) : const Color.fromRGBO(1, 171, 245, 1),
+      backgroundColor: widget.type == '1'
+          ? const Color.fromRGBO(255, 97, 97, 1)
+          : const Color.fromRGBO(1, 171, 245, 1),
       appBar: const SimpleAppBar(title: '红包领取'),
       body: SingleChildScrollView(
         child: Column(
-          children: [renderHeaderImage(), renderNavLink(), utils.widgetUtils.marginTop(), renderKl(), utils.widgetUtils.marginTop(), rendenGuize()],
+          children: [
+            renderHeaderImage(),
+            renderNavLink(),
+            utils.widgetUtils.marginTop(),
+            renderKl(),
+            utils.widgetUtils.marginTop(),
+            rendenGuize()
+          ],
         ),
       ),
     );
@@ -76,7 +88,10 @@ class _WaimaiDetailState extends State<WaimaiDetail> with LoadingMixin {
 
   // 头部
   Widget renderHeaderImage() {
-    return AspectRatio(aspectRatio: 1.87, child: Image.asset('assets/images/waimai/hb/${widget.type == '1' ? '1' : 'sc_bg'}.png'));
+    return AspectRatio(
+        aspectRatio: 1.87,
+        child: Image.asset(
+            'assets/images/waimai/hb/${widget.type == '1' ? '1' : 'sc_bg'}.png'));
   }
 
   /// 复制口令模块

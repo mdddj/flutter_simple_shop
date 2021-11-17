@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:dd_taoke_sdk/model/ff_convert_convert_util.dart';
-
+import 'package:dataoke_sdk/model/ff_convert_convert_util.dart';
 
 List<JdNativeProduct> jdNativeProductCovert(String resp) {
-  return List<JdNativeProduct>.from((jsonDecode(resp) as List<dynamic>).map((e) => JdNativeProduct.fromJson(e))).toList();
+  return List<JdNativeProduct>.from((jsonDecode(resp) as List<dynamic>)
+      .map((e) => JdNativeProduct.fromJson(e))).toList();
 }
 
 class JdNativeProduct {
@@ -45,7 +45,7 @@ class JdNativeProduct {
 
   factory JdNativeProduct.fromJson(Map<String, dynamic> jsonRes) {
     final List<int>? forbidTypes =
-    jsonRes['forbidTypes'] is List ? <int>[] : null;
+        jsonRes['forbidTypes'] is List ? <int>[] : null;
     if (forbidTypes != null) {
       for (final dynamic item in jsonRes['forbidTypes']!) {
         if (item != null) {
@@ -57,19 +57,21 @@ class JdNativeProduct {
       categoryInfo: CategoryInfo.fromJson(
           asT<Map<String, dynamic>>(jsonRes['categoryInfo'])!),
       comments: asT<int>(jsonRes['comments'])!,
-      commissionInfo:jsonRes['commissionInfo']!=null ? CommissionInfo.fromJson(
-          asT<Map<String, dynamic>>(jsonRes['commissionInfo'])!):null,
+      commissionInfo: jsonRes['commissionInfo'] != null
+          ? CommissionInfo.fromJson(
+              asT<Map<String, dynamic>>(jsonRes['commissionInfo'])!)
+          : null,
       couponInfo: CouponInfo.fromJson(
           asT<Map<String, dynamic>>(jsonRes['couponInfo'])!),
       goodCommentsShare: asT<double>(jsonRes['goodCommentsShare'])!,
       imageInfo:
-      ImageInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['imageInfo'])!),
+          ImageInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['imageInfo'])!),
       inOrderCount30Days: asT<int>(jsonRes['inOrderCount30Days'])!,
       materialUrl: asT<String>(jsonRes['materialUrl'])!,
       priceInfo:
-      PriceInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['priceInfo'])!),
+          PriceInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['priceInfo'])!),
       shopInfo:
-      ShopInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['shopInfo'])!),
+          ShopInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['shopInfo'])!),
       skuId: asT<int>(jsonRes['skuId'])!,
       skuName: asT<String>(jsonRes['skuName'])!,
       isHot: asT<int>(jsonRes['isHot'])!,
@@ -137,42 +139,42 @@ class JdNativeProduct {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'categoryInfo': categoryInfo,
-    'comments': comments,
-    'commissionInfo': commissionInfo,
-    'couponInfo': couponInfo,
-    'goodCommentsShare': goodCommentsShare,
-    'imageInfo': imageInfo,
-    'inOrderCount30Days': inOrderCount30Days,
-    'materialUrl': materialUrl,
-    'priceInfo': priceInfo,
-    'shopInfo': shopInfo,
-    'skuId': skuId,
-    'skuName': skuName,
-    'isHot': isHot,
-    'spuid': spuid,
-    'brandCode': brandCode,
-    'brandName': brandName,
-    'owner': owner,
-    'pinGouInfo': pinGouInfo,
-    'resourceInfo': resourceInfo,
-    'inOrderCount30DaysSku': inOrderCount30DaysSku,
-    'seckillInfo': seckillInfo,
-    'jxFlags': jxFlags,
-    'videoInfo': videoInfo,
-    'documentInfo': documentInfo,
-    'bookInfo': bookInfo,
-    'forbidTypes': forbidTypes,
-    'deliveryType': deliveryType,
-    'skuLabelInfo': skuLabelInfo,
-    'promotionLabelInfoList': promotionLabelInfoList,
-    'secondPriceInfoList': secondPriceInfoList,
-    'preSaleInfo': preSaleInfo,
-    'reserveInfo': reserveInfo,
-  };
+        'categoryInfo': categoryInfo,
+        'comments': comments,
+        'commissionInfo': commissionInfo,
+        'couponInfo': couponInfo,
+        'goodCommentsShare': goodCommentsShare,
+        'imageInfo': imageInfo,
+        'inOrderCount30Days': inOrderCount30Days,
+        'materialUrl': materialUrl,
+        'priceInfo': priceInfo,
+        'shopInfo': shopInfo,
+        'skuId': skuId,
+        'skuName': skuName,
+        'isHot': isHot,
+        'spuid': spuid,
+        'brandCode': brandCode,
+        'brandName': brandName,
+        'owner': owner,
+        'pinGouInfo': pinGouInfo,
+        'resourceInfo': resourceInfo,
+        'inOrderCount30DaysSku': inOrderCount30DaysSku,
+        'seckillInfo': seckillInfo,
+        'jxFlags': jxFlags,
+        'videoInfo': videoInfo,
+        'documentInfo': documentInfo,
+        'bookInfo': bookInfo,
+        'forbidTypes': forbidTypes,
+        'deliveryType': deliveryType,
+        'skuLabelInfo': skuLabelInfo,
+        'promotionLabelInfoList': promotionLabelInfoList,
+        'secondPriceInfoList': secondPriceInfoList,
+        'preSaleInfo': preSaleInfo,
+        'reserveInfo': reserveInfo,
+      };
 
-  JdNativeProduct clone() =>
-      JdNativeProduct.fromJson(asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
+  JdNativeProduct clone() => JdNativeProduct.fromJson(
+      asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
 }
 
 class CategoryInfo {
@@ -186,13 +188,13 @@ class CategoryInfo {
   });
 
   factory CategoryInfo.fromJson(Map<String, dynamic> jsonRes) => CategoryInfo(
-    cid1: asT<int>(jsonRes['cid1'])!,
-    cid1Name: asT<String>(jsonRes['cid1Name'])!,
-    cid2: asT<int>(jsonRes['cid2'])!,
-    cid2Name: asT<String>(jsonRes['cid2Name'])!,
-    cid3: asT<int>(jsonRes['cid3'])!,
-    cid3Name: asT<String>(jsonRes['cid3Name'])!,
-  );
+        cid1: asT<int>(jsonRes['cid1'])!,
+        cid1Name: asT<String>(jsonRes['cid1Name'])!,
+        cid2: asT<int>(jsonRes['cid2'])!,
+        cid2Name: asT<String>(jsonRes['cid2Name'])!,
+        cid3: asT<int>(jsonRes['cid3'])!,
+        cid3Name: asT<String>(jsonRes['cid3Name'])!,
+      );
 
   int cid1;
   String cid1Name;
@@ -207,13 +209,13 @@ class CategoryInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'cid1': cid1,
-    'cid1Name': cid1Name,
-    'cid2': cid2,
-    'cid2Name': cid2Name,
-    'cid3': cid3,
-    'cid3Name': cid3Name,
-  };
+        'cid1': cid1,
+        'cid1Name': cid1Name,
+        'cid2': cid2,
+        'cid2Name': cid2Name,
+        'cid3': cid3,
+        'cid3Name': cid3Name,
+      };
 
   CategoryInfo clone() => CategoryInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -255,14 +257,14 @@ class CommissionInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'commission': commission,
-    'commissionShare': commissionShare,
-    'couponCommission': couponCommission,
-    'plusCommissionShare': plusCommissionShare,
-    'isLock': isLock,
-    'startTime': startTime,
-    'endTime': endTime,
-  };
+        'commission': commission,
+        'commissionShare': commissionShare,
+        'couponCommission': couponCommission,
+        'plusCommissionShare': plusCommissionShare,
+        'isLock': isLock,
+        'startTime': startTime,
+        'endTime': endTime,
+      };
 
   CommissionInfo clone() => CommissionInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -275,7 +277,7 @@ class CouponInfo {
 
   factory CouponInfo.fromJson(Map<String, dynamic> jsonRes) {
     final List<CouponList>? couponList =
-    jsonRes['couponList'] is List ? <CouponList>[] : null;
+        jsonRes['couponList'] is List ? <CouponList>[] : null;
     if (couponList != null) {
       for (final dynamic item in jsonRes['couponList']!) {
         if (item != null) {
@@ -296,8 +298,8 @@ class CouponInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'couponList': couponList,
-  };
+        'couponList': couponList,
+      };
 
   CouponInfo clone() => CouponInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -320,19 +322,19 @@ class CouponList {
   });
 
   factory CouponList.fromJson(Map<String, dynamic> jsonRes) => CouponList(
-    bindType: asT<int>(jsonRes['bindType'])!,
-    discount: asT<double>(jsonRes['discount'])!,
-    link: asT<String>(jsonRes['link'])!,
-    platformType: asT<int>(jsonRes['platformType'])!,
-    quota: asT<double>(jsonRes['quota'])!,
-    getStartTime: asT<int>(jsonRes['getStartTime'])!,
-    getEndTime: asT<int>(jsonRes['getEndTime'])!,
-    useStartTime: asT<int>(jsonRes['useStartTime'])!,
-    useEndTime: asT<int>(jsonRes['useEndTime'])!,
-    isBest: asT<int>(jsonRes['isBest'])!,
-    hotValue: asT<int>(jsonRes['hotValue']??-1)!,
-    isInputCoupon: asT<Object?>(jsonRes['isInputCoupon']),
-  );
+        bindType: asT<int>(jsonRes['bindType'])!,
+        discount: asT<double>(jsonRes['discount'])!,
+        link: asT<String>(jsonRes['link'])!,
+        platformType: asT<int>(jsonRes['platformType'])!,
+        quota: asT<double>(jsonRes['quota'])!,
+        getStartTime: asT<int>(jsonRes['getStartTime'])!,
+        getEndTime: asT<int>(jsonRes['getEndTime'])!,
+        useStartTime: asT<int>(jsonRes['useStartTime'])!,
+        useEndTime: asT<int>(jsonRes['useEndTime'])!,
+        isBest: asT<int>(jsonRes['isBest'])!,
+        hotValue: asT<int>(jsonRes['hotValue'] ?? -1)!,
+        isInputCoupon: asT<Object?>(jsonRes['isInputCoupon']),
+      );
 
   int bindType;
   double discount;
@@ -353,19 +355,19 @@ class CouponList {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'bindType': bindType,
-    'discount': discount,
-    'link': link,
-    'platformType': platformType,
-    'quota': quota,
-    'getStartTime': getStartTime,
-    'getEndTime': getEndTime,
-    'useStartTime': useStartTime,
-    'useEndTime': useEndTime,
-    'isBest': isBest,
-    'hotValue': hotValue,
-    'isInputCoupon': isInputCoupon,
-  };
+        'bindType': bindType,
+        'discount': discount,
+        'link': link,
+        'platformType': platformType,
+        'quota': quota,
+        'getStartTime': getStartTime,
+        'getEndTime': getEndTime,
+        'useStartTime': useStartTime,
+        'useEndTime': useEndTime,
+        'isBest': isBest,
+        'hotValue': hotValue,
+        'isInputCoupon': isInputCoupon,
+      };
 
   CouponList clone() => CouponList.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -379,7 +381,7 @@ class ImageInfo {
 
   factory ImageInfo.fromJson(Map<String, dynamic> jsonRes) {
     final List<ImageList>? imageList =
-    jsonRes['imageList'] is List ? <ImageList>[] : null;
+        jsonRes['imageList'] is List ? <ImageList>[] : null;
     if (imageList != null) {
       for (final dynamic item in jsonRes['imageList']!) {
         if (item != null) {
@@ -389,7 +391,7 @@ class ImageInfo {
     }
     return ImageInfo(
       imageList: imageList!,
-      whiteImage: asT<String>(jsonRes['whiteImage']??'')!,
+      whiteImage: asT<String>(jsonRes['whiteImage'] ?? '')!,
     );
   }
 
@@ -402,9 +404,9 @@ class ImageInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'imageList': imageList,
-    'whiteImage': whiteImage,
-  };
+        'imageList': imageList,
+        'whiteImage': whiteImage,
+      };
 
   ImageInfo clone() => ImageInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -416,8 +418,8 @@ class ImageList {
   });
 
   factory ImageList.fromJson(Map<String, dynamic> jsonRes) => ImageList(
-    url: asT<String>(jsonRes['url'])!,
-  );
+        url: asT<String>(jsonRes['url'])!,
+      );
 
   String url;
 
@@ -427,8 +429,8 @@ class ImageList {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'url': url,
-  };
+        'url': url,
+      };
 
   ImageList clone() => ImageList.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -444,12 +446,12 @@ class PriceInfo {
   });
 
   factory PriceInfo.fromJson(Map<String, dynamic> jsonRes) => PriceInfo(
-    price: asT<double>(jsonRes['price'])!,
-    lowestPrice: asT<double>(jsonRes['lowestPrice'])!,
-    lowestPriceType: asT<int>(jsonRes['lowestPriceType'])!,
-    lowestCouponPrice: asT<double>(jsonRes['lowestCouponPrice'])!,
-    historyPriceDay: asT<Object?>(jsonRes['historyPriceDay']),
-  );
+        price: asT<double>(jsonRes['price'])!,
+        lowestPrice: asT<double>(jsonRes['lowestPrice'])!,
+        lowestPriceType: asT<int>(jsonRes['lowestPriceType'])!,
+        lowestCouponPrice: asT<double>(jsonRes['lowestCouponPrice'])!,
+        historyPriceDay: asT<Object?>(jsonRes['historyPriceDay']),
+      );
 
   double price;
   double lowestPrice;
@@ -463,12 +465,12 @@ class PriceInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'price': price,
-    'lowestPrice': lowestPrice,
-    'lowestPriceType': lowestPriceType,
-    'lowestCouponPrice': lowestCouponPrice,
-    'historyPriceDay': historyPriceDay,
-  };
+        'price': price,
+        'lowestPrice': lowestPrice,
+        'lowestPriceType': lowestPriceType,
+        'lowestCouponPrice': lowestCouponPrice,
+        'historyPriceDay': historyPriceDay,
+      };
 
   PriceInfo clone() => PriceInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -490,21 +492,21 @@ class ShopInfo {
   });
 
   factory ShopInfo.fromJson(Map<String, dynamic> jsonRes) => ShopInfo(
-    shopName: asT<String>(jsonRes['shopName'])!,
-    shopId: asT<int>(jsonRes['shopId'])!,
-    shopLevel: asT<double>(jsonRes['shopLevel'])!,
-    shopLabel: asT<String>(jsonRes['shopLabel'])!,
-    userEvaluateScore: asT<String>(jsonRes['userEvaluateScore']??'')!,
-    commentFactorScoreRankGrade:
-    asT<String>(jsonRes['commentFactorScoreRankGrade']??'')!,
-    logisticsLvyueScore: asT<String>(jsonRes['logisticsLvyueScore']??'')!,
-    logisticsFactorScoreRankGrade:
-    asT<String>(jsonRes['logisticsFactorScoreRankGrade']??'')!,
-    afterServiceScore: asT<String>(jsonRes['afterServiceScore']??'')!,
-    afsFactorScoreRankGrade:
-    asT<String>(jsonRes['afsFactorScoreRankGrade']??'')!,
-    scoreRankRate: asT<String>(jsonRes['scoreRankRate']??'')!,
-  );
+        shopName: asT<String>(jsonRes['shopName'])!,
+        shopId: asT<int>(jsonRes['shopId'])!,
+        shopLevel: asT<double>(jsonRes['shopLevel'])!,
+        shopLabel: asT<String>(jsonRes['shopLabel'])!,
+        userEvaluateScore: asT<String>(jsonRes['userEvaluateScore'] ?? '')!,
+        commentFactorScoreRankGrade:
+            asT<String>(jsonRes['commentFactorScoreRankGrade'] ?? '')!,
+        logisticsLvyueScore: asT<String>(jsonRes['logisticsLvyueScore'] ?? '')!,
+        logisticsFactorScoreRankGrade:
+            asT<String>(jsonRes['logisticsFactorScoreRankGrade'] ?? '')!,
+        afterServiceScore: asT<String>(jsonRes['afterServiceScore'] ?? '')!,
+        afsFactorScoreRankGrade:
+            asT<String>(jsonRes['afsFactorScoreRankGrade'] ?? '')!,
+        scoreRankRate: asT<String>(jsonRes['scoreRankRate'] ?? '')!,
+      );
 
   String shopName;
   int shopId;
@@ -524,18 +526,18 @@ class ShopInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'shopName': shopName,
-    'shopId': shopId,
-    'shopLevel': shopLevel,
-    'shopLabel': shopLabel,
-    'userEvaluateScore': userEvaluateScore,
-    'commentFactorScoreRankGrade': commentFactorScoreRankGrade,
-    'logisticsLvyueScore': logisticsLvyueScore,
-    'logisticsFactorScoreRankGrade': logisticsFactorScoreRankGrade,
-    'afterServiceScore': afterServiceScore,
-    'afsFactorScoreRankGrade': afsFactorScoreRankGrade,
-    'scoreRankRate': scoreRankRate,
-  };
+        'shopName': shopName,
+        'shopId': shopId,
+        'shopLevel': shopLevel,
+        'shopLabel': shopLabel,
+        'userEvaluateScore': userEvaluateScore,
+        'commentFactorScoreRankGrade': commentFactorScoreRankGrade,
+        'logisticsLvyueScore': logisticsLvyueScore,
+        'logisticsFactorScoreRankGrade': logisticsFactorScoreRankGrade,
+        'afterServiceScore': afterServiceScore,
+        'afsFactorScoreRankGrade': afsFactorScoreRankGrade,
+        'scoreRankRate': scoreRankRate,
+      };
 
   ShopInfo clone() => ShopInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -551,12 +553,12 @@ class PinGouInfo {
   });
 
   factory PinGouInfo.fromJson(Map<String, dynamic> jsonRes) => PinGouInfo(
-    pingouPrice: asT<Object?>(jsonRes['pingouPrice']),
-    pingouTmCount: asT<Object?>(jsonRes['pingouTmCount']),
-    pingouUrl: asT<Object?>(jsonRes['pingouUrl']),
-    pingouStartTime: asT<Object?>(jsonRes['pingouStartTime']),
-    pingouEndTime: asT<Object?>(jsonRes['pingouEndTime']),
-  );
+        pingouPrice: asT<Object?>(jsonRes['pingouPrice']),
+        pingouTmCount: asT<Object?>(jsonRes['pingouTmCount']),
+        pingouUrl: asT<Object?>(jsonRes['pingouUrl']),
+        pingouStartTime: asT<Object?>(jsonRes['pingouStartTime']),
+        pingouEndTime: asT<Object?>(jsonRes['pingouEndTime']),
+      );
 
   Object? pingouPrice;
   Object? pingouTmCount;
@@ -570,12 +572,12 @@ class PinGouInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'pingouPrice': pingouPrice,
-    'pingouTmCount': pingouTmCount,
-    'pingouUrl': pingouUrl,
-    'pingouStartTime': pingouStartTime,
-    'pingouEndTime': pingouEndTime,
-  };
+        'pingouPrice': pingouPrice,
+        'pingouTmCount': pingouTmCount,
+        'pingouUrl': pingouUrl,
+        'pingouStartTime': pingouStartTime,
+        'pingouEndTime': pingouEndTime,
+      };
 
   PinGouInfo clone() => PinGouInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -588,9 +590,9 @@ class ResourceInfo {
   });
 
   factory ResourceInfo.fromJson(Map<String, dynamic> jsonRes) => ResourceInfo(
-    eliteId: asT<int>(jsonRes['eliteId'])!,
-    eliteName: asT<String>(jsonRes['eliteName'])!,
-  );
+        eliteId: asT<int>(jsonRes['eliteId'])!,
+        eliteName: asT<String>(jsonRes['eliteName'])!,
+      );
 
   int eliteId;
   String eliteName;
@@ -601,9 +603,9 @@ class ResourceInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'eliteId': eliteId,
-    'eliteName': eliteName,
-  };
+        'eliteId': eliteId,
+        'eliteName': eliteName,
+      };
 
   ResourceInfo clone() => ResourceInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
@@ -618,7 +620,7 @@ class SkuLabelInfo {
 
   factory SkuLabelInfo.fromJson(Map<String, dynamic> jsonRes) {
     final List<Object>? fxgServiceList =
-    jsonRes['fxgServiceList'] is List ? <Object>[] : null;
+        jsonRes['fxgServiceList'] is List ? <Object>[] : null;
     if (fxgServiceList != null) {
       for (final dynamic item in jsonRes['fxgServiceList']!) {
         if (item != null) {
@@ -643,10 +645,10 @@ class SkuLabelInfo {
   }
 
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'is7ToReturn': is7ToReturn,
-    'fxg': fxg,
-    'fxgServiceList': fxgServiceList,
-  };
+        'is7ToReturn': is7ToReturn,
+        'fxg': fxg,
+        'fxgServiceList': fxgServiceList,
+      };
 
   SkuLabelInfo clone() => SkuLabelInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);

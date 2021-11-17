@@ -1,8 +1,8 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/brand_list_model.dart';
-import 'package:dd_taoke_sdk/params/brand_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/brand_list_model.dart';
+import 'package:dataoke_sdk/params/brand_param.dart';
 import 'package:flutter/material.dart';
 
 // Project imports:
@@ -20,12 +20,12 @@ class BrandProvider extends ChangeNotifier {
   List<BrandDetailGoodsList> brandGoodsList = [];
   Color detailBgColor = Colors.white;
 
-
   /// 加载品牌列表
   Future<void> refresh() async {
     lists.clear();
     page = 1;
-    final result = await DdTaokeSdk.instance.getBrandList(param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'));
+    final result = await DdTaokeSdk.instance.getBrandList(
+        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'));
     if (result != null) {
       lists.addAll(result.lists ?? []);
     }
@@ -35,7 +35,8 @@ class BrandProvider extends ChangeNotifier {
   /// 加载下一页
   Future<void> load() async {
     page = page + 1;
-    final result = await DdTaokeSdk.instance.getBrandList(param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'));
+    final result = await DdTaokeSdk.instance.getBrandList(
+        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'));
     if (result != null) {
       lists.addAll(result.lists ?? []);
     }

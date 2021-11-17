@@ -1,8 +1,8 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/product.dart';
-import 'package:dd_taoke_sdk/params/discount_two_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/params/discount_two_param.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -23,7 +23,9 @@ class ZheState extends ChangeNotifier {
 
   /// 加载商品
   Future<bool> fetchData() async {
-    final result = await DdTaokeSdk.instance.getDiscountTwoProduct(param: DiscountTwoParam(pageSize: '$_pageSize', sort: '2', pageId: '$_page', cids: cid));
+    final result = await DdTaokeSdk.instance.getDiscountTwoProduct(
+        param: DiscountTwoParam(
+            pageSize: '$_pageSize', sort: '2', pageId: '$_page', cids: cid));
     if (result != null) {
       products.addAll(result.list ?? []);
     }

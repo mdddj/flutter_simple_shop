@@ -1,6 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/model/category.dart';
+import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
 
 class LeftWidgetItem extends StatelessWidget {

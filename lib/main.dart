@@ -2,9 +2,9 @@
 import 'dart:io';
 
 // Package imports:
-import 'package:dd_taoke_sdk/network/util.dart';
 
 // Flutter imports:
+import 'package:dataoke_sdk/network/util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';

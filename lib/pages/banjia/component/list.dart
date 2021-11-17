@@ -1,7 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:badges/badges.dart';
-import 'package:dd_taoke_sdk/model/halfday_result.dart';
+import 'package:dataoke_sdk/model/halfday_result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -67,7 +67,8 @@ class BanjiaList extends StatelessWidget {
                       borderRadius: BorderRadius.circular(6),
                       elevation: 0,
                       borderSide: const BorderSide(color: Colors.pinkAccent),
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 6, vertical: 2),
                     )
                   ],
                 ),
@@ -79,15 +80,17 @@ class BanjiaList extends StatelessWidget {
                       hideText: '',
                     ),
                     ElevatedButton(
-                        onPressed: () {
-                          NavigatorUtil.gotoGoodsDetailPage(Get.context!, '${item.id}',newViewPage: true);
-                        },
+                      onPressed: () {
+                        NavigatorUtil.gotoGoodsDetailPage(
+                            Get.context!, '${item.id}',
+                            newViewPage: true);
+                      },
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.pink)
-                      ),
-                        child: Text((item.itemSoldNum ?? 0) == 0
-                            ? '去抢购'
-                            : '已抢${item.itemSoldNum}'),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.pink)),
+                      child: Text((item.itemSoldNum ?? 0) == 0
+                          ? '去抢购'
+                          : '已抢${item.itemSoldNum}'),
                     )
                   ],
                 )

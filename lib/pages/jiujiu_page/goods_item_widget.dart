@@ -1,6 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,12 +18,18 @@ class GoodsItemWidget extends StatelessWidget {
   final Widget? imageWidget;
   final EdgeInsets? margin;
 
-  const GoodsItemWidget({required this.goodsItem, this.shopWidget, this.imageWidget, this.margin,Key? key}):super(key: key);
+  const GoodsItemWidget(
+      {required this.goodsItem,
+      this.shopWidget,
+      this.imageWidget,
+      this.margin,
+      Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:margin ?? const EdgeInsets.only(bottom: 10.0),
+      margin: margin ?? const EdgeInsets.only(bottom: 10.0),
       color: Colors.white,
       width: Get.width,
       child: Row(
@@ -38,7 +44,7 @@ class GoodsItemWidget extends StatelessWidget {
                 SimpleImage(
                   url: goodsItem.mainPic!,
                 ),
-                imageWidget??Container()
+                imageWidget ?? Container()
               ],
             ),
           ),
@@ -47,7 +53,8 @@ class GoodsItemWidget extends StatelessWidget {
               child: InkWell(
             onTap: () {
               NavigatorUtil.gotoGoodsDetailPage(
-                  context, goodsItem.id.toString(),newViewPage: true);
+                  context, goodsItem.id.toString(),
+                  newViewPage: true);
             },
             child: Container(
               padding: const EdgeInsets.all(10.0),
@@ -67,8 +74,10 @@ class GoodsItemWidget extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1),
                         //店铺
-                        shopWidget ?? TagWidget(
-                            title: goodsItem.shopName??'', noBorder: true),
+                        shopWidget ??
+                            TagWidget(
+                                title: goodsItem.shopName ?? '',
+                                noBorder: true),
 
                         //券后价
                         Container(
@@ -78,8 +87,7 @@ class GoodsItemWidget extends StatelessWidget {
                               const TextSpan(
                                   text: '￥',
                                   style: TextStyle(
-                                      color: Colors.pinkAccent,
-                                      fontSize: 12)),
+                                      color: Colors.pinkAccent, fontSize: 12)),
                               TextSpan(
                                   text: '${goodsItem.actualPrice}',
                                   style: const TextStyle(
@@ -89,8 +97,7 @@ class GoodsItemWidget extends StatelessWidget {
                               const TextSpan(
                                   text: '  券后价    ',
                                   style: TextStyle(
-                                      color: Colors.pinkAccent,
-                                      fontSize: 12)),
+                                      color: Colors.pinkAccent, fontSize: 12)),
                               TextSpan(
                                   text: '原价${goodsItem.originalPrice}',
                                   style: const TextStyle(
@@ -159,8 +166,7 @@ class GoodsItemWidget extends StatelessWidget {
                                 child: const Text(
                                   '立即购买',
                                   style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.white),
+                                      fontSize: 12, color: Colors.white),
                                 ),
                               ))
                         ],

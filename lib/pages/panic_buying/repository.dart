@@ -1,9 +1,9 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/category.dart';
-import 'package:dd_taoke_sdk/model/product.dart';
-import 'package:dd_taoke_sdk/params/top_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/category.dart';
+import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/params/top_param.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -30,7 +30,9 @@ class PanicBuyingModel extends ChangeNotifier {
 
   // 加载实时榜单商品
   Future<bool> loadRealTimeProduct() async {
-    final result = await DdTaokeSdk.instance.getTopProducts(param: TopParam(rankType: rankType, pageId: '$_page', cid: cid, pageSize: '20'));
+    final result = await DdTaokeSdk.instance.getTopProducts(
+        param: TopParam(
+            rankType: rankType, pageId: '$_page', cid: cid, pageSize: '20'));
     if (result.isNotEmpty) {
       products.addAll(result);
     }

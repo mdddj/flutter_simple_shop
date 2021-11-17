@@ -1,8 +1,8 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/product.dart';
-import 'package:dd_taoke_sdk/params/super_search_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/params/super_search_param.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,6 @@ class ProductSearchMini extends StatefulWidget {
 
   const ProductSearchMini({Key? key, required this.keyWorlds})
       : super(key: key);
-
 
   @override
   _ProductSearchMiniState createState() => _ProductSearchMiniState();
@@ -44,10 +43,13 @@ class _ProductSearchMiniState extends State<ProductSearchMini> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: itemBuilder,itemCount: _products.length,);
+    return ListView.builder(
+      itemBuilder: itemBuilder,
+      itemCount: _products.length,
+    );
   }
 
-  Widget itemBuilder(_,int index){
+  Widget itemBuilder(_, int index) {
     final product = _products[index];
     return ListTile(
       leading: ExtendedImage.network(product.mainPic!),

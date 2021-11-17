@@ -1,7 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
-import 'package:dd_taoke_sdk/model/brand_list_model.dart';
+import 'package:dataoke_sdk/model/brand_list_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
@@ -36,9 +36,10 @@ class BrandItemCard extends StatelessWidget {
   /// 品牌信息栏目
   Widget _buildHeader() {
     return GestureDetector(
-      onTap: ()async{
+      onTap: () async {
         await Get.context!.navigator.push(SwipeablePageRoute(
-            builder: (_) => BrandDetailPage(brandId: storeInfo.brandId.toString())));
+            builder: (_) =>
+                BrandDetailPage(brandId: storeInfo.brandId.toString())));
       },
       child: Flex(
         direction: Axis.horizontal,
@@ -67,7 +68,9 @@ class BrandItemCard extends StatelessWidget {
                       Text(
                         '${storeInfo.brandName}',
                         style: const TextStyle(
-                            fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold),
+                            fontSize: 14,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
                       ),
                       Text(
                         '已售${Numeral(storeInfo.sales!)}件 >',
@@ -77,7 +80,8 @@ class BrandItemCard extends StatelessWidget {
                   ),
                   Text(
                     '单品低至${storeInfo.maxDiscount}折  |  领券最高减${storeInfo.maxDiscountAmount}',
-                    style: const TextStyle(fontSize: 12, color: Colors.redAccent),
+                    style:
+                        const TextStyle(fontSize: 12, color: Colors.redAccent),
                   )
                 ],
               ),

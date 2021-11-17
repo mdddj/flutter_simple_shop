@@ -1,19 +1,15 @@
-
-
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/dd_taoke_sdk.dart';
-import 'package:dd_taoke_sdk/model/product.dart';
-import 'package:dd_taoke_sdk/params/nine_nine_param.dart';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/params/nine_nine_param.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final jiujiuRiverpod = ChangeNotifierProvider<JiujiuState>((ref)=>JiujiuState());
+final jiujiuRiverpod =
+    ChangeNotifierProvider<JiujiuState>((ref) => JiujiuState());
 
-
-class JiujiuState extends ChangeNotifier{
-
-
+class JiujiuState extends ChangeNotifier {
   String type = '-1';
   int page = 1;
   bool loading = false;
@@ -21,23 +17,24 @@ class JiujiuState extends ChangeNotifier{
   List<Product> products = [];
 
   ///初始化
-  Future<void> init()async{
-    if(page==1){
+  Future<void> init() async {
+    if (page == 1) {
       products.clear();
       loading = true;
       notifyListeners();
     }
-    final result = await DdTaokeSdk.instance.getNineNineProducts(param: NineNineParam(nineCid: type,pageId: '$page',pageSize: '20'));
-    if(result!=null){
-      products.addAll(result.list??[]);
+    final result = await DdTaokeSdk.instance.getNineNineProducts(
+        param: NineNineParam(nineCid: type, pageId: '$page', pageSize: '20'));
+    if (result != null) {
+      products.addAll(result.list ?? []);
       page++;
-      loading  =false;
+      loading = false;
       notifyListeners();
     }
   }
 
-  Future<void> changeIndex(int index)async{
-    switch(index){
+  Future<void> changeIndex(int index) async {
+    switch (index) {
       case 0:
         type = '-1';
         break;
@@ -50,10 +47,10 @@ class JiujiuState extends ChangeNotifier{
       case 3:
         type = '3';
         break;
-        default:
-          break;
+      default:
+        break;
     }
-    page  =1;
+    page = 1;
     await init();
   }
 
@@ -62,11 +59,9 @@ class JiujiuState extends ChangeNotifier{
     await init();
   }
 
-
   /// 刷新
-  Future<void> refresh()async {
+  Future<void> refresh() async {
     page = 1;
     await init();
   }
-
 }

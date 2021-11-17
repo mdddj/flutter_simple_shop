@@ -1,6 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dd_taoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/model/product.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +13,13 @@ import 'price_layout.dart';
 class StoreGoodsItemLayout extends StatelessWidget {
   final Product storeGoods;
 
-  const StoreGoodsItemLayout({Key? key, required this.storeGoods}) : super(key: key);
+  const StoreGoodsItemLayout({Key? key, required this.storeGoods})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         NavigatorUtil.gotoGoodsDetailPage(context, storeGoods.id.toString());
       },
       child: Container(
@@ -32,8 +33,9 @@ class StoreGoodsItemLayout extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  ExtendedImage.network(MImageUtils.magesProcessor(storeGoods.mainPic!),
-                  borderRadius: BorderRadius.circular(5),
+                  ExtendedImage.network(
+                    MImageUtils.magesProcessor(storeGoods.mainPic!),
+                    borderRadius: BorderRadius.circular(5),
                     shape: BoxShape.rectangle,
                   ),
                   Positioned(
@@ -43,7 +45,9 @@ class StoreGoodsItemLayout extends StatelessWidget {
                   )
                 ],
               ),
-              PriceLayout(original: '${storeGoods.actualPrice}'.replaceAll('.0', ''), discounts: '${storeGoods.originalPrice}'.replaceAll('.0', ''))
+              PriceLayout(
+                  original: '${storeGoods.actualPrice}'.replaceAll('.0', ''),
+                  discounts: '${storeGoods.originalPrice}'.replaceAll('.0', ''))
             ],
           ),
         ),
