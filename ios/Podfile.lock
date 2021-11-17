@@ -2,9 +2,9 @@ PODS:
   - ai_barcode (0.0.1):
     - Flutter
     - MTBBarcodeScanner
-  - dd_js_util (0.0.1):
+  - dataoke_sdk (0.0.1):
     - Flutter
-  - dd_taoke_sdk (0.0.1):
+  - dd_js_util (0.0.1):
     - Flutter
   - Flutter (1.0.0)
   - image_picker (0.0.1):
@@ -29,8 +29,8 @@ PODS:
 
 DEPENDENCIES:
   - ai_barcode (from `.symlinks/plugins/ai_barcode/ios`)
+  - dataoke_sdk (from `.symlinks/plugins/dataoke_sdk/ios`)
   - dd_js_util (from `.symlinks/plugins/dd_js_util/ios`)
-  - dd_taoke_sdk (from `.symlinks/plugins/dd_taoke_sdk/ios`)
   - Flutter (from `Flutter`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - package_info (from `.symlinks/plugins/package_info/ios`)
@@ -49,10 +49,10 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   ai_barcode:
     :path: ".symlinks/plugins/ai_barcode/ios"
+  dataoke_sdk:
+    :path: ".symlinks/plugins/dataoke_sdk/ios"
   dd_js_util:
     :path: ".symlinks/plugins/dd_js_util/ios"
-  dd_taoke_sdk:
-    :path: ".symlinks/plugins/dd_taoke_sdk/ios"
   Flutter:
     :path: Flutter
   image_picker:
@@ -76,8 +76,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ai_barcode: 67fb0a7b732dbb87e92b59bb90a438db9383fa2f
+  dataoke_sdk: aa95616c89b448c7b3f698825a49bed62c9b7b9d
   dd_js_util: dd9d6c042b6221e3b5eeaba6f2caf186a382aa3d
-  dd_taoke_sdk: 55ce446c45ae67ba18fdc002608997fc5c07a0dc
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   image_picker: 9aa50e1d8cdacdbed739e925b7eea16d014367e6
   MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb

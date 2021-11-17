@@ -228,8 +228,12 @@ class _HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
             left: 0,
             child: Container(
               decoration: const BoxDecoration(color: Colors.white),
+              padding: EdgeInsets.only(
+                  bottom:
+                      GetPlatform.isIOS ? Get.mediaQuery.padding.bottom : 0),
               width: Get.width,
-              height: 60,
+              height:
+                  60 + (GetPlatform.isIOS ? Get.mediaQuery.padding.bottom : 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
