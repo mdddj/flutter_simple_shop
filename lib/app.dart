@@ -1,6 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:after_layout/after_layout.dart';
+import 'package:demo1/pages/index_page/new/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -41,14 +42,14 @@ class _AppState extends State<App> with AfterLayoutMixin {
 
   // 页面列表
   final List<Widget> _pages = [
-    const IndexHome(),
+    // const IndexHome(),
     // IndexHomeV2(),
-    // const IndexHomeNew(),
+    const IndexHomeNew(),
     JiujiuIndexHome(scrollController: jiujiuController),
     const CategoryIndexPage(),
     // FavoriteIndexHome(),
     const DynamicIndex(),
-    const UserIndexHome()
+    // const UserIndexHome()
   ];
 
   Widget loadingWidget() {
@@ -95,16 +96,24 @@ class _AppState extends State<App> with AfterLayoutMixin {
     const kNavIconSize = 18.0;
     return Scaffold(
       // 滚动到顶部按钮
-      floatingActionButton: !showToTopBtn || _currentIndex == 2 || _currentIndex == 3 || _currentIndex == 0 || _currentIndex == 4
+      floatingActionButton: !showToTopBtn ||
+              _currentIndex == 2 ||
+              _currentIndex == 3 ||
+              _currentIndex == 0 ||
+              _currentIndex == 4
           ? null
           : FloatingActionButton(
               onPressed: () {
                 //返回到顶部时执行动画
                 if (_currentIndex == 0) {
-                  mController.animateTo(.0, duration: const Duration(milliseconds: 200), curve: Curves.ease);
+                  mController.animateTo(.0,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.ease);
                 }
                 if (_currentIndex == 1) {
-                  jiujiuController.animateTo(.0, duration: const Duration(milliseconds: 200), curve: Curves.ease);
+                  jiujiuController.animateTo(.0,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.ease);
                 }
               },
               child: const Icon(Icons.arrow_upward, color: Colors.white)),
@@ -171,19 +180,19 @@ class _AppState extends State<App> with AfterLayoutMixin {
                         height: kNavIconSize,
                         width: kNavIconSize,
                       )),
-            BottomNavigationBarItem(
-                label: '我的',
-                icon: _currentIndex == 4
-                    ? Image.asset(
-                        'assets/nav/my.png',
-                        width: kNavIconSize,
-                        height: kNavIconSize,
-                      )
-                    : Image.asset(
-                        'assets/nav/my-n.png',
-                        height: kNavIconSize,
-                        width: kNavIconSize,
-                      )),
+            // BottomNavigationBarItem(
+            //     label: '我的',
+            //     icon: _currentIndex == 4
+            //         ? Image.asset(
+            //             'assets/nav/my.png',
+            //             width: kNavIconSize,
+            //             height: kNavIconSize,
+            //           )
+            //         : Image.asset(
+            //             'assets/nav/my-n.png',
+            //             height: kNavIconSize,
+            //             width: kNavIconSize,
+            //           )),
           ]),
       body: IndexedStack(
         index: _currentIndex,

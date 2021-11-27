@@ -8,7 +8,6 @@ import 'package:flutter/services.dart';
 // Package imports:
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -41,8 +40,7 @@ class Utils {
     }
   }
 
-
-  void log(String msg){
+  void log(String msg) {
     Logger().i(msg);
   }
 
@@ -62,9 +60,11 @@ class Utils {
       //   return result;
       // }
     } else if (GetPlatform.isAndroid) {
-      var _imagePicker = await ImagePicker().pickImage(source: ImageSource.gallery);
-      var file = File(_imagePicker!.path);
-      return file;
+      // var _imagePicker =
+      //     await ImagePicker().pickImage(source: ImageSource.gallery);
+      // var file = File(_imagePicker!.path);
+      // return file;
+      return null;
     }
   }
 
@@ -114,16 +114,14 @@ class Utils {
         if (await canLaunch(url)) {
           await launch(url);
         } else {
-
           final _newUrl = url.replaceAll('https://', '');
           showMessage('打开url失败,即将尝试删除https://后打开 $_newUrl');
-          if(await canLaunch(_newUrl)){
+          if (await canLaunch(_newUrl)) {
             await launch(_newUrl);
-          }else{
+          } else {
             showMessage('打开url失败');
-            copy(url,message: '打开URL失败,链接已复制到剪贴板,请在浏览器访问');
+            copy(url, message: '打开URL失败,链接已复制到剪贴板,请在浏览器访问');
           }
-
         }
       } else {
         await launch(url);

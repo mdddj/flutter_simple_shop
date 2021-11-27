@@ -6,8 +6,6 @@ import 'package:get/get.dart';
 
 // Project imports:
 import '../../../common/utils.dart';
-import '../scan/scan_code_auth.dart';
-import '../scan/scan_view.dart';
 
 class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const UserHomeAppBar({Key? key}) : super(key: key);
@@ -23,23 +21,6 @@ class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: TextStyle(color: Colors.black),
       ),
       actions: [
-        if (!GetPlatform.isWeb)
-          IconButton(
-              onPressed: () async {
-                final scanData = await ScanLayout.doScan();
-                if (scanData.isNotEmpty) {
-                  final isOk = await utils.userApi.checkIsUuid(scanData);
-                  if (isOk) {
-                    await Get.to(() => ScanCodeAuth(
-                          uuid: scanData,
-                        ));
-                  }
-                }
-              },
-              icon: const Icon(
-                Icons.qr_code,
-                color: Colors.black,
-              )),
         IconButton(
             onPressed: () {},
             icon: const Icon(

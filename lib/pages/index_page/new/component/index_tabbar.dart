@@ -16,7 +16,9 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
     return Container(
       width: double.infinity,
       alignment: Alignment.center,
-      color: Colors.white,
+      decoration: const BoxDecoration(
+        color: Colors.white,
+      ),
       child: Theme(
         data: ThemeData(
           splashColor: Colors.transparent,

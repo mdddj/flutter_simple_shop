@@ -160,6 +160,7 @@ class GridMenuComponent extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
         child: WaterfallFlow.count(
+          padding: EdgeInsets.zero,
           crossAxisCount: 5,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

@@ -34,7 +34,7 @@ void main() async {
   /// 使用浏览器查看网络请求,详情查看[https://www.jianshu.com/p/e4058e064341]
   /// await Stetho.initialize();
 
-  /// 本地缓存工具类
+  /// 本地缓存工具类，
   await Hive.initFlutter();
   await Hive.openBox('app');
 
@@ -91,6 +91,7 @@ class _MyAppState extends State<MyApp> {
               actionsIconTheme: IconThemeData(
                 color: Colors.blueGrey
               ),
+              backgroundColor: Colors.white
             ),
             bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                 selectedItemColor: Colors.pink,
