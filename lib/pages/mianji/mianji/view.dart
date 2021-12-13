@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:demo1/pages/mianji/mianji/apply.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -25,15 +26,24 @@ class _MianjiPageState extends State<MianjiPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const SimpleAppBar(title: '典典面基动态'),
-      body: EasyRefresh.custom(slivers: [
-        SliverToBoxAdapter(
-          child: MaterialButton(
-            onPressed: () => Get.to(() => const WhiteIndex()),
-            child: const Text('发布动态'),
-          ),
-        )
-      ]),
+      body: EasyRefresh.custom(slivers: [_buildAction()]),
     );
+  }
+
+  /// 构建操作区域。
+  Widget _buildAction() {
+    return Container(
+      margin: const EdgeInsets.only(left: 12, top: 12),
+      child: Row(
+        children: [
+          ElevatedButton(
+              onPressed: () {
+                Get.to(() => const ApplyPage());
+              },
+              child: const Text('申请面基'))
+        ],
+      ),
+    ).sliverBox;
   }
 
   @override

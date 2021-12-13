@@ -38,6 +38,7 @@ class _SearchPageState extends State<SearchPage> {
       appBar: SAppBarSearch(
         hintText: '搜索拼多多隐藏优惠券',
         onSearch: logic.onSearch,
+        eve: 0,
       ),
       body: EasyRefresh.custom(slivers: [
         Obx(() {

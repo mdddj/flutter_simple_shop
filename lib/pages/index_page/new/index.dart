@@ -34,7 +34,7 @@ class _IndexHomeNewState extends State<IndexHomeNew>
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 3, vsync: this);
+    tabController = TabController(length: 2, vsync: this);
     _scrollController.addListener(_listenTabbar);
   }
 
@@ -70,7 +70,7 @@ class _IndexHomeNewState extends State<IndexHomeNew>
 
   Widget renderViews() {
     return TabBarView(
-      children: [_buildGoodsList(), Container(), const JdProductsView()],
+      children: [_buildGoodsList(), const JdProductsView()],
       controller: tabController,
     );
   }

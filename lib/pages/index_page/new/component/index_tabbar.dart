@@ -32,9 +32,6 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
                   text: '淘宝',
                 ),
                 Tab(
-                  text: '拼多多',
-                ),
-                Tab(
                   text: '京东',
                 ),
               ],

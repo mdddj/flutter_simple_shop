@@ -3,7 +3,7 @@ description: 典典的小卖部,淘客版本 qq群667186542
 version: 2.0.1
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -28,7 +28,7 @@ dependencies:
   fsuper_nullsafety: ^3.0.1
   flustars: ^2.0.1
   common_utils: ^2.0.2
-  extended_image: ^5.1.3
+  extended_image: ^6.0.1
   extended_image_library: ^3.1.0
   waterfall_flow: ^3.0.1
   loading_more_list: ^4.1.0
@@ -38,8 +38,8 @@ dependencies:
   carousel_slider: ^4.0.0
   shimmer: ^2.0.0
   flutter_svg: ^0.23.0+1
-  extended_text_field: ^8.0.0
-  extended_text: ^7.0.0
+  extended_text_field: ^9.0.0
+  extended_text: ^8.0.0
   font_awesome_flutter: ^9.2.0
   animated_text_kit: ^4.2.1
   html: ^0.15.0
@@ -78,15 +78,14 @@ dependencies:
   hive_flutter: ^1.1.0
   flutter_blurhash: ^0.6.0
   dataoke_sdk: ^0.0.1
-#  filepicker_windows: ^2.0.0  # 文件选择器
-#  win32: ^2.1.5   # windows 开放api
-#
+  #  filepicker_windows: ^2.0.0  # 文件选择器
+  #  win32: ^2.1.5   # windows 开放api
+  #
   window_size:
     git:
-      url: git://github.com/google/flutter-desktop-embedding.git  # 修改窗口标题
+      url: git://github.com/google/flutter-desktop-embedding.git # 修改窗口标题
       path: plugins/window_size
       ref: 7812516a5c1fc8ef379e244106953a2b534432b9
-
 
 dev_dependencies:
   flutter_test:
@@ -96,7 +95,6 @@ dev_dependencies:
   import_sorter: ^4.6.0
   flutter_lints: ^1.0.4
 flutter:
-
   uses-material-design: true
 
   assets:
@@ -107,6 +105,9 @@ flutter:
     - assets/svg/cate/
     - assets/json/
     - assets/images/waimai/hb/
+
+dependency_overrides:
+  decimal: 1.5.0
 
 msix_config:
   display_name: diandianshop
@@ -120,6 +121,6 @@ msix_config:
   start_menu_icon_path: D:\logo.png
   tile_icon_path: D:\logo.png
   vs_generated_images_folder_path: C:\ldd\icons
-  icons_background_color: '#ffffff'
+  icons_background_color: "#ffffff"
   architecture: x64
-  capabilities: 'internetClient,location,microphone,webcam'
+  capabilities: "internetClient,location,microphone,webcam"

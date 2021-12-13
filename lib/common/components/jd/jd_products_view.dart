@@ -22,6 +22,13 @@ class _JdProductsViewState extends State<JdProductsView> {
   Widget renderListWidget(){
     return Consumer(builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
       final products = watch(jdProductsProvider).products;
+      if(products.isEmpty){
+        return Container(
+          height: 50,
+          alignment: Alignment.center,
+          child: const Text('暂无数据'),
+        );
+      }
       return WaterfallFlow.count(
         padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 5),
         mainAxisSpacing: 12,
