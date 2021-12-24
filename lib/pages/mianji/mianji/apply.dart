@@ -31,7 +31,10 @@ class _ApplyPageState extends State<ApplyPage> {
                 key: formKey,
                 child: CupertinoFormSection.insetGrouped(
                   margin: EdgeInsets.zero,
-                  header: const Text('请填写面基信息'),
+                  header: Text(
+                    '请填写面基信息',
+                    style: Get.textTheme.headline6,
+                  ),
                   backgroundColor: Colors.transparent,
                   children: [
                     CupertinoTextFormFieldRow(
@@ -78,15 +81,63 @@ class _ApplyPageState extends State<ApplyPage> {
                   ],
                 ),
               ),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '上传你的生活照。(10张)',
+                      style: Get.textTheme.headline6?.copyWith(fontSize: 14),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 5,
+                              mainAxisSpacing: 12,
+                              crossAxisSpacing: 12),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          alignment: Alignment.center,
+                          decoration:
+                              BoxDecoration(color: Colors.grey.shade100),
+                          child: const Icon(
+                            Icons.add,
+                            color: Colors.blue,
+                          ),
+                        );
+                      },
+                      itemCount: 10,
+                    )
+                  ],
+                ),
+              ),
               const SizedBox(
                 height: 12,
               ),
-              CupertinoButton.filled(
-                  child: const Text(
-                    '填写完毕，进入面基队列。\n(您当前排在第189位)',
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {})
+              SizedBox(
+                width: double.infinity,
+                child: CupertinoButton.filled(
+                    child: const Text(
+                      '加入和典典面基的队列',
+                      textAlign: TextAlign.center,
+                    ),
+                    onPressed: () {}),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 9),
+                alignment: Alignment.centerLeft,
+                child: const Text(
+                  '系统提示:你当前排在第78位',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              )
             ],
           ),
         ),
