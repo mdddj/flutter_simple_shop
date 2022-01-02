@@ -1,4 +1,5 @@
 // Dart imports:
+import 'dart:convert';
 import 'dart:ui';
 
 // Package imports:
@@ -817,6 +818,7 @@ class _HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     final result = await DdTaokeSdk.instance.getDetailBaseData(
       productId: widget.goodsId,
     );
+    print(jsonEncode(result!.info));
     if (result != null) {
       if (mounted) {
         setState(() {

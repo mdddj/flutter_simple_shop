@@ -49,7 +49,7 @@ class _AppState extends State<App> with AfterLayoutMixin {
     const CategoryIndexPage(),
     // FavoriteIndexHome(),
     const DynamicIndex(),
-    // const UserIndexHome()
+    const UserIndexHome()
   ];
 
   Widget loadingWidget() {
@@ -93,7 +93,7 @@ class _AppState extends State<App> with AfterLayoutMixin {
 
   @override
   Widget build(BuildContext context) {
-    const kNavIconSize = 18.0;
+    const kNavIconSize = 23.0;
     return Scaffold(
       // 滚动到顶部按钮
       floatingActionButton: !showToTopBtn ||
@@ -180,19 +180,19 @@ class _AppState extends State<App> with AfterLayoutMixin {
                         height: kNavIconSize,
                         width: kNavIconSize,
                       )),
-            // BottomNavigationBarItem(
-            //     label: '我的',
-            //     icon: _currentIndex == 4
-            //         ? Image.asset(
-            //             'assets/nav/my.png',
-            //             width: kNavIconSize,
-            //             height: kNavIconSize,
-            //           )
-            //         : Image.asset(
-            //             'assets/nav/my-n.png',
-            //             height: kNavIconSize,
-            //             width: kNavIconSize,
-            //           )),
+            BottomNavigationBarItem(
+                label: '我的',
+                icon: _currentIndex == 4
+                    ? Image.asset(
+                        'assets/nav/my.png',
+                        width: kNavIconSize,
+                        height: kNavIconSize,
+                      )
+                    : Image.asset(
+                        'assets/nav/my-n.png',
+                        height: kNavIconSize,
+                        width: kNavIconSize,
+                      )),
           ]),
       body: IndexedStack(
         index: _currentIndex,

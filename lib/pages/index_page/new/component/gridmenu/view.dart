@@ -42,7 +42,8 @@ final gridMenuModles = [
           image: elmImage,
           isAssets: true,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => const WaimaiIndex()));
+            Get.context!.navigator
+                .push(SwipeablePageRoute(builder: (_) => const WaimaiIndex()));
           })),
 
   GridMenuItem(
@@ -51,7 +52,8 @@ final gridMenuModles = [
           image: mtwmImage,
           onTap: () async {
             Get.context!.read(indexRiverpod).changeLoadingState(true);
-            await tkApi.meituan({'actId': '2', 'linkType': '1'}, mapHandle: (data) async {
+            await tkApi.meituan({'actId': '2', 'linkType': '1'},
+                mapHandle: (data) async {
               final url = (data['data'] ?? '').toString();
               if (url.isNotEmpty) {
                 await utils.openLink(url);
@@ -63,11 +65,13 @@ final gridMenuModles = [
           onLongTap: () async {
             // 长按复制领取链接
             Get.context!.read(indexRiverpod).changeLoadingState(true);
-            await tkApi.meituan({'actId': '2', 'linkType': '1'}, mapHandle: (data) async {
+            await tkApi.meituan({'actId': '2', 'linkType': '1'},
+                mapHandle: (data) async {
               final url = (data['data'] ?? '').toString();
               if (url.isNotEmpty) {
                 utils.copy(url, message: '领券链接复制成功,打开浏览器粘贴即可');
-                await utils.widgetUtils.showSimpleDialog('领券链接复制成功,打开浏览器粘贴即可', title: '获取链接成功');
+                await utils.widgetUtils
+                    .showSimpleDialog('领券链接复制成功,打开浏览器粘贴即可', title: '获取链接成功');
               }
             });
             Get.context!.read(indexRiverpod).changeLoadingState(false);
@@ -79,7 +83,9 @@ final gridMenuModles = [
           title: '排行榜',
           image: phbImage,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => const PanicBuyingPage(), canOnlySwipeFromEdge: true));
+            Get.context!.navigator.push(SwipeablePageRoute(
+                builder: (_) => const PanicBuyingPage(),
+                canOnlySwipeFromEdge: true));
           },
           isAssets: true)),
 
@@ -89,7 +95,8 @@ final gridMenuModles = [
           title: '折上折',
           image: zheImage,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => const ZheIndex(), canOnlySwipeFromEdge: true));
+            Get.context!.navigator.push(SwipeablePageRoute(
+                builder: (_) => const ZheIndex(), canOnlySwipeFromEdge: true));
           },
           isAssets: true)),
 
@@ -98,7 +105,9 @@ final gridMenuModles = [
           title: '每日半价',
           image: banjiaImage,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => const BanjiaIndex(), canOnlySwipeFromEdge: true));
+            Get.context!.navigator.push(SwipeablePageRoute(
+                builder: (_) => const BanjiaIndex(),
+                canOnlySwipeFromEdge: true));
           },
           isAssets: true)),
 
@@ -107,7 +116,9 @@ final gridMenuModles = [
           title: '拼夕夕',
           image: 'assets/svg/pdd.svg',
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => const SearchPage(), canOnlySwipeFromEdge: true));
+            Get.context!.navigator.push(SwipeablePageRoute(
+                builder: (_) => const SearchPage(),
+                canOnlySwipeFromEdge: true));
           },
           isAssets: true)),
   GridMenuItem(
@@ -124,7 +135,9 @@ final gridMenuModles = [
           title: '精选品牌',
           image: pp,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => const BrandListPage(), canOnlySwipeFromEdge: true));
+            Get.context!.navigator.push(SwipeablePageRoute(
+                builder: (_) => const BrandListPage(),
+                canOnlySwipeFromEdge: true));
           },
           isAssets: true)),
 
@@ -133,7 +146,9 @@ final gridMenuModles = [
           title: '京东好货',
           image: jd,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => const RecommendPage(), canOnlySwipeFromEdge: true));
+            Get.context!.navigator.push(SwipeablePageRoute(
+                builder: (_) => const RecommendPage(),
+                canOnlySwipeFromEdge: true));
           },
           isAssets: true)),
 
@@ -143,7 +158,9 @@ final gridMenuModles = [
           title: '典典面基',
           image: pyq,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => const MianjiPage(), canOnlySwipeFromEdge: true));
+            Get.context!.navigator.push(SwipeablePageRoute(
+                builder: (_) => const MianjiPage(),
+                canOnlySwipeFromEdge: true));
           },
           isAssets: true)),
 ];
@@ -155,16 +172,24 @@ class GridMenuComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      child: Padding(
         padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
-        child: WaterfallFlow.count(
-          padding: EdgeInsets.zero,
-          crossAxisCount: 5,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          children: gridMenuModles,
+        child: PhysicalModel(
+          color: Colors.grey.shade50,
+          elevation: 1,
+          borderRadius: BorderRadius.circular(8),
+          child: Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+                color: Colors.white, borderRadius: BorderRadius.circular(8)),
+            child: WaterfallFlow.count(
+              padding: EdgeInsets.zero,
+              crossAxisCount: 5,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              children: gridMenuModles,
+            ),
+          ),
         ),
       ),
     );
