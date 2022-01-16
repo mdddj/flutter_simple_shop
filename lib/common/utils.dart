@@ -96,6 +96,13 @@ class Utils {
     await urlToApp(url, urlYs);
   }
 
+  // 跳转url
+  Future<void> urlOpen(String url) async{
+    if (await canLaunch(url)) {
+      await launch(url);
+    }
+  }
+
   /// url 跳转到 app  使用约束
   Future<void> urlToApp(String url, String urlYs) async {
     /// 如果是windows平台,直接跳转到浏览器打开链接
