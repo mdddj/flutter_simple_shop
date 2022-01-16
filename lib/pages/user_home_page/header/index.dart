@@ -1,9 +1,8 @@
 // Flutter imports:
 // Package imports:
 import 'package:extended_image/extended_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../../common/utils.dart';
 import '../../../constant/style.dart';
@@ -11,6 +10,9 @@ import '../../../constant/style.dart';
 import '../../../modals/user.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import '../../../util/navigator_util.dart';
+import 'money_count.dart';
+
+const kAvatarHeight = 58.0;
 
 // 头部容器
 class HeaderIndex extends StatelessWidget {
@@ -28,10 +30,10 @@ class HeaderIndex extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           utils.widgetUtils.marginTop(),
-          Consumer(
+          Consumer<UserModel>(
             builder: (BuildContext context,
-                T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-              final user = watch(userModel).user;
+                value, Widget? child) {
+              final user = value.user;
               if (user == null) {
                 return _loginWidgetLayout(context);
               }
@@ -45,29 +47,53 @@ class HeaderIndex extends StatelessWidget {
 
   /// 已登录显示
   Widget _loginSuccessLayout(User user) {
-    return Row(
+    return Column(
       children: [
-        utils.widgetUtils.marginRight(),
-        // 用户头像
-        PhysicalModel(
-          color: Colors.grey.shade200,
-          elevation: 10,
-          borderRadius: BorderRadius.circular(50),
-          child: ExtendedImage.network(
-            user.picture,
-            width: 50,
-            height: 50,
-            borderRadius: BorderRadius.circular(50),
-            shape: BoxShape.rectangle,
-          ),
+        Row(
+          children: [
+            utils.widgetUtils.marginRight(),
+            // 用户头像
+            ExtendedImage.network(
+              user.picture,
+              width: kAvatarHeight,
+              height: kAvatarHeight,
+              borderRadius: BorderRadius.circular(50),
+              shape: BoxShape.rectangle,
+            ),
+            utils.widgetUtils.marginRight(),
+            // 昵称
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        user.nickName,
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25),
+                      ),
+                      Text(
+                        'ID: ${user.loginNumber}',
+                        style: TextStyle(color: Colors.grey.shade400),
+                      )
+                    ],
+                  ),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.chevron_right_outlined,
+                        color: Colors.grey.shade400,
+                      ))
+                ],
+              ),
+            ),
+          ],
         ),
-        utils.widgetUtils.marginRight(),
-        // 昵称
-        Text(
-          user.nickName,
-          style: const TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
-        ),
+        const MoneyCounterWidget()
       ],
     );
   }

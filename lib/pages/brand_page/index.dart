@@ -6,7 +6,6 @@ import 'package:dataoke_sdk/model/category.dart';
 import 'package:dataoke_sdk/params/brand_param.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 // Project imports:
@@ -15,6 +14,7 @@ import '../../provider/riverpod/category_riverpod.dart';
 import '../index_page/component/category_component.dart';
 import 'category_delegate.dart';
 import 'components/item.dart';
+import 'package:provider/provider.dart';
 
 /// 品牌列表页面
 class BrandListPage extends StatefulWidget {
@@ -35,7 +35,7 @@ class _BrandListPageState extends State<BrandListPage> with LoadingMixin {
   @override
   void initState() {
     super.initState();
-    cid = context.read(categoryRiverpod).categorys[0].cid!;
+    cid = context.read<CategoryState>().categorys[0].cid!;
     Future.microtask(init);
   }
 

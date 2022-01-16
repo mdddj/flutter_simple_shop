@@ -3,9 +3,8 @@
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SubCategoryView extends ConsumerWidget {
+class SubCategoryView extends StatelessWidget {
   final ValueChanged<Subcategory>? changeSubcategory;
   final Category category;
   final Subcategory? subcategory;
@@ -15,7 +14,7 @@ class SubCategoryView extends ConsumerWidget {
       : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext context) {
     final showSubcategorys = category.subcategories ?? [];
     return Container(
       decoration: const BoxDecoration(color: Colors.white),

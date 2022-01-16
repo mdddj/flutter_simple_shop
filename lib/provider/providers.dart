@@ -1,4 +1,12 @@
 // Package imports:
+import 'package:demo1/pages/banjia/resp.dart';
+import 'package:demo1/pages/dynamic/pyq_riverpod.dart';
+import 'package:demo1/pages/dynamic/wph_riverpod.dart';
+import 'package:demo1/pages/index_page/new/index_riverpod.dart';
+import 'package:demo1/pages/jiujiu_page/riverpod.dart';
+import 'package:demo1/pages/new_goods_list/riverpod.dart';
+import 'package:demo1/pages/panic_buying/repository.dart';
+import 'package:demo1/pages/zhe/riverpod.dart';
 import 'package:nested/nested.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +18,10 @@ import './nine_goods_provider.dart';
 // Project imports:
 import '../pages/brand_page/provider/brand_provider.dart';
 import 'index_provider.dart';
+import 'jd_products_provider.dart';
+import 'riverpod/category_riverpod.dart';
+import 'riverpod/search_riverpod.dart';
+import 'riverpod/user_riverpod.dart';
 import 'user_provider.dart';
 
 // Providers---end
@@ -25,4 +37,16 @@ List<SingleChildWidget> providers = [
   ChangeNotifierProvider<UserProvider>(create: (_)=>UserProvider()),
   ChangeNotifierProvider<IndexProvider>(create: (_)=>IndexProvider()),
   ChangeNotifierProvider<BrandProvider>(create: (_)=>BrandProvider()),
+  ChangeNotifierProvider(create: (_)=>CategoryState()),
+  ChangeNotifierProvider(create: (_)=>IndexState()),
+  ChangeNotifierProvider(create: (_)=>JdProductsProviderState()),
+  ChangeNotifierProvider(create: (_)=>SearchState()),
+  ChangeNotifierProvider(create: (_)=>UserModel()),
+  ChangeNotifierProvider(create: (_)=>BanjiaResp()),
+  ChangeNotifierProvider(create: (_)=>WphState()),
+  ChangeNotifierProvider(create: (_)=>PyqState()),
+  ChangeNotifierProvider(create: (_)=>JiujiuState()),
+  ChangeNotifierProvider(create: (_)=>GoodsListState()),
+  ChangeNotifierProvider(create: (_)=>PanicBuyingModel()),
+  ChangeNotifierProvider(create: (_)=>ZheState())
 ];

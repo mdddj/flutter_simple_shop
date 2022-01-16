@@ -1,13 +1,10 @@
 import 'package:dataoke_sdk/jd_api.dart';
 import 'package:dataoke_sdk/model/jd/jd_req_param.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 
 import '../common/components/jd/product_model.dart';
 
-final jdProductsProvider = ChangeNotifierProvider<JdProductsProviderState>(
-    (ref) => JdProductsProviderState());
 
 /// 京东产品的状态
 class JdProductsProviderState extends ChangeNotifier {

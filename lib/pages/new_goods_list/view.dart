@@ -5,7 +5,7 @@ import 'package:dataoke_sdk/constant/sort.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../widgets/round_underline_tab_indicator.dart';
 import '../../widgets/simple_appbar.dart';
@@ -34,7 +34,7 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    context.read(goodsListRiverpod).setCategory(widget.category, widget.subcategory, isInit: true);
+    context.read<GoodsListState>().setCategory(widget.category, widget.subcategory, isInit: true);
     _tabController = TabController(length: 4, vsync: this);
   }
 
@@ -44,22 +44,22 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
       appBar: SimpleAppBar(
         title: '产品列表',
         bottom: BottomCategoryTabs(
-          onTap: (int index) => context.read(goodsListRiverpod).mainCateChange(index, context),
+          onTap: (int index) => context.read<GoodsListState>().mainCateChange(index, context),
           initIndex: widget.initIndex,
         ),
         bottomHeight: 48,
       ),
-      body: EasyRefresh.custom(onLoad: context.read(goodsListRiverpod).nextPage, onRefresh: context.read(goodsListRiverpod).onRefresh, header: MaterialHeader(), footer: MaterialFooter(), slivers: [
-        Consumer(
-          builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-            final cate = watch(goodsListRiverpod).category;
-            final subCate = watch(goodsListRiverpod).subcategory;
+      body: EasyRefresh.custom(onLoad: context.read<GoodsListState>().nextPage, onRefresh: context.read<GoodsListState>().onRefresh, header: MaterialHeader(), footer: MaterialFooter(), slivers: [
+        Consumer<GoodsListState>(
+          builder: (BuildContext context, value, Widget? child) {
+            final cate = value.category;
+            final subCate = value.subcategory;
             return SliverToBoxAdapter(
               child: SubCategoryView(
                 cate,
                 changeSubcategory: (subcategory) {
-                  context.read(goodsListRiverpod).setCategory(cate, subcategory);
-                  context.read(goodsListRiverpod).onRefresh();
+                  value.setCategory(cate, subcategory);
+                  value.onRefresh();
                 },
                 subcategory: subCate,
               ),
@@ -68,15 +68,15 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
         ),
 
         // 排序
-        Consumer(
-          builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-            final current = watch(goodsListRiverpod).sort;
+        Consumer<GoodsListState>(
+          builder: (BuildContext context,value, Widget? child) {
+            final current = value.sort;
             return //排序
                 SliverPersistentHeader(
               pinned: true,
               delegate: StickyTabBarDelegate(
                 child: TabBar(
-                    onTap: context.read(goodsListRiverpod).sortChange,
+                    onTap:value.sortChange,
                     labelColor: Colors.pinkAccent,
                     unselectedLabelColor: Colors.black,
                     indicatorColor: Colors.pinkAccent,
@@ -107,9 +107,9 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
         ),
 
         // 刷新指示器
-        Consumer(
-          builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-            final loading = watch(goodsListRiverpod).loading;
+        Consumer<GoodsListState>(
+          builder: (BuildContext context, value, Widget? child) {
+            final loading = value.loading;
             if (loading) {
               return const SliverToBoxAdapter(
                 child: Padding(
@@ -123,9 +123,9 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
         ),
 
         // 产品列表
-        Consumer(
-          builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-            final products = watch(goodsListRiverpod).products;
+        Consumer<GoodsListState>(
+          builder: (BuildContext context,value, Widget? child) {
+            final products = value.products;
             return ProductsList(products);
           },
         ),
@@ -151,6 +151,6 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
 
   @override
   void afterFirstLayout(BuildContext context) async {
-    await context.read(goodsListRiverpod).onRefresh();
+    await context.read<GoodsListState>().onRefresh();
   }
 }

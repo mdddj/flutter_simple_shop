@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../../common/utils.dart';
@@ -19,7 +19,7 @@ class WriteBlogLogic extends GetxController {
 
   /// 获取博客的分类
   Future<void> getBlogCategorys(BuildContext context) async {
-    await context.read(categoryRiverpod).getBlogCategory();
+    await context.read<CategoryState>().getBlogCategory();
   }
 
   // 标题被改变

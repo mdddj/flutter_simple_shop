@@ -2,8 +2,8 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
+import 'package:provider/provider.dart';
 import '../../../provider/jd_products_provider.dart';
 import 'product_model.dart';
 
@@ -24,8 +24,8 @@ class _JdProductsViewState extends State<JdProductsView> {
   Widget renderListWidget() {
     return Consumer(
       builder: (BuildContext context,
-          T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-        final products = watch(jdProductsProvider).products;
+           watch, Widget? child) {
+        final products = context.read<JdProductsProviderState>().products;
 
         return EasyRefresh.custom(slivers: [
           SliverWaterfallFlow.count(

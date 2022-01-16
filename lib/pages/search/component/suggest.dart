@@ -6,7 +6,7 @@ import 'package:dataoke_sdk/model/hot_search_worlds_result.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../../common/widgets/hot.dart';
@@ -37,7 +37,7 @@ class Suggest extends StatelessWidget {
           Obx(() {
             final suggs = SearchLogic.instance.suggest;
             return Wrap(
-              children: suggs.map(_renderItem).toList(),
+              children: suggs.map((e)=>_renderItem(e,context)).toList(),
             );
           }),
         ],
@@ -45,10 +45,10 @@ class Suggest extends StatelessWidget {
     );
   }
 
-  Widget _renderItem(HotSearchWorlds item) {
+  Widget _renderItem(HotSearchWorlds item,BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.context!.read(searchRiverpod).loadData(worlds: item.words);
+        context.read<SearchState>().loadData(worlds: item.words);
         Get.to(() => SearchListIndex(value: item.words ?? ''));
       },
       child: Container(

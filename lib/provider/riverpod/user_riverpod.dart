@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../../common/utils.dart';
 import '../../modals/user.dart';
 
-final userModel = ChangeNotifierProvider((ref) => UserModel());
 
 // 用户信息
 class UserModel extends ChangeNotifier {

@@ -5,12 +5,11 @@ import 'package:dataoke_sdk/model/product.dart';
 import 'package:dataoke_sdk/params/discount_two_param.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../provider/riverpod/category_riverpod.dart';
 
-final zheRiverpod = ChangeNotifierProvider((ref) => ZheState());
 
 class ZheState extends ChangeNotifier {
   int _page = 1;
@@ -36,7 +35,7 @@ class ZheState extends ChangeNotifier {
   }
 
   void onTabChange(int index) {
-    final categorys = Get.context!.read(categoryRiverpod).categorys;
+    final categorys = Get.context!.read<CategoryState>().categorys;
     if (index == 0) {
       cid = '';
     } else {

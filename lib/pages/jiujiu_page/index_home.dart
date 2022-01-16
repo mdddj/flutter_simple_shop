@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../widgets/round_underline_tab_indicator.dart';
@@ -30,7 +30,7 @@ class _JiujiuIndexHomeState extends State<JiujiuIndexHome> with TickerProviderSt
   @override
   void initState() {
     tabController = TabController(length: 4, vsync: this);
-    Future.microtask(context.read(jiujiuRiverpod).init);
+    Future.microtask(context.read<JiujiuState>().init);
     super.initState();
   }
 
@@ -46,7 +46,7 @@ class _JiujiuIndexHomeState extends State<JiujiuIndexHome> with TickerProviderSt
           child: Container(
             alignment: Alignment.centerLeft,
             child: TabBar(
-              onTap: context.read(jiujiuRiverpod).changeIndex,
+              onTap: context.read<JiujiuState>().changeIndex,
               controller: tabController,
               isScrollable: true,
               indicator: const RoundUnderlineTabIndicator(
@@ -81,8 +81,8 @@ class _JiujiuIndexHomeState extends State<JiujiuIndexHome> with TickerProviderSt
       body: EasyRefresh.custom(
           header: MaterialHeader(),
           footer: MaterialFooter(),
-          onRefresh: context.read(jiujiuRiverpod).refresh,
-          onLoad: context.read(jiujiuRiverpod).nextPage,
+          onRefresh: context.read<JiujiuState>().refresh,
+          onLoad: context.read<JiujiuState>().nextPage,
           slivers: const [JiuJiuLoadingStatus(), JiuJiuProductList()]),
     );
   }

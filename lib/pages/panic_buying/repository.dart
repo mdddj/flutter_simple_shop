@@ -6,12 +6,11 @@ import 'package:dataoke_sdk/model/product.dart';
 import 'package:dataoke_sdk/params/top_param.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../provider/riverpod/category_riverpod.dart';
 
-final panicBuyingRiverpod = ChangeNotifierProvider((ref) => PanicBuyingModel());
 
 //数据模型
 class PanicBuyingModel extends ChangeNotifier {
@@ -55,7 +54,7 @@ class PanicBuyingModel extends ChangeNotifier {
     }
     if (index > 1) {
       /// 获取选中哪个分类
-      final categorys = Get.context!.read(categoryRiverpod).categorys;
+      final categorys = Get.context!.read<CategoryState>().categorys;
       final _cid = categorys[index - 2].cid;
       cid = '$_cid';
     }

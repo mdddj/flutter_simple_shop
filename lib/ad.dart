@@ -3,9 +3,8 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:black_hole_flutter/black_hole_flutter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/src/provider.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
@@ -46,8 +45,6 @@ class _AdPageState extends State<AdPage> with AfterLayoutMixin {
               displayFullTextOnTap: true,
               stopPauseOnTap: true,
             ),
-            // SizedBox(height: 20),
-            // CircularProgressIndicator()
           ],
         ),
       ),
@@ -56,9 +53,9 @@ class _AdPageState extends State<AdPage> with AfterLayoutMixin {
 
   @override
   void afterFirstLayout(BuildContext context) async {
-    await context.read(categoryRiverpod).init();
-    await context.read(categoryRiverpod).getJdCategory();
-    await context.read(indexRiverpod).fetch();
+    await context.read<CategoryState>().init();
+    await context.read<CategoryState>().getJdCategory();
+    await context.read<IndexState>().fetch();
     await context.navigator.pushReplacement(SwipeablePageRoute(builder: (_) => const App()));
   }
 }

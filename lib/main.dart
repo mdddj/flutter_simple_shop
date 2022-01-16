@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:provider/provider.dart';
 import 'package:window_size/window_size.dart';
 
@@ -28,7 +27,8 @@ import 'util/navigator_util.dart';
 void main() async {
   /// 初始化典典小卖部的Api sdk 文档-->[https://pub.dev/packages/dd_taoke_sdk]
 
-  DdTaokeUtil.instance.init('https://itbug.shop', '443', debug: false); //  远程服务器
+  DdTaokeUtil.instance
+      .init('https://itbug.shop', '443', debug: false); //  远程服务器
   // DdTaokeUtil.instance.init('http://192.168.100.15', '80', debug: false); // 本地测试服务器
 
   /// 使用浏览器查看网络请求,详情查看[https://www.jianshu.com/p/e4058e064341]
@@ -53,7 +53,8 @@ void main() async {
   HttpOverrides.global = MyHttpOverrides();
 
   /// windows 版本处理函数
-  if (!GetPlatform.isWeb && (GetPlatform.isWindows || GetPlatform.isLinux || GetPlatform.isMacOS)) {
+  if (!GetPlatform.isWeb &&
+      (GetPlatform.isWindows || GetPlatform.isLinux || GetPlatform.isMacOS)) {
     setWindowTitle('典典的小卖部 桌面客户端  v2.0.0');
     const windowSize = Size(500, 1041);
     setWindowMaxSize(windowSize);
@@ -61,7 +62,7 @@ void main() async {
   }
 
   /// 启动app
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -82,17 +83,12 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
             primaryColor: Colors.white,
             appBarTheme: const AppBarTheme(
-              titleTextStyle: TextStyle(
-                color: Colors.black,
-              ),
-              iconTheme: IconThemeData(
-                color: Colors.blueGrey
-              ),
-              actionsIconTheme: IconThemeData(
-                color: Colors.blueGrey
-              ),
-              backgroundColor: Colors.white
-            ),
+                titleTextStyle: TextStyle(
+                  color: Colors.black,
+                ),
+                iconTheme: IconThemeData(color: Colors.blueGrey),
+                actionsIconTheme: IconThemeData(color: Colors.blueGrey),
+                backgroundColor: Colors.white),
             bottomNavigationBarTheme: const BottomNavigationBarThemeData(
                 selectedItemColor: Colors.pink,
                 unselectedLabelStyle: TextStyle(fontSize: 12),
@@ -114,6 +110,7 @@ class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
     return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

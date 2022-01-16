@@ -4,14 +4,11 @@ import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:dataoke_sdk/model/pdd/pdd_category.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../../common/utils.dart';
 import '../../modals/blog_category_model.dart';
 
-final categoryRiverpod =
-    ChangeNotifierProvider<CategoryState>((ref) => CategoryState());
 
 class CategoryState extends ChangeNotifier {
   List<Category> categorys = [];

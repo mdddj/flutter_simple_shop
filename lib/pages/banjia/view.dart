@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../widgets/float_widget.dart';
@@ -29,7 +29,7 @@ class _BanjiaIndexState extends State<BanjiaIndex> {
   @override
   void initState() {
     Future.microtask(() {
-      context.read(banjiaRiverpod).init();
+      context.read<BanjiaResp>().init();
     });
     scrollController.addListener(() {
       if (scrollController.offset >= 200) {
@@ -62,11 +62,11 @@ class _BanjiaIndexState extends State<BanjiaIndex> {
           delegate: FloatWidget(child: const BanjiaSessions(), height: 48),
           pinned: true,
         ),
-        Consumer(
+        Consumer<BanjiaResp>(
           builder: (BuildContext context,
-              T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-            final list = watch(banjiaRiverpod).products;
-            final loading = watch(banjiaRiverpod).loading;
+              value, Widget? child) {
+            final list = value.products;
+            final loading = value.loading;
             if(loading) return const SliverToBoxAdapter(child: LoadingWidget());
             return BanjiaList(products: list);
           },

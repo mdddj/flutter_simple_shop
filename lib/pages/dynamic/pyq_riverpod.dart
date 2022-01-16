@@ -7,9 +7,7 @@ import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:dataoke_sdk/params/wechat_param.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final pyqRiverpod = ChangeNotifierProvider<PyqState>((ref)=>PyqState());
 class PyqState extends ChangeNotifier{
 
   int _page = 1;

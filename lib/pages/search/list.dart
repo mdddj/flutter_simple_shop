@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../provider/riverpod/search_riverpod.dart';
 import '../../widgets/appbar_search.dart';
@@ -22,7 +22,7 @@ class SearchListIndex extends StatelessWidget {
       appBar: SAppBarSearch(
         value: value,
         bgColor: Colors.white,
-        onSearch: (String value)=> context.read(searchRiverpod).loadData(worlds: value),
+        onSearch: (String value)=> context.read<SearchState>().loadData(worlds: value),
       ),
       body: EasyRefresh.custom(
         slivers: const [
@@ -31,7 +31,7 @@ class SearchListIndex extends StatelessWidget {
             child: SearchProductList(),
           )
         ],
-        onLoad: context.read(searchRiverpod).nextPage,
+        onLoad: context.read<SearchState>().nextPage,
         footer: MaterialFooter(),
       ),
     );

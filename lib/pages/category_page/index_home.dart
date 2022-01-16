@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
+import 'package:provider/provider.dart';
 
 import './left_widget.dart';
 import './right_widget.dart';
@@ -44,10 +44,10 @@ class _CategoryIndexPageState extends State<CategoryIndexPage> {
         ),
       ),
       body: EditePageHandle(
-        child: Consumer(
-          builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-            final categorys = watch(categoryRiverpod).categorys;
-            final current = watch(categoryRiverpod).current;
+        child: Consumer<CategoryState>(
+          builder: (BuildContext context, value, Widget? child) {
+            final categorys = value.categorys;
+            final current = value.current;
             if (categorys.isEmpty) {
               return const Text('没有数据');
             }
@@ -68,7 +68,7 @@ class _CategoryIndexPageState extends State<CategoryIndexPage> {
                           itemCount: categorys.length,
                           itemBuilder: (context, index) {
                             return InkWell(
-                              onTap: () => context.read(categoryRiverpod).setCurrent(categorys[index]),
+                              onTap: () => context.read<CategoryState>().setCurrent(categorys[index]),
                               child: LeftWidgetItem(item: categorys[index], isCurrent: current.cid == categorys[index].cid),
                             );
                           }),

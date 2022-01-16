@@ -10,18 +10,18 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.4
-  get: ^4.3.8
-  url_launcher: ^6.0.15
+  get: ^4.6.1
+  url_launcher: ^6.0.17
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
-  date_format: ^2.0.4
-  shared_preferences: ^2.0.9
-  flutter_html: ^2.1.5
+  date_format: ^2.0.5
+  shared_preferences: ^2.0.11
+  flutter_widget_from_html: ^0.8.4
   dio: ^4.0.4
   flutter_spinkit: ^5.1.0
   tab_indicator_styler: ^2.0.0
   flutter_swiper_null_safety: ^1.0.2
-  provider: ^6.0.1
+  provider: ^6.0.2
   flutter_easyrefresh: ^2.2.1
   pull_to_refresh: ^2.0.0
   fbutton_nullsafety: ^5.0.0
@@ -30,16 +30,16 @@ dependencies:
   common_utils: ^2.0.2
   extended_image: ^6.0.1
   extended_image_library: ^3.1.0
-  waterfall_flow: ^3.0.1
+  waterfall_flow: ^3.0.2
   loading_more_list: ^4.1.0
   extended_list: ^3.0.0
   pull_to_refresh_notification: ^2.2.0
   fsearch_nullsafety: ^2.0.0
   carousel_slider: ^4.0.0
   shimmer: ^2.0.0
-  flutter_svg: ^0.23.0+1
-  extended_text_field: ^9.0.0
-  extended_text: ^8.0.0
+  flutter_svg: ^1.0.0
+  extended_text_field: ^9.0.2
+  extended_text: ^8.0.2
   font_awesome_flutter: ^9.2.0
   animated_text_kit: ^4.2.1
   html: ^0.15.0
@@ -47,7 +47,7 @@ dependencies:
   after_layout: ^1.1.0
   palette_generator: ^0.3.2
   crypto: ^3.0.1
-  msix: ^2.6.3
+  msix: ^2.7.3
   encrypt: ^5.0.1
   extended_nested_scroll_view: ^5.0.0
   sliver_tools: ^0.2.5
@@ -58,26 +58,25 @@ dependencies:
     git:
       url: git://github.com/mdddj/dd_js_util
   fcontrol_nullsafety: ^2.0.0
-  flutter_hooks: ^0.18.1
-  hooks_riverpod: ^0.14.0+5
+  flutter_hooks: ^0.18.2
   get_it: ^7.2.0
   logger: ^1.1.0
   http: ^0.13.4
   shelf_proxy: ^1.0.1
   responsive_builder: ^0.4.1
   bubble_tab_indicator: ^0.1.6
-  badges: ^2.0.1
+  badges: ^2.0.2
   carousel_pro_nullsafety: ^1.0.2
-  flutter_markdown: ^0.6.8
-  zefyrka: ^1.0.10
+  flutter_markdown: ^0.6.9
+  zefyrka: ^1.1.1
   package_info: ^2.0.2
   show_up_animation: ^2.0.0
   swipeable_page_route: ^0.2.4
-  black_hole_flutter: ^0.3.3
-  hive: ^2.0.4
+  black_hole_flutter: ^0.3.4
+  hive: ^2.0.5
   hive_flutter: ^1.1.0
   flutter_blurhash: ^0.6.0
-  dataoke_sdk: ^0.0.1
+  dataoke_sdk: ^0.0.2
   #  filepicker_windows: ^2.0.0  # 文件选择器
   #  win32: ^2.1.5   # windows 开放api
   #
@@ -91,7 +90,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  build_runner: ^2.1.5
+  build_runner: ^2.1.7
   import_sorter: ^4.6.0
   flutter_lints: ^1.0.4
 flutter:

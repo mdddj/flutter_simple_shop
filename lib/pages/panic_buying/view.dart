@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../widgets/simple_appbar.dart';
@@ -33,7 +33,7 @@ class _PanicBuyingPageState extends State<PanicBuyingPage> {
   void initState() {
     super.initState();
     Future.microtask(() async {
-      await context.read(panicBuyingRiverpod).init();
+      await context.read<PanicBuyingModel>().init();
     });
   }
 
@@ -51,7 +51,7 @@ class _PanicBuyingPageState extends State<PanicBuyingPage> {
               text: '全天榜',
             ),
           ],
-          onTap:  context.read(panicBuyingRiverpod).tabChanged,
+          onTap:  context.read<PanicBuyingModel>().tabChanged,
         ),
         bottomHeight: 48,
       ),
@@ -64,12 +64,12 @@ class _PanicBuyingPageState extends State<PanicBuyingPage> {
               const SliverToBoxAdapter(
                 child: ViewStatusWithPanicBuy(),
               ),
-              Consumer(builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-                return ProductsList(watch(panicBuyingRiverpod).products);
+              Consumer<PanicBuyingModel>(builder: (BuildContext context, value, Widget? child) {
+                return ProductsList(value.products);
               },)
             ],
             onLoad: () async {
-              final result = await context.read(panicBuyingRiverpod).nextPage();
+              final result = await context.read<PanicBuyingModel>().nextPage();
               easyRefreshController.finishLoad(noMore: result);
             },
             footer: MaterialFooter(),

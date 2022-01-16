@@ -1,25 +1,26 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../widgets/loading_widget.dart';
+
 // Project imports:
 import 'pyq_riverpod.dart';
 
-class PyQLoading extends ConsumerWidget{
+class PyQLoading extends StatelessWidget {
   const PyQLoading({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final loading = watch(pyqRiverpod).loading;
-    Widget contaner = Container();
-    if(loading){
-      contaner = const LoadingWidget();
-    }
-    return SliverToBoxAdapter(
-      child: contaner,
-    );
+  Widget build(BuildContext context) {
+    return Consumer<PyqState>(builder: (c, v, ch) {
+      final loading = v.loading;
+      Widget container = Container();
+      if (loading) {
+        container = const LoadingWidget();
+      }
+      return SliverToBoxAdapter(
+        child: container,
+      );
+    });
   }
-
 }

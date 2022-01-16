@@ -3,10 +3,9 @@
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/halfday_result.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final banjiaRiverpod = ChangeNotifierProvider((ref) => BanjiaResp());
 
+///半价
 class BanjiaResp extends ChangeNotifier {
   List<ListElement> products = [];
   List<SessionsList> sessions = [];

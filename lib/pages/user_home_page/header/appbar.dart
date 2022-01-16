@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:get/get.dart';
 
 // Project imports:
 import '../../../common/utils.dart';
@@ -16,23 +15,19 @@ class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       automaticallyImplyLeading: false,
-      title: const Text(
-        '个人中心',
-        style: TextStyle(color: Colors.black),
-      ),
       actions: [
         IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.settings,
+              Icons.nightlight_outlined,
               color: Colors.black,
             )),
         IconButton(
-            onPressed: () async {
-              final result = utils.weChatBro;
-              utils.showMessage(result ? '是微信浏览器' : '不是微信浏览器');
-            },
-            icon: const Icon(Icons.cast_connected_sharp)),
+            onPressed: () {},
+            icon: const Icon(
+              Icons.settings_outlined,
+              color: Colors.black,
+            )),
         utils.widgetUtils.marginRight()
       ],
     );

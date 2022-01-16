@@ -4,9 +4,7 @@ import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:dataoke_sdk/params/product_list_param.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final indexRiverpod = ChangeNotifierProvider<IndexState>((ref) => IndexState());
 
 /// 首页状态
 class IndexState extends ChangeNotifier {

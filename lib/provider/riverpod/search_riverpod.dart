@@ -4,10 +4,7 @@ import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:dataoke_sdk/params/super_search_param.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final searchRiverpod =
-    ChangeNotifierProvider((ref) => SearchState()); // 用户搜索的关键字
 
 class SearchState extends ChangeNotifier {
   String type = '0';

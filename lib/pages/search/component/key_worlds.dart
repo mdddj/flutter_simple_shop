@@ -3,7 +3,7 @@
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/src/provider.dart';
 
 // Project imports:
 import '../../../provider/riverpod/search_riverpod.dart';
@@ -49,7 +49,7 @@ class _SearchKeyWorldsState extends State<SearchKeyWorlds> {
   Widget _item(String item) {
     return InkWell(
       onTap: () {
-        context.read(searchRiverpod).loadData(worlds: item);
+        context.read<SearchState>().loadData(worlds: item);
         Get.to(() => SearchListIndex(value: item));
       },
       child: Container(

@@ -3,8 +3,8 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
@@ -52,9 +52,9 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
       ],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(48),
-        child: Consumer(
-          builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-            final loading = watch(indexRiverpod).indexLoading;
+        child: Consumer<IndexState>(
+          builder: (BuildContext context,value, Widget? child) {
+            final loading = value.indexLoading;
             final categoryWidgets = utils.widgetUtils.categoryTabs(context);
             return LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
@@ -84,10 +84,10 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
                               if (index == 0) {
                                 return;
                               }
-                              final category = context.read(categoryRiverpod).getCategoryByIndex(index - 1);
+                              final category = context.read<CategoryState>().getCategoryByIndex(index - 1);
                               utils.widgetUtils.to(NewGoodsList(
                                 category: category,
-                                initIndex: context.read(categoryRiverpod).getIndexWithCategory(category),
+                                initIndex: context.read<CategoryState>().getIndexWithCategory(category),
                               ));
                             },
                           ),

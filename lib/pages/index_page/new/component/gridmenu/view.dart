@@ -1,11 +1,10 @@
 // Flutter imports:
 // Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
+import 'package:provider/provider.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
@@ -51,7 +50,7 @@ final gridMenuModles = [
           title: '美团领券',
           image: mtwmImage,
           onTap: () async {
-            Get.context!.read(indexRiverpod).changeLoadingState(true);
+            Get.context!.read<IndexState>().changeLoadingState(true);
             await tkApi.meituan({'actId': '2', 'linkType': '1'},
                 mapHandle: (data) async {
               final url = (data['data'] ?? '').toString();
@@ -59,12 +58,12 @@ final gridMenuModles = [
                 await utils.openLink(url);
               }
             });
-            Get.context!.read(indexRiverpod).changeLoadingState(false);
+            Get.context!.read<IndexState>().changeLoadingState(false);
           },
           isAssets: true,
           onLongTap: () async {
             // 长按复制领取链接
-            Get.context!.read(indexRiverpod).changeLoadingState(true);
+            Get.context!.read<IndexState>().changeLoadingState(true);
             await tkApi.meituan({'actId': '2', 'linkType': '1'},
                 mapHandle: (data) async {
               final url = (data['data'] ?? '').toString();
@@ -74,7 +73,7 @@ final gridMenuModles = [
                     .showSimpleDialog('领券链接复制成功,打开浏览器粘贴即可', title: '获取链接成功');
               }
             });
-            Get.context!.read(indexRiverpod).changeLoadingState(false);
+            Get.context!.read<IndexState>().changeLoadingState(false);
           })),
 
   /// 排行榜

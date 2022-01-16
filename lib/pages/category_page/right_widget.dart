@@ -2,7 +2,7 @@
 // Package imports:
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../common/utils.dart';
@@ -23,7 +23,7 @@ class RightWidgetItme extends StatelessWidget {
         utils.widgetUtils.to(NewGoodsList(
           category: category,
           subcategory: item,
-          initIndex: context.read(categoryRiverpod).getIndexWithCategory(category),
+          initIndex: context.read<CategoryState>().getIndexWithCategory(category),
         ));
       },
       child: Container(

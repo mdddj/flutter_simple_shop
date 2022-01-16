@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../common/utils.dart';
 import '../../provider/riverpod/user_riverpod.dart';
@@ -29,6 +29,7 @@ class _IndexHomeState extends State<UserIndexHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: const UserHomeAppBar(),
       body: SingleChildScrollView(
         child: Column(
@@ -37,9 +38,11 @@ class _IndexHomeState extends State<UserIndexHome> {
             utils.widgetUtils.marginTop(),
             const OrderIndex(),
             utils.widgetUtils.marginTop(),
-            Consumer(
-              builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-                final hasAdminAuth = watch(userModel).hasAdminAuthority();
+            Consumer<UserModel>(
+              builder: (BuildContext context,
+                  value,
+                  Widget? child) {
+                final hasAdminAuth =value.hasAdminAuthority();
                 if (!hasAdminAuth) return Container();
                 return MyWrap(
                   title: '管理员功能',
@@ -60,7 +63,8 @@ class _IndexHomeState extends State<UserIndexHome> {
                               utils.widgetUtils.to(const WriteBlogPage());
                             },
                             isAssets: true,
-                            icon: const CircleAvatar(child: FaIcon(FontAwesomeIcons.edit))))
+                            icon: const CircleAvatar(
+                                child: FaIcon(FontAwesomeIcons.edit))))
                   ],
                 );
               },

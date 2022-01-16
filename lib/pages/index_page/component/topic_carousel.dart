@@ -13,7 +13,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 import '../../../common/utils.dart';
@@ -49,13 +49,13 @@ class IndexTopicComponentCarousel extends StatelessWidget {
                       id: '${item.topicId!}', title: item.topicName!)));
             }
             if (item.sourceType == 2) {
-              Get.context!.read(indexRiverpod).changeLoadingState(true);
+              Get.context!.read<IndexState>().changeLoadingState(true);
               final result = await DdTaokeSdk.instance.getActivityLink(
                   ActivityLinkParam(promotionSceneId: item.activityId!));
               if (result != null) {
                 await utils.openTaobao(result.clickUrl);
               }
-              Get.context!.read(indexRiverpod).changeLoadingState(false);
+              Get.context!.read<IndexState>().changeLoadingState(false);
             }
             if ((item.link ?? '').isNotEmpty) {
               await utils.openLink(item.link!);

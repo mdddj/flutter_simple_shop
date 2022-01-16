@@ -7,12 +7,10 @@ import 'package:dataoke_sdk/model/product.dart';
 import 'package:dataoke_sdk/params/product_list_param.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../provider/riverpod/category_riverpod.dart';
-
-final goodsListRiverpod = ChangeNotifierProvider((ref) => GoodsListState());
 
 class GoodsListState extends ChangeNotifier {
   // 主分类
@@ -76,7 +74,7 @@ class GoodsListState extends ChangeNotifier {
 
   // 主分类切换
   void mainCateChange(int index, BuildContext context) {
-    final cate = context.read(categoryRiverpod).categorys[index];
+    final cate = context.read<CategoryState>().categorys[index];
     setCategory(cate, null);
     onRefresh();
   }

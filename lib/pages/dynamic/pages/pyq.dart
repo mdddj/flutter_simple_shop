@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/src/provider.dart';
 
 // Project imports:
 import '../components/list.dart';
@@ -24,7 +24,7 @@ class _PyqViewState extends State<PyqView> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      context.read(pyqRiverpod).fetchData();
+      context.read<PyqState>().fetchData();
     });
   }
 
@@ -36,7 +36,7 @@ class _PyqViewState extends State<PyqView> {
         PyqList()
       ],
       onLoad: ()async{
-        await context.read(pyqRiverpod).nextPage();
+        await context.read<PyqState>().nextPage();
       },
       footer: MaterialFooter(),
     );

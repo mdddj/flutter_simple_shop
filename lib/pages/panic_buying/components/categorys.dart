@@ -2,12 +2,11 @@
 // Package imports:
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../../../common/utils.dart';
 
-class BottomCategoryTabs extends ConsumerWidget implements PreferredSizeWidget  {
+class BottomCategoryTabs extends StatelessWidget implements PreferredSizeWidget  {
   final List<Tab>? insets;
   final ValueChanged<int>? onTap;
   final int? initIndex;
@@ -15,7 +14,7 @@ class BottomCategoryTabs extends ConsumerWidget implements PreferredSizeWidget  
   const BottomCategoryTabs({this.insets, this.onTap, this.initIndex,Key? key}):super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext context) {
     var _insets = insets ?? [];
     final categoryWidgets = utils.widgetUtils.categoryTabs(context);
     return Container(

@@ -7,11 +7,9 @@ import 'package:dio/dio.dart';
 // Flutter imports:
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../network/interceptor/auth_interceptor.dart';
-import '../provider/riverpod/user_riverpod.dart';
 
 /// app 控制器
 class AppController extends GetxController {
@@ -26,12 +24,6 @@ class AppController extends GetxController {
     adStart();
     getIsWeChatBrowser();
     super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-    Get.context!.read(userModel).appStartWithUserModel();
   }
 
   /// 请求中添加授权信息

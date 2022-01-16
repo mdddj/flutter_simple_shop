@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/src/provider.dart';
 
 // Project imports:
 import '../../../common/utils.dart';
@@ -219,7 +219,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
       return;
     }
     var isLoginSuccess =
-        await context.read(userModel).login(username, password);
+        await context.read<UserModel>().login(username, password);
     if (isLoginSuccess) {
       Get.back();
     }

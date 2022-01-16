@@ -5,7 +5,7 @@ import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/src/provider.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
@@ -71,7 +71,7 @@ class WidgetUtils extends WidgetUtilService {
   @override
   List<Widget> categoryTabs(BuildContext context) {
     return context
-        .read(categoryRiverpod)
+        .read<CategoryState>()
         .categorys
         .map((e) => Tab(
               text: e.cname,

@@ -21,7 +21,7 @@ class AtText extends SpecialText {
 
   @override
   InlineSpan finishText() {
-    TextStyle? textStyle = this.textStyle.copyWith(color: Colors.pinkAccent, fontSize: 16.0);
+    TextStyle? textStyle = this.textStyle?.copyWith(color: Colors.pinkAccent, fontSize: 16.0);
 
     final atText = toString();
 

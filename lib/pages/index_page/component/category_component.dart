@@ -2,7 +2,7 @@
 // Package imports:
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../../constant/style.dart';
@@ -62,7 +62,7 @@ class _CategoryComponentState extends State<CategoryComponent> {
 
   @override
   Widget build(BuildContext context) {
-    final categorys = context.read(categoryRiverpod).categorys;
+    final categorys = context.read<CategoryState>().categorys;
     var extendItemsLength = widget.extendItems == null ? 0 : widget.extendItems!.length;
     return Stack(
       children: [

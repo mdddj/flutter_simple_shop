@@ -7,10 +7,9 @@ import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../../common/toast.dart';
@@ -20,17 +19,19 @@ import '../../../widgets/extended_image.dart';
 import '../../../widgets/simple_price.dart';
 import '../pyq_riverpod.dart';
 
-class PyqList extends ConsumerWidget {
+class PyqList extends StatelessWidget {
   const PyqList({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final product = watch(pyqRiverpod).products;
-    if (product.isEmpty) return const SliverToBoxAdapter();
-    return SliverWaterfallFlow.count(
-      crossAxisCount: 1,
-      children: product.map(renderItem).toList(),
-    );
+  Widget build(BuildContext context) {
+    return Consumer<PyqState>(builder: (c,v,ch){
+      final product = v.products;
+      if (product.isEmpty) return const SliverToBoxAdapter();
+      return SliverWaterfallFlow.count(
+        crossAxisCount: 1,
+        children: product.map(renderItem).toList(),
+      );
+    });
   }
 
   Widget renderItem(Product product) {
@@ -78,10 +79,7 @@ class PyqList extends ConsumerWidget {
           const Divider(
             indent: 12,
           ),
-          Html(
-            data: '${product.circleText}',
-            style: {'body': Style(color: Colors.grey)},
-          ),
+          Text('${product.circleText}'),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 12),
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),

@@ -1,20 +1,22 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 // Package imports:
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 import '../../../panic_buying/components/list.dart';
 // Project imports:
 import '../index_riverpod.dart';
 
-class IndexProductss extends ConsumerWidget{
+class IndexProductss extends StatelessWidget{
   const IndexProductss({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final list = watch(indexRiverpod).products;
-    if(list.isEmpty) return const SliverToBoxAdapter();
-    return ProductsList(list);
+  Widget build(BuildContext context) {
+    return Consumer<IndexState>(builder: (c,v,ch){
+      final list = v.products;
+      if(list.isEmpty) return const SliverToBoxAdapter();
+      return ProductsList(list);
+    });
   }
 
 }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../provider/riverpod/search_riverpod.dart';
@@ -35,7 +35,7 @@ class _SearchPageState extends State<SearchPage> {
         value: widget.initSearchKeyWord,
         bgColor: Colors.white,
         onSearch: (String value) {
-          context.read(searchRiverpod).loadData(worlds: value);
+          context.read<SearchState>().loadData(worlds: value);
           Get.to(() => SearchListIndex(value: value));
         },
         eve: 0,

@@ -2,22 +2,24 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../../widgets/loading_widget.dart';
 import '../repository.dart';
 
 /// 页面状态显示
-class ViewStatusWithPanicBuy extends ConsumerWidget {
+class ViewStatusWithPanicBuy extends StatelessWidget {
   const ViewStatusWithPanicBuy({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
-    final changeLoading = watch(panicBuyingRiverpod).changeLoading;
-    if (changeLoading) {
-      return const LoadingWidget();
-    }
-    return Container();
+  Widget build(BuildContext context) {
+    return Consumer<PanicBuyingModel>(builder: (c,v,ch){
+      final changeLoading = v.changeLoading;
+      if (changeLoading) {
+        return const LoadingWidget();
+      }
+      return Container();
+    });
   }
 }

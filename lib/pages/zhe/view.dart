@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../widgets/loading_widget.dart';
@@ -27,7 +27,7 @@ class _ZheIndexState extends State<ZheIndex> {
   void initState() {
     super.initState();
     Future.microtask(() async {
-      context.read(zheRiverpod).onTabChange(0);
+      context.read<ZheState>().onTabChange(0);
     });
   }
 
@@ -37,7 +37,7 @@ class _ZheIndexState extends State<ZheIndex> {
       appBar: SimpleAppBar(
         title: '折上折 - 拍两件更优惠',
         bottom: BottomCategoryTabs(
-          onTap: context.read(zheRiverpod).onTabChange,
+          onTap: context.read<ZheState>().onTabChange,
           insets: const [
             Tab(
               text: '推荐',
@@ -46,10 +46,10 @@ class _ZheIndexState extends State<ZheIndex> {
         ),
         bottomHeight: 48,
       ),
-      body: Consumer(
-        builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-          final products = watch(zheRiverpod).products;
-          final loading = watch(zheRiverpod).loading;
+      body: Consumer<ZheState>(
+        builder: (BuildContext context, value, Widget? child) {
+          final products = value.products;
+          final loading = value.loading;
           return EasyRefresh.custom(
             controller: easyRefreshController,
             scrollController: scrollController,
@@ -61,7 +61,7 @@ class _ZheIndexState extends State<ZheIndex> {
               ProductsList(products)
             ],
             onLoad: () async {
-              final hasNextPage = await context.read(zheRiverpod).nextPage();
+              final hasNextPage = await context.read<ZheState>().nextPage();
               if (scrollController.hasClients) {
                 easyRefreshController.finishLoad(noMore: hasNextPage);
               }
@@ -69,7 +69,7 @@ class _ZheIndexState extends State<ZheIndex> {
             footer: MaterialFooter(),
             header: MaterialHeader(),
             onRefresh: ()async {
-              await context.read(zheRiverpod).refresh();
+              await context.read<ZheState>().refresh();
             },
           );
         },

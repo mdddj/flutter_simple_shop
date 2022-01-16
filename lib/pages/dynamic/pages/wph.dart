@@ -1,11 +1,8 @@
-// Flutter imports:
 // Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:html/dom.dart' as dom;
+import 'package:provider/provider.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 import '../../../widgets/extended_image.dart';
@@ -26,21 +23,21 @@ class _WeipinhuiJinBianGoodsState extends State<WeipinhuiJinBianGoods> {
   @override
   void initState() {
     super.initState();
-    context.read(wphRiverpod).init();
+    context.read<WphState>().init();
   }
 
   @override
   Widget build(BuildContext context) {
     return EasyRefresh.custom(
       slivers: [
-        Consumer(
-          builder: (BuildContext context, T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-            final list = watch(wphRiverpod).products;
+        Consumer<WphState>(
+          builder: (BuildContext context,value, Widget? child) {
+            final list = value.products;
             return SliverList(delegate: SliverChildBuilderDelegate((_, index) => renderItem(list[index]), childCount: list.length));
           },
         )
       ],
-      onLoad: context.read(wphRiverpod).nextPage,
+      onLoad: context.read<WphState>().nextPage,
     );
   }
 
@@ -78,11 +75,7 @@ class _WeipinhuiJinBianGoodsState extends State<WeipinhuiJinBianGoods> {
                   Expanded(
                     child: Column(
                       children: [
-                        Html(
-                          data: '${item['content']}',
-                          onLinkTap: (String? url, RenderContext context, Map<String, String> attributes, dom.Element? element) {
-                          },
-                        ),
+                        Text('${item['content']}'),
                         Row(
                           children: [
                             Container(

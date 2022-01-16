@@ -2,7 +2,7 @@
 // Package imports:
 import 'package:dataoke_sdk/model/halfday_result.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../resp.dart';
@@ -12,12 +12,12 @@ class BanjiaSessions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(
+    return Consumer<BanjiaResp>(
       builder: (BuildContext context,
-          T Function<T>(ProviderBase<Object?, T>) watch, Widget? child) {
-        final sessions = watch(banjiaRiverpod).sessions;
+          value, Widget? child) {
+        final sessions = value.sessions;
         if (sessions.isEmpty) return Container();
-        final curr = watch(banjiaRiverpod).currTime;
+        final curr = value.currTime;
         return Container(
             color: Colors.pink,
             height: 48,
@@ -43,7 +43,7 @@ class BanjiaSessions extends StatelessWidget {
 
     return GestureDetector(
       onTap: (){
-        context.read(banjiaRiverpod).onChange(item.hpdTime!);
+        context.read<BanjiaResp>().onChange(item.hpdTime!);
       },
       child: Container(
         height: double.infinity,
