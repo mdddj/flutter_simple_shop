@@ -1,5 +1,4 @@
 // Dart imports:
-import 'dart:convert';
 import 'dart:ui';
 
 // Package imports:
@@ -10,12 +9,9 @@ import 'package:dataoke_sdk/model/product.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 // Flutter imports:
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
@@ -818,7 +814,6 @@ class _HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     final result = await DdTaokeSdk.instance.getDetailBaseData(
       productId: widget.goodsId,
     );
-    print(jsonEncode(result!.info));
     if (result != null) {
       if (mounted) {
         setState(() {

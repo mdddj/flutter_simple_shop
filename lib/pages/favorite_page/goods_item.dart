@@ -1,7 +1,6 @@
 // Flutter imports:
 // Package imports:
 import 'package:fcontrol_nullsafety/fdefine.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 

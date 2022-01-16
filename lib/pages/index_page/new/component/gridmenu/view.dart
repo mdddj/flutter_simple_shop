@@ -1,6 +1,5 @@
 // Flutter imports:
 // Package imports:
-import 'dart:developer';
 
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +53,7 @@ final gridMenuModles = [
           image: mtwmImage,
           onTap: () async {
             Get.context!.read<IndexState>().changeLoadingState(true);
-           final result = await tkApi.meituan({'actId': '2', 'linkType': '1'},
+            await tkApi.meituan({'actId': '2', 'linkType': '1'},
                 mapHandle: (data) async {
               final url = (data['data'] ?? '').toString();
               Logger().d('美团领券URL:$url');

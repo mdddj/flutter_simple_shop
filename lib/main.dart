@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:window_size/window_size.dart';
 
 // Project imports:
 import './provider/providers.dart';
@@ -55,10 +54,10 @@ void main() async {
   /// windows 版本处理函数
   if (!GetPlatform.isWeb &&
       (GetPlatform.isWindows || GetPlatform.isLinux || GetPlatform.isMacOS)) {
-    setWindowTitle('典典的小卖部 桌面客户端  v2.0.0');
-    const windowSize = Size(500, 1041);
-    setWindowMaxSize(windowSize);
-    setWindowMinSize(windowSize);
+    // setWindowTitle('典典的小卖部 桌面客户端  v2.0.0');
+    // const windowSize = Size(500, 1041);
+    // setWindowMaxSize(windowSize);
+    // setWindowMinSize(windowSize);
   }
 
   /// 启动app

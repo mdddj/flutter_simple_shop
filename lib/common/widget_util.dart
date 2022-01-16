@@ -2,10 +2,9 @@
 // Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:dataoke_sdk/model/product.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:

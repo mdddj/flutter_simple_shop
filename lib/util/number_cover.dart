@@ -13,8 +13,6 @@ class Numeral {
   ///
   /// return [Numeral] instance.
   factory Numeral(num number) {
-    assert(number is num, 'The data to be processed must be passed in a [num].');
-
     return Numeral._(number);
   }
 

@@ -54,9 +54,7 @@ dependencies:
   shelf: ^1.2.0
   extended_sliver: ^2.0.1
   # dd_taoke_sdk: ^1.6.1 已经弃用，换成了dataoke_sdk
-  dd_js_util:
-    git:
-      url: git://github.com/mdddj/dd_js_util
+  dd_js_util: ^0.0.3
   fcontrol_nullsafety: ^2.0.0
   flutter_hooks: ^0.18.2
   get_it: ^7.2.0
@@ -80,11 +78,11 @@ dependencies:
   #  filepicker_windows: ^2.0.0  # 文件选择器
   #  win32: ^2.1.5   # windows 开放api
   #
-  window_size:
-    git:
-      url: git://github.com/google/flutter-desktop-embedding.git # 修改窗口标题
-      path: plugins/window_size
-      ref: 7812516a5c1fc8ef379e244106953a2b534432b9
+#  window_size:
+#    git:
+#      url: git://github.com/google/flutter-desktop-embedding.git # 修改窗口标题
+#      path: plugins/window_size
+#      ref: 7812516a5c1fc8ef379e244106953a2b534432b9
 
 dev_dependencies:
   flutter_test:

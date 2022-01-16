@@ -2,12 +2,11 @@
 // Package imports:
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../../common/utils.dart';

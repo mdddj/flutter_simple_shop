@@ -1,5 +1,4 @@
 // Dart imports:
-import 'dart:ui';
 
 // Flutter imports:
 import 'package:flutter/cupertino.dart';

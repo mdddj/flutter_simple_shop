@@ -1,12 +1,4 @@
 // Package imports:
-import 'package:demo1/pages/banjia/resp.dart';
-import 'package:demo1/pages/dynamic/pyq_riverpod.dart';
-import 'package:demo1/pages/dynamic/wph_riverpod.dart';
-import 'package:demo1/pages/index_page/new/index_riverpod.dart';
-import 'package:demo1/pages/jiujiu_page/riverpod.dart';
-import 'package:demo1/pages/new_goods_list/riverpod.dart';
-import 'package:demo1/pages/panic_buying/repository.dart';
-import 'package:demo1/pages/zhe/riverpod.dart';
 import 'package:nested/nested.dart';
 import 'package:provider/provider.dart';
 
@@ -15,8 +7,16 @@ import './dtk_index_goods_provider.dart';
 import './goods_detail_provider.dart';
 import './goods_list_provider.dart';
 import './nine_goods_provider.dart';
+import '../pages/banjia/resp.dart';
 // Project imports:
 import '../pages/brand_page/provider/brand_provider.dart';
+import '../pages/dynamic/pyq_riverpod.dart';
+import '../pages/dynamic/wph_riverpod.dart';
+import '../pages/index_page/new/index_riverpod.dart';
+import '../pages/jiujiu_page/riverpod.dart';
+import '../pages/new_goods_list/riverpod.dart';
+import '../pages/panic_buying/repository.dart';
+import '../pages/zhe/riverpod.dart';
 import 'index_provider.dart';
 import 'jd_products_provider.dart';
 import 'riverpod/category_riverpod.dart';

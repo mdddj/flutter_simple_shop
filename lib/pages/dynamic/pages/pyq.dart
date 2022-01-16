@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../components/list.dart';

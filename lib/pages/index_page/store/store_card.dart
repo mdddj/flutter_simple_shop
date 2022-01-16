@@ -1,7 +1,6 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/model/brand_list_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';

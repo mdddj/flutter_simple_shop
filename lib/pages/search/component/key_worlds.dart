@@ -3,7 +3,7 @@
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../../provider/riverpod/search_riverpod.dart';

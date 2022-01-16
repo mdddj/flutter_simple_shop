@@ -6,7 +6,6 @@ import 'package:after_layout/after_layout.dart';
 import 'package:dataoke_sdk/model/product.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart' hide NestedScrollView;
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 

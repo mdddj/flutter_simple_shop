@@ -2,7 +2,6 @@
 // Package imports:
 import 'package:badges/badges.dart';
 import 'package:dataoke_sdk/model/halfday_result.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';

@@ -1,7 +1,6 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/model/product.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

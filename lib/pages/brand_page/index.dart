@@ -6,6 +6,7 @@ import 'package:dataoke_sdk/model/category.dart';
 import 'package:dataoke_sdk/params/brand_param.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:provider/provider.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 // Project imports:
@@ -14,7 +15,6 @@ import '../../provider/riverpod/category_riverpod.dart';
 import '../index_page/component/category_component.dart';
 import 'category_delegate.dart';
 import 'components/item.dart';
-import 'package:provider/provider.dart';
 
 /// 品牌列表页面
 class BrandListPage extends StatefulWidget {

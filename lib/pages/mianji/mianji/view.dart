@@ -1,14 +1,12 @@
 // Flutter imports:
-import 'package:demo1/pages/mianji/mianji/apply.dart';
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 
 // Project imports:
 import '../../../widgets/simple_appbar.dart';
-import '../../user_home_page/white/index.dart';
+import 'apply.dart';
 import 'logic.dart';
 
 // 面基动态

@@ -4,7 +4,7 @@ import 'package:after_layout/after_layout.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
