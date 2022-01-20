@@ -177,21 +177,16 @@ class GridMenuComponent extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Padding(
         padding: const EdgeInsets.all(12),
-        child: PhysicalModel(
-          color: Colors.grey.shade50,
-          elevation: 1,
-          borderRadius: BorderRadius.circular(8),
-          child: Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(8)),
-            child: WaterfallFlow.count(
-              padding: EdgeInsets.zero,
-              crossAxisCount: 5,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              children: gridMenuModles,
-            ),
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(8)),
+          child: WaterfallFlow.count(
+            padding: EdgeInsets.zero,
+            crossAxisCount: 5,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            children: gridMenuModles,
           ),
         ),
       ),

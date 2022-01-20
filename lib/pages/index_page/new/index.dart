@@ -16,6 +16,7 @@ import 'component/appbar.dart';
 import 'component/carousel.dart';
 import 'component/gridmenu/view.dart';
 import 'component/index_tabbar.dart';
+import 'component/two_column_comm.dart';
 
 /// 新版首页
 class IndexHomeNew extends StatefulWidget {
@@ -53,10 +54,15 @@ class _IndexHomeNewState extends State<IndexHomeNew>
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return [
               const IndexHomeAppbar(),
+              // 轮播图
               SliverPadding(
                   padding: const EdgeInsets.only(top: 12),
                   sliver: const IndexCarousel().sliverBox),
+              // 网格菜单
               const GridMenuComponent(),
+              // 两列菜单
+              const IndexColumnWidget(),
+              // 分类导航
               SliverPersistentHeader(
                 delegate: IndexTabbar(tabController),
                 pinned: true,

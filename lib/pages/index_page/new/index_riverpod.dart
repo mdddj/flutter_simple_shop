@@ -3,6 +3,7 @@
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/carousel_model.dart';
 import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/params/hotday_param.dart';
 import 'package:dataoke_sdk/params/product_list_param.dart';
 import 'package:flutter/material.dart';
 
@@ -16,8 +17,17 @@ class IndexState extends ChangeNotifier {
   // 首页推广轮播图
   List<Carousel> carousel = [];
 
+  // 每日榜单的商品列表
+  List<Product> hotDayProducts = [];
 
   int _page = 1;
+
+  // 获取畅销榜单商品
+  Future<void> getHotDayProducts() async {
+    final result =  await DdTaokeSdk.instance.getHotDayProduct(param: HotdayParam(pageSize: '50', pageId: '1'));
+    hotDayProducts = result?.list??[];
+    notifyListeners();
+  }
 
   /// 改变首页loading状态
   void changeLoadingState(bool value) {
@@ -32,6 +42,7 @@ class IndexState extends ChangeNotifier {
       products.addAll(result.list ?? []);
     }
     await getAllCarousel();
+    await getHotDayProducts();
     notifyListeners();
   }
 
