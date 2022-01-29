@@ -1,13 +1,13 @@
 import 'package:dataoke_sdk/model/product.dart';
-import 'package:demo1/common/utils.dart';
-import 'package:demo1/pages/index_page/new/index_riverpod.dart';
-import 'package:demo1/provider/index_provider.dart';
-import 'package:demo1/widgets/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
+
+import '../common/utils.dart';
+import '../widgets/simple_appbar.dart';
+import 'index_page/new/index_riverpod.dart';
 
 /// 畅销榜单页面
 class BestSellerListPage extends StatefulWidget {

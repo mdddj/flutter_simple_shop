@@ -1,9 +1,9 @@
-import 'package:demo1/pages/best_seller_list.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:provider/provider.dart';
 
+import '../../../best_seller_list.dart';
 import '../index_riverpod.dart';
 
 
