@@ -24,8 +24,6 @@ class _ActivityViewPageState extends State<ActivityViewPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => DdTaokeSdk.instance
-        .getActivityLink(ActivityLinkParam(promotionSceneId: widget.id)));
   }
 
   @override

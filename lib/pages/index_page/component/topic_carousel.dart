@@ -13,6 +13,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
@@ -43,6 +44,7 @@ class IndexTopicComponentCarousel extends StatelessWidget {
           pagination: const SwiperPagination(),
           onTap: (int index) async {
             final item = list[index];
+            Logger().wtf(item.toJson());
             if (item.sourceType == 1) {
               await context.navigator.push(SwipeablePageRoute(
                   builder: (_) => ActivityViewPage(
