@@ -18,17 +18,12 @@ class SearchProductList extends StatelessWidget {
     return Consumer<SearchState>(builder: (c,v,ch){
       final products = v.products;
       return WaterfallFlow.builder(
-        padding: const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(12),
         gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8),
+            crossAxisCount: 2, mainAxisSpacing: 12, crossAxisSpacing: 12),
         itemBuilder: (BuildContext context, int index) {
           final item = products[index];
-          return PhysicalModel(
-            color: Colors.grey.shade200,
-            borderRadius: BorderRadius.circular(10),
-            elevation: 3,
-            child: WaterfallGoodsCard(item),
-          );
+          return WaterfallGoodsCard(item);
         },
         itemCount: products.length,physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,

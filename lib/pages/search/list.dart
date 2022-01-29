@@ -23,6 +23,7 @@ class SearchListIndex extends StatelessWidget {
         value: value,
         bgColor: Colors.white,
         onSearch: (String value)=> context.read<SearchState>().loadData(worlds: value),
+        eve: 0,
       ),
       body: EasyRefresh.custom(
         slivers: const [
