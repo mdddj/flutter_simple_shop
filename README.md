@@ -12,13 +12,13 @@
 
 ---
 
-app 可视化后台管理:https://github.com/mdddj/ddxmb-admin
+[//]: # (app 可视化后台管理:https://github.com/mdddj/ddxmb-admin)
 
-一个淘客导购 APP:
+# APP应用名: 典典的小卖部
 
-- 支持接入大淘客 Api,折淘客 Api
-- 支持淘宝,拼多多,京东,唯品会,饿了么,美团领券
-- 支持 Android,Web,Windows,Ios 四端编译 [下载体验](https://itbug.shop/app)
+- 接口来自于大淘客,折淘客,淘宝联盟等等
+- 支持淘宝、拼多多、京东、唯品会、饿了么、美团等优惠券领取
+- 支持Android、Ios 双端编译
 
 | SDK 文档             | [![pub](https://badgen.net/pub/v/dd_taoke_sdk)](https://pub.dev/packages/dd_taoke_sdk) |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -26,27 +26,38 @@ app 可视化后台管理:https://github.com/mdddj/ddxmb-admin
 | Getx 重构版          | [典典的小卖部 getx 重构版本](https://github.com/mdddj/simple_shop_v2)                  |
 | jetpack compose 版本 | [jetpack compose (kotlin) 版本](https://github.com/mdddj/dd_simple_shop_jetpack)       |
 
-我的一些小插件 (空安全支持)
+[//]: # ()
+[//]: # (我的一些小插件 &#40;空安全支持&#41;)
 
-| 网络监测工具                      | [![pub](https://badgen.net/pub/v/flutter_network_connection)](https://pub.dev/packages/flutter_network_connection)   |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| 扫码枪 Spp 模式获取数据           | [![pub](https://badgen.net/pub/v/scanner_gun)](https://pub.dev/packages/scanner_gun)                                 |
-| 息屏显示方法封装                  | [![pub](https://badgen.net/pub/v/flutter_lifecycle_by_resume)](https://pub.dev/packages/flutter_lifecycle_by_resume) |
-| 商米手持 pda 端扫描数据获取插件   | [![pub](https://badgen.net/pub/v/sm_scan)](https://pub.dev/packages/sm_scan)                                         |
-| 新大陆手持 pda 端扫描数据获取插件 | [![pub](https://badgen.net/pub/v/xindalu_scan_flutter)](https://pub.dev/packages/xindalu_scan_flutter)               |
+[//]: # ()
+[//]: # (| 网络监测工具                      | [![pub]&#40;https://badgen.net/pub/v/flutter_network_connection&#41;]&#40;https://pub.dev/packages/flutter_network_connection&#41;   |)
+
+[//]: # (| --------------------------------- | -------------------------------------------------------------------------------------------------------------------- |)
+
+[//]: # (| 扫码枪 Spp 模式获取数据           | [![pub]&#40;https://badgen.net/pub/v/scanner_gun&#41;]&#40;https://pub.dev/packages/scanner_gun&#41;                                 |)
+
+[//]: # (| 息屏显示方法封装                  | [![pub]&#40;https://badgen.net/pub/v/flutter_lifecycle_by_resume&#41;]&#40;https://pub.dev/packages/flutter_lifecycle_by_resume&#41; |)
+
+[//]: # (| 商米手持 pda 端扫描数据获取插件   | [![pub]&#40;https://badgen.net/pub/v/sm_scan&#41;]&#40;https://pub.dev/packages/sm_scan&#41;                                         |)
+
+[//]: # (| 新大陆手持 pda 端扫描数据获取插件 | [![pub]&#40;https://badgen.net/pub/v/xindalu_scan_flutter&#41;]&#40;https://pub.dev/packages/xindalu_scan_flutter&#41;               |)
 
 ## 关于本项目
 
-这是我入门 flutter 写的项目,一边学一边写,肯定有很多不合理的地方,还望各位大佬勿喷!谢谢 有问题也可以提交 iss,或者加 flutter 学习群提问,看到都会回复的,群号 667186542
+**这是我入门 flutter 写的项目,一边学一边写,肯定有很多不合理的地方,还望各位大佬勿喷!谢谢 有问题也可以提交 iss,或者加 flutter 学习群提问,看到都会回复的,群号 667186542**
 
-## 注意
 
-启动前需要创建一个数字签名,如何配置请看[官方文档](https://flutter.cn/docs/deployment/android)
-**没有`key.jks`文件极有可能启动不起来**
+[//]: # (## 注意)
 
-## apk 文件
+[//]: # ()
+[//]: # (启动前需要创建一个数字签名,如何配置请看[官方文档]&#40;https://flutter.cn/docs/deployment/android&#41;)
 
-加群在群文件找到典典的小卖部.apk 下载(旧版本)
+[//]: # (**没有`key.jks`文件极有可能启动不起来**)
+[//]: # ()
+[//]: # (## apk 文件)
+
+[//]: # ()
+[//]: # (加群在群文件找到典典的小卖部.apk 下载&#40;旧版本&#41;)
 
 # 项目截图
 
