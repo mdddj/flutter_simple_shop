@@ -1,3 +1,4 @@
+import 'package:demo1/pages/best_seller_list.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
@@ -18,7 +19,7 @@ class IndexColumnWidget extends StatelessWidget {
       sliver: SliverWaterfallFlow.count(crossAxisCount: 2,children: [
         TwoColumnCommWidget(imageBuilder: (double w, double h) {
           return ExtendedImage.network(products[0].mainPic!,width: w,height: h,borderRadius: BorderRadius.circular(12),shape: BoxShape.rectangle,);
-        }, title: '畅销榜单', subTitle: '所有人,买它',),
+        }, title: '畅销榜单', subTitle: '所有人,买它',onTap: BestSellerListPage.nav),
         TwoColumnCommWidget(imageBuilder: (double w, double h) {
           return ExtendedImage.network(products[1].mainPic!,width: w,height: h,borderRadius: BorderRadius.circular(12),shape: BoxShape.rectangle);
         }, subTitle: '新鲜更有趣', title: '每日上新',)
@@ -32,30 +33,34 @@ class TwoColumnCommWidget extends StatelessWidget {
   final IndexTwoColumnImageWidgetBuild imageBuilder;
   final String title;
   final String subTitle;
-  const TwoColumnCommWidget({Key? key,required this.imageBuilder, required this.title, required this.subTitle}) : super(key: key);
+  final VoidCallback? onTap;
+  const TwoColumnCommWidget({Key? key,required this.imageBuilder, required this.title, required this.subTitle, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-      return Container(
-        padding: const EdgeInsets.all(12),
-        width: constraints.maxWidth,
-        decoration: BoxDecoration(color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(12)
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
-                 Text(title,style: const TextStyle(fontSize: 18),),
-                Text(subTitle,style: TextStyle(fontSize: 13,color: Colors.grey.shade400))
-              ],
-            )),
-            imageBuilder.call(constraints.maxWidth * .3,constraints.maxWidth * .3)
-          ],
+      return GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          width: constraints.maxWidth,
+          decoration: BoxDecoration(color: Colors.grey.shade200,
+          borderRadius: BorderRadius.circular(12)
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children:  [
+                   Text(title,style: const TextStyle(fontSize: 18),),
+                  Text(subTitle,style: TextStyle(fontSize: 13,color: Colors.grey.shade400))
+                ],
+              )),
+              imageBuilder.call(constraints.maxWidth * .3,constraints.maxWidth * .3)
+            ],
+          ),
         ),
       );
     },);
