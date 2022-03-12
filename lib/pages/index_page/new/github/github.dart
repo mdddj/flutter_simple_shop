@@ -18,7 +18,8 @@ class GithubWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Text('本项目已经开源,并且持续更新中,欢迎Start',style: Get.textTheme.bodyLarge,),
+           Text('本项目已经开源,并且持续更新中,欢迎Start',style: Get.textTheme.bodyLarge,).marginOnly(bottom: 8),
+
           ElevatedButton(
               onPressed: () {
                 shopGithubUrl.urlLinkTo();
