@@ -17,6 +17,7 @@ import 'component/carousel.dart';
 import 'component/gridmenu/view.dart';
 import 'component/index_tabbar.dart';
 import 'component/two_column_comm.dart';
+import 'github/github.dart';
 
 /// 新版首页
 class IndexHomeNew extends StatefulWidget {
@@ -59,6 +60,9 @@ class _IndexHomeNewState extends State<IndexHomeNew>
                   padding: const EdgeInsets.only(top: 12),
                   sliver: const IndexCarousel().sliverBox),
               // 网格菜单
+
+            const GithubWidget().sliverBox,
+
               const GridMenuComponent(),
               // 两列菜单
               const IndexColumnWidget(),

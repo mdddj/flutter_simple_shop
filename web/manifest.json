@@ -1,11 +1,11 @@
 {
-    "name": "flutter_simple_shop",
-    "short_name": "flutter_simple_shop",
+    "name": "典典的小卖部",
+    "short_name": "典典的小卖部",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "典典的小卖部web版本.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

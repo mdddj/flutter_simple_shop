@@ -11,7 +11,7 @@ dependencies:
 
   cupertino_icons: ^1.0.4
   get: ^4.6.1
-  url_launcher: ^6.0.18
+  url_launcher: ^6.0.20
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.5
@@ -47,7 +47,7 @@ dependencies:
   after_layout: ^1.1.0
   palette_generator: ^0.3.3
   crypto: ^3.0.1
-  msix: ^2.8.5
+  msix: ^3.3.2
   encrypt: ^5.0.1
   extended_nested_scroll_view: ^5.0.0
   sliver_tools: ^0.2.5
@@ -61,7 +61,7 @@ dependencies:
   logger: ^1.1.0
   http: ^0.13.4
   shelf_proxy: ^1.0.1
-  responsive_builder: ^0.4.1
+  responsive_builder: ^0.4.2
   bubble_tab_indicator: ^0.1.6
   badges: ^2.0.2
   carousel_pro_nullsafety: ^1.0.2
@@ -71,7 +71,7 @@ dependencies:
   show_up_animation: ^2.0.0
   swipeable_page_route: ^0.2.6
   black_hole_flutter: ^0.3.5
-  hive: ^2.0.5
+  hive: ^2.0.6
   hive_flutter: ^1.1.0
   flutter_blurhash: ^0.6.4
   dataoke_sdk:
