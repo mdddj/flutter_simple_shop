@@ -45,7 +45,7 @@ dependencies:
   html: ^0.15.0
   extended_tabs: ^2.3.0
   after_layout: ^1.1.0
-  palette_generator: ^0.3.2
+  palette_generator: ^0.3.3
   crypto: ^3.0.1
   msix: ^2.8.5
   encrypt: ^5.0.1
@@ -73,7 +73,7 @@ dependencies:
   black_hole_flutter: ^0.3.5
   hive: ^2.0.5
   hive_flutter: ^1.1.0
-  flutter_blurhash: ^0.6.0
+  flutter_blurhash: ^0.6.4
   dataoke_sdk:
     path: ../plugins/dataoke_sdk
   #  filepicker_windows: ^2.0.0  # 文件选择器
