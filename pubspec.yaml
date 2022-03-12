@@ -31,15 +31,15 @@ dependencies:
   extended_image: ^6.0.1
   extended_image_library: ^3.1.2
   waterfall_flow: ^3.0.2
-  loading_more_list: ^4.1.0
+  loading_more_list: ^4.1.2
   extended_list: ^3.0.0
   pull_to_refresh_notification: ^2.3.0
   fsearch_nullsafety: ^2.0.0
   carousel_slider: ^4.0.0
   shimmer: ^2.0.0
   flutter_svg: ^1.0.3
-  extended_text_field: ^9.0.3
-  extended_text: ^8.0.2
+  extended_text_field: ^10.0.0
+  extended_text: ^9.0.0
   font_awesome_flutter: ^9.2.0
   animated_text_kit: ^4.2.1
   html: ^0.15.0
