@@ -19,14 +19,14 @@ class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.nightlight_outlined,
-              color: Colors.black,
+              Icons.qr_code,
+              color: Colors.white,
             )),
         IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.settings_outlined,
-              color: Colors.black,
+              Icons.notifications,
+              color: Colors.white,
             )),
         utils.widgetUtils.marginRight()
       ],

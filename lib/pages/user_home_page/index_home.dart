@@ -29,19 +29,22 @@ class _IndexHomeState extends State<UserIndexHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const UserHomeAppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            _buildHeaderWidget(),
+            Container(
+              decoration: const BoxDecoration(color: Colors.green),
+              child: Column(children: [
+                const UserHomeAppBar(),
+                _buildHeaderWidget(),
+              ]),
+            ),
             utils.widgetUtils.marginTop(),
             const OrderIndex(),
             utils.widgetUtils.marginTop(),
             Consumer<UserModel>(
-              builder: (BuildContext context,
-                  value,
-                  Widget? child) {
-                final hasAdminAuth =value.hasAdminAuthority();
+              builder: (BuildContext context, value, Widget? child) {
+                final hasAdminAuth = value.hasAdminAuthority();
                 if (!hasAdminAuth) return Container();
                 return MyWrap(
                   title: '管理员功能',
