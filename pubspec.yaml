@@ -74,8 +74,7 @@ dependencies:
   hive: ^2.0.6
   hive_flutter: ^1.1.0
   flutter_blurhash: ^0.6.4
-  dataoke_sdk:
-    path: ../plugins/dataoke_sdk
+  dataoke_sdk: ^0.0.3
   #  filepicker_windows: ^2.0.0  # 文件选择器
   #  win32: ^2.1.5   # windows 开放api
   #
