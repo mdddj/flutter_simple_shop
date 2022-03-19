@@ -298,10 +298,10 @@ packages:
   dataoke_sdk:
     dependency: "direct main"
     description:
-      path: "../plugins/dataoke_sdk"
-      relative: true
-    source: path
-    version: "0.0.2"
+      name: dataoke_sdk
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.3"
   date_format:
     dependency: "direct main"
     description:
