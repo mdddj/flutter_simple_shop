@@ -99,9 +99,9 @@ Widget _renderCounts() {
       child: WaterfallFlow.count(
         crossAxisCount: 3,
         children: [
-          _countItem('余额', '\$128.0'),
-          _countItem('优惠券', '\$123789.8'),
-          _countItem('积分', '\$123789.8'),
+          _countItem('余额', '102.43'),
+          _countItem('优惠券', '32张'),
+          _countItem('积分', '289'),
         ],
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
@@ -112,8 +112,8 @@ Widget _renderCounts() {
 
   Widget _countItem(String key,String value){
     return Column(children: [
-      Text(value,style: Get.textTheme.subtitle2),
-      const SizedBox(height: 12,),
+      Text(value,style: Get.textTheme.subtitle1),
+      const SizedBox(height: 6,),
       Text(key,style: Get.textTheme.bodySmall)
     ]);
   }

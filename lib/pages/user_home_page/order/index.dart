@@ -1,6 +1,8 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../constant/style.dart';
 import '../../../util/navigator_util.dart';
 // Project imports:
 import '../widgets/svg_title.dart';
@@ -15,21 +17,40 @@ class OrderIndex extends StatelessWidget {
 
   Widget _actions(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(color: Colors.white),
-      child: GridView.count(shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        crossAxisCount: 4,
-        padding: EdgeInsets.zero,
+      margin: const EdgeInsets.symmetric(horizontal: 12),
+      decoration:  BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(kDefaultRadius)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          InkWell(
-            onTap: () {
-              NavigatorUtil.gotoOrderAllIndexPage(context, '-1'); // -1表示全部显示
-            },
-            child: const SvgTitle(title: '全部订单', svgPath: 'assets/svg/order.svg'),
+          Padding(
+            padding: const EdgeInsets.only(left: 12,right: 12,top: 12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('我的订单',style: Get.textTheme.headlineSmall?.copyWith(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold
+                )),
+                Text('查看全部 >',style: Get.textTheme.bodySmall,)
+              ],
+            ),
           ),
-          const SvgTitle(title: '已通过', svgPath: 'assets/svg/order2.svg',),
-          const SvgTitle(title: '等待审核', svgPath: 'assets/svg/order3.svg'),
-          const SvgTitle(title: '无效订单', svgPath: 'assets/svg/order4.svg'),
+          GridView.count(shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            crossAxisCount: 4,
+            padding: EdgeInsets.zero,
+            children: [
+              InkWell(
+                onTap: () {
+                  NavigatorUtil.gotoOrderAllIndexPage(context, '-1'); // -1表示全部显示
+                },
+                child: const SvgTitle(title: '全部订单', svgPath: 'assets/svg/order.svg'),
+              ),
+              const SvgTitle(title: '已通过', svgPath: 'assets/svg/order2.svg',),
+              const SvgTitle(title: '等待审核', svgPath: 'assets/svg/order3.svg'),
+              const SvgTitle(title: '无效订单', svgPath: 'assets/svg/order4.svg'),
+            ],
+          ),
         ],
       ),
     );
