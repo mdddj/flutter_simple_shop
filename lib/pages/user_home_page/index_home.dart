@@ -2,9 +2,12 @@
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:loading_more_list/loading_more_list.dart';
 import 'package:provider/provider.dart';
 
 import '../../common/utils.dart';
+import '../../constant/style.dart';
 import '../../provider/riverpod/user_riverpod.dart';
 import '../../widgets/wrap.dart';
 // Project imports:
@@ -28,18 +31,20 @@ class _IndexHomeState extends State<UserIndexHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade100,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Container(
-              decoration: const BoxDecoration(color: Colors.green),
+              decoration: const BoxDecoration(color: Colors.pink),
               child: Column(children: [
                 const UserHomeAppBar(),
                 _buildHeaderWidget(),
+                
               ]),
             ),
             utils.widgetUtils.marginTop(),
+            _renderUserValues(),
             const OrderIndex(),
             utils.widgetUtils.marginTop(),
             Consumer<UserModel>(
@@ -74,43 +79,46 @@ class _IndexHomeState extends State<UserIndexHome> {
           ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(
-      //     Icons.edit,
-      //     color: Colors.white,
-      //     size: 30,
-      //   ),
-      //   onPressed: () {
-      //     Get.dialog(AlertDialog(
-      //       contentPadding: EdgeInsets.zero,
-      //       content: SingleChildScrollView(
-      //         child: Column(
-      //           children: [
-      //             ListTile(
-      //               title: Text('发布博客'),
-      //               leading: Icon(Icons.insert_drive_file_outlined),
-      //               onTap: (){
-      //                 Get.back();
-      //                 NavigatorUtil.goetoWhitePage(context);
-      //               },
-      //             ),
-      //             ListTile(
-      //               title: Text('发布动态'),
-      //               leading: Icon(Icons.app_registration),
-      //               onTap: (){
-      //
-      //               },
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //     ));
-      //   },
-      //   backgroundColor: Colors.pinkAccent,
-      // ),
     );
   }
 
+
+// 用户订单和优惠券,余额等数据
+Widget _renderUserValues(){
+  return Container(
+    margin: const EdgeInsets.all(12),
+    decoration:  BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(kDefaultRadius)),
+    child:_renderCounts() ,
+  );
+}
+
+Widget _renderCounts() {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 22),
+      decoration: BoxDecoration( borderRadius: BorderRadius.circular(12)),
+      child: WaterfallFlow.count(
+        crossAxisCount: 3,
+        children: [
+          _countItem('余额', '\$128.0'),
+          _countItem('优惠券', '\$123789.8'),
+          _countItem('积分', '\$123789.8'),
+        ],
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
+      ),
+    );
+  }
+
+  Widget _countItem(String key,String value){
+    return Column(children: [
+      Text(value,style: Get.textTheme.subtitle2),
+      const SizedBox(height: 12,),
+      Text(key,style: Get.textTheme.bodySmall)
+    ]);
+  }
+
+// 用户中心的头部
   Widget _buildHeaderWidget() {
     return const HeaderIndex();
   }

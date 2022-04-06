@@ -29,7 +29,7 @@ class SvgTitle extends StatelessWidget {
               svgPath!,
               width: 25,
               height: 25,
-              color: Colors.black,
+              color: Colors.pink,
             ),
             utils.widgetUtils.marginTop(height: 5),
             Text(

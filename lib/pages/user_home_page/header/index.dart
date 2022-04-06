@@ -4,7 +4,6 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:waterfall_flow/waterfall_flow.dart';
 
 import '../../../common/utils.dart';
 import '../../../constant/style.dart';
@@ -12,7 +11,6 @@ import '../../../constant/style.dart';
 import '../../../modals/user.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import '../../../util/navigator_util.dart';
-import 'money_count.dart';
 
 const kAvatarHeight = 58.0;
 
@@ -43,7 +41,7 @@ class HeaderIndex extends StatelessWidget {
           ),
           // _renderCounts(),
           const SizedBox(
-            height: 12,
+            height: 44,
           ),
           _renderVip()
         ],
@@ -110,41 +108,7 @@ class HeaderIndex extends StatelessWidget {
     );
   }
 
-  Widget _renderCounts() {
-    return Container(
-      margin: const EdgeInsets.only(left: 32, right: 32, top: 22),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-          color: Colors.white24, borderRadius: BorderRadius.circular(12)),
-      child: WaterfallFlow.count(
-        crossAxisCount: 2,
-        children: [
-          _countItem('当日收益', '\$128.0'),
-          _countItem('当日收益', '\$123789.8'),
-        ],
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
-      ),
-    );
-  }
-
-  Widget _countItem(String title, String value) {
-    return Column(children: [
-      Text(
-        title,
-        style: const TextStyle(
-            color: Colors.black54, fontSize: 12, fontWeight: FontWeight.bold),
-      ),
-      const SizedBox(
-        height: 4,
-      ),
-      Text(
-        value,
-        style: const TextStyle(color: Colors.white, fontSize: 20),
-      )
-    ]);
-  }
+  
 
   /// 已登录显示
   Widget _loginSuccessLayout(User user) {
@@ -190,43 +154,60 @@ class HeaderIndex extends StatelessWidget {
       onTap: () => NavigatorUtil.gotoUserLoginPage(context),
       child: Container(
         alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              '登录/注册',
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold),
-            ),
-
-            const SizedBox(
-              height: 12,
-            ),
-            // 登录图标
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+        child: Row(
               children: [
-                SvgPicture.asset(
-                  'assets/svg/qq.svg',
-                  width: 32,
-                  height: 32,
-                  color: Colors.white,
-                ),
                 const SizedBox(
-                  width: 12,
+                  width: 68,
+                  height: 68,
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.people_outline,
+                      size: 29,
+                      color: Colors.pink,
+                    ),
+                  ),
                 ),
-                SvgPicture.asset(
-                  'assets/svg/wechat.svg',
-                  width: 28,
-                  height: 28,
-                  color: Colors.white,
-                )
+                const SizedBox(width: 12,),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Text(
+                      '登录/注册',
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+
+                    const SizedBox(
+                      height: 4,
+                    ),
+                    // 登录图标
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/svg/qq.svg',
+                          width: 32,
+                          height: 32,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(
+                          width: 12,
+                        ),
+                        SvgPicture.asset(
+                          'assets/svg/wechat.svg',
+                          width: 28,
+                          height: 28,
+                          color: Colors.white,
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ],
-            )
-          ],
-        ),
+            ),
       ),
     );
   }

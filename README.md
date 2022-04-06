@@ -12,13 +12,13 @@
 
 ---
 
-[//]: # (app 可视化后台管理:https://github.com/mdddj/ddxmb-admin)
+[//]: # (app 可视化后台管理：https://github.com/mdddj/ddxmb-admin)
 
-# APP应用名: 典典的小卖部
+# APP 应用名：典典的小卖部
 
-- 接口来自于大淘客,折淘客,淘宝联盟等等
+- 接口来自于大淘客，折淘客，淘宝联盟等等
 - 支持淘宝、拼多多、京东、唯品会、饿了么、美团等优惠券领取
-- 支持Android、Ios 双端编译
+- 支持 Android、Ios 双端编译
 
 | SDK 文档             | [![pub](https://badgen.net/pub/v/dd_taoke_sdk)](https://pub.dev/packages/dd_taoke_sdk) |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -27,7 +27,7 @@
 | jetpack compose 版本 | [jetpack compose (kotlin) 版本](https://github.com/mdddj/dd_simple_shop_jetpack)       |
 
 [//]: # ()
-[//]: # (我的一些小插件 &#40;空安全支持&#41;)
+[//]: # （我的一些小插件 &#40; 空安全支持 &#41;)
 
 [//]: # ()
 [//]: # (| 网络监测工具                      | [![pub]&#40;https://badgen.net/pub/v/flutter_network_connection&#41;]&#40;https://pub.dev/packages/flutter_network_connection&#41;   |)
@@ -44,24 +44,23 @@
 
 ## 关于本项目
 
-**这是我入门 flutter 写的项目,一边学一边写,肯定有很多不合理的地方,还望各位大佬勿喷!谢谢 有问题也可以提交 iss,或者加 flutter 学习群提问,看到都会回复的,群号 667186542**
+**这是我入门 flutter 写的项目，一边学一边写，肯定有很多不合理的地方，还望各位大佬勿喷！谢谢 有问题也可以提交 iss, 或者加 flutter 学习群提问，看到都会回复的，群号 667186542**
 
-
-[//]: # (## 注意)
+[//]: # (## 注意）
 
 [//]: # ()
-[//]: # (启动前需要创建一个数字签名,如何配置请看[官方文档]&#40;https://flutter.cn/docs/deployment/android&#41;)
+[//]: # （启动前需要创建一个数字签名，如何配置请看【官方文档】&#40;https://flutter.cn/docs/deployment/android&#41;)
 
 [//]: # (**没有`key.jks`文件极有可能启动不起来**)
 [//]: # ()
-[//]: # (## apk 文件)
+[//]: # (## apk 文件）
 
 [//]: # ()
-[//]: # (加群在群文件找到典典的小卖部.apk 下载&#40;旧版本&#41;)
+[//]: # （加群在群文件找到典典的小卖部。apk 下载 &#40; 旧版本 &#41;)
 
 # 项目截图
 
-v2.0 新增(
+v2.0 新增 (
 点击查看大图): [[品牌列表](https://static.saintic.com/picbed/huang/2020/12/13/1607873908351.jpg)][[品牌详情](https://static.saintic.com/picbed/huang/2020/12/13/1607873911435.jpg)]
 
 | 一些                                                                                       | 截图                                                                                       | 预览                                                                                       |

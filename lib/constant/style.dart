@@ -13,3 +13,6 @@ const kHomeCateTabHeight = 35.0;
 
 // 默认边距
 const kDefaultPadding = 12.0;
+
+// 圆角
+const kDefaultRadius= 12.0;
