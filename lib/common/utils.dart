@@ -66,6 +66,7 @@ class Utils {
       // return file;
       return null;
     }
+    return null;
   }
 
   //处理图片不带http

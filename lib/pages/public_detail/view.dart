@@ -270,7 +270,7 @@ class _PublicDetailViewState extends State<PublicDetailView> implements PublicDe
       case 'wph':
         return await getWphDetail();
       default:
-        break;
+      return null;
     }
   }
 
@@ -280,6 +280,7 @@ class _PublicDetailViewState extends State<PublicDetailView> implements PublicDe
     if (result != null) {
       return PublicDetailModel.fromWph(result);
     }
+    return null;
   }
 
   /// 加载拼夕夕商品详情
@@ -288,6 +289,7 @@ class _PublicDetailViewState extends State<PublicDetailView> implements PublicDe
     if (result != null) {
       return PublicDetailModel.fromPdd(result);
     }
+    return null;
   }
 
   @override

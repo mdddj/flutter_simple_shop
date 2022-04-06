@@ -46,6 +46,7 @@ class _ApplyPageState extends State<ApplyPage> {
                         if (text == null || text.isEmpty) {
                           return '请输入姓名';
                         }
+                        return null;
                       },
                     ),
                     CupertinoTextFormFieldRow(
