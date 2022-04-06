@@ -2,6 +2,7 @@
 // Package imports:
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
@@ -40,7 +41,7 @@ class HeaderIndex extends StatelessWidget {
               return _loginSuccessLayout(user);
             },
           ),
-          _renderCounts(),
+          // _renderCounts(),
           const SizedBox(
             height: 12,
           ),
@@ -76,7 +77,10 @@ class HeaderIndex extends StatelessWidget {
                 children: const [
                   Text(
                     '会员可享有多项特权',
-                    style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                   ),
                   Text('未开通特权', style: TextStyle(color: Colors.black))
                 ]),
@@ -87,10 +91,13 @@ class HeaderIndex extends StatelessWidget {
               height: 38,
               child: ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black),
+                    backgroundColor: MaterialStateProperty.all(Colors.black),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100)))),
-                child: const Text('免费激活',style: TextStyle(color: Colors.yellow),),
+                child: const Text(
+                  '免费激活',
+                  style: TextStyle(color: Colors.yellow),
+                ),
                 onPressed: () {},
               ),
             ),
@@ -181,10 +188,45 @@ class HeaderIndex extends StatelessWidget {
   Widget _loginWidgetLayout(BuildContext context) {
     return GestureDetector(
       onTap: () => NavigatorUtil.gotoUserLoginPage(context),
-      child: const Text(
-        '登录/注册',
-        style: TextStyle(
-            fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+      child: Container(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              '登录/注册',
+              style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+
+            const SizedBox(
+              height: 12,
+            ),
+            // 登录图标
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  'assets/svg/qq.svg',
+                  width: 32,
+                  height: 32,
+                  color: Colors.white,
+                ),
+                const SizedBox(
+                  width: 12,
+                ),
+                SvgPicture.asset(
+                  'assets/svg/wechat.svg',
+                  width: 28,
+                  height: 28,
+                  color: Colors.white,
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
