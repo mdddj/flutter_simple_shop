@@ -1,15 +1,11 @@
-// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// Package imports:
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:provider/provider.dart';
-
-import '../../constant/style.dart';
 import './left_widget.dart';
 import './right_widget.dart';
-// Project imports:
+import '../../constant/style.dart';
 import '../../provider/riverpod/category_riverpod.dart';
 import '../../widgets/edit_page_handle.dart';
 

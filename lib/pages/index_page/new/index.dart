@@ -1,23 +1,21 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:dataoke_sdk/model/product.dart';
-import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 import 'package:flutter/material.dart' hide NestedScrollView;
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import '../../../common/components/jd/jd_products_view.dart';
 // Project imports:
+import '../../../constant/style.dart';
 import '../../../controller/app_controller.dart';
 import '../../../repository/index_goods_repository.dart';
 import '../../../widgets/edit_page_handle.dart';
-import '../../../widgets/loading_more_list_indicator.dart';
 import '../../../widgets/waterfall_goods_card.dart';
 import 'component/appbar.dart';
 import 'component/carousel.dart';
 import 'component/gridmenu/view.dart';
-import 'component/index_tabbar.dart';
 import 'component/two_column_comm.dart';
-import 'github/github.dart';
 
 /// 新版首页
 class IndexHomeNew extends StatefulWidget {
@@ -49,33 +47,43 @@ class _IndexHomeNewState extends State<IndexHomeNew>
     return EditePageHandle(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: ExtendedNestedScrollView(
-          controller: _scrollController,
-          body: renderViews(),
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return [
-              const IndexHomeAppbar(),
-              // 轮播图
-              SliverPadding(
-                  padding: const EdgeInsets.only(top: 12),
-                  sliver: const IndexCarousel().sliverBox),
-              // 网格菜单
+        body: EasyRefresh.custom(
+          scrollController: _scrollController,
+          slivers: [
+            const IndexHomeAppbar(),
+            // 轮播图
+            SliverPadding(
+                padding: const EdgeInsets.only(top: 12),
+                sliver: const IndexCarousel().sliverBox),
+            // 网格菜单
 
-            const GithubWidget().sliverBox,
+            //  github 广告
+            // const GithubWidget().sliverBox,
 
-              const GridMenuComponent(),
-              // 两列菜单
-              const IndexColumnWidget(),
-              // 分类导航
-              SliverPersistentHeader(
-                delegate: IndexTabbar(tabController),
-                pinned: true,
-              ),
-            ];
-          },
+            const GridMenuComponent(),
+            // 两列菜单,畅销榜单和每日上新
+            const IndexColumnWidget(),
+            _renderAd(),
+            // 分类导航
+            // SliverPersistentHeader(
+            //   delegate: IndexTabbar(tabController),
+            //   pinned: true,
+            // ),
+            _buildGoodsList()
+          ],
         ),
       ),
     );
+  }
+
+  /// 横幅广告
+  Widget _renderAd(){
+    return Container(
+      margin: const EdgeInsets.only(left: kDefaultPadding,right: kDefaultPadding,top: kDefaultPadding),
+      child: AspectRatio(aspectRatio:1920 / 500 ,child: ClipRRect(
+          borderRadius: BorderRadius.circular(kDefaultRadius),
+          child: Image.asset('assets/images/ad.jpg')),),
+    ).sliverBox;
   }
 
   Widget renderViews() {
@@ -86,7 +94,7 @@ class _IndexHomeNewState extends State<IndexHomeNew>
   }
 
   Widget _buildGoodsList() {
-    return LoadingMoreList(ListConfig<Product>(
+    return LoadingMoreSliverList(SliverListConfig<Product>(
       extendedListDelegate:
       const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
@@ -96,10 +104,10 @@ class _IndexHomeNewState extends State<IndexHomeNew>
       sourceList: indexGoodsRepository,
       padding: const EdgeInsets.only(left: 12, right: 12),
 //      lastChildLayoutType: LastChildLayoutType.foot,
-      indicatorBuilder: (context, state) {
-        return LoadingMoreListCostumIndicator(state, isSliver: false);
-      },
-    )).marginOnly(top: 12);
+//       indicatorBuilder: (context, state) {
+//         return LoadingMoreListCostumIndicator(state, isSliver: true);
+//       },
+    ));
   }
 
   @override
