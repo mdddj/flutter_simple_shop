@@ -1,4 +1,3 @@
-import 'package:after_layout/after_layout.dart';
 import 'package:dataoke_sdk/constant/sort.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +9,7 @@ import '../../widgets/round_underline_tab_indicator.dart';
 import '../../widgets/simple_appbar.dart';
 import '../../widgets/sticky_tab_bar_delegate.dart';
 import '../panic_buying/components/list.dart';
+
 // Project imports:
 import 'components/sort_widget.dart';
 import 'components/subcategory_view.dart';
@@ -21,18 +21,26 @@ class NewGoodsList extends StatefulWidget {
   final Subcategory? subcategory;
   final int? initIndex;
 
-  const NewGoodsList({Key? key, required this.category, this.subcategory, this.initIndex}) : super(key: key);
+  const NewGoodsList(
+      {Key? key, required this.category, this.subcategory, this.initIndex})
+      : super(key: key);
 
   @override
   _NewGoodsListState createState() => _NewGoodsListState();
 }
-class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderStateMixin, AfterLayoutMixin {
+
+class _NewGoodsListState extends State<NewGoodsList>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
+
+  final EasyRefreshController _easyRefreshController = EasyRefreshController();
 
   @override
   void initState() {
     super.initState();
-    context.read<GoodsListState>().setCategory(widget.category, widget.subcategory, isInit: true);
+    context
+        .read<GoodsListState>()
+        .setCategory(widget.category, widget.subcategory, isInit: true);
     _tabController = TabController(length: 4, vsync: this);
   }
 
@@ -41,99 +49,103 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
     return Scaffold(
       appBar: const SimpleAppBar(
         title: '产品列表',
-        // bottom: BottomCategoryTabs(
-        //   onTap: (int index) => context.read<GoodsListState>().mainCateChange(index, context),
-        //   initIndex: widget.initIndex,
-        // ),
-        // bottomHeight: 48,
       ),
-      body: EasyRefresh.custom(onLoad: context.read<GoodsListState>().nextPage, onRefresh: context.read<GoodsListState>().onRefresh, header: MaterialHeader(), footer: MaterialFooter(), slivers: [
+      body: EasyRefresh.custom(
+        controller: _easyRefreshController,
+          onLoad: context.read<GoodsListState>().nextPage,
+          onRefresh: context.read<GoodsListState>().onRefresh,
+          firstRefresh: true,
+          slivers: [
+            //排序操作
+            Consumer<GoodsListState>(
+              builder: (BuildContext context, value, Widget? child) {
+                final current = value.sort;
+                return //排序
+                    SliverPersistentHeader(
+                  pinned: true,
+                  delegate: StickyTabBarDelegate(
+                    child: TabBar(
+                        onTap: (int index){
+                          value.sortChange(index);
+                          _easyRefreshController.callRefresh();
+                        },
+                        labelColor: Colors.pinkAccent,
+                        unselectedLabelColor: Colors.black,
+                        indicatorColor: Colors.pinkAccent,
+                        indicator: const RoundUnderlineTabIndicator(
+                            borderSide: BorderSide(
+                          width: 2,
+                          color: Colors.pinkAccent,
+                        )),
+                        controller: _tabController,
+                        tabs: <Widget>[
+                          SortWidget(
+                            title: '人气',
+                            current: current == DdSort.defaultSort,
+                          ),
+                          SortWidget(
+                            title: '最新',
+                            current: current == DdSort.timeHighToLow,
+                          ),
+                          SortWidget(
+                            title: '销量',
+                            current: current == DdSort.salesHighToLow,
+                          ),
+                          SortWidget(
+                              title: '价格',
+                              current: current == DdSort.priceLowToHigh,
+                              icon: _bulidPriceIconWidget(current)),
+                        ]),
+                  ),
+                );
+              },
+            ),
 
+            const SizedBox(
+              height: 12,
+            ).sliverBox,
+            //子分类
+            Consumer<GoodsListState>(
+              builder: (BuildContext context, value, Widget? child) {
+                final cate = value.category;
+                final subCate = value.subcategory;
+                return SliverToBoxAdapter(
+                  child: SubCategoryView(
+                    cate,
+                    changeSubcategory: (subcategory) {
+                      value.setCategory(cate, subcategory);
+                      value.onRefresh();
+                    },
+                    subcategory: subCate,
+                  ),
+                );
+              },
+            ),
 
+            // 刷新指示器
+            Consumer<GoodsListState>(
+              builder: (BuildContext context, value, Widget? child) {
+                final loading = value.loading;
+                if (loading) {
+                  return const SliverToBoxAdapter(
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Center(child: CircularProgressIndicator()),
+                    ),
+                  );
+                }
+                return const SliverToBoxAdapter();
+              },
+            ),
 
-        //排序操作
-        Consumer<GoodsListState>(
-          builder: (BuildContext context,value, Widget? child) {
-            final current = value.sort;
-            return //排序
-              SliverPersistentHeader(
-                pinned: true,
-                delegate: StickyTabBarDelegate(
-                  child: TabBar(
-                      onTap:value.sortChange,
-                      labelColor: Colors.pinkAccent,
-                      unselectedLabelColor: Colors.black,
-                      indicatorColor: Colors.pinkAccent,
-                      indicator: const RoundUnderlineTabIndicator(
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: Colors.pinkAccent,
-                          )),
-                      controller: _tabController,
-                      tabs: <Widget>[
-                        SortWidget(
-                          title: '人气',
-                          current: current == DdSort.defaultSort,
-                        ),
-                        SortWidget(
-                          title: '最新',
-                          current: current == DdSort.timeHighToLow,
-                        ),
-                        SortWidget(
-                          title: '销量',
-                          current: current == DdSort.salesHighToLow,
-                        ),
-                        SortWidget(title: '价格', current: current == DdSort.priceLowToHigh, icon: _bulidPriceIconWidget(current)),
-                      ]),
-                ),
-              );
-          },
-        ),
-
-        const SizedBox(height: 12,).sliverBox,
-        //子分类
-        Consumer<GoodsListState>(
-          builder: (BuildContext context, value, Widget? child) {
-            final cate = value.category;
-            final subCate = value.subcategory;
-            return SliverToBoxAdapter(
-              child: SubCategoryView(
-                cate,
-                changeSubcategory: (subcategory) {
-                  value.setCategory(cate, subcategory);
-                  value.onRefresh();
-                },
-                subcategory: subCate,
-              ),
-            );
-          },
-        ),
-
-
-        // 刷新指示器
-        Consumer<GoodsListState>(
-          builder: (BuildContext context, value, Widget? child) {
-            final loading = value.loading;
-            if (loading) {
-              return const SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Center(child: CircularProgressIndicator()),
-                ),
-              );
-            }
-            return const SliverToBoxAdapter();
-          },
-        ),
-
-        // 产品列表
-        Consumer<GoodsListState>(
-          builder: (BuildContext context,value, Widget? child) {
-            final products = value.products;
-            return ProductsList(products);
-          },
-        ),
-      ]),
+            // 产品列表
+            Consumer<GoodsListState>(
+              builder: (BuildContext context, value, Widget? child) {
+                final products = value.products;
+                return ProductsList(products);
+              },
+            ),
+          ]),
     );
   }
 
@@ -151,10 +163,5 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
       height: 12,
       width: 12,
     );
-  }
-
-  @override
-  void afterFirstLayout(BuildContext context) async {
-    await context.read<GoodsListState>().onRefresh();
   }
 }

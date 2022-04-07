@@ -50,8 +50,6 @@ class GoodsListState extends ChangeNotifier {
       cancelToken!.cancel('关闭上一次请求');
       cancelToken = null;
     }
-    loading = true;
-    notifyListeners();
     await fetchData();
   }
 
@@ -68,7 +66,6 @@ class GoodsListState extends ChangeNotifier {
     if (result != null) {
       products.addAll(result.list ?? []);
     }
-    loading = false;
     notifyListeners();
   }
 
@@ -101,8 +98,6 @@ class GoodsListState extends ChangeNotifier {
       default:
         break;
     }
-    onRefresh();
-    notifyListeners();
   }
 
   // 下一页
