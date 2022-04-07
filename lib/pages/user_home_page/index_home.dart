@@ -2,23 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 // Package imports:
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
-import 'package:provider/provider.dart';
 
 import '../../common/utils.dart';
 import '../../constant/style.dart';
-import '../../provider/riverpod/user_riverpod.dart';
-import '../../widgets/wrap.dart';
 // Project imports:
-import '../blog/write_blog/view.dart';
-import '../index_page/new/component/gridmenu/menu_item.dart';
-import '../index_page/new/component/gridmenu/model.dart';
 import 'header/appbar.dart';
 import 'header/index.dart';
 import 'order/index.dart';
-import 'pages/new_version_page.dart';
 
 /// 用户主页布局
 class UserIndexHome extends StatefulWidget {
@@ -93,32 +85,78 @@ class _IndexHomeState extends State<UserIndexHome> {
           color: Colors.white,
           borderRadius: BorderRadius.circular(kDefaultRadius)),
       child: Column(children: [
-        _renderMenuItem('浏览历史'),
-        _renderMenuItem('我的钱包'),
-        _renderMenuItem('我的分销'),
-        _renderMenuItem('地址管理'),
-        _renderMenuItem('我的收藏'),
-        _renderMenuItem('意见反馈'),
-        _renderMenuItem('设置'),
+        _renderMenuItem('浏览历史',
+            svgIcon: 'assets/svg/user/llls.svg',
+            color: Colors.green,
+            child: _renderHistoryList(),
+            actions: IconButton(onPressed: (){}, icon: Icon(Icons.delete,size: 22,color: Colors.grey.shade400))),
+        _renderMenuItem('我的钱包',
+            svgIcon: 'assets/svg/user/qb.svg', color: Colors.red),
+        _renderMenuItem('我的分销',
+            svgIcon: 'assets/svg/user/fx.svg', color: Colors.greenAccent),
+        _renderMenuItem('地址管理',
+            svgIcon: 'assets/svg/user/dz.svg', color: Colors.deepOrangeAccent),
+        _renderMenuItem('我的收藏',
+            svgIcon: 'assets/svg/user/sc.svg', color: Colors.blueAccent),
+        _renderMenuItem('意见反馈',
+            svgIcon: 'assets/svg/user/yj.svg', color: Colors.orangeAccent),
+        _renderMenuItem('设置',
+            svgIcon: 'assets/svg/user/sz.svg', color: Colors.blue),
       ]),
+    );
+  }
+
+  /// 浏览历史列表
+  Widget _renderHistoryList() {
+    return SizedBox(
+      width: double.infinity,
+      height: 80,
+      child: ListView.builder(
+        itemBuilder: (_, i) {
+          return AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                padding: const EdgeInsets.all(2),
+                width: double.infinity,
+                height: double.infinity,
+                child: Container(color: Colors.grey.shade100,),
+              ));
+        },
+        scrollDirection: Axis.horizontal,
+      ),
     );
   }
 
 // 菜单项目
   Widget _renderMenuItem(String title,
-      {String? svgIcon, VoidCallback? onTap, Widget? child}) {
+      {String? svgIcon, VoidCallback? onTap, Widget? child, Color? color,Widget? actions}) {
     return Container(
-      child: ListTile(
-        leading: svgIcon == null
-            ? null
-            : SvgPicture.asset(
-                svgIcon,
-                width: 32,
-                height: 32,
-              ),
-        title: Text(title),
-        subtitle: child,
-        onTap: onTap,
+      color: Colors.white,
+      child: Column(
+        children: [
+          ListTile(
+            leading: svgIcon == null
+                ? null
+                : SvgPicture.asset(
+                    svgIcon,
+                    width: 22,
+                    height: 22,
+                    color: color,
+                  ),
+            title: Row(
+              children: [
+                Text(title),
+                const Spacer()
+,actions??const SizedBox()
+              ],
+            ),
+            onTap: onTap,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: child??const SizedBox(),
+          )
+        ],
       ),
     );
   }

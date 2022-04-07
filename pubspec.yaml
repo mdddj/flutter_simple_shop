@@ -99,6 +99,7 @@ flutter:
     - assets/nav/
     - assets/icons/
     - assets/svg/
+    - assets/svg/user/
     - assets/svg/cate/
     - assets/json/
     - assets/images/waimai/hb/
