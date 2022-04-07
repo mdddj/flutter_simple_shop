@@ -8,6 +8,7 @@ import 'package:dataoke_sdk/model/coupon_link_result.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
+import 'package:fcontrol_nullsafety/fdefine.dart';
 // Flutter imports:
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -231,41 +232,12 @@ class _HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
               width: Get.width,
               height:
                   60 + (GetPlatform.isIOS ? Get.mediaQuery.padding.bottom : 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  IconButton(onPressed: Get.back, icon: const Icon(Icons.home)),
-                  Expanded(
-                    child: WaterfallFlow.count(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 12,
-                      crossAxisSpacing: 12,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 12),
-                      children: <Widget>[
-                        OutlinedButton(
-                            onPressed: () async {
-                              if (couponLinkResult != null) {
-                                utils.copy(couponLinkResult!.longTpwd ?? '无优惠券',
-                                    message: '复制成功,打开淘宝APP领取优惠券');
-                              }
-                            },
-                            child: const Text('复制口令')),
-                        ElevatedButton(
-                            onPressed: () async {
-                              if (couponLinkResult != null) {
-                                await utils.openTaobao(
-                                    couponLinkResult!.couponClickUrl ??
-                                        'https://itbug.shop');
-                              }
-                            },
-                            child: const Text('立即领券')),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 12,
-                  )
+              child:  Row(
+                children: [
+                  const SizedBox(width: 12,),
+                  _renderBottomItem('帮助',Icons.help),
+                  Expanded(child: buildImageButton1(context)),
+                  const SizedBox(width: 12,),
                 ],
               ),
             ),
@@ -273,6 +245,61 @@ class _HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
         ],
       ),
     );
+  }
+
+  ///底部操作区域菜单图标+文字
+  Widget _renderBottomItem(String key,IconData icon){
+    return Container(
+      height: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 5),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(icon),
+          Text(key)
+        ],
+      ),
+    );
+  }
+
+  Widget buildBottomRow() {
+    return Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                IconButton(onPressed: Get.back, icon: const Icon(Icons.home)),
+                Expanded(
+                  child: WaterfallFlow.count(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 12,
+                    crossAxisSpacing: 12,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12, vertical: 12),
+                    children: <Widget>[
+                      OutlinedButton(
+                          onPressed: () async {
+                            if (couponLinkResult != null) {
+                              utils.copy(couponLinkResult!.longTpwd ?? '无优惠券',
+                                  message: '复制成功,打开淘宝APP领取优惠券');
+                            }
+                          },
+                          child: const Text('复制口令')),
+                      ElevatedButton(
+                          onPressed: () async {
+                            if (couponLinkResult != null) {
+                              await utils.openTaobao(
+                                  couponLinkResult!.couponClickUrl ??
+                                      'https://itbug.shop');
+                            }
+                          },
+                          child: const Text('立即领券')),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  width: 12,
+                )
+              ],
+            );
   }
 
   // 详情图
@@ -809,6 +836,47 @@ class _HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     ];
     return cats[int.parse(fqcat) - 1];
   }
+
+
+
+
+  Row buildImageButton1(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        FButton(
+          height: 38,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          text: "复制口令",
+          style: const TextStyle(color: Colors.white),
+          color: const Color(0xff9ccc65),
+          alignment: Alignment.center,
+          onPressed: () {
+          },
+          clickEffect: true,
+          corner: const FCorner(leftTopCorner: 25, leftBottomCorner: 25),
+          imageMargin: 8,
+        ),
+        const SizedBox(
+            height: 38,
+            child: VerticalDivider(width: 0.25, color: Colors.black)),
+        FButton(
+          height: 38,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          text: "立即领券",
+          style: const TextStyle(color: Colors.white),
+          color: const Color(0xffd4e157),
+          alignment: Alignment.center,
+          onPressed: () {
+          },
+          corner: const FCorner(rightTopCorner: 25, rightBottomCorner: 25),
+          imageMargin: 8,
+          imageAlignment: ImageAlignment.right,
+        ),
+      ],
+    );
+  }
+
 
   Future<String> initDatas() async {
     final result = await DdTaokeSdk.instance.getDetailBaseData(

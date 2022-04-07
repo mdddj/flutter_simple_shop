@@ -2,15 +2,16 @@ import 'package:after_layout/after_layout.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/material.dart' hide NestedScrollView;
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
-import '../../../common/components/jd/jd_products_view.dart';
 // Project imports:
 import '../../../constant/style.dart';
 import '../../../controller/app_controller.dart';
 import '../../../repository/index_goods_repository.dart';
 import '../../../widgets/edit_page_handle.dart';
+import '../../../widgets/loading_more_list_indicator.dart';
 import '../../../widgets/waterfall_goods_card.dart';
 import 'component/appbar.dart';
 import 'component/carousel.dart';
@@ -38,9 +39,7 @@ class _IndexHomeNewState extends State<IndexHomeNew>
     _scrollController.addListener(_listenTabbar);
   }
 
-  void _listenTabbar(){
-
-  }
+  void _listenTabbar() {}
 
   @override
   Widget build(BuildContext context) {
@@ -51,24 +50,13 @@ class _IndexHomeNewState extends State<IndexHomeNew>
           scrollController: _scrollController,
           slivers: [
             const IndexHomeAppbar(),
-            // 轮播图
             SliverPadding(
                 padding: const EdgeInsets.only(top: 12),
                 sliver: const IndexCarousel().sliverBox),
-            // 网格菜单
-
-            //  github 广告
-            // const GithubWidget().sliverBox,
-
             const GridMenuComponent(),
-            // 两列菜单,畅销榜单和每日上新
             const IndexColumnWidget(),
             _renderAd(),
-            // 分类导航
-            // SliverPersistentHeader(
-            //   delegate: IndexTabbar(tabController),
-            //   pinned: true,
-            // ),
+            _renderHeader(),
             _buildGoodsList()
           ],
         ),
@@ -77,37 +65,59 @@ class _IndexHomeNewState extends State<IndexHomeNew>
   }
 
   /// 横幅广告
-  Widget _renderAd(){
+  Widget _renderAd() {
     return Container(
-      margin: const EdgeInsets.only(left: kDefaultPadding,right: kDefaultPadding,top: kDefaultPadding),
-      child: AspectRatio(aspectRatio:1920 / 500 ,child: ClipRRect(
-          borderRadius: BorderRadius.circular(kDefaultRadius),
-          child: Image.asset('assets/images/ad.jpg')),),
+      margin: const EdgeInsets.only(
+          left: kDefaultPadding, right: kDefaultPadding, top: kDefaultPadding),
+      child: AspectRatio(
+        aspectRatio: 1920 / 500,
+        child: ClipRRect(
+            borderRadius: BorderRadius.circular(kDefaultRadius),
+            child: Image.asset('assets/images/ad.jpg')),
+      ),
     ).sliverBox;
   }
 
-  Widget renderViews() {
-    return TabBarView(
-      children: [_buildGoodsList(), const JdProductsView()],
-      controller: tabController,
-    );
+  /// 产品列表标题
+  Widget _renderHeader() {
+    return Container(
+      alignment: Alignment.centerLeft,
+      margin: const EdgeInsets.only(left: 12,bottom: 12,right: 12,top: 12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SvgPicture.asset(
+            'assets/svg/rmtj.svg',
+            width: 120,
+            height: 30,
+          ),
+          Text('* 每20分钟更新一次',style: Get.textTheme.bodyText2?.copyWith(
+            color: Colors.grey,
+            fontSize: 12
+          ),)
+        ],
+      ),
+    ).sliverBox;
   }
 
+  /// 首页产品列表
   Widget _buildGoodsList() {
-    return LoadingMoreSliverList(SliverListConfig<Product>(
-      extendedListDelegate:
-      const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
-      itemBuilder: (context, item, index) {
-        return WaterfallGoodsCard(item);
-      },
-      sourceList: indexGoodsRepository,
-      padding: const EdgeInsets.only(left: 12, right: 12),
-//      lastChildLayoutType: LastChildLayoutType.foot,
-//       indicatorBuilder: (context, state) {
-//         return LoadingMoreListCostumIndicator(state, isSliver: true);
-//       },
-    ));
+    return LoadingMoreSliverList(
+        SliverListConfig<Product>(
+          extendedListDelegate:
+              const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
+          itemBuilder: (context, item, index) {
+            return WaterfallGoodsCard(item);
+          },
+          sourceList: indexGoodsRepository,
+          padding: const EdgeInsets.only(left: 12, right: 12),
+          lastChildLayoutType: LastChildLayoutType.foot,
+          indicatorBuilder: (context, state) {
+            return LoadingMoreListCostumIndicator(state, isSliver: true);
+          },
+        ),
+        key: AppController.find.indexProductKey);
   }
 
   @override

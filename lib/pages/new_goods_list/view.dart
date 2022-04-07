@@ -1,16 +1,14 @@
-// Flutter imports:
-// Package imports:
 import 'package:after_layout/after_layout.dart';
 import 'package:dataoke_sdk/constant/sort.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../widgets/round_underline_tab_indicator.dart';
 import '../../widgets/simple_appbar.dart';
 import '../../widgets/sticky_tab_bar_delegate.dart';
-import '../panic_buying/components/categorys.dart';
 import '../panic_buying/components/list.dart';
 // Project imports:
 import 'components/sort_widget.dart';
@@ -41,15 +39,59 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SimpleAppBar(
+      appBar: const SimpleAppBar(
         title: '产品列表',
-        bottom: BottomCategoryTabs(
-          onTap: (int index) => context.read<GoodsListState>().mainCateChange(index, context),
-          initIndex: widget.initIndex,
-        ),
-        bottomHeight: 48,
+        // bottom: BottomCategoryTabs(
+        //   onTap: (int index) => context.read<GoodsListState>().mainCateChange(index, context),
+        //   initIndex: widget.initIndex,
+        // ),
+        // bottomHeight: 48,
       ),
       body: EasyRefresh.custom(onLoad: context.read<GoodsListState>().nextPage, onRefresh: context.read<GoodsListState>().onRefresh, header: MaterialHeader(), footer: MaterialFooter(), slivers: [
+
+
+
+        //排序操作
+        Consumer<GoodsListState>(
+          builder: (BuildContext context,value, Widget? child) {
+            final current = value.sort;
+            return //排序
+              SliverPersistentHeader(
+                pinned: true,
+                delegate: StickyTabBarDelegate(
+                  child: TabBar(
+                      onTap:value.sortChange,
+                      labelColor: Colors.pinkAccent,
+                      unselectedLabelColor: Colors.black,
+                      indicatorColor: Colors.pinkAccent,
+                      indicator: const RoundUnderlineTabIndicator(
+                          borderSide: BorderSide(
+                            width: 2,
+                            color: Colors.pinkAccent,
+                          )),
+                      controller: _tabController,
+                      tabs: <Widget>[
+                        SortWidget(
+                          title: '人气',
+                          current: current == DdSort.defaultSort,
+                        ),
+                        SortWidget(
+                          title: '最新',
+                          current: current == DdSort.timeHighToLow,
+                        ),
+                        SortWidget(
+                          title: '销量',
+                          current: current == DdSort.salesHighToLow,
+                        ),
+                        SortWidget(title: '价格', current: current == DdSort.priceLowToHigh, icon: _bulidPriceIconWidget(current)),
+                      ]),
+                ),
+              );
+          },
+        ),
+
+        const SizedBox(height: 12,).sliverBox,
+        //子分类
         Consumer<GoodsListState>(
           builder: (BuildContext context, value, Widget? child) {
             final cate = value.category;
@@ -67,44 +109,6 @@ class _NewGoodsListState extends State<NewGoodsList> with SingleTickerProviderSt
           },
         ),
 
-        // 排序
-        Consumer<GoodsListState>(
-          builder: (BuildContext context,value, Widget? child) {
-            final current = value.sort;
-            return //排序
-                SliverPersistentHeader(
-              pinned: true,
-              delegate: StickyTabBarDelegate(
-                child: TabBar(
-                    onTap:value.sortChange,
-                    labelColor: Colors.pinkAccent,
-                    unselectedLabelColor: Colors.black,
-                    indicatorColor: Colors.pinkAccent,
-                    indicator: const RoundUnderlineTabIndicator(
-                        borderSide: BorderSide(
-                      width: 2,
-                      color: Colors.pinkAccent,
-                    )),
-                    controller: _tabController,
-                    tabs: <Widget>[
-                      SortWidget(
-                        title: '人气',
-                        current: current == DdSort.defaultSort,
-                      ),
-                      SortWidget(
-                        title: '最新',
-                        current: current == DdSort.timeHighToLow,
-                      ),
-                      SortWidget(
-                        title: '销量',
-                        current: current == DdSort.salesHighToLow,
-                      ),
-                      SortWidget(title: '价格', current: current == DdSort.priceLowToHigh, icon: _bulidPriceIconWidget(current)),
-                    ]),
-              ),
-            );
-          },
-        ),
 
         // 刷新指示器
         Consumer<GoodsListState>(

@@ -17,11 +17,50 @@ class SubCategoryView extends StatelessWidget {
   Widget build(BuildContext context) {
     final showSubcategorys = category.subcategories ?? [];
     return Container(
-      decoration: const BoxDecoration(color: Colors.white),
-      child: buildGridView(showSubcategorys),
+      child: _renderSubCategoryList(showSubcategorys),
     );
   }
 
+  /// 一行滑动版本
+  Widget _renderSubCategoryList(List<Subcategory> showSubcategorys){
+    return SizedBox(
+      height: 30,
+      child: ListView.builder(itemBuilder: (_,index){
+        return _rederItem(showSubcategorys[index]);
+      },itemCount: showSubcategorys.length,scrollDirection: Axis.horizontal,),
+    );
+  }
+
+  /// 一行滑动版本的子项布局
+  Widget _rederItem(Subcategory item){
+    return GestureDetector(
+      onTap: (){
+        if (subcategory == null) {
+          changeSubcategory?.call(item);
+          return;
+        }
+        if (subcategory != null && subcategory!.subcid != item.subcid) {
+          changeSubcategory?.call(item);
+        }
+      },
+      child: Container(
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 5),
+        margin: const EdgeInsets.only(left: 12),
+        decoration: BoxDecoration(
+          color: subcategory != null &&
+              subcategory!.subcid == item.subcid ? Colors.pink.shade50 : Colors.grey.shade200,
+          borderRadius: BorderRadius.circular(50)
+        ),
+        child: Text('${item.subcname}',style: TextStyle(
+          color:  subcategory != null &&
+              subcategory!.subcid == item.subcid ? Colors.pink : null
+        ),),
+      ),
+    );
+  }
+
+  /// 网格版本 (占位太多,不推荐使用)
   GridView buildGridView(List<Subcategory> showSubcategorys) {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

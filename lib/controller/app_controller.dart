@@ -4,6 +4,7 @@ import 'dart:typed_data';
 // Package imports:
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 // Flutter imports:
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,7 @@ class AppController extends GetxController {
   Rxn bgBytes = Rxn<Uint8List>();
   bool isWeChatBrowser = false;
   bool showTip = true; // 是否显示提醒
+  GlobalKey indexProductKey = GlobalKey();
 
   @override
   void onInit() {

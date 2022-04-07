@@ -1,13 +1,9 @@
-// Flutter imports:
-// Package imports:
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/brand_list_model.dart';
 import 'package:dataoke_sdk/model/carousel_model.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:dataoke_sdk/params/brand_param.dart';
 import 'package:flutter/material.dart';
-
-// Project imports:
 import '../util/color_util.dart';
 
 /// 首页状态管理
@@ -21,6 +17,9 @@ class IndexProvider extends ChangeNotifier {
   /// 轮播图展示列表
   BrandListResult? storeData; // 首页显示的品牌
   Map<int?, Color> brandBgColorMap = {}; // 背景颜色
+
+
+
 
   int currIndex = 1;
 
