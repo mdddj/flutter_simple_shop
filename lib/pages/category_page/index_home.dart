@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:provider/provider.dart';
 
+import '../../constant/style.dart';
 import './left_widget.dart';
 import './right_widget.dart';
 // Project imports:
@@ -79,6 +80,7 @@ class _CategoryIndexPageState extends State<CategoryIndexPage> {
                       child: Container(
                           color: Colors.white,
                           child: WaterfallFlow.builder(
+                            padding: const EdgeInsets.all(kDefaultPadding),
                             gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 3, mainAxisSpacing: 12, crossAxisSpacing: 20),
                             itemBuilder: (context, sIndex) {
                               return RightWidgetItme(category: current, item: current.subcategories![sIndex]);

@@ -10,7 +10,13 @@ import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_ume/flutter_ume.dart'; // UME 框架
+import 'package:flutter_ume_kit_ui/flutter_ume_kit_ui.dart'; // UI 插件包
+import 'package:flutter_ume_kit_perf/flutter_ume_kit_perf.dart'; // 性能插件包
+import 'package:flutter_ume_kit_show_code/flutter_ume_kit_show_code.dart'; // 代码查看插件包
+import 'package:flutter_ume_kit_device/flutter_ume_kit_device.dart'; // 设备信息插件包
+import 'package:flutter_ume_kit_console/flutter_ume_kit_console.dart'; // debugPrint 插件包
+import 'package:flutter_ume_kit_dio/flutter_ume_kit_dio.dart'; // Dio 网络请求调试工具
 // Project imports:
 import './provider/providers.dart';
 import 'ad.dart';
@@ -22,6 +28,8 @@ import 'service/api_service.dart';
 import 'service/blog_api.dart';
 import 'service/user_api.dart';
 import 'util/navigator_util.dart';
+
+const kDebugMode = true;
 
 void main() async {
   /// 初始化典典小卖部的Api sdk 文档-->[https://pub.dev/packages/dd_taoke_sdk]
@@ -60,8 +68,24 @@ void main() async {
     // setWindowMinSize(windowSize);
   }
 
+  if (kDebugMode) {
+    PluginManager.instance // 注册插件
+      ..register(const WidgetInfoInspector())
+      ..register(const WidgetDetailInspector())
+      ..register(const ColorSucker())
+      ..register(AlignRuler())
+      ..register(const ColorPicker()) // 新插件
+      ..register(const TouchIndicator()) // 新插件
+      ..register(Performance())
+      ..register(const ShowCode())
+      ..register(const MemoryInfoPage())
+      ..register(CpuInfoPage())
+      ..register(const DeviceInfoPanel())
+      ..register(Console());
+  }
+
   /// 启动app
-  runApp(const MyApp());
+  runApp(const UMEWidget(child: MyApp(),enable: kDebugMode,));
 }
 
 class MyApp extends StatefulWidget {

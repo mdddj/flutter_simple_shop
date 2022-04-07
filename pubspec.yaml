@@ -15,9 +15,9 @@ dependencies:
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.5
-  shared_preferences: ^2.0.12
-  flutter_widget_from_html: ^0.8.4
-  dio: ^4.0.4
+  shared_preferences: ^2.0.13
+  flutter_widget_from_html: ^0.8.5
+  dio: ^4.0.6
   flutter_spinkit: ^5.1.0
   tab_indicator_styler: ^2.0.0
   flutter_swiper_null_safety: ^1.0.2
@@ -27,9 +27,9 @@ dependencies:
   fbutton_nullsafety: ^5.0.0
   fsuper_nullsafety: ^3.0.1
   flustars: ^2.0.1
-  common_utils: ^2.0.2
-  extended_image: ^6.0.1
-  extended_image_library: ^3.1.2
+  common_utils: ^2.1.0
+  extended_image: ^6.0.2+1
+  extended_image_library: ^3.1.4
   waterfall_flow: ^3.0.2
   loading_more_list: ^4.1.2
   extended_list: ^3.0.0
@@ -53,7 +53,6 @@ dependencies:
   sliver_tools: ^0.2.5
   shelf: ^1.2.0
   extended_sliver: ^2.0.1
-  # dd_taoke_sdk: ^1.6.1 已经弃用，换成了dataoke_sdk
   dd_js_util: ^0.0.3
   fcontrol_nullsafety: ^2.0.0
   flutter_hooks: ^0.18.2
@@ -75,22 +74,21 @@ dependencies:
   hive_flutter: ^1.1.0
   flutter_blurhash: ^0.6.4
   dataoke_sdk: ^0.0.3
-  #  filepicker_windows: ^2.0.0  # 文件选择器
-  #  win32: ^2.1.5   # windows 开放api
-  #
-#  window_size:
-#    git:
-#      url: git://github.com/google/flutter-desktop-embedding.git # 修改窗口标题
-#      path: plugins/window_size
-#      ref: 7812516a5c1fc8ef379e244106953a2b534432b9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   build_runner: ^2.1.7
   import_sorter: ^4.6.0
   flutter_lints: ^1.0.4
+  flutter_ume: ^0.3.0+1
+  flutter_ume_kit_ui: ^0.3.0+1
+  flutter_ume_kit_device: ^0.3.0
+  flutter_ume_kit_perf: ^0.3.0
+  flutter_ume_kit_show_code: ^0.3.0
+  flutter_ume_kit_console: ^0.3.0
+  flutter_ume_kit_dio: ^0.3.0
+
 flutter:
   uses-material-design: true
 
@@ -103,9 +101,6 @@ flutter:
     - assets/svg/cate/
     - assets/json/
     - assets/images/waimai/hb/
-
-#dependency_overrides:
-#  decimal: 1.5.0
 
 msix_config:
   display_name: diandianshop
