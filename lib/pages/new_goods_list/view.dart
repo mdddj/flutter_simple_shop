@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 
 import '../../widgets/round_underline_tab_indicator.dart';
 import '../../widgets/simple_appbar.dart';
-import '../../widgets/sticky_tab_bar_delegate.dart';
 import '../panic_buying/components/list.dart';
 
 // Project imports:
@@ -47,8 +46,49 @@ class _NewGoodsListState extends State<NewGoodsList>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const SimpleAppBar(
+      appBar:  SimpleAppBar(
         title: '产品列表',
+        bottomHeight: 48,
+        bottom: PreferredSize(preferredSize: const Size.fromHeight(48), child: Consumer<GoodsListState>(
+          builder: (BuildContext context, value, Widget? child) {
+            final current = value.sort;
+            return //排序
+              TabBar(
+                  onTap: (int index){
+                    value.sortChange(index);
+                    _easyRefreshController.callRefresh();
+                  },
+                  labelColor: Colors.pinkAccent,
+                  unselectedLabelColor: Colors.black,
+                  indicatorColor: Colors.pinkAccent,
+                  indicator: const RoundUnderlineTabIndicator(
+                      borderSide: BorderSide(
+                        width: 2,
+                        color: Colors.pinkAccent,
+                      )),
+                  controller: _tabController,
+                  tabs: <Widget>[
+                    SortWidget(
+                      title: '人气',
+                      current: current == DdSort.defaultSort,
+                    ),
+                    SortWidget(
+                      title: '最新',
+                      current: current == DdSort.timeHighToLow,
+                    ),
+                    SortWidget(
+                      title: '销量',
+                      current: current == DdSort.salesHighToLow,
+                    ),
+                    SortWidget(
+                        title: '价格',
+                        current: current == DdSort.priceLowToHigh,
+                        icon: _bulidPriceIconWidget(current)),
+                  ]);
+          },
+        ),
+
+        )
       ),
       body: EasyRefresh.custom(
         controller: _easyRefreshController,
@@ -57,49 +97,6 @@ class _NewGoodsListState extends State<NewGoodsList>
           firstRefresh: true,
           slivers: [
             //排序操作
-            Consumer<GoodsListState>(
-              builder: (BuildContext context, value, Widget? child) {
-                final current = value.sort;
-                return //排序
-                    SliverPersistentHeader(
-                  pinned: true,
-                  delegate: StickyTabBarDelegate(
-                    child: TabBar(
-                        onTap: (int index){
-                          value.sortChange(index);
-                          _easyRefreshController.callRefresh();
-                        },
-                        labelColor: Colors.pinkAccent,
-                        unselectedLabelColor: Colors.black,
-                        indicatorColor: Colors.pinkAccent,
-                        indicator: const RoundUnderlineTabIndicator(
-                            borderSide: BorderSide(
-                          width: 2,
-                          color: Colors.pinkAccent,
-                        )),
-                        controller: _tabController,
-                        tabs: <Widget>[
-                          SortWidget(
-                            title: '人气',
-                            current: current == DdSort.defaultSort,
-                          ),
-                          SortWidget(
-                            title: '最新',
-                            current: current == DdSort.timeHighToLow,
-                          ),
-                          SortWidget(
-                            title: '销量',
-                            current: current == DdSort.salesHighToLow,
-                          ),
-                          SortWidget(
-                              title: '价格',
-                              current: current == DdSort.priceLowToHigh,
-                              icon: _bulidPriceIconWidget(current)),
-                        ]),
-                  ),
-                );
-              },
-            ),
 
             const SizedBox(
               height: 12,

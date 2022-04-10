@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   dd_js_util
+  permission_handler_windows
   url_launcher_windows
 )
 

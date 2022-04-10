@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
-import '../../../common/components/pdd/view.dart';
 import '../../../modals/pdd_search_item_model.dart';
 import '../../../widgets/appbar_search.dart';
 import '../../../widgets/component/coupon_discount.dart';
@@ -54,7 +53,7 @@ class _SearchPageState extends State<SearchPage> {
                   )
                 : loading
                     ? const LoadingWidget()
-                    : const PddRecommendListView(),
+                    : const SizedBox(),
           ));
         })
       ]),

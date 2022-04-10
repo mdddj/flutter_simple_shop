@@ -99,6 +99,8 @@ class TKApiService {
   }
 
   /// 拼多多推荐商品
+  /// 弃用 - 2022-04-07 17:30:20
+  @Deprecated("方法弃用")
   Future<List<dynamic>> pddRecommendGoods(int page, int channelType) async {
     final result = await DdTaokeUtil.dio!.get<String>('/pdd/recommend', queryParameters: {'page': page, 'channelType': channelType});
     if (result.statusCode == 200 && result.data != null) {
@@ -113,7 +115,7 @@ class TKApiService {
             }
           }
         } catch (e) {
-          log('拼多多商品解析失败');
+          log('拼多多商品解析失败:$e');
         }
       }
     }

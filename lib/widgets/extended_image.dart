@@ -1,5 +1,6 @@
 // Flutter imports:
 // Package imports:
+import 'package:dd_js_util/ext/string.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
@@ -81,15 +82,21 @@ class SimpleImage extends StatelessWidget {
           left: 0,
           right: 0,
           bottom: 0,
-          child: ExtendedImage.network(
-            MImageUtils.magesProcessor(url),
-            width: double.infinity,
-            height: double.infinity,
-            loadStateChanged: loadingState,
-            cache: true,
-            fit: BoxFit.cover,
-            shape: BoxShape.rectangle,
-            borderRadius:radius ?? BorderRadius.circular(8),
+          child: GestureDetector(
+            onLongPress: (){
+              //下载图片
+              url.downloadImage(checkPermission: true,isAsset: false);
+            },
+            child: ExtendedImage.network(
+              MImageUtils.magesProcessor(url),
+              width: double.infinity,
+              height: double.infinity,
+              loadStateChanged: loadingState,
+              cache: true,
+              fit: BoxFit.cover,
+              shape: BoxShape.rectangle,
+              borderRadius:radius ?? BorderRadius.circular(8),
+            ),
           ),
         ),
       ],

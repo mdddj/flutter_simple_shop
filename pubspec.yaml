@@ -52,7 +52,7 @@ dependencies:
   sliver_tools: ^0.2.5
   shelf: ^1.2.0
   extended_sliver: ^2.0.1
-  dd_js_util: ^0.0.3
+  dd_js_util: ^0.0.4
   fcontrol_nullsafety: ^2.0.0
   flutter_hooks: ^0.18.2
   get_it: ^7.2.0
@@ -72,7 +72,11 @@ dependencies:
   hive: ^2.0.6
   hive_flutter: ^1.1.0
   flutter_blurhash: ^0.6.4
-  dataoke_sdk: ^0.0.3
+
+
+#  dataoke_sdk: ^0.0.3 找不到包,注释这一行
+  dataoke_sdk:
+    path: ../plugins/dataoke_sdk
 
 dev_dependencies:
   flutter_test:
