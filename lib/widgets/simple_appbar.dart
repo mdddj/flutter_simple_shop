@@ -12,8 +12,9 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double? bottomHeight;
   final Color? backgroundColor;
   final Color? titleColor;
+  final List<Widget>? actions;
 
-  const SimpleAppBar({Key? key, required this.title, this.subTitle, this.elevation, this.bottom, this.bottomHeight, this.backgroundColor, this.titleColor}) : super(key: key);
+  const SimpleAppBar({Key? key,this.actions, required this.title, this.subTitle, this.elevation, this.bottom, this.bottomHeight, this.backgroundColor, this.titleColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,17 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
       iconTheme: IconThemeData(color:titleColor?? Colors.grey),
       elevation: elevation ?? 0,
       bottom: bottom,
+      actions: [
+        Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ...?actions
+            ],
+          ),
+        )
+      ],
     );
   }
 

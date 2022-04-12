@@ -1,6 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:after_layout/after_layout.dart';
+import 'package:demo1/pages/dynamic_page/view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -48,7 +49,7 @@ class _AppState extends State<App> with AfterLayoutMixin {
     JiujiuIndexHome(scrollController: jiujiuController),
     const CategoryIndexPage(),
     // FavoriteIndexHome(),
-    const DynamicIndex(),
+    const DynamicPagePage(),
     const UserIndexHome()
   ];
 
