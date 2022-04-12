@@ -1,6 +1,5 @@
 // Flutter imports:
 // Package imports:
-import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,9 +9,8 @@ import 'package:provider/provider.dart';
 
 // Project imports:
 import '../../../common/utils.dart';
-import '../../../common/widget_util.dart';
-import '../../../constant/style.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
+import 'register_page.dart';
 
 // 用户登入页面
 class UserLoginPage extends StatefulWidget {
@@ -33,105 +31,88 @@ class _UserLoginPageState extends State<UserLoginPage> {
     return buildScaffold(context);
   }
 
+  //跳转到注册页面
+  void _navToRegisterPage() {
+    Get.to(() => const RegisterPage());
+  }
+
   Scaffold buildScaffold(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black),
-        title: const Text('登录'),
-        actions: const <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 20.0),
-            child: Center(child: Text('注册账号',style: TextStyle(color: Colors.blueGrey),)),
-          )
-        ],
-      ),
       body: Stack(
         children: <Widget>[
-          SizedBox(
-            height: WidgetUtils().kBodyHeight,
-            child: SingleChildScrollView(
-              child: Column(
-                children: <Widget>[
-                  // //   Logo
-                  // renderLogo(),
-                  //
-                  // // 间隔
-                  // const SizedBox(height: 40),
-
-                  //表单
-                  Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                    margin:
-                        const EdgeInsets.symmetric(horizontal: kDefaultPadding,vertical: 30),
-                    child: Column(
-                      children: <Widget>[
-                        // 用户名输入框
-                        TextField(
-                          decoration: const InputDecoration(
-                              hintText: '请输入登录账号',
-                              labelText: '账号',
-                              border:
-                                  OutlineInputBorder(borderSide: BorderSide())),
-                          onChanged: (val) {
-                            setState(() {
-                              username = val;
-                            });
-                          },
-                        ),
-
-                        utils.widgetUtils.marginTop(height: 20),
-                        // 密码输入框
-                        TextField(
-                          decoration: const InputDecoration(
-                              hintText: '请输入登录密码',
-                              labelText: '密码',
-                              border:
-                                  OutlineInputBorder(borderSide: BorderSide())),
-                          onChanged: (val) {
-                            setState(() {
-                              password = val;
-                            });
-                          },
-                        )
-                      ],
-                    ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            height: Get.height,
+            width: Get.width,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                // 用户名输入框
+                TextField(
+                  decoration: const InputDecoration(
+                    hintText: '请输入登录账号',
+                    labelText: '账号',
                   ),
+                  onChanged: (val) {
+                    setState(() {
+                      username = val;
+                    });
+                  },
+                ),
 
-                  // 间隔
-                  const SizedBox(height: 20),
-                  renderLoginButton()
-                ],
-              ),
+                utils.widgetUtils.marginTop(height: 20),
+                // 密码输入框
+                TextField(
+                  decoration: const InputDecoration(
+                    hintText: '请输入登录密码',
+                    labelText: '密码',
+                  ),
+                  onChanged: (val) {
+                    setState(() {
+                      password = val;
+                    });
+                  },
+                ),
+
+                const SizedBox(height: 40,),
+                renderLoginButton(),
+                const SizedBox(height: 12),
+                renderRegisterButton()
+              ],
             ),
           ),
-          renderXieyi()
+
+          // 协议按钮
+          renderXieyi(),
+
+          // 页面关闭按钮
+          Positioned(
+            child: GestureDetector(
+                onTap: Get.back, child: const Icon(Icons.close)),
+            left: 12,
+            top: Get.mediaQuery.padding.top + 12,
+          )
         ],
       ),
     );
   }
 
+  // 登录按钮
   Widget renderLoginButton() {
+    return SizedBox(
+      width: double.infinity,
+        child: ElevatedButton(onPressed: _submit, child: const Text('登录')));
+  }
 
-
-
-
-    return FButton(
-      width: Get.width,
-      text: '登 录',
-      style: const TextStyle(color: Colors.white),
-      color: Colors.pink,
-      onPressed: _submit,
-      clickEffect: true,
-      alignment: Alignment.center,
-      padding: const EdgeInsets.all(kDefaultPadding),
-      highlightColor: Colors.pinkAccent.withOpacity(0.50),
-      hoverColor: Colors.pink.withOpacity(0.76),
-    ).marginSymmetric(horizontal: 30);
+// 注册按钮
+  Widget renderRegisterButton() {
+    return SizedBox(
+      width: double.infinity,
+        child:
+            TextButton(child: const Text('注册'), onPressed: _navToRegisterPage));
   }
 
   // 协议
@@ -144,19 +125,14 @@ class _UserLoginPageState extends State<UserLoginPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          InkWell(
+          GestureDetector(
             onTap: () {
               setState(() {
                 isAgree = !isAgree;
               });
             },
-            child: Image.asset(
-              isAgree
-                  ? 'assets/icons/select.png'
-                  : 'assets/icons/select_no.png',
-              height: 22,
-              width: 22,
-            ),
+            child: Icon(
+                isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 5.0),
