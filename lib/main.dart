@@ -34,7 +34,7 @@ void main() async {
 
   // DdTaokeUtil.instance
   //     .init('https://itbug.shop', '443', debug: false); //  远程服务器
-  DdTaokeUtil.instance.init('http://192.168.199.82', '80', debug: false); // 本地测试服务器
+  DdTaokeUtil.instance.init('http://localhost', '80', debug: false); // 本地测试服务器
 
   /// 使用浏览器查看网络请求,详情查看[https://www.jianshu.com/p/e4058e064341]
   /// await Stetho.initialize();

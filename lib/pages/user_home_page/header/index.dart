@@ -96,7 +96,9 @@ class HeaderIndex extends StatelessWidget {
                   '免费激活',
                   style: TextStyle(color: Colors.yellow),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  // 激活会员
+                },
               ),
             ),
           ),
@@ -150,6 +152,7 @@ class HeaderIndex extends StatelessWidget {
 
   /// 登录跳转
   Widget _loginWidgetLayout(BuildContext context) {
+    
     return GestureDetector(
       onTap: () => NavigatorUtil.gotoUserLoginPage(context),
       child: Container(
