@@ -36,7 +36,7 @@ class _CategoryComponentState extends State<CategoryComponent> {
   void initState() {
     super.initState();
     _bindController();
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       setState(() {
         _categoryChildPosition = CategoryChildPosition(count: 0, position: <int, Offset>{}, size: <int, Size>{});
       });

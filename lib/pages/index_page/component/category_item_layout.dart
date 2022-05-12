@@ -23,7 +23,7 @@ class CategoryItemDefaultLayout extends StatefulWidget {
 class _CategoryItemDefaultLayoutState extends State<CategoryItemDefaultLayout> {
   @override
   void initState() {
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _notificationWidgetInfoTo();
     });
 

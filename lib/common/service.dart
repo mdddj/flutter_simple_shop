@@ -36,7 +36,6 @@ class Api extends ApiService {
   Future<bool> login(String username, String password,
       {ValueChanged<String>? tokenHandle,
       ValueChanged<String>? loginFail}) async {
-        print('用户:$username 密码:$password');
     final result = await request.post('/api/user-public/login',
         data: {'loginNumber': username, 'password': password},
         error: (int code, String msg, data) {

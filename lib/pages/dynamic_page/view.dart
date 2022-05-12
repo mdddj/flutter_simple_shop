@@ -28,7 +28,7 @@ class _DynamicPagePageState extends State<DynamicPagePage> {
         }, child: const Text('发布动态'),)
       ]),
       body: EasyRefresh.custom(
-        slivers: [
+        slivers: const [
 
         ]
       )

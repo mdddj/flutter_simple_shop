@@ -50,7 +50,7 @@ class DrawableStartTextState extends State<DrawableStartText> {
     _textHeight = painter.size.height;
 
     //在第一帧后计算下第一行能显示多少个字母，然后将字母分成两段显示
-    WidgetsBinding.instance!.addPostFrameCallback((callback) {
+    WidgetsBinding.instance.addPostFrameCallback((callback) {
       _image.image.resolve(const ImageConfiguration()).addListener(ImageStreamListener((imageInfo, synchronousCall) {
         //计算图片的宽高
         var imgHeight = imageInfo.image.height.toDouble();

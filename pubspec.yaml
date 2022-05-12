@@ -16,7 +16,6 @@ dependencies:
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.6
   shared_preferences: ^2.0.15
-  flutter_widget_from_html: ^0.8.5
   dio: ^4.0.6
   flutter_spinkit: ^5.1.0
   tab_indicator_styler: ^2.0.0
