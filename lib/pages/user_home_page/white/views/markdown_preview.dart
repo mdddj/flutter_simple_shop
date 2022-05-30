@@ -1,8 +1,8 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 // Package imports:
-import 'package:flutter_markdown/flutter_markdown.dart';
 
 /// 预览markdown
 class MarkDownPreview extends StatelessWidget {

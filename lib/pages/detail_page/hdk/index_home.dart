@@ -14,7 +14,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
@@ -744,7 +743,7 @@ class _HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
         child: Row(
           children: <Widget>[
             IconButton(
-              icon: const FaIcon(FontAwesomeIcons.arrowLeft),
+              icon: const Icon(Icons.chevron_left),
               color: Colors.black,
               onPressed: Get.back,
             ),

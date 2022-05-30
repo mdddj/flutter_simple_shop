@@ -2,7 +2,7 @@
 
 // Package imports:
 import 'package:extended_image/extended_image.dart';
-import 'package:extended_text/extended_text.dart';
+import 'package:extended_text_field/extended_text_field.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';

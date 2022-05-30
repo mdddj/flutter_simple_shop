@@ -6,7 +6,6 @@ import 'package:fcontrol_nullsafety/fdefine.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
 
@@ -85,11 +84,7 @@ class _PublicDetailViewState extends State<PublicDetailView> implements PublicDe
               // 返回按钮
               IconButton(
                   onPressed: Get.back,
-                  icon: FaIcon(
-                    FontAwesomeIcons.arrowLeft,
-                    color: Colors.grey.shade200,
-                    size: 18,
-                  ))
+                  icon: const Icon(Icons.chevron_left))
             ],
           ),
           const SizedBox(
