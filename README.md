@@ -10,9 +10,23 @@
     <img src="https://static.saintic.com/picbed/huang/2020/12/14/1607875349615.png">
 </p>
 
+
+运行环境 (如果不匹配有可能跑不起来)
+```dart
+[✓] Flutter (Channel stable, 3.0.1, on macOS 12.4 21F79 darwin-arm (Rosetta),
+    locale zh-Hans-CN)
+[✓] Android toolchain - develop for Android devices (Android SDK version
+    32.1.0-rc1)
+[✓] Xcode - develop for iOS and macOS (Xcode 13.4)
+[✓] Android Studio (version 2021.2)
+[✓] IntelliJ IDEA Ultimate Edition (version 2022.1.1)
+[✓] VS Code (version 1.67.2)
+```
+
+
 ---
 
-[//]: # (app 可视化后台管理：https://github.com/mdddj/ddxmb-admin)
+ app 可视化后台管理：https://github.com/mdddj/ddxmb-admin
 
 # APP 应用名：典典的小卖部
 
@@ -26,8 +40,7 @@
 | Getx 重构版          | [典典的小卖部 getx 重构版本](https://github.com/mdddj/simple_shop_v2)                  |
 | jetpack compose 版本 | [jetpack compose (kotlin) 版本](https://github.com/mdddj/dd_simple_shop_jetpack)       |
 
-[//]: # ()
-[//]: # （我的一些小插件 &#40; 空安全支持 &#41;)
+
 
 [//]: # ()
 [//]: # (| 网络监测工具                      | [![pub]&#40;https://badgen.net/pub/v/flutter_network_connection&#41;]&#40;https://pub.dev/packages/flutter_network_connection&#41;   |)
@@ -46,17 +59,7 @@
 
 **这是我入门 flutter 写的项目，一边学一边写，肯定有很多不合理的地方，还望各位大佬勿喷！谢谢 有问题也可以提交 iss, 或者加 flutter 学习群提问，看到都会回复的，群号 667186542**
 
-[//]: # (## 注意）
 
-[//]: # ()
-[//]: # （启动前需要创建一个数字签名，如何配置请看【官方文档】&#40;https://flutter.cn/docs/deployment/android&#41;)
-
-[//]: # (**没有`key.jks`文件极有可能启动不起来**)
-[//]: # ()
-[//]: # (## apk 文件）
-
-[//]: # ()
-[//]: # （加群在群文件找到典典的小卖部。apk 下载 &#40; 旧版本 &#41;)
 
 # 项目截图
 
@@ -75,6 +78,7 @@ v2.0 新增 (
 
 ![1603946039040.png](https://static.saintic.com/picbed/huang/2020/10/29/1603946039040.png)
 
+在web中构建
 ```dart
 flutter build web --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://unpkg.zhimg.com/canvaskit-wasm@0.24.0/bin/
 ```
