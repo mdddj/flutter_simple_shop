@@ -1,8 +1,5 @@
-// Flutter imports:
-// Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -18,7 +15,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MorphingAppBar(
+    return AppBar(
       backgroundColor: backgroundColor ?? Colors.white,
       title: TitleAndSubtitle(
         title: Text(

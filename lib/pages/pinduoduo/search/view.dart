@@ -1,10 +1,7 @@
-// Flutter imports:
-// Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
 import '../../../modals/pdd_search_item_model.dart';
@@ -63,7 +60,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget renderItem(PddSearchItemModel item) {
     return GestureDetector(
       onTap: () {
-        context.navigator.push(SwipeablePageRoute(builder: (_) => PublicDetailView(goodsId: item.goodsSign, type: 'pdd')));
+        context.navigator.push(MaterialPageRoute(builder: (_) => PublicDetailView(goodsId: item.goodsSign, type: 'pdd')));
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),

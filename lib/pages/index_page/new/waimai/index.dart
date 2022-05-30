@@ -1,11 +1,8 @@
-// Flutter imports:
-// Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
 import '../../../../widgets/component/custom_loading.dart';
@@ -50,7 +47,7 @@ class WaimaiIndex extends StatelessWidget {
   }
 
   void navTo(String type) {
-    Get.context!.navigator.push(SwipeablePageRoute(builder: (_) => WaimaiDetail(type: type)));
+    Get.context!.navigator.push(MaterialPageRoute(builder: (_) => WaimaiDetail(type: type)));
   }
 
   /// 渲染图片

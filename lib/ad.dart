@@ -6,9 +6,7 @@ import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:show_up_animation/show_up_animation.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
-// Project imports:
 import 'app.dart';
 import 'pages/index_page/new/index_riverpod.dart';
 import 'provider/riverpod/category_riverpod.dart';
@@ -56,7 +54,7 @@ class _AdPageState extends State<AdPage> with AfterLayoutMixin {
     await context.read<CategoryState>().init();
     await context.read<CategoryState>().getJdCategory();
     await context.read<IndexState>().fetch();
-    await context.navigator.pushReplacement(SwipeablePageRoute(builder: (_) => const App()));
+    await context.navigator.pushReplacement(MaterialPageRoute(builder: (_) => const App()));
   }
 }
 

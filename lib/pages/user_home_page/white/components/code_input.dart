@@ -1,9 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:get/get.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
 import '../../../../common/utils.dart';
@@ -24,7 +22,7 @@ class _CodeInputPageState extends State<CodeInputPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MorphingAppBar(
+      appBar: AppBar(
         title: Text('输入代码($_type)'),
         actions: [
           PopupMenuButton<String>(

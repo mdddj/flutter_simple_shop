@@ -1,10 +1,7 @@
-// Flutter imports:
-// Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:dataoke_sdk/model/brand_list_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
 import '../../../util/image_util.dart';
@@ -37,7 +34,7 @@ class BrandItemCard extends StatelessWidget {
   Widget _buildHeader() {
     return GestureDetector(
       onTap: () async {
-        await Get.context!.navigator.push(SwipeablePageRoute(
+        await Get.context!.navigator.push(MaterialPageRoute(
             builder: (_) =>
                 BrandDetailPage(brandId: storeInfo.brandId.toString())));
       },

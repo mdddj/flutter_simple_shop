@@ -1,11 +1,8 @@
-// Flutter imports:
-// Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:show_up_animation/show_up_animation.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
 import '../../../modals/pdd_product.dart';
@@ -49,7 +46,7 @@ class _PddRecommendListViewState extends State<PddRecommendListView> {
       builder: (BuildContext context, BoxConstraints constraints) {
         return GestureDetector(
           onTap: () {
-            context.navigator.push(SwipeablePageRoute(builder: (_) => PublicDetailView(goodsId: item.goodsSign, type: 'pdd')));
+            context.navigator.push(MaterialPageRoute(builder: (_) => PublicDetailView(goodsId: item.goodsSign, type: 'pdd')));
           },
           child: Container(
               decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),

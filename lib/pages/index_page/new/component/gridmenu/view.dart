@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
 import '../../../../../common/utils.dart';
@@ -44,7 +43,7 @@ final gridMenuModles = [
           isAssets: true,
           onTap: () {
             Get.context!.navigator
-                .push(SwipeablePageRoute(builder: (_) => const WaimaiIndex()));
+                .push(MaterialPageRoute(builder: (_) => const WaimaiIndex()));
           })),
 
   GridMenuItem(
@@ -77,7 +76,7 @@ final gridMenuModles = [
                     .showSimpleDialog('领券链接复制成功,打开浏览器粘贴即可', title: '获取链接成功');
               }
             });
-            Get.context!.read<IndexState>().changeLoadingState(false);
+            Get.context?.read<IndexState>().changeLoadingState(false);
           })),
 
   /// 排行榜
@@ -86,9 +85,9 @@ final gridMenuModles = [
           title: '排行榜',
           image: phbImage,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(
+            Get.context!.navigator.push(MaterialPageRoute(
                 builder: (_) => const PanicBuyingPage(),
-                canOnlySwipeFromEdge: true));
+                ));
           },
           isAssets: true)),
 
@@ -98,8 +97,8 @@ final gridMenuModles = [
           title: '折上折',
           image: zheImage,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(
-                builder: (_) => const ZheIndex(), canOnlySwipeFromEdge: true));
+            Get.context!.navigator.push(MaterialPageRoute(
+                builder: (_) => const ZheIndex(), ));
           },
           isAssets: true)),
 
@@ -108,9 +107,9 @@ final gridMenuModles = [
           title: '每日半价',
           image: banjiaImage,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(
+            Get.context!.navigator.push(MaterialPageRoute(
                 builder: (_) => const BanjiaIndex(),
-                canOnlySwipeFromEdge: true));
+               ));
           },
           isAssets: true)),
 
@@ -119,9 +118,9 @@ final gridMenuModles = [
           title: '拼夕夕',
           image: 'assets/svg/pdd.svg',
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(
+            Get.context!.navigator.push(MaterialPageRoute(
                 builder: (_) => const SearchPage(),
-                canOnlySwipeFromEdge: true));
+                ));
           },
           isAssets: true)),
   GridMenuItem(
@@ -138,9 +137,9 @@ final gridMenuModles = [
           title: '精选品牌',
           image: pp,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(
+            Get.context!.navigator.push(MaterialPageRoute(
                 builder: (_) => const BrandListPage(),
-                canOnlySwipeFromEdge: true));
+                ));
           },
           isAssets: true)),
 
@@ -149,9 +148,9 @@ final gridMenuModles = [
           title: '京东好货',
           image: jd,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(
+            Get.context!.navigator.push(MaterialPageRoute(
                 builder: (_) => const RecommendPage(),
-                canOnlySwipeFromEdge: true));
+                ));
           },
           isAssets: true)),
 
@@ -161,9 +160,9 @@ final gridMenuModles = [
           title: '典典面基',
           image: pyq,
           onTap: () {
-            Get.context!.navigator.push(SwipeablePageRoute(
+            Get.context!.navigator.push(MaterialPageRoute(
                 builder: (_) => const MianjiPage(),
-                canOnlySwipeFromEdge: true));
+                ));
           },
           isAssets: true)),
 ];

@@ -1,9 +1,7 @@
-// Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:provider/provider.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 import '../../../widgets/extended_image.dart';
 import '../../index_page/store/price_layout.dart';
@@ -45,7 +43,7 @@ class _WeipinhuiJinBianGoodsState extends State<WeipinhuiJinBianGoods> {
   Widget renderItem(dynamic item) {
     return GestureDetector(
       onTap: (){
-         context.navigator.push(SwipeablePageRoute(builder: (_)=>PublicDetailView(goodsId: item['id'].toString(), type: 'wph')));
+         context.navigator.push(MaterialPageRoute(builder: (_)=>PublicDetailView(goodsId: item['id'].toString(), type: 'wph')));
       },
       child: Card(
         elevation: 0,

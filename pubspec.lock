@@ -683,13 +683,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
-  list_diff:
-    dependency: transitive
-    description:
-      name: list_diff
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
   loading_more_list:
     dependency: "direct main"
     description:
@@ -1122,13 +1115,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
-  swipeable_page_route:
-    dependency: "direct main"
-    description:
-      name: swipeable_page_route
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.6"
   synchronized:
     dependency: transitive
     description:

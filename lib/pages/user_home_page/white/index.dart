@@ -9,7 +9,6 @@ import 'package:extended_text_field/extended_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 import '../../../common/utils.dart';
 // Project imports:
@@ -175,7 +174,7 @@ class _WhiteIndexState extends State<WhiteIndex> {
                 title: const Text('插入代码'),
                 onTap: () async {
                   Get.back();
-                  final result = await context.navigator.push<Map<String, String>>(SwipeablePageRoute(builder: (_) => const CodeInputPage()));
+                  final result = await context.navigator.push<Map<String, String>>(MaterialPageRoute(builder: (_) => const CodeInputPage()));
                   if (result != null) {
                     insertText('<code content="${result['code']}" language="${result['type']}" codeEnd/>');
                   }

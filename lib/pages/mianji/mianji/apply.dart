@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 /// 申请面基页面
 ///
@@ -18,7 +17,7 @@ class _ApplyPageState extends State<ApplyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MorphingAppBar(
+      appBar: AppBar(
         title: const Text('典典面基助手'),
         elevation: 0,
       ),

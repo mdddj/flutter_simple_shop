@@ -15,7 +15,6 @@ import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_f
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 import '../../../common/utils.dart';
 // Project imports:
@@ -46,7 +45,7 @@ class IndexTopicComponentCarousel extends StatelessWidget {
             final item = list[index];
             Logger().wtf(item.toJson());
             if (item.sourceType == 1) {
-              await context.navigator.push(SwipeablePageRoute(
+              await context.navigator.push(MaterialPageRoute(
                   builder: (_) => ActivityViewPage(
                       id: '${item.topicId!}', title: item.topicName!)));
             }
@@ -57,7 +56,7 @@ class IndexTopicComponentCarousel extends StatelessWidget {
               if (result != null) {
                 await utils.openTaobao(result.clickUrl);
               }
-              Get.context!.read<IndexState>().changeLoadingState(false);
+              Get.context?.read<IndexState>().changeLoadingState(false);
             }
             if ((item.link ?? '').isNotEmpty) {
               await utils.openLink(item.link!);

@@ -1,11 +1,8 @@
-// Flutter imports:
-// Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 // Project imports:
 import '../constant/style.dart';
@@ -85,6 +82,6 @@ class WidgetUtils extends WidgetUtilService {
 
   Future<T?> to<T>(Widget page) async {
     return await Get.context!.navigator
-        .push<T>(SwipeablePageRoute(builder: (_) => page));
+        .push<T>(MaterialPageRoute(builder: (_) => page));
   }
 }
