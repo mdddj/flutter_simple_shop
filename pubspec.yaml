@@ -72,7 +72,7 @@ dependencies:
 
 
 
-  #  dataoke_sdk: ^0.0.3 找不到包,注释这一行
+  #  dataoke_sdk: ^0.0.5 找不到包,注释这一行
   dataoke_sdk:
     path: ../plugins/dataoke_sdk
 
@@ -85,6 +85,7 @@ dev_dependencies:
 
 dependency_overrides:
   win32: ^2.7.0
+  cached_network_image: ^3.2.1
 
 flutter:
   uses-material-design: true
