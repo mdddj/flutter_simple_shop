@@ -1,8 +1,8 @@
 // Flutter imports:
 // Package imports:
+import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
-import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 
