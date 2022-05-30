@@ -11,7 +11,6 @@ import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 
 // Project imports:
 import '../../../util/system_toast.dart';
-import '../../../util/user_utils.dart';
 
 class OrderAddIndexPage extends StatefulWidget {
   const OrderAddIndexPage({Key? key}) : super(key: key);
@@ -67,10 +66,6 @@ class _OrderAddState extends State<OrderAddIndexPage> {
                   SystemToast.show('订单编号格式不正确');
                   return;
                 }
-                await UserUtil.loadUserInfo().then((user) async {
-                  if (user != null) {
-                  }
-                });
               },
               clickEffect: true,
               padding: EdgeInsets.zero,

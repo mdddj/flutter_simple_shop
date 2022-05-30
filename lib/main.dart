@@ -6,7 +6,6 @@ import 'package:dataoke_sdk/network/util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
@@ -34,8 +33,6 @@ void main() async {
   /// await Stetho.initialize();
 
   /// 本地缓存工具类，
-  await Hive.initFlutter();
-  await Hive.openBox('app');
 
   WidgetsFlutterBinding.ensureInitialized();
 

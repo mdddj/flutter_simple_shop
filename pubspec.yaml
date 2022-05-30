@@ -15,7 +15,6 @@ dependencies:
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.6
-  shared_preferences: ^2.0.15
   dio: ^4.0.6
   flutter_spinkit: ^5.1.0
   tab_indicator_styler: ^2.0.0
@@ -29,7 +28,6 @@ dependencies:
   fsuper_nullsafety: ^3.0.3
   common_utils: ^2.1.0
   extended_image: ^6.2.1
-  extended_image_library: ^3.3.0
   waterfall_flow: ^3.0.2
   loading_more_list: ^4.1.2
   extended_list: ^3.0.0
@@ -69,7 +67,6 @@ dependencies:
   swipeable_page_route: ^0.2.6
   black_hole_flutter: ^0.3.5
   hive: ^2.2.1
-  hive_flutter: ^1.1.0
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^2.0.0
 

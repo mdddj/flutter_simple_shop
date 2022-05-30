@@ -1,8 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-// Package imports:
-import 'package:hive_flutter/hive_flutter.dart';
 
 // Project imports:
 import '../../common/utils.dart';
@@ -28,30 +26,18 @@ class UserModel extends ChangeNotifier {
   Future<bool> login(String username, String password) async {
     return await utils.api.login(username, password, tokenHandle: tokenHandle, loginFail: (msg) {
       utils.showMessage(msg);
-      Hive.box('app').delete('token');
     });
   }
 
   // token处理
   void tokenHandle(String token) {
     _token = token;
-    var box = Hive.box('app');
-    box.put('token', token);
     appStartWithUserModel();
     notifyListeners();
   }
 
   // app启动的时候获取token,判断是否失败,
   Future<void> appStartWithUserModel() async {
-    final token = Hive.box('app').get('token');
-    if (token != null) {
-      final _user = await utils.api.getUser(token);
-      if (_user != null) {
-        user = _user;
-        _token = _token;
-        isLogin = true;
-        notifyListeners();
-      }
-    }
+
   }
 }

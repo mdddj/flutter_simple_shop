@@ -1,10 +1,6 @@
-// Dart imports:
-
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 import '../modals/favorites_model.dart';
-import '../util/user_utils.dart';
 
 class UserProvider extends ChangeNotifier {
 
@@ -89,25 +85,15 @@ class UserProvider extends ChangeNotifier {
 
   // 获取用户收藏的商品列表
   Future<void> loadUserFavoriteGoodsListFun(int pageId) async {
-    // 判断用户是否已经登录
-    await UserUtil.loadUserInfo().then((user) async {
-      if (user != null) {
-        if(pageId==1){
-          resetFavoriteData();
-        }
-      }
-    });
   }
 
 
   // 将用户信息存储到本地
   void setUserInfo(String json) async {
-    await UserUtil.setUserInfo(json);
   }
 
   // 将本地保存的用户信息删除
   void removeUserInfoData() async {
-    await UserUtil.removeUserInfoData();
     notifyListeners();
   }
 }

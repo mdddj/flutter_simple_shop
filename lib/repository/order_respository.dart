@@ -1,11 +1,7 @@
-// Dart imports:
 
-// Package imports:
 import 'package:loading_more_list/loading_more_list.dart';
 
 import '../modals/order_list_model.dart';
-// Project imports:
-import '../util/user_utils.dart';
 
 class OrderRespository extends LoadingMoreBase<OrderAuditObject>{
 
@@ -24,12 +20,6 @@ class OrderRespository extends LoadingMoreBase<OrderAuditObject>{
   Future<bool> loadData([bool isloadMoreAction = false]) async {
     
     var isSuccess = false;
-    
-    await UserUtil.loadUserInfo().then((user) async {
-      if(user!=null){
-      }else{
-      }
-    });
     
     return isSuccess;
   }
