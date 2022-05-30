@@ -4,12 +4,6 @@ import 'dart:io';
 // Flutter imports:
 import 'package:dataoke_sdk/network/util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ume/flutter_ume.dart'; // UME 框架
-import 'package:flutter_ume_kit_console/flutter_ume_kit_console.dart'; // debugPrint 插件包
-import 'package:flutter_ume_kit_device/flutter_ume_kit_device.dart'; // 设备信息插件包
-import 'package:flutter_ume_kit_perf/flutter_ume_kit_perf.dart'; // 性能插件包
-import 'package:flutter_ume_kit_show_code/flutter_ume_kit_show_code.dart'; // 代码查看插件包
-import 'package:flutter_ume_kit_ui/flutter_ume_kit_ui.dart'; // UI 插件包
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -66,27 +60,10 @@ void main() async {
     // setWindowMinSize(windowSize);
   }
 
-  if (kDebugMode) {
-    PluginManager.instance // 注册插件
-      ..register(const WidgetInfoInspector())
-      ..register(const WidgetDetailInspector())
-      ..register(const ColorSucker())
-      ..register(AlignRuler())
-      ..register(const ColorPicker()) // 新插件
-      ..register(const TouchIndicator()) // 新插件
-      ..register(Performance())
-      ..register(const ShowCode())
-      ..register(const MemoryInfoPage())
-      ..register(CpuInfoPage())
-      ..register(const DeviceInfoPanel())
-      ..register(Console());
-  }
+  if (kDebugMode) {}
 
   /// 启动app
-  runApp(const UMEWidget(
-    child: MyApp(),
-    enable: kDebugMode,
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {

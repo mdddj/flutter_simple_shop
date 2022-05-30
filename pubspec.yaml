@@ -8,7 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_lints: ^2.0.1
   cupertino_icons: ^1.0.4
   get: ^4.6.5
   url_launcher: ^6.1.2
@@ -19,7 +19,6 @@ dependencies:
   dio: ^4.0.6
   flutter_spinkit: ^5.1.0
   tab_indicator_styler: ^2.0.0
-  flutter_swiper_null_safety: ^1.0.2
   provider: ^6.0.3
   flutter_easyrefresh: ^2.2.1
   pull_to_refresh: ^2.0.0
@@ -70,10 +69,11 @@ dependencies:
   hive: ^2.2.1
   hive_flutter: ^1.1.0
   flutter_blurhash: ^0.7.0
+  flutter_swiper_null_safety_flutter3: ^2.0.0
 
 
 
-#  dataoke_sdk: ^0.0.3 找不到包,注释这一行
+  #  dataoke_sdk: ^0.0.3 找不到包,注释这一行
   dataoke_sdk:
     path: ../plugins/dataoke_sdk
 
@@ -82,14 +82,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.1.8
   import_sorter: ^4.6.0
-  flutter_lints: ^1.0.4
-  flutter_ume: ^0.3.0+1
-  flutter_ume_kit_ui: ^0.3.0+1
-  flutter_ume_kit_device: ^0.3.0
-  flutter_ume_kit_perf: ^0.3.0
-  flutter_ume_kit_show_code: ^0.3.0
-  flutter_ume_kit_console: ^0.3.0
-  flutter_ume_kit_dio: ^0.3.0
+
 
 flutter:
   uses-material-design: true

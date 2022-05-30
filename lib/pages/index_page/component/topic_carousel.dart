@@ -11,7 +11,7 @@ import 'package:dataoke_sdk/params/activity_link_param.dart';
 import 'package:extended_image/extended_image.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
+import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
