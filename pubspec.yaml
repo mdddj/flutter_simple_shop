@@ -9,9 +9,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_lints: ^2.0.1
-  cupertino_icons: ^1.0.4
+  cupertino_icons: ^1.0.5
   get: ^4.6.5
-  url_launcher: ^6.1.2
+  url_launcher: ^6.1.3
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.6
@@ -38,37 +38,38 @@ dependencies:
   flutter_svg: ^1.1.0
   extended_text_field: ^10.1.0
   extended_text: ^9.1.0
-  animated_text_kit: ^4.2.1
+  animated_text_kit: ^4.2.2
   html: ^0.15.0
   extended_tabs: ^2.3.0
   after_layout: ^1.2.0
-  palette_generator: ^0.3.3
+  palette_generator: ^0.3.3+1
   crypto: ^3.0.2
   encrypt: ^5.0.1
-  extended_nested_scroll_view: ^5.1.0
-  sliver_tools: ^0.2.6
-  shelf: ^1.3.0
+  extended_nested_scroll_view: ^5.1.2
+  sliver_tools: ^0.2.7
+  shelf: ^1.3.1
   extended_sliver: ^2.1.3
-  dd_js_util: ^0.1.0
+  dd_js_util: ^0.2.3
   fcontrol_nullsafety: ^2.0.0
-  flutter_hooks: ^0.18.4
+  flutter_hooks: ^0.18.5
   get_it: ^7.2.0
   logger: ^1.1.0
   http: ^0.13.4
-  shelf_proxy: ^1.0.1
+  shelf_proxy: ^1.0.2
   responsive_builder: ^0.4.2
   bubble_tab_indicator: ^0.1.6
-  badges: ^2.0.2
+  badges: ^2.0.3
   carousel_pro_nullsafety: ^1.0.2
-  flutter_markdown: ^0.6.10+1
+  flutter_markdown: ^0.6.10+2
   zefyrka: ^1.3.0
   package_info: ^2.0.2
   show_up_animation: ^2.0.0
   black_hole_flutter: ^0.3.5
-  hive: ^2.2.1
+  hive: ^2.2.2
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^2.0.0
-
+  ali_bc_taoke_sdk:
+    path: ../../hlx/github/ali_bc_taoke_sdk
 
 
   #  dataoke_sdk: ^0.0.5 找不到包,注释这一行

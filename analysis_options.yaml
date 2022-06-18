@@ -62,6 +62,6 @@ linter:
     - avoid_null_checks_in_equality_operators
     - prefer_mixin
 #    - use_setters_to_change_properties
-    - type_annotate_public_apis # prefer
+#    - type_annotate_public_apis # prefer
     - prefer_generic_function_type_aliases
 
