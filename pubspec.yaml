@@ -68,13 +68,7 @@ dependencies:
   hive: ^2.2.2
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^2.0.0
-  ali_bc_taoke_sdk:
-    path: ../../hlx/github/ali_bc_taoke_sdk
-
-
-  #  dataoke_sdk: ^0.0.5 找不到包,注释这一行
-  dataoke_sdk:
-    path: ../plugins/dataoke_sdk
+  dataoke_sdk: ^0.0.7
 
 dev_dependencies:
   flutter_test:

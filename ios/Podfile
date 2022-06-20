@@ -1,12 +1,8 @@
-# Uncomment this line to define a global platform for your project
 platform :ios, '10.13'
 install! 'cocoapods', :disable_input_output_paths => true
 
-source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
-
-# CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 project 'Runner', {
@@ -53,5 +49,5 @@ post_install do |installer|
                       'PERMISSION_MICROPHONE=1'
               ]
         end
-  end
+    end
 end

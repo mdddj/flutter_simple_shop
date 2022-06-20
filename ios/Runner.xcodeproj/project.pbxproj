@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
-		27903F9C183A806AEBB64B1B /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B2FD6E59D6DEE35E35BBD4 /* Pods_Runner.framework */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		6710BDD4285D812C009287B6 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6710BDD3285D812C009287B6 /* libresolv.tbd */; };
+		6710BDD6285D8133009287B6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6710BDD5285D8133009287B6 /* JavaScriptCore.framework */; };
 		674F6C5D284C4BAA006FCF63 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C5C284C4BAA006FCF63 /* libz.tbd */; };
 		674F6C5F284C4BB8006FCF63 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C5E284C4BB8006FCF63 /* libsqlite3.tbd */; };
 		674F6C61284C4BC3006FCF63 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C60284C4BC3006FCF63 /* CoreTelephony.framework */; };
@@ -20,6 +21,7 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
+		AB0CC6CC17809B2296BC2D77 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967F56C9884048187D3EA853 /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +41,9 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
-		50B2FD6E59D6DEE35E35BBD4 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61F65066A30C7A2D438B5528 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
+		6710BDD3285D812C009287B6 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		6710BDD5285D8133009287B6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		674F6C5C284C4BAA006FCF63 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		674F6C5E284C4BB8006FCF63 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		674F6C60284C4BC3006FCF63 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -49,6 +53,8 @@
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
+		86AA5896E21F3083954D328F /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		967F56C9884048187D3EA853 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,9 +62,7 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7691A2E5AE03DA963A0B10D /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
-		CE037D3F0DCAECFFECC6EFE8 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
-		F33B7266267D902FE87FA69F /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
+		D58471570E47E766E482CDAF /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +70,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6710BDD6285D8133009287B6 /* JavaScriptCore.framework in Frameworks */,
+				6710BDD4285D812C009287B6 /* libresolv.tbd in Frameworks */,
 				674F6C63284C4BCA006FCF63 /* CoreMotion.framework in Frameworks */,
 				674F6C61284C4BC3006FCF63 /* CoreTelephony.framework in Frameworks */,
 				674F6C5F284C4BB8006FCF63 /* libsqlite3.tbd in Frameworks */,
 				674F6C5D284C4BAA006FCF63 /* libz.tbd in Frameworks */,
-				27903F9C183A806AEBB64B1B /* Pods_Runner.framework in Frameworks */,
+				AB0CC6CC17809B2296BC2D77 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,9 +141,9 @@
 		D061EA2B8E7C4ABEE8099B68 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CE037D3F0DCAECFFECC6EFE8 /* Pods-Runner.debug.xcconfig */,
-				C7691A2E5AE03DA963A0B10D /* Pods-Runner.release.xcconfig */,
-				F33B7266267D902FE87FA69F /* Pods-Runner.profile.xcconfig */,
+				61F65066A30C7A2D438B5528 /* Pods-Runner.debug.xcconfig */,
+				86AA5896E21F3083954D328F /* Pods-Runner.release.xcconfig */,
+				D58471570E47E766E482CDAF /* Pods-Runner.profile.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -145,11 +151,13 @@
 		E09A32FD93B94E9ABEA91ABF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6710BDD5285D8133009287B6 /* JavaScriptCore.framework */,
+				6710BDD3285D812C009287B6 /* libresolv.tbd */,
 				674F6C62284C4BCA006FCF63 /* CoreMotion.framework */,
 				674F6C60284C4BC3006FCF63 /* CoreTelephony.framework */,
 				674F6C5E284C4BB8006FCF63 /* libsqlite3.tbd */,
 				674F6C5C284C4BAA006FCF63 /* libz.tbd */,
-				50B2FD6E59D6DEE35E35BBD4 /* Pods_Runner.framework */,
+				967F56C9884048187D3EA853 /* Pods_Runner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,15 +169,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
 			buildPhases = (
-				712A264125C004A4F9A59123 /* [CP] Check Pods Manifest.lock */,
+				6BA3422197F07408A2906C87 /* [CP] Check Pods Manifest.lock */,
 				9740EEB61CF901F6004384FC /* Run Script */,
 				97C146EA1CF9000F007C117D /* Sources */,
 				97C146EB1CF9000F007C117D /* Frameworks */,
 				97C146EC1CF9000F007C117D /* Resources */,
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
-				8F570F33B9A35E1AA2157BD0 /* [CP] Embed Pods Frameworks */,
-				149CEE60C09395AD3DF8979D /* [CP] Copy Pods Resources */,
+				0C49F3BA44AEB086B33D559A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,19 +238,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		149CEE60C09395AD3DF8979D /* [CP] Copy Pods Resources */ = {
+		0C49F3BA44AEB086B33D559A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3B06AD1E1E4923F5004D2608 /* Thin Binary */ = {
@@ -260,7 +267,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin";
 		};
-		712A264125C004A4F9A59123 /* [CP] Check Pods Manifest.lock */ = {
+		6BA3422197F07408A2906C87 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,21 +287,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8F570F33B9A35E1AA2157BD0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9740EEB61CF901F6004384FC /* Run Script */ = {
@@ -358,7 +350,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -378,6 +370,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -411,7 +404,10 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -427,204 +423,6 @@
 					"-l\"z\"",
 					"-framework",
 					"\"AVFoundation\"",
-					"-framework",
-					"\"AliHADeviceEvaluation\"",
-					"-framework",
-					"\"AliReachability\"",
-					"-framework",
-					"\"AliRemoteDebugInterface\"",
-					"-framework",
-					"\"AliWindmillImage\"",
-					"-framework",
-					"\"AlibabaAuthEntrance\"",
-					"-framework",
-					"\"AlibabaAuthExt\"",
-					"-framework",
-					"\"AlibabaAuthSDK\"",
-					"-framework",
-					"\"AlibcLinkPartnerSDK\"",
-					"-framework",
-					"\"AlibcTradeBaseContainer\"",
-					"-framework",
-					"\"AlibcTradeBiz\"",
-					"-framework",
-					"\"AlibcTradeCommonSDK\"",
-					"-framework",
-					"\"AlibcTradeContainer\"",
-					"-framework",
-					"\"AlibcTradeSDK\"",
-					"-framework",
-					"\"AlibcTradeUltimateBizSDK\"",
-					"-framework",
-					"\"AlibcTradeUltimateSDK\"",
-					"-framework",
-					"\"AlibcTradeWebViewContainer\"",
-					"-framework",
-					"\"AlibcTrademiniAppContainer\"",
-					"-framework",
-					"\"AriverApi\"",
-					"-framework",
-					"\"AriverApp\"",
-					"-framework",
-					"\"AriverAuth\"",
-					"-framework",
-					"\"AriverConfig\"",
-					"-framework",
-					"\"AriverDevice\"",
-					"-framework",
-					"\"AriverDeviceCore\"",
-					"-framework",
-					"\"AriverFileManager\"",
-					"-framework",
-					"\"AriverKernel\"",
-					"-framework",
-					"\"AriverLogger\"",
-					"-framework",
-					"\"AriverResource\"",
-					"-framework",
-					"\"AriverRuntime\"",
-					"-framework",
-					"\"AriverSecurity\"",
-					"-framework",
-					"\"AriverWebSocket\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreAudio\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"CoreMotion\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"DWInteractiveSDK\"",
-					"-framework",
-					"\"FMDB\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"JavaScriptCore\"",
-					"-framework",
-					"\"Masonry\"",
-					"-framework",
-					"\"MediaPlayer\"",
-					"-framework",
-					"\"MtopSDK\"",
-					"-framework",
-					"\"MunionBcAdSDK\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Reachability\"",
-					"-framework",
-					"\"RiverLogger\"",
-					"-framework",
-					"\"SDWebImage\"",
-					"-framework",
-					"\"SGAVMP\"",
-					"-framework",
-					"\"SGMain\"",
-					"-framework",
-					"\"SGMiddleTier\"",
-					"-framework",
-					"\"SGSecurityBody\"",
-					"-framework",
-					"\"SSZipArchive\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SecurityGuardSDK\"",
-					"-framework",
-					"\"SocketRocket\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"TBMediaPlayer\"",
-					"-framework",
-					"\"TBMediaPlayerBundle\"",
-					"-framework",
-					"\"TBModuleHub\"",
-					"-framework",
-					"\"TriverAPI\"",
-					"-framework",
-					"\"TriverAppContainer\"",
-					"-framework",
-					"\"TriverCapability\"",
-					"-framework",
-					"\"TriverDebugTool\"",
-					"-framework",
-					"\"TriverLivePlayer\"",
-					"-framework",
-					"\"TriverLocalDebug\"",
-					"-framework",
-					"\"TriverRuntime\"",
-					"-framework",
-					"\"TriverVideo\"",
-					"-framework",
-					"\"TriverVideoEnhance\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"UT\"",
-					"-framework",
-					"\"UTDID\"",
-					"-framework",
-					"\"UT_AppMonitor\"",
-					"-framework",
-					"\"UT_Common\"",
-					"-framework",
-					"\"UT_Core\"",
-					"-framework",
-					"\"VideoToolbox\"",
-					"-framework",
-					"\"WindMix\"",
-					"-framework",
-					"\"WindVane\"",
-					"-framework",
-					"\"WindVaneBasic\"",
-					"-framework",
-					"\"WindVaneCore\"",
-					"-framework",
-					"\"WindmillTRiverKit\"",
-					"-framework",
-					"\"WindmillWeaver\"",
-					"-framework",
-					"\"ali_bc_taoke_sdk\"",
-					"-framework",
-					"\"dataoke_sdk\"",
-					"-framework",
-					"\"dd_js_util\"",
-					"-framework",
-					"\"image_gallery_saver\"",
-					"-framework",
-					"\"image_picker_ios\"",
-					"-framework",
-					"\"mtopcoreopen\"",
-					"-framework",
-					"\"mtopext\"",
-					"-framework",
-					"\"package_info\"",
-					"-framework",
-					"\"path_provider_ios\"",
-					"-framework",
-					"\"permission_handler_apple\"",
-					"-framework",
-					"\"sqflite\"",
-					"-framework",
-					"\"url_launcher_ios\"",
 					"-weak_framework",
 					"\"AdSupport\"",
 					"-weak_framework",
@@ -654,7 +452,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -674,6 +472,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -709,7 +508,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -729,6 +528,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -763,7 +563,10 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -779,204 +582,6 @@
 					"-l\"z\"",
 					"-framework",
 					"\"AVFoundation\"",
-					"-framework",
-					"\"AliHADeviceEvaluation\"",
-					"-framework",
-					"\"AliReachability\"",
-					"-framework",
-					"\"AliRemoteDebugInterface\"",
-					"-framework",
-					"\"AliWindmillImage\"",
-					"-framework",
-					"\"AlibabaAuthEntrance\"",
-					"-framework",
-					"\"AlibabaAuthExt\"",
-					"-framework",
-					"\"AlibabaAuthSDK\"",
-					"-framework",
-					"\"AlibcLinkPartnerSDK\"",
-					"-framework",
-					"\"AlibcTradeBaseContainer\"",
-					"-framework",
-					"\"AlibcTradeBiz\"",
-					"-framework",
-					"\"AlibcTradeCommonSDK\"",
-					"-framework",
-					"\"AlibcTradeContainer\"",
-					"-framework",
-					"\"AlibcTradeSDK\"",
-					"-framework",
-					"\"AlibcTradeUltimateBizSDK\"",
-					"-framework",
-					"\"AlibcTradeUltimateSDK\"",
-					"-framework",
-					"\"AlibcTradeWebViewContainer\"",
-					"-framework",
-					"\"AlibcTrademiniAppContainer\"",
-					"-framework",
-					"\"AriverApi\"",
-					"-framework",
-					"\"AriverApp\"",
-					"-framework",
-					"\"AriverAuth\"",
-					"-framework",
-					"\"AriverConfig\"",
-					"-framework",
-					"\"AriverDevice\"",
-					"-framework",
-					"\"AriverDeviceCore\"",
-					"-framework",
-					"\"AriverFileManager\"",
-					"-framework",
-					"\"AriverKernel\"",
-					"-framework",
-					"\"AriverLogger\"",
-					"-framework",
-					"\"AriverResource\"",
-					"-framework",
-					"\"AriverRuntime\"",
-					"-framework",
-					"\"AriverSecurity\"",
-					"-framework",
-					"\"AriverWebSocket\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreAudio\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"CoreMotion\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"DWInteractiveSDK\"",
-					"-framework",
-					"\"FMDB\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"JavaScriptCore\"",
-					"-framework",
-					"\"Masonry\"",
-					"-framework",
-					"\"MediaPlayer\"",
-					"-framework",
-					"\"MtopSDK\"",
-					"-framework",
-					"\"MunionBcAdSDK\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Reachability\"",
-					"-framework",
-					"\"RiverLogger\"",
-					"-framework",
-					"\"SDWebImage\"",
-					"-framework",
-					"\"SGAVMP\"",
-					"-framework",
-					"\"SGMain\"",
-					"-framework",
-					"\"SGMiddleTier\"",
-					"-framework",
-					"\"SGSecurityBody\"",
-					"-framework",
-					"\"SSZipArchive\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SecurityGuardSDK\"",
-					"-framework",
-					"\"SocketRocket\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"TBMediaPlayer\"",
-					"-framework",
-					"\"TBMediaPlayerBundle\"",
-					"-framework",
-					"\"TBModuleHub\"",
-					"-framework",
-					"\"TriverAPI\"",
-					"-framework",
-					"\"TriverAppContainer\"",
-					"-framework",
-					"\"TriverCapability\"",
-					"-framework",
-					"\"TriverDebugTool\"",
-					"-framework",
-					"\"TriverLivePlayer\"",
-					"-framework",
-					"\"TriverLocalDebug\"",
-					"-framework",
-					"\"TriverRuntime\"",
-					"-framework",
-					"\"TriverVideo\"",
-					"-framework",
-					"\"TriverVideoEnhance\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"UT\"",
-					"-framework",
-					"\"UTDID\"",
-					"-framework",
-					"\"UT_AppMonitor\"",
-					"-framework",
-					"\"UT_Common\"",
-					"-framework",
-					"\"UT_Core\"",
-					"-framework",
-					"\"VideoToolbox\"",
-					"-framework",
-					"\"WindMix\"",
-					"-framework",
-					"\"WindVane\"",
-					"-framework",
-					"\"WindVaneBasic\"",
-					"-framework",
-					"\"WindVaneCore\"",
-					"-framework",
-					"\"WindmillTRiverKit\"",
-					"-framework",
-					"\"WindmillWeaver\"",
-					"-framework",
-					"\"ali_bc_taoke_sdk\"",
-					"-framework",
-					"\"dataoke_sdk\"",
-					"-framework",
-					"\"dd_js_util\"",
-					"-framework",
-					"\"image_gallery_saver\"",
-					"-framework",
-					"\"image_picker_ios\"",
-					"-framework",
-					"\"mtopcoreopen\"",
-					"-framework",
-					"\"mtopext\"",
-					"-framework",
-					"\"package_info\"",
-					"-framework",
-					"\"path_provider_ios\"",
-					"-framework",
-					"\"permission_handler_apple\"",
-					"-framework",
-					"\"sqflite\"",
-					"-framework",
-					"\"url_launcher_ios\"",
 					"-weak_framework",
 					"\"AdSupport\"",
 					"-weak_framework",
@@ -1010,7 +615,10 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -1026,204 +634,6 @@
 					"-l\"z\"",
 					"-framework",
 					"\"AVFoundation\"",
-					"-framework",
-					"\"AliHADeviceEvaluation\"",
-					"-framework",
-					"\"AliReachability\"",
-					"-framework",
-					"\"AliRemoteDebugInterface\"",
-					"-framework",
-					"\"AliWindmillImage\"",
-					"-framework",
-					"\"AlibabaAuthEntrance\"",
-					"-framework",
-					"\"AlibabaAuthExt\"",
-					"-framework",
-					"\"AlibabaAuthSDK\"",
-					"-framework",
-					"\"AlibcLinkPartnerSDK\"",
-					"-framework",
-					"\"AlibcTradeBaseContainer\"",
-					"-framework",
-					"\"AlibcTradeBiz\"",
-					"-framework",
-					"\"AlibcTradeCommonSDK\"",
-					"-framework",
-					"\"AlibcTradeContainer\"",
-					"-framework",
-					"\"AlibcTradeSDK\"",
-					"-framework",
-					"\"AlibcTradeUltimateBizSDK\"",
-					"-framework",
-					"\"AlibcTradeUltimateSDK\"",
-					"-framework",
-					"\"AlibcTradeWebViewContainer\"",
-					"-framework",
-					"\"AlibcTrademiniAppContainer\"",
-					"-framework",
-					"\"AriverApi\"",
-					"-framework",
-					"\"AriverApp\"",
-					"-framework",
-					"\"AriverAuth\"",
-					"-framework",
-					"\"AriverConfig\"",
-					"-framework",
-					"\"AriverDevice\"",
-					"-framework",
-					"\"AriverDeviceCore\"",
-					"-framework",
-					"\"AriverFileManager\"",
-					"-framework",
-					"\"AriverKernel\"",
-					"-framework",
-					"\"AriverLogger\"",
-					"-framework",
-					"\"AriverResource\"",
-					"-framework",
-					"\"AriverRuntime\"",
-					"-framework",
-					"\"AriverSecurity\"",
-					"-framework",
-					"\"AriverWebSocket\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreAudio\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"CoreMotion\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"DWInteractiveSDK\"",
-					"-framework",
-					"\"FMDB\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"JavaScriptCore\"",
-					"-framework",
-					"\"Masonry\"",
-					"-framework",
-					"\"MediaPlayer\"",
-					"-framework",
-					"\"MtopSDK\"",
-					"-framework",
-					"\"MunionBcAdSDK\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Reachability\"",
-					"-framework",
-					"\"RiverLogger\"",
-					"-framework",
-					"\"SDWebImage\"",
-					"-framework",
-					"\"SGAVMP\"",
-					"-framework",
-					"\"SGMain\"",
-					"-framework",
-					"\"SGMiddleTier\"",
-					"-framework",
-					"\"SGSecurityBody\"",
-					"-framework",
-					"\"SSZipArchive\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SecurityGuardSDK\"",
-					"-framework",
-					"\"SocketRocket\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"TBMediaPlayer\"",
-					"-framework",
-					"\"TBMediaPlayerBundle\"",
-					"-framework",
-					"\"TBModuleHub\"",
-					"-framework",
-					"\"TriverAPI\"",
-					"-framework",
-					"\"TriverAppContainer\"",
-					"-framework",
-					"\"TriverCapability\"",
-					"-framework",
-					"\"TriverDebugTool\"",
-					"-framework",
-					"\"TriverLivePlayer\"",
-					"-framework",
-					"\"TriverLocalDebug\"",
-					"-framework",
-					"\"TriverRuntime\"",
-					"-framework",
-					"\"TriverVideo\"",
-					"-framework",
-					"\"TriverVideoEnhance\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"UT\"",
-					"-framework",
-					"\"UTDID\"",
-					"-framework",
-					"\"UT_AppMonitor\"",
-					"-framework",
-					"\"UT_Common\"",
-					"-framework",
-					"\"UT_Core\"",
-					"-framework",
-					"\"VideoToolbox\"",
-					"-framework",
-					"\"WindMix\"",
-					"-framework",
-					"\"WindVane\"",
-					"-framework",
-					"\"WindVaneBasic\"",
-					"-framework",
-					"\"WindVaneCore\"",
-					"-framework",
-					"\"WindmillTRiverKit\"",
-					"-framework",
-					"\"WindmillWeaver\"",
-					"-framework",
-					"\"ali_bc_taoke_sdk\"",
-					"-framework",
-					"\"dataoke_sdk\"",
-					"-framework",
-					"\"dd_js_util\"",
-					"-framework",
-					"\"image_gallery_saver\"",
-					"-framework",
-					"\"image_picker_ios\"",
-					"-framework",
-					"\"mtopcoreopen\"",
-					"-framework",
-					"\"mtopext\"",
-					"-framework",
-					"\"package_info\"",
-					"-framework",
-					"\"path_provider_ios\"",
-					"-framework",
-					"\"permission_handler_apple\"",
-					"-framework",
-					"\"sqflite\"",
-					"-framework",
-					"\"url_launcher_ios\"",
 					"-weak_framework",
 					"\"AdSupport\"",
 					"-weak_framework",
