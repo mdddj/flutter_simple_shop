@@ -33,11 +33,15 @@ class StoreGoodsItemLayout extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  ExtendedImage.network(
-                    MImageUtils.magesProcessor(storeGoods.mainPic!),
-                    borderRadius: BorderRadius.circular(5),
-                    shape: BoxShape.rectangle,
-                  ),
+                  LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+                    return ExtendedImage.network(
+                      MImageUtils.magesProcessor(storeGoods.mainPic!),
+                      borderRadius: BorderRadius.circular(5),
+                      shape: BoxShape.rectangle,
+                      width: constraints.maxWidth,
+                      height: constraints.maxWidth,
+                    );
+                  },),
                   Positioned(
                     bottom: 0,
                     right: 0,
