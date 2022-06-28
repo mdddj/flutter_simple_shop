@@ -130,12 +130,16 @@ class TKApiService {
       if (json != null && json.isNotEmpty) {
         try {
           final data = jsonDecode(json);
-          final pddRespose = data['goods_detail_response']['goods_details'];
+          final map = jsonDecode(data);
+          final pddRespose = map['goods_detail_response']['goods_details'];
+
           if (pddRespose is List<dynamic>) {
             final item = pddRespose.first;
             return PddDetail.fromJson(item);
           }
-        } catch (e) {
+        } catch (e,s) {
+          print(e);
+          print(s);
           log('拼多多商品详情解析失败');
         }
       }

@@ -116,7 +116,7 @@ class PddSearchItemModel {
       mallId: asT<int>(jsonRes['mallId'])!,
       hasMallCoupon: asT<bool>(jsonRes['hasMallCoupon'])!,
       couponTotalQuantity: asT<int>(jsonRes['couponTotalQuantity'])!,
-      predictPromotionRate: asT<int>(jsonRes['predictPromotionRate'])!,
+      predictPromotionRate: asT<double>(jsonRes['predictPromotionRate'])!,
       optIds: optIds!,
       hasCoupon: asT<bool>(jsonRes['hasCoupon'])!,
       mallCouponMaxDiscountAmount: asT<int>(jsonRes['mallCouponMaxDiscountAmount'])!,
@@ -151,7 +151,7 @@ class PddSearchItemModel {
       mallCouponId: asT<int>(jsonRes['mallCouponId'] ?? 0)!,
       goodsImageUrl: asT<String>(jsonRes['goodsImageUrl'])!,
       servTxt: asT<String>(jsonRes['servTxt'])!,
-      promotionRate: asT<int>(jsonRes['promotionRate'])!,
+      promotionRate: asT<double>(jsonRes['promotionRate'])!,
       catIds: catIds!,
       optId: asT<int>(jsonRes['optId'])!,
     );
@@ -164,7 +164,7 @@ class PddSearchItemModel {
   int mallId;
   bool hasMallCoupon;
   int couponTotalQuantity;
-  int predictPromotionRate;
+  double predictPromotionRate;
   List<int> optIds;
   bool hasCoupon;
   int mallCouponMaxDiscountAmount;
@@ -199,7 +199,7 @@ class PddSearchItemModel {
   int mallCouponId;
   String goodsImageUrl;
   String servTxt;
-  int promotionRate;
+  double promotionRate;
   List<int> catIds;
   int optId;
 
