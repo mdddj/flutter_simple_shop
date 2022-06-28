@@ -55,8 +55,8 @@ class PanicBuyingModel extends ChangeNotifier {
     if (index > 1) {
       /// 获取选中哪个分类
       final categorys = Get.context!.read<CategoryState>().categorys;
-      final _cid = categorys[index - 2].cid;
-      cid = '$_cid';
+      final myCid = categorys[index - 2].cid;
+      cid = '$myCid';
     }
     loadRealTimeProduct();
   }

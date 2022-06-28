@@ -22,10 +22,10 @@ class FavoriteIndexHome extends StatefulWidget {
   const FavoriteIndexHome({Key? key}) : super(key: key);
 
   @override
-  _IndexState createState() => _IndexState();
+  IndexState createState() => IndexState();
 }
 
-class _IndexState extends State<FavoriteIndexHome> {
+class IndexState extends State<FavoriteIndexHome> {
   UserProvider? userProvider;
   GoodsDetailProvider? goodsDetailProvider;
   RefreshController rc = RefreshController(initialRefresh: true);
@@ -162,7 +162,10 @@ class _IndexState extends State<FavoriteIndexHome> {
 
                                                               userProvider.removeFavoriteOk();
                                                               SystemToast.show('删除成功');
-                                                              Navigator.pop(context);
+                                                              if(mounted){
+                                                                Navigator.pop(context);
+                                                              }
+
                                                             },
                                                             child: const Text('确定'),
                                                           ),

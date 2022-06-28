@@ -8,10 +8,10 @@ class LoadAnimation extends StatefulWidget {
   const LoadAnimation({required this.child, Key? key}) : super(key: key);
 
   @override
-  _LoadAnimationState createState() => _LoadAnimationState();
+  LoadAnimationState createState() => LoadAnimationState();
 }
 
-class _LoadAnimationState extends State<LoadAnimation>
+class LoadAnimationState extends State<LoadAnimation>
     with TickerProviderStateMixin {
   late AnimationController controller;
 

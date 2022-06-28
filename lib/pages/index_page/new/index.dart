@@ -23,10 +23,10 @@ class IndexHomeNew extends StatefulWidget {
   const IndexHomeNew({Key? key}) : super(key: key);
 
   @override
-  _IndexHomeNewState createState() => _IndexHomeNewState();
+  IndexHomeNewState createState() => IndexHomeNewState();
 }
 
-class _IndexHomeNewState extends State<IndexHomeNew>
+class IndexHomeNewState extends State<IndexHomeNew>
     with AfterLayoutMixin, SingleTickerProviderStateMixin {
   late TabController tabController;
   IndexGoodsRepository indexGoodsRepository = IndexGoodsRepository();

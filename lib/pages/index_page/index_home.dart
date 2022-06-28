@@ -25,10 +25,10 @@ class IndexHome extends StatefulWidget {
   const IndexHome({Key? key, this.mController}) : super(key: key);
 
   @override
-  _IndexHomeState createState() => _IndexHomeState();
+  IndexHomeState createState() => IndexHomeState();
 }
 
-class _IndexHomeState extends State<IndexHome>
+class IndexHomeState extends State<IndexHome>
     with TickerProviderStateMixin, AfterLayoutMixin<IndexHome> {
 //   状态管理
   final GlobalKey _titleKey = GlobalKey();

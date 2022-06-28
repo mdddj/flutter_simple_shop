@@ -57,11 +57,11 @@ class DrawableStartTextState extends State<DrawableStartText> {
         var imgWidth = imageInfo.image.width.toDouble();
         //由于图片缩放了。所以根据缩放大小计算出宽图，这里没有用key去取值，是因为取出的值是空的
         var scale = _textHeight! / imgHeight;
-        var _imageWidth = imgWidth * scale;
+        var myImageWidth = imgWidth * scale;
 
         //再用父控件的宽度减去图片的宽度就是文字显示的宽度
         var parentWidth = rowKey.currentContext!.findRenderObject()!.paintBounds.size.width;
-        var textWidth = parentWidth - _imageWidth;
+        var textWidth = parentWidth - myImageWidth;
 
         // 判断一行是否能显示全部文字
 

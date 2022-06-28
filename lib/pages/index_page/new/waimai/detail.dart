@@ -23,10 +23,10 @@ class WaimaiDetail extends StatefulWidget {
   const WaimaiDetail({Key? key, required this.type}) : super(key: key);
 
   @override
-  _WaimaiDetailState createState() => _WaimaiDetailState();
+  WaimaiDetailState createState() => WaimaiDetailState();
 }
 
-class _WaimaiDetailState extends State<WaimaiDetail> with LoadingMixin {
+class WaimaiDetailState extends State<WaimaiDetail> with LoadingMixin {
   ActivityLinkResult? model;
 
   @override

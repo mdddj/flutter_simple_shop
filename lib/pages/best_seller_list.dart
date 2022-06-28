@@ -16,10 +16,10 @@ class BestSellerListPage extends StatefulWidget {
   static void nav()=>Get.to(()=>const BestSellerListPage());
 
   @override
-  _BestSellerListPageState createState() => _BestSellerListPageState();
+  BestSellerListPageState createState() => BestSellerListPageState();
 }
 
-class _BestSellerListPageState extends State<BestSellerListPage> {
+class BestSellerListPageState extends State<BestSellerListPage> {
 
 
  late  List<Product> _products;

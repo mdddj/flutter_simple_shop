@@ -17,10 +17,10 @@ class CategoryItemDefaultLayout extends StatefulWidget {
       : super(key: key);
 
   @override
-  _CategoryItemDefaultLayoutState createState() => _CategoryItemDefaultLayoutState();
+  CategoryItemDefaultLayoutState createState() => CategoryItemDefaultLayoutState();
 }
 
-class _CategoryItemDefaultLayoutState extends State<CategoryItemDefaultLayout> {
+class CategoryItemDefaultLayoutState extends State<CategoryItemDefaultLayout> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {

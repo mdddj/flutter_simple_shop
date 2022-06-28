@@ -21,10 +21,10 @@ class BrandListPage extends StatefulWidget {
   const BrandListPage({Key? key}) : super(key: key);
 
   @override
-  _BrandListPageState createState() => _BrandListPageState();
+  BrandListPageState createState() => BrandListPageState();
 }
 
-class _BrandListPageState extends State<BrandListPage> with LoadingMixin {
+class BrandListPageState extends State<BrandListPage> with LoadingMixin {
   final CategoryController _categoryController = CategoryController();
   final EasyRefreshController _easyRefreshController = EasyRefreshController();
   int page = 1;

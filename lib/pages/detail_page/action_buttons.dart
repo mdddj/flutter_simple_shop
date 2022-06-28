@@ -38,26 +38,24 @@ class ActionButtons extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  FSuper(
+                  const FSuper(
                     lightOrientation: FLightOrientation.LeftBottom,
                     height:120,
-//                    width: ScreenUtil().setWidth(180),
                     text: '首页',
                     textAlignment: Alignment.bottomCenter,
                     child1Alignment: Alignment.topCenter,
-                    child1: const Icon(
+                    child1: Icon(
                       Icons.home,
                       size: 12,
                     ),
                   ),
-                  FSuper(
+                  const FSuper(
                     lightOrientation: FLightOrientation.LeftBottom,
                     height: 120,
-//                    width: ScreenUtil().setWidth(180),
                     text: '分享',
                     textAlignment: Alignment.bottomCenter,
                     child1Alignment: Alignment.topCenter,
-                    child1: const Icon(
+                    child1: Icon(
                       Icons.share,
                       size: 20,
                     ),
@@ -65,14 +63,13 @@ class ActionButtons extends StatelessWidget {
                   InkWell(
                     onTap: () async {
                     },
-                    child: FSuper(
+                    child: const FSuper(
                       lightOrientation: FLightOrientation.LeftBottom,
                       height: 120,
-//                    width: ScreenUtil().setWidth(180),
                       text: '收藏',
                       textAlignment: Alignment.bottomCenter,
                       child1Alignment: Alignment.topCenter,
-                      child1: const Icon(
+                      child1: Icon(
                         Icons.favorite_border,
                         size: 20,
                       ),

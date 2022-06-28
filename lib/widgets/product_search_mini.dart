@@ -15,10 +15,10 @@ class ProductSearchMini extends StatefulWidget {
       : super(key: key);
 
   @override
-  _ProductSearchMiniState createState() => _ProductSearchMiniState();
+  ProductSearchMiniState createState() => ProductSearchMiniState();
 }
 
-class _ProductSearchMiniState extends State<ProductSearchMini> {
+class ProductSearchMiniState extends State<ProductSearchMini> {
   final List<Product> _products = [];
 
   @override

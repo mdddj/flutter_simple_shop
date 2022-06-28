@@ -20,10 +20,10 @@ class TouchCallBack extends StatefulWidget {
     this.background = const Color(0xffd8d8d8),
   }) : super(key: key);
   @override
-  _TouchCallBackState createState() => _TouchCallBackState();
+  TouchCallBackState createState() => TouchCallBackState();
 }
 
-class _TouchCallBackState extends State<TouchCallBack> {
+class TouchCallBackState extends State<TouchCallBack> {
   Color color = Colors.transparent;
   @override
   Widget build(BuildContext context) {

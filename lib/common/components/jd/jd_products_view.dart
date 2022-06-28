@@ -12,10 +12,10 @@ class JdProductsView extends StatefulWidget {
   const JdProductsView({Key? key}) : super(key: key);
 
   @override
-  _JdProductsViewState createState() => _JdProductsViewState();
+  JdProductsViewState createState() => JdProductsViewState();
 }
 
-class _JdProductsViewState extends State<JdProductsView> {
+class JdProductsViewState extends State<JdProductsView> {
   @override
   Widget build(BuildContext context) {
     return renderListWidget();

@@ -15,15 +15,15 @@ class BottomCategoryTabs extends StatelessWidget implements PreferredSizeWidget 
 
   @override
   Widget build(BuildContext context) {
-    var _insets = insets ?? [];
+    var myInsets = insets ?? [];
     final categoryWidgets = utils.widgetUtils.categoryTabs(context);
     return Container(
       alignment: Alignment.centerLeft,
       child: DefaultTabController(
-        length: categoryWidgets.length + _insets.length,
+        length: categoryWidgets.length + myInsets.length,
         initialIndex: initIndex ?? 0,
         child: TabBar(
-          tabs: [..._insets, ...categoryWidgets],
+          tabs: [...myInsets, ...categoryWidgets],
           isScrollable: true,
           indicator: const BubbleTabIndicator(
             indicatorHeight: 25.0,

@@ -27,20 +27,20 @@ class PublicDetailView extends StatefulWidget {
   const PublicDetailView({Key? key, required this.goodsId, required this.type}) : super(key: key);
 
   @override
-  _PublicDetailViewState createState() => _PublicDetailViewState();
+  PublicDetailViewState createState() => PublicDetailViewState();
 }
 
-class _PublicDetailViewState extends State<PublicDetailView> implements PublicDetailViewAbs {
+class PublicDetailViewState extends State<PublicDetailView> implements PublicDetailViewAbs {
   PublicDetailModel? info;
 
   @override
   void initState() {
     super.initState();
     Future.microtask(() async {
-      final _info = await fetchData();
+      final myInfo = await fetchData();
       if (mounted) {
         setState(() {
-          info = _info;
+          info = myInfo;
         });
       }
     });

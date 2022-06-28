@@ -15,10 +15,10 @@ class NewVersionPage extends StatefulWidget {
   const NewVersionPage({Key? key}) : super(key: key);
 
   @override
-  _NewVersionPageState createState() => _NewVersionPageState();
+  NewVersionPageState createState() => NewVersionPageState();
 }
 
-class _NewVersionPageState extends State<NewVersionPage> with LoadingMixin {
+class NewVersionPageState extends State<NewVersionPage> with LoadingMixin {
   final TextEditingController textEditingController = TextEditingController();
   final TextEditingController descController = TextEditingController();
   final TextEditingController downUrlController = TextEditingController();

@@ -1,6 +1,6 @@
 // Package imports:
-import 'package:nested/nested.dart';
 import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
 
 import './ddq_provider.dart';
 import './dtk_index_goods_provider.dart';

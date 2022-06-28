@@ -17,10 +17,10 @@ class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
 
   @override
-  _AppState createState() => _AppState();
+  AppState createState() => AppState();
 }
 
-class _AppState extends State<App> with AfterLayoutMixin {
+class AppState extends State<App> with AfterLayoutMixin {
   static ScrollController mController = ScrollController();
   static ScrollController jiujiuController = ScrollController(); // 9.9包邮页面滑动控制器
 

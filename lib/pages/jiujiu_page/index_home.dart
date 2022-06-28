@@ -17,10 +17,10 @@ class JiujiuIndexHome extends StatefulWidget {
   const JiujiuIndexHome({this.scrollController,Key? key}): super(key: key);
 
   @override
-  _JiujiuIndexHomeState createState() => _JiujiuIndexHomeState();
+  JiujiuIndexHomeState createState() => JiujiuIndexHomeState();
 }
 
-class _JiujiuIndexHomeState extends State<JiujiuIndexHome> with TickerProviderStateMixin {
+class JiujiuIndexHomeState extends State<JiujiuIndexHome> with TickerProviderStateMixin {
   bool initLoading = false;
   bool nextPageLoading = false;
 

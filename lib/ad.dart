@@ -15,10 +15,10 @@ class AdPage extends StatefulWidget {
   const AdPage({Key? key}) : super(key: key);
 
   @override
-  _AdPageState createState() => _AdPageState();
+  AdPageState createState() => AdPageState();
 }
 
-class _AdPageState extends State<AdPage> with AfterLayoutMixin {
+class AdPageState extends State<AdPage> with AfterLayoutMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +52,12 @@ class _AdPageState extends State<AdPage> with AfterLayoutMixin {
   @override
   void afterFirstLayout(BuildContext context) async {
     await context.read<CategoryState>().init();
-    await context.read<CategoryState>().getJdCategory();
-    await context.read<IndexState>().fetch();
+    if(mounted){
+      await context.read<CategoryState>().getJdCategory();
+      if(mounted){
+        await context.read<IndexState>().fetch();
+      }
+    }
     await context.navigator.pushReplacement(MaterialPageRoute(builder: (_) => const App()));
   }
 }

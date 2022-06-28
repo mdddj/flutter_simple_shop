@@ -45,8 +45,7 @@ class BrandProvider extends ChangeNotifier {
 
   /// 加载品牌页面
   /// 首次
-  Future<void> detail(String _brandId) async {
-    brandId = _brandId;
+  Future<void> detail(String brandId) async {
     if (brandDetailModel != null) {
       brandDetailModel = brandDetailModel;
     }

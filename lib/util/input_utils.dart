@@ -80,7 +80,7 @@ class InputUtils {
       return;
     }
     // Delete the previous character.
-    final _value = controller.value;
+    final myValue = controller.value;
     final previousCodeUnit = text.codeUnitAt(textSelection.start - 1);
     final offset = _isUtf16Surrogate(previousCodeUnit) ? 2 : 1;
     final newStart = textSelection.start - offset;
@@ -91,9 +91,9 @@ class InputUtils {
       selection: TextSelection.collapsed(offset: newStart),
     );
     final oldTextSpan = MySpecialTextSpanBuilder().build(
-      _value.text,
+      myValue.text,
     );
-    value = handleSpecialTextSpanDelete(value, _value, oldTextSpan, null);
+    value = handleSpecialTextSpanDelete(value, myValue, oldTextSpan, null);
     controller.value = value;
   }
 

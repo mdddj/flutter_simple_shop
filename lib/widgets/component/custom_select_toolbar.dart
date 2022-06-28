@@ -12,10 +12,10 @@ class CustomSelectToolbar extends StatefulWidget {
   const CustomSelectToolbar({this.items, this.select, this.hideSubTitle,Key? key}):super(key: key);
 
   @override
-  _CustomSelectToolbarState createState() => _CustomSelectToolbarState();
+  CustomSelectToolbarState createState() => CustomSelectToolbarState();
 }
 
-class _CustomSelectToolbarState extends State<CustomSelectToolbar>
+class CustomSelectToolbarState extends State<CustomSelectToolbar>
     with AfterLayoutMixin<CustomSelectToolbar> {
 
   @override

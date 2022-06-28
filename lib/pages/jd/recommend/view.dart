@@ -14,10 +14,10 @@ class RecommendPage extends StatefulWidget {
   const RecommendPage({Key? key}) : super(key: key);
 
   @override
-  _RecommendPageState createState() => _RecommendPageState();
+  RecommendPageState createState() => RecommendPageState();
 }
 
-class _RecommendPageState extends State<RecommendPage> {
+class RecommendPageState extends State<RecommendPage> {
   final RecommendLogic logic = Get.put(RecommendLogic());
 
   @override

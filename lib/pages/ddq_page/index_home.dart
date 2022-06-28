@@ -16,10 +16,10 @@ class DdqIndexHome extends StatefulWidget {
   const DdqIndexHome({Key? key}) : super(key: key);
 
   @override
-  _DdqIndexHomeState createState() => _DdqIndexHomeState();
+  DdqIndexHomeState createState() => DdqIndexHomeState();
 }
 
-class _DdqIndexHomeState extends State<DdqIndexHome> {
+class DdqIndexHomeState extends State<DdqIndexHome> {
   late DdqProvider ddqProvider = context.watch<DdqProvider>();
   int? cur;
 

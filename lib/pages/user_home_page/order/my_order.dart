@@ -18,10 +18,10 @@ class MyOrderHomePage extends StatefulWidget {
   const MyOrderHomePage({this.stype,Key? key}):super(key: key);
 
   @override
-  _MyOrderHomePageState createState() => _MyOrderHomePageState();
+  MyOrderHomePageState createState() => MyOrderHomePageState();
 }
 
-class _MyOrderHomePageState extends State<MyOrderHomePage> {
+class MyOrderHomePageState extends State<MyOrderHomePage> {
 
   OrderRespository orderRespository = OrderRespository();
 

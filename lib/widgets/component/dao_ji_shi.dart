@@ -25,10 +25,10 @@ class Daojishi extends StatefulWidget {
       : super(key: key);
 
   @override
-  _DaojishiState createState() => _DaojishiState();
+  DaojishiState createState() => DaojishiState();
 }
 
-class _DaojishiState extends State<Daojishi> {
+class DaojishiState extends State<Daojishi> {
   late Timer _timer;
 
   int _m = 0; // 分

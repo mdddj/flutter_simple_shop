@@ -18,10 +18,10 @@ class BanjiaIndex extends StatefulWidget {
   const BanjiaIndex({Key? key}) : super(key: key);
 
   @override
-  _BanjiaIndexState createState() => _BanjiaIndexState();
+  BanjiaIndexState createState() => BanjiaIndexState();
 }
 
-class _BanjiaIndexState extends State<BanjiaIndex> {
+class BanjiaIndexState extends State<BanjiaIndex> {
   final ScrollController scrollController = ScrollController();
 
   bool showTopButton = false;

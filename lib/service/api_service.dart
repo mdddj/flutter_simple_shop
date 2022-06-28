@@ -86,10 +86,10 @@ class TKApiService {
 
     if (response.isNotEmpty) {
       try {
-        final _map = jsonDecode(response);
-        if (_map['goodsList'] is List<dynamic>) {
-          final _list = List<PddSearchItemModel>.from((_map['goodsList'] as List<dynamic>).map((e) => PddSearchItemModel.fromJson(e))).toList();
-          result.addAll(_list);
+        final myMap = jsonDecode(response);
+        if (myMap['goodsList'] is List<dynamic>) {
+          final myList = List<PddSearchItemModel>.from((myMap['goodsList'] as List<dynamic>).map((e) => PddSearchItemModel.fromJson(e))).toList();
+          result.addAll(myList);
         }
       } catch (s) {
         log('解析拼多多数据失败:$s');

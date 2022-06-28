@@ -23,10 +23,10 @@ class CategoryComponent extends StatefulWidget {
       : super(key: key);
 
   @override
-  _CategoryComponentState createState() => _CategoryComponentState();
+  CategoryComponentState createState() => CategoryComponentState();
 }
 
-class _CategoryComponentState extends State<CategoryComponent> {
+class CategoryComponentState extends State<CategoryComponent> {
   int _current = 0;
   CategoryChildPosition? _categoryChildPosition;
   final ValueNotifier<CategoryChildPosition?> _valueNotifier = ValueNotifier<CategoryChildPosition?>(
@@ -166,18 +166,18 @@ class _CategoryComponentState extends State<CategoryComponent> {
   /// 菜单被点击事件
   /// 不包含扩展项目
   void _onTap(String? name, List<Category> categorys) {
-    var _index = -1;
-    Category? _item;
+    var index = -1;
+    Category? item;
 
     for (var i = 0; i < categorys.length; i++) {
       if (categorys[i].cname == name) {
-        _index = i;
-        _item = categorys[i];
+        index = i;
+        item = categorys[i];
         break;
       }
     }
-    if(_item!=null){
-      widget.onSelect?.call(_index, _item);
+    if(item!=null){
+      widget.onSelect?.call(index, item);
     }
 
   }
@@ -216,7 +216,7 @@ class InsetCustomItem {
 typedef SelectWithItem = void Function(int index, Category item);
 
 class CategoryController {
-  late _CategoryComponentState _state;
+  late CategoryComponentState _state;
 
   final int? current;
 
@@ -227,11 +227,11 @@ class CategoryController {
   }
 
   // 绑定状态
-  void bindState(_CategoryComponentState _categoryComponentState) {
-    _state = _categoryComponentState;
+  void bindState(CategoryComponentState categoryComponentState) {
+    _state = categoryComponentState;
   }
 
-  _CategoryComponentState get state => _state;
+  CategoryComponentState get state => _state;
 
 }
 

@@ -24,10 +24,10 @@ class WhiteIndex extends StatefulWidget {
   const WhiteIndex({Key? key}) : super(key: key);
 
   @override
-  _WhiteIndexState createState() => _WhiteIndexState();
+  WhiteIndexState createState() => WhiteIndexState();
 }
 
-class _WhiteIndexState extends State<WhiteIndex> {
+class WhiteIndexState extends State<WhiteIndex> {
   final MySpecialTextSpanBuilder _mySpecialTextSpanBuilder = MySpecialTextSpanBuilder();
   final TextEditingController _textEditingController = TextEditingController();
   final GlobalKey _key = GlobalKey();
@@ -141,7 +141,7 @@ class _WhiteIndexState extends State<WhiteIndex> {
           buildSvgPictureIcon('assets/svg/tupian.svg', 80, onTap: () async {
             final file = await utils.selectFile();
             if (file != null) {
-              insertText("<img src='https://static.saintic.com/picbed/huang/2021/06/12/1623466301058.jpg' width='${Get.width}' height='${Get.width}'/>");
+              insertText("<img src='https://static.saintic.com/picbed/huang/2021/06/12/1623466301058.jpg' width='${Get.width}' height='${Get.width}' alt=""/>");
               insertText('如果您觉得这个开源项目不错,扫码支持一下哦~');
             }
           }),
@@ -289,12 +289,12 @@ class _WhiteIndexState extends State<WhiteIndex> {
 
   void manualDelete() {
     //delete by code
-    final _value = _textEditingController.value;
-    final selection = _value.selection;
+    final myValue = _textEditingController.value;
+    final selection = myValue.selection;
     if (!selection.isValid) return;
 
     TextEditingValue value;
-    final actualText = _value.text;
+    final actualText = myValue.text;
     if (selection.isCollapsed && selection.start == 0) return;
     final start = selection.isCollapsed ? selection.start - 1 : selection.start;
     final end = selection.end;
@@ -304,9 +304,9 @@ class _WhiteIndexState extends State<WhiteIndex> {
       selection: TextSelection.collapsed(offset: start),
     );
 
-    final oldTextSpan = _mySpecialTextSpanBuilder.build(_value.text);
+    final oldTextSpan = _mySpecialTextSpanBuilder.build(myValue.text);
 
-    value = handleSpecialTextSpanDelete(value, _value, oldTextSpan, null);
+    value = handleSpecialTextSpanDelete(value, myValue, oldTextSpan, null);
 
     _textEditingController.value = value;
   }

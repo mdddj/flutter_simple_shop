@@ -15,10 +15,10 @@ class WriteBlogPage extends StatefulWidget {
   const WriteBlogPage({Key? key}) : super(key: key);
 
   @override
-  _WriteBlogPageState createState() => _WriteBlogPageState();
+  WriteBlogPageState createState() => WriteBlogPageState();
 }
 
-class _WriteBlogPageState extends State<WriteBlogPage> {
+class WriteBlogPageState extends State<WriteBlogPage> {
   final WriteBlogLogic logic = Get.put(WriteBlogLogic());
   final TextEditingController tagController = TextEditingController();
   final FocusNode tagFocusNode = FocusNode();

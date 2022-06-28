@@ -16,10 +16,10 @@ class ZheIndex extends StatefulWidget {
   const ZheIndex({Key? key}) : super(key: key);
 
   @override
-  _ZheIndexState createState() => _ZheIndexState();
+  ZheIndexState createState() => ZheIndexState();
 }
 
-class _ZheIndexState extends State<ZheIndex> {
+class ZheIndexState extends State<ZheIndex> {
   final EasyRefreshController easyRefreshController = EasyRefreshController();
   final ScrollController scrollController = ScrollController();
 

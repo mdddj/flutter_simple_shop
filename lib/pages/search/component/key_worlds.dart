@@ -1,5 +1,4 @@
-// Flutter imports:
-// Package imports:
+
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,10 +13,10 @@ class SearchKeyWorlds extends StatefulWidget {
   const SearchKeyWorlds({Key? key}) : super(key: key);
 
   @override
-  _SearchKeyWorldsState createState() => _SearchKeyWorldsState();
+  SearchKeyWorldsState createState() => SearchKeyWorldsState();
 }
 
-class _SearchKeyWorldsState extends State<SearchKeyWorlds> {
+class SearchKeyWorldsState extends State<SearchKeyWorlds> {
   List<String> _keyWorlds = List.generate(10, (index) => '        ');
 
   @override

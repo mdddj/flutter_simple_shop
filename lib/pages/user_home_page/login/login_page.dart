@@ -17,10 +17,10 @@ class UserLoginPage extends StatefulWidget {
   const UserLoginPage({Key? key}) : super(key: key);
 
   @override
-  _UserLoginPageState createState() => _UserLoginPageState();
+  UserLoginPageState createState() => UserLoginPageState();
 }
 
-class _UserLoginPageState extends State<UserLoginPage> {
+class UserLoginPageState extends State<UserLoginPage> {
   bool isAgree = false; // 是否同意协议
   String username = ''; // 用户名
   String password = ''; // 密码
@@ -90,10 +90,10 @@ class _UserLoginPageState extends State<UserLoginPage> {
 
           // 页面关闭按钮
           Positioned(
-            child: GestureDetector(
-                onTap: Get.back, child: const Icon(Icons.close)),
             left: 12,
             top: Get.mediaQuery.padding.top + 12,
+            child: GestureDetector(
+                onTap: Get.back, child: const Icon(Icons.close)),
           )
         ],
       ),
@@ -112,7 +112,7 @@ class _UserLoginPageState extends State<UserLoginPage> {
     return SizedBox(
       width: double.infinity,
         child:
-            TextButton(child: const Text('注册'), onPressed: _navToRegisterPage));
+            TextButton(onPressed: _navToRegisterPage, child: const Text('注册')));
   }
 
   // 协议
@@ -134,12 +134,12 @@ class _UserLoginPageState extends State<UserLoginPage> {
             child: Icon(
                 isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 5.0),
+          const Padding(
+            padding: EdgeInsets.only(left: 5.0),
             child: FSuper(
               lightOrientation: controller.FLightOrientation.LeftBottom,
               text: '我已阅读并同意',
-              spans: const [
+              spans: [
                 TextSpan(
                     text: '用户协议',
                     style: TextStyle(decoration: TextDecoration.underline)),

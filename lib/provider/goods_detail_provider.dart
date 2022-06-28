@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 // Project imports:
 import '../modals/coupon_data.dart';
 import '../modals/goods_info.dart';
-import '../util/system_toast.dart';
 
 class GoodsDetailProvider extends ChangeNotifier {
   GoodsDetail? goodInfo; // 商品信息

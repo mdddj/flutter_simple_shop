@@ -16,10 +16,10 @@ class OrderAddIndexPage extends StatefulWidget {
   const OrderAddIndexPage({Key? key}) : super(key: key);
 
   @override
-  _OrderAddState createState() => _OrderAddState();
+  OrderAddState createState() => OrderAddState();
 }
 
-class _OrderAddState extends State<OrderAddIndexPage> {
+class OrderAddState extends State<OrderAddIndexPage> {
   double svgSize = 220.0;
   double placeholderHeight =12;
   TextEditingController textEditingController = TextEditingController();

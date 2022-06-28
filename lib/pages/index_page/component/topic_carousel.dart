@@ -1,6 +1,3 @@
-// Dart imports:
-
-// Package imports:
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart'
     as my_carousel_comp;
@@ -9,15 +6,12 @@ import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/carousel_model.dart';
 import 'package:dataoke_sdk/params/activity_link_param.dart';
 import 'package:extended_image/extended_image.dart';
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
 
 import '../../../common/utils.dart';
-// Project imports:
 import '../../activity_page/activity_view/view.dart';
 import '../new/index_riverpod.dart';
 
@@ -42,15 +36,15 @@ class IndexTopicComponentCarousel extends StatelessWidget {
           itemCount: list.length,
           pagination: const SwiperPagination(),
           onTap: (int index) async {
+            final stateProivder = context.read<IndexState>();
             final item = list[index];
-            Logger().wtf(item.toJson());
             if (item.sourceType == 1) {
               await context.navigator.push(MaterialPageRoute(
                   builder: (_) => ActivityViewPage(
                       id: '${item.topicId!}', title: item.topicName!)));
             }
             if (item.sourceType == 2) {
-              Get.context!.read<IndexState>().changeLoadingState(true);
+              stateProivder.changeLoadingState(true);
               final result = await DdTaokeSdk.instance.getActivityLink(
                   ActivityLinkParam(promotionSceneId: item.activityId!));
               if (result != null) {

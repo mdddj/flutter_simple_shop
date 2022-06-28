@@ -25,10 +25,10 @@ class NewGoodsList extends StatefulWidget {
       : super(key: key);
 
   @override
-  _NewGoodsListState createState() => _NewGoodsListState();
+  NewGoodsListState createState() => NewGoodsListState();
 }
 
-class _NewGoodsListState extends State<NewGoodsList>
+class NewGoodsListState extends State<NewGoodsList>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 

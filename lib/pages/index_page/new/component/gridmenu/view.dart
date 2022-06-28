@@ -1,14 +1,9 @@
-// Flutter imports:
-// Package imports:
 
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
-import 'package:logger/logger.dart';
 import 'package:provider/provider.dart';
-
-// Project imports:
 import '../../../../../common/utils.dart';
 import '../../../../../config/app_config.dart';
 import '../../../../../service/api_service.dart';
@@ -51,17 +46,17 @@ final gridMenuModles = [
           title: '美团领券',
           image: mtwmImage,
           onTap: () async {
-            Get.context!.read<IndexState>().changeLoadingState(true);
+            final indexState = Get.context!.read<IndexState>();
+            indexState.changeLoadingState(true);
             await tkApi.meituan({'actId': '2', 'linkType': '1'},
                 mapHandle: (data) async {
               final url = (data['data'] ?? '').toString();
-              Logger().d('美团领券URL:$url');
               if (url.isNotEmpty) {
                 await utils.urlOpen(url);
               }
             });
 
-            Get.context!.read<IndexState>().changeLoadingState(false);
+            indexState.changeLoadingState(false);
           },
           isAssets: true,
           onLongTap: () async {

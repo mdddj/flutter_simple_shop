@@ -14,10 +14,10 @@ class PyqView extends StatefulWidget {
   const PyqView({Key? key}) : super(key: key);
 
   @override
-  _PyqViewState createState() => _PyqViewState();
+  PyqViewState createState() => PyqViewState();
 }
 
-class _PyqViewState extends State<PyqView> {
+class PyqViewState extends State<PyqView> {
 
 
   @override

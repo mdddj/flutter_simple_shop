@@ -16,10 +16,10 @@ class PddRecommendListView extends StatefulWidget {
   const PddRecommendListView({Key? key}) : super(key: key);
 
   @override
-  _PddRecommendListViewState createState() => _PddRecommendListViewState();
+  PddRecommendListViewState createState() => PddRecommendListViewState();
 }
 
-class _PddRecommendListViewState extends State<PddRecommendListView> {
+class PddRecommendListViewState extends State<PddRecommendListView> {
   PddRecommendListResp pddRecommendListResp = PddRecommendListResp();
 
   @override

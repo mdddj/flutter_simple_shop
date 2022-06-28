@@ -77,13 +77,13 @@ class SAppBarSearch extends StatefulWidget implements PreferredSizeWidget {
   final bool isSliveWidget ;
 
   @override
-  _SAppBarSearchState createState() => _SAppBarSearchState();
+  SAppBarSearchState createState() => SAppBarSearchState();
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-class _SAppBarSearchState extends State<SAppBarSearch> {
+class SAppBarSearchState extends State<SAppBarSearch> {
   late TextEditingController _controller;
   late FocusNode _focusNode;
   bool isInput = false;

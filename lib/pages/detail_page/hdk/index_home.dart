@@ -36,10 +36,10 @@ class HaoDanKuDetailItem extends StatefulWidget {
   const HaoDanKuDetailItem({required this.goodsId, Key? key}) : super(key: key);
 
   @override
-  _HaoDanKuDetailItemState createState() => _HaoDanKuDetailItemState();
+  HaoDanKuDetailItemState createState() => HaoDanKuDetailItemState();
 }
 
-class _HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
+class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     with TickerProviderStateMixin {
   late Product info;
   CouponLinkResult? couponLinkResult;

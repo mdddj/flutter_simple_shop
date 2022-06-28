@@ -25,10 +25,10 @@ class DetailIndex extends StatefulWidget {
   const DetailIndex({required this.weipinhuiId,Key? key}):super(key: key);
 
   @override
-  _DetailIndexState createState() => _DetailIndexState();
+  DetailIndexState createState() => DetailIndexState();
 }
 
-class _DetailIndexState extends State<DetailIndex> {
+class DetailIndexState extends State<DetailIndex> {
   bool loadIng = true;
 
   // 唯品会商品数据
@@ -294,23 +294,21 @@ class _DetailIndexState extends State<DetailIndex> {
 
   //商品是否包邮
   Widget _isFreeshipRemoteDistrict() {
-    return FSuper(
+    return const FSuper(
       lightOrientation: FLightOrientation.LeftBottom,
       text: '包邮',
-      padding: const EdgeInsets.all(2),
-      margin: const EdgeInsets.only(right: 5),
-//      corner: Corner.all(3),
-//      strokeColor: Colors.black,
+      padding: EdgeInsets.all(2),
+      margin: EdgeInsets.only(right: 5),
       strokeWidth: 1,
     );
   }
 
   //商品是否赠送运费险
   Widget _haveYunfeixian() {
-    return FSuper(
+    return const FSuper(
       lightOrientation: FLightOrientation.LeftBottom,
       text: '赠送运费险',
-      padding: const EdgeInsets.all(2),
+      padding: EdgeInsets.all(2),
       strokeWidth: 1,
     );
   }

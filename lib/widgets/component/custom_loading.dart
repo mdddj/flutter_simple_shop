@@ -51,10 +51,10 @@ class Skeleton extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SkeletonState createState() => _SkeletonState();
+  SkeletonState createState() => SkeletonState();
 }
 
-class _SkeletonState extends State<Skeleton>
+class SkeletonState extends State<Skeleton>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 

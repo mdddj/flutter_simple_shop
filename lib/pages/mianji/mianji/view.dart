@@ -14,10 +14,10 @@ class MianjiPage extends StatefulWidget {
   const MianjiPage({Key? key}) : super(key: key);
 
   @override
-  _MianjiPageState createState() => _MianjiPageState();
+  MianjiPageState createState() => MianjiPageState();
 }
 
-class _MianjiPageState extends State<MianjiPage> {
+class MianjiPageState extends State<MianjiPage> {
   final MianjiLogic logic = Get.put(MianjiLogic());
 
   @override

@@ -16,14 +16,14 @@ class IndexColumnWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final products = context.read<IndexState>().hotDayProducts;
     return SliverPadding(
-      sliver: SliverWaterfallFlow.count(crossAxisCount: 2,children: [
+      sliver: SliverWaterfallFlow.count(crossAxisCount: 2,mainAxisSpacing: 12,crossAxisSpacing: 12,children: [
         TwoColumnCommWidget(imageBuilder: (double w, double h) {
           return ExtendedImage.network(products[0].mainPic!,width: w,height: h,borderRadius: BorderRadius.circular(12),shape: BoxShape.rectangle,);
         }, title: '畅销榜单', subTitle: '所有人,买它',onTap: BestSellerListPage.nav),
         TwoColumnCommWidget(imageBuilder: (double w, double h) {
           return ExtendedImage.network(products[1].mainPic!,width: w,height: h,borderRadius: BorderRadius.circular(12),shape: BoxShape.rectangle);
         }, subTitle: '新鲜更有趣', title: '每日上新',)
-      ],mainAxisSpacing: 12,crossAxisSpacing: 12,), padding: const EdgeInsets.symmetric(horizontal: 12),
+      ],), padding: const EdgeInsets.symmetric(horizontal: 12),
     );
   }
 }

@@ -14,10 +14,10 @@ class WeipinhuiJinBianGoods extends StatefulWidget {
   const WeipinhuiJinBianGoods({Key? key}) : super(key: key);
 
   @override
-  _WeipinhuiJinBianGoodsState createState() => _WeipinhuiJinBianGoodsState();
+  WeipinhuiJinBianGoodsState createState() => WeipinhuiJinBianGoodsState();
 }
 
-class _WeipinhuiJinBianGoodsState extends State<WeipinhuiJinBianGoods> {
+class WeipinhuiJinBianGoodsState extends State<WeipinhuiJinBianGoods> {
   @override
   void initState() {
     super.initState();

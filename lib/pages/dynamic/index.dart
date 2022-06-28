@@ -10,10 +10,10 @@ class DynamicIndex extends StatefulWidget {
   const DynamicIndex({Key? key}) : super(key: key);
 
   @override
-  _DynamicIndexState createState() => _DynamicIndexState();
+  DynamicIndexState createState() => DynamicIndexState();
 }
 
-class _DynamicIndexState extends State<DynamicIndex> with SingleTickerProviderStateMixin {
+class DynamicIndexState extends State<DynamicIndex> with SingleTickerProviderStateMixin {
   late TabController tabController;
 
   @override

@@ -18,10 +18,10 @@ class DDQWidget extends StatefulWidget {
   const DDQWidget({Key? key}) : super(key: key);
 
   @override
-  _DDQWidgetState createState() => _DDQWidgetState();
+  DDQWidgetState createState() => DDQWidgetState();
 }
 
-class _DDQWidgetState extends State<DDQWidget> {
+class DDQWidgetState extends State<DDQWidget> {
   final GlobalKey globalKey = GlobalKey();
   DdqProvider? ddqProvider;
   bool isLoading = true;

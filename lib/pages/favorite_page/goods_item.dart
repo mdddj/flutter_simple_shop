@@ -127,11 +127,11 @@ class FavoriteGoodsItem extends StatelessWidget {
       strokeWidth: 1,
     );
     if (difference.inDays < 0) {
-      returnWidget = FSuper(
+      returnWidget = const FSuper(
         lightOrientation: FLightOrientation.LeftBottom,
         text: '已失效',
-        padding: const EdgeInsets.all(2),
-        strokeColor: const Color(0xffc2bfc2),
+        padding: EdgeInsets.all(2),
+        strokeColor: Color(0xffc2bfc2),
         strokeWidth: 1,
       );
     }

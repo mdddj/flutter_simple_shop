@@ -23,10 +23,10 @@ class PanicBuyingPage extends StatefulWidget {
   const PanicBuyingPage({Key? key}) : super(key: key);
 
   @override
-  _PanicBuyingPageState createState() => _PanicBuyingPageState();
+  PanicBuyingPageState createState() => PanicBuyingPageState();
 }
 
-class _PanicBuyingPageState extends State<PanicBuyingPage> {
+class PanicBuyingPageState extends State<PanicBuyingPage> {
   final EasyRefreshController easyRefreshController = EasyRefreshController();
 
   @override

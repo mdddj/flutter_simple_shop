@@ -21,10 +21,10 @@ class BrandDetailPage extends StatefulWidget {
   const BrandDetailPage({Key? key, required this.brandId}) : super(key: key);
 
   @override
-  _BrandDetailPageState createState() => _BrandDetailPageState();
+  BrandDetailPageState createState() => BrandDetailPageState();
 }
 
-class _BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<BrandDetailPage>, LoadingMixin {
+class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<BrandDetailPage>, LoadingMixin {
   final EasyRefreshController _easyRefreshController = EasyRefreshController();
   List<Product> products = <Product>[];
   BrandDetail? brandDetailModel;

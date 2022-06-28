@@ -8,10 +8,10 @@ class ApplyPage extends StatefulWidget {
   const ApplyPage({Key? key}) : super(key: key);
 
   @override
-  _ApplyPageState createState() => _ApplyPageState();
+  ApplyPageState createState() => ApplyPageState();
 }
 
-class _ApplyPageState extends State<ApplyPage> {
+class ApplyPageState extends State<ApplyPage> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override

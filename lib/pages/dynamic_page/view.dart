@@ -12,10 +12,10 @@ class DynamicPagePage extends StatefulWidget {
   const DynamicPagePage({Key? key}) : super(key: key);
 
   @override
-  _DynamicPagePageState createState() => _DynamicPagePageState();
+  DynamicPagePageState createState() => DynamicPagePageState();
 }
 
-class _DynamicPagePageState extends State<DynamicPagePage> {
+class DynamicPagePageState extends State<DynamicPagePage> {
   final logic = Get.put(DynamicPageLogic());
   final state = Get.find<DynamicPageLogic>().state;
 

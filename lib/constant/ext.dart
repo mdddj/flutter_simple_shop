@@ -1,12 +1,12 @@
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 extension StringExt on String {
 
   ///跳转到浏览器
   void urlLinkTo() {
-    canLaunch(this).then((value) {
+    canLaunchUrlString(this).then((value) {
       if (value) {
-        launch(this);
+        launchUrlString(this);
       }
     });
   }

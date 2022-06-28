@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 // Project imports:
 import '../controller/app_controller.dart';
@@ -33,10 +33,10 @@ class Utils {
 
   // 显示一条消息
   void showMessage(String msg) {
-    final _context = Get.context;
-    if (_context != null) {
-      ScaffoldMessenger.of(_context).removeCurrentSnackBar();
-      ScaffoldMessenger.of(_context).showSnackBar(SnackBar(content: Text(msg)));
+    final context = Get.context;
+    if (context != null) {
+      ScaffoldMessenger.of(context).removeCurrentSnackBar();
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
     }
   }
 
@@ -84,9 +84,9 @@ class Utils {
   }
 
   Future<void> navToBrowser(String url) async {
-    if (await canLaunch(url)) {
+    if (await canLaunchUrlString(url)) {
       // 判断当前手机是否安装某app. 能否正常跳转
-      await launch(url);
+      await launchUrlString(url);
     } else {
       copy(url, message: '跳转url失败,链接已复制到剪贴板');
     }
@@ -99,8 +99,8 @@ class Utils {
 
   // 跳转url
   Future<void> urlOpen(String url) async{
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
     }
   }
 
@@ -108,31 +108,31 @@ class Utils {
   Future<void> urlToApp(String url, String urlYs) async {
     /// 如果是windows平台,直接跳转到浏览器打开链接
     if (GetPlatform.isWindows) {
-      await launch(url);
+      await launchUrlString(url);
       return;
     }
-    var _url = url;
-    _url = '$urlYs${urlHandle(url)}';
-    if (await canLaunch(_url)) {
+    var myUrl = url;
+    myUrl = '$urlYs${urlHandle(url)}';
+    if (await canLaunchUrlString(myUrl)) {
       // 判断当前手机是否安装某app. 能否正常跳转
-      await launch(_url);
+      await launchUrlString(myUrl);
     } else {
       if (weChatBro) {
         // 如果是微信浏览器
-        if (await canLaunch(url)) {
-          await launch(url);
+        if (await canLaunchUrlString(url)) {
+          await launchUrlString(url);
         } else {
-          final _newUrl = url.replaceAll('https://', '');
-          showMessage('打开url失败,即将尝试删除https://后打开 $_newUrl');
-          if (await canLaunch(_newUrl)) {
-            await launch(_newUrl);
+          final newUrl = url.replaceAll('https://', '');
+          showMessage('打开url失败,即将尝试删除https://后打开 $newUrl');
+          if (await canLaunchUrlString(newUrl)) {
+            await launchUrlString(newUrl);
           } else {
             showMessage('打开url失败');
             copy(url, message: '打开URL失败,链接已复制到剪贴板,请在浏览器访问');
           }
         }
       } else {
-        await launch(url);
+        await launchUrlString(url);
       }
     }
   }
@@ -143,13 +143,13 @@ class Utils {
   }
 
   String urlHandle(String url) {
-    var _url = url;
-    if (_url.indexOf('http://') == 0) {
-      _url = _url.replaceAll('http://', '');
-    } else if (_url.indexOf('https://') == 0) {
-      _url = _url.replaceAll('https://', '');
+    var myUrl = url;
+    if (myUrl.indexOf('http://') == 0) {
+      myUrl = myUrl.replaceAll('http://', '');
+    } else if (myUrl.indexOf('https://') == 0) {
+      myUrl = myUrl.replaceAll('https://', '');
     }
-    return _url;
+    return myUrl;
   }
 
   /// 判断是否为微信浏览器

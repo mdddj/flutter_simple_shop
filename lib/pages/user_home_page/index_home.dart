@@ -17,10 +17,10 @@ class UserIndexHome extends StatefulWidget {
   const UserIndexHome({Key? key}) : super(key: key);
 
   @override
-  _IndexHomeState createState() => _IndexHomeState();
+  IndexHomeState createState() => IndexHomeState();
 }
 
-class _IndexHomeState extends State<UserIndexHome> {
+class IndexHomeState extends State<UserIndexHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -178,14 +178,14 @@ class _IndexHomeState extends State<UserIndexHome> {
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
       child: WaterfallFlow.count(
         crossAxisCount: 3,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
         children: [
           _countItem('余额', '102.43'),
           _countItem('优惠券', '32张'),
           _countItem('积分', '289'),
         ],
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
       ),
     );
   }

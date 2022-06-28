@@ -57,9 +57,9 @@ class NavigatorUtil {
         MaterialPageRoute(builder: (_) => const OrderAddIndexPage()));
   }
 
-  static void gotoOrderAllIndexPage(BuildContext context,String _stype){
+  static void gotoOrderAllIndexPage(BuildContext context,String stype){
     context.navigator.push(
-        MaterialPageRoute(builder: (_) => MyOrderHomePage(stype: _stype,)));
+        MaterialPageRoute(builder: (_) => MyOrderHomePage(stype: stype,)));
   }
 
   // 前往好单库商品详情页面

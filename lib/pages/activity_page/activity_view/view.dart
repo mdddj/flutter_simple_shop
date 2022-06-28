@@ -19,10 +19,10 @@ class ActivityViewPage extends StatefulWidget {
   final String id;
 
   @override
-  _ActivityViewPageState createState() => _ActivityViewPageState();
+  ActivityViewPageState createState() => ActivityViewPageState();
 }
 
-class _ActivityViewPageState extends State<ActivityViewPage> {
+class ActivityViewPageState extends State<ActivityViewPage> {
   final ActivityViewLogic logic = Get.put(ActivityViewLogic());
 
   List<Product> _products = [];

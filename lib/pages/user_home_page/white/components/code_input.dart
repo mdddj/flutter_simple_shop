@@ -11,10 +11,10 @@ class CodeInputPage extends StatefulWidget {
   const CodeInputPage({Key? key}) : super(key: key);
 
   @override
-  _CodeInputPageState createState() => _CodeInputPageState();
+  CodeInputPageState createState() => CodeInputPageState();
 }
 
-class _CodeInputPageState extends State<CodeInputPage> {
+class CodeInputPageState extends State<CodeInputPage> {
   String _type = 'dart'; // 语言
 
   final TextEditingController textEditingController = TextEditingController();
@@ -50,8 +50,8 @@ class _CodeInputPageState extends State<CodeInputPage> {
           ),
           IconButton(
               onPressed: () {
-                final _codes = Uri.encodeComponent(textEditingController.text);
-                Get.back(result: {'code': _codes, 'type': _type});
+                final myCodes = Uri.encodeComponent(textEditingController.text);
+                Get.back(result: {'code': myCodes, 'type': _type});
               },
               icon: const Icon(Icons.check)),
           utils.widgetUtils.marginRight()

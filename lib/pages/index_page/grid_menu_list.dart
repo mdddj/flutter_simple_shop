@@ -20,10 +20,10 @@ class GridMenuList extends StatefulWidget {
   const GridMenuList({Key? key}) : super(key: key);
 
   @override
-  _GridMenuListState createState() => _GridMenuListState();
+  GridMenuListState createState() => GridMenuListState();
 }
 
-class _GridMenuListState extends State<GridMenuList> {
+class GridMenuListState extends State<GridMenuList> {
   final int rowCount = 5;
   late List<IndexGridMenuItemModel> _items = [];
 

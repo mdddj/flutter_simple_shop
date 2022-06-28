@@ -14,10 +14,10 @@ class NewVersionDialog extends StatefulWidget {
   const NewVersionDialog({Key? key,required this.map}) : super(key: key);
 
   @override
-  _NewVersionDialogState createState() => _NewVersionDialogState();
+  NewVersionDialogState createState() => NewVersionDialogState();
 }
 
-class _NewVersionDialogState extends State<NewVersionDialog> {
+class NewVersionDialogState extends State<NewVersionDialog> {
   @override
   Widget build(BuildContext context) {
     final desc = widget.map['desc'].toString();

@@ -13,10 +13,10 @@ class CategoryIndexPage extends StatefulWidget {
   const CategoryIndexPage({Key? key}) : super(key: key);
 
   @override
-  _CategoryIndexPageState createState() => _CategoryIndexPageState();
+  CategoryIndexPageState createState() => CategoryIndexPageState();
 }
 
-class _CategoryIndexPageState extends State<CategoryIndexPage> {
+class CategoryIndexPageState extends State<CategoryIndexPage> {
   int current = 0;
 
   @override
