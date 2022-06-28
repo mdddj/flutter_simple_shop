@@ -1,6 +1,8 @@
 PODS:
   - dataoke_sdk (0.0.1):
     - Flutter
+  - dd_check_plugin (0.0.1):
+    - Flutter
   - dd_js_util (0.0.1):
     - Flutter
   - Flutter (1.0.0)
@@ -28,6 +30,8 @@ PODS:
   - Mantle (2.2.0):
     - Mantle/extobjc (= 2.2.0)
   - Mantle/extobjc (2.2.0)
+  - network_info_plus (0.0.1):
+    - Flutter
   - package_info (0.0.1):
     - Flutter
   - path_provider_ios (0.0.1):
@@ -48,11 +52,13 @@ PODS:
 
 DEPENDENCIES:
   - dataoke_sdk (from `.symlinks/plugins/dataoke_sdk/ios`)
+  - dd_check_plugin (from `.symlinks/plugins/dd_check_plugin/ios`)
   - dd_js_util (from `.symlinks/plugins/dd_js_util/ios`)
   - Flutter (from `Flutter`)
   - flutter_image_compress (from `.symlinks/plugins/flutter_image_compress/ios`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - network_info_plus (from `.symlinks/plugins/network_info_plus/ios`)
   - package_info (from `.symlinks/plugins/package_info/ios`)
   - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
@@ -70,6 +76,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   dataoke_sdk:
     :path: ".symlinks/plugins/dataoke_sdk/ios"
+  dd_check_plugin:
+    :path: ".symlinks/plugins/dd_check_plugin/ios"
   dd_js_util:
     :path: ".symlinks/plugins/dd_js_util/ios"
   Flutter:
@@ -80,6 +88,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/image_gallery_saver/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
+  network_info_plus:
+    :path: ".symlinks/plugins/network_info_plus/ios"
   package_info:
     :path: ".symlinks/plugins/package_info/ios"
   path_provider_ios:
@@ -93,6 +103,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   dataoke_sdk: aa95616c89b448c7b3f698825a49bed62c9b7b9d
+  dd_check_plugin: f3d378fdfffd915012853d731035c0bbade6ad9f
   dd_js_util: dd9d6c042b6221e3b5eeaba6f2caf186a382aa3d
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   flutter_image_compress: fd2b476345226e1a10ea352fa306af95704642c1
@@ -101,6 +112,7 @@ SPEC CHECKSUMS:
   image_picker_ios: b786a5dcf033a8336a657191401bfdf12017dabb
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   Mantle: c5aa8794a29a022dfbbfc9799af95f477a69b62d
+  network_info_plus: b78876159360f5580608c2cea620d6ceffabd0ad
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider_ios: 7d7ce634493af4477d156294792024ec3485acd5
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce

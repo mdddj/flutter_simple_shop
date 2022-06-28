@@ -3,6 +3,7 @@ import 'dart:io';
 
 // Flutter imports:
 import 'package:dataoke_sdk/network/util.dart';
+import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
@@ -24,10 +25,12 @@ import 'util/navigator_util.dart';
 const kDebugMode = true;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   /// 初始化典典小卖部的Api sdk 文档-->[https://pub.dev/packages/dd_taoke_sdk]
 
   DdTaokeUtil.instance
       .init('https://itbug.shop', '443', debug: false); //  远程服务器
+  DdCheckPlugin.instance.init(DdTaokeUtil.instance.createInstance());
   // DdTaokeUtil.instance.init('http://localhost', '80', debug: false); // 本地测试服务器
 
   /// 使用浏览器查看网络请求,详情查看[https://www.jianshu.com/p/e4058e064341]
@@ -35,7 +38,7 @@ void main() async {
 
   /// 本地缓存工具类，
 
-  WidgetsFlutterBinding.ensureInitialized();
+
 
   /// 初始化单例工具类
   GetIt.instance.registerSingleton<Utils>(Utils());

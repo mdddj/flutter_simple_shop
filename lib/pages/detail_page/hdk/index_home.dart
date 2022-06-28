@@ -1,15 +1,12 @@
-// Dart imports:
 import 'dart:ui';
-
-// Package imports:
 import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/coupon_link_result.dart';
 import 'package:dataoke_sdk/model/product.dart';
+import 'package:dd_js_util/api/base.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:fcontrol_nullsafety/fdefine.dart';
-// Flutter imports:
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,8 +14,6 @@ import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_f
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
-
-// Project imports:
 import '../../../common/utils.dart';
 import '../../../modals/shop_info.dart';
 import '../../../util/image_util.dart';
@@ -52,8 +47,8 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
   double _initImagesTopHei = 0; // 图片详情距离顶部的高度 (包含转态栏)
   bool _showToTopButton = false; // 显示返回顶部按钮
 
-  TabController? _tabController;
-  ScrollController? _scrollController;
+  late TabController _tabController;
+  final ScrollController _scrollController = ScrollController();
   final GlobalKey _swaperGlogbalKey = GlobalKey();
   final GlobalKey _appbarGlogbalKey = GlobalKey();
   final GlobalKey _detailImagesGlogbalKey = GlobalKey();
@@ -63,13 +58,12 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     super.initState();
     futureBuildData = initDatas();
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
-    _scrollController = ScrollController();
   }
 
   void addScrollListener() {
-    _scrollController!.addListener(() {
+    _scrollController.addListener(() {
       // 控制顶部导航显影
-      var scrollHeight = _scrollController!.offset;
+      var scrollHeight = _scrollController.offset;
       var t = scrollHeight / (MediaQuery.of(context).size.width * 0.85);
       if (scrollHeight == 0) {
         t = 0;
@@ -85,10 +79,10 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
       //计算详情widget到顶部距离
       var topHei = getY(_detailImagesGlogbalKey.currentContext!);
       if (topHei <= _topAppbarHei + ztlHei) {
-        _tabController!.animateTo(1);
+        _tabController.animateTo(1);
       } else {
-        if (_tabController!.index != 0) {
-          _tabController!.animateTo(0);
+        if (_tabController.index != 0) {
+          _tabController.animateTo(0);
         }
       }
     });
@@ -97,10 +91,10 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
   // 顶部选项卡被切换
   void tabOnChange(int index) {
     if (index == 0) {
-      _scrollController!.animateTo(0,
+      _scrollController.animateTo(0,
           duration: const Duration(milliseconds: 600), curve: Curves.ease);
     } else if (index == 1) {
-      _scrollController!.animateTo(
+      _scrollController.animateTo(
           _initImagesTopHei - ztlHei - _topAppbarHei + 5,
           duration: const Duration(milliseconds: 600),
           curve: Curves.ease);
@@ -110,8 +104,8 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _scrollController!.addListener(() {
-      var scrollHeight = _scrollController!.offset;
+    _scrollController.addListener(() {
+      var scrollHeight = _scrollController.offset;
       var t = scrollHeight / (MediaQuery.of(context).size.width * 0.85);
       if (scrollHeight == 0) {
         t = 0;
@@ -197,7 +191,7 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
                   right: 12,
                   child: InkWell(
                     onTap: () {
-                      _scrollController!.animateTo(0,
+                      _scrollController.animateTo(0,
                           duration: const Duration(milliseconds: 600),
                           curve: Curves.ease);
                     },
@@ -876,20 +870,24 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     );
   }
 
-
+  @Doc(message: '初始化页面数据')
   Future<String> initDatas() async {
-    final result = await DdTaokeSdk.instance.getDetailBaseData(
-      productId: widget.goodsId,
-    );
-    if (result != null) {
-      if (mounted) {
-        setState(() {
-          info = result.info!;
-          couponLinkResult = result.couponInfo;
-        });
+    try{
+      final result = await DdTaokeSdk.instance.getDetailBaseData(
+        productId: widget.goodsId,
+      );
+      if (result != null) {
+        if (mounted) {
+          setState(() {
+            info = result.info!;
+            couponLinkResult = result.couponInfo;
+          });
+        }
+      } else {
+        throw Exception('商品优惠已过期');
       }
-    } else {
-      throw Exception('商品优惠已过期');
+    }catch(e,s){
+      debugPrintStack(stackTrace: s);
     }
     return 'success';
   }
@@ -897,7 +895,7 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
   @override
   void dispose() {
     super.dispose();
-    _scrollController!.dispose();
+    _scrollController.dispose();
   }
 
   // 获取widget距离顶部的位置
