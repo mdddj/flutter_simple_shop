@@ -4,6 +4,7 @@ import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/coupon_link_result.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:dd_js_util/api/base.dart';
+import 'package:dd_js_util/ext/bool.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:fcontrol_nullsafety/fdefine.dart';
@@ -13,6 +14,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import '../../../common/utils.dart';
 import '../../../modals/shop_info.dart';
@@ -25,7 +27,14 @@ import '../../../widgets/round_underline_tab_indicator.dart';
 import '../../../widgets/simple_price.dart';
 import '../detail_imgs_widget.dart';
 
-class HaoDanKuDetailItem extends StatefulWidget {
+//是否展示轮播图上面的返回箭头
+final satteShowBackButton = StateProvider((ref) => true);
+
+//是否在顶部展示导航条
+final stateShowAppbar = StateProvider((ref) => false);
+
+//详情页面
+class HaoDanKuDetailItem extends ConsumerStatefulWidget {
   final String goodsId;
 
   const HaoDanKuDetailItem({required this.goodsId, Key? key}) : super(key: key);
@@ -34,7 +43,7 @@ class HaoDanKuDetailItem extends StatefulWidget {
   HaoDanKuDetailItemState createState() => HaoDanKuDetailItemState();
 }
 
-class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
+class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     with TickerProviderStateMixin {
   late Product info;
   CouponLinkResult? couponLinkResult;
@@ -74,7 +83,6 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
         _appbarOpaction = t;
       });
 
-      /// // 控制顶部导航显影
 
       //计算详情widget到顶部距离
       var topHei = getY(_detailImagesGlogbalKey.currentContext!);
@@ -106,6 +114,13 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     super.didChangeDependencies();
     _scrollController.addListener(() {
       var scrollHeight = _scrollController.offset;
+      if(scrollHeight >= 2){
+        ref.read(satteShowBackButton.notifier).state = false;
+        ref.read(stateShowAppbar.notifier).state = true;
+      }else{
+        ref.read(satteShowBackButton.notifier).state = true;
+        ref.read(stateShowAppbar.notifier).state = false;
+      }
       var t = scrollHeight / (MediaQuery.of(context).size.width * 0.85);
       if (scrollHeight == 0) {
         t = 0;
@@ -126,24 +141,29 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarColor: Colors.grey,
         statusBarIconBrightness: Brightness.light));
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: null,
-      body: FutureBuilder(
-        future: futureBuildData,
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          return AnimatedSwitcher(
-            duration: const Duration(milliseconds: 800),
-            switchInCurve: Curves.fastOutSlowIn,
-            child: snapshot.hasData
-                ? buildCustomScrollViewShop()
-                : snapshot.hasError
-                    ? NoDataWidget(
-                        title: snapshot.error.toString(),
-                      )
-                    : const LoadingWidget(),
-          );
-        },
+    return Container(
+      color: Colors.white,
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: null,
+          body: FutureBuilder(
+            future: futureBuildData,
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              return AnimatedSwitcher(
+                duration: const Duration(milliseconds: 800),
+                switchInCurve: Curves.fastOutSlowIn,
+                child: snapshot.hasData
+                    ? buildCustomScrollViewShop()
+                    : snapshot.hasError
+                        ? NoDataWidget(
+                            title: snapshot.error.toString(),
+                          )
+                        : const LoadingWidget(),
+              );
+            },
+          ),
+        ),
       ),
     );
   }
@@ -153,7 +173,7 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
       onNotification: (notification) {
         if (_topAppbarHei == 0) {
           setState(() {
-            _topAppbarHei = _appbarGlogbalKey.currentContext!.size!.height +
+            _topAppbarHei = (_appbarGlogbalKey.currentContext?.size?.height??0) +
                 MediaQueryData.fromWindow(window).padding.top;
             _initImagesTopHei = getY(_detailImagesGlogbalKey.currentContext!);
           });
@@ -187,7 +207,7 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
           // 返回顶部按钮
           _showToTopButton
               ? Positioned(
-                  bottom: 80,
+                  bottom: 80 + MediaQuery.of(context).padding.bottom,
                   right: 12,
                   child: InkWell(
                     onTap: () {
@@ -687,9 +707,10 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     return Stack(
       children: <Widget>[
         buildContainer(swiper: swiper),
-        Positioned(
+        AnimatedPositioned(
+          duration: const Duration(milliseconds: 100),
           left: 12,
-          top: 12 + ztlHei,
+          top:ref.watch(satteShowBackButton) ?  12 : -12,
           child: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -722,14 +743,16 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
   }
 
   // 顶部显影appbar
-  Opacity buildOpacityAppbar() {
+  Widget buildOpacityAppbar() {
+    final isShow = ref.watch(stateShowAppbar);
+    if(isShow.not){
+      return const SizedBox();
+    }
     return Opacity(
       opacity: _appbarOpaction,
       child: Container(
         key: _appbarGlogbalKey,
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        margin:
-            EdgeInsets.only(top: MediaQueryData.fromWindow(window).padding.top),
         height: kToolbarHeight,
         width: Get.width,
         decoration: const BoxDecoration(
@@ -778,11 +801,9 @@ class HaoDanKuDetailItemState extends State<HaoDanKuDetailItem>
     );
   }
 
-  Container buildContainer({Widget? swiper, double? width}) {
-    return Container(
+  Widget buildContainer({Widget? swiper, double? width}) {
+    return SizedBox(
       height: width ?? Get.width,
-      margin:
-          EdgeInsets.only(top: MediaQueryData.fromWindow(window).padding.top),
       child: swiper,
     );
   }

@@ -49,7 +49,7 @@ dependencies:
   sliver_tools: ^0.2.7
   shelf: ^1.3.1
   extended_sliver: ^2.1.3
-  dd_js_util: ^0.2.4
+  dd_js_util: ^0.2.5
   fcontrol_nullsafety: ^2.0.0
   flutter_hooks: ^0.18.5+1
   get_it: ^7.2.0
