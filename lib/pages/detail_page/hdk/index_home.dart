@@ -48,7 +48,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   late Product info;
   CouponLinkResult? couponLinkResult;
   ShopInfo? _shopInfo;
-  late Future<String> futureBuildData;
+  late Future<String> futureBuildData = initDatas();
   double _appbarOpaction = 0;
   int curentSwaiperIndex = 0;
   double ztlHei = MediaQueryData.fromWindow(window).padding.top; // 转态栏高度
@@ -65,7 +65,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   @override
   void initState() {
     super.initState();
-    futureBuildData = initDatas();
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
   }
 
