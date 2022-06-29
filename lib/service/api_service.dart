@@ -7,6 +7,7 @@ import 'dart:developer';
 import 'package:dataoke_sdk/network/util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
+import 'package:logger/logger.dart';
 
 import '../common/toast.dart';
 import '../common/utils.dart';
@@ -137,9 +138,7 @@ class TKApiService {
             final item = pddRespose.first;
             return PddDetail.fromJson(item);
           }
-        } catch (e,s) {
-          print(e);
-          print(s);
+        } catch (_) {
           log('拼多多商品详情解析失败');
         }
       }
@@ -151,13 +150,17 @@ class TKApiService {
   Future<dynamic> pddCovert(String goodsSgin) async {
     var data = {'id': goodsSgin};
     final result = await DdTaokeUtil.dio!.get<String>('/pdd/covert', queryParameters: data);
+    Logger().d(result);
     if (result.statusCode == 200 && result.data != null) {
       final json = result.data ?? '';
       if(json.isNotEmpty){
         try{
           final map  = jsonDecode(json);
-          return map['goods_promotion_url_generate_response']['goods_promotion_url_list'][0];
-        }catch(_){}
+          final jsonMap = jsonDecode(map.toString());
+          return jsonMap['goods_promotion_url_generate_response']['goods_promotion_url_list'][0];
+        }catch(e,s){
+          Logger().e('转换平多多优惠券失败');
+        }
       }
     }
   }

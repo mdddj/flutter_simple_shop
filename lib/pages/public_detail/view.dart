@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 
 // Project imports:
 import '../../common/no_shadow_croll_ehavior.dart';
@@ -289,6 +290,7 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
 
   @override
   Future<void> onGetCoupon() async {
+    Logger().d('领取优惠券${info?.type}');
     if (info != null) {
       switch (info!.type) {
         case '拼多多':
