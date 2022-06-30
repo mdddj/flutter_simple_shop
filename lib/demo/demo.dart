@@ -120,10 +120,14 @@ class EmptyCard extends HomeComponetRender {
 
 ///工厂类
 class HomeCardFactory {
+
+
   static HomeComponetRender render(String type, Map<String, dynamic> data) {
     switch (type) {
       case "slider":
         return SliverComponet(data);
+      case "newlist":
+        return NewlistComponet(data);
       default:
         return EmptyCard();
     }
