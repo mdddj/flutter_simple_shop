@@ -7,7 +7,6 @@ import 'package:dd_js_util/api/base.dart';
 import 'package:dd_js_util/ext/bool.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
-import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -82,7 +81,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         _appbarOpaction = t;
       });
 
-
       //计算详情widget到顶部距离
       var topHei = getY(_detailImagesGlogbalKey.currentContext!);
       if (topHei <= _topAppbarHei + ztlHei) {
@@ -113,10 +111,10 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     super.didChangeDependencies();
     _scrollController.addListener(() {
       var scrollHeight = _scrollController.offset;
-      if(scrollHeight >= 2){
+      if (scrollHeight >= 2) {
         ref.read(satteShowBackButton.notifier).state = false;
         ref.read(stateShowAppbar.notifier).state = true;
-      }else{
+      } else {
         ref.read(satteShowBackButton.notifier).state = true;
         ref.read(stateShowAppbar.notifier).state = false;
       }
@@ -172,8 +170,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       onNotification: (notification) {
         if (_topAppbarHei == 0) {
           setState(() {
-            _topAppbarHei = (_appbarGlogbalKey.currentContext?.size?.height??0) +
-                MediaQueryData.fromWindow(window).padding.top;
+            _topAppbarHei =
+                (_appbarGlogbalKey.currentContext?.size?.height ?? 0) +
+                    MediaQueryData.fromWindow(window).padding.top;
             _initImagesTopHei = getY(_detailImagesGlogbalKey.currentContext!);
           });
           addScrollListener();
@@ -238,18 +237,15 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
             left: 0,
             child: Container(
               decoration: const BoxDecoration(color: Colors.white),
-              padding: EdgeInsets.only(
-                  bottom:
-                      GetPlatform.isIOS ? Get.mediaQuery.padding.bottom : 0),
               width: Get.width,
-              height:
-                  60 + (GetPlatform.isIOS ? Get.mediaQuery.padding.bottom : 0),
-              child:  Row(
+              height: 60,
+              child: Row(
                 children: [
-                  const SizedBox(width: 12,),
-                  _renderBottomItem('帮助',Icons.help),
-                  Expanded(child: buildImageButton1(context)),
-                  const SizedBox(width: 12,),
+                  const SizedBox(
+                    width: 12,
+                  ),
+                  _renderBottomItem('帮助', Icons.help),
+                  Expanded(child: buildBottomRow()),
                 ],
               ),
             ),
@@ -260,58 +256,53 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   }
 
   ///底部操作区域菜单图标+文字
-  Widget _renderBottomItem(String key,IconData icon){
+  Widget _renderBottomItem(String key, IconData icon) {
     return Container(
       height: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Icon(icon),
-          Text(key)
-        ],
+        children: [Icon(icon), Text(key)],
       ),
     );
   }
 
   Widget buildBottomRow() {
     return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(onPressed: Get.back, icon: const Icon(Icons.home)),
-                Expanded(
-                  child: WaterfallFlow.count(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 12,
-                    crossAxisSpacing: 12,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 12),
-                    children: <Widget>[
-                      OutlinedButton(
-                          onPressed: () async {
-                            if (couponLinkResult != null) {
-                              utils.copy(couponLinkResult!.longTpwd ?? '无优惠券',
-                                  message: '复制成功,打开淘宝APP领取优惠券');
-                            }
-                          },
-                          child: const Text('复制口令')),
-                      ElevatedButton(
-                          onPressed: () async {
-                            if (couponLinkResult != null) {
-                              await utils.openTaobao(
-                                  couponLinkResult!.couponClickUrl ??
-                                      'https://itbug.shop');
-                            }
-                          },
-                          child: const Text('立即领券')),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  width: 12,
-                )
-              ],
-            );
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        IconButton(onPressed: Get.back, icon: const Icon(Icons.home)),
+        Expanded(
+          child: WaterfallFlow.count(
+            crossAxisCount: 2,
+            mainAxisSpacing: 12,
+            crossAxisSpacing: 12,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            children: <Widget>[
+              OutlinedButton(
+                  onPressed: () async {
+                    if (couponLinkResult != null) {
+                      utils.copy(couponLinkResult!.longTpwd ?? '无优惠券',
+                          message: '复制成功,打开淘宝APP领取优惠券');
+                    }
+                  },
+                  child: const Text('复制口令')),
+              ElevatedButton(
+                  onPressed: () async {
+                    if (couponLinkResult != null) {
+                      await utils.openTaobao(couponLinkResult!.couponClickUrl ??
+                          'https://itbug.shop');
+                    }
+                  },
+                  child: const Text('立即领券')),
+            ],
+          ),
+        ),
+        const SizedBox(
+          width: 12,
+        )
+      ],
+    );
   }
 
   // 详情图
@@ -709,7 +700,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         AnimatedPositioned(
           duration: const Duration(milliseconds: 100),
           left: 12,
-          top:ref.watch(satteShowBackButton) ?  12 : -12,
+          top: ref.watch(satteShowBackButton) ? 12 : -12,
           child: GestureDetector(
             onTap: () {
               Navigator.pop(context);
@@ -744,7 +735,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   // 顶部显影appbar
   Widget buildOpacityAppbar() {
     final isShow = ref.watch(stateShowAppbar);
-    if(isShow.not){
+    if (isShow.not) {
       return const SizedBox();
     }
     return Opacity(
@@ -850,49 +841,47 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     return cats[int.parse(fqcat) - 1];
   }
 
-
-
-
-  Row buildImageButton1(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        FButton(
-          height: 38,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          text: "复制口令",
-          style: const TextStyle(color: Colors.white),
-          color: const Color(0xff9ccc65),
-          alignment: Alignment.center,
-          onPressed: () {
-          },
-          clickEffect: true,
-          corner: const FCorner(leftTopCorner: 25, leftBottomCorner: 25),
-          imageMargin: 8,
-        ),
-        const SizedBox(
-            height: 38,
-            child: VerticalDivider(width: 0.25, color: Colors.black)),
-        FButton(
-          height: 38,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          text: "立即领券",
-          style: const TextStyle(color: Colors.white),
-          color: const Color(0xffd4e157),
-          alignment: Alignment.center,
-          onPressed: () {
-          },
-          corner: const FCorner(rightTopCorner: 25, rightBottomCorner: 25),
-          imageMargin: 8,
-          imageAlignment: ImageAlignment.right,
-        ),
-      ],
-    );
-  }
+  //
+  // Row buildImageButton1(BuildContext context) {
+  //   return Row(
+  //     mainAxisAlignment: MainAxisAlignment.center,
+  //     children: <Widget>[
+  //       FButton(
+  //         height: 38,
+  //         padding: const EdgeInsets.symmetric(horizontal: 20),
+  //         text: "复制口令",
+  //         style: const TextStyle(color: Colors.white),
+  //         color: const Color(0xff9ccc65),
+  //         alignment: Alignment.center,
+  //         onPressed: () {
+  //         },
+  //         clickEffect: true,
+  //         corner: const FCorner(leftTopCorner: 25, leftBottomCorner: 25),
+  //         imageMargin: 8,
+  //       ),
+  //       const SizedBox(
+  //           height: 38,
+  //           child: VerticalDivider(width: 0.25, color: Colors.black)),
+  //       FButton(
+  //         height: 38,
+  //         padding: const EdgeInsets.symmetric(horizontal: 20),
+  //         text: "立即领券",
+  //         style: const TextStyle(color: Colors.white),
+  //         color: const Color(0xffd4e157),
+  //         alignment: Alignment.center,
+  //         onPressed: () {
+  //         },
+  //         corner: const FCorner(rightTopCorner: 25, rightBottomCorner: 25),
+  //         imageMargin: 8,
+  //         imageAlignment: ImageAlignment.right,
+  //       ),
+  //     ],
+  //   );
+  // }
 
   @Doc(message: '初始化页面数据')
   Future<String> initDatas() async {
-    try{
+    try {
       final result = await DdTaokeSdk.instance.getDetailBaseData(
         productId: widget.goodsId,
       );
@@ -906,7 +895,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       } else {
         throw Exception('商品优惠已过期');
       }
-    }catch(e,s){
+    } catch (e, s) {
       debugPrintStack(stackTrace: s);
     }
     return 'success';

@@ -84,6 +84,7 @@ class MyAppState extends State<MyApp> {
         title: '典典小卖部',
         theme: ThemeData(
             primaryColor: Colors.white,
+            useMaterial3: true,
             appBarTheme: const AppBarTheme(
                 titleTextStyle: TextStyle(
                   color: Colors.black,

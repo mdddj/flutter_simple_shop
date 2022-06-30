@@ -158,7 +158,7 @@ class TKApiService {
           final map  = jsonDecode(json);
           final jsonMap = jsonDecode(map.toString());
           return jsonMap['goods_promotion_url_generate_response']['goods_promotion_url_list'][0];
-        }catch(e,s){
+        }catch(_){
           Logger().e('转换平多多优惠券失败');
         }
       }

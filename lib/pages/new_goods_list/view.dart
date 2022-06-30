@@ -95,6 +95,8 @@ class NewGoodsListState extends State<NewGoodsList>
           onLoad: context.read<GoodsListState>().nextPage,
           onRefresh: context.read<GoodsListState>().onRefresh,
           firstRefresh: true,
+          header: MaterialHeader(),
+          footer: MaterialFooter(),
           slivers: [
             //排序操作
 

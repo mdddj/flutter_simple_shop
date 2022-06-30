@@ -56,10 +56,14 @@ class DetailImagesWidget extends StatelessWidget {
       for (var item in imagesArr as Iterable<DetailImage>) {
         var src = _getUrl(item.img!);
 
-        imagesWidget.add(ExtendedImage.network(
-          src,
-          fit: BoxFit.fill,
-          cache: true,
+        imagesWidget.add(AspectRatio(
+          aspectRatio: double.parse(item.width!) / double.parse(item.height!),
+          child: ExtendedImage.network(
+            src,
+            fit: BoxFit.fill,
+            cache: true,
+            
+          ),
         ));
       }
     }
