@@ -1,10 +1,9 @@
-// Flutter imports:
-// Package imports:
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
@@ -13,14 +12,14 @@ import '../../../provider/riverpod/user_riverpod.dart';
 import 'register_page.dart';
 
 // 用户登入页面
-class UserLoginPage extends StatefulWidget {
+class UserLoginPage extends ConsumerStatefulWidget {
   const UserLoginPage({Key? key}) : super(key: key);
 
   @override
   UserLoginPageState createState() => UserLoginPageState();
 }
 
-class UserLoginPageState extends State<UserLoginPage> {
+class UserLoginPageState extends ConsumerState<UserLoginPage> {
   bool isAgree = false; // 是否同意协议
   String username = ''; // 用户名
   String password = ''; // 密码
@@ -77,7 +76,9 @@ class UserLoginPageState extends State<UserLoginPage> {
                   },
                 ),
 
-                const SizedBox(height: 40,),
+                const SizedBox(
+                  height: 40,
+                ),
                 renderLoginButton(),
                 const SizedBox(height: 12),
                 renderRegisterButton()
@@ -103,14 +104,14 @@ class UserLoginPageState extends State<UserLoginPage> {
   // 登录按钮
   Widget renderLoginButton() {
     return SizedBox(
-      width: double.infinity,
+        width: double.infinity,
         child: ElevatedButton(onPressed: _submit, child: const Text('登录')));
   }
 
 // 注册按钮
   Widget renderRegisterButton() {
     return SizedBox(
-      width: double.infinity,
+        width: double.infinity,
         child:
             TextButton(onPressed: _navToRegisterPage, child: const Text('注册')));
   }
@@ -189,17 +190,17 @@ class UserLoginPageState extends State<UserLoginPage> {
 
   /// 登录
   Future<void> _submit() async {
+
+    final nav = Navigator.of(context);
+
     if (username.isEmpty || password.isEmpty) {
       utils.showMessage('请输入用户名或者密码');
       return;
     }
-    var isLoginSuccess =
-        await context.read<UserModel>().login(username, password);
-    if (isLoginSuccess) {
-      Get.back();
+
+    final success = await ref.read(userRiverpod.notifier).login(username, password);
+    if(success){
+      nav.pop();
     }
-    setState(() {
-      loading = false;
-    });
   }
 }

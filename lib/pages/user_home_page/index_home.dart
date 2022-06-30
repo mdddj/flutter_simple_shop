@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 // Package imports:
 import 'package:get/get.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import '../../common/utils.dart';
@@ -13,14 +14,17 @@ import 'header/index.dart';
 import 'order/index.dart';
 
 /// 用户主页布局
-class UserIndexHome extends StatefulWidget {
+class UserIndexHome extends ConsumerStatefulWidget {
   const UserIndexHome({Key? key}) : super(key: key);
 
   @override
   IndexHomeState createState() => IndexHomeState();
 }
 
-class IndexHomeState extends State<UserIndexHome> {
+class IndexHomeState extends ConsumerState<UserIndexHome> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,35 +45,6 @@ class IndexHomeState extends State<UserIndexHome> {
             utils.widgetUtils.marginTop(),
             _renderMenus(),
             utils.widgetUtils.marginTop(),
-            // Consumer<UserModel>(
-            //   builder: (BuildContext context, value, Widget? child) {
-            //     final hasAdminAuth = value.hasAdminAuthority();
-            //     if (!hasAdminAuth) return Container();
-            //     return MyWrap(
-            //       title: '管理员功能',
-            //       children: [
-            //         GridMenuItem(
-            //             item: GridMenuModel(
-            //                 title: '新版本',
-            //                 image: 'assets/svg/new_version.svg',
-            //                 onTap: () {
-            //                   utils.widgetUtils.to(const NewVersionPage());
-            //                 },
-            //                 isAssets: true)),
-            //         GridMenuItem(
-            //             item: GridMenuModel(
-            //                 title: '发布博客',
-            //                 image: '',
-            //                 onTap: () {
-            //                   utils.widgetUtils.to(const WriteBlogPage());
-            //                 },
-            //                 isAssets: true,
-            //                 icon: const CircleAvatar(
-            //                     child: FaIcon(FontAwesomeIcons.edit))))
-            //       ],
-            //     );
-            //   },
-            // )
           ],
         ),
       ),

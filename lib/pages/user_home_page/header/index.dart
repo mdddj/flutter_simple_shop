@@ -3,7 +3,7 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../common/utils.dart';
 import '../../../constant/style.dart';
@@ -15,14 +15,16 @@ import '../../../util/navigator_util.dart';
 const kAvatarHeight = 58.0;
 
 // 头部容器
-class HeaderIndex extends StatelessWidget {
+class HeaderIndex extends ConsumerWidget {
   const HeaderIndex({Key? key}) : super(key: key);
 
   final TextStyle subTitleStyle =
       const TextStyle(color: Colors.black26, fontSize: 12);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
+    final user = ref.watch(userRiverpod).user;
+    print('进来了:$user');
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -30,15 +32,7 @@ class HeaderIndex extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           utils.widgetUtils.marginTop(),
-          Consumer<UserModel>(
-            builder: (BuildContext context, value, Widget? child) {
-              final user = value.user;
-              if (user == null) {
-                return _loginWidgetLayout(context);
-              }
-              return _loginSuccessLayout(user);
-            },
-          ),
+          _loginWidgetLayout(context),
           // _renderCounts(),
           const SizedBox(
             height: 44,

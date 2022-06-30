@@ -14,13 +14,11 @@ class User {
     required this.email,
     required this.picture,
     required this.phone,
-    required this.password,
     required this.loginTime,
     required this.type,
     required this.roles,
     required this.resourcesCategories,
     required this.status,
-    required this.salt,
   });
 
   factory User.fromJson(Map<String, dynamic> jsonRes) {
@@ -53,13 +51,11 @@ class User {
       email: asT<String>(jsonRes['email']??'')!,
       picture: asT<String>(jsonRes['picture'])!,
       phone: asT<String>(jsonRes['phone']??'')!,
-      password: asT<String>(jsonRes['password'])!,
       loginTime: asT<String>(jsonRes['loginTime']??'')!,
       type: asT<int>(jsonRes['type'])!,
       roles: roles!,
       resourcesCategories: resourcesCategories!,
       status: asT<int>(jsonRes['status'])!,
-      salt: asT<String>(jsonRes['salt'])!,
     );
   }
 
@@ -69,13 +65,11 @@ class User {
   Object email;
   String picture;
   Object phone;
-  String password;
   Object loginTime;
   int type;
   List<Roles> roles;
   List<Object> resourcesCategories;
   int status;
-  String salt;
 
   @override
   String toString() {
@@ -89,13 +83,11 @@ class User {
     'email': email,
     'picture': picture,
     'phone': phone,
-    'password': password,
     'loginTime': loginTime,
     'type': type,
     'roles': roles,
     'resourcesCategories': resourcesCategories,
     'status': status,
-    'salt': salt,
   };
 
   User clone() =>

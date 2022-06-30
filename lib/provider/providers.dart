@@ -41,7 +41,6 @@ List<SingleChildWidget> providers = [
   ChangeNotifierProvider(create: (_)=>IndexState()),
   ChangeNotifierProvider(create: (_)=>JdProductsProviderState()),
   ChangeNotifierProvider(create: (_)=>SearchState()),
-  ChangeNotifierProvider(create: (_)=>UserModel()),
   ChangeNotifierProvider(create: (_)=>BanjiaResp()),
   ChangeNotifierProvider(create: (_)=>WphState()),
   ChangeNotifierProvider(create: (_)=>PyqState()),

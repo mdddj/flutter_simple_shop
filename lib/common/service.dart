@@ -59,7 +59,10 @@ class Api extends ApiService {
     if (result.isNotEmpty) {
       try {
         return User.fromJson(jsonDecode(result));
-      } catch (_) {}
+      } catch (e,s) {
+        print(e);
+        print(s);
+      }
     }
     return null;
   }

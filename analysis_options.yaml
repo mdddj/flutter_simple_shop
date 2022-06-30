@@ -4,6 +4,7 @@ analyzer:
     implicit-dynamic: true
   errors:
     todo: ignore
+    invalid_annotation_target: ignore
   exclude:
     - lib/generated
     - lib/l10n

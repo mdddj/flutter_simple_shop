@@ -1,43 +1,32 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
-
-
-// Project imports:
+import 'package:dd_js_util/api/base.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../common/utils.dart';
-import '../../modals/user.dart';
+import 'model/my_user.dart';
+import 'model/user.dart';
 
+final userRiverpod =
+    StateNotifierProvider<UserModel, UserDetailModal>((ref) => UserModel(ref));
 
 // 用户信息
-class UserModel extends ChangeNotifier {
-  User? user;
-  String? _token;
+class UserModel extends StateNotifier<UserDetailModal> {
+  final Ref ref;
 
-  /// 是否已经登录
-  bool isLogin = false;
+  UserModel(this.ref) : super(const UserDetailModal(user: null));
 
-  String get getUserToken => _token ?? '';
-
-  // 判断用户是否有淘客权限
-  bool hasAdminAuthority() {
-    return isLogin && user != null && user!.roles.where((element) => element.name == 'admin').toList().isNotEmpty;
-  }
-
-  // 用户登录的方法处理
+  @Doc(message: '登录的方法,登录成功会返回一个jwt token')
   Future<bool> login(String username, String password) async {
-    return await utils.api.login(username, password, tokenHandle: tokenHandle, loginFail: (msg) {
+    return await utils.api.login(username, password, loginFail: (msg) {
       utils.showMessage(msg);
-    });
+    }, tokenHandle: fetchUserDetail);
   }
 
-  // token处理
-  void tokenHandle(String token) {
-    _token = token;
-    appStartWithUserModel();
-    notifyListeners();
-  }
-
-  // app启动的时候获取token,判断是否失败,
-  Future<void> appStartWithUserModel() async {
-
+  @Doc(message: '使用jwt token 来加载用户的基本资料')
+  Future<void> fetchUserDetail(String token) async {
+    final vUser = await utils.api.getUser(token);
+    if (vUser != null) {
+      state = state.copyWith(user: MyUser.fromUser(vUser));
+    } else {
+      toast("获取用户信息失败,请稍后重试");
+    }
   }
 }
