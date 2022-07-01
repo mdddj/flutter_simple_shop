@@ -168,7 +168,7 @@ class AppState extends State<App> with AfterLayoutMixin {
                         width: kNavIconSize,
                       )),
             BottomNavigationBarItem(
-                label: '动态',
+                label: '收藏',
                 icon: _currentIndex == 3
                     ? Image.asset(
                         'assets/nav/shoucang.png',

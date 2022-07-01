@@ -3,6 +3,7 @@ import 'dart:io';
 
 // Flutter imports:
 import 'package:dataoke_sdk/network/util.dart';
+import 'package:dd_js_util/api/base.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
@@ -22,14 +23,13 @@ import 'service/user_api.dart';
 import 'util/navigator_util.dart';
 
 const kDebugMode = true;
+const apiHost = 'http://192.168.199.72';
+const apiPort = '80';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  DdTaokeUtil.instance
-      .init('http://192.168.199.72', '80', debug: false); //  远程服务器
-
-  /// 初始化单例工具类
+  BaseApi.host = "$apiHost:$apiPort";
+  DdTaokeUtil.instance.init(apiHost, apiPort, debug: false);
   GetIt.instance.registerSingleton<Utils>(Utils());
   GetIt.instance.registerSingleton<WidgetUtils>(WidgetUtils());
   GetIt.instance.registerSingleton<NavigatorUtil>(NavigatorUtil());
@@ -37,21 +37,8 @@ void main() async {
   GetIt.instance.registerSingleton<TKApiService>(TKApiService());
   GetIt.instance.registerSingleton<BlogApi>(BlogApi());
   GetIt.instance.registerSingleton<UserApi>(UserApi());
-
-  /// 安卓 https 请求处理
   HttpOverrides.global = MyHttpOverrides();
-
   await Hive.initFlutter();
-
-  // /// windows 版本处理函数
-  // if (!GetPlatform.isWeb &&
-  //     (GetPlatform.isWindows || GetPlatform.isLinux || GetPlatform.isMacOS)) {
-  //   // setWindowTitle('典典的小卖部 桌面客户端  v2.0.0');
-  //   // const windowSize = Size(500, 1041);
-  //   // setWindowMaxSize(windowSize);
-  //   // setWindowMinSize(windowSize);
-  // }
-
   runApp(const ProviderScope(child: MyApp()));
 }
 
