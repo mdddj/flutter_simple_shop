@@ -7,10 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:provider/provider.dart';
-
-// Project imports:
 import './provider/providers.dart';
 import 'ad.dart';
 import 'common/service.dart';
@@ -26,19 +25,9 @@ const kDebugMode = true;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  /// 初始化典典小卖部的Api sdk 文档-->[https://pub.dev/packages/dd_taoke_sdk]
 
   DdTaokeUtil.instance
       .init('http://192.168.199.72', '80', debug: false); //  远程服务器
-  // DdCheckPlugin.instance.init(DdTaokeUtil.instance.createInstance());
-  // DdTaokeUtil.instance.init('http://localhost', '80', debug: false); // 本地测试服务器
-
-  /// 使用浏览器查看网络请求,详情查看[https://www.jianshu.com/p/e4058e064341]
-  /// await Stetho.initialize();
-
-  /// 本地缓存工具类，
-
-
 
   /// 初始化单例工具类
   GetIt.instance.registerSingleton<Utils>(Utils());
@@ -49,32 +38,26 @@ void main() async {
   GetIt.instance.registerSingleton<BlogApi>(BlogApi());
   GetIt.instance.registerSingleton<UserApi>(UserApi());
 
-  /// https 请求处理
+  /// 安卓 https 请求处理
   HttpOverrides.global = MyHttpOverrides();
 
-  /// windows 版本处理函数
-  if (!GetPlatform.isWeb &&
-      (GetPlatform.isWindows || GetPlatform.isLinux || GetPlatform.isMacOS)) {
-    // setWindowTitle('典典的小卖部 桌面客户端  v2.0.0');
-    // const windowSize = Size(500, 1041);
-    // setWindowMaxSize(windowSize);
-    // setWindowMinSize(windowSize);
-  }
+  await Hive.initFlutter();
 
-  if (kDebugMode) {}
+  // /// windows 版本处理函数
+  // if (!GetPlatform.isWeb &&
+  //     (GetPlatform.isWindows || GetPlatform.isLinux || GetPlatform.isMacOS)) {
+  //   // setWindowTitle('典典的小卖部 桌面客户端  v2.0.0');
+  //   // const windowSize = Size(500, 1041);
+  //   // setWindowMaxSize(windowSize);
+  //   // setWindowMinSize(windowSize);
+  // }
 
-  /// 启动app
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  @override
-  MyAppState createState() => MyAppState();
-}
-
-class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -106,10 +89,6 @@ class MyAppState extends State<MyApp> {
   }
 }
 
-/// 配置https整数问题
-///
-/// 相关文档: [https://stackoverflow.com/questions/54285172/how-to-solve-flutter-certificate-verify-failed-error-while-performing-a-post-req]
-///
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {

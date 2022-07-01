@@ -1,7 +1,8 @@
 import 'package:dd_js_util/api/base.dart';
-import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:logger/logger.dart';
 import '../../common/utils.dart';
+import '../../util/cache_util.dart';
 import 'model/my_user.dart';
 import 'model/user.dart';
 
@@ -27,8 +28,18 @@ class UserModel extends StateNotifier<UserDetailModal> {
     if (vUser != null) {
       state = state.copyWith(user: MyUser.fromUser(vUser));
       toast('欢迎回来,${vUser.nickName}');
+      CacheFactory.create<TokenCache>().setToken(token);
     } else {
       toast("获取用户信息失败,请稍后重试");
+    }
+  }
+
+  @Doc(message: '页面初始化执行函数,从缓存中取出token,然后加载用户信息')
+  void initState() async {
+    final t = await CacheFactory.create<TokenCache>().userToken;
+    Logger().d('加载缓存token:$t');
+    if (t.isNotEmpty) {
+      fetchUserDetail(t);
     }
   }
 }

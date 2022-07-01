@@ -1,5 +1,4 @@
 import 'package:dd_js_util/api/base.dart';
-import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
@@ -12,7 +11,6 @@ import '../../constant/style.dart';
 // Project imports:
 import '../../provider/goods_detail_provider.dart';
 import '../../provider/user_provider.dart';
-import '../../util/system_toast.dart';
 import '../../widgets/no_data.dart';
 
 ///用户收藏页面

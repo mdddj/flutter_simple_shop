@@ -28,6 +28,12 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
     return buildScaffold(context);
   }
 
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(ref.read(userRiverpod.notifier).initState);
+  }
+
   //跳转到注册页面
   void _navToRegisterPage() {
     Get.to(() => const RegisterPage());

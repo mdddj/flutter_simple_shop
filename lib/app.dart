@@ -10,7 +10,6 @@ import './pages/index_page/index_home.dart';
 import './pages/jiujiu_page/index_home.dart';
 import './pages/user_home_page/index_home.dart';
 import './personal/personal.dart';
-import 'pages/dynamic_page/view.dart';
 import 'pages/favorite_page/index_home.dart';
 import 'pages/index_page/new/index.dart';
 
