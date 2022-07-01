@@ -31,7 +31,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(ref.read(userRiverpod.notifier).initState);
+    ;
   }
 
   //跳转到注册页面

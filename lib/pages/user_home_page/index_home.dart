@@ -9,6 +9,7 @@ import 'package:loading_more_list/loading_more_list.dart';
 import '../../common/utils.dart';
 import '../../constant/style.dart';
 // Project imports:
+import '../../provider/riverpod/user_riverpod.dart';
 import 'header/appbar.dart';
 import 'header/index.dart';
 import 'order/index.dart';
@@ -24,7 +25,11 @@ class UserIndexHome extends ConsumerStatefulWidget {
 class IndexHomeState extends ConsumerState<UserIndexHome> {
 
 
-
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(ref.read(userRiverpod.notifier).initState);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
