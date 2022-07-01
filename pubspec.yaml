@@ -23,7 +23,6 @@ dependencies:
     git:
       url: https://github.com/hkloudou/flutter_easyrefresh.git
       ref: v2-flutter3
-  pull_to_refresh: ^2.0.0
   fbutton_nullsafety: ^5.0.0
   fsuper_nullsafety: ^3.0.3
   common_utils: ^2.1.0
@@ -65,7 +64,7 @@ dependencies:
   package_info: ^2.0.2
   show_up_animation: ^2.0.0
   black_hole_flutter: ^0.3.5
-  hive: ^2.2.2
+  hive: ^2.2.3
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^2.0.0
   dataoke_sdk: ^0.0.8
@@ -73,7 +72,7 @@ dependencies:
   riverpod: ^1.0.3
   hooks_riverpod: ^1.0.4
   dd_check_plugin: ^0.0.6
-  flutter_smart_dialog: ^4.5.3+5
+  flutter_smart_dialog: ^4.5.3+6
   freezed_annotation: ^2.0.3
   freezed: ^2.0.3+1
   json_serializable: ^6.2.0
