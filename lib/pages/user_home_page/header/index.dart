@@ -4,11 +4,13 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:logger/logger.dart';
 
 import '../../../common/utils.dart';
 import '../../../constant/style.dart';
 // Project imports:
 import '../../../modals/user.dart';
+import '../../../provider/riverpod/model/my_user.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import '../../../util/navigator_util.dart';
 
@@ -24,7 +26,7 @@ class HeaderIndex extends ConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref) {
     final user = ref.watch(userRiverpod).user;
-    print('进来了:$user');
+    Logger().d(user);
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -32,7 +34,7 @@ class HeaderIndex extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           utils.widgetUtils.marginTop(),
-          _loginWidgetLayout(context),
+          AnimatedSwitcher(duration: const Duration(milliseconds: 300),child: user==null ? _loginWidgetLayout(context) : _loginSuccessLayout(user) ,),
           // _renderCounts(),
           const SizedBox(
             height: 44,
@@ -107,7 +109,7 @@ class HeaderIndex extends ConsumerWidget {
   
 
   /// 已登录显示
-  Widget _loginSuccessLayout(User user) {
+  Widget _loginSuccessLayout(MyUser user) {
     return Column(
       children: [
         Row(

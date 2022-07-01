@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:dataoke_sdk/network/util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 
 // Project imports:
 import '../controller/app_controller.dart';
@@ -59,9 +60,8 @@ class Api extends ApiService {
     if (result.isNotEmpty) {
       try {
         return User.fromJson(jsonDecode(result));
-      } catch (e,s) {
-        print(e);
-        print(s);
+      } catch (e) {
+        Logger().d("用户数据解析失败:$e");
       }
     }
     return null;

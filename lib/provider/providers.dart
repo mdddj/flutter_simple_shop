@@ -21,7 +21,6 @@ import 'index_provider.dart';
 import 'jd_products_provider.dart';
 import 'riverpod/category_riverpod.dart';
 import 'riverpod/search_riverpod.dart';
-import 'riverpod/user_riverpod.dart';
 import 'user_provider.dart';
 
 // Providers---end

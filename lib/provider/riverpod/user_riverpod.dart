@@ -1,4 +1,5 @@
 import 'package:dd_js_util/api/base.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../common/utils.dart';
 import 'model/my_user.dart';
@@ -25,6 +26,7 @@ class UserModel extends StateNotifier<UserDetailModal> {
     final vUser = await utils.api.getUser(token);
     if (vUser != null) {
       state = state.copyWith(user: MyUser.fromUser(vUser));
+      toast('欢迎回来,${vUser.nickName}');
     } else {
       toast("获取用户信息失败,请稍后重试");
     }

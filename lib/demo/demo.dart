@@ -64,7 +64,6 @@ class SliverComponet extends HomeComponetRender<SliverModal> {
   @override
   Widget renderCardWidget() {
     ///如果需要获取数据,通过[getCardData]函数拿数据
-    final cardModel = getCardData(); //组件所需要的参数
     return const Text("slider 组件");
   }
 
@@ -88,7 +87,6 @@ class NewlistComponet extends HomeComponetRender<NewListModal> {
   @override
   Widget renderCardWidget() {
     ///如果需要获取数据,通过[getCardData]函数拿数据
-    final cardModel = getCardData(); //组件所需要的参数
     return const Text("newlist 组件");
   }
 
@@ -131,7 +129,6 @@ class HomeCardFactory {
       default:
         return EmptyCard();
     }
-    return EmptyCard();
   }
 }
 

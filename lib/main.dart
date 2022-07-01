@@ -3,9 +3,6 @@ import 'dart:io';
 
 // Flutter imports:
 import 'package:dataoke_sdk/network/util.dart';
-import 'package:dataoke_sdk/network/util.dart';
-import 'package:dataoke_sdk/network/util.dart';
-import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
@@ -32,7 +29,7 @@ void main() async {
   /// 初始化典典小卖部的Api sdk 文档-->[https://pub.dev/packages/dd_taoke_sdk]
 
   DdTaokeUtil.instance
-      .init('http://localhost', '80', debug: false); //  远程服务器
+      .init('http://192.168.199.72', '80', debug: false); //  远程服务器
   // DdCheckPlugin.instance.init(DdTaokeUtil.instance.createInstance());
   // DdTaokeUtil.instance.init('http://localhost', '80', debug: false); // 本地测试服务器
 

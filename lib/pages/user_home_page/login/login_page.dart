@@ -1,12 +1,10 @@
+import 'package:dd_js_util/ext/context.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:provider/provider.dart';
-
-// Project imports:
 import '../../../common/utils.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import 'register_page.dart';
@@ -190,7 +188,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
 
   /// 登录
   Future<void> _submit() async {
-
+    context.hideKeyBoard();
     final nav = Navigator.of(context);
 
     if (username.isEmpty || password.isEmpty) {
@@ -198,8 +196,9 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
       return;
     }
 
-    final success = await ref.read(userRiverpod.notifier).login(username, password);
-    if(success){
+    final success =
+        await ref.read(userRiverpod.notifier).login(username, password);
+    if (success) {
       nav.pop();
     }
   }
