@@ -23,7 +23,8 @@ import 'service/user_api.dart';
 import 'util/navigator_util.dart';
 
 const kDebugMode = true;
-const apiHost = 'http://192.168.199.72';
+//
+const apiHost = 'http://192.168.100.26';
 const apiPort = '80';
 
 void main() async {

@@ -44,7 +44,7 @@ class HaoDanKuDetailItem extends ConsumerStatefulWidget {
 
 class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     with TickerProviderStateMixin {
-  late Product info;
+  Product? info;
   CouponLinkResult? couponLinkResult;
   ShopInfo? _shopInfo;
   late Future<String> futureBuildData = initDatas();
@@ -425,14 +425,14 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                   text: '推荐理由: ',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               TextSpan(
-                  text: '${info.desc}',
+                  text: '${info!.desc}',
                   style: const TextStyle(color: Colors.grey)),
               TextSpan(
                   text: '复制文案',
                   style: const TextStyle(color: Colors.pinkAccent),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      utils.copy(info.desc);
+                      utils.copy(info!.desc);
                     })
             ],
           ),
@@ -478,7 +478,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              '${info.couponPrice}元优惠券'.replaceAll('.0', ''),
+                              '${info!.couponPrice}元优惠券'.replaceAll('.0', ''),
                               style: const TextStyle(
                                   color: Color.fromRGBO(145, 77, 9, 1.0),
                                   fontSize: 14,
@@ -488,7 +488,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                               height: 12,
                             ),
                             Text(
-                              '使用日期:${getTimeStr(info.couponStartTime ?? '')} - ${getTimeStr(info.couponEndTime ?? '已过期')}',
+                              '使用日期:${getTimeStr(info!.couponStartTime ?? '')} - ${getTimeStr(info!.couponEndTime ?? '已过期')}',
                               style: const TextStyle(
                                   color: Color.fromRGBO(145, 77, 9, 1.0),
                                   fontWeight: FontWeight.w400),
@@ -561,7 +561,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
             children: <Widget>[
               FSuper(
                 lightOrientation: controller.FLightOrientation.LeftBottom,
-                text: '满${info.couponConditions}减${info.couponPrice}',
+                text: '满${info!.couponConditions}减${info!.couponPrice}',
                 backgroundColor: Colors.red,
                 textAlign: TextAlign.center,
                 textAlignment: Alignment.center,
@@ -594,11 +594,11 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         SizedBox(
           width: Get.width,
           child: DrawableStartText(
-            lettersCountOfAfterImage: info.dtitle!.length,
-            assetImage: info.shopType == 1
+            lettersCountOfAfterImage: info!.dtitle!.length,
+            assetImage: info!.shopType == 1
                 ? 'assets/icons/tianmao2.png'
                 : 'assets/icons/taobao2.png',
-            text: ' ${info.title}',
+            text: ' ${info!.title}',
             textStyle:
                 const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
           ),
@@ -621,14 +621,14 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           lightOrientation: controller.FLightOrientation.LeftBottom,
           spans: <TextSpan>[
             TextSpan(
-                text: '原价 ¥ ${info.originalPrice}',
+                text: '原价 ¥ ${info!.originalPrice}',
                 style: const TextStyle(
                     color: Colors.grey, decoration: TextDecoration.lineThrough))
           ],
         ),
         FSuper(
           lightOrientation: controller.FLightOrientation.LeftBottom,
-          text: '已售 ${info.monthSales}',
+          text: '已售 ${info!.monthSales}',
         )
       ],
     ));
@@ -648,8 +648,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           SimplePrice(
-            price: '${info.actualPrice} ',
-            zhe: '${info.discounts}',
+            price: '${info!.actualPrice} ',
+            zhe: '${info!.discounts}',
           ),
         ],
       ),
@@ -803,7 +803,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     return SingleChildScrollView(
       key: _detailImagesGlogbalKey,
       child: DetailImagesWidget(
-        images: info.detailPics,
+        images: info!.detailPics,
         hideTitle: true,
       ),
     );
@@ -814,7 +814,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   }
 
   List<String> getImages() {
-    var str = info.imgs ?? '';
+    var str = info!.imgs ?? '';
     return str.split(',');
   }
 
