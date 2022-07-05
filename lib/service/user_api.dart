@@ -1,8 +1,16 @@
 // Package imports:
 import 'package:dio/dio.dart';
+import 'package:get_it/get_it.dart';
 
 
 class UserApi {
+
+  static String get userToken => GetIt.instance.get<UserApi>().token;
+
+  static String? _token;
+  set token(String? v)=> _token = v;
+  String get token => _token ?? '';
+
 
   /// 检测是否存在于redius数据库中
   Future<bool> checkIsUuid(String uuid) async {

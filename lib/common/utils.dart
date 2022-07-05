@@ -22,13 +22,9 @@ import 'widget_util.dart';
 /// 工具类
 class Utils {
   WidgetUtils get widgetUtils => GetIt.instance.get<WidgetUtils>();
-
   NavigatorUtil get routerUtils => GetIt.instance.get<NavigatorUtil>();
-
   Api get api => GetIt.instance.get<Api>();
-
   UserApi get userApi => GetIt.instance.get<UserApi>();
-
   BlogApi get blogApi => GetIt.instance.get<BlogApi>();
 
   // 显示一条消息
