@@ -9,7 +9,6 @@ import 'package:logger/logger.dart';
 import '../../../common/utils.dart';
 import '../../../constant/style.dart';
 // Project imports:
-import '../../../modals/user.dart';
 import '../../../provider/riverpod/model/my_user.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import '../../../util/navigator_util.dart';

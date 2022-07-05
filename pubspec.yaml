@@ -67,8 +67,8 @@ dependencies:
   hive: ^2.2.3
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^2.0.0
-  dataoke_sdk: ^0.0.9
-#    path: ../plugins/dataoke_sdk
+  dataoke_sdk:
+    path: ../plugins/dataoke_sdk
   riverpod: ^1.0.3
   hooks_riverpod: ^1.0.4
   dd_check_plugin: ^0.0.6

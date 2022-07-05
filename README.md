@@ -11,6 +11,12 @@
 </p>
 
 
+如果运行没有数据,在`main.dart`第`27`行替换为下面的代码
+```dart
+const apiHost = 'https://itbug.shop';
+const apiPort = '443';
+```
+
 运行环境 (如果不匹配有可能跑不起来)
 ```dart
 [✓] Flutter (Channel stable, 3.0.4, on macOS 12.4 21F79 darwin-arm (Rosetta),
