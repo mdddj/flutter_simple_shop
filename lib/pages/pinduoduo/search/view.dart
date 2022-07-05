@@ -13,6 +13,9 @@ import '../../../widgets/simple_price.dart';
 import '../../public_detail/view.dart';
 import 'logic.dart';
 
+
+var i = Icon(Icons.abc);
+
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
