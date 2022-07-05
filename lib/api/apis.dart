@@ -3,14 +3,29 @@ import 'package:dd_js_util/api/base.dart';
 
 import 'base.dart';
 
+extension DyExt on dynamic {
+  bool get success =>
+      this is Map<String, dynamic> ? this['state'] == 200 : false;
+
+  String get msg => this is Map<String, dynamic> ? this['message'] : 'error';
+
+  @Doc(message: '简单处理服务器返回数据')
+  void simpleHandle() {
+    if (this.success) {
+      toast(this.msg);
+    } else {
+      toast('失败:${this.msg}');
+    }
+  }
+}
+
 class FavoritesAddApi extends MyBaseApi {
   FavoritesAddApi() : super("/api/favorites/save", httpMethod: HttpMethod.post);
 
-  @Doc(message: "添加收藏函数")
+  @Doc(message: "像服务器发起请求,添加收藏")
   static Future<void> doRequeset(FavoriteModel favoriteModel) async {
-    final api = FavoritesAddApi();
-    api.params.addAll(favoriteModel.getJson());
+    final api = FavoritesAddApi()..params.addAll(favoriteModel.getJson());
     final result = await api.request();
-    print(result);
+    result.simpleHandle();
   }
 }

@@ -15,6 +15,7 @@ import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
+import '../../../api/apis.dart';
 import '../../../common/utils.dart';
 import '../../../modals/shop_info.dart';
 import '../../../util/image_util.dart';
@@ -267,11 +268,19 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     );
   }
 
+  @Doc(message: '添加收藏')
+  Future<void> addFavorite() async {
+    if(info!=null){
+      FavoritesAddApi.doRequeset(info!);
+    }
+  }
+
   Widget buildBottomRow() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         IconButton(onPressed: Get.back, icon: const Icon(Icons.home)),
+        IconButton(onPressed: addFavorite, icon: const Icon(Icons.favorite)),
         Expanded(
           child: WaterfallFlow.count(
             crossAxisCount: 2,
