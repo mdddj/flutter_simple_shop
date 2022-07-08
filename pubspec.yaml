@@ -64,6 +64,8 @@ dependencies:
   hive: ^2.2.3
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^2.0.0
+
+#  如果本地找不到,替换为线上版本,功能都一样 dataoke_sdk: ^any
   dataoke_sdk:
     path: ../plugins/dataoke_sdk
   riverpod: ^1.0.3
