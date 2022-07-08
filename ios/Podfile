@@ -1,7 +1,6 @@
 platform :ios, '10.13'
 install! 'cocoapods', :disable_input_output_paths => true
 
-source 'http://repo.baichuan-ios.taobao.com/baichuanSDK/AliBCSpecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 

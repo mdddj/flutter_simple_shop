@@ -1,6 +1,5 @@
 import 'package:dd_js_util/api/base.dart';
 import 'package:dio/dio.dart';
-
 import '../service/user_api.dart';
 
 class MyInterceptor implements Interceptor {
