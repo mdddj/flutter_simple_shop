@@ -21,8 +21,8 @@ import 'util/navigator_util.dart';
 
 const kDebugMode = true;
 // 线上场景: apiHost =  https://itbug.shop  apiPort = 443
-const apiHost = 'http://192.168.199.80';
-const apiPort = '80';
+const apiHost = 'https://itbug.shop';
+const apiPort = '443';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

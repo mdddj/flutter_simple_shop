@@ -65,35 +65,34 @@ dependencies:
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^2.0.0
 
-#  如果本地找不到,替换为线上版本,功能都一样 dataoke_sdk: ^any
+  #  大淘客SDK,如果本地找不到,替换为线上版本,功能都一样 dataoke_sdk: ^any
   dataoke_sdk:
     path: ../plugins/dataoke_sdk
+
   riverpod: ^1.0.3
   hooks_riverpod: ^1.0.4
   dd_check_plugin: ^0.1.0
   flutter_smart_dialog: ^4.5.3+6
-  freezed_annotation: ^2.0.3
-  freezed: ^2.0.4
-  json_serializable: ^6.3.0
-  json_annotation: ^4.6.0
+
   hive_flutter: ^1.1.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.1.8
+  build_runner: ^2.1.11
   import_sorter: ^4.6.0
   analyzer: ^4.2.0
+  freezed_annotation: ^2.0.3
+  freezed: ^2.0.4
+  json_serializable: ^6.3.1
+  json_annotation: ^4.6.0
 
-
-dependency_overrides:
-  win32: ^2.7.0
-  cached_network_image: ^3.2.1
 
 flutter:
   uses-material-design: true
 
+  #本地资源
   assets:
     - assets/images/
     - assets/nav/
@@ -104,20 +103,3 @@ flutter:
     - assets/json/
     - assets/images/waimai/hb/
 
-
-#微软商店配置
-msix_config:
-  display_name: diandianshop
-  publisher_display_name: liandiandian
-  identity_name: shop coupen
-  msix_version: 1.0.0.0
-  certificate_path: D:\key2.jks
-  certificate_password: 123456
-  publisher: CN=My Company, O=My Company, L=Berlin, S=Berlin, C=DE
-  logo_path: D:\logo.png
-  start_menu_icon_path: D:\logo.png
-  tile_icon_path: D:\logo.png
-  vs_generated_images_folder_path: C:\ldd\icons
-  icons_background_color: "#ffffff"
-  architecture: x64
-  capabilities: "internetClient,location,microphone,webcam"

@@ -142,7 +142,7 @@ packages:
     source: hosted
     version: "8.1.3"
   cached_network_image:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: cached_network_image
       url: "https://pub.dartlang.org"
@@ -561,14 +561,14 @@ packages:
     source: sdk
     version: "0.0.0"
   freezed:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.4"
   freezed_annotation:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
@@ -757,19 +757,19 @@ packages:
     source: hosted
     version: "0.6.4"
   json_annotation:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.6.0"
   json_serializable:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: json_serializable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.3.0"
+    version: "6.3.1"
   lints:
     dependency: transitive
     description:
@@ -1427,7 +1427,7 @@ packages:
     source: hosted
     version: "2.1.0"
   win32:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: win32
       url: "https://pub.dartlang.org"
