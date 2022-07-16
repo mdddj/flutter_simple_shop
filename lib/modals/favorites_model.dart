@@ -20,7 +20,7 @@ class FavoritesAllData {
 
   factory FavoritesAllData.fromJson(Map<String, dynamic> json) => FavoritesAllData(
     pageInfo: PageInfo.fromJson(json['pageInfo']),
-    goods: List<Good>.from(json['goods'].map((x) => Good.fromJson(x))),
+    goods: List<Good>.from(json['goods'].map(Good.fromJson)),
   );
 
   Map<String, dynamic> toJson() => {
@@ -283,7 +283,7 @@ class PageInfo {
   factory PageInfo.fromJson(Map<String, dynamic> json) => PageInfo(
     number: json['number'],
     size: json['size'],
-    content: List<Content>.from(json['content'].map((x) => Content.fromJson(x))),
+    content: List<Content>.from(json['content'].map(Content.fromJson)),
     sort: PageInfoSort.fromJson(json['sort']),
     numberOfElements: json['numberOfElements'],
     first: json['first'],

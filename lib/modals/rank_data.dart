@@ -26,7 +26,7 @@ class RankListGoods {
     time: json['time'],
     code: json['code'],
     msg: json['msg'],
-    data: List<Datum>.from(json['data'].map((x) => Datum.fromJson(x))),
+    data: List<Datum>.from(json['data'].map(Datum.fromJson)),
   );
 
   Map<String, dynamic> toJson() => {

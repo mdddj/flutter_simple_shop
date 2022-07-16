@@ -31,7 +31,6 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
   @override
   void initState() {
     super.initState();
-    ;
   }
 
   //跳转到注册页面

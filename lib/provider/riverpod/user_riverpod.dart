@@ -1,5 +1,4 @@
 import 'package:dd_js_util/api/base.dart';
-import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
@@ -10,7 +9,7 @@ import 'model/my_user.dart';
 import 'model/user.dart';
 
 final userRiverpod =
-    StateNotifierProvider<UserModel, UserDetailModal>((ref) => UserModel(ref));
+    StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
 
 // 用户信息
 class UserModel extends StateNotifier<UserDetailModal> {

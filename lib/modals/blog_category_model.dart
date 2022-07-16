@@ -13,9 +13,9 @@ class BlogCategory {
     required this.createTime,
   });
 
-  static List<BlogCategory> fromList(dynamic data) => List<BlogCategory>.from((data as List<dynamic>).map((e) => BlogCategory.fromJson(e)).toList());
+  static List<BlogCategory> fromList(dynamic data) => List<BlogCategory>.from((data as List<dynamic>).map(BlogCategory.fromJson).toList());
 
-  factory BlogCategory.fromJson(Map<String, dynamic> jsonRes) => BlogCategory(
+  factory BlogCategory.fromJson(dynamic jsonRes) => BlogCategory(
     id: asT<int>(jsonRes['id'])!,
     name: asT<String>(jsonRes['name'])!,
     logo: asT<String>(jsonRes['logo'])!,

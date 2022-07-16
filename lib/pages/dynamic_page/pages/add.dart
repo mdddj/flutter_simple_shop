@@ -36,7 +36,7 @@ class _AddDynamicPageState extends State<AddDynamicPage> {
     result?.printDataJson();
     if (result.requestIsSuccess) {
       final list = result!.dataCovertToList<ResCategory>(
-          (originMap) => ResCategory.fromMap(originMap));
+          (originMap) => ResCategory.fromMap(originMap as Map<String,dynamic>));
       _list = list;
     }
   }

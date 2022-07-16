@@ -5,7 +5,7 @@
 // Dart imports:
 import 'dart:convert';
 
-List<DetailImage> detailImageFromJson(String str) => List<DetailImage>.from(json.decode(str).map((x) => DetailImage.fromJson(x)));
+List<DetailImage> detailImageFromJson(String str) => List<DetailImage>.from(json.decode(str).map(DetailImage.fromJson));
 
 String detailImageToJson(List<DetailImage> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
@@ -22,7 +22,7 @@ class DetailImage {
   String? width;
   String? height;
 
-  factory DetailImage.fromJson(Map<String, dynamic> json) => DetailImage(
+  factory DetailImage.fromJson(dynamic json) => DetailImage(
     img: json['img'],
     hotAreaList: List<dynamic>.from(json['hotAreaList'].map((x) => x)),
     width: json['width'],

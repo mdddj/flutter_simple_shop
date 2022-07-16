@@ -4,7 +4,7 @@ import 'package:dataoke_sdk/model/ff_convert_convert_util.dart';
 
 List<JdNativeProduct> jdNativeProductCovert(String resp) {
   return List<JdNativeProduct>.from((jsonDecode(resp) as List<dynamic>)
-      .map((e) => JdNativeProduct.fromJson(e))).toList();
+      .map(JdNativeProduct.fromJson)).toList();
 }
 
 class JdNativeProduct {
@@ -43,7 +43,8 @@ class JdNativeProduct {
     this.reserveInfo,
   });
 
-  factory JdNativeProduct.fromJson(Map<String, dynamic> jsonRes) {
+  factory JdNativeProduct.fromJson(dynamic e) {
+    final jsonRes = e as Map<String,dynamic>;
     final List<int>? forbidTypes =
         jsonRes['forbidTypes'] is List ? <int>[] : null;
     if (forbidTypes != null) {

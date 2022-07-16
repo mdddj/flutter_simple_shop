@@ -1,7 +1,7 @@
 // Dart imports:
 import 'dart:convert';
 
-List<MainTopic> mainTopicFromJson(String str) => List<MainTopic>.from(json.decode(str).map((x) => MainTopic.fromJson(x)));
+List<MainTopic> mainTopicFromJson(String str) => List<MainTopic>.from(json.decode(str).map(MainTopic.fromJson));
 
 String mainTopicToJson(List<MainTopic> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 

@@ -89,7 +89,7 @@ class TKApiService {
       try {
         final myMap = jsonDecode(response);
         if (myMap['goodsList'] is List<dynamic>) {
-          final myList = List<PddSearchItemModel>.from((myMap['goodsList'] as List<dynamic>).map((e) => PddSearchItemModel.fromJson(e))).toList();
+          final myList = List<PddSearchItemModel>.from((myMap['goodsList'] as List<dynamic>).map(PddSearchItemModel.fromJson)).toList();
           result.addAll(myList);
         }
       } catch (s) {

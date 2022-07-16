@@ -53,7 +53,7 @@ class PddSearchItemModel {
     required this.optId,
   });
 
-  factory PddSearchItemModel.fromJson(Map<String, dynamic> jsonRes) {
+  factory PddSearchItemModel.fromJson(dynamic jsonRes) {
     final unifiedTags = jsonRes['unifiedTags'] is List ? <String>[] : null;
     if (unifiedTags != null) {
       for (final dynamic item in jsonRes['unifiedTags']!) {

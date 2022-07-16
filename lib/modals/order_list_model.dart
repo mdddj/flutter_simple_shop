@@ -42,7 +42,7 @@ class OrderAllData {
   factory OrderAllData.fromJson(Map<String, dynamic> json) => OrderAllData(
     number: json['number'],
     size: json['size'],
-    content: List<OrderAuditObject>.from(json['content'].map((x) => OrderAuditObject.fromJson(x))),
+    content: List<OrderAuditObject>.from(json['content'].map(OrderAuditObject.fromJson)),
     sort: OrderAllDataSort.fromJson(json['sort']),
     numberOfElements: json['numberOfElements'],
     first: json['first'],

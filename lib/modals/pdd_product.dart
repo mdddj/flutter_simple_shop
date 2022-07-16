@@ -4,7 +4,7 @@ import 'dart:convert';
 // Project imports:
 import 'ff_convert_convert_util.dart';
 
-List<PddGoods> pddCovertList(List<dynamic> list)=> List<PddGoods>.from(list.map((e) => PddGoods.fromJson(e))).toList();
+List<PddGoods> pddCovertList(List<dynamic> list)=> List<PddGoods>.from(list.map(PddGoods.fromJson)).toList();
 
 class PddGoods {
   PddGoods({
@@ -45,7 +45,7 @@ class PddGoods {
     required this.unifiedTags,
   });
 
-  factory PddGoods.fromJson(Map<String, dynamic> jsonRes) {
+  factory PddGoods.fromJson(dynamic jsonRes) {
     final activityTags = jsonRes['activity_tags'] is List ? <int>[] : null;
     if (activityTags != null) {
       for (final dynamic item in jsonRes['activity_tags']!) {

@@ -49,7 +49,7 @@ class Goods {
   });
 
   factory Goods.fromJson(Map<String, dynamic> json) => Goods(
-    list: List<GoodsItem>.from(json['list'].map((x) => GoodsItem.fromJson(x))),
+    list: List<GoodsItem>.from(json['list'].map(GoodsItem.fromJson)),
     totalNum: json['totalNum'],
     pageId: json['pageId'],
   );
