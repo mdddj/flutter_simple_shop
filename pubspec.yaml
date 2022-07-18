@@ -11,7 +11,7 @@ dependencies:
   flutter_lints: ^2.0.1
   cupertino_icons: ^1.0.5
   get: ^4.6.5
-  url_launcher: ^6.1.4
+  url_launcher: ^6.1.5
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.6
@@ -71,7 +71,7 @@ dependencies:
 
   riverpod: ^1.0.3
   hooks_riverpod: ^1.0.4
-  dd_check_plugin: ^0.1.1
+  dd_check_plugin: ^0.1.9
   flutter_smart_dialog: ^4.5.3+6
   hive_flutter: ^1.1.0
 
