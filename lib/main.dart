@@ -73,7 +73,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
@@ -82,3 +81,4 @@ class MyHttpOverrides extends HttpOverrides {
           (X509Certificate cert, String host, int port) => true;
   }
 }
+

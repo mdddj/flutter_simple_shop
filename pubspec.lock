@@ -294,7 +294,7 @@ packages:
       name: dd_check_plugin
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.1"
+    version: "0.1.9"
   dd_js_util:
     dependency: "direct main"
     description:
@@ -500,7 +500,7 @@ packages:
       name: flutter_markdown
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.10+2"
+    version: "0.6.10+3"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -521,7 +521,7 @@ packages:
       name: flutter_smart_dialog
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.5.3+6"
+    version: "4.5.3+7"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -1334,7 +1334,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.4"
+    version: "6.1.5"
   url_launcher_android:
     dependency: transitive
     description:
