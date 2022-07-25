@@ -71,7 +71,7 @@ dependencies:
 
   riverpod: ^1.0.3
   hooks_riverpod: ^1.0.4
-  dd_check_plugin: ^0.1.9
+  dd_check_plugin: ^0.2.1
   flutter_smart_dialog: ^4.5.3+7
   hive_flutter: ^1.1.0
 
