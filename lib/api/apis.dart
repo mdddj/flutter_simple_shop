@@ -22,10 +22,11 @@ extension DyExt on dynamic {
 class FavoritesAddApi extends MyBaseApi {
   FavoritesAddApi() : super("/api/favorites/save", httpMethod: HttpMethod.post);
 
-  @Doc(message: "像服务器发起请求,添加收藏")
+  @Doc(message: "服务器发起请求,添加收藏")
   static Future<void> doRequeset(FavoriteModel favoriteModel) async {
+
     final api = FavoritesAddApi()..params.addAll(favoriteModel.getJson());
-    final result = await api.request();
+    final result = await api.request(loadingText: '正在添加到收藏夹');
     result.simpleHandle();
   }
 }

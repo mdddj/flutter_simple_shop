@@ -301,7 +301,7 @@ packages:
       name: dd_js_util
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.8"
+    version: "0.3.0"
   decimal:
     dependency: transitive
     description:
@@ -316,6 +316,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.6"
+  easy_refresh:
+    dependency: transitive
+    description:
+      name: easy_refresh
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.2+2"
   encrypt:
     dependency: "direct main"
     description:
@@ -378,14 +385,14 @@ packages:
       name: extended_text
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "9.1.0"
+    version: "9.1.1"
   extended_text_field:
     dependency: "direct main"
     description:
       name: extended_text_field
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "10.1.0"
+    version: "10.1.1"
   extended_text_library:
     dependency: transitive
     description:

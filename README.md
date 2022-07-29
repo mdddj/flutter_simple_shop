@@ -17,6 +17,20 @@ const apiHost = 'https://itbug.shop';
 const apiPort = '443';
 ```
 
+### 如果拉取依赖报错,需要替换线上包
+![https://img.itbug.shop/public%2F2022-07-2907%3A41%3A28%2FaNLFiB.jpg](https://img.itbug.shop/public%2F2022-07-2907%3A41%3A28%2FaNLFiB.jpg)
+
+```dart
+  dataoke_sdk:
+    path: ../plugins/dataoke_sdk
+```
+替换成
+```dart
+  dataoke_sdk: any
+```
+
+
+
 运行环境 (如果不匹配有可能跑不起来)
 ```dart
 [✓] Flutter (Channel stable, 3.0.5, on macOS 12.4 21F79 darwin-arm (Rosetta),
