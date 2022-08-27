@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import './provider/providers.dart';
 import 'ad.dart';
 import 'common/service.dart';
+import 'common/styles.dart';
 import 'common/utils.dart';
 import 'common/widget_util.dart';
 import 'controller/app_controller.dart';
@@ -21,7 +22,7 @@ import 'util/navigator_util.dart';
 
 const kDebugMode = true;
 // 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.199.69';
+const apiHost = 'http://192.168.100.26';
 const apiPort = '80';
 
 void main() async {
@@ -50,20 +51,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: ThemeData(
-            primaryColor: Colors.white,
-            useMaterial3: true,
-            appBarTheme: const AppBarTheme(
-                titleTextStyle: TextStyle(
-                  color: Colors.black,
-                ),
-                iconTheme: IconThemeData(color: Colors.blueGrey),
-                actionsIconTheme: IconThemeData(color: Colors.blueGrey),
-                backgroundColor: Colors.white),
-            bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-                selectedItemColor: Colors.pink,
-                unselectedLabelStyle: TextStyle(fontSize: 12),
-                selectedLabelStyle: TextStyle(fontSize: 12))),
+        theme: buildLighitTheme(context),
         onInit: () {
           Get.put(AppController());
         },
@@ -73,6 +61,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
@@ -81,6 +70,3 @@ class MyHttpOverrides extends HttpOverrides {
           (X509Certificate cert, String host, int port) => true;
   }
 }
-
-
-
