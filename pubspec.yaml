@@ -3,7 +3,7 @@ description: 典典的小卖部,淘客版本 qq群667186542
 version: 2.0.1
 
 environment:
-  sdk: ">=2.17.5 <3.0.0"
+  sdk: ">=2.18.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -23,7 +23,7 @@ dependencies:
   fbutton_nullsafety: ^5.0.0
   fsuper_nullsafety: ^3.0.3
   common_utils: ^2.1.0
-  extended_image: ^6.2.1
+  extended_image: ^6.3.0
   waterfall_flow: ^3.0.2
   loading_more_list: ^5.0.2
   extended_list: ^3.0.0
@@ -33,7 +33,7 @@ dependencies:
   shimmer: ^2.0.0
   flutter_svg: ^1.1.4
   extended_text_field: ^10.1.1
-  extended_text: ^9.1.1
+  extended_text: ^9.1.2
   animated_text_kit: ^4.2.2
   html: ^0.15.0
   extended_tabs: ^3.0.3
@@ -52,7 +52,7 @@ dependencies:
   logger: ^1.1.0
   http: ^0.13.5
   shelf_proxy: ^1.0.2
-  responsive_builder: ^0.4.2
+  responsive_builder: ^0.4.3
   bubble_tab_indicator: ^0.1.6
   badges: ^2.0.3
   carousel_pro_nullsafety: ^1.0.2
@@ -71,7 +71,7 @@ dependencies:
   riverpod: ^1.0.3
   hooks_riverpod: ^1.0.4
   dd_check_plugin: ^0.2.3
-  flutter_smart_dialog: ^4.5.4+2
+  flutter_smart_dialog: ^4.5.5
   hive_flutter: ^1.1.0
 
 

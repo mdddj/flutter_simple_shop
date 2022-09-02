@@ -26,6 +26,7 @@ const apiHost = 'http://192.168.100.26';
 const apiPort = '80';
 
 void main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
   BaseApi.host = "$apiHost:$apiPort";
   DdTaokeUtil.instance.init(apiHost, apiPort, debug: false);
