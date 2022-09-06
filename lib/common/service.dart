@@ -57,11 +57,12 @@ class Api extends ApiService {
         onStart: AppController.find.addAuthDetail,
         isTaokeApi: false);
 
+    print(result);
     if (result.isNotEmpty) {
       try {
         return User.fromJson(jsonDecode(result));
-      } catch (e) {
-        Logger().d("用户数据解析失败:$e");
+      } catch (e,s) {
+        Logger().d("用户数据解析失败:$e\n$s");
       }
     }
     return null;

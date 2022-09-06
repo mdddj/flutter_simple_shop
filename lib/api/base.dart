@@ -1,7 +1,10 @@
 import 'package:dd_js_util/api/base.dart';
+import 'package:dd_js_util/api/exception.dart';
+import 'package:dd_js_util/ext/map.dart';
+import 'package:dd_js_util/util/log.dart';
 import 'package:dio/dio.dart';
 import '../service/user_api.dart';
-
+///添加token到请求头
 class MyInterceptor implements Interceptor {
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {}
@@ -15,8 +18,47 @@ class MyInterceptor implements Interceptor {
   void onResponse(Response response, ResponseInterceptorHandler handler) {}
 }
 
-abstract class MyBaseApi extends BaseApi {
-  MyBaseApi(String url,{HttpMethod? httpMethod}) : super(url,httpMethod: httpMethod??HttpMethod.get) {
+
+
+
+///接口封装
+abstract class MyAppCoreApi extends BaseApi {
+  MyAppCoreApi(String url, {HttpMethod? httpMethod})
+      : super(url, httpMethod: httpMethod ?? HttpMethod.get) {
     intrtceptors.add(MyInterceptor());
+  }
+
+  @override
+  Future<WrapJson> request(
+      {bool showErrorMsg = true,
+      String? loadingText,
+      String contentType = "",
+      Map<String, dynamic>? headers,
+      bool showDefaultLoading = true,
+      data,
+      ResponseType? responseType,
+      bool? nullParams,
+      RequestEncoder? requestEncoder,
+      DioStart? dioStart}) async {
+    try{
+      final r = await super.request(
+          showErrorMsg: showErrorMsg,
+          loadingText: loadingText,
+          contentType: contentType,
+          headers: headers,
+          showDefaultLoading: showDefaultLoading,
+          data: data,
+          responseType: responseType,
+          nullParams: nullParams,
+          requestEncoder: requestEncoder,
+          dioStart: (dio,url){
+        kLog('开始请求:$url \n$data\n$params');
+        dioStart?.call(dio,url);
+      });
+      return WrapJson(r);
+    }on AppException catch(e){
+      kLogErr(e);
+      return WrapJson.fromMyServerError(e);
+    }
   }
 }

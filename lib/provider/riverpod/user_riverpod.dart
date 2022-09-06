@@ -26,12 +26,12 @@ class UserModel extends StateNotifier<UserDetailModal> {
 
   @Doc(message: '使用jwt token 来加载用户的基本资料')
   Future<void> fetchUserDetail(String token) async {
+    CacheFactory.create<TokenCache>().setToken(token);
+    GetIt.instance.get<UserApi>().token = token;
     final vUser = await utils.api.getUser(token);
     if (vUser != null) {
       state = state.copyWith(user: MyUser.fromUser(vUser));
       toast('欢迎回来,${vUser.nickName}');
-      CacheFactory.create<TokenCache>().setToken(token);
-      GetIt.instance.get<UserApi>().token = token;
     } else {
       toast("获取用户信息失败,请稍后重试");
     }

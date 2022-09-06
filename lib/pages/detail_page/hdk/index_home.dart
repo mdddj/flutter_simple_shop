@@ -25,6 +25,7 @@ import '../../../widgets/my_drawable_start_text.dart';
 import '../../../widgets/no_data.dart';
 import '../../../widgets/round_underline_tab_indicator.dart';
 import '../../../widgets/simple_price.dart';
+import '../../user_home_page/ext.dart';
 import '../detail_imgs_widget.dart';
 
 //是否展示轮播图上面的返回箭头
@@ -270,6 +271,10 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
 
   @Doc(message: '添加收藏')
   Future<void> addFavorite() async {
+    if(ref.isLogin.not){
+      toast('请先登录');
+      return;
+    }
     if(info!=null){
       FavoritesAddApi.doRequeset(info!);
     }

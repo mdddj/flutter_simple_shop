@@ -45,7 +45,7 @@ dependencies:
   sliver_tools: ^0.2.8
   shelf: ^1.3.2
   extended_sliver: ^2.1.3
-  dd_js_util: ^0.4.5
+
   fcontrol_nullsafety: ^2.0.0
   flutter_hooks: ^0.18.5+1
   get_it: ^7.2.0
@@ -68,6 +68,9 @@ dependencies:
   #  大淘客SDK,如果本地找不到,替换为线上版本,功能都一样 dataoke_sdk: ^any
   dataoke_sdk:
     path: ../plugins/dataoke_sdk
+
+  dd_js_util:
+    path: ../dd_js_util
 
   riverpod: ^1.0.3
   hooks_riverpod: ^1.0.4

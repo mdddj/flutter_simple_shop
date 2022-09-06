@@ -1,18 +1,14 @@
 import 'package:after_layout/after_layout.dart';
-import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/material.dart' hide NestedScrollView;
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:loading_more_list/loading_more_list.dart';
 
 // Project imports:
 import '../../../constant/style.dart';
 import '../../../controller/app_controller.dart';
 import '../../../repository/index_goods_repository.dart';
 import '../../../widgets/edit_page_handle.dart';
-import '../../../widgets/loading_more_list_indicator.dart';
-import '../../../widgets/waterfall_goods_card.dart';
 import 'component/appbar.dart';
 import 'component/carousel.dart';
 import 'component/gridmenu/view.dart';
@@ -57,7 +53,7 @@ class IndexHomeNewState extends State<IndexHomeNew>
             const IndexColumnWidget(),
             _renderAd(),
             _renderHeader(),
-            _buildGoodsList()
+            IndexProducts(repository: indexGoodsRepository)
           ],
         ),
       ),
@@ -100,25 +96,6 @@ class IndexHomeNewState extends State<IndexHomeNew>
     ).sliverBox;
   }
 
-  /// 首页产品列表
-  Widget _buildGoodsList() {
-    return LoadingMoreSliverList(
-        SliverListConfig<Product>(
-          extendedListDelegate:
-              const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
-          itemBuilder: (context, item, index) {
-            return WaterfallGoodsCard(item);
-          },
-          sourceList: indexGoodsRepository,
-          padding: const EdgeInsets.only(left: 12, right: 12),
-          lastChildLayoutType: LastChildLayoutType.foot,
-          indicatorBuilder: (context, state) {
-            return LoadingMoreListCostumIndicator(state, isSliver: true);
-          },
-        ),
-        key: AppController.find.indexProductKey);
-  }
 
   @override
   void afterFirstLayout(BuildContext context) {
