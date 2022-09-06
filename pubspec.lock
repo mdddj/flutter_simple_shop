@@ -270,9 +270,9 @@ packages:
   dataoke_sdk:
     dependency: "direct main"
     description:
-      name: dataoke_sdk
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../plugins/dataoke_sdk"
+      relative: true
+    source: path
     version: "0.1.0"
   date_format:
     dependency: "direct main"
@@ -301,7 +301,7 @@ packages:
       name: dd_js_util
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.1"
+    version: "0.4.5"
   decimal:
     dependency: transitive
     description:
@@ -316,13 +316,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.6"
-  easy_refresh:
-    dependency: transitive
-    description:
-      name: easy_refresh
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.2+2"
   encrypt:
     dependency: "direct main"
     description:
@@ -535,7 +528,7 @@ packages:
       name: flutter_smart_dialog
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.5.5"
+    version: "4.5.5+2"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -1208,7 +1201,7 @@ packages:
       name: sliver_tools
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.7"
+    version: "0.2.8"
   source_gen:
     dependency: transitive
     description:

@@ -1,18 +1,11 @@
-// Dart imports:
 import 'dart:convert';
 import 'dart:developer';
-
-// Package imports:
-// Flutter imports:
 import 'package:dataoke_sdk/network/util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
-import 'package:logger/logger.dart';
-
 import '../common/toast.dart';
 import '../common/utils.dart';
 import '../modals/pdd_detail_model.dart';
-// Project imports:
 import '../modals/pdd_search_item_model.dart';
 import '../pages/dynamic/model/wph_detail_resul.dart';
 
@@ -99,70 +92,50 @@ class TKApiService {
     return result;
   }
 
-  /// 拼多多推荐商品
-  /// 弃用 - 2022-04-07 17:30:20
-  @Deprecated("方法弃用")
-  Future<List<dynamic>> pddRecommendGoods(int page, int channelType) async {
-    final result = await DdTaokeUtil.dio!.get<String>('/pdd/recommend', queryParameters: {'page': page, 'channelType': channelType});
-    if (result.statusCode == 200 && result.data != null) {
-      final json = result.data;
-      if (json != null && json.isNotEmpty) {
-        try {
-          final data = jsonDecode(json);
-          final pddRespose = data['goods_basic_detail_response'];
-          if (pddRespose != null) {
-            if (pddRespose['list'] is List<dynamic>) {
-              return pddRespose['list'] as List<dynamic>;
-            }
-          }
-        } catch (e) {
-          log('拼多多商品解析失败:$e');
-        }
-      }
-    }
-    return [];
-  }
+
 
   /// 获取平多多详情
+  /// TODO 多多详情
   Future<PddDetail?> ppdDetail(String goodsSgin) async {
-    final result = await DdTaokeUtil.dio!.get<String>('/pdd/detail', queryParameters: {'id': goodsSgin});
-    if (result.statusCode == 200 && result.data != null) {
-      final json = result.data;
-      if (json != null && json.isNotEmpty) {
-        try {
-          final data = jsonDecode(json);
-          final map = jsonDecode(data);
-          final pddRespose = map['goods_detail_response']['goods_details'];
-
-          if (pddRespose is List<dynamic>) {
-            final item = pddRespose.first;
-            return PddDetail.fromJson(item);
-          }
-        } catch (_) {
-          log('拼多多商品详情解析失败');
-        }
-      }
-    }
-    return null;
+    // final result = await DdTaokeUtil.dio!.get<String>('/pdd/detail', queryParameters: {'id': goodsSgin});
+    // if (result.statusCode == 200 && result.data != null) {
+    //   final json = result.data;
+    //   if (json != null && json.isNotEmpty) {
+    //     try {
+    //       final data = jsonDecode(json);
+    //       final map = jsonDecode(data);
+    //       final pddRespose = map['goods_detail_response']['goods_details'];
+    //
+    //       if (pddRespose is List<dynamic>) {
+    //         final item = pddRespose.first;
+    //         return PddDetail.fromJson(item);
+    //       }
+    //     } catch (_) {
+    //       log('拼多多商品详情解析失败');
+    //     }
+    //   }
+    // }
+    // return null;
   }
 
   /// 拼多多转链
+  /// TODO 多多转链
   Future<dynamic> pddCovert(String goodsSgin) async {
-    var data = {'id': goodsSgin};
-    final result = await DdTaokeUtil.dio!.get<String>('/pdd/covert', queryParameters: data);
-    Logger().d(result);
-    if (result.statusCode == 200 && result.data != null) {
-      final json = result.data ?? '';
-      if(json.isNotEmpty){
-        try{
-          final map  = jsonDecode(json);
-          final jsonMap = jsonDecode(map.toString());
-          return jsonMap['goods_promotion_url_generate_response']['goods_promotion_url_list'][0];
-        }catch(_){
-          Logger().e('转换平多多优惠券失败');
-        }
-      }
-    }
+    // var data = {'id': goodsSgin};
+    // final result = await DdTaokeUtil.dio!.get<String>('/pdd/covert', queryParameters: data);
+    // Logger().d(result);
+    // if (result.statusCode == 200 && result.data != null) {
+    //   final json = result.data ?? '';
+    //   if(json.isNotEmpty){
+    //     try{
+    //       final map  = jsonDecode(json);
+    //       final jsonMap = jsonDecode(map.toString());
+    //       return jsonMap['goods_promotion_url_generate_response']['goods_promotion_url_list'][0];
+    //     }catch(_){
+    //       Logger().e('转换平多多优惠券失败');
+    //     }
+    //   }
+    // }
   }
 }
 

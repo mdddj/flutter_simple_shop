@@ -1,3 +1,4 @@
+import 'package:dd_js_util/ext/widget.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
@@ -15,7 +16,9 @@ class IndexColumnWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final products = context.read<IndexState>().hotDayProducts;
-    debugPrint("产品数据:${products.length}");
+    if(products.isEmpty){
+      return const SizedBox().toSliverWidget;
+    }
     return SliverPadding(
       sliver: SliverWaterfallFlow.count(
         crossAxisCount: 2,

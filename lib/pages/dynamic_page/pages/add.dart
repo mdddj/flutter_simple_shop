@@ -1,6 +1,5 @@
 import 'package:dataoke_sdk/apis/apis.dart';
 import 'package:dataoke_sdk/model/res_category.dart';
-import 'package:dataoke_sdk/v2/dio_base_api.dart';
 import 'package:dd_js_util/widget/picture_selection.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
