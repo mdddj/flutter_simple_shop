@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:dataoke_sdk/network/util.dart';
+import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/api/base.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
@@ -22,7 +23,7 @@ import 'util/navigator_util.dart';
 
 const kDebugMode = true;
 // 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.100.26';
+const apiHost = 'http://92.168.199.81';
 const apiPort = '80';
 
 void main() async {
@@ -38,6 +39,9 @@ void main() async {
   GetIt.instance.registerSingleton<BlogApi>(BlogApi());
   GetIt.instance.registerSingleton<UserApi>(UserApi());
   HttpOverrides.global = MyHttpOverrides();
+  if(kDebugMode){
+    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '92.168.199.81',timeOut: const Duration(seconds: 2));
+  }
   await Hive.initFlutter();
   runApp(const ProviderScope(child: MyApp()));
 }
