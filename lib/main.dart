@@ -22,7 +22,7 @@ import 'util/navigator_util.dart';
 
 const kDebugMode = true;
 // 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.199.81';
+const apiHost = 'http://192.168.199.33';
 const apiPort = '80';
 
 void main() async {
@@ -38,7 +38,7 @@ void main() async {
   GetIt.instance.registerSingleton<UserApi>(UserApi());
   HttpOverrides.global = MyHttpOverrides();
   if(kDebugMode){
-    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.81',timeOut: const Duration(seconds: 2));
+    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.33',timeOut: const Duration(seconds: 2));
   }
   await Hive.initFlutter();
   runApp(const ProviderScope(child: MyApp()));

@@ -63,6 +63,7 @@ dependencies:
   black_hole_flutter: ^0.3.5
   hive: ^2.2.3
   flutter_blurhash: ^0.7.0
+  curl_logger_dio_interceptor: ^0.0.3
   flutter_swiper_null_safety_flutter3: ^2.0.0
 
   #  大淘客SDK,如果本地找不到,替换为线上版本,功能都一样 dataoke_sdk: ^any
@@ -77,6 +78,7 @@ dependencies:
   dd_check_plugin: ^0.2.3
   flutter_smart_dialog: ^4.5.5+2
   hive_flutter: ^1.1.0
+  pretty_dio_logger: ^1.2.0-beta-1
 
 
 dev_dependencies:

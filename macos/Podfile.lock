@@ -48,7 +48,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   dd_check_plugin: 94a3ed8a1ae99fb3d5eb70f6400ebd4e46658856
-  FlutterMacOS: 57701585bf7de1b3fc2bb61f6378d73bbdea8424
+  FlutterMacOS: ae6af50a8ea7d6103d888583d46bd8328a7e9811
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   network_info_plus_macos: d2b9e6c01c291449b91a584217aa53b113847dbd
   package_info: 6eba2fd8d3371dda2d85c8db6fe97488f24b74b2
