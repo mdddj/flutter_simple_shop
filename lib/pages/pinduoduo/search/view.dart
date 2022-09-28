@@ -16,6 +16,7 @@ import 'logic.dart';
 
 var i = const Icon(Icons.abc);
 
+///搜索页面
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 

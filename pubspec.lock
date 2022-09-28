@@ -308,7 +308,7 @@ packages:
       path: "../dd_js_util"
       relative: true
     source: path
-    version: "0.5.2"
+    version: "0.5.3"
   decimal:
     dependency: transitive
     description:
