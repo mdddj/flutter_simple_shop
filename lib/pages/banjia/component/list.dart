@@ -1,18 +1,15 @@
-// Flutter imports:
-// Package imports:
+
 import 'package:badges/badges.dart';
-import 'package:dataoke_sdk/model/halfday_result.dart';
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
-
-// Project imports:
 import '../../../util/navigator_util.dart';
 import '../../../widgets/extended_image.dart';
 import '../../../widgets/simple_price.dart';
 
 class BanjiaList extends StatelessWidget {
-  final List<ListElement> products;
+  final List<HalfPriceListElement> products;
 
   const BanjiaList({Key? key, required this.products}) : super(key: key);
 
@@ -24,7 +21,7 @@ class BanjiaList extends StatelessWidget {
     );
   }
 
-  Widget renderItem(ListElement item) {
+  Widget renderItem(HalfPriceListElement item) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),

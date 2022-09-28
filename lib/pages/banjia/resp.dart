@@ -1,13 +1,11 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/halfday_result.dart';
+
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 
 
 ///半价
 class BanjiaResp extends ChangeNotifier {
-  List<ListElement> products = [];
+  List<HalfPriceListElement> products = [];
   List<SessionsList> sessions = [];
   String? banner;
 

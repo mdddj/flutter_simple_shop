@@ -20,9 +20,9 @@ import 'service/blog_api.dart';
 import 'service/user_api.dart';
 import 'util/navigator_util.dart';
 
-const kDebugMode = true;
+const kDebugMode = false;
 // 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.199.33';
+const apiHost = 'http://192.168.199.89';
 const apiPort = '80';
 
 void main() async {
