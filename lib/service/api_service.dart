@@ -97,6 +97,8 @@ class TKApiService {
   /// 获取平多多详情
   /// TODO 多多详情
   Future<PddDetail?> ppdDetail(String goodsSgin) async {
+    return null;
+
     // final result = await DdTaokeUtil.dio!.get<String>('/pdd/detail', queryParameters: {'id': goodsSgin});
     // if (result.statusCode == 200 && result.data != null) {
     //   final json = result.data;

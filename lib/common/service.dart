@@ -56,8 +56,6 @@ class Api extends ApiService {
         data: {'token': token},
         onStart: AppController.find.addAuthDetail,
         isTaokeApi: false);
-
-    print(result);
     if (result.isNotEmpty) {
       try {
         return User.fromJson(jsonDecode(result));

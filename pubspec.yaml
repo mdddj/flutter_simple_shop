@@ -3,7 +3,7 @@ description: 典典的小卖部,淘客版本 qq群667186542
 version: 2.0.1
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: ">=2.18.1 <3.0.0"
 
 dependencies:
   flutter:
@@ -14,7 +14,7 @@ dependencies:
   url_launcher: ^6.1.5
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
-  date_format: ^2.0.6
+  date_format: ^2.0.7
   dio: ^4.0.6
   flutter_spinkit: ^5.1.0
   tab_indicator_styler: ^2.0.0
@@ -23,7 +23,7 @@ dependencies:
   fbutton_nullsafety: ^5.0.0
   fsuper_nullsafety: ^3.0.3
   common_utils: ^2.1.0
-  extended_image: ^6.3.0
+  extended_image: ^6.3.1
   waterfall_flow: ^3.0.2
   loading_more_list: ^5.0.2
   extended_list: ^3.0.0
@@ -31,7 +31,7 @@ dependencies:
   fsearch_nullsafety: ^2.0.0
   carousel_slider: ^4.1.1
   shimmer: ^2.0.0
-  flutter_svg: ^1.1.4
+  flutter_svg: ^1.1.5
   extended_text_field: ^10.1.1
   extended_text: ^9.1.2
   animated_text_kit: ^4.2.2
@@ -43,7 +43,7 @@ dependencies:
   encrypt: ^5.0.1
   extended_nested_scroll_view: ^5.1.3
   sliver_tools: ^0.2.8
-  shelf: ^1.3.2
+  shelf: ^1.4.0
   extended_sliver: ^2.1.3
 
   fcontrol_nullsafety: ^2.0.0
@@ -56,7 +56,7 @@ dependencies:
   bubble_tab_indicator: ^0.1.6
   badges: ^2.0.3
   carousel_pro_nullsafety: ^1.0.2
-  flutter_markdown: ^0.6.10+5
+  flutter_markdown: ^0.6.12
   zefyrka: ^1.3.0
   package_info: ^2.0.2
   show_up_animation: ^2.0.0
@@ -64,7 +64,7 @@ dependencies:
   hive: ^2.2.3
   flutter_blurhash: ^0.7.0
   curl_logger_dio_interceptor: ^0.0.3
-  flutter_swiper_null_safety_flutter3: ^2.0.0
+  flutter_swiper_null_safety_flutter3: ^3.0.0
 
   #  大淘客SDK,如果本地找不到,替换为线上版本,功能都一样 dataoke_sdk: ^any
   dataoke_sdk:
@@ -75,22 +75,22 @@ dependencies:
 
   riverpod: ^1.0.3
   hooks_riverpod: ^1.0.4
-  dd_check_plugin: ^0.2.3
-  flutter_smart_dialog: ^4.5.5+2
+  dd_check_plugin: ^0.2.4
+  flutter_smart_dialog: ^4.5.5+6
   hive_flutter: ^1.1.0
-  pretty_dio_logger: ^1.2.0-beta-1
+  pretty_dio_logger: ^1.1.1
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.1.11
+  build_runner: ^2.2.1
   import_sorter: ^4.6.0
-  analyzer: ^4.2.0
-  freezed_annotation: ^2.0.3
-  freezed: ^2.0.4
-  json_serializable: ^6.3.1
-  json_annotation: ^4.6.0
+  analyzer: ^5.1.0
+  freezed_annotation: ^2.1.0
+  freezed: ^2.1.1
+  json_serializable: ^6.4.0
+  json_annotation: ^4.7.0
 
 
 flutter:

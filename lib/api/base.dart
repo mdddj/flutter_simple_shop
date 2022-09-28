@@ -43,7 +43,7 @@ abstract class MyAppCoreApi extends BaseApi {
       ResponseType? responseType,
       bool? nullParams,
       RequestEncoder? requestEncoder,
-      DioStart? dioStart}) async {
+      DioStart? dioStart,bool? returnIsString}) async {
     try{
       final r = await super.request(
           showErrorMsg: showErrorMsg,
