@@ -280,7 +280,7 @@ packages:
       path: "../plugins/dataoke_sdk"
       relative: true
     source: path
-    version: "0.1.2"
+    version: "1.0.1"
   date_format:
     dependency: "direct main"
     description:
@@ -305,10 +305,10 @@ packages:
   dd_js_util:
     dependency: "direct main"
     description:
-      path: "../dd_js_util"
-      relative: true
-    source: path
-    version: "0.5.3"
+      name: dd_js_util
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.6"
   decimal:
     dependency: transitive
     description:
@@ -456,6 +456,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  flex_color_scheme:
+    dependency: "direct main"
+    description:
+      name: flex_color_scheme
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.0.1"
+  flex_seed_scheme:
+    dependency: transitive
+    description:
+      name: flex_seed_scheme
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -489,6 +503,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.18.5+1"
+  flutter_html:
+    dependency: transitive
+    description:
+      name: flutter_html
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0-alpha.5"
   flutter_image_compress:
     dependency: transitive
     description:
@@ -528,7 +549,7 @@ packages:
       name: flutter_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.3+1"
   flutter_screenutil:
     dependency: transitive
     description:
@@ -664,7 +685,7 @@ packages:
       name: hooks_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.3+1"
   html:
     dependency: "direct main"
     description:
@@ -924,6 +945,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  numerus:
+    dependency: transitive
+    description:
+      name: numerus
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.1"
   octo_image:
     dependency: transitive
     description:
@@ -1168,7 +1196,7 @@ packages:
       name: riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.3+1"
   rxdart:
     dependency: transitive
     description:
@@ -1369,7 +1397,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.5"
+    version: "6.1.6"
   url_launcher_android:
     dependency: transitive
     description:

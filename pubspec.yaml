@@ -11,7 +11,7 @@ dependencies:
   flutter_lints: ^2.0.1
   cupertino_icons: ^1.0.5
   get: ^4.6.5
-  url_launcher: ^6.1.5
+  url_launcher: ^6.1.6
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.7
@@ -64,16 +64,17 @@ dependencies:
   flutter_blurhash: ^0.7.0
   curl_logger_dio_interceptor: ^0.0.3
   flutter_swiper_null_safety_flutter3: ^3.0.0
-  riverpod: ^1.0.3
-  hooks_riverpod: ^1.0.4
+  riverpod: ^1.0.3+1
+  hooks_riverpod: ^1.0.3+1
   dd_check_plugin: ^0.2.4
   flutter_smart_dialog: ^4.5.5+6
   hive_flutter: ^1.1.0
   pretty_dio_logger: ^1.1.1
+  flex_color_scheme: ^6.0.1
+  dd_js_util: ^0.5.6
   dataoke_sdk:
     path: ../plugins/dataoke_sdk #请替换为pub仓库版本>>>>dataoke_sdk: ^lastversion
-  dd_js_util:
-    path: ../dd_js_util #请替换为pub仓库版本>>>>dd_js_util: ^lastversion
+
 
 
 dev_dependencies:

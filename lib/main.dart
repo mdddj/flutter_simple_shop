@@ -54,7 +54,8 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: buildLighitTheme(context),
+        theme: MyAppTheme.defaultTheme,
+        darkTheme: MyAppTheme.darkTheme,
         onInit: () {
           Get.put(AppController());
         },
