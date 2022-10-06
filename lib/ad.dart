@@ -1,64 +1,63 @@
-// Flutter imports:
-// Package imports:
-import 'package:after_layout/after_layout.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:dd_js_util/dd_js_util.dart';
+import 'package:extended_image/extended_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:show_up_animation/show_up_animation.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart' hide FutureProvider;
 
-import 'app.dart';
-import 'pages/index_page/new/index_riverpod.dart';
-import 'provider/riverpod/category_riverpod.dart';
+import 'index.dart';
 
-class AdPage extends StatefulWidget {
-  const AdPage({Key? key}) : super(key: key);
+final initFuture =
+    FutureProvider.family<dynamic, BuildContext>((ref, context) async {
+  final categoryModel = context.read<CategoryState>();
+  final indexModel = context.read<IndexState>();
+  await categoryModel.init();
+  await categoryModel.getJdCategory();
+  await indexModel.fetch();
+  return {};
+});
+
+class InitBuildWidget extends ConsumerWidget {
+  final Widget home;
+
+  const InitBuildWidget({Key? key, required this.home}) : super(key: key);
 
   @override
-  AdPageState createState() => AdPageState();
+  Widget build(BuildContext context, WidgetRef ref) {
+    return ref.watch(initFuture(context)).when(
+        data: (v) => home,
+        error: (e, s) => const Text('启动失败'),
+        loading: InitLoadingWidget.new);
+  }
 }
 
-class AdPageState extends State<AdPage> with AfterLayoutMixin {
+class InitLoadingWidget extends StatelessWidget {
+  const InitLoadingWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: ShowUpAnimation(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AnimatedTextKit(
-              animatedTexts: [
-                WavyAnimatedText(
-                  '欢迎来到典典的小卖部',
-                  textStyle: const TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink
-                  ),
-                ),
-              ],
-              totalRepeatCount: 10,
-              pause: const Duration(milliseconds: 500),
-              displayFullTextOnTap: true,
-              stopPauseOnTap: true,
+      body: Stack(
+        children: [
+          Positioned(
+            left: 0,
+            right: 0,
+            top: context.paddingTop + 100,
+            child: ExtendedImage.asset(
+              'assets/images/logo.png',
+              enableMemoryCache: true,
+              width: 32,
+              height: 32,
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            bottom: context.paddingBottom + 12,
+            left: 0,
+            right: 0,
+            child: const CupertinoActivityIndicator(),
+          )
+        ],
       ),
-    ));
-  }
-
-  @override
-  void afterFirstLayout(BuildContext context) async {
-    await context.read<CategoryState>().init();
-    if(mounted){
-      await context.read<CategoryState>().getJdCategory();
-      if(mounted){
-        await context.read<IndexState>().fetch();
-      }
-    }
-    await context.navigator.pushReplacement(MaterialPageRoute(builder: (_) => const App()));
+    );
   }
 }
-

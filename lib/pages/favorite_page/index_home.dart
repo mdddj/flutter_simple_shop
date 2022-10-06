@@ -18,10 +18,10 @@ class FavoriteIndexHome extends StatefulWidget {
   const FavoriteIndexHome({Key? key}) : super(key: key);
 
   @override
-  IndexState createState() => IndexState();
+  FavoriteIndexHomeState createState() => FavoriteIndexHomeState();
 }
 
-class IndexState extends State<FavoriteIndexHome> {
+class FavoriteIndexHomeState extends State<FavoriteIndexHome> {
   UserProvider? userProvider;
   GoodsDetailProvider? goodsDetailProvider;
 
