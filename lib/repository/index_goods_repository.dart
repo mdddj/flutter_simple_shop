@@ -14,21 +14,30 @@ class IndexGoodsRepository extends LoadingMoreBase<Product> {
   @override
   bool get hasMore => true;
 
+  @override
+  Future<bool> refresh([bool notifyStateChanged = false]) {
+    return super.refresh(notifyStateChanged);
+  }
 
   @override
   Future<bool> loadData([bool isloadMoreAction = false]) async {
     var isSuccess = false;
-    final result = await DdTaokeSdk.instance.getProducts(param: ProductListParam(pageId: '$pageindex',pageSize: '$pageSize'),error: (c,m,d){
-      kLog('加载首页推荐产品失败:$c $m $d');
-    });
-    kLog("加载首页产品列表");
-    if(result!=null){
-      kLog('首页推荐产品数量返回:${result.list?.length}');
-      addAll(result.list??[]);
-      pageindex++;
-      isSuccess = true;
-    }else{
-      kLog('加载首页产品数据失败');
+    try{
+      debugPrint("正在加载首页推荐产品");
+      final result = await DdTaokeSdk.instance.getProducts(param: ProductListParam(pageId: '$pageindex',pageSize: '$pageSize'),error: (c,m,d){
+        kLog('加载首页推荐产品失败:$c $m $d');
+      },ifPrint: (String url)=> url.contains('/goods') );
+      kLog("加载首页产品列表");
+      if(result!=null){
+        kLog('首页推荐产品数量返回:${result.list?.length}');
+        addAll(result.list??[]);
+        pageindex++;
+        isSuccess = true;
+      }else{
+        kLog('加载首页产品数据失败');
+        isSuccess = false;
+      }
+    }catch(e){
       isSuccess = false;
     }
     return isSuccess;
@@ -39,7 +48,7 @@ class IndexGoodsRepository extends LoadingMoreBase<Product> {
 
 class IndexProducts extends StatelessWidget {
   final IndexGoodsRepository repository;
-  const IndexProducts({Key? key, required this.repository}) : super(key: key);
+   const IndexProducts({Key? key, required this.repository}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +62,9 @@ class IndexProducts extends StatelessWidget {
           },
           sourceList: repository,
           padding: const EdgeInsets.only(left: 12, right: 12),
-          lastChildLayoutType: LastChildLayoutType.foot,
           indicatorBuilder: (context, state) {
-            return LoadingMoreListCostumIndicator(state, isSliver: false);
+            return LoadingMoreListCostumIndicator(state, isSliver: true);
           },
-        ),
-        key: AppController.find.indexProductKey);
+        ));
   }
 }

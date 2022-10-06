@@ -1,4 +1,3 @@
-import 'package:dd_js_util/ext/widget.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
@@ -17,7 +16,7 @@ class IndexColumnWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final products = context.read<IndexState>().hotDayProducts;
     if(products.isEmpty){
-      return const SizedBox().toSliverWidget;
+      return const SizedBox();
     }
     return WaterfallFlow.count(
       crossAxisCount: 2,
@@ -25,6 +24,9 @@ class IndexColumnWidget extends StatelessWidget {
       crossAxisSpacing: 12,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+      ),
       children: [
         TwoColumnCommWidget(
             imageBuilder: (double w, double h) {

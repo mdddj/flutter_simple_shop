@@ -54,7 +54,7 @@ class HomeWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return EasyRefresh.custom(slivers: [
+    return CustomScrollView(slivers: [
       SliverList(delegate: SliverChildBuilderDelegate((context, index) {
         switch(index){
           case 0:
