@@ -8,7 +8,9 @@ import 'index.dart';
 
 void initNetUtil() {
   BaseApi.host = "$apiHost:$apiPort";
-  HttpOverrides.global = MyHttpOverrides();
+  if(Platform.isAndroid){
+    HttpOverrides.global = MyHttpOverrides();
+  }
 }
 
 void initInstance(){

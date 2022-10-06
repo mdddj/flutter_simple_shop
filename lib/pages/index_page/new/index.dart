@@ -1,10 +1,8 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' hide NestedScrollView;
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-
 import '../../../index.dart';
 
 /// 新版首页
@@ -69,7 +67,7 @@ class HomeWidgets extends StatelessWidget {
             return const SizedBox();
         }
       },childCount: 4)),
-      IndexProducts(repository: IndexGoodsRepository())
+      // IndexProducts(repository: IndexGoodsRepository())
     ],  );
   }
 }

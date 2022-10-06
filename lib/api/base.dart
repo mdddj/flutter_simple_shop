@@ -59,10 +59,14 @@ abstract class MyAppCoreApi extends BaseApi {
         kLog('开始请求:$url \n$data\n$params');
         dioStart?.call(dio,url);
       });
+      kLog(r);
       return WrapJson(r);
     }on AppException catch(e){
       kLogErr(e);
       return WrapJson.fromMyServerError(e);
+    }catch(e){
+      kLogErr(e);
+      return WrapJson.fromMyServerError(AppException.appError(code: 9000,msg: "系统错误"));
     }
   }
 }

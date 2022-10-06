@@ -1,11 +1,7 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-// Flutter imports:
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-// Project imports:
 import '../network/interceptor/auth_interceptor.dart';
 
 /// app 控制器

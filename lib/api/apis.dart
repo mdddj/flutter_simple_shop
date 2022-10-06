@@ -3,6 +3,7 @@ import 'package:dd_js_util/api/base.dart';
 import 'base.dart';
 
 
+
 ///添加到收藏夹接口
 class FavoritesAddApi extends MyAppCoreApi {
   FavoritesAddApi() : super("/api/user/favorites/save", httpMethod: HttpMethod.post);
@@ -11,4 +12,10 @@ class FavoritesAddApi extends MyAppCoreApi {
   static Future<void> doRequeset(FavoriteModel favoriteModel) async {
     final result = await (FavoritesAddApi()).request(showDefaultLoading: false,data: favoriteModel.getJson());
   }
+}
+
+///折淘客获取轮播图接口
+class KZheTaokeApiWithCarousel extends MyAppCoreApi {
+  KZheTaokeApiWithCarousel():super('/api/zhe/carousel-list');
+
 }
