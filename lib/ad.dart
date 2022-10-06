@@ -1,12 +1,12 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:provider/provider.dart' hide FutureProvider;
 
 import 'index.dart';
-
+const kLogoSize = 90.0;
+///初始化请求
 final initFuture =
     FutureProvider.family<dynamic, BuildContext>((ref, context) async {
   final categoryModel = context.read<CategoryState>();
@@ -17,6 +17,8 @@ final initFuture =
   return {};
 });
 
+
+///APP小部件
 class InitBuildWidget extends ConsumerWidget {
   final Widget home;
 
@@ -31,6 +33,9 @@ class InitBuildWidget extends ConsumerWidget {
   }
 }
 
+
+
+///初始化启动小部件
 class InitLoadingWidget extends StatelessWidget {
   const InitLoadingWidget({Key? key}) : super(key: key);
 
@@ -46,15 +51,20 @@ class InitLoadingWidget extends StatelessWidget {
             child: ExtendedImage.asset(
               'assets/images/logo.png',
               enableMemoryCache: true,
-              width: 32,
-              height: 32,
+              width: kLogoSize,
+              height: kLogoSize,
             ),
           ),
           Positioned(
             bottom: context.paddingBottom + 12,
             left: 0,
             right: 0,
-            child: const CupertinoActivityIndicator(),
+            child: const Center(
+              child: SizedBox(
+                  width: 30,
+                  height: 30,
+                  child: CircularProgressIndicator()),
+            ),
           )
         ],
       ),
