@@ -64,8 +64,8 @@ dependencies:
   flutter_blurhash: ^0.7.0
   curl_logger_dio_interceptor: ^0.0.3
   flutter_swiper_null_safety_flutter3: ^3.0.0
-  riverpod: ^1.0.3+1
-  hooks_riverpod: ^1.0.3+1
+  riverpod: ^2.0.2
+  hooks_riverpod: ^2.0.2
   dd_check_plugin: ^0.2.4
   flutter_smart_dialog: ^4.5.5+6
   hive_flutter: ^1.1.0
