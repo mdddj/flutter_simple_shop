@@ -3,8 +3,6 @@ import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
-// Project imports:
 import '../constant/style.dart';
 import '../provider/riverpod/category_riverpod.dart';
 import '../widgets/component/custom_loading.dart';
@@ -60,7 +58,7 @@ class WidgetUtils extends WidgetUtilService {
     return Skeleton(
       width: width,
       height: height,
-      cornerRadius: radius ?? 4,
+      cornerRadius: radius ?? 4, child: const SizedBox(),
     );
   }
 

@@ -1,8 +1,7 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
-import '../../widgets/component/custom_skeleton_widget.dart';
+import '../../index.dart';
 
 ///首页的加载骨架屏
 ///

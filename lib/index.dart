@@ -9,3 +9,4 @@ export 'pages/index.dart';
 export 'provider/index.dart';
 export 'service/index.dart';
 export 'util/index.dart';
+export 'widgets/index.dart';

@@ -12,7 +12,7 @@ Widget loadingState(ExtendedImageState state) {
     case LoadState.loading:
       return Skeleton(
         width: wd,
-        height: he,
+        height: he, child: const SizedBox(),
       );
     case LoadState.completed:
       return ExtendedRawImage(
@@ -42,12 +42,12 @@ class Skeleton extends StatefulWidget {
   final double height;
   final double width;
   final double cornerRadius;
-
+  final Widget? child;
   const Skeleton({
     Key? key,
     this.height = 20,
     this.width = 200,
-    this.cornerRadius = 4,
+    this.cornerRadius = 4, this.child,
   }) : super(key: key);
 
   @override
@@ -105,6 +105,7 @@ class SkeletonState extends State<Skeleton>
           ],
         ),
       ),
+      child: widget.child,
     );
   }
 }

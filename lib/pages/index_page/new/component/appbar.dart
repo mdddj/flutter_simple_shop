@@ -3,13 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-// Project imports:
-import '../../../../common/utils.dart';
-import '../../../../provider/riverpod/category_riverpod.dart';
-import '../../../../widgets/appbar_search.dart';
-import '../../../new_goods_list/view.dart';
-import '../../../search/view.dart';
-import '../index_riverpod.dart';
+import '../../../../index.dart';
 
 /// 首页导航栏
 class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
@@ -73,9 +67,6 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
                               ),
                               ...categoryWidgets
                             ],
-                            labelColor: Colors.black,
-                            indicatorColor: Colors.transparent,
-                            unselectedLabelColor: Colors.grey,
                             onTap: (int index) {
                               if (index == 0) {
                                 return;

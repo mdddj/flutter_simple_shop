@@ -41,3 +41,18 @@ export 'index_page/store/goods_card.dart';
 export 'index_page/store/goods_item_layout.dart';
 export 'index_page/store/price_layout.dart';
 export 'index_page/store/store_card.dart';
+
+export 'new_goods_list/components/sort_widget.dart';
+export 'new_goods_list/components/subcategory_view.dart';
+export 'new_goods_list/riverpod.dart';
+export 'new_goods_list/view.dart';
+
+
+export 'search/component/helper_show.dart';
+export 'search/component/initloading_status.dart';
+export 'search/component/key_worlds.dart';
+export 'search/component/product_list.dart';
+export 'search/component/suggest.dart';
+export 'search/list.dart';
+export 'search/logic.dart';
+export 'search/view.dart';
