@@ -19,10 +19,10 @@ class UserIndexHome extends ConsumerStatefulWidget {
   const UserIndexHome({Key? key}) : super(key: key);
 
   @override
-  IndexHomeState createState() => IndexHomeState();
+  UserIndexHomeState createState() => UserIndexHomeState();
 }
 
-class IndexHomeState extends ConsumerState<UserIndexHome> {
+class UserIndexHomeState extends ConsumerState<UserIndexHome> {
 
 
   @override

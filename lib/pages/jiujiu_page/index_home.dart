@@ -12,9 +12,8 @@ import 'riverpod.dart';
 
 // 9.9包邮专区
 class JiujiuIndexHome extends StatefulWidget {
-  final ScrollController? scrollController;
 
-  const JiujiuIndexHome({this.scrollController,Key? key}): super(key: key);
+  const JiujiuIndexHome({Key? key}): super(key: key);
 
   @override
   JiujiuIndexHomeState createState() => JiujiuIndexHomeState();
