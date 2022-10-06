@@ -1,18 +1,11 @@
-import 'package:dataoke_sdk/constant/sort.dart';
-import 'package:dataoke_sdk/model/category.dart';
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
-import '../../widgets/round_underline_tab_indicator.dart';
-import '../../widgets/simple_appbar.dart';
-import '../panic_buying/components/list.dart';
+import '../../index.dart' hide Subcategory;
 
-// Project imports:
-import 'components/sort_widget.dart';
-import 'components/subcategory_view.dart';
-import 'riverpod.dart';
 
 /// 新的商品列表
 class NewGoodsList extends StatefulWidget {

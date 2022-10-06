@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:provider/provider.dart';
 
-import '../../../best_seller_list.dart';
-import '../index_riverpod.dart';
+import '../../../../index.dart';
+
 
 typedef IndexTwoColumnImageWidgetBuild = ExtendedImage Function(
     double w, double h);
@@ -19,40 +19,39 @@ class IndexColumnWidget extends StatelessWidget {
     if(products.isEmpty){
       return const SizedBox().toSliverWidget;
     }
-    return SliverPadding(
-      sliver: SliverWaterfallFlow.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 12,
-        crossAxisSpacing: 12,
-        children: [
+    return WaterfallFlow.count(
+      crossAxisCount: 2,
+      mainAxisSpacing: 12,
+      crossAxisSpacing: 12,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      children: [
+        TwoColumnCommWidget(
+            imageBuilder: (double w, double h) {
+              return ExtendedImage.network(
+                products[0].mainPic!,
+                width: w,
+                height: h,
+                borderRadius: BorderRadius.circular(12),
+                shape: BoxShape.rectangle,
+              );
+            },
+            title: '畅销榜单',
+            subTitle: '所有人,买它',
+            onTap: BestSellerListPage.nav),
+        if (products.length > 1)
           TwoColumnCommWidget(
-              imageBuilder: (double w, double h) {
-                return ExtendedImage.network(
-                  products[0].mainPic!,
+            imageBuilder: (double w, double h) {
+              return ExtendedImage.network(products[1].mainPic!,
                   width: w,
                   height: h,
                   borderRadius: BorderRadius.circular(12),
-                  shape: BoxShape.rectangle,
-                );
-              },
-              title: '畅销榜单',
-              subTitle: '所有人,买它',
-              onTap: BestSellerListPage.nav),
-          if (products.length > 1)
-            TwoColumnCommWidget(
-              imageBuilder: (double w, double h) {
-                return ExtendedImage.network(products[1].mainPic!,
-                    width: w,
-                    height: h,
-                    borderRadius: BorderRadius.circular(12),
-                    shape: BoxShape.rectangle);
-              },
-              subTitle: '新鲜更有趣',
-              title: '每日上新',
-            )
-        ],
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+                  shape: BoxShape.rectangle);
+            },
+            subTitle: '新鲜更有趣',
+            title: '每日上新',
+          )
+      ],
     );
   }
 }

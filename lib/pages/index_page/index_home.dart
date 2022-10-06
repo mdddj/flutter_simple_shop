@@ -97,7 +97,6 @@ class IndexHomeState extends State<IndexHome>
     return LoadingMoreCustomScrollView(
       controller: _mainScrollController,
       slivers: <Widget>[
-        const IndexHomeAppbar(),
         const IndexCarousel().marginOnly(top: 6).sliverBox,
 
         const DDQWidget().sliverBox,

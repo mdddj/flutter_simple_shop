@@ -1,4 +1,4 @@
-import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -7,13 +7,11 @@ import '../../../../index.dart';
 
 /// 首页导航栏
 class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const IndexHomeAppbar({Key? key}) : super(key: key);
+  final TabController tabController;
+  const IndexHomeAppbar({Key? key,required this.tabController}) : super(key: key);
 
-  void navTo(BuildContext context) {
-    context.navigator.push(MaterialPageRoute(
-        builder: (_) => const SearchPage(
-              initSearchKeyWord: '',
-            )));
+  Future<void> navTo(BuildContext context)  async {
+    await context.navToWidget(to:const SearchPage());
   }
 
   @override
@@ -55,29 +53,27 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
                     AnimatedContainer(
                       duration: const Duration(milliseconds: 800),
                       height: 46,
-                      child: DefaultTabController(
-                        length: 1 + categoryWidgets.length,
-                        child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: TabBar(
-                            isScrollable: true,
-                            tabs: [
-                              const Tab(
-                                text: '精选',
-                              ),
-                              ...categoryWidgets
-                            ],
-                            onTap: (int index) {
-                              if (index == 0) {
-                                return;
-                              }
-                              final category = context.read<CategoryState>().getCategoryByIndex(index - 1);
-                              utils.widgetUtils.to(NewGoodsList(
-                                category: category,
-                                initIndex: context.read<CategoryState>().getIndexWithCategory(category),
-                              ));
-                            },
-                          ),
+                      child: Container(
+                        alignment: Alignment.centerLeft,
+                        child: TabBar(
+                          controller: tabController,
+                          isScrollable: true,
+                          tabs: [
+                            const Tab(
+                              text: '精选',
+                            ),
+                            ...categoryWidgets
+                          ],
+                          onTap: (int index) {
+                            if (index == 0) {
+                              return;
+                            }
+                            final category = context.read<CategoryState>().getCategoryByIndex(index - 1);
+                            utils.widgetUtils.to(NewGoodsList(
+                              category: category,
+                              initIndex: context.read<CategoryState>().getIndexWithCategory(category),
+                            ));
+                          },
                         ),
                       ),
                     ),

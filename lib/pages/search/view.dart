@@ -17,9 +17,9 @@ import 'logic.dart';
 
 /// 搜索页面
 class SearchPage extends StatefulWidget {
-  final String? initSearchKeyWord; // 初始化搜索关键字
+  final String initSearchKeyWord; // 初始化搜索关键字
 
-  const SearchPage({Key? key, this.initSearchKeyWord}) : super(key: key);
+  const SearchPage({Key? key, this.initSearchKeyWord = ''}) : super(key: key);
 
   @override
   SearchPageState createState() => SearchPageState();

@@ -1,14 +1,9 @@
-// Package imports:
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/product.dart';
-import 'package:dataoke_sdk/params/product_list_param.dart';
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:dd_js_util/util/log.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
-import '../controller/app_controller.dart';
-import '../widgets/loading_more_list_indicator.dart';
-import '../widgets/waterfall_goods_card.dart';
+import '../index.dart';
 
 /// 首页商品列表
 class IndexGoodsRepository extends LoadingMoreBase<Product> {
@@ -60,7 +55,7 @@ class IndexProducts extends StatelessWidget {
           padding: const EdgeInsets.only(left: 12, right: 12),
           lastChildLayoutType: LastChildLayoutType.foot,
           indicatorBuilder: (context, state) {
-            return LoadingMoreListCostumIndicator(state, isSliver: true);
+            return LoadingMoreListCostumIndicator(state, isSliver: false);
           },
         ),
         key: AppController.find.indexProductKey);
