@@ -603,7 +603,7 @@ packages:
     source: hosted
     version: "2.1.1"
   freezed_annotation:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
@@ -763,13 +763,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.1"
-  import_sorter:
-    dependency: "direct dev"
-    description:
-      name: import_sorter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.6.0"
   intl:
     dependency: transitive
     description:
@@ -1370,13 +1363,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  tint:
-    dependency: transitive
-    description:
-      name: tint
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
   typed_data:
     dependency: transitive
     description:

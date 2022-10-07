@@ -1,12 +1,8 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 
-// Package imports:
-import 'package:get/get.dart';
+import '../../index.dart';
 
-// Project imports:
-import '../../common/toast.dart';
-import '../../common/utils.dart';
 
 /// 新版本弹窗
 class NewVersionDialog extends StatefulWidget {
@@ -26,14 +22,15 @@ class NewVersionDialogState extends State<NewVersionDialog> {
       title: const Text('新版本发布!'),
       content: Text(desc),
       actions: [
-        TextButton(onPressed: Get.back, child: const Text('忽略')),
+        TextButton(onPressed: context.pop, child: const Text('忽略')),
         ElevatedButton(onPressed: () async {
+          final nav = context.nav;
             if(url.isNotEmpty){
               await utils.openLink(url);
-              Get.back();
+              nav.pop();
             }else{
-              showToast('未配置下载页面url');
-              Get.back();
+              showIosDialog('未配置下载页面url');
+              nav.pop();
             }
         }, child: const Text('前往下载'))
       ],
