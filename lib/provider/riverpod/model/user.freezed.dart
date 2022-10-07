@@ -24,7 +24,6 @@ mixin _$UserDetailModal {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  @Doc(message: "设置值后会自动刷新")
   $UserDetailModalCopyWith<UserDetailModal> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -145,7 +144,9 @@ class _$_UserDetailModal implements _UserDetailModal {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserDetailModalToJson(this);
+    return _$$_UserDetailModalToJson(
+      this,
+    );
   }
 }
 
@@ -156,7 +157,7 @@ abstract class _UserDetailModal implements UserDetailModal {
       _$_UserDetailModal.fromJson;
 
   @override
-  MyUser? get user => throw _privateConstructorUsedError;
+  MyUser? get user;
   @override
   @JsonKey(ignore: true)
   _$$_UserDetailModalCopyWith<_$_UserDetailModal> get copyWith =>

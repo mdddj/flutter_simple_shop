@@ -54,7 +54,7 @@ class ZhetaokeCarouselWidget extends ConsumerWidget {
         itemCount: carousels.length,
         autoplay: carousels.isNotEmpty,
       ).aspectRatio(2.53);
-    }, error: (e,s)=>const Text('error'), loading: ()=>const CupertinoActivityIndicator().center);
+    }, error: (e,s)=>const Text('error'), loading: ()=>const CupertinoActivityIndicator().center.aspectRatio(2.53));
   }
 
 

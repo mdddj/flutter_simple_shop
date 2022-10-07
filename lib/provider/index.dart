@@ -11,6 +11,8 @@ export 'nine_goods_provider.dart';
 export 'providers.dart';
 export 'riverpod/base.dart';
 export 'riverpod/category_riverpod.dart';
+export 'riverpod/index/index_products_model.dart';
+export 'riverpod/index/riverpod.dart';
 export 'riverpod/search_riverpod.dart';
 export 'riverpod/user_riverpod.dart';
 export 'user_provider.dart';

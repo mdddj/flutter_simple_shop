@@ -1,20 +1,10 @@
-// Dart imports:
 import 'dart:ui';
-
-// Package imports:
 import 'package:after_layout/after_layout.dart';
-import 'package:dataoke_sdk/model/product.dart';
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import './ddq.dart';
-// Project imports:
-import '../../repository/index_goods_repository.dart';
-import '../../widgets/loading_more_list_indicator.dart';
-import '../../widgets/waterfall_goods_card.dart';
-import 'new/component/appbar.dart';
 import 'new/component/carousel.dart';
 import 'store/component_index.dart';
 
@@ -36,7 +26,6 @@ class IndexHomeState extends State<IndexHome>
   bool _titleIsInTop = false;
 
   //dddd
-  IndexGoodsRepository indexGoodsRepository = IndexGoodsRepository();
   final ScrollController _mainScrollController = ScrollController();
 
   TabController? tabController;
@@ -59,38 +48,7 @@ class IndexHomeState extends State<IndexHome>
     );
   }
 
-  // 首页商品列表
-  Widget _buildGoodsList() {
-    return LoadingMoreSliverList(SliverListConfig<Product>(
-      extendedListDelegate:
-          const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12),
-      itemBuilder: (context, item, index) {
-        return WaterfallGoodsCard(item);
-      },
-      sourceList: indexGoodsRepository,
-      padding: const EdgeInsets.only(left: 12, right: 12),
-//      lastChildLayoutType: LastChildLayoutType.foot,
-      indicatorBuilder: (context, state) {
-        return LoadingMoreListCostumIndicator(state, isSliver: true);
-      },
-    ));
-  }
 
-  /// 初始化数据
-  /// 从上往下顺序加载
-  Future<void> _initDatas() async {
-    setState(() {
-      carouselISLoaded = true;
-    });
-    // await context.read<DtkIndexGoodsModal>().getGoodsList(1); // 首页商品列表
-    // setState(() {
-    //   tabController = TabController(length: categorys.length + 1, vsync: this);
-    //   setState(() {
-    //     categortListIsLoaded = true;
-    //   });
-    // });
-  }
 
   // body
   Widget _buildIndexBody() {
@@ -98,11 +56,8 @@ class IndexHomeState extends State<IndexHome>
       controller: _mainScrollController,
       slivers: <Widget>[
         const IndexCarousel().marginOnly(top: 6).sliverBox,
-
         const DDQWidget().sliverBox,
-
         const StoreComponentIndex().sliverBox,
-
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           child: const Text(
@@ -112,8 +67,6 @@ class IndexHomeState extends State<IndexHome>
           ),
         ).sliverBox,
 
-        //商品列表 (瀑布流)
-        _buildGoodsList(),
       ],
     );
   }
@@ -154,6 +107,5 @@ class IndexHomeState extends State<IndexHome>
   void afterFirstLayout(BuildContext context) {
     _titleLocationHandler();
     _addMainScrollListening();
-    _initDatas();
   }
 }
