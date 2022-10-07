@@ -501,9 +501,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                             ),
                             Text(
                               '使用日期:${getTimeStr(info!.couponStartTime ?? '')} - ${getTimeStr(info!.couponEndTime ?? '已过期')}',
-                              style: const TextStyle(
-                                  color: Color.fromRGBO(145, 77, 9, 1.0),
-                                  fontWeight: FontWeight.w400),
+                              style: context.textTheme.labelSmall,
                             )
                           ],
                         ),

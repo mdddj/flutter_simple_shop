@@ -20,7 +20,7 @@ MyUser _$MyUserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MyUser {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get loginNumber => throw _privateConstructorUsedError;
   String get nickName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $MyUserCopyWith<$Res> {
   factory $MyUserCopyWith(MyUser value, $Res Function(MyUser) then) =
       _$MyUserCopyWithImpl<$Res>;
   $Res call(
-      {String id,
+      {int id,
       String loginNumber,
       String nickName,
       String email,
@@ -72,7 +72,7 @@ class _$MyUserCopyWithImpl<$Res> implements $MyUserCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       loginNumber: loginNumber == freezed
           ? _value.loginNumber
           : loginNumber // ignore: cast_nullable_to_non_nullable
@@ -111,7 +111,7 @@ abstract class _$$_MyUserCopyWith<$Res> implements $MyUserCopyWith<$Res> {
       __$$_MyUserCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
+      {int id,
       String loginNumber,
       String nickName,
       String email,
@@ -145,7 +145,7 @@ class __$$_MyUserCopyWithImpl<$Res> extends _$MyUserCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       loginNumber: loginNumber == freezed
           ? _value.loginNumber
           : loginNumber // ignore: cast_nullable_to_non_nullable
@@ -195,7 +195,7 @@ class _$_MyUser implements _MyUser {
       _$$_MyUserFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String loginNumber;
   @override
@@ -260,7 +260,7 @@ class _$_MyUser implements _MyUser {
 
 abstract class _MyUser implements MyUser {
   const factory _MyUser(
-      {required final String id,
+      {required final int id,
       required final String loginNumber,
       required final String nickName,
       required final String email,
@@ -272,7 +272,7 @@ abstract class _MyUser implements MyUser {
   factory _MyUser.fromJson(Map<String, dynamic> json) = _$_MyUser.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String get loginNumber;
   @override

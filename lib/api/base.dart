@@ -28,11 +28,13 @@ class MyInterceptor implements Interceptor {
 
 ///接口封装
 abstract class MyAppCoreApi extends BaseApi {
-  MyAppCoreApi(String url, {HttpMethod? httpMethod})
+  MyAppCoreApi(String url, {HttpMethod? httpMethod,bool showDetailLog = false})
       : super(url, httpMethod: httpMethod ?? HttpMethod.get) {
     intrtceptors.add(MyInterceptor());
-    intrtceptors.add(CurlLoggerDioInterceptor());
-    intrtceptors.add(PrettyDioLogger());
+    if(showDetailLog){
+      intrtceptors.add(CurlLoggerDioInterceptor());
+      intrtceptors.add(PrettyDioLogger());
+    }
   }
 
   @override
@@ -46,7 +48,7 @@ abstract class MyAppCoreApi extends BaseApi {
       ResponseType? responseType,
       bool? nullParams,
       RequestEncoder? requestEncoder,
-      DioStart? dioStart,bool? returnIsString}) async {
+      DioStart? dioStart,bool? returnIsString,bool isFullUrl = false}) async {
     try{
       final r = await super.request(
           showErrorMsg: showErrorMsg,
@@ -57,7 +59,7 @@ abstract class MyAppCoreApi extends BaseApi {
           data: data,
           responseType: responseType,
           nullParams: nullParams,
-          requestEncoder: requestEncoder);
+          requestEncoder: requestEncoder,isFullUrl: isFullUrl);
       return WrapJson(r);
     }on AppException catch(e){
       kLogErr(e);

@@ -5,12 +5,9 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:provider/provider.dart';
 
-import '../../constant/style.dart';
+import '../../api/apis.dart';
+import '../../index.dart';
 
-// Project imports:
-import '../../provider/goods_detail_provider.dart';
-import '../../provider/user_provider.dart';
-import '../../widgets/no_data.dart';
 
 ///用户收藏页面
 class FavoriteIndexHome extends StatefulWidget {
@@ -25,11 +22,19 @@ class FavoriteIndexHomeState extends State<FavoriteIndexHome> {
   GoodsDetailProvider? goodsDetailProvider;
 
   @override
+  void initState() {
+    super.initState();
+    delayFunction(() async {
+    final r = await FavoritesFindListApi.doRequest(0);
+    r.print();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<UserProvider>(
       builder: (context, userProvider, _) {
         return Scaffold(
-          backgroundColor: userProvider.goods!.isEmpty ? Colors.white : null,
           appBar: AppBar(
             title: const Text('收藏'),
             centerTitle: true,

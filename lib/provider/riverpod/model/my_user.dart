@@ -8,7 +8,7 @@ part 'my_user.g.dart';
 class MyUser with _$MyUser{
 
   const factory MyUser({
-    required String id,
+    required int id,
     required String loginNumber,
     required String nickName,
     required String email,

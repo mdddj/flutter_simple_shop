@@ -44,7 +44,6 @@ class ZhetaokeCarouselWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ref.watch(kRivCarouseApiFuture).when(data: (model){
       final data = model.getValue('data');
-      kLog(jsonDecode(data));
       final carousels = _getCarouselList(jsonDecode(data));
       return Swiper(itemBuilder: (BuildContext context, int index) {
         final item = carousels[index];
