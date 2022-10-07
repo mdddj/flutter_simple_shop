@@ -1,7 +1,7 @@
 import 'package:dataoke_sdk/model/product.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +13,7 @@ import 'index_page/new/index_riverpod.dart';
 class BestSellerListPage extends StatefulWidget {
   const BestSellerListPage({Key? key}) : super(key: key);
 
-  static void nav()=>Get.to(()=>const BestSellerListPage());
+  static void nav(BuildContext context)=>context.navToWidget(to:const BestSellerListPage());
 
   @override
   BestSellerListPageState createState() => BestSellerListPageState();

@@ -1,4 +1,4 @@
-import 'package:dd_js_util/common/fun.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -49,23 +49,23 @@ class AppBottomNav extends ConsumerWidget {
         items: [
           BottomNavigationBarItem(
               label: '首页',
-              icon: _buildIcon(currentIndex, 0, 'home')),
+              icon: _buildIcon(currentIndex, 0, 'home',context)),
           BottomNavigationBarItem(
               label: '9.9包邮',
-              icon: _buildIcon(currentIndex, 1, 'jiujiu')),
+              icon: _buildIcon(currentIndex, 1, 'jiujiu',context)),
           BottomNavigationBarItem(
               label: '分类',
-              icon: _buildIcon(currentIndex, 2, 'fenlei')),
+              icon: _buildIcon(currentIndex, 2, 'fenlei',context)),
           BottomNavigationBarItem(
               label: '收藏',
-              icon: _buildIcon(currentIndex, 3, 'shoucang')),
+              icon: _buildIcon(currentIndex, 3, 'shoucang',context)),
           BottomNavigationBarItem(
               label: '我的',
-              icon: _buildIcon(currentIndex, 4 , 'my')),
+              icon: _buildIcon(currentIndex, 4 , 'my',context)),
         ]);
   }
 
-  Widget _buildIcon(int currentIndex, int index, String filename) {
+  Widget _buildIcon(int currentIndex, int index, String filename,BuildContext context) {
     return IfWidget(
         expression: () => currentIndex == index,
         trueBuild: () => ExtendedImage.asset(
@@ -79,6 +79,7 @@ class AppBottomNav extends ConsumerWidget {
               height: kNavIconSize,
               width: kNavIconSize,
               enableMemoryCache: true,
+              color: context.iconColor,
             ));
   }
 }

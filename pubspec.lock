@@ -64,13 +64,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.3"
-  black_hole_flutter:
-    dependency: "direct main"
-    description:
-      name: black_hole_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.5"
   boolean_selector:
     dependency: transitive
     description:
@@ -638,7 +631,7 @@ packages:
     source: hosted
     version: "3.0.3"
   get:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: get
       url: "https://pub.dartlang.org"

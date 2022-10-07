@@ -1,10 +1,7 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../../../constant/style.dart';
 import '../../../util/navigator_util.dart';
-// Project imports:
 import '../widgets/svg_title.dart';
 
 class OrderIndex extends StatelessWidget {
@@ -27,11 +24,11 @@ class OrderIndex extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('我的订单',style: Get.textTheme.headlineSmall?.copyWith(
+                Text('我的订单',style: context.textTheme.headlineSmall?.copyWith(
                   fontSize: 17,
                   fontWeight: FontWeight.bold
                 )),
-                Text('查看全部 >',style: Get.textTheme.bodySmall,)
+                Text('查看全部 >',style: context.textTheme.bodySmall,)
               ],
             ),
           ),

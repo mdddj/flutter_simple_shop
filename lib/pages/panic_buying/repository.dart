@@ -5,7 +5,6 @@ import 'package:dataoke_sdk/model/category.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:dataoke_sdk/params/top_param.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
@@ -23,8 +22,8 @@ class PanicBuyingModel extends ChangeNotifier {
   String cid = '';
 
   /// 页面初始化
-  Future<void> init() async {
-    tabChanged(0);
+  Future<void> init(BuildContext context) async {
+    tabChanged(0,context);
   }
 
   // 加载实时榜单商品
@@ -41,7 +40,7 @@ class PanicBuyingModel extends ChangeNotifier {
   }
 
   // 选项卡被切换
-  void tabChanged(int index) {
+  void tabChanged(int index,BuildContext context) {
     products.clear();
     changeLoading = true;
     notifyListeners();
@@ -54,7 +53,7 @@ class PanicBuyingModel extends ChangeNotifier {
     }
     if (index > 1) {
       /// 获取选中哪个分类
-      final categorys = Get.context!.read<CategoryState>().categorys;
+      final categorys = context.read<CategoryState>().categorys;
       final myCid = categorys[index - 2].cid;
       cid = '$myCid';
     }

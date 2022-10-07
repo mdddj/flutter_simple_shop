@@ -3,7 +3,6 @@ import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../common/utils.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
@@ -35,7 +34,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
 
   //跳转到注册页面
   void _navToRegisterPage() {
-    Get.to(() => const RegisterPage());
+    context.navToWidget(to: const RegisterPage());
   }
 
   Scaffold buildScaffold(BuildContext context) {
@@ -46,8 +45,8 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
         children: <Widget>[
           Container(
             padding: const EdgeInsets.all(20),
-            height: Get.height,
-            width: Get.width,
+            height: context.screenHeight,
+            width: context.screenWidth,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,9 +94,9 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
           // 页面关闭按钮
           Positioned(
             left: 12,
-            top: Get.mediaQuery.padding.top + 12,
+            top: context.paddingTop+ 12,
             child: GestureDetector(
-                onTap: Get.back, child: const Icon(Icons.close)),
+                onTap: context.pop, child: const Icon(Icons.close)),
           )
         ],
       ),

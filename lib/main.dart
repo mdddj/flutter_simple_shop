@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:provider/provider.dart';
@@ -26,12 +25,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: providers,
-      child: GetMaterialApp(
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
         theme: MyAppTheme.defaultTheme,
         darkTheme: MyAppTheme.darkTheme,
-        onInit: () => Get.put<AppController>(AppController()),
         home: const InitBuildWidget(home: App()),
         builder: FlutterSmartDialog.init(),
       ),

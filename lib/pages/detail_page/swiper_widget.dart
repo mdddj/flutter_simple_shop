@@ -1,11 +1,6 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
-
-// Package imports:
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../widgets/extended_image.dart';
 
 class SwiperWidget extends StatelessWidget {
@@ -20,8 +15,8 @@ class SwiperWidget extends StatelessWidget {
       return Stack(
         children: <Widget>[
           SizedBox(
-            width: Get.width,
-            height: Get.width,
+            width: context.screenWidth,
+            height: context.screenWidth,
             child: Swiper(
               itemBuilder: (BuildContext context, int index) {
                 return ExtendedImageWidget(

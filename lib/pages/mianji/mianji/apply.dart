@@ -1,7 +1,6 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 /// 申请面基页面
 ///
 class ApplyPage extends StatefulWidget {
@@ -32,7 +31,7 @@ class ApplyPageState extends State<ApplyPage> {
                   margin: EdgeInsets.zero,
                   header: Text(
                     '请填写面基信息',
-                    style: Get.textTheme.headline6,
+                    style: context.textTheme.headline6,
                   ),
                   backgroundColor: Colors.transparent,
                   children: [
@@ -89,7 +88,7 @@ class ApplyPageState extends State<ApplyPage> {
                   children: [
                     Text(
                       '上传你的生活照。(10张)',
-                      style: Get.textTheme.headline6?.copyWith(fontSize: 14),
+                      style: context.textTheme.headline6?.copyWith(fontSize: 14),
                     ),
                     const SizedBox(
                       height: 5,

@@ -1,8 +1,6 @@
-import 'package:dataoke_sdk/apis/apis.dart';
-import 'package:dataoke_sdk/model/res_category.dart';
-import 'package:dd_js_util/widget/picture_selection.dart';
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../widgets/simple_appbar.dart';
 
@@ -70,9 +68,10 @@ class _AddDynamicPageState extends State<AddDynamicPage> {
               title:  Text(_selectCategory ==null ? '选择分类' : _selectCategory!.name),
               onTap: () async {
                 final select =
-                    await Get.to<ResCategory?>(() => CategoryListSelect(
-                          list: _list,
-                        ));
+                    await context.navToWidget<ResCategory?>(to: CategoryListSelect(
+                      list: _list,
+                    ));
+
                 _selectCategory = select;
                 setState(() {});
               },
@@ -103,7 +102,7 @@ class CategoryListSelect extends StatelessWidget {
           return ListTile(
             title: Text(item.name),
             onTap: () {
-              Get.back(result: item);
+              Navigator.pop(context,item);
             },
           );
         },

@@ -1,10 +1,5 @@
-// Flutter imports:
-// Package imports:
 import 'package:dataoke_sdk/model/brand_detail_result.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../../common/utils.dart';
 import '../../../util/image_util.dart';
 
@@ -26,7 +21,7 @@ class BrandDetailView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _biuldLogo(),
+          _biuldLogo(context),
           utils.widgetUtils.marginTop(),
           Text(brandDetailModel.brandDesc!)
         ],
@@ -34,7 +29,7 @@ class BrandDetailView extends StatelessWidget {
     );
   }
 
-  Widget _buildName() {
+  Widget _buildName(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -44,12 +39,12 @@ class BrandDetailView extends StatelessWidget {
               fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold),
         ),
         const SizedBox(width: 12,),
-        InkWell(onTap: showInfo,child: Icon(Icons.info_outline_rounded,color: Colors.black.withOpacity(.5),size: 15,),)
+        InkWell(onTap:()=> showInfo(context),child: Icon(Icons.info_outline_rounded,color: Colors.black.withOpacity(.5),size: 15,),)
       ],
     );
   }
 
-  Widget _biuldLogo() {
+  Widget _biuldLogo(BuildContext context) {
     return Row(
       children: [
         Container(
@@ -68,13 +63,13 @@ class BrandDetailView extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 12,),
-        _buildName()
+        _buildName(context)
       ],
     );
   }
 
-  void showInfo(){
-    showDialog(context: Get.context!,builder: (context){
+  void showInfo(BuildContext context){
+    showDialog(context: context,builder: (context){
       return AlertDialog(
         title: const Text('关于品牌'),
         content: Text(brandDetailModel.brandDesc!),

@@ -55,7 +55,7 @@ class InputUtils {
     return controller.text.length;
   }
 
-  static void backspace(TextEditingController controller) {
+  static void backspace(TextEditingController controller,BuildContext context) {
     final text = controller.text;
     final textSelection = controller.selection;
     final selectionLength = textSelection.end - textSelection.start;
@@ -90,7 +90,7 @@ class InputUtils {
       text: newText,
       selection: TextSelection.collapsed(offset: newStart),
     );
-    final oldTextSpan = MySpecialTextSpanBuilder().build(
+    final oldTextSpan = MySpecialTextSpanBuilder(context: context).build(
       myValue.text,
     );
     value = handleSpecialTextSpanDelete(value, myValue, oldTextSpan, null);

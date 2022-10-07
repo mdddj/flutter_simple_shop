@@ -1,17 +1,10 @@
-// Dart imports:
 import 'dart:convert';
 import 'dart:math';
-
-// Package imports:
-import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_text_field/extended_text_field.dart';
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-
 import '../../../common/utils.dart';
-// Project imports:
 import '../../../util/input_utils.dart';
 import 'components/code_input.dart';
 import 'components/more_action_bottomsheet.dart';
@@ -28,7 +21,7 @@ class WhiteIndex extends StatefulWidget {
 }
 
 class WhiteIndexState extends State<WhiteIndex> {
-  final MySpecialTextSpanBuilder _mySpecialTextSpanBuilder = MySpecialTextSpanBuilder();
+  late final MySpecialTextSpanBuilder _mySpecialTextSpanBuilder = MySpecialTextSpanBuilder(context: context);
   final TextEditingController _textEditingController = TextEditingController();
   final GlobalKey _key = GlobalKey();
 
@@ -68,7 +61,7 @@ class WhiteIndexState extends State<WhiteIndex> {
         ],
       ),
       body: SizedBox(
-        height: Get.height,
+        height: context.screenHeight,
         child: Column(
           children: <Widget>[
             Expanded(
@@ -80,7 +73,7 @@ class WhiteIndexState extends State<WhiteIndex> {
                   expands: true,
                   cursorColor: Colors.pinkAccent,
                   controller: _textEditingController,
-                  specialTextSpanBuilder: MySpecialTextSpanBuilder(showAtBackground: false, goodsCardOnTapCallBack: deleteOneGoodsCard, atTextOnTap: onAtTextTap),
+                  specialTextSpanBuilder: MySpecialTextSpanBuilder(showAtBackground: false, goodsCardOnTapCallBack: deleteOneGoodsCard, atTextOnTap: onAtTextTap,context: context),
                   focusNode: _focusNode,
                   maxLines: null,
                   style: const TextStyle(textBaseline: TextBaseline.alphabetic),
@@ -122,7 +115,7 @@ class WhiteIndexState extends State<WhiteIndex> {
   Container buildActionIcons() {
     return Container(
       height: kToolbarHeight,
-      width: Get.width,
+      width: context.screenWidth,
       color: Colors.black12,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -141,7 +134,7 @@ class WhiteIndexState extends State<WhiteIndex> {
           buildSvgPictureIcon('assets/svg/tupian.svg', 80, onTap: () async {
             final file = await utils.selectFile();
             if (file != null) {
-              insertText("<img src='https://static.saintic.com/picbed/huang/2021/06/12/1623466301058.jpg' width='${Get.width}' height='${Get.width}' alt=""/>");
+              insertText("<img src='https://static.saintic.com/picbed/huang/2021/06/12/1623466301058.jpg' width='${context.screenWidth}' height='100' alt=""/>");
               insertText('如果您觉得这个开源项目不错,扫码支持一下哦~');
             }
           }),
@@ -150,7 +143,7 @@ class WhiteIndexState extends State<WhiteIndex> {
             utils.showMessage('功能设计中');
           }),
           buildSvgPictureIcon('assets/svg/shangpin.svg', 80, onTap: () async {
-            await Get.to(() => const SearchProduct());
+            await context.navToWidget(to: const SearchProduct());
             insertText('<product=611071580085=productEnd/>');
             utils.showMessage('插入商品成功');
           }),
@@ -159,9 +152,9 @@ class WhiteIndexState extends State<WhiteIndex> {
               ListTile(
                 title: const Text('预览正文内容'),
                 onTap: () {
-                  Get.back();
+                  context.pop();
                   final data = _textEditingController.text;
-                  Get.to(() => MarkDownPreview(data: data));
+                 context.navToWidget(to:  MarkDownPreview(data: data));
                 },
                 leading: const Icon(Icons.preview),
               ),
@@ -173,8 +166,8 @@ class WhiteIndexState extends State<WhiteIndex> {
               ListTile(
                 title: const Text('插入代码'),
                 onTap: () async {
-                  Get.back();
-                  final result = await context.navigator.push<Map<String, String>>(MaterialPageRoute(builder: (_) => const CodeInputPage()));
+                  context.pop();
+                  final result = await context.navToWidget(to:  const CodeInputPage());
                   if (result != null) {
                     insertText('<code content="${result['code']}" language="${result['type']}" codeEnd/>');
                   }
@@ -186,7 +179,7 @@ class WhiteIndexState extends State<WhiteIndex> {
                 onTap: () {},
                 leading: const Icon(Icons.tag),
               ),
-            ]);
+            ],context);
           }),
           buildSvgPictureIcon('assets/svg/jianpan.svg', 80, onTap: () {
             if (_focusNode.hasFocus) {

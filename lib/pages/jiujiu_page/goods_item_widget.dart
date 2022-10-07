@@ -1,10 +1,6 @@
-// Flutter imports:
-// Package imports:
 import 'package:dataoke_sdk/model/product.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../common/utils.dart';
 import '../../util/navigator_util.dart';
 import '../../widgets/extended_image.dart';
@@ -30,7 +26,7 @@ class GoodsItemWidget extends StatelessWidget {
     return Container(
       margin: margin ?? const EdgeInsets.only(bottom: 10.0),
       color: Colors.white,
-      width: Get.width,
+      width: context.screenWidth,
       child: Row(
         children: <Widget>[
           utils.widgetUtils.marginRight(),

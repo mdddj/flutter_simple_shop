@@ -1,4 +1,4 @@
-import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +43,7 @@ class WeipinhuiJinBianGoodsState extends State<WeipinhuiJinBianGoods> {
   Widget renderItem(dynamic item) {
     return GestureDetector(
       onTap: (){
-         context.navigator.push(MaterialPageRoute(builder: (_)=>PublicDetailView(goodsId: item['id'].toString(), type: 'wph')));
+         context.navToWidget(to: PublicDetailView(goodsId: item['id'].toString(), type: 'wph'));
       },
       child: Card(
         elevation: 0,

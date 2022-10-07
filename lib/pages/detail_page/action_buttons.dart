@@ -1,9 +1,7 @@
-// Flutter imports:
-// Package imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-import 'package:get/get.dart';
 
 // 底部浮动操作按钮
 class ActionButtons extends StatelessWidget {
@@ -21,7 +19,7 @@ class ActionButtons extends StatelessWidget {
       left:12,
       child: FSuper(
         lightOrientation: FLightOrientation.LeftBottom,
-        width:Get.width,
+        width:context.screenWidth,
         height: 120,
         backgroundColor: const Color.fromRGBO(255, 255, 255, 0.85),
         shadowColor: Colors.black26,
@@ -29,7 +27,7 @@ class ActionButtons extends StatelessWidget {
         child2: Row(
           children: <Widget>[
             Container(
-              width: Get.width/2,
+              width: context.screenWidth/2,
               height: 100,
               padding: const EdgeInsets.symmetric(
                   horizontal: 12,

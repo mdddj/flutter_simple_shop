@@ -1,14 +1,10 @@
-// Flutter imports:
-// Package imports:
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:logger/logger.dart';
 
 import '../../../common/utils.dart';
 import '../../../constant/style.dart';
-// Project imports:
 import '../../../provider/riverpod/model/my_user.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import '../../../util/navigator_util.dart';

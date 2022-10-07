@@ -1,15 +1,11 @@
-// Flutter imports:
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import '../../../common/utils.dart';
 import '../../../widgets/simple_appbar.dart';
-// Project imports:
-import 'logic.dart';
 
 class ActivityViewPage extends StatefulWidget {
   const ActivityViewPage({required this.id, required this.title, Key? key})
@@ -23,7 +19,6 @@ class ActivityViewPage extends StatefulWidget {
 }
 
 class ActivityViewPageState extends State<ActivityViewPage> {
-  final ActivityViewLogic logic = Get.put(ActivityViewLogic());
 
   List<Product> _products = [];
 
@@ -56,7 +51,6 @@ class ActivityViewPageState extends State<ActivityViewPage> {
 
   @override
   void dispose() {
-    Get.delete<ActivityViewLogic>();
     super.dispose();
   }
 }

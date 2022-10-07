@@ -1,6 +1,6 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
@@ -168,11 +168,11 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
 
   Widget _countItem(String key, String value) {
     return Column(children: [
-      Text(value, style: Get.textTheme.subtitle1),
+      Text(value, style: context.textTheme.subtitle1),
       const SizedBox(
         height: 6,
       ),
-      Text(key, style: Get.textTheme.bodySmall)
+      Text(key, style: context.textTheme.bodySmall)
     ]);
   }
 

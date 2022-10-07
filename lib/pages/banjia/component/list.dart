@@ -2,7 +2,6 @@
 import 'package:badges/badges.dart';
 import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import '../../../util/navigator_util.dart';
 import '../../../widgets/extended_image.dart';
@@ -75,18 +74,22 @@ class BanjiaList extends StatelessWidget {
                       price: '${item.price}',
                       hideText: '',
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        NavigatorUtil.gotoGoodsDetailPage(
-                            Get.context!, '${item.id}',
-                            newViewPage: true);
-                      },
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.pink)),
-                      child: Text((item.itemSoldNum ?? 0) == 0
-                          ? '去抢购'
-                          : '已抢${item.itemSoldNum}'),
+                    Builder(
+                      builder: (context) {
+                        return ElevatedButton(
+                          onPressed: () {
+                            NavigatorUtil.gotoGoodsDetailPage(
+                                context, '${item.id}',
+                                newViewPage: true);
+                          },
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.pink)),
+                          child: Text((item.itemSoldNum ?? 0) == 0
+                              ? '去抢购'
+                              : '已抢${item.itemSoldNum}'),
+                        );
+                      }
                     )
                   ],
                 )

@@ -13,11 +13,13 @@ class MySpecialTextSpanBuilder extends SpecialTextSpanBuilder {
   final bool showAtBackground;
   final SpecialTextGestureTapCallback? atTextOnTap;
   final SpecialTextGestureTapCallback? goodsCardOnTapCallBack;
+  final BuildContext context;
 
   MySpecialTextSpanBuilder({
     this.showAtBackground = false,
     this.goodsCardOnTapCallBack,
     this.atTextOnTap,
+    required this.context
   });
 
   @override
@@ -34,7 +36,7 @@ class MySpecialTextSpanBuilder extends SpecialTextSpanBuilder {
     if (isStart(flag, AtText.flag)) {
       return AtText(textStyle!, onTap, start: index - (AtText.flag.length - 1), showAtBackground: showAtBackground, onAtTextTap: atTextOnTap);
     } else if (isStart(flag, ImageText.flag)) {
-      return ImageText(textStyle!, start: index - (ImageText.flag.length - 1), onClick: onTap);
+      return ImageText(textStyle!, context, start: index - (ImageText.flag.length - 1), onClick: onTap);
     } else if (isStart(flag, GoodsText.flag)) {
       return GoodsText(textStyle!, start: index - (GoodsText.flag.length - 1), onGoodsTap: goodsCardOnTapCallBack);
     } else if (isStart(flag, CodeText.flag)) {

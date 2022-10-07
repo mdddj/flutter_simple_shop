@@ -1,18 +1,9 @@
-// Dart imports:
 import 'dart:io';
-
-// Flutter imports:
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-// Package imports:
-import 'package:get/get.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-
-// Project imports:
-import '../controller/app_controller.dart';
 import '../service/blog_api.dart';
 import '../service/user_api.dart';
 import '../util/navigator_util.dart';
@@ -29,11 +20,7 @@ class Utils {
 
   // 显示一条消息
   void showMessage(String msg) {
-    final context = Get.context;
-    if (context != null) {
-      ScaffoldMessenger.of(context).removeCurrentSnackBar();
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
-    }
+    SmartDialog.showToast(msg);
   }
 
   void log(String msg) {
@@ -42,7 +29,7 @@ class Utils {
 
   // 选择文件
   Future<File?> selectFile() async {
-    if (!GetPlatform.isWeb && GetPlatform.isWindows) {
+    if ( Platform.isWindows) {
       // final file = OpenFilePicker()
       //   ..filterSpecification = {
       //     '图片文件 (*.jpg; *.png)': '*.jpg;*.png',
@@ -55,7 +42,7 @@ class Utils {
       // if (result != null) {
       //   return result;
       // }
-    } else if (GetPlatform.isAndroid) {
+    } else if (Platform.isAndroid) {
       // var _imagePicker =
       //     await ImagePicker().pickImage(source: ImageSource.gallery);
       // var file = File(_imagePicker!.path);
@@ -103,7 +90,7 @@ class Utils {
   /// url 跳转到 app  使用约束
   Future<void> urlToApp(String url, String urlYs) async {
     /// 如果是windows平台,直接跳转到浏览器打开链接
-    if (GetPlatform.isWindows) {
+    if (Platform.isWindows) {
       await launchUrlString(url);
       return;
     }
@@ -113,23 +100,7 @@ class Utils {
       // 判断当前手机是否安装某app. 能否正常跳转
       await launchUrlString(myUrl);
     } else {
-      if (weChatBro) {
-        // 如果是微信浏览器
-        if (await canLaunchUrlString(url)) {
-          await launchUrlString(url);
-        } else {
-          final newUrl = url.replaceAll('https://', '');
-          showMessage('打开url失败,即将尝试删除https://后打开 $newUrl');
-          if (await canLaunchUrlString(newUrl)) {
-            await launchUrlString(newUrl);
-          } else {
-            showMessage('打开url失败');
-            copy(url, message: '打开URL失败,链接已复制到剪贴板,请在浏览器访问');
-          }
-        }
-      } else {
-        await launchUrlString(url);
-      }
+      await launchUrlString(url);
     }
   }
 
@@ -148,8 +119,6 @@ class Utils {
     return myUrl;
   }
 
-  /// 判断是否为微信浏览器
-  bool get weChatBro => AppController.find.isWeChatBrowser;
 }
 
 Utils get utils => GetIt.instance.get<Utils>();

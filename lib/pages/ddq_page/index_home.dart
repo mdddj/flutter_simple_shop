@@ -1,13 +1,9 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import './goods_item.dart';
 import './sliver_app_bar_delegate.dart';
-// Project imports:
-import '../../common/utils.dart';
 import '../../provider/ddq_provider.dart';
 import '../../widgets/ddq_times_widget.dart';
 
@@ -27,13 +23,13 @@ class DdqIndexHomeState extends State<DdqIndexHome> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SizedBox(
-      height: utils.widgetUtils.kBodyHeight + kToolbarHeight,
-      width: Get.width,
+      height: context.kBodyHeight + kToolbarHeight,
+      width: context.screenWidth,
       child: Stack(
         children: [
           _bg(),
           Positioned(
-            top: kToolbarHeight + Get.mediaQuery.padding.top,
+            top: kToolbarHeight + context.paddingTop,
             left: 0,
             right: 0,
             bottom: 0,
@@ -69,7 +65,7 @@ class DdqIndexHomeState extends State<DdqIndexHome> {
   Widget _title() {
     return Positioned(
         left: 0,
-        top: 22+ Get.mediaQuery.padding.top,
+        top: 22+ context.paddingTop,
         right: 0,
         child: Container(
             alignment: Alignment.center,
@@ -83,7 +79,7 @@ class DdqIndexHomeState extends State<DdqIndexHome> {
   Widget _backBtn() {
     return Positioned(
         left: 12,
-        top: 12 + Get.mediaQuery.padding.top,
+        top: 12 + context.paddingTop,
         child: const BackButton(
           color: Colors.white,
         ));
@@ -97,7 +93,7 @@ class DdqIndexHomeState extends State<DdqIndexHome> {
         top: 0,
         child: Image.asset(
           'assets/images/ddq.png',
-          width: Get.width,
+          width: context.screenWidth,
           height: 170 + kToolbarHeight,
           fit: BoxFit.cover,
         ));

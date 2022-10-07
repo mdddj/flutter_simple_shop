@@ -1,13 +1,7 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-// Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../../widgets/simple_appbar.dart';
-import 'apply.dart';
-import 'logic.dart';
 
 // 面基动态
 class MianjiPage extends StatefulWidget {
@@ -18,7 +12,6 @@ class MianjiPage extends StatefulWidget {
 }
 
 class MianjiPageState extends State<MianjiPage> {
-  final MianjiLogic logic = Get.put(MianjiLogic());
 
   @override
   Widget build(BuildContext context) {
@@ -36,17 +29,15 @@ class MianjiPageState extends State<MianjiPage> {
         children: [
           ElevatedButton(
               onPressed: () {
-                Get.to(() => const ApplyPage());
               },
               child: const Text('申请面基'))
         ],
       ),
-    ).sliverBox;
+    ).toSliverWidget;
   }
 
   @override
   void dispose() {
-    Get.delete<MianjiLogic>();
     super.dispose();
   }
 }

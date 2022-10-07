@@ -1,6 +1,5 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../../../../constant/ext.dart';
 import '../../../../constant/string.dart';
 
@@ -18,7 +17,7 @@ class GithubWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Text('本项目已经开源,并且持续更新中,欢迎Start',style: Get.textTheme.bodyLarge,).marginOnly(bottom: 8),
+           Text('本项目已经开源,并且持续更新中,欢迎Start',style: context.textTheme.bodyLarge,).marginOnly(bottom: 8),
 
           ElevatedButton(
               onPressed: () {

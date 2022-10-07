@@ -4,7 +4,6 @@ import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/product.dart';
 import 'package:dataoke_sdk/params/discount_two_param.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
@@ -34,8 +33,8 @@ class ZheState extends ChangeNotifier {
     return result != null && (result.list ?? []).length < _pageSize;
   }
 
-  void onTabChange(int index) {
-    final categorys = Get.context!.read<CategoryState>().categorys;
+  void onTabChange(int index,BuildContext context) {
+    final categorys = context.read<CategoryState>().categorys;
     if (index == 0) {
       cid = '';
     } else {

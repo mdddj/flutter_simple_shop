@@ -1,14 +1,5 @@
-// Flutter imports:
-// Package imports:
-import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../../widgets/simple_appbar.dart';
-import 'components/blog_categorys.dart';
-import 'components/tags.dart';
-import 'logic.dart';
 
 // 发布博客页面
 class WriteBlogPage extends StatefulWidget {
@@ -19,14 +10,12 @@ class WriteBlogPage extends StatefulWidget {
 }
 
 class WriteBlogPageState extends State<WriteBlogPage> {
-  final WriteBlogLogic logic = Get.put(WriteBlogLogic());
   final TextEditingController tagController = TextEditingController();
   final FocusNode tagFocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
-    logic.getBlogCategorys(context);
   }
 
   @override
@@ -38,22 +27,17 @@ class WriteBlogPageState extends State<WriteBlogPage> {
           children: [
             renderComponent(
               title: '请输入标题',
-              child: TextField(
-                onChanged: logic.titleChange,
+              child: const TextField(
               ),
             ),
             renderComponent(
               title: '请选择分类',
-              child: Obx(() {
-                return BlogCategorys(select: logic.select.value, onSelect: logic.onSelect);
-              }),
             ),
             renderComponent(
                 title: '请输入正文内容',
-                child: TextField(
+                child: const TextField(
                   minLines: 6,
                   maxLines: 12,
-                  onChanged: logic.contentChange,
                 )),
             renderComponent(
                 title: '添加文章标签',
@@ -61,23 +45,14 @@ class WriteBlogPageState extends State<WriteBlogPage> {
                   controller: tagController,
                   focusNode: tagFocusNode,
                   onSubmitted: (v) {
-                    logic.addTag(v);
                     tagController.clear();
                     tagFocusNode.requestFocus();
                   },
                 )),
-            renderComponent(title: '已添加标签', child: const WriteBlogTags()),
             renderComponent(
                 title: '操作',
                 child: Row(
-                  children: [
-                    Obx(() {
-                      return FancyElevatedButton(
-                        onPressed: logic.submit,
-                        isLoading: logic.submitLoading.value,
-                        child: const Text('发布'),
-                      );
-                    })
+                  children: const [
                   ],
                 ))
           ],
@@ -88,7 +63,6 @@ class WriteBlogPageState extends State<WriteBlogPage> {
 
   @override
   void dispose() {
-    Get.delete<WriteBlogLogic>();
     tagController.dispose();
     tagFocusNode.dispose();
     super.dispose();

@@ -1,13 +1,11 @@
-import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:dataoke_sdk/model/product.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import '../constant/style.dart';
 import '../provider/riverpod/category_riverpod.dart';
 import '../widgets/component/custom_loading.dart';
 import '../widgets/waterfall_goods_card.dart';
-import 'widgets/simple_dialog.dart';
 
 /// 组件工具类
 abstract class WidgetUtilService {
@@ -28,8 +26,6 @@ abstract class WidgetUtilService {
 }
 
 class WidgetUtils extends WidgetUtilService {
-  double get kBodyHeight =>
-      Get.height - Get.mediaQuery.padding.top - kToolbarHeight;
 
   @override
   Widget marginTop({double? height}) {
@@ -47,10 +43,7 @@ class WidgetUtils extends WidgetUtilService {
 
   @override
   Future<void> showSimpleDialog(String message, {String? title}) async {
-    await Get.dialog(MySimpleDialog(
-      message: message,
-      title: title,
-    ));
+    showIosDialog(message);
   }
 
   @override
@@ -78,8 +71,4 @@ class WidgetUtils extends WidgetUtilService {
     return WaterfallGoodsCard(product);
   }
 
-  Future<T?> to<T>(Widget page) async {
-    return await Get.context!.navigator
-        .push<T>(MaterialPageRoute(builder: (_) => page));
-  }
 }

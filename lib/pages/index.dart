@@ -70,7 +70,6 @@ export 'search/component/key_worlds.dart';
 export 'search/component/product_list.dart';
 export 'search/component/suggest.dart';
 export 'search/list.dart';
-export 'search/logic.dart';
 export 'search/view.dart';
 export 'user_home_page/ext.dart';
 export 'user_home_page/header/appbar.dart';

@@ -1,7 +1,7 @@
 import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../index.dart' hide Subcategory;
@@ -95,7 +95,7 @@ class NewGoodsListState extends State<NewGoodsList>
 
             const SizedBox(
               height: 12,
-            ).sliverBox,
+            ).toSliverWidget,
             //子分类
             Consumer<GoodsListState>(
               builder: (BuildContext context, value, Widget? child) {

@@ -1,11 +1,7 @@
-// Flutter imports:
-// Package imports:
 import 'package:dataoke_sdk/model/brand_list_model.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
-// Project imports:
 import '../../../provider/index_provider.dart';
 
 // 品牌特卖

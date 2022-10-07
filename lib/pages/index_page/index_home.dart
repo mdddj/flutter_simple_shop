@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:after_layout/after_layout.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import './ddq.dart';
@@ -55,9 +55,9 @@ class IndexHomeState extends State<IndexHome>
     return LoadingMoreCustomScrollView(
       controller: _mainScrollController,
       slivers: <Widget>[
-        const IndexCarousel().marginOnly(top: 6).sliverBox,
-        const DDQWidget().sliverBox,
-        const StoreComponentIndex().sliverBox,
+        const IndexCarousel().marginOnly(top: 6).toSliverWidget,
+        const DDQWidget().toSliverWidget,
+        const StoreComponentIndex().toSliverWidget,
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           child: const Text(
@@ -65,7 +65,7 @@ class IndexHomeState extends State<IndexHome>
             style: TextStyle(
                 fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold),
           ),
-        ).sliverBox,
+        ).toSliverWidget,
 
       ],
     );

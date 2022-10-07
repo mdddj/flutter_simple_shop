@@ -1,9 +1,7 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 
-// Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
@@ -33,7 +31,7 @@ class PanicBuyingPageState extends State<PanicBuyingPage> {
   void initState() {
     super.initState();
     Future.microtask(() async {
-      await context.read<PanicBuyingModel>().init();
+      await context.read<PanicBuyingModel>().init(context);
     });
   }
 
@@ -51,7 +49,7 @@ class PanicBuyingPageState extends State<PanicBuyingPage> {
               text: '全天榜',
             ),
           ],
-          onTap:  context.read<PanicBuyingModel>().tabChanged,
+          onTap: (index)=> context.read<PanicBuyingModel>().tabChanged(index,context),
         ),
         bottomHeight: 48,
       ),
@@ -86,4 +84,4 @@ class PanicBuyingPageState extends State<PanicBuyingPage> {
   }
 }
 
-void toPanicBuyPage() => Get.to(() => const PanicBuyingPage());
+void toPanicBuyPage(BuildContext context) => context.navToWidget(to: const PanicBuyingPage());

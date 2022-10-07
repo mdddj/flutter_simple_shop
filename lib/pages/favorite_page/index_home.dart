@@ -3,7 +3,6 @@ import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../constant/style.dart';
@@ -55,7 +54,7 @@ class FavoriteIndexHomeState extends State<FavoriteIndexHome> {
                 const Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: NoDataWidget(title: '暂无收藏'),
-                ).sliverBox
+                ).toSliverWidget
               ]),
               //------------收藏列表end
               userProvider.isEditFavoriteIng

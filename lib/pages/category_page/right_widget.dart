@@ -1,11 +1,7 @@
-// Flutter imports:
-// Package imports:
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-// Project imports:
-import '../../common/utils.dart';
 import '../../provider/riverpod/category_riverpod.dart';
 import '../../widgets/extended_image.dart';
 import '../new_goods_list/view.dart';
@@ -20,7 +16,7 @@ class RightWidgetItme extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        utils.widgetUtils.to(NewGoodsList(
+        context.navToWidget(to: NewGoodsList(
           category: category,
           subcategory: item,
           initIndex: context.read<CategoryState>().getIndexWithCategory(category),

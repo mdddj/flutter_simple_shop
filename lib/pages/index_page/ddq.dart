@@ -38,10 +38,10 @@ class DDQWidgetState extends State<DDQWidget> {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             child: Column(
               children: <Widget>[
-                const ComponentTitle(
+                 ComponentTitle(
                   title: '限时抢购',
                   height: 24,
-                  onTap: NavigatorUtil.goTODdqPage,
+                  onTap: ()=>NavigatorUtil.goTODdqPage(context),
                 ),
                 const SizedBox(
                   height: 12,

@@ -1,8 +1,5 @@
-import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-// Project imports:
 import '../pages/ddq_page/index_home.dart';
 import '../pages/detail_page/hdk/index_home.dart';
 import '../pages/index_page/index_home.dart';
@@ -17,63 +14,55 @@ import '../pages/user_home_page/white/index.dart';
 class NavigatorUtil {
   // 跳转首页方法
   static void gotoHomePage(BuildContext context) {
-    context.navigator.pushReplacement(MaterialPageRoute(builder: (_)=>const IndexHome()));
+    context.navToWidget(to: const IndexHome());
   }
 
   // 跳转商品详情页方法
   static void gotoGoodsDetailPage(BuildContext context, String goodsId,{bool newViewPage=false}) {
-      context.navigator.push(
-          MaterialPageRoute(builder: (_) => HaoDanKuDetailItem(goodsId: goodsId,)));
+      context.navToWidget(to: HaoDanKuDetailItem(goodsId: goodsId,));
   }
 
 //  跳转到错误页面
   static void gotoErrorPage(BuildContext context) {
-    context.navigator.push(
-        MaterialPageRoute(builder: (_) => const NotFoundPage()));
+    context.navToWidget(to: const NotFoundPage());
   }
 
 
   //跳转到钉钉抢页面
-  static void goTODdqPage() {
-    Get.context!.navigator.push(
-        MaterialPageRoute(builder: (_) => const DdqIndexHome()));
+  static void goTODdqPage(BuildContext context) {
+    context.navToWidget(to: const DdqIndexHome());
   }
 
   // 跳转到登入页面
   static void gotoUserLoginPage(BuildContext context) {
-    context.navigator.push(
-        MaterialPageRoute(builder: (_) => const UserLoginPage()));
+    context.navToWidget(to: const UserLoginPage());
   }
 
   // 跳转到发布动态页面
   static void goetoWhitePage(BuildContext context){
-    context.navigator.push(
-        MaterialPageRoute(builder: (_) => const WhiteIndex()));
+    context.navToWidget(to: const WhiteIndex());
   }
 
   // 跳转到绑定订单页面
   static void gotoOrderAddIndexPage(BuildContext context){
-    context.navigator.push(
-        MaterialPageRoute(builder: (_) => const OrderAddIndexPage()));
+    context.navToWidget(to: const OrderAddIndexPage());
   }
 
   static void gotoOrderAllIndexPage(BuildContext context,String stype){
-    context.navigator.push(
-        MaterialPageRoute(builder: (_) => MyOrderHomePage(stype: stype,)));
+    context.navToWidget(to: MyOrderHomePage(stype: stype,));
   }
 
   // 前往好单库商品详情页面
   static void gotoHaodankuGoodsDetailPage(BuildContext context,String? goodsId){
-    context.navigator.push(
-        MaterialPageRoute(builder: (_) => HaoDanKuDetailItem(goodsId:goodsId!)));
+    context.navToWidget(to: HaoDanKuDetailItem(goodsId:goodsId!));
   }
 
   /// 跳转到搜索页面
   ///
   /// [worlds] 初始化搜索关键字
 
-  void toSearchPage({String? worlds}){
-    Get.to(() => SearchPage(
+  void toSearchPage(BuildContext context,{String? worlds}){
+    context.navToWidget(to: SearchPage(
       initSearchKeyWord: worlds??'',
     ));
   }

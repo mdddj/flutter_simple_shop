@@ -1,19 +1,12 @@
-// Dart imports:
-
-// Package imports:
 import 'package:badges/badges.dart';
 import 'package:dataoke_sdk/model/hot_search_worlds_result.dart';
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
-// Project imports:
 import '../../../common/widgets/hot.dart';
 import '../../../provider/riverpod/search_riverpod.dart';
 import '../../../widgets/extended_image.dart';
 import '../list.dart';
-import '../logic.dart';
 
 class Suggest extends StatelessWidget {
   const Suggest({Key? key}) : super(key: key);
@@ -34,12 +27,9 @@ class Suggest extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          Obx(() {
-            final suggs = SearchLogic.instance.suggest;
-            return Wrap(
-              children: suggs.map((e)=>_renderItem(e,context)).toList(),
-            );
-          }),
+         Wrap(
+    children: [].map((e)=>_renderItem(e,context)).toList(),
+    ),
         ],
       ),
     );
@@ -49,7 +39,7 @@ class Suggest extends StatelessWidget {
     return InkWell(
       onTap: () {
         context.read<SearchState>().loadData(worlds: item.words);
-        Get.to(() => SearchListIndex(value: item.words ?? ''));
+        context.navToWidget(to: SearchListIndex(value: item.words ?? ''));
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),

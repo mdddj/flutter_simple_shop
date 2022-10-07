@@ -1,14 +1,13 @@
-import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart'
     as my_carousel_comp;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/carousel_model.dart';
 import 'package:dataoke_sdk/params/activity_link_param.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../../common/utils.dart';
@@ -36,12 +35,12 @@ class IndexTopicComponentCarousel extends StatelessWidget {
           itemCount: list.length,
           pagination: const SwiperPagination(),
           onTap: (int index) async {
+
             final stateProivder = context.read<IndexState>();
             final item = list[index];
             if (item.sourceType == 1) {
-              await context.navigator.push(MaterialPageRoute(
-                  builder: (_) => ActivityViewPage(
-                      id: '${item.topicId!}', title: item.topicName!)));
+              context.navToWidget(to: ActivityViewPage(
+                  id: '${item.topicId!}', title: item.topicName!));
             }
             if (item.sourceType == 2) {
               stateProivder.changeLoadingState(true);
@@ -50,7 +49,7 @@ class IndexTopicComponentCarousel extends StatelessWidget {
               if (result != null) {
                 await utils.openTaobao(result.clickUrl);
               }
-              Get.context?.read<IndexState>().changeLoadingState(false);
+              stateProivder.changeLoadingState(false);
             }
             if ((item.link ?? '').isNotEmpty) {
               await utils.openLink(item.link!);

@@ -15,8 +15,6 @@ class CategoryGoodsList extends ConsumerStatefulWidget {
 class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('分类页面'),
-    );
+    return const Text('分类页面');
   }
 }

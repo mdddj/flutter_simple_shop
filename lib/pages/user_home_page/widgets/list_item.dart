@@ -1,8 +1,5 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:get/get.dart';
 
 class ListItem extends StatelessWidget {
 
@@ -20,7 +17,7 @@ class ListItem extends StatelessWidget {
       onTap:onTap as void Function()?,
       child: Container(
         height: 111,
-        width: Get.width,
+        width: context.screenWidth,
         padding: const EdgeInsets.symmetric(horizontal:12),
         margin: isCard ? const EdgeInsets.symmetric(horizontal: 12):EdgeInsets.zero,
         decoration: const BoxDecoration(

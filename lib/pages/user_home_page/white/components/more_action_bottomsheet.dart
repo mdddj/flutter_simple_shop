@@ -1,8 +1,4 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:get/get.dart';
 
 // 更多操作
 class MoreActions extends StatelessWidget {
@@ -12,8 +8,8 @@ class MoreActions extends StatelessWidget {
 
 
   /// 显示
-  static Future<void> show(List<ListTile> actions) async {
-    await Get.bottomSheet(MoreActions(actions: actions),backgroundColor: Colors.white,elevation: 10);
+  static Future<void> show(List<ListTile> actions,BuildContext context) async {
+    await showModalBottomSheet(context: context, builder: (_)=>MoreActions(actions: actions));
   }
 
   @override

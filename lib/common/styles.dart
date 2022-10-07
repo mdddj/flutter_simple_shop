@@ -6,7 +6,7 @@ class MyAppTheme {
   ///默认主题
   static ThemeData get defaultTheme {
     return FlexThemeData.light(
-      scheme: FlexScheme.sakura,
+      scheme: FlexScheme.redWine,
       surfaceMode: FlexSurfaceMode.highScaffoldLowSurface,
       blendLevel: 20,
       appBarOpacity: 0.95,

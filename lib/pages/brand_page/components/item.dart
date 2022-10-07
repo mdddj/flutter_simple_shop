@@ -1,9 +1,6 @@
-import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:dataoke_sdk/model/brand_list_model.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../../util/image_util.dart';
 import '../../../util/number_cover.dart';
 import '../../index_page/store/goods_item_layout.dart';
@@ -25,18 +22,16 @@ class BrandItemCard extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       child: Column(
-        children: [_buildHeader(), _buildGoodsGrid()],
+        children: [_buildHeader(context), _buildGoodsGrid()],
       ),
     );
   }
 
   /// 品牌信息栏目
-  Widget _buildHeader() {
+  Widget _buildHeader(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        await Get.context!.navigator.push(MaterialPageRoute(
-            builder: (_) =>
-                BrandDetailPage(brandId: storeInfo.brandId.toString())));
+        await context.navToWidget(to: BrandDetailPage(brandId: storeInfo.brandId.toString()));
       },
       child: Flex(
         direction: Axis.horizontal,

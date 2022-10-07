@@ -1,6 +1,6 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:provider/provider.dart';
 import './left_widget.dart';
@@ -54,7 +54,7 @@ class CategoryIndexPageState extends State<CategoryIndexPage> {
                     .of(context)
                     .size
                     .width,
-                height: Get.height - kToolbarHeight - Get.mediaQuery.padding.top,
+                height: context.screenHeight - kToolbarHeight - context.paddingTop,
                 child: Row(
                   children: <Widget>[
                     //左侧

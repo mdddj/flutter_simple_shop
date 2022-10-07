@@ -1,8 +1,4 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:get/get.dart';
 
 class SAppBarSearch extends StatefulWidget implements PreferredSizeWidget {
   const SAppBarSearch(
@@ -172,7 +168,7 @@ class SAppBarSearchState extends State<SAppBarSearch> {
     var right = isActionEmpty && !isFocus && isTextEmpty ? 15.0 : 0.0;
     return widget.isSliveWidget ? SliverAppBar(
       pinned: true,
-      backgroundColor: widget.bgColor ?? Get.theme.primaryColor,
+      backgroundColor: widget.bgColor,
       titleSpacing: 0,
       leading: isFocus ? const SizedBox() : widget.leading,
       leadingWidth: isFocus ? 15 : (widget.leadingWidth ?? kToolbarHeight),
@@ -217,7 +213,7 @@ class SAppBarSearchState extends State<SAppBarSearch> {
       elevation: widget.eve ?? 3,
       bottom: widget.bottom,
     ): AppBar(
-      backgroundColor: widget.bgColor ?? Get.theme.primaryColor,
+      backgroundColor: widget.bgColor,
       titleSpacing: 0,
       leading: isFocus ? const SizedBox() : widget.leading,
       leadingWidth: isFocus ? 15 : (widget.leadingWidth ?? kToolbarHeight),

@@ -1,17 +1,10 @@
-// Dart imports:
-
-// Package imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-import 'package:get/get.dart';
 import 'package:logger/logger.dart';
-
-// Project imports:
-import '../../common/no_shadow_croll_ehavior.dart';
 import '../../common/utils.dart';
 import '../../service/api_service.dart';
 import '../../util/image_util.dart';
@@ -77,14 +70,14 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
   /// 导航区域
   Widget renderNav() {
     return Container(
-      margin: EdgeInsets.only(top: Get.mediaQuery.padding.top + 12, left: 12, right: 12),
+      margin: EdgeInsets.only(top: context.paddingTop + 12, left: 12, right: 12),
       child: Column(
         children: [
           Row(
             children: [
               // 返回按钮
               IconButton(
-                  onPressed: Get.back,
+                  onPressed: context.pop,
                   icon: const Icon(Icons.chevron_left))
             ],
           ),
@@ -309,10 +302,6 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
       if (onShare) {
         utils.copy(urls['mobile_short_url'], message: '链接已复制');
         return;
-      }
-
-      if(utils.weChatBro){
-        await utils.openLink(urls['mobile_short_url'].toString().replaceAll('https://', ''));
       }
 
       await utils.openLink(urls['mobile_short_url'], urlYs: 'pinduoduo://');

@@ -1,19 +1,12 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
-// Project imports:
 import '../../provider/riverpod/search_riverpod.dart';
 import '../../widgets/appbar_search.dart';
 import 'component/helper_show.dart';
 import 'component/key_worlds.dart';
 import 'component/suggest.dart';
-import 'list.dart';
-import 'logic.dart';
 
 /// 搜索页面
 class SearchPage extends StatefulWidget {
@@ -26,7 +19,6 @@ class SearchPage extends StatefulWidget {
 }
 
 class SearchPageState extends State<SearchPage> {
-  final SearchLogic logic = Get.put(SearchLogic());
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +28,6 @@ class SearchPageState extends State<SearchPage> {
         bgColor: Colors.white,
         onSearch: (String value) {
           context.read<SearchState>().loadData(worlds: value);
-          Get.to(() => SearchListIndex(value: value));
         },
         eve: 0,
       ),
@@ -56,7 +47,6 @@ class SearchPageState extends State<SearchPage> {
 
   @override
   void dispose() {
-    Get.delete<SearchLogic>();
     super.dispose();
   }
 }

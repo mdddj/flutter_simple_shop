@@ -1,14 +1,8 @@
-// Flutter imports:
-// Package imports:
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
-
-// Project imports:
-import '../../../widgets/loading_widget.dart';
-import 'logic.dart';
 
 class RecommendPage extends StatefulWidget {
   const RecommendPage({Key? key}) : super(key: key);
@@ -18,27 +12,22 @@ class RecommendPage extends StatefulWidget {
 }
 
 class RecommendPageState extends State<RecommendPage> {
-  final RecommendLogic logic = Get.put(RecommendLogic());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(() {
-        final loading = logic.loading.value;
-        return AnimatedSwitcher(
-          duration: const Duration(
-            seconds: 1,
-          ),
-          child: loading ? const LoadingWidget() : renderProducts(),
-        );
-      }),
+      body: AnimatedSwitcher(
+        duration: const Duration(
+          seconds: 1,
+        ),
+        child: renderProducts() ,
+      ),
     );
   }
 
   Widget renderProducts() {
-    final items = logic.products;
+    final items = [];
     return EasyRefresh(
-      onLoad: logic.nextPage,
       child: WaterfallFlow.builder(
         itemBuilder: itemBuilder,
         itemCount: items.length,
@@ -49,7 +38,7 @@ class RecommendPageState extends State<RecommendPage> {
   }
 
   Widget itemBuilder(BuildContext context, int index) {
-    final item = logic.products[index];
+     late JdProduct item = JdProduct.fromJson({});
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Colors.white),
       child: Padding(
@@ -131,7 +120,6 @@ class RecommendPageState extends State<RecommendPage> {
 
   @override
   void dispose() {
-    Get.delete<RecommendLogic>();
     super.dispose();
   }
 }

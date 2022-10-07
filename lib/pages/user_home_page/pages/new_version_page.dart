@@ -1,9 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
-
-// Project imports:
 import '../../../common/widgets/loading_mixin.dart';
 import '../../../constant/style.dart';
 import '../../../service/api_service.dart';
@@ -39,7 +34,7 @@ class NewVersionPageState extends State<NewVersionPage> with LoadingMixin {
                 ),
                 TextField(controller: descController, decoration: const InputDecoration(hintText: '输入版本更新内容')),
                 TextField(controller: downUrlController, decoration: const InputDecoration(hintText: '版本下载网址')),
-                FancyElevatedButton(
+                ElevatedButton(
                   onPressed: () async {
                     final text = textEditingController.text;
                     final desc = descController.text;
@@ -48,7 +43,6 @@ class NewVersionPageState extends State<NewVersionPage> with LoadingMixin {
                     await tkApi.setNewVersionNumber(text, desc, url);
                     setLoading(false);
                   },
-                  isLoading: loadingState,
                   child: const Text('提交'),
                 )
               ],

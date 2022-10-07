@@ -1,9 +1,6 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 
-// Package imports:
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../../../common/utils.dart';
 
 /// 代码输入组件
@@ -51,15 +48,15 @@ class CodeInputPageState extends State<CodeInputPage> {
           IconButton(
               onPressed: () {
                 final myCodes = Uri.encodeComponent(textEditingController.text);
-                Get.back(result: {'code': myCodes, 'type': _type});
+                Navigator.pop(context,{'code': myCodes, 'type': _type});
               },
               icon: const Icon(Icons.check)),
           utils.widgetUtils.marginRight()
         ],
       ),
       body: SizedBox(
-        height: utils.widgetUtils.kBodyHeight,
-        width: Get.width,
+        height: context.kBodyHeight,
+        width: context.screenWidth,
         child: SizedBox(
             height: double.infinity,
             child: LayoutBuilder(
@@ -73,7 +70,7 @@ class CodeInputPageState extends State<CodeInputPage> {
                   textDirection: TextDirection.ltr,
                   textAlign: TextAlign.left,
                 );
-                tp.layout(maxWidth: Get.width);
+                tp.layout(maxWidth: context.screenWidth);
 
                 var lines = (tp.size.height / tp.preferredLineHeight).ceil();
                 var maxLines = 10;

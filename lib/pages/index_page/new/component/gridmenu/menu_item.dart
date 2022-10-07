@@ -1,11 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../../../../common/utils.dart';
 import '../../../../../widgets/extended_image.dart';
 import 'model.dart';
@@ -45,7 +39,7 @@ class GridMenuItem extends StatelessWidget {
 
   // 标题
   Widget renderTitle() {
-    return DefaultTextStyle.merge(child: Text(item.title), style: Get.textTheme.subtitle2!.copyWith(fontSize: 12), maxLines: 1, overflow: TextOverflow.ellipsis);
+    return DefaultTextStyle.merge(child: Text(item.title), maxLines: 1, overflow: TextOverflow.ellipsis);
   }
 
   // 图片

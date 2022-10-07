@@ -1,9 +1,6 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-// Project imports:
-import '../../../../common/utils.dart';
 import '../../../../widgets/product_search_mini.dart';
 
 class SearchProduct extends StatelessWidget {
@@ -14,7 +11,7 @@ class SearchProduct extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('搜索产品'),),
       body: SizedBox(
-        height: utils.widgetUtils.kBodyHeight,
+        height: context.kBodyHeight,
         child: Column(
           children: const [
             SizedBox(

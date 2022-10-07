@@ -1,10 +1,7 @@
-import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../../../widgets/component/custom_loading.dart';
 import '../../../../widgets/simple_appbar.dart';
 import 'detail.dart';
@@ -24,30 +21,30 @@ class WaimaiIndex extends StatelessWidget {
       appBar: const SimpleAppBar(
         title: '外卖红包',
       ),
-      body: renderBody(),
+      body: renderBody(context),
     );
   }
 
-  Widget renderBody() {
-    return EasyRefresh.custom(slivers: [renderWaimaihongbao(), renderWaimaiShangChao()]);
+  Widget renderBody(BuildContext context) {
+    return EasyRefresh.custom(slivers: [renderWaimaihongbao(context), renderWaimaiShangChao(context)]);
   }
 
   /// 商超红包
-  Widget renderWaimaiShangChao() {
+  Widget renderWaimaiShangChao(BuildContext context) {
     return SliverToBoxAdapter(
-      child: GestureDetector(onTap: () => navTo('2'), child: renderImage('assets/images/waimai2.png')),
+      child: GestureDetector(onTap: () => navTo('2',context), child: renderImage('assets/images/waimai2.png')),
     );
   }
 
   /// 普通外卖红包
-  Widget renderWaimaihongbao() {
+  Widget renderWaimaihongbao(BuildContext context) {
     return SliverToBoxAdapter(
-      child: GestureDetector(onTap: () => navTo('1'), child: renderImage('assets/images/waimai1.png')),
+      child: GestureDetector(onTap: () => navTo('1',context), child: renderImage('assets/images/waimai1.png')),
     );
   }
 
-  void navTo(String type) {
-    Get.context!.navigator.push(MaterialPageRoute(builder: (_) => WaimaiDetail(type: type)));
+  void navTo(String type,BuildContext context) {
+   context.navToWidget(to: WaimaiDetail(type: type));
   }
 
   /// 渲染图片

@@ -1,3 +1,4 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
@@ -40,7 +41,7 @@ class IndexColumnWidget extends StatelessWidget {
             },
             title: '畅销榜单',
             subTitle: '所有人,买它',
-            onTap: BestSellerListPage.nav),
+            onTap:()=> BestSellerListPage.nav(context)),
         if (products.length > 1)
           TwoColumnCommWidget(
             imageBuilder: (double w, double h) {
@@ -83,7 +84,7 @@ class TwoColumnCommWidget extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             width: constraints.maxWidth,
             decoration: BoxDecoration(
-                color: Colors.grey.shade200,
+                color: context.cardColor,
                 borderRadius: BorderRadius.circular(12)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

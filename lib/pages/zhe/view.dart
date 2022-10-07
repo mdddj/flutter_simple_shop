@@ -27,7 +27,7 @@ class ZheIndexState extends State<ZheIndex> {
   void initState() {
     super.initState();
     Future.microtask(() async {
-      context.read<ZheState>().onTabChange(0);
+      context.read<ZheState>().onTabChange(0,context);
     });
   }
 

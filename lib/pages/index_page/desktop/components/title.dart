@@ -1,10 +1,5 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:get/get.dart';
-
-// Project imports:
 import '../../../../constant/style.dart';
 
 class AppTitle extends StatelessWidget {
@@ -15,7 +10,7 @@ class AppTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-      child: Text(text,style: Get.textTheme.headline6!.copyWith(
+      child: Text(text,style: context.textTheme.headline6?.copyWith(
         color: Colors.black,
         fontWeight: FontWeight.bold,
         fontSize: 15

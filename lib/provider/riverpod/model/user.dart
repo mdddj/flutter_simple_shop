@@ -1,4 +1,3 @@
-import 'package:dd_js_util/api/base.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'my_user.dart';

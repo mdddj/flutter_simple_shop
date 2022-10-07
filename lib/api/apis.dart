@@ -12,7 +12,7 @@ class FavoritesAddApi extends MyAppCoreApi {
 
   @Doc(message: "服务器发起请求,添加收藏")
   static Future<void> doRequeset(FavoriteModel favoriteModel) async {
-    final result = await (FavoritesAddApi()).request(showDefaultLoading: false,data: favoriteModel.getJson());
+    await (FavoritesAddApi()).request(showDefaultLoading: false,data: favoriteModel.getJson());
   }
 }
 

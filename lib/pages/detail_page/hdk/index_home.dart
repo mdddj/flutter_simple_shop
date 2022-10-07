@@ -3,8 +3,7 @@ import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dataoke_sdk/model/coupon_link_result.dart';
 import 'package:dataoke_sdk/model/product.dart';
-import 'package:dd_js_util/api/base.dart';
-import 'package:dd_js_util/ext/bool.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:flutter/gestures.dart';
@@ -12,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import '../../../api/apis.dart';
@@ -239,7 +237,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
             left: 0,
             child: Container(
               decoration: const BoxDecoration(color: Colors.white),
-              width: Get.width,
+              width: context.screenWidth,
               height: 60,
               child: Row(
                 children: [
@@ -247,7 +245,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                     width: 12,
                   ),
                   _renderBottomItem('帮助', Icons.help),
-                  Expanded(child: buildBottomRow()),
+                  Expanded(child: buildBottomRow(context)),
                 ],
               ),
             ),
@@ -280,11 +278,11 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     }
   }
 
-  Widget buildBottomRow() {
+  Widget buildBottomRow(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        IconButton(onPressed: Get.back, icon: const Icon(Icons.home)),
+        IconButton(onPressed:()=>Navigator.pop(context), icon: const Icon(Icons.home)),
         IconButton(onPressed: addFavorite, icon: const Icon(Icons.favorite)),
         Expanded(
           child: WaterfallFlow.count(
@@ -606,7 +604,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   Widget buildSliverToBoxAdapterThree({bool isSliver = true}) {
     var widget = containerWarp(
         SizedBox(
-          width: Get.width,
+          width: context.screenWidth,
           child: DrawableStartText(
             lettersCountOfAfterImage: info!.dtitle!.length,
             assetImage: info!.shopType == 1
@@ -693,8 +691,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       loop: true,
       itemBuilder: (BuildContext context, int index) {
         return ExtendedImageWidget(
-          width: Get.width,
-          height: Get.width,
+          width: context.screenWidth,
+          height: context.screenWidth,
           src: getImages()[index],
           fit: BoxFit.fill,
           knowSize: true,
@@ -758,7 +756,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         key: _appbarGlogbalKey,
         padding: const EdgeInsets.symmetric(horizontal: 12),
         height: kToolbarHeight,
-        width: Get.width,
+        width: context.screenWidth,
         decoration: const BoxDecoration(
             color: Colors.white, boxShadow: [BoxShadow(color: Colors.black26)]),
         child: Row(
@@ -766,7 +764,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
             IconButton(
               icon: const Icon(Icons.chevron_left),
               color: Colors.black,
-              onPressed: Get.back,
+              onPressed: ()=>Navigator.pop(context),
             ),
             const SizedBox(
               width: 12,
@@ -807,7 +805,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
 
   Widget buildContainer({Widget? swiper, double? width}) {
     return SizedBox(
-      height: width ?? Get.width,
+      height: width ?? context.screenWidth,
       child: swiper,
     );
   }

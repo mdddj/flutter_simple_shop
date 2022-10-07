@@ -1,7 +1,6 @@
 
-import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:provider/provider.dart';
 import '../../../../../common/utils.dart';
@@ -29,138 +28,110 @@ const pp = 'assets/svg/pp.svg'; // 品牌
 const jd = 'assets/svg/jd.svg'; // 京东
 const pyq = 'assets/svg/pyq.svg'; // 朋友圈
 
-final gridMenuModles = [
-  /// 领券
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '饿了吗',
-          image: elmImage,
-          isAssets: true,
-          onTap: () {
-            Get.context!.navigator
-                .push(MaterialPageRoute(builder: (_) => const WaimaiIndex()));
-          })),
+List<Widget> buildIndexGridMenuItems(BuildContext context) {
+  return [
+    /// 领券
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '饿了吗',
+            image: elmImage,
+            isAssets: true,
+            onTap: ()=> context.navToWidget(to: const WaimaiIndex()))),
 
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '美团领券',
-          image: mtwmImage,
-          onTap: () async {
-            final indexState = Get.context!.read<IndexState>();
-            indexState.changeLoadingState(true);
-            await tkApi.meituan({'actId': '2', 'linkType': '1'},
-                mapHandle: (data) async {
-              final url = (data['data'] ?? '').toString();
-              if (url.isNotEmpty) {
-                await utils.urlOpen(url);
-              }
-            });
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '美团领券',
+            image: mtwmImage,
+            onTap: () async {
+              final indexState = context.read<IndexState>();
+              indexState.changeLoadingState(true);
+              await tkApi.meituan({'actId': '2', 'linkType': '1'},
+                  mapHandle: (data) async {
+                    final url = (data['data'] ?? '').toString();
+                    if (url.isNotEmpty) {
+                      await utils.urlOpen(url);
+                    }
+                  });
 
-            indexState.changeLoadingState(false);
-          },
-          isAssets: true,
-          onLongTap: () async {
-            // 长按复制领取链接
-            Get.context!.read<IndexState>().changeLoadingState(true);
-            await tkApi.meituan({'actId': '2', 'linkType': '1'},
-                mapHandle: (data) async {
-              final url = (data['data'] ?? '').toString();
-              if (url.isNotEmpty) {
-                utils.copy(url, message: '领券链接复制成功,打开浏览器粘贴即可');
-                await utils.widgetUtils
-                    .showSimpleDialog('领券链接复制成功,打开浏览器粘贴即可', title: '获取链接成功');
-              }
-            });
-            Get.context?.read<IndexState>().changeLoadingState(false);
-          })),
+              indexState.changeLoadingState(false);
+            },
+            isAssets: true,
+            onLongTap: () async {
+              final indexStateProvider = context.read<IndexState>();
+              indexStateProvider.changeLoadingState(true);
+              await tkApi.meituan({'actId': '2', 'linkType': '1'},
+                  mapHandle: (data) async {
+                    final url = (data['data'] ?? '').toString();
+                    if (url.isNotEmpty) {
+                      utils.copy(url, message: '领券链接复制成功,打开浏览器粘贴即可');
+                      await utils.widgetUtils
+                          .showSimpleDialog('领券链接复制成功,打开浏览器粘贴即可', title: '获取链接成功');
+                    }
+                  });
+              indexStateProvider.changeLoadingState(false);
+            })),
 
-  /// 排行榜
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '排行榜',
-          image: phbImage,
-          onTap: () {
-            Get.context!.navigator.push(MaterialPageRoute(
-                builder: (_) => const PanicBuyingPage(),
-                ));
-          },
-          isAssets: true)),
+    /// 排行榜
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '排行榜',
+            image: phbImage,
+            onTap: () =>context.navToWidget(to: const PanicBuyingPage()),
+            isAssets: true)),
 
-  /// 折上折
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '折上折',
-          image: zheImage,
-          onTap: () {
-            Get.context!.navigator.push(MaterialPageRoute(
-                builder: (_) => const ZheIndex(), ));
-          },
-          isAssets: true)),
+    /// 折上折
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '折上折',
+            image: zheImage,
+            onTap: () => context.navToWidget(to: const ZheIndex()),
+            isAssets: true)),
 
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '每日半价',
-          image: banjiaImage,
-          onTap: () {
-            Get.context!.navigator.push(MaterialPageRoute(
-                builder: (_) => const BanjiaIndex(),
-               ));
-          },
-          isAssets: true)),
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '每日半价',
+            image: banjiaImage,
+            onTap: () => context.navToWidget(to: const BanjiaIndex()),
+            isAssets: true)),
 
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '拼夕夕',
-          image: 'assets/svg/pdd.svg',
-          onTap: () {
-            Get.context!.navigator.push(MaterialPageRoute(
-                builder: (_) => const SearchPage(),
-                ));
-          },
-          isAssets: true)),
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '8折话费',
-          image: chf,
-          onTap: () {
-            utils.openLink(appConfig['huafeiUrl'].toString());
-          },
-          isAssets: true)),
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '拼夕夕',
+            image: 'assets/svg/pdd.svg',
+            onTap: ()=> const SearchPage(),
+            isAssets: true)),
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '8折话费',
+            image: chf,
+            onTap: ()=> utils.openLink(appConfig['huafeiUrl'].toString()),
+            isAssets: true)),
 
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '精选品牌',
-          image: pp,
-          onTap: () {
-            Get.context!.navigator.push(MaterialPageRoute(
-                builder: (_) => const BrandListPage(),
-                ));
-          },
-          isAssets: true)),
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '精选品牌',
+            image: pp,
+            onTap: ()=> context.navToWidget(to: const BrandListPage()),
+            isAssets: true)),
 
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '京东好货',
-          image: jd,
-          onTap: () {
-            Get.context!.navigator.push(MaterialPageRoute(
-                builder: (_) => const RecommendPage(),
-                ));
-          },
-          isAssets: true)),
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '京东好货',
+            image: jd,
+            onTap: () => context.navToWidget(to: const RecommendPage()),
+            isAssets: true)),
 
-  /// 面基专区
-  GridMenuItem(
-      item: GridMenuModel(
-          title: '典典面基',
-          image: pyq,
-          onTap: () {
-            Get.context!.navigator.push(MaterialPageRoute(
-                builder: (_) => const MianjiPage(),
-                ));
-          },
-          isAssets: true)),
-];
+    /// 面基专区
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '典典面基',
+            image: pyq,
+            onTap: ()=> context.navToWidget(to: const MianjiPage()),
+            isAssets: true)),
+  ];
+}
+
+
 
 /// 首页的网格菜单
 class GridMenuComponent extends StatelessWidget {
@@ -171,13 +142,13 @@ class GridMenuComponent extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(8)),
+          color: context.cardColor, borderRadius: BorderRadius.circular(8)),
       child: WaterfallFlow.count(
         padding: EdgeInsets.zero,
         crossAxisCount: 5,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        children: gridMenuModles,
+        children: buildIndexGridMenuItems(context),
       ),
     );
   }

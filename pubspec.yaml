@@ -12,7 +12,6 @@ dependencies:
     sdk: flutter
   flutter_lints: ^2.0.1
   cupertino_icons: ^1.0.5
-  get: ^4.6.5
   url_launcher: ^6.1.6
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
@@ -61,7 +60,6 @@ dependencies:
   zefyrka: ^1.3.0
   package_info: ^2.0.2
   show_up_animation: ^2.0.0
-  black_hole_flutter: ^0.3.5
   hive: ^2.2.3
   flutter_blurhash: ^0.7.0
   curl_logger_dio_interceptor: ^0.0.3

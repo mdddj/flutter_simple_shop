@@ -1,9 +1,7 @@
 import 'dart:convert';
 import 'package:dataoke_sdk/network/util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:logger/logger.dart';
-import '../controller/app_controller.dart';
 import '../provider/riverpod/model/my_user.dart';
 import 'utils.dart';
 
@@ -37,7 +35,6 @@ class Api extends ApiService {
       loginFail?.call(msg);
     }, isTaokeApi: false);
     if (result.isNotEmpty) {
-      Get.log('登录成功:$result');
       tokenHandle?.call(result);
       return true;
     }
@@ -48,7 +45,6 @@ class Api extends ApiService {
   Future<MyUser?> getUser(String token) async {
     final result = await request.get('/api/get-user-by-token',
         data: {'token': token},
-        onStart: AppController.find.addAuthDetail,
         isTaokeApi: false);
     if (result.isNotEmpty) {
       try {
@@ -70,8 +66,7 @@ class Api extends ApiService {
   Future<String> post(String url, Map<String, dynamic> data) async {
     return request.post(url,
         data: data,
-        isTaokeApi: false,
-        onStart: AppController.find.addAuthDetail);
+        isTaokeApi: false);
   }
 
   Future<String> get(String url,

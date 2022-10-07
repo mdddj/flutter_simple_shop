@@ -20,7 +20,6 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
       hintText: '输入关键字,例如:"辣条"',
       onTap: () => navTo(context),
       readOnly: true,
-      eve: 0,
       leadingWidth: 58,
       leading: Container(
         alignment: Alignment.center,
@@ -28,6 +27,7 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
           'assets/svg/diandian.svg',
           width: 34,
           height: 34,
+          color: context.iconColor,
         ),
       ),
       actions: [
@@ -35,7 +35,6 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
             onPressed: () {},
             icon: const Icon(
               Icons.message,
-              color: Colors.black,
             ))
       ],
       bottom: PreferredSize(
@@ -69,7 +68,7 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
                               return;
                             }
                             final category = context.read<CategoryState>().getCategoryByIndex(index - 1);
-                            utils.widgetUtils.to(NewGoodsList(
+                            context.navToWidget(to:NewGoodsList(
                               category: category,
                               initIndex: context.read<CategoryState>().getIndexWithCategory(category),
                             ));

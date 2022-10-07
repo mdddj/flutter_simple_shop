@@ -1,11 +1,7 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-// Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-
-// Project imports:
 import 'list.dart'; // 9.9包邮的provider
 import 'loading_status.dart';
 import 'riverpod.dart';
@@ -40,7 +36,7 @@ class JiujiuIndexHomeState extends State<JiujiuIndexHome> with TickerProviderSta
         backgroundColor: Colors.white,
         title: const Text('9块9包邮', style: TextStyle(color: Colors.black)),
         bottom: PreferredSize(
-          preferredSize: Size(Get.width, 48),
+          preferredSize: Size(context.screenWidth, 48),
           child: Container(
             alignment: Alignment.centerLeft,
             child: TabBar(

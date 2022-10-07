@@ -1,7 +1,6 @@
 
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import 'jd_constant.dart';
 import 'jd_types_model.dart';
 

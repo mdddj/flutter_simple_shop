@@ -1,17 +1,18 @@
 // Flutter imports:
 // Package imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:extended_text_field/extended_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:html/parser.dart';
 
 // 在输入框渲染一张图片
 class ImageText extends SpecialText {
   static const String flag = '<img';
   final int? start;
+  final BuildContext context;
 
-  ImageText(TextStyle textStyle, {this.start, this.onClick})
+  ImageText(TextStyle textStyle,this.context, {this.start, this.onClick})
       : super(ImageText.flag, '/>', textStyle);
   String? _imageUrl;
 
@@ -29,7 +30,7 @@ class ImageText extends SpecialText {
 
     var fit = BoxFit.cover;
 
-    var pmWidth = Get.width;
+    var pmWidth = context.screenWidth;
 
     var height = double.tryParse(img.attributes['height']!)!;
     var width = double.tryParse(img.attributes['width']!)!;

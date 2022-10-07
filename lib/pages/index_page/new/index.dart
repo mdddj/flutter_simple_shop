@@ -1,9 +1,8 @@
-import 'package:after_layout/after_layout.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' hide NestedScrollView;
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 import '../../../index.dart';
@@ -16,7 +15,7 @@ class IndexHomeNew extends StatefulWidget {
   IndexHomeNewState createState() => IndexHomeNewState();
 }
 
-class IndexHomeNewState extends State<IndexHomeNew> with AfterLayoutMixin, SingleTickerProviderStateMixin {
+class IndexHomeNewState extends State<IndexHomeNew> with  SingleTickerProviderStateMixin {
   late TabController tabController = TabController(length: context.categoryLength + 1, vsync: this);
 
   @override
@@ -36,10 +35,6 @@ class IndexHomeNewState extends State<IndexHomeNew> with AfterLayoutMixin, Singl
     );
   }
 
-  @override
-  void afterFirstLayout(BuildContext context) {
-    AppController.find.getNewVersion();
-  }
 
   @override
   void dispose() {
@@ -76,6 +71,7 @@ class HomeWidgets extends ConsumerWidget {
       onLoad: () async => await fetchProducts(ref),
       onRefresh: () async => await refresh(ref),
       firstRefresh: true,
+      header: MaterialHeader(),
     );
   }
 

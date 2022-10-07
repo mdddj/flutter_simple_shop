@@ -1,4 +1,3 @@
-import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 
 class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -17,12 +16,9 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: backgroundColor ?? Colors.white,
-      title: TitleAndSubtitle(
-        title: Text(
-          title,
-          style: TextStyle(color:titleColor?? Colors.black),
-        ),
-        subtitle: subTitle,
+      title: Text(
+        title,
+        style: TextStyle(color:titleColor?? Colors.black),
       ),
       iconTheme: IconThemeData(color:titleColor?? Colors.grey),
       elevation: elevation ?? 0,
