@@ -37,7 +37,7 @@ class ZheIndexState extends State<ZheIndex> {
       appBar: SimpleAppBar(
         title: '折上折 - 拍两件更优惠',
         bottom: BottomCategoryTabs(
-          onTap: context.read<ZheState>().onTabChange,
+          onTap:(index) => context.read<ZheState>().onTabChange(index,context),
           insets: const [
             Tab(
               text: '推荐',

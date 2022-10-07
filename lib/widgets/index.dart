@@ -1,6 +1,7 @@
 library widgets;
 
 
+export 'appbar_search.dart';
 export 'category/jd_category.dart';
 export 'component/coupon_discount.dart';
 export 'component/custom_loading.dart';
@@ -9,14 +10,13 @@ export 'component/custom_skeleton_container.dart';
 export 'component/dao_ji_shi.dart';
 export 'component/new_version_dialog.dart';
 export 'component/tool_tip.dart';
-export 'flexd/index_header_flexd_widget.dart';
-export 'flexd/index_main_goods_mini_title_bar.dart';
-export 'appbar_search.dart';
 export 'coupon_price.dart';
 export 'ddq_times_widget.dart';
 export 'detail_simple_bborder_button.dart';
 export 'edit_page_handle.dart';
 export 'extended_image.dart';
+export 'flexd/index_header_flexd_widget.dart';
+export 'flexd/index_main_goods_mini_title_bar.dart';
 export 'float_widget.dart';
 export 'icon_block_widget.dart';
 export 'index_sticky_tabbar_delegate.dart';
