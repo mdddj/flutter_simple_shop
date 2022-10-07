@@ -1,10 +1,8 @@
-// Flutter imports:
-// Package imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 
-// Project imports:
 import '../constant/color.dart';
 
 // 券后价小部件
@@ -24,21 +22,20 @@ class CouponPriceWidget extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: const EdgeInsets.only(right: 3.0),
-          child: const Text('券后', style: TextStyle(color: Colors.black38, fontSize: 12)),
+          child: const Text('券后'),
         ),
-        const Text(
+         Text(
           '¥',
-          style: TextStyle(fontSize: 15, color: Colors.pinkAccent),
+          style: TextStyle(fontSize: 15, color:context.primaryColor.withOpacity(.78)),
         ),
         Text(
           actualPrice.toString(),
-          style: const TextStyle(color: Colors.pinkAccent, fontSize: 15),
+          style: TextStyle(color: context.primaryColor, fontSize: 15),
         ),
         Container(
           margin: EdgeInsets.only(left: interval ?? 10.0),
           child: Text(
             '¥$originalPrice',
-            style: const TextStyle(decoration: TextDecoration.lineThrough, color: Colors.black38, fontSize: 12),
           ),
         ),
         //多少折

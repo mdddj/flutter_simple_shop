@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:provider/provider.dart';
 import '../../provider/riverpod/search_riverpod.dart';
 import '../../widgets/appbar_search.dart';

@@ -54,7 +54,6 @@ class BanjiaIndexState extends State<BanjiaIndex> {
     return Scaffold(
       appBar: const SimpleAppBar(
         title: '每日半价',
-        backgroundColor: Colors.pink,
         titleColor: Colors.white,
       ),
       body: EasyRefresh.custom(scrollController: scrollController, slivers: [

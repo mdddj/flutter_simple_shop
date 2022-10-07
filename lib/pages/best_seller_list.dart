@@ -32,7 +32,7 @@ class BestSellerListPageState extends State<BestSellerListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const SimpleAppBar(title: '畅销榜单',elevation: 0,),
+      appBar: const SimpleAppBar(title: '畅销榜单'),
       body: EasyRefresh.custom(slivers: [
         SliverPadding(
             padding: const EdgeInsets.all(12),

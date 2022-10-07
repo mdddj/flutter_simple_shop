@@ -6,16 +6,14 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double? elevation;
   final PreferredSizeWidget? bottom;
   final double? bottomHeight;
-  final Color? backgroundColor;
   final Color? titleColor;
   final List<Widget>? actions;
 
-  const SimpleAppBar({Key? key,this.actions, required this.title, this.subTitle, this.elevation, this.bottom, this.bottomHeight, this.backgroundColor, this.titleColor}) : super(key: key);
+  const SimpleAppBar({Key? key,this.actions, required this.title, this.subTitle, this.elevation, this.bottom, this.bottomHeight, this.titleColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: backgroundColor ?? Colors.white,
       title: Text(
         title,
       ),
