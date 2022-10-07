@@ -1,58 +1,68 @@
 import 'package:badges/badges.dart';
-import 'package:dataoke_sdk/model/hot_search_worlds_result.dart';
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:provider/provider.dart' hide FutureProvider;
 import '../../../common/widgets/hot.dart';
 import '../../../provider/riverpod/search_riverpod.dart';
 import '../../../widgets/extended_image.dart';
 import '../list.dart';
 
-class Suggest extends StatelessWidget {
+
+final _riverpodSuggest = FutureProvider.autoDispose((ref) async {
+  return await DdTaokeSdk.instance.getHotSearchWorlds();
+});
+
+///热搜榜
+class Suggest extends ConsumerWidget {
   const Suggest({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 12),
-      padding: const EdgeInsets.all(12),
-      decoration: const BoxDecoration(color: Colors.white),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            '热搜榜',
-            style: TextStyle(fontSize: 16),
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-         Wrap(
-    children: [].map((e)=>_renderItem(e,context)).toList(),
-    ),
-        ],
+  Widget build(BuildContext context,WidgetRef ref) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              '热搜榜',
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            ref.watch(_riverpodSuggest).when(data: (list){
+              return Wrap(
+                children: list.map((e)=>_renderItem(e,context)).toList(),
+              );
+            }, error: (e,s)=>const Text("加载热搜榜失败,点我重试").click(() {
+              ref.refresh(_riverpodSuggest);
+            }), loading: ()=>const CupertinoActivityIndicator())
+          ],
+        ),
       ),
     );
   }
 
   Widget _renderItem(HotSearchWorlds item,BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         context.read<SearchState>().loadData(worlds: item.words);
         context.navToWidget(to: SearchListIndex(value: item.words ?? ''));
       },
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-        margin: const EdgeInsets.only(bottom: 12),
-        decoration: const BoxDecoration(color: Colors.white),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 6),
         child: Row(
           children: [
+            Text('${item.rankNum!}'),
             SizedBox(
               width: 30,
               height: 58,
               child: Container(
                 alignment: Alignment.center,
-                child: Text('${item.rankNum!}'),
               ),
             ),
             SizedBox(
@@ -73,18 +83,13 @@ class Suggest extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        item.theme!,
-                        style: const TextStyle(color: Colors.black),
-                      ),
+                      Text(item.theme!),
                       if (item.label!.isNotEmpty)
                         Badge(
                           badgeContent: Text(
                             item.label!,
-                            style: const TextStyle(
-                                color: Colors.pink,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                color: context.primaryColor),
                           ),
                           badgeColor: Colors.white,
                         ),

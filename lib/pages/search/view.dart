@@ -25,13 +25,11 @@ class SearchPageState extends State<SearchPage> {
     return Scaffold(
       appBar: SAppBarSearch(
         value: widget.initSearchKeyWord,
-        bgColor: Colors.white,
         onSearch: (String value) {
           context.read<SearchState>().loadData(worlds: value);
         },
-        eve: 0,
       ),
-      body: EasyRefresh.custom(slivers: const [
+      body: const CustomScrollView(slivers: [
         SliverToBoxAdapter(
           child: HelperComp(),
         ),

@@ -18,10 +18,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: backgroundColor ?? Colors.white,
       title: Text(
         title,
-        style: TextStyle(color:titleColor?? Colors.black),
       ),
-      iconTheme: IconThemeData(color:titleColor?? Colors.grey),
-      elevation: elevation ?? 0,
       bottom: bottom,
       actions: [
         Padding(

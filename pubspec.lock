@@ -273,7 +273,7 @@ packages:
       path: "../plugins/dataoke_sdk"
       relative: true
     source: path
-    version: "1.0.1"
+    version: "1.0.2"
   date_format:
     dependency: "direct main"
     description:
@@ -805,6 +805,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
+  loading_animation_widget:
+    dependency: "direct main"
+    description:
+      name: loading_animation_widget
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.0+3"
   loading_more_list:
     dependency: "direct main"
     description:

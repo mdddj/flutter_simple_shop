@@ -139,10 +139,8 @@ class GridMenuComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Padding(
       padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-          color: context.cardColor, borderRadius: BorderRadius.circular(8)),
       child: WaterfallFlow.count(
         padding: EdgeInsets.zero,
         crossAxisCount: 5,

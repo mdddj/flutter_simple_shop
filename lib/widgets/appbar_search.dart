@@ -18,10 +18,8 @@ class SAppBarSearch extends StatefulWidget implements PreferredSizeWidget {
       this.onCancel,
       this.onChanged,
       this.onSearch,
-      this.bgColor,
       this.readOnly,
       this.bottom,
-      this.eve,
       this.leadingWidth,this.isSliveWidget=false})
       : super(key: key);
   final double borderRadius;
@@ -43,7 +41,6 @@ class SAppBarSearch extends StatefulWidget implements PreferredSizeWidget {
   // 最前面的组件
   final Widget? leading;
 
-  final double? eve;
 
   // 搜索框后缀组件
   final Widget? suffix;
@@ -67,8 +64,6 @@ class SAppBarSearch extends StatefulWidget implements PreferredSizeWidget {
   // 点击键盘搜索
   final ValueChanged<String>? onSearch;
 
-  // appbar背景颜色
-  final Color? bgColor;
 
   final bool isSliveWidget ;
 
@@ -168,16 +163,14 @@ class SAppBarSearchState extends State<SAppBarSearch> {
     var right = isActionEmpty && !isFocus && isTextEmpty ? 15.0 : 0.0;
     return widget.isSliveWidget ? SliverAppBar(
       pinned: true,
-      backgroundColor: widget.bgColor,
+      floating: true,
       titleSpacing: 0,
       leading: isFocus ? const SizedBox() : widget.leading,
       leadingWidth: isFocus ? 15 : (widget.leadingWidth ?? kToolbarHeight),
-      iconTheme: const IconThemeData(color: Colors.black),
       title: Container(
         margin: EdgeInsets.only(right: right, left: left),
         height: widget.height,
         decoration: BoxDecoration(
-          color: const Color(0xFFF2F2F2),
           borderRadius: BorderRadius.circular(widget.borderRadius),
         ),
         child: Row(
@@ -197,9 +190,7 @@ class SAppBarSearchState extends State<SAppBarSearch> {
                   isDense: true,
                   border: InputBorder.none,
                   hintText: widget.hintText ?? '请输入关键字',
-                  hintStyle: const TextStyle(fontSize: 15, color: Color(0xFF999999)),
                 ),
-                style: const TextStyle(fontSize: 15, color: Color(0xFF333333), height: 1.3),
                 textInputAction: TextInputAction.search,
                 onTap: widget.onTap,
                 onSubmitted: widget.onSearch,
@@ -210,19 +201,15 @@ class SAppBarSearchState extends State<SAppBarSearch> {
         ),
       ),
       actions: _actions(),
-      elevation: widget.eve ?? 3,
       bottom: widget.bottom,
     ): AppBar(
-      backgroundColor: widget.bgColor,
       titleSpacing: 0,
       leading: isFocus ? const SizedBox() : widget.leading,
       leadingWidth: isFocus ? 15 : (widget.leadingWidth ?? kToolbarHeight),
-      iconTheme: const IconThemeData(color: Colors.black),
       title: Container(
         margin: EdgeInsets.only(right: right, left: left),
         height: widget.height,
         decoration: BoxDecoration(
-          color: const Color(0xFFF2F2F2),
           borderRadius: BorderRadius.circular(widget.borderRadius),
         ),
         child: Row(
@@ -230,7 +217,7 @@ class SAppBarSearchState extends State<SAppBarSearch> {
             SizedBox(
               width: widget.height,
               height: widget.height,
-              child: const Icon(Icons.search, size: 22, color: Color(0xFF999999)),
+              child: const Icon(Icons.search),
             ),
             Expanded(
               child: TextField(
@@ -242,9 +229,7 @@ class SAppBarSearchState extends State<SAppBarSearch> {
                   isDense: true,
                   border: InputBorder.none,
                   hintText: widget.hintText ?? '请输入关键字',
-                  hintStyle: const TextStyle(fontSize: 15, color: Color(0xFF999999)),
                 ),
-                style: const TextStyle(fontSize: 15, color: Color(0xFF333333), height: 1.3),
                 textInputAction: TextInputAction.search,
                 onTap: widget.onTap,
                 onSubmitted: widget.onSearch,
@@ -255,7 +240,6 @@ class SAppBarSearchState extends State<SAppBarSearch> {
         ),
       ),
       actions: _actions(),
-      elevation: widget.eve ?? 3,
       bottom: widget.bottom,
     );
   }

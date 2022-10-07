@@ -1,4 +1,3 @@
-
 import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
@@ -19,26 +18,26 @@ class SearchKeyWorldsState extends State<SearchKeyWorlds> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 12),
-      padding: const EdgeInsets.all(12),
-      decoration: const BoxDecoration(color: Colors.white),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            '搜索发现',
-            style: TextStyle(fontSize: 16),
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          Wrap(
-            spacing: 5,
-            runSpacing: 5,
-            children: _keyWorlds.map(_item).toList(),
-          ),
-        ],
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              '搜索发现',
+              style: TextStyle(fontSize: 16),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            Wrap(
+              spacing: 5,
+              runSpacing: 2,
+              children: _keyWorlds.map(_item).toList(),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -47,12 +46,10 @@ class SearchKeyWorldsState extends State<SearchKeyWorlds> {
     return InkWell(
       onTap: () {
         context.read<SearchState>().loadData(worlds: item);
-       context.navToWidget(to: SearchListIndex(value: item));
+        context.navToWidget(to: SearchListIndex(value: item));
       },
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-        decoration: BoxDecoration(color: Colors.grey.shade200, borderRadius: BorderRadius.circular(30)),
-        child: Text(item),
+      child: Chip(
+        label: Text(item),
       ),
     );
   }

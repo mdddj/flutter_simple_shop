@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         theme: MyAppTheme.defaultTheme,
         darkTheme: MyAppTheme.darkTheme,
         home: const InitBuildWidget(home: App()),
-        builder: FlutterSmartDialog.init(),
+        builder: FlutterSmartDialog.init(loadingBuilder: MyCustomLoadingWidget.new),
       ),
     );
   }

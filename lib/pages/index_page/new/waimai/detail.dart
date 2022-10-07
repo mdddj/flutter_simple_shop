@@ -1,15 +1,14 @@
 // Flutter imports:
 // Package imports:
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/activity_link_result.dart';
-import 'package:dataoke_sdk/params/activity_link_param.dart';
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 
 // Project imports:
 import '../../../../common/utils.dart';
-import '../../../../common/widgets/loading_mixin.dart';
 import '../../../../widgets/simple_appbar.dart';
 
 ///
@@ -26,24 +25,24 @@ class WaimaiDetail extends StatefulWidget {
   WaimaiDetailState createState() => WaimaiDetailState();
 }
 
-class WaimaiDetailState extends State<WaimaiDetail> with LoadingMixin {
+class WaimaiDetailState extends State<WaimaiDetail>  {
   ActivityLinkResult? model;
 
   @override
   void initState() {
     super.initState();
-    Future.microtask(() async {
-      setLoading(true);
+    delayFunction(() async  {
+      SmartDialog.showLoading(msg: '加载中');
       final result = await DdTaokeSdk.instance.getActivityLink(
           ActivityLinkParam(
               promotionSceneId:
-                  widget.type == '1' ? '20150318019998877' : '1585018034441'));
+              widget.type == '1' ? '20150318019998877' : '1585018034441'));
+      SmartDialog.dismiss();
       if (mounted && result != null) {
         setState(() {
           model = result;
         });
       }
-      setLoading(false);
     });
   }
 

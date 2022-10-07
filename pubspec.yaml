@@ -73,6 +73,7 @@ dependencies:
   flex_color_scheme: ^6.0.1
   freezed_annotation: ^2.1.0
   json_annotation: ^4.7.0
+  loading_animation_widget: ^1.2.0+3
   dd_js_util:
     path: ../dd_js_util
   dataoke_sdk:
