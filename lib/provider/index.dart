@@ -9,6 +9,7 @@ export 'index_provider.dart';
 export 'jd_products_provider.dart';
 export 'nine_goods_provider.dart';
 export 'providers.dart';
+export 'riverpod/base.dart';
 export 'riverpod/category_riverpod.dart';
 export 'riverpod/search_riverpod.dart';
 export 'riverpod/user_riverpod.dart';

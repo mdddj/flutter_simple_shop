@@ -1,14 +1,11 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-// Package imports:
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import '../../common/utils.dart';
 import '../../constant/style.dart';
-// Project imports:
 import '../../provider/riverpod/user_riverpod.dart';
 import 'header/appbar.dart';
 import 'header/index.dart';
@@ -33,7 +30,6 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[

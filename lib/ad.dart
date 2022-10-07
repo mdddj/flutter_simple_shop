@@ -4,19 +4,33 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:provider/provider.dart' hide FutureProvider;
 
+import 'api/apis.dart';
 import 'index.dart';
+
 const kLogoSize = 90.0;
+
 ///初始化请求
-final initFuture =
-    FutureProvider.family<dynamic, BuildContext>((ref, context) async {
-  final categoryModel = context.read<CategoryState>();
-  final indexModel = context.read<IndexState>();
-  await categoryModel.init();
-  await categoryModel.getJdCategory();
-  await indexModel.fetch();
+final initFuture = FutureProvider.family<dynamic, BuildContext>((ref, context) async {
+  try {
+    final categoryModel = context.read<CategoryState>();
+    final indexModel = context.read<IndexState>();
+
+    ///加载超级分类数据
+    await categoryModel.init();
+
+    ///加载京东超级分类数据
+    await categoryModel.getJdCategory();
+
+    ///加载双列产品数据
+    await indexModel.fetch();
+
+    ///加载折淘客的APP Key
+    await KZheTaokeApiWithAppkeyGet.doRequest(ref);
+  } on AppException catch (_) {
+    rethrow;
+  }
   return {};
 });
-
 
 ///APP小部件
 class InitBuildWidget extends ConsumerWidget {
@@ -26,14 +40,11 @@ class InitBuildWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(initFuture(context)).when(
-        data: (v) => home,
-        error: (e, s) => const Text('启动失败'),
-        loading: InitLoadingWidget.new);
+    return ref
+        .watch(initFuture(context))
+        .when(data: (v) => home, error: (e, s) => const Text('启动失败'), loading: InitLoadingWidget.new);
   }
 }
-
-
 
 ///初始化启动小部件
 class InitLoadingWidget extends StatelessWidget {
@@ -60,10 +71,7 @@ class InitLoadingWidget extends StatelessWidget {
             left: 0,
             right: 0,
             child: const Center(
-              child: SizedBox(
-                  width: 30,
-                  height: 30,
-                  child: CircularProgressIndicator()),
+              child: SizedBox(width: 30, height: 30, child: CircularProgressIndicator()),
             ),
           )
         ],

@@ -1,5 +1,7 @@
 import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:riverpod/riverpod.dart';
+import '../index.dart';
 import 'base.dart';
 
 
@@ -17,5 +19,19 @@ class FavoritesAddApi extends MyAppCoreApi {
 ///折淘客获取轮播图接口
 class KZheTaokeApiWithCarousel extends MyAppCoreApi {
   KZheTaokeApiWithCarousel():super('/api/zhe/carousel-list');
+}
 
+///获取折淘客的APP key
+class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi{
+  KZheTaokeApiWithAppkeyGet():super('/api/zhe/app-key');
+  static Future<String> doRequest(Ref ref) async {
+    final api = KZheTaokeApiWithAppkeyGet();
+    final r = await api.request(showDefaultLoading: false);
+    if(r.isSuccess.not){
+      throw AppException(code: 10005, message: '获取折淘客APP失败,请重试');
+    }
+    final appKey = r.getString('data');
+    ref.read(riverpodZhetaokeAppKeyState.notifier).state = appKey;
+    return appKey ;
+  }
 }

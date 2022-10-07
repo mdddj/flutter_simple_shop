@@ -1,16 +1,10 @@
-// Dart imports:
 import 'dart:convert';
-
-// Package imports:
-// Flutter imports:
 import 'package:dataoke_sdk/network/util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
-
-// Project imports:
 import '../controller/app_controller.dart';
-import '../modals/user.dart';
+import '../provider/riverpod/model/my_user.dart';
 import 'utils.dart';
 
 abstract class ApiService {
@@ -22,7 +16,7 @@ abstract class ApiService {
   void errorHandle(int? code, String? msg);
 
   /// 获取用户相关信息
-  Future<User?> getUser(String token);
+  Future<MyUser?> getUser(String token);
 }
 
 /// 接口
@@ -51,14 +45,14 @@ class Api extends ApiService {
   }
 
   @override
-  Future<User?> getUser(String token) async {
+  Future<MyUser?> getUser(String token) async {
     final result = await request.get('/api/get-user-by-token',
         data: {'token': token},
         onStart: AppController.find.addAuthDetail,
         isTaokeApi: false);
     if (result.isNotEmpty) {
       try {
-        return User.fromJson(jsonDecode(result));
+        return MyUser.fromJson(jsonDecode(result));
       } catch (e,s) {
         Logger().d("用户数据解析失败:$e\n$s");
       }
