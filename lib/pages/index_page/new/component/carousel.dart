@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -34,19 +36,30 @@ final kRivCarouseApiFuture = FutureProvider<WrapJson>((ref) async {
   }
 });
 
-///折淘客的轮播图接口
+///折淘客的轮播图
 class ZhetaokeCarouselWidget extends ConsumerWidget {
   const ZhetaokeCarouselWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ref.watch(kRivCarouseApiFuture).when(data: (model){
+      final data = model.getValue('data');
+      kLog(jsonDecode(data));
+      final carousels = _getCarouselList(jsonDecode(data));
       return Swiper(itemBuilder: (BuildContext context, int index) {
-        return ExtendedImage.network('');
+        final item = carousels[index];
+        final pic = item['pic'];
+        return ExtendedImage.network(pic,fit: BoxFit.cover,);
       },
-        itemCount: 0,
-      );
+        itemCount: carousels.length,
+        autoplay: carousels.isNotEmpty,
+      ).aspectRatio(2.53);
     }, error: (e,s)=>const Text('error'), loading: ()=>const CupertinoActivityIndicator().center);
+  }
+
+
+  List<dynamic> _getCarouselList(final Map<String,dynamic> map) {
+    return map['content'] as List<dynamic>;
   }
 
 }

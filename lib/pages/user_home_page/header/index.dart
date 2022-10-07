@@ -25,7 +25,6 @@ class HeaderIndex extends ConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref) {
     final user = ref.watch(userRiverpod).user;
-    Logger().d(user);
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),

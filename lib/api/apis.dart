@@ -1,5 +1,5 @@
-import 'package:dataoke_sdk/model/base/favorite_model.dart';
-import 'package:dd_js_util/api/base.dart';
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'base.dart';
 
 

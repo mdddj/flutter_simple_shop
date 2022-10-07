@@ -40,7 +40,6 @@ class UserModel extends StateNotifier<UserDetailModal> {
   @Doc(message: '页面初始化执行函数,从缓存中取出token,然后加载用户信息')
   void initState() async {
     final t = await CacheFactory.create<TokenCache>().userToken;
-    Logger().d('加载缓存token:$t');
     if (t.isNotEmpty) {
       fetchUserDetail(t);
     }
