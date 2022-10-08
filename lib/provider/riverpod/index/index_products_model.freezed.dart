@@ -107,9 +107,7 @@ class __$$_IndexProductsModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_IndexProductsModel
-    with DiagnosticableTreeMixin
-    implements _IndexProductsModel {
+class _$_IndexProductsModel implements _IndexProductsModel {
   _$_IndexProductsModel({required this.products, required this.page});
 
   factory _$_IndexProductsModel.fromJson(Map<String, dynamic> json) =>
@@ -121,17 +119,8 @@ class _$_IndexProductsModel
   int page;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'IndexProductsModel(products: $products, page: $page)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'IndexProductsModel'))
-      ..add(DiagnosticsProperty('products', products))
-      ..add(DiagnosticsProperty('page', page));
   }
 
   @JsonKey(ignore: true)

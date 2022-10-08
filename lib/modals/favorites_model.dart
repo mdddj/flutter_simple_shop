@@ -1,16 +1,13 @@
-// To parse this JSON data, do
-//
-//     final favoritesAllData = favoritesAllDataFromJson(jsonString);
-
-// Dart imports:
 import 'dart:convert';
+
+import 'index.dart';
 
 FavoritesAllData favoritesAllDataFromJson(String str) => FavoritesAllData.fromJson(json.decode(str));
 
 String favoritesAllDataToJson(FavoritesAllData data) => json.encode(data.toJson());
 
 class FavoritesAllData {
-  PageInfo? pageInfo;
+  Pageable? pageInfo;
   List<Good>? goods;
 
   FavoritesAllData({
@@ -19,7 +16,7 @@ class FavoritesAllData {
   });
 
   factory FavoritesAllData.fromJson(Map<String, dynamic> json) => FavoritesAllData(
-    pageInfo: PageInfo.fromJson(json['pageInfo']),
+    pageInfo: Pageable.fromJson(json['pageInfo']),
     goods: List<Good>.from(json['goods'].map(Good.fromJson)),
   );
 
@@ -250,165 +247,5 @@ class Good {
     'serviceScore': serviceScore,
     'teamName': teamName,
     'nineCid': nineCid,
-  };
-}
-
-class PageInfo {
-  int? number;
-  int? size;
-  List<Content>? content;
-  PageInfoSort? sort;
-  int? numberOfElements;
-  bool? first;
-  int? totalPages;
-  int? totalElements;
-  bool? last;
-  Pageable? pageable;
-  bool? empty;
-
-  PageInfo({
-    this.number,
-    this.size,
-    this.content,
-    this.sort,
-    this.numberOfElements,
-    this.first,
-    this.totalPages,
-    this.totalElements,
-    this.last,
-    this.pageable,
-    this.empty,
-  });
-
-  factory PageInfo.fromJson(Map<String, dynamic> json) => PageInfo(
-    number: json['number'],
-    size: json['size'],
-    content: List<Content>.from(json['content'].map(Content.fromJson)),
-    sort: PageInfoSort.fromJson(json['sort']),
-    numberOfElements: json['numberOfElements'],
-    first: json['first'],
-    totalPages: json['totalPages'],
-    totalElements: json['totalElements'],
-    last: json['last'],
-    pageable: Pageable.fromJson(json['pageable']),
-    empty: json['empty'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    'number': number,
-    'size': size,
-    'content': List<dynamic>.from(content!.map((x) => x.toJson())),
-    'sort': sort!.toJson(),
-    'numberOfElements': numberOfElements,
-    'first': first,
-    'totalPages': totalPages,
-    'totalElements': totalElements,
-    'last': last,
-    'pageable': pageable!.toJson(),
-    'empty': empty,
-  };
-}
-
-class Content {
-  int? id;
-  int? goodsId;
-  int? userId;
-  int? createDate;
-
-  Content({
-    this.id,
-    this.goodsId,
-    this.userId,
-    this.createDate,
-  });
-
-  factory Content.fromJson(Map<String, dynamic> json) => Content(
-    id: json['id'],
-    goodsId: json['goodsId'],
-    userId: json['userId'],
-    createDate: json['createDate'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    'id': id,
-    'goodsId': goodsId,
-    'userId': userId,
-    'createDate': createDate,
-  };
-}
-
-class Pageable {
-  PageableSort? sort;
-  int? offset;
-  int? pageNumber;
-  int? pageSize;
-  bool? paged;
-  bool? unpaged;
-
-  Pageable({
-    this.sort,
-    this.offset,
-    this.pageNumber,
-    this.pageSize,
-    this.paged,
-    this.unpaged,
-  });
-
-  factory Pageable.fromJson(Map<String, dynamic> json) => Pageable(
-    sort: PageableSort.fromJson(json['sort']),
-    offset: json['offset'],
-    pageNumber: json['pageNumber'],
-    pageSize: json['pageSize'],
-    paged: json['paged'],
-    unpaged: json['unpaged'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    'sort': sort!.toJson(),
-    'offset': offset,
-    'pageNumber': pageNumber,
-    'pageSize': pageSize,
-    'paged': paged,
-    'unpaged': unpaged,
-  };
-}
-
-class PageableSort {
-  String? ref;
-
-  PageableSort({
-    this.ref,
-  });
-
-  factory PageableSort.fromJson(Map<String, dynamic> json) => PageableSort(
-    ref: json['\u0024ref'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    '\u0024ref': ref,
-  };
-}
-
-class PageInfoSort {
-  bool? unsorted;
-  bool? sorted;
-  bool? empty;
-
-  PageInfoSort({
-    this.unsorted,
-    this.sorted,
-    this.empty,
-  });
-
-  factory PageInfoSort.fromJson(Map<String, dynamic> json) => PageInfoSort(
-    unsorted: json['unsorted'],
-    sorted: json['sorted'],
-    empty: json['empty'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    'unsorted': unsorted,
-    'sorted': sorted,
-    'empty': empty,
   };
 }

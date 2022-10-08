@@ -71,8 +71,6 @@ class DetailIndexState extends State<DetailIndex> {
                           // 标题
                           TitleWidget(
                             title: detail.goodsName,
-                            size: 60,
-                            color: Colors.black,
                           ),
                           const SizedBox(height: 5),
                           // 价钱行

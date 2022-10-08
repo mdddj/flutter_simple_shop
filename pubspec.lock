@@ -7,7 +7,7 @@ packages:
       name: _fe_analyzer_shared
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "49.0.0"
+    version: "47.0.0"
   after_layout:
     dependency: "direct main"
     description:
@@ -21,7 +21,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.1.0"
+    version: "4.7.0"
   animated_text_kit:
     dependency: "direct main"
     description:
@@ -301,7 +301,7 @@ packages:
       path: "../dd_js_util"
       relative: true
     source: path
-    version: "1.0.0"
+    version: "1.0.1"
   decimal:
     dependency: transitive
     description:
@@ -601,7 +601,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.0+1"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -672,6 +672,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  hive_generator:
+    dependency: "direct main"
+    description:
+      name: hive_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.3"
   hooks_riverpod:
     dependency: "direct main"
     description:

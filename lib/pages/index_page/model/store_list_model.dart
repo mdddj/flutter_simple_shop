@@ -1,12 +1,6 @@
-// Dart imports:
 import 'dart:convert' show json;
 
-T? asT<T>(dynamic value) {
-  if (value is T) {
-    return value;
-  }
-  return null;
-}
+import '../../../modals/ff_convert_convert_util.dart';
 
 
 class StoreData {

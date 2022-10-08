@@ -29,7 +29,7 @@ class FavoritesList extends StatelessWidget {
       slivers: [
         LoadingMoreSliverList(SliverListConfig<MyFavoritesModel>(
             itemBuilder: (context, model, index) {
-              return FavoriteGoodsItem(item: model,);
+              return FavoriteGoodsItem(item: model, isShowEditIcon: false,);
             },
             sourceList: FavoritesRepository()))
       ],

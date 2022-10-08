@@ -209,9 +209,7 @@ class __$$_MyFavoritesModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MyFavoritesModel
-    with DiagnosticableTreeMixin
-    implements _MyFavoritesModel {
+class _$_MyFavoritesModel implements _MyFavoritesModel {
   _$_MyFavoritesModel(
       {required this.amount,
       required this.arrivalPrice,
@@ -246,24 +244,8 @@ class _$_MyFavoritesModel
   String type;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'MyFavoritesModel(amount: $amount, arrivalPrice: $arrivalPrice, createTime: $createTime, endTime: $endTime, id: $id, imageUrl: $imageUrl, productId: $productId, title: $title, type: $type)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MyFavoritesModel'))
-      ..add(DiagnosticsProperty('amount', amount))
-      ..add(DiagnosticsProperty('arrivalPrice', arrivalPrice))
-      ..add(DiagnosticsProperty('createTime', createTime))
-      ..add(DiagnosticsProperty('endTime', endTime))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('imageUrl', imageUrl))
-      ..add(DiagnosticsProperty('productId', productId))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('type', type));
   }
 
   @JsonKey(ignore: true)

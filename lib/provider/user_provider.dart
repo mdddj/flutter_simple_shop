@@ -4,8 +4,6 @@ import '../modals/favorites_model.dart';
 
 class UserProvider extends ChangeNotifier {
 
-  //------------- 用户收藏商品信息
-  PageInfo? pageInfo; // 用户收藏商品信息
   List<Good>? goods = []; // 商品列表
   int page = 1; // 第几页
   bool isEditFavoriteIng = false; //是否在编辑收藏商品
@@ -70,7 +68,6 @@ class UserProvider extends ChangeNotifier {
 
   // 重置收藏属性值
   void resetFavoriteData() {
-    pageInfo = null;
     goods = [];
     page = 1;
     editFavoriteIds = [];

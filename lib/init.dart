@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:get_it/get_it.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'index.dart';
 
 
@@ -27,6 +28,13 @@ void initInstance(){
   GetIt.instance.registerSingleton<UserApi>(UserApi());
 }
 
+
+Future<void> initCaches() async  {
+  Hive.registerAdapter(AppLocalSettingModelAdapter());
+  await Hive.initFlutter();
+  await Hive.openBox<AppLocalSettingModel>(appSettingHiveKey);
+
+}
 
 class MyHttpOverrides extends HttpOverrides {
   @override

@@ -62,7 +62,7 @@ class JdNativeProduct {
           ? CommissionInfo.fromJson(
               asT<Map<String, dynamic>>(jsonRes['commissionInfo'])!)
           : null,
-      couponInfo: CouponInfo.fromJson(
+      couponInfo: JdCouponInfo.fromJson(
           asT<Map<String, dynamic>>(jsonRes['couponInfo'])!),
       goodCommentsShare: asT<double>(jsonRes['goodCommentsShare'])!,
       imageInfo:
@@ -72,7 +72,7 @@ class JdNativeProduct {
       priceInfo:
           PriceInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['priceInfo'])!),
       shopInfo:
-          ShopInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['shopInfo'])!),
+          JdShopInfo.fromJson(asT<Map<String, dynamic>>(jsonRes['shopInfo'])!),
       skuId: asT<int>(jsonRes['skuId'])!,
       skuName: asT<String>(jsonRes['skuName'])!,
       isHot: asT<int>(jsonRes['isHot'])!,
@@ -104,13 +104,13 @@ class JdNativeProduct {
   CategoryInfo categoryInfo;
   int comments;
   CommissionInfo? commissionInfo;
-  CouponInfo couponInfo;
+  JdCouponInfo couponInfo;
   double goodCommentsShare;
   ImageInfo imageInfo;
   int inOrderCount30Days;
   String materialUrl;
   PriceInfo priceInfo;
-  ShopInfo shopInfo;
+  JdShopInfo shopInfo;
   int skuId;
   String skuName;
   int isHot;
@@ -271,12 +271,12 @@ class CommissionInfo {
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
 }
 
-class CouponInfo {
-  CouponInfo({
+class JdCouponInfo {
+  JdCouponInfo({
     required this.couponList,
   });
 
-  factory CouponInfo.fromJson(Map<String, dynamic> jsonRes) {
+  factory JdCouponInfo.fromJson(Map<String, dynamic> jsonRes) {
     final List<CouponList>? couponList =
         jsonRes['couponList'] is List ? <CouponList>[] : null;
     if (couponList != null) {
@@ -286,7 +286,7 @@ class CouponInfo {
         }
       }
     }
-    return CouponInfo(
+    return JdCouponInfo(
       couponList: couponList!,
     );
   }
@@ -302,7 +302,7 @@ class CouponInfo {
         'couponList': couponList,
       };
 
-  CouponInfo clone() => CouponInfo.fromJson(
+  JdCouponInfo clone() => JdCouponInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
 }
 
@@ -477,8 +477,8 @@ class PriceInfo {
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
 }
 
-class ShopInfo {
-  ShopInfo({
+class JdShopInfo {
+  JdShopInfo({
     required this.shopName,
     required this.shopId,
     required this.shopLevel,
@@ -492,7 +492,7 @@ class ShopInfo {
     required this.scoreRankRate,
   });
 
-  factory ShopInfo.fromJson(Map<String, dynamic> jsonRes) => ShopInfo(
+  factory JdShopInfo.fromJson(Map<String, dynamic> jsonRes) => JdShopInfo(
         shopName: asT<String>(jsonRes['shopName'])!,
         shopId: asT<int>(jsonRes['shopId'])!,
         shopLevel: asT<double>(jsonRes['shopLevel'])!,
@@ -540,7 +540,7 @@ class ShopInfo {
         'scoreRankRate': scoreRankRate,
       };
 
-  ShopInfo clone() => ShopInfo.fromJson(
+  JdShopInfo clone() => JdShopInfo.fromJson(
       asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
 }
 

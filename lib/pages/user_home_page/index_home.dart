@@ -7,6 +7,7 @@ import 'package:loading_more_list/loading_more_list.dart';
 import '../../common/utils.dart';
 import '../../constant/style.dart';
 import '../../provider/riverpod/user_riverpod.dart';
+import '../setting/theme_setting.dart';
 import 'header/appbar.dart';
 import 'header/index.dart';
 import 'order/index.dart';
@@ -74,6 +75,8 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
             svgIcon: 'assets/svg/user/dz.svg', color: Colors.deepOrangeAccent),
         _renderMenuItem('我的收藏',
             svgIcon: 'assets/svg/user/sc.svg', color: Colors.blueAccent),
+        _renderMenuItem('切换主题',
+            svgIcon: 'assets/svg/user/zhuti.svg', color: Colors.pink,onTap: ()=>context.navToWidget(to:const ThemeSettingPage() )),
         _renderMenuItem('意见反馈',
             svgIcon: 'assets/svg/user/yj.svg', color: Colors.orangeAccent),
         _renderMenuItem('设置',

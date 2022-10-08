@@ -7,8 +7,19 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
   int vPageSize = 20;
   int vPage = 0;
   bool nomore = false;
+
+  @override
+  Future<bool> refresh([bool notifyStateChanged = false]) {
+    vPage = 0;
+    nomore = true;
+    return super.refresh(notifyStateChanged);
+  }
+
   @override
   Future<bool> loadData([bool isloadMoreAction = false]) async  {
+    if(vPage == 0){
+      clear();
+    }
     final pageParams = {
       'page': vPage,
       'pageSize': vPageSize

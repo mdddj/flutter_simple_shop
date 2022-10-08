@@ -7,37 +7,32 @@ import '../../index.dart';
 // 收藏商品列表卡片布局
 class FavoriteGoodsItem extends StatelessWidget {
   final MyFavoritesModel item;
-  final bool? isShowEditIcon; //是否显示选中按钮
+  final bool isShowEditIcon; //是否显示选中按钮
   final List<String>? selectListIds;
   final UserProvider? userProvider;
 
-  const FavoriteGoodsItem({required this.item, this.isShowEditIcon, this.selectListIds, this.userProvider, Key? key})
+  const FavoriteGoodsItem({required this.item, required this.isShowEditIcon, this.selectListIds, this.userProvider, Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(children: <Widget>[
-      Container(
-        padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
-        margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
-        height: 250,
-        decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(15))),
-        child: Row(
-          children: <Widget>[
-            ExtendedImageWidget(
-              src: MImageUtils.magesProcessor(item.imageUrl),
-              height: 460,
-              width: 460,
-            ),
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  NavigatorUtil.gotoGoodsDetailPage(context, item.productId);
-                },
-                child: Container(
-                  margin: const EdgeInsets.only(left: 10),
-                  width: double.infinity,
-                  height: double.infinity,
+      Card(
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: <Widget>[
+              ExtendedImageWidget(
+                src: MImageUtils.magesProcessor(item.imageUrl),
+                height: 90,
+                width: 90,
+              ),
+              const SizedBox(
+                width: 12,
+              ),
+              Expanded(
+                child: GestureDetector(
+                  onTap: () => NavigatorUtil.gotoGoodsDetailPage(context, item.productId),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -45,7 +40,7 @@ class FavoriteGoodsItem extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         child: Column(
                           children: <Widget>[
-                            TitleWidget(title: item.title, color: Colors.black, padding: EdgeInsets.zero),
+                            TitleWidget(title: item.title),
                             const SizedBox(height: 5.0),
                             CouponPriceWidget(
                               actualPrice: item.arrivalPrice,
@@ -61,9 +56,9 @@ class FavoriteGoodsItem extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
       isShowEditIcon!

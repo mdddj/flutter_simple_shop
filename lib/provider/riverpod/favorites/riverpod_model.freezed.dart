@@ -108,9 +108,7 @@ class __$$_FavoritesStateModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FavoritesStateModel
-    with DiagnosticableTreeMixin
-    implements _FavoritesStateModel {
+class _$_FavoritesStateModel implements _FavoritesStateModel {
   _$_FavoritesStateModel({required this.favorites, required this.page});
 
   factory _$_FavoritesStateModel.fromJson(Map<String, dynamic> json) =>
@@ -122,17 +120,8 @@ class _$_FavoritesStateModel
   int page;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'FavoritesStateModel(favorites: $favorites, page: $page)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'FavoritesStateModel'))
-      ..add(DiagnosticsProperty('favorites', favorites))
-      ..add(DiagnosticsProperty('page', page));
   }
 
   @JsonKey(ignore: true)
