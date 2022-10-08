@@ -1,25 +1,18 @@
-// Flutter imports:
-// Package imports:
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 
-import '../../modals/favorites_model.dart';
-// Project imports:
-import '../../provider/user_provider.dart';
-import '../../util/image_util.dart';
-import '../../util/navigator_util.dart';
-import '../../widgets/coupon_price.dart';
-import '../../widgets/extended_image.dart';
-import '../../widgets/title_widget.dart';
+import '../../index.dart';
 
 // 收藏商品列表卡片布局
 class FavoriteGoodsItem extends StatelessWidget {
-  final Good good;
+  final MyFavoritesModel item;
   final bool? isShowEditIcon; //是否显示选中按钮
   final List<String>? selectListIds;
   final UserProvider? userProvider;
-  const FavoriteGoodsItem({required this.good, this.isShowEditIcon,this.selectListIds,this.userProvider,Key? key}):super(key: key);
+
+  const FavoriteGoodsItem({required this.item, this.isShowEditIcon, this.selectListIds, this.userProvider, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,21 +21,18 @@ class FavoriteGoodsItem extends StatelessWidget {
         padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
         margin: const EdgeInsets.only(left: 10, right: 10, top: 10),
         height: 250,
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(15))),
+        decoration: const BoxDecoration(color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(15))),
         child: Row(
           children: <Widget>[
             ExtendedImageWidget(
-              src: MImageUtils.magesProcessor(good.mainPic!),
+              src: MImageUtils.magesProcessor(item.imageUrl),
               height: 460,
               width: 460,
             ),
             Expanded(
               child: InkWell(
                 onTap: () {
-                  NavigatorUtil.gotoGoodsDetailPage(
-                      context, good.id.toString());
+                  NavigatorUtil.gotoGoodsDetailPage(context, item.productId);
                 },
                 child: Container(
                   margin: const EdgeInsets.only(left: 10),
@@ -55,14 +45,11 @@ class FavoriteGoodsItem extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         child: Column(
                           children: <Widget>[
-                            TitleWidget(
-                                title: good.dtitle,
-                                color: Colors.black,
-                                padding: EdgeInsets.zero),
+                            TitleWidget(title: item.title, color: Colors.black, padding: EdgeInsets.zero),
                             const SizedBox(height: 5.0),
                             CouponPriceWidget(
-                              actualPrice: good.actualPrice,
-                              originalPrice: good.originalPrice,
+                              actualPrice: item.arrivalPrice,
+                              originalPrice: double.tryParse(item.amount),
                             )
                           ],
                         ),
@@ -79,35 +66,37 @@ class FavoriteGoodsItem extends StatelessWidget {
           ],
         ),
       ),
-      isShowEditIcon! ? Positioned(
-        right: 10,
-        top: 10,
-        child: Container(
-          width: 100,
-          height: 250,
-          decoration: const BoxDecoration(
+      isShowEditIcon!
+          ? Positioned(
+              right: 10,
+              top: 10,
+              child: Container(
+                width: 100,
+                height: 250,
+                decoration: const BoxDecoration(
 //              color: Colors.grey,
-              borderRadius: BorderRadius.all(Radius.circular(15))),
-          child: Checkbox(
-            value: isSelectValue(),
-            onChanged: (value){
-              if(value!){
-                userProvider!.addRemoveFavoriteGoodsId(good.id.toString());
-              }else{
-                userProvider!.removeFavoriteGoodsId(good.id.toString());
-              }
-            },
-          ),
-        ),
-      ):Container()
+                    borderRadius: BorderRadius.all(Radius.circular(15))),
+                child: Checkbox(
+                  value: isSelectValue(),
+                  onChanged: (value) {
+                    if (value!) {
+                      userProvider!.addRemoveFavoriteGoodsId(item.productId);
+                    } else {
+                      userProvider!.removeFavoriteGoodsId(item.productId);
+                    }
+                  },
+                ),
+              ),
+            )
+          : Container()
     ]);
   }
 
   //计算是否在将在删除列表中
-  bool isSelectValue(){
+  bool isSelectValue() {
     // 如果不存在则返回-1
-    var index = selectListIds!.indexOf(good.id.toString());
-    if(index==-1){
+    var index = selectListIds!.indexOf(item.productId);
+    if (index == -1) {
       return false;
     }
     return true;
@@ -116,26 +105,28 @@ class FavoriteGoodsItem extends StatelessWidget {
   // 建立有效期组件
   Widget _calcDateHowLong() {
     var now = DateTime.now();
-    var endTime = good.couponEndTime!;
-
-    var difference = endTime.difference(now);
-    Widget returnWidget = FSuper(
-      lightOrientation: FLightOrientation.LeftBottom,
-      text: '剩余有效期${difference.inDays}天${difference.inHours % 24}小时',
-      padding: const EdgeInsets.all(2),
-      strokeColor: const Color(0xffFF7043),
-      strokeWidth: 1,
-    );
-    if (difference.inDays < 0) {
-      returnWidget = const FSuper(
+    var endTime = DateTime.tryParse(item.endTime);
+    if (endTime != null) {
+      var difference = endTime.difference(now);
+      Widget returnWidget = FSuper(
         lightOrientation: FLightOrientation.LeftBottom,
-        text: '已失效',
-        padding: EdgeInsets.all(2),
-        strokeColor: Color(0xffc2bfc2),
+        text: '剩余有效期${difference.inDays}天${difference.inHours % 24}小时',
+        padding: const EdgeInsets.all(2),
+        strokeColor: const Color(0xffFF7043),
         strokeWidth: 1,
       );
+      if (difference.inDays < 0) {
+        returnWidget = const FSuper(
+          lightOrientation: FLightOrientation.LeftBottom,
+          text: '已失效',
+          padding: EdgeInsets.all(2),
+          strokeColor: Color(0xffc2bfc2),
+          strokeWidth: 1,
+        );
+      }
+      return returnWidget;
     }
 
-    return returnWidget;
+    return const SizedBox();
   }
 }

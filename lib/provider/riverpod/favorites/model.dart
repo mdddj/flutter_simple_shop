@@ -17,6 +17,6 @@ class MyFavoritesModel with _$MyFavoritesModel {
     required String title,
     required String type
 }) = _MyFavoritesModel;
-  factory MyFavoritesModel.fromJson(Map<String,Object?> json) => _$MyFavoritesModelFromJson(json);
+  factory MyFavoritesModel.fromJson(dynamic json) => _$MyFavoritesModelFromJson(json);
 
 }

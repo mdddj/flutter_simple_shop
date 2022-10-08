@@ -4,6 +4,7 @@ export 'best_seller_list.dart';
 export 'category_page/index_home.dart';
 export 'category_page/left_widget.dart';
 export 'category_page/right_widget.dart';
+export 'favorite_page/actions.dart';
 export 'favorite_page/goods_item.dart';
 export 'favorite_page/index_home.dart';
 export 'index_page/component/category_component.dart';

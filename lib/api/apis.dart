@@ -41,7 +41,7 @@ class FavoritesAddApi extends MyAppCoreApi {
 
 @Doc(message: '查询收藏列表api')
 class FavoritesFindListApi extends MyAppCoreApi with ApiPageMixin {
-  FavoritesFindListApi():super('$favoritesPrefix/list');
+  FavoritesFindListApi():super('$favoritesPrefix/list',showDetailLog: true);
   static Future<WrapJson> doRequest(int page) async {
     final api = FavoritesFindListApi()..page = page..pageSize=20;
     return await api.request(showDefaultLoading: false);
