@@ -13,7 +13,6 @@ class CategoryDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
         height: kToolbarHeight,
-        color: Colors.white,
         alignment: Alignment.center,
         child: CategoryComponent(
           onSelect: onSelect,

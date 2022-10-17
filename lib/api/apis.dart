@@ -59,9 +59,6 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi{
   static Future<String> doRequest(Ref ref) async {
     final api = KZheTaokeApiWithAppkeyGet();
     final r = await api.request(showDefaultLoading: false);
-    if(r.isSuccess.not){
-      throw AppException(code: 10005, message: '获取折淘客APP失败,请重试');
-    }
     final appKey = r.getString('data');
     ref.read(riverpodZhetaokeAppKeyState.notifier).state = appKey;
     return appKey ;

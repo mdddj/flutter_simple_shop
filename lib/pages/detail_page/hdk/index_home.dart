@@ -891,8 +891,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
 
   @Doc(message: '初始化页面数据')
   Future<String> initDatas() async {
-    try {
-      final result = await DdTaokeSdk.instance.getDetailBaseData(
+    final result = await DdTaokeSdk.instance.getDetailBaseData(
         productId: widget.goodsId,
       );
       if (result != null) {
@@ -903,11 +902,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           });
         }
       } else {
-        throw Exception('商品优惠已过期');
+        throw AppException.appError(code: 90002,msg: '商品优惠已过期');
       }
-    } catch (e, s) {
-      debugPrintStack(stackTrace: s);
-    }
     return 'success';
   }
 

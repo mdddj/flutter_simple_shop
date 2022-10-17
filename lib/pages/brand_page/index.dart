@@ -61,7 +61,6 @@ class BrandListPageState extends State<BrandListPage> with LoadingMixin {
     return Scaffold(
       appBar: AppBar(
         title: const Text('品牌特卖'),
-        elevation: 0,
       ),
       body: EasyRefresh.custom(
         controller: _easyRefreshController,

@@ -10,7 +10,8 @@ import 'index.dart';
 const kLogoSize = 90.0;
 
 ///初始化请求
-final initFuture = FutureProvider.family<dynamic, BuildContext>((ref, context) async {
+final initFuture =
+    FutureProvider.family<dynamic, BuildContext>((ref, context) async {
   try {
     final categoryModel = context.read<CategoryState>();
     final indexModel = context.read<IndexState>();
@@ -40,9 +41,18 @@ class InitBuildWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref
-        .watch(initFuture(context))
-        .when(data: (v) => home, error: (e, s) => const Text('启动失败'), loading: InitLoadingWidget.new);
+    return ref.watch(initFuture(context)).when(
+        data: (v) => home,
+        error: (e, s) => buildInitError(context, e),
+        loading: InitLoadingWidget.new);
+  }
+
+  Widget buildInitError(BuildContext context, e) {
+    return Container(
+      color: context.appbarBackgroundColor,
+      alignment: Alignment.center,
+      child: Text("启动失败:$e"),
+    );
   }
 }
 
@@ -71,7 +81,8 @@ class InitLoadingWidget extends StatelessWidget {
             left: 0,
             right: 0,
             child: const Center(
-              child: SizedBox(width: 30, height: 30, child: CircularProgressIndicator()),
+              child: SizedBox(
+                  width: 30, height: 30, child: CircularProgressIndicator()),
             ),
           )
         ],

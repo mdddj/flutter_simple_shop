@@ -22,39 +22,33 @@ class StoreGoodsItemLayout extends StatelessWidget {
       onTap: () {
         NavigatorUtil.gotoGoodsDetailPage(context, storeGoods.id.toString());
       },
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.grey[100]!.withOpacity(.8),
-          borderRadius: const BorderRadius.all(Radius.circular(5)),
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Stack(
             children: [
-              Stack(
-                children: [
-                  LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-                    return ExtendedImage.network(
-                      MImageUtils.magesProcessor(storeGoods.mainPic!),
-                      borderRadius: BorderRadius.circular(5),
-                      shape: BoxShape.rectangle,
-                      width: constraints.maxWidth,
-                      height: constraints.maxWidth,
-                    );
-                  },),
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: _buildDiscountLayout(),
-                  )
-                ],
-              ),
-              PriceLayout(
-                  original: '${storeGoods.actualPrice}'.replaceAll('.0', ''),
-                  discounts: '${storeGoods.originalPrice}'.replaceAll('.0', ''))
+              LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+                return ExtendedImage.network(
+                  MImageUtils.magesProcessor(storeGoods.mainPic!),
+                  borderRadius: BorderRadius.circular(5),
+                  shape: BoxShape.rectangle,
+                  width: constraints.maxWidth,
+                  height: constraints.maxWidth,
+                );
+              },),
+              ///折扣标识
+              // Positioned(
+              //   bottom: 0,
+              //   right: 0,
+              //   child: _buildDiscountLayout(),
+              // )
             ],
           ),
-        ),
+          const SizedBox(height: 6,),
+          PriceLayout(
+              original: '${storeGoods.actualPrice}'.replaceAll('.0', ''),
+              discounts: '${storeGoods.originalPrice}'.replaceAll('.0', ''))
+        ],
       ),
     );
   }

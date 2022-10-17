@@ -20,7 +20,7 @@ class FavoritesActionWidget extends ConsumerWidget {
                 onChanged: (v) {
                 },
               ),
-              Text('全选')
+              const Text('全选')
             ],
           ),
           const SizedBox(

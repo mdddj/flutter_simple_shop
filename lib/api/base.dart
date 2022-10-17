@@ -60,7 +60,11 @@ abstract class MyAppCoreApi extends BaseApi {
           responseType: responseType,
           nullParams: nullParams,
           requestEncoder: requestEncoder,isFullUrl: isFullUrl);
-      return WrapJson(r);
+      final json = WrapJson(r);
+      if(json.isSuccess.not){
+        throw AppException.appError(code: 90001,msg: json.message);
+      }
+      return json;
     }on AppException catch(e){
       kLogErr(e);
       return WrapJson.fromMyServerError(e);

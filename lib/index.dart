@@ -1,4 +1,4 @@
-library app;
+library index;
 export 'ad.dart';
 export 'app.dart';
 export 'common/index.dart';

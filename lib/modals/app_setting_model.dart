@@ -37,4 +37,9 @@ class AppLocalSettingModel extends HiveObject {
   }
 
 
+  @override
+  String toString() {
+    return 'themeIndex  is $themeIndex , themeModel is $themeModel';
+  }
+
 }

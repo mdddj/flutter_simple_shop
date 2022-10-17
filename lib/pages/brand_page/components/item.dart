@@ -1,6 +1,7 @@
 import 'package:dataoke_sdk/model/brand_list_model.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
+import 'package:loading_more_list/loading_more_list.dart';
 import '../../../util/image_util.dart';
 import '../../../util/number_cover.dart';
 import '../../index_page/store/goods_item_layout.dart';
@@ -14,15 +15,12 @@ class BrandItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(15)),
-      ),
-      child: Column(
-        children: [_buildHeader(context), _buildGoodsGrid()],
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        child: Column(
+          children: [_buildHeader(context), _buildGoodsGrid()],
+        ),
       ),
     );
   }
@@ -85,9 +83,9 @@ class BrandItemCard extends StatelessWidget {
 
   /// 产品列表
   Widget _buildGoodsGrid() {
-    return GridView.count(
+    return WaterfallFlow.count(
+      padding: EdgeInsets.zero,
       crossAxisCount: 3,
-      childAspectRatio: .8,
       shrinkWrap: true,
       crossAxisSpacing: 12,
       physics: const NeverScrollableScrollPhysics(),

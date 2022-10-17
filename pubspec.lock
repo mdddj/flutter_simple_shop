@@ -301,7 +301,7 @@ packages:
       path: "../dd_js_util"
       relative: true
     source: path
-    version: "1.0.1"
+    version: "1.0.2"
   decimal:
     dependency: transitive
     description:
@@ -371,7 +371,7 @@ packages:
       name: extended_tabs
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.3"
+    version: "4.0.1"
   extended_text:
     dependency: "direct main"
     description:
@@ -1147,7 +1147,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.3"
+    version: "6.0.4"
   pub_semver:
     dependency: transitive
     description:
@@ -1341,7 +1341,7 @@ packages:
       name: sync_scroll_library
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.3"
+    version: "1.0.1"
   synchronized:
     dependency: transitive
     description:

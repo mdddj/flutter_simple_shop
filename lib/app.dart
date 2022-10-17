@@ -8,14 +8,7 @@ const kNavIconSize = 23.0;
 final _homeModuleShowIndex = StateProvider((ref) => 0);
 
 ///APP主要页面
-const _pages = <Widget>[
-  IndexHomeNew(),
-  JiujiuIndexHome(),
-  CategoryIndexPage(),
-  FavoriteIndexHome(),
-  UserIndexHome()
-];
-
+const _pages = <Widget>[IndexHomeNew(), JiujiuIndexHome(), CategoryIndexPage(), FavoriteIndexHome(), UserIndexHome()];
 
 ///APP主体框架
 class App extends ConsumerWidget {
@@ -47,25 +40,15 @@ class AppBottomNav extends ConsumerWidget {
           ref.read(_homeModuleShowIndex.notifier).state = index;
         }),
         items: [
-          BottomNavigationBarItem(
-              label: '首页',
-              icon: _buildIcon(currentIndex, 0, 'home',context)),
-          BottomNavigationBarItem(
-              label: '9.9包邮',
-              icon: _buildIcon(currentIndex, 1, 'jiujiu',context)),
-          BottomNavigationBarItem(
-              label: '分类',
-              icon: _buildIcon(currentIndex, 2, 'fenlei',context)),
-          BottomNavigationBarItem(
-              label: '收藏',
-              icon: _buildIcon(currentIndex, 3, 'shoucang',context)),
-          BottomNavigationBarItem(
-              label: '我的',
-              icon: _buildIcon(currentIndex, 4 , 'my',context)),
+          BottomNavigationBarItem(label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
+          BottomNavigationBarItem(label: '9.9包邮', icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
+          BottomNavigationBarItem(label: '分类', icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
+          BottomNavigationBarItem(label: '收藏', icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
+          BottomNavigationBarItem(label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
         ]);
   }
 
-  Widget _buildIcon(int currentIndex, int index, String filename,BuildContext context) {
+  Widget _buildIcon(int currentIndex, int index, String filename, BuildContext context) {
     return IfWidget(
         expression: () => currentIndex == index,
         trueBuild: () => ExtendedImage.asset(
@@ -73,6 +56,7 @@ class AppBottomNav extends ConsumerWidget {
               height: kNavIconSize,
               width: kNavIconSize,
               enableMemoryCache: true,
+              color: context.primaryColor,
             ),
         elseBuild: () => ExtendedImage.asset(
               'assets/nav/$filename-n.png',

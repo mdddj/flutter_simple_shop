@@ -18,7 +18,7 @@ void initNetUtil() {
   }
 }
 
-void initInstance(){
+void initInstanceObject(){
   GetIt.instance.registerSingleton<Utils>(Utils());
   GetIt.instance.registerSingleton<WidgetUtils>(WidgetUtils());
   GetIt.instance.registerSingleton<NavigatorUtil>(NavigatorUtil());
