@@ -299,4 +299,3 @@ export './repository/index.dart';
 export './repository/order_respository.dart';
 export './repository/goods_list_repository.dart';
 export './theme.dart';
-export './generated_plugin_registrant.dart';

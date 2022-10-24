@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import '../../index.dart';
+import '../../widgets/login_tip_widget.dart';
 
 ///用户收藏页面
 class FavoriteIndexHome extends ConsumerWidget {
@@ -15,7 +16,7 @@ class FavoriteIndexHome extends ConsumerWidget {
           title: const Text('收藏'),
           centerTitle: true,
         ),
-        body: IfWidget(expression: () => ref.isLogin, trueBuild: FavoritesList.new));
+        body: IfWidget(expression: () => ref.isLogin, trueBuild: FavoritesList.new,elseBuild: LoginTipWidget.new,));
   }
 }
 
