@@ -1,10 +1,11 @@
+import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' hide NestedScrollView;
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:waterfall_flow/waterfall_flow.dart';
+import 'package:loading_more_list/loading_more_list.dart';
+import '../../../common/components/new_products/respose.dart';
 import '../../../index.dart';
 
 /// 新版首页
@@ -15,7 +16,7 @@ class IndexHomeNew extends StatefulWidget {
   IndexHomeNewState createState() => IndexHomeNewState();
 }
 
-class IndexHomeNewState extends State<IndexHomeNew> with  SingleTickerProviderStateMixin {
+class IndexHomeNewState extends State<IndexHomeNew> with SingleTickerProviderStateMixin {
   late TabController tabController = TabController(length: context.categoryLength + 1, vsync: this);
 
   @override
@@ -35,7 +36,6 @@ class IndexHomeNewState extends State<IndexHomeNew> with  SingleTickerProviderSt
     );
   }
 
-
   @override
   void dispose() {
     super.dispose();
@@ -49,7 +49,7 @@ class HomeWidgets extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return EasyRefresh.custom(
+    return LoadingMoreCustomScrollView(
       slivers: [
         SliverList(
             delegate: SliverChildBuilderDelegate((context, index) {
@@ -66,21 +66,23 @@ class HomeWidgets extends ConsumerWidget {
               return const SizedBox();
           }
         }, childCount: 4)),
-        const IndexProducts()
+        buildList()
       ],
-      onLoad: () async => await fetchProducts(ref),
-      onRefresh: () async => await refresh(ref),
-      firstRefresh: true,
-      header: MaterialHeader(),
     );
   }
 
-  Future<void> fetchProducts(WidgetRef ref) async {
-    ref.read(riverpodIndexProducts.notifier).loadData();
-  }
-
-  Future<void> refresh(WidgetRef ref) async {
-    ref.read(riverpodIndexProducts.notifier).loadData(true);
+  ///不能封装成单独的一个widget,会不能加载
+  Widget buildList() {
+    return  LoadingMoreSliverList(SliverListConfig<Product>(
+        itemBuilder: (c, ite, index) {
+          return WaterfallGoodsCard(ite);
+        },
+        sourceList: NewProductsLoadMore(),
+        extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),padding: const EdgeInsets.all(12)),);
   }
 }
 

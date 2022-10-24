@@ -8,7 +8,7 @@ import 'index.dart';
 const kDebugMode = false;
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.100.26';
+const apiHost = 'http://192.168.199.75';
 const apiPort = '80';
 
 void main() async {
@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: providers,
       child: ThemeBuildWidget(themeBuild: (appThemeSetting){
-        kLog('主题配置:$appThemeSetting');
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: '典典小卖部',
