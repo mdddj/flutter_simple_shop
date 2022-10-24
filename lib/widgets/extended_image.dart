@@ -29,10 +29,7 @@ class ExtendedImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.zero,
-        margin: EdgeInsets.zero,
-        child: buildExtendedImage(w: width, h: height));
+    return buildExtendedImage(w: width, h: height);
   }
 
   Widget buildExtendedImage({double? w, double? h}) {

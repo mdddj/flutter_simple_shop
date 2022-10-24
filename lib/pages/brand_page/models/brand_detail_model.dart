@@ -1,12 +1,9 @@
 // Dart imports:
 import 'dart:convert' show json;
 
-T? asT<T>(dynamic value) {
-  if (value is T) {
-    return value;
-  }
-  return null;
-}
+import 'package:dataoke_sdk/model/ff_convert_convert_util.dart';
+
+
 
 class BrandDetailModel {
   BrandDetailModel({

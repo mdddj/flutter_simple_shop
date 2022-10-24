@@ -21,19 +21,31 @@ class FavoriteIndexHome extends ConsumerWidget {
 }
 
 ///收藏列表
-class FavoritesList extends StatelessWidget {
+class FavoritesList extends StatefulWidget {
   const FavoritesList({Key? key}) : super(key: key);
 
+  @override
+  State<FavoritesList> createState() => _FavoritesListState();
+}
+
+class _FavoritesListState extends State<FavoritesList> {
+  final sourceList = FavoritesRepository();
   @override
   Widget build(BuildContext context) {
     return LoadingMoreCustomScrollView(
       slivers: [
         LoadingMoreSliverList(SliverListConfig<MyFavoritesModel>(
             itemBuilder: (context, model, index) {
-              return FavoriteGoodsItem(item: model, isShowEditIcon: false,);
+              return FavoriteGoodsItem(item: model, isShowEditIcon: false);
             },
-            sourceList: FavoritesRepository()))
+            sourceList: sourceList))
       ],
     );
+  }
+
+  @override
+  void dispose() {
+    sourceList.dispose();
+    super.dispose();
   }
 }

@@ -18,9 +18,9 @@ class UserLoginPage extends ConsumerStatefulWidget {
 
 class UserLoginPageState extends ConsumerState<UserLoginPage> {
   bool isAgree = false; // 是否同意协议
-  String username = ''; // 用户名
-  String password = ''; // 密码
   bool loading = false; // 是否登录中
+  final usernameEditController = TextEditingController(text: 'admin');
+  final passwordEditController = TextEditingController(text: '123456');
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +57,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                     hintText: '请输入登录账号',
                     labelText: '账号',
                   ),
-                  onChanged: (val) {
-                    setState(() {
-                      username = val;
-                    });
-                  },
+                  controller: usernameEditController,
                 ),
 
                 utils.widgetUtils.marginTop(height: 20),
@@ -71,11 +67,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                     hintText: '请输入登录密码',
                     labelText: '密码',
                   ),
-                  onChanged: (val) {
-                    setState(() {
-                      password = val;
-                    });
-                  },
+                  controller: passwordEditController,
                 ),
 
                 const SizedBox(
@@ -195,6 +187,8 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
     context.hideKeyBoard();
     final nav = Navigator.of(context);
 
+    final username = usernameEditController.text;
+    final password = passwordEditController.text;
     if (username.isEmpty || password.isEmpty) {
       utils.showMessage('请输入用户名或者密码');
       return;

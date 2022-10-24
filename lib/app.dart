@@ -3,6 +3,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'index.dart';
+import 'widgets/lazy_indexed_stack.dart';
 
 const kNavIconSize = 23.0;
 final _homeModuleShowIndex = StateProvider((ref) => 0);
@@ -17,7 +18,7 @@ class App extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: IndexedStack(
+      body: LazyIndexedStack(
         index: ref.watch(_homeModuleShowIndex),
         children: _pages,
       ),

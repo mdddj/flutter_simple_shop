@@ -1,8 +1,8 @@
 // Dart imports:
 import 'dart:convert';
 
-// Project imports:
-import 'ff_convert_convert_util.dart';
+import 'package:dataoke_sdk/model/ff_convert_convert_util.dart';
+
 
 class PddSearchItemModel {
   PddSearchItemModel({

@@ -4,15 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import '../../../widgets/waterfall_goods_card.dart';
+import '../../utils.dart';
+
 
 class NewProductsLoadMore extends LoadingMoreBase<Product> {
   int page = 1;
   bool more = true;
 
+
+  @override
+  Future<bool> refresh([bool notifyStateChanged = false]) {
+    page = 1;
+    more = true;
+    return super.refresh(notifyStateChanged);
+  }
+
   @override
   Future<bool> loadData([bool isloadMoreAction = false]) async {
     kLog('加载新品');
-    final r = await DdTaokeSdk.instance.getProducts(param: ProductListParam(pageId: '$page'));
+    final r = await kApi.getProducts(param: ProductListParam(pageId: '$page'));
     if(page ==  1) clear();
     if (r != null) {
       final list = r.list ?? [];
@@ -23,8 +33,9 @@ class NewProductsLoadMore extends LoadingMoreBase<Product> {
       } else {
         more = false;
       }
+      return true;
     }
-    return true;
+    return false;
   }
 
   @override

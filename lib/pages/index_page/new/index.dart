@@ -20,6 +20,11 @@ class IndexHomeNewState extends State<IndexHomeNew> with SingleTickerProviderSta
   late TabController tabController = TabController(length: context.categoryLength + 1, vsync: this);
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -45,6 +50,7 @@ class IndexHomeNewState extends State<IndexHomeNew> with SingleTickerProviderSta
 
 ///首页[精选]的小部件列表
 class HomeWidgets extends ConsumerWidget {
+
   const HomeWidgets({Key? key}) : super(key: key);
 
   @override
@@ -66,24 +72,21 @@ class HomeWidgets extends ConsumerWidget {
               return const SizedBox();
           }
         }, childCount: 4)),
-        buildList()
+        LoadingMoreSliverList(
+          SliverListConfig<Product>(
+              itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
+              sourceList: NewProductsLoadMore(),
+              extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              padding: const EdgeInsets.all(10)),
+        )
       ],
     );
   }
 
-  ///不能封装成单独的一个widget,会不能加载
-  Widget buildList() {
-    return  LoadingMoreSliverList(SliverListConfig<Product>(
-        itemBuilder: (c, ite, index) {
-          return WaterfallGoodsCard(ite);
-        },
-        sourceList: NewProductsLoadMore(),
-        extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),padding: const EdgeInsets.all(12)),);
-  }
 }
 
 ///无限下拉瀑布流标题

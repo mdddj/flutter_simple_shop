@@ -22,19 +22,17 @@ class RightWidgetItme extends StatelessWidget {
           initIndex: context.read<CategoryState>().getIndexWithCategory(category),
         ));
       },
-      child: Container(
-        alignment: Alignment.center,
-        color: Colors.white,
-        child: Column(
-          children: <Widget>[
-            ExtendedImageWidget(
-              src: item.scpic!,
-              width: 50,
-              height: 50,
-            ),
-            Text(item.subcname!)
-          ],
-        ),
+      child: Column(
+        children: <Widget>[
+          ExtendedImageWidget(
+            src: item.scpic!,
+            width: 50,
+            height: 50,
+            radius: BorderRadius.circular(50),
+          ),
+          const SizedBox(height: 5),
+          Text(item.subcname!)
+        ],
       ),
     );
   }

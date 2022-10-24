@@ -32,9 +32,7 @@ class JiujiuIndexHomeState extends State<JiujiuIndexHome> with TickerProviderSta
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        title: const Text('9块9包邮', style: TextStyle(color: Colors.black)),
+        title: const Text('9块9包邮'),
         bottom: PreferredSize(
           preferredSize: Size(context.screenWidth, 48),
           child: Container(
@@ -57,9 +55,6 @@ class JiujiuIndexHomeState extends State<JiujiuIndexHome> with TickerProviderSta
                   text: '19.9元区',
                 ),
               ],
-              labelColor: Colors.black,
-              indicatorColor: Colors.transparent,
-              unselectedLabelColor: Colors.grey,
             ),
           ),
         ),

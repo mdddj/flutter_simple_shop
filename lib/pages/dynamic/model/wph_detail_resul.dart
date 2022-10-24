@@ -1,8 +1,7 @@
-// Dart imports:
 import 'dart:convert';
 
-// Project imports:
-import '../../../modals/ff_convert_convert_util.dart';
+import 'package:dd_js_util/dd_js_util.dart';
+
 
 class WeipinhuiDetail {
   WeipinhuiDetail(

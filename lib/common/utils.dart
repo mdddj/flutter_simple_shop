@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:dataoke_sdk/dd_taoke_sdk.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get_it/get_it.dart';
@@ -9,7 +10,7 @@ import '../service/user_api.dart';
 import '../util/navigator_util.dart';
 import 'service.dart';
 import 'widget_util.dart';
-
+DdTaokeSdk get kApi => DdTaokeSdk.instance;
 /// 工具类
 class Utils {
   WidgetUtils get widgetUtils => GetIt.instance.get<WidgetUtils>();
