@@ -14,7 +14,7 @@ class RightWidgetItme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         context.navToWidget(to: NewGoodsList(
           category: category,

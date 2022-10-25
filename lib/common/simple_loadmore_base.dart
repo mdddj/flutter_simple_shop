@@ -50,5 +50,5 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
   bool transformIsNomore(dynamic data);
 
   @override
-  bool get hasMore => !nomore;
+  bool get hasMore => !nomore ;
 }

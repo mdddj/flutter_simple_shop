@@ -18,7 +18,7 @@ class App extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: LazyIndexedStack(
+      body: IndexedStack(
         index: ref.watch(_homeModuleShowIndex),
         children: _pages,
       ),
