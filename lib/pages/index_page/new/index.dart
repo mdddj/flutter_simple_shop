@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import '../../../common/components/new_products/respose.dart';
 import '../../../index.dart';
+import '../../../widgets/loading/custom_loading_more_widget.dart';
 
 /// 新版首页
 class IndexHomeNew extends StatefulWidget {
@@ -57,31 +58,35 @@ class HomeWidgets extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return LoadingMoreCustomScrollView(
       slivers: [
-        SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-          switch (index) {
-            case 0:
-              return const IndexCarousel();
-            case 1:
-              return const GridMenuComponent();
-            case 2:
-              return const IndexColumnWidget();
-            case 3:
-              return const IndexProductTitle();
-            default:
-              return const SizedBox();
-          }
-        }, childCount: 4)),
+        SliverPadding(
+          padding: const EdgeInsets.all(kDefaultPadding),
+          sliver: SliverList(
+              delegate: SliverChildBuilderDelegate((context, index) {
+            switch (index) {
+              case 0:
+                return const IndexCarousel();
+              case 1:
+                return const GridMenuComponent();
+              case 2:
+                return const IndexColumnWidget();
+              case 3:
+                return const IndexProductTitle();
+              default:
+                return const SizedBox();
+            }
+          }, childCount: 4)),
+        ),
         LoadingMoreSliverList(
           SliverListConfig<Product>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: NewProductsLoadMore(),
+              indicatorBuilder: CustomLoadingMoreWidget.new,
               extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
               ),
-              padding: const EdgeInsets.all(10)),
+              padding: const EdgeInsets.all(kDefaultPadding)),
         )
       ],
     );
@@ -96,7 +101,7 @@ class IndexProductTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 12, bottom: 12, right: 12, top: 12),
+      padding: const EdgeInsets.only(top: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -104,6 +109,7 @@ class IndexProductTitle extends StatelessWidget {
             'assets/svg/rmtj.svg',
             width: 120,
             height: 30,
+            color: context.iconColor,
           ),
           Text(
             '* 每20分钟更新一次',

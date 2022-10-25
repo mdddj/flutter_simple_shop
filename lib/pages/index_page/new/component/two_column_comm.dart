@@ -26,7 +26,7 @@ class IndexColumnWidget extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(
-        vertical: 12,
+        vertical: kDefaultPadding,
       ),
       children: [
         TwoColumnCommWidget(

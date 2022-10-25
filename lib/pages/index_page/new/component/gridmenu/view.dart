@@ -13,6 +13,7 @@ import '../../../../mianji/mianji/view.dart';
 import '../../../../panic_buying/view.dart';
 import '../../../../pinduoduo/search/view.dart';
 import '../../../../zhe/view.dart';
+import '../../index_card_wrapper.dart';
 import '../../index_riverpod.dart';
 import '../../waimai/index.dart';
 import 'menu_item.dart';
@@ -139,14 +140,16 @@ class GridMenuComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12),
-      child: WaterfallFlow.count(
-        padding: EdgeInsets.zero,
-        crossAxisCount: 5,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        children: buildIndexGridMenuItems(context),
+    return IndexCardWrapper(
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: WaterfallFlow.count(
+          padding: EdgeInsets.zero,
+          crossAxisCount: 5,
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          children: buildIndexGridMenuItems(context),
+        ),
       ),
     );
   }

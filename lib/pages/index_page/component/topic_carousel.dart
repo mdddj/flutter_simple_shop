@@ -23,39 +23,36 @@ class IndexTopicComponentCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
-      child: AspectRatio(
-        aspectRatio: 2.53,
-        child: Swiper(
-          itemBuilder: (BuildContext context, int index) {
-            final item = list[index];
-            return renderItem(item);
-          },
-          itemCount: list.length,
-          pagination: const SwiperPagination(),
-          onTap: (int index) async {
+    return AspectRatio(
+      aspectRatio: 2.53,
+      child: Swiper(
+        itemBuilder: (BuildContext context, int index) {
+          final item = list[index];
+          return renderItem(item);
+        },
+        itemCount: list.length,
+        pagination: const SwiperPagination(),
+        onTap: (int index) async {
 
-            final stateProivder = context.read<IndexState>();
-            final item = list[index];
-            if (item.sourceType == 1) {
-              context.navToWidget(to: ActivityViewPage(
-                  id: '${item.topicId!}', title: item.topicName!));
+          final stateProivder = context.read<IndexState>();
+          final item = list[index];
+          if (item.sourceType == 1) {
+            context.navToWidget(to: ActivityViewPage(
+                id: '${item.topicId!}', title: item.topicName!));
+          }
+          if (item.sourceType == 2) {
+            stateProivder.changeLoadingState(true);
+            final result = await DdTaokeSdk.instance.getActivityLink(
+                ActivityLinkParam(promotionSceneId: item.activityId!));
+            if (result != null) {
+              await utils.openTaobao(result.clickUrl);
             }
-            if (item.sourceType == 2) {
-              stateProivder.changeLoadingState(true);
-              final result = await DdTaokeSdk.instance.getActivityLink(
-                  ActivityLinkParam(promotionSceneId: item.activityId!));
-              if (result != null) {
-                await utils.openTaobao(result.clickUrl);
-              }
-              stateProivder.changeLoadingState(false);
-            }
-            if ((item.link ?? '').isNotEmpty) {
-              await utils.openLink(item.link!);
-            }
-          },
-        ),
+            stateProivder.changeLoadingState(false);
+          }
+          if ((item.link ?? '').isNotEmpty) {
+            await utils.openLink(item.link!);
+          }
+        },
       ),
     );
   }
