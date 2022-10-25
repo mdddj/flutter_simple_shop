@@ -5,6 +5,7 @@ import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:path_provider/path_provider.dart';
 import 'index.dart';
 
 
@@ -30,10 +31,11 @@ void initInstanceObject(){
 
 
 Future<void> initCaches() async  {
+  final appDocumentDirectory = await getApplicationDocumentsDirectory();
+  Hive.init(appDocumentDirectory.path);
   Hive.registerAdapter(AppLocalSettingModelAdapter());
-  await Hive.initFlutter();
+  await kApi.objectAdapterInit();
   await Hive.openBox<AppLocalSettingModel>(appSettingHiveKey);
-
 }
 
 class MyHttpOverrides extends HttpOverrides {

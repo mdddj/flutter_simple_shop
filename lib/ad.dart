@@ -20,7 +20,7 @@ final initFuture =
     await categoryModel.init();
 
     ///加载京东超级分类数据
-    await categoryModel.getJdCategory();
+    // await categoryModel.getJdCategory();
 
     ///加载双列产品数据
     await indexModel.fetch();

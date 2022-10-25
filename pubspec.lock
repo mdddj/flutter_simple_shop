@@ -273,7 +273,7 @@ packages:
       path: "../plugins/dataoke_sdk"
       relative: true
     source: path
-    version: "1.0.2"
+    version: "1.0.4"
   date_format:
     dependency: "direct main"
     description:
@@ -298,9 +298,9 @@ packages:
   dd_js_util:
     dependency: "direct main"
     description:
-      path: "../dd_js_util"
-      relative: true
-    source: path
+      name: dd_js_util
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "1.0.3"
   decimal:
     dependency: transitive
@@ -1002,12 +1002,12 @@ packages:
     source: hosted
     version: "1.0.1"
   path_provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.8"
+    version: "2.0.11"
   path_provider_android:
     dependency: transitive
     description:

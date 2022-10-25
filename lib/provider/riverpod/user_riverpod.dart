@@ -1,4 +1,4 @@
-import 'package:dd_js_util/api/base.dart';
+import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory;
 import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../common/utils.dart';
@@ -26,6 +26,7 @@ class UserModel extends StateNotifier<UserDetailModal> {
   Future<void> fetchUserDetail(String token) async {
     CacheFactory.create<TokenCache>().setToken(token);
     GetIt.instance.get<UserApi>().token = token;
+    kLog('token==$token');
     final vUser = await utils.api.getUser(token);
     if (vUser != null) {
       state = state.copyWith(user: vUser);

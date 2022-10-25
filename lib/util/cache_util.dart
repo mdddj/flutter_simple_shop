@@ -17,6 +17,7 @@ abstract class CacheBase<E> {
   Future<void> setValue(String key, E value) async {
     final box = await openBox();
     await box.put(key, value);
+    box.close();
   }
 
   Future<E> getValue(String key, {E? defaultValue}) async {
@@ -27,7 +28,10 @@ abstract class CacheBase<E> {
 
 ///jwt token 缓存
 class TokenCache extends CacheBase<String> {
-  TokenCache() : super("token-cache");
+  TokenCache._() : super("token-cache");
+  factory TokenCache() => instance;
+  static TokenCache get instance => TokenCache._();
+
   final tokenKey = "u-token";
   void setToken(String token){
     setValue(tokenKey, token);

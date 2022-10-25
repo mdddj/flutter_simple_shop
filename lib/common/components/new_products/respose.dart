@@ -21,7 +21,6 @@ class NewProductsLoadMore extends LoadingMoreBase<Product> {
 
   @override
   Future<bool> loadData([bool isloadMoreAction = false]) async {
-    kLog('加载新品');
     final r = await kApi.getProducts(param: ProductListParam(pageId: '$page'));
     if(page ==  1) clear();
     if (r != null) {

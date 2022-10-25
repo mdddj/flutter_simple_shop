@@ -2,6 +2,7 @@ import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod/riverpod.dart';
+import '../common/extend/string.dart';
 import '../index.dart';
 import 'base.dart';
 
@@ -57,10 +58,16 @@ class KZheTaokeApiWithCarousel extends MyAppCoreApi {
 class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi{
   KZheTaokeApiWithAppkeyGet():super('/api/zhe/app-key');
   static Future<String> doRequest(Ref ref) async {
+    final cacehData = await TokenCache.instance.getValue('zhe-app-key',defaultValue: '');
+    if(cacehData.isNotEmpty){
+      ref.read(riverpodZhetaokeAppKeyState.notifier).state = cacehData;
+      return cacehData;
+    }
     final api = KZheTaokeApiWithAppkeyGet();
     final r = await api.request(showDefaultLoading: false);
     final appKey = r.getString('data');
-    ref.read(riverpodZhetaokeAppKeyState.notifier).state = appKey;
+    await appKey.saveToCaceh("zhe-app-key");
+
     return appKey ;
   }
 }
