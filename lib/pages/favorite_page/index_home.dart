@@ -3,26 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import '../../index.dart';
+import '../../widgets/loading/custom_loading_more_widget.dart';
 import '../../widgets/login_tip_widget.dart';
 
 ///用户收藏页面
 class FavoriteIndexHome extends ConsumerWidget {
   const FavoriteIndexHome({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('收藏'),
-          centerTitle: true,
-        ),
-        body: IfWidget(expression: () => ref.isLogin, trueBuild: FavoritesList.new,elseBuild: LoginTipWidget.new,));
+      appBar: '收藏'.appbar,
+      body: IfWidget(
+        expression: ref.isLoginFun,
+        trueBuild: _FavoritesListWidget.new,
+        elseBuild: LoginTipWidget.new,
+      ),
+    );
   }
 }
 
-///收藏夹列表
-class FavoritesList extends StatelessWidget {
-  const FavoritesList({Key? key}) : super(key: key);
+class _FavoritesListWidget extends StatelessWidget {
+  const _FavoritesListWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +31,10 @@ class FavoritesList extends StatelessWidget {
         itemBuilder: (context, model, index) {
           return FavoriteGoodsItem(item: model, isShowEditIcon: false);
         },
-        sourceList: FavoritesRepository(),physics: const FixedOverscrollBouncingScrollPhysics()));
+        sourceList: FavoritesRepository(),indicatorBuilder: CustomLoadingMoreWidget.new));
   }
 }
+
+
 
 

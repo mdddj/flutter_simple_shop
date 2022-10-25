@@ -14,4 +14,8 @@ extension RefExt on WidgetRef {
   ///判断用户是否已经登录
   bool get isLogin => user != null;
 
+  bool isLoginFun() {
+    return isLogin;
+  }
+
 }

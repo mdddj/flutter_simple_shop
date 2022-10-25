@@ -11,8 +11,9 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
 
   @override
   Future<bool> refresh([bool notifyStateChanged = false]) {
+    print('loading more ..执行刷新....');
     vPage = 0;
-    nomore = true;
+    nomore = false;
     return super.refresh(notifyStateChanged);
   }
 
