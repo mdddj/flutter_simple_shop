@@ -80,7 +80,7 @@ class HomeWidgets extends ConsumerWidget {
           SliverListConfig<Product>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: NewProductsLoadMore(),
-              indicatorBuilder: CustomLoadingMoreWidget.new,
+              indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
               extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,

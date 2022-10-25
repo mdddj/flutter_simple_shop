@@ -1,6 +1,7 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import '../../../meet/add_new_meet.dart';
 import '../../../widgets/simple_appbar.dart';
 
 // 面基动态
@@ -29,6 +30,7 @@ class MianjiPageState extends State<MianjiPage> {
         children: [
           ElevatedButton(
               onPressed: () {
+                context.navToWidget(to: const AddNewMeet());
               },
               child: const Text('申请面基'))
         ],

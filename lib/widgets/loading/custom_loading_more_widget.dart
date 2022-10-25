@@ -1,31 +1,55 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
+
+
+
+class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
+  final BuildContext context;
+  final IndicatorStatus indicatorStatus;
+  const CustomLoadingMoreWidgetWithSliver(this.context, this.indicatorStatus,{Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomLoadingMoreWidget(context,indicatorStatus,isSliver: true,);
+  }
+}
+
 
 ///自定义Loadingmore 加载状态展示
 class CustomLoadingMoreWidget extends StatelessWidget {
   final BuildContext context;
   final IndicatorStatus indicatorStatus;
-
-  const CustomLoadingMoreWidget(this.context, this.indicatorStatus, {Key? key}) : super(key: key);
+  final bool isSliver;
+  const CustomLoadingMoreWidget(this.context, this.indicatorStatus, {Key? key,this.isSliver = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    late Widget child;
     switch (indicatorStatus) {
       case IndicatorStatus.fullScreenError:
-        return const _FullScreenError();
+        child = const _FullScreenError();
+        break;
       case IndicatorStatus.fullScreenBusying:
-        return const _FullScreenBusying();
+        child =  const _FullScreenBusying();
+        break;
       case IndicatorStatus.loadingMoreBusying:
-        return const _LoadingMoreBusying();
+        child =  const _LoadingMoreBusying();
+        break;
       case IndicatorStatus.empty:
-        return const _Empty();
+        child =  const _Empty();
+        break;
       case IndicatorStatus.error:
-        return const _Error();
+        child =  const _Error();
+        break;
       case IndicatorStatus.none:
-        return const _Nothing();
+        child =  const _Nothing();
+        break;
       default:
-        return const SizedBox();
+        child = const SizedBox();
+        break;
     }
+    return isSliver ? child.toSliverWidget : child;
   }
 }
 
