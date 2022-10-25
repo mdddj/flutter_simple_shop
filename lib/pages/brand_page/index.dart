@@ -35,7 +35,7 @@ class BrandListPageState extends State<BrandListPage> with LoadingMixin {
   @override
   void initState() {
     super.initState();
-    cid = context.read<CategoryState>().categorys[0].cid!;
+    cid = context.read<CategoryState>().categorys[0].cid;
     Future.microtask(init);
   }
 
@@ -102,7 +102,7 @@ class BrandListPageState extends State<BrandListPage> with LoadingMixin {
   /// 菜单被选择
   void _categoryOnSelect(int index, Category item) async {
     _categoryController.toIndex(index);
-    cid = item.cid!;
+    cid = item.cid;
     page = 1;
     lists.clear();
     setState(() {});

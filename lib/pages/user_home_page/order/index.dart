@@ -1,6 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import '../../../constant/style.dart';
 import '../../../util/navigator_util.dart';
 import '../widgets/svg_title.dart';
 

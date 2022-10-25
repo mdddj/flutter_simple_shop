@@ -14,7 +14,7 @@ class RiverpodFavoritesState extends StateNotifier<FavoritesStateModel>{
     if(isRefresh){
       state = FavoritesStateModel(favorites: [], page: 0);
     }
-    final r = await FavoritesFindListApi.doRequest(state.page);
+  await FavoritesFindListApi.doRequest(state.page);
 
   }
 }

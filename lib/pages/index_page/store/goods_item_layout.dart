@@ -53,18 +53,4 @@ class StoreGoodsItemLayout extends StatelessWidget {
     );
   }
 
-  /// 折扣小部件
-  Widget _buildDiscountLayout() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 3),
-      decoration: BoxDecoration(
-        color: Colors.pinkAccent.withOpacity(.5),
-        borderRadius: const BorderRadius.all(Radius.circular(5)),
-      ),
-      child: Text(
-        '${storeGoods.discounts}折',
-        style: const TextStyle(fontSize: 12, color: Colors.white),
-      ),
-    );
-  }
 }

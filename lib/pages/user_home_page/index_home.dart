@@ -33,7 +33,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
         child: Column(
           children: <Widget>[
             Container(
-              decoration: const BoxDecoration(color: Colors.pink),
+              decoration:  BoxDecoration(color: context.primaryColor),
               child: Column(children: [
                 const UserHomeAppBar(),
                 _buildHeaderWidget(),
@@ -90,8 +90,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
                 padding: const EdgeInsets.all(2),
                 width: double.infinity,
                 height: double.infinity,
-                child: Container(
-                  color: Colors.grey.shade100,
+                child: const Card(
                 ),
               ));
         },

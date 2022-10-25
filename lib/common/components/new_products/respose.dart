@@ -1,5 +1,4 @@
 import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 

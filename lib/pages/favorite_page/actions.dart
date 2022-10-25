@@ -31,7 +31,7 @@ class FavoritesActionWidget extends ConsumerWidget {
             child: Row(
               mainAxisAlignment:
               MainAxisAlignment.spaceBetween,
-              children: <Widget>[
+              children: const <Widget>[
 
               ],
             ),

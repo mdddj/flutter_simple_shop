@@ -15,7 +15,7 @@ class SubCategoryView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final showSubcategorys = category.subcategories ?? [];
+    final showSubcategorys = category.subcategories;
     return Container(
       child: _renderSubCategoryList(showSubcategorys),
     );
@@ -52,7 +52,7 @@ class SubCategoryView extends StatelessWidget {
               subcategory!.subcid == item.subcid ? Colors.pink.shade50 : Colors.grey.shade200,
           borderRadius: BorderRadius.circular(50)
         ),
-        child: Text('${item.subcname}',style: TextStyle(
+        child: Text(item.subcname,style: TextStyle(
           color:  subcategory != null &&
               subcategory!.subcid == item.subcid ? Colors.pink : null
         ),),
@@ -96,7 +96,7 @@ class SubCategoryView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 ExtendedImage.network(
-                  item.scpic!,
+                  item.scpic,
                   width: constraints.maxWidth * 0.5,
                   height: constraints.maxWidth * 0.5,
                   fit: BoxFit.fill,
@@ -104,7 +104,7 @@ class SubCategoryView extends StatelessWidget {
                   borderRadius: const BorderRadius.all(Radius.circular(30.0)),
                 ),
                 Text(
-                  item.subcname!,
+                  item.subcname,
                   style: TextStyle(
                       color: subcategory != null &&
                               subcategory!.subcid == item.subcid

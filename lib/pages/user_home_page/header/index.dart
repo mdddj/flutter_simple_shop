@@ -21,20 +21,22 @@ class HeaderIndex extends ConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref) {
     final user = ref.watch(userRiverpod).user;
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          utils.widgetUtils.marginTop(),
-          AnimatedSwitcher(duration: const Duration(milliseconds: 300),child: user==null ? _loginWidgetLayout(context) : _loginSuccessLayout(user) ,),
-          // _renderCounts(),
-          const SizedBox(
-            height: 44,
-          ),
-          _renderVip()
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            utils.widgetUtils.marginTop(),
+            AnimatedSwitcher(duration: const Duration(milliseconds: 300),child: user==null ? _loginWidgetLayout(context) : _loginSuccessLayout(user) ,),
+            // _renderCounts(),
+            const SizedBox(
+              height: 44,
+            ),
+            _renderVip()
+          ],
+        ),
       ),
     );
   }

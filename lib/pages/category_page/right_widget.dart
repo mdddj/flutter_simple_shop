@@ -25,13 +25,13 @@ class RightWidgetItme extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ExtendedImageWidget(
-            src: item.scpic!,
+            src: item.scpic,
             width: 50,
             height: 50,
             radius: BorderRadius.circular(50),
           ),
           const SizedBox(height: 5),
-          Text(item.subcname!)
+          Text(item.subcname)
         ],
       ),
     );

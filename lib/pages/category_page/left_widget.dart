@@ -18,7 +18,7 @@ class LeftWidgetItem extends StatelessWidget {
       decoration:
           BoxDecoration(color: isCurrent! ? null : context.colorScheme.background),
       child: Text(
-        item.cname!,
+        item.cname,
         style: TextStyle(color: isCurrent! ? context.primaryColor : null),
       ),
     );

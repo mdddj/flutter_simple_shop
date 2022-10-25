@@ -61,8 +61,7 @@ class FavoriteGoodsItem extends StatelessWidget {
           ),
         ),
       ),
-      isShowEditIcon!
-          ? Positioned(
+      isShowEditIcon? Positioned(
               right: 10,
               top: 10,
               child: Container(

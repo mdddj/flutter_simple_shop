@@ -72,9 +72,9 @@ class CategoryIndexPageState extends State<CategoryIndexPage> {
                         padding: const EdgeInsets.all(kDefaultPadding),
                         gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 3, mainAxisSpacing: 12, crossAxisSpacing: 20),
                         itemBuilder: (context, sIndex) {
-                          return RightWidgetItme(category: current, item: current.subcategories![sIndex]);
+                          return RightWidgetItme(category: current, item: current.subcategories[sIndex]);
                         },
-                        itemCount: (current.subcategories ?? []).length,
+                        itemCount: (current.subcategories).length,
                       ),
                     )
                   ],
