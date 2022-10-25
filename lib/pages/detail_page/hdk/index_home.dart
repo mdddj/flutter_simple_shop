@@ -274,7 +274,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       return;
     }
     if(info!=null){
-      FavoritesAddApi.doRequeset(info!);
+      FavoritesAddApi.doRequeset(info!,success: (){
+
+      });
     }
   }
 
@@ -891,6 +893,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
 
   @Doc(message: '初始化页面数据')
   Future<String> initDatas() async {
+    kLog('加载产品信息:${widget.goodsId}');
     final result = await DdTaokeSdk.instance.getDetailBaseData(
         productId: widget.goodsId,
       );

@@ -26,7 +26,6 @@ class UserModel extends StateNotifier<UserDetailModal> {
   Future<void> fetchUserDetail(String token) async {
     CacheFactory.create<TokenCache>().setToken(token);
     GetIt.instance.get<UserApi>().token = token;
-    kLog('token==$token');
     final vUser = await utils.api.getUser(token);
     if (vUser != null) {
       state = state.copyWith(user: vUser);

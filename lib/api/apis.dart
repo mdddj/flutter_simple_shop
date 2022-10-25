@@ -13,13 +13,14 @@ mixin ApiPageMixin on MyAppCoreApi {
 }
 
 extension WrapJsonExt on WrapJson {
-  void handle({ValueChanged<dynamic>? dataHandle}) {
+  void handle({ValueChanged<dynamic>? dataHandle,VoidCallback? success}) {
     if(isSuccess){
       toast(message);
       final resultData = getValue('data');
       if(resultData!=null){
         dataHandle?.call(resultData);
       }
+      success?.call();
     }else{
       showIosDialog(message);
     }
@@ -34,9 +35,9 @@ class FavoritesAddApi extends MyAppCoreApi {
   FavoritesAddApi() : super("$favoritesPrefix/save", httpMethod: HttpMethod.post);
 
   @Doc(message: "服务器发起请求,添加收藏")
-  static Future<void> doRequeset(FavoriteModel favoriteModel) async {
+  static Future<void> doRequeset(FavoriteModel favoriteModel,{VoidCallback? success}) async {
     final r = await (FavoritesAddApi()).request(data: favoriteModel.getJson());
-    r.handle();
+    r.handle(success: success);
   }
 }
 

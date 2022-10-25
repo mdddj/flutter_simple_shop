@@ -27,9 +27,7 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
       'pageSize': vPageSize
     };
     var isSuccess = true;
-    kLog('加载用户的收藏产品');
     final r =  await api.request(showDefaultLoading: false,data: pageParams);
-    r.print();
     isSuccess = r.isSuccess;
     if(r.isSuccess){
       final data = r.getValue('data');
