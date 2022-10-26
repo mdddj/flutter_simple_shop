@@ -68,7 +68,6 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi{
     final r = await api.request(showDefaultLoading: false);
     final appKey = r.getString('data');
     await appKey.saveToCaceh("zhe-app-key");
-
     return appKey ;
   }
 }
@@ -76,4 +75,11 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi{
 ///面基申请
 class MeetRequestAdd extends MyAppCoreApi {
   MeetRequestAdd():super('/api/mianji/add',httpMethod: HttpMethod.post);
+}
+
+///查询面基申请记录
+class SelectMeetListData extends MyAppCoreApi with ApiPageMixin {
+  SelectMeetListData._():super('/api/mianji/list');
+  static SelectMeetListData get _instance => SelectMeetListData._();
+  factory SelectMeetListData() => _instance;
 }

@@ -23,7 +23,15 @@ class MyInterceptor implements Interceptor {
   }
 }
 
-
+abstract class MyAppCoreApiWithPager extends MyAppCoreApi {
+  MyAppCoreApiWithPager(super.url);
+  void setPageParam(int page,int pageSize){
+    params.addAll({
+      "page": page,
+      "pageSize": pageSize
+    });
+  }
+}
 
 
 ///接口封装

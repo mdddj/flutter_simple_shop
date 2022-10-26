@@ -1,4 +1,5 @@
 
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import '../api/apis.dart';
@@ -29,8 +30,8 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
     isSuccess = r.isSuccess;
     if(r.isSuccess){
       final data = r.getValue('data');
-      final list  = transformResponseData(data);
-      nomore = transformIsNomore(data);
+      final list  = transformResponseData(WrapJson(data));
+      nomore = transformIsNomore(WrapJson(data));
       addAll(list);
       vPage++;
     }
@@ -40,12 +41,14 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
   A get api;
 
   ///将服务器返回的数据转换成所需要的模型
-  List<T> transformResponseData(dynamic data);
+  List<T> transformResponseData(WrapJson data);
 
   /// return [true] 没有更多了
   /// return [false] 还有下一页
-  bool transformIsNomore(dynamic data);
+  bool transformIsNomore(WrapJson data);
 
   @override
   bool get hasMore => !nomore ;
+
+
 }

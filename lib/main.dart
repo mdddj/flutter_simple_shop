@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.100.26';
+const apiHost = 'http://192.168.199.86';
 const apiPort = '80';
 const kDebugMode = false;
 

@@ -10,23 +10,13 @@ import 'index.dart';
 const kLogoSize = 90.0;
 
 ///初始化请求
-final initFuture =
-    FutureProvider.family<dynamic, BuildContext>((ref, context) async {
+final initFuture = FutureProvider.family<dynamic, BuildContext>((ref, context) async {
   try {
     final categoryModel = context.read<CategoryState>();
     final indexModel = context.read<IndexState>();
-
-    ///加载超级分类数据
-    await categoryModel.init();
-
-    ///加载京东超级分类数据
-    // await categoryModel.getJdCategory();
-
-    ///加载双列产品数据
-    await indexModel.fetch();
-
-    ///加载折淘客的APP Key
-    await KZheTaokeApiWithAppkeyGet.doRequest(ref);
+    await categoryModel.init();//加载超级分类数据
+    await indexModel.fetch();//加载双列产品数据
+    await KZheTaokeApiWithAppkeyGet.doRequest(ref);//加载折淘客的APP Key
   } on AppException catch (_) {
     rethrow;
   }
@@ -41,14 +31,12 @@ class InitBuildWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(initFuture(context)).when(
-        data: (v) => home,
-        error: (e, s) => buildInitError(context, e),
-        loading: InitLoadingWidget.new);
+    return ref.watch(initFuture(context)).when(data: (v) => home, error: (e, s) => buildInitError(context, e), loading: InitLoadingWidget.new);
   }
 
   Widget buildInitError(BuildContext context, e) {
     return Container(
+      padding: const EdgeInsets.all(kDefaultPadding),
       color: context.appbarBackgroundColor,
       alignment: Alignment.center,
       child: Text("启动失败:$e"),
@@ -81,8 +69,7 @@ class InitLoadingWidget extends StatelessWidget {
             left: 0,
             right: 0,
             child: const Center(
-              child: SizedBox(
-                  width: 30, height: 30, child: CircularProgressIndicator()),
+              child: SizedBox(width: 30, height: 30, child: CircularProgressIndicator()),
             ),
           )
         ],
