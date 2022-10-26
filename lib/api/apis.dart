@@ -72,3 +72,8 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi{
     return appKey ;
   }
 }
+
+///面基申请
+class MeetRequestAdd extends MyAppCoreApi {
+  MeetRequestAdd():super('/api/mianji/add',httpMethod: HttpMethod.post);
+}

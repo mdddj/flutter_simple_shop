@@ -4,11 +4,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:provider/provider.dart';
 import 'index.dart';
 
-const kDebugMode = false;
-
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.199.74';
+const apiHost = 'http://192.168.100.26';
 const apiPort = '80';
+const kDebugMode = false;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -49,13 +49,19 @@ class IndexHomeNewState extends State<IndexHomeNew> with SingleTickerProviderSta
   }
 }
 
-///首页[精选]的小部件列表
-class HomeWidgets extends ConsumerWidget {
-
+class HomeWidgets extends ConsumerStatefulWidget {
   const HomeWidgets({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomeWidgets> createState() => _HomeWidgetsState();
+}
+
+class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAliveClientMixin {
+  final repository = NewProductsLoadMore();
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
     return LoadingMoreCustomScrollView(
       slivers: [
         SliverPadding(
@@ -79,19 +85,28 @@ class HomeWidgets extends ConsumerWidget {
         LoadingMoreSliverList(
           SliverListConfig<Product>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
-              sourceList: NewProductsLoadMore(),
+              sourceList: repository,
               indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
               extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
+                crossAxisSpacing: kDefaultPadding,
+                mainAxisSpacing: kDefaultPadding,
               ),
-              padding: const EdgeInsets.all(kDefaultPadding)),
+              padding: const EdgeInsets.all(kDefaultPadding),
+              childCount: repository.length),
         )
       ],
     );
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+    repository.dispose();
+  }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 ///无限下拉瀑布流标题

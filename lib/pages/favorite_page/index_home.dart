@@ -6,11 +6,17 @@ import '../../index.dart';
 import '../../widgets/loading/custom_loading_more_widget.dart';
 import '../../widgets/login_tip_widget.dart';
 
-///用户收藏页面
-class FavoriteIndexHome extends ConsumerWidget {
+class FavoriteIndexHome extends ConsumerStatefulWidget {
   const FavoriteIndexHome({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<FavoriteIndexHome> createState() => _FavoriteIndexHomeState();
+}
+
+class _FavoriteIndexHomeState extends ConsumerState<FavoriteIndexHome> with AutomaticKeepAliveClientMixin {
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       appBar: '收藏'.appbar,
       body: IfWidget(
@@ -20,6 +26,9 @@ class FavoriteIndexHome extends ConsumerWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 class _FavoritesListWidget extends StatelessWidget {
@@ -31,10 +40,7 @@ class _FavoritesListWidget extends StatelessWidget {
         itemBuilder: (context, model, index) {
           return FavoriteGoodsItem(item: model, isShowEditIcon: false);
         },
-        sourceList: FavoritesRepository(),indicatorBuilder: CustomLoadingMoreWidget.new));
+        sourceList: FavoritesRepository(),
+        indicatorBuilder: CustomLoadingMoreWidget.new));
   }
 }
-
-
-
-

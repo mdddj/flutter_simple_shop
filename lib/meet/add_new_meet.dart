@@ -1,8 +1,8 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 
+import '../api/apis.dart';
 import '../constant/style.dart';
 
 ///线下面基申请页面
@@ -30,6 +30,15 @@ class _AddNewMeetState extends State<AddNewMeet> {
   final fAddressYourFocusNode = FocusNode(); //你的居住地
   final fAddressToFocusNode = FocusNode(); // 你想去面基的地点
   final fTimeWithDDFocusNode = FocusNode(); //你和典典认识多久了
+
+
+  ///提交数据
+  Future<void> submitData() async {
+    final api = MeetRequestAdd();
+    api.params.addAll({});
+    final response = await api.request();
+    response.handle();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +92,7 @@ class _AddNewMeetState extends State<AddNewMeet> {
                 )
               ],
             ),
+            ElevatedButton(onPressed: submitData, child: const Text('发送申请'))
           ],
         ),
       ),
@@ -119,7 +129,7 @@ class MyTextField extends StatelessWidget {
         focusNode: focusNode,
         maxLines: 5,
         minLines: 1,
-        decoration: InputDecoration(hintText: placeholder, filled: true, fillColor: context.theme.highlightColor),
+        decoration: InputDecoration(hintText: placeholder, filled: true, fillColor: context.theme.highlightColor,labelText: placeholder),
       ),
     );
   }
