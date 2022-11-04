@@ -1,6 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dd_js_util/ext/string.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 

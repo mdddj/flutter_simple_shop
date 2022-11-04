@@ -2,7 +2,7 @@
 
 
 
-import 'package:dd_js_util/ext/map.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 
 import '../api/apis.dart';
 import '../common/index.dart';
