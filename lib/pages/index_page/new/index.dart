@@ -7,7 +7,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import '../../../common/components/new_products/respose.dart';
 import '../../../index.dart';
-import '../../../widgets/loading/custom_loading_more_widget.dart';
 
 /// 新版首页
 class IndexHomeNew extends StatefulWidget {

@@ -1,6 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import '../../../meet/add_new_meet.dart';
 import '../../../meet/meet_list_widget.dart';
 import '../../../widgets/simple_appbar.dart';

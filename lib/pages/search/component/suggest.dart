@@ -38,9 +38,7 @@ class Suggest extends ConsumerWidget {
               return Wrap(
                 children: list.map((e)=>_renderItem(e,context)).toList(),
               );
-            }, error: (e,s)=>const Text("加载热搜榜失败,点我重试").click(() {
-              ref.refresh(_riverpodSuggest);
-            }), loading: ()=>const CupertinoActivityIndicator())
+            }, error: (e,s)=>const Text("加载热搜榜失败"), loading: ()=>const CupertinoActivityIndicator())
           ],
         ),
       ),

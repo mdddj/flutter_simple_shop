@@ -22,13 +22,5 @@ class DefaultUsernameWidget extends StatelessWidget {
   }
 }
 
-class _RoleRender extends StatelessWidget {
-  final MyUser user;
-  const _RoleRender(this.user,{Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return const SizedBox();
-  }
-}
 
