@@ -11,7 +11,7 @@ class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomLoadingMoreWidget(context,indicatorStatus,isSliver: true,);
+    return CustomLoadingMoreWidget(context,indicatorStatus).toSliverWidget;
   }
 }
 

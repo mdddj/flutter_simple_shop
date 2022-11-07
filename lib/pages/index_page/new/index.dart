@@ -86,7 +86,6 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAli
           SliverListConfig<Product>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: repository,
-              indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
               extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: kDefaultPadding,

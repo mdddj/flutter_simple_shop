@@ -528,7 +528,7 @@ packages:
       name: flutter_markdown
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.12"
+    version: "0.6.13"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -1525,5 +1525,5 @@ packages:
     source: hosted
     version: "1.3.0"
 sdks:
-  dart: ">=2.18.2 <3.0.0"
+  dart: ">=2.18.4 <3.0.0"
   flutter: ">=3.3.0"
