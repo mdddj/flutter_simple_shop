@@ -52,7 +52,8 @@ mixin _$MeetModel {
 /// @nodoc
 abstract class $MeetModelCopyWith<$Res> {
   factory $MeetModelCopyWith(MeetModel value, $Res Function(MeetModel) then) =
-      _$MeetModelCopyWithImpl<$Res>;
+      _$MeetModelCopyWithImpl<$Res, MeetModel>;
+  @useResult
   $Res call(
       {String aboutDiandian,
       int age,
@@ -70,79 +71,83 @@ abstract class $MeetModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MeetModelCopyWithImpl<$Res> implements $MeetModelCopyWith<$Res> {
+class _$MeetModelCopyWithImpl<$Res, $Val extends MeetModel>
+    implements $MeetModelCopyWith<$Res> {
   _$MeetModelCopyWithImpl(this._value, this._then);
 
-  final MeetModel _value;
   // ignore: unused_field
-  final $Res Function(MeetModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? aboutDiandian = freezed,
-    Object? age = freezed,
-    Object? id = freezed,
-    Object? location = freezed,
-    Object? mianjiInfo = freezed,
-    Object? name = freezed,
-    Object? soulCodeImage = freezed,
-    Object? soulName = freezed,
-    Object? toLocation = freezed,
-    Object? state = freezed,
-    Object? user = freezed,
+    Object? aboutDiandian = null,
+    Object? age = null,
+    Object? id = null,
+    Object? location = null,
+    Object? mianjiInfo = null,
+    Object? name = null,
+    Object? soulCodeImage = null,
+    Object? soulName = null,
+    Object? toLocation = null,
+    Object? state = null,
+    Object? user = null,
   }) {
     return _then(_value.copyWith(
-      aboutDiandian: aboutDiandian == freezed
+      aboutDiandian: null == aboutDiandian
           ? _value.aboutDiandian
           : aboutDiandian // ignore: cast_nullable_to_non_nullable
               as String,
-      age: age == freezed
+      age: null == age
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      location: location == freezed
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String,
-      mianjiInfo: mianjiInfo == freezed
+      mianjiInfo: null == mianjiInfo
           ? _value.mianjiInfo
           : mianjiInfo // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      soulCodeImage: soulCodeImage == freezed
+      soulCodeImage: null == soulCodeImage
           ? _value.soulCodeImage
           : soulCodeImage // ignore: cast_nullable_to_non_nullable
               as String,
-      soulName: soulName == freezed
+      soulName: null == soulName
           ? _value.soulName
           : soulName // ignore: cast_nullable_to_non_nullable
               as String,
-      toLocation: toLocation == freezed
+      toLocation: null == toLocation
           ? _value.toLocation
           : toLocation // ignore: cast_nullable_to_non_nullable
               as String,
-      state: state == freezed
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as int,
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as MyUser,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MyUserCopyWith<$Res> get user {
     return $MyUserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
@@ -153,6 +158,7 @@ abstract class _$$_MeetModelCopyWith<$Res> implements $MeetModelCopyWith<$Res> {
           _$_MeetModel value, $Res Function(_$_MeetModel) then) =
       __$$_MeetModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String aboutDiandian,
       int age,
@@ -171,71 +177,70 @@ abstract class _$$_MeetModelCopyWith<$Res> implements $MeetModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MeetModelCopyWithImpl<$Res> extends _$MeetModelCopyWithImpl<$Res>
+class __$$_MeetModelCopyWithImpl<$Res>
+    extends _$MeetModelCopyWithImpl<$Res, _$_MeetModel>
     implements _$$_MeetModelCopyWith<$Res> {
   __$$_MeetModelCopyWithImpl(
       _$_MeetModel _value, $Res Function(_$_MeetModel) _then)
-      : super(_value, (v) => _then(v as _$_MeetModel));
+      : super(_value, _then);
 
-  @override
-  _$_MeetModel get _value => super._value as _$_MeetModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? aboutDiandian = freezed,
-    Object? age = freezed,
-    Object? id = freezed,
-    Object? location = freezed,
-    Object? mianjiInfo = freezed,
-    Object? name = freezed,
-    Object? soulCodeImage = freezed,
-    Object? soulName = freezed,
-    Object? toLocation = freezed,
-    Object? state = freezed,
-    Object? user = freezed,
+    Object? aboutDiandian = null,
+    Object? age = null,
+    Object? id = null,
+    Object? location = null,
+    Object? mianjiInfo = null,
+    Object? name = null,
+    Object? soulCodeImage = null,
+    Object? soulName = null,
+    Object? toLocation = null,
+    Object? state = null,
+    Object? user = null,
   }) {
     return _then(_$_MeetModel(
-      aboutDiandian: aboutDiandian == freezed
+      aboutDiandian: null == aboutDiandian
           ? _value.aboutDiandian
           : aboutDiandian // ignore: cast_nullable_to_non_nullable
               as String,
-      age: age == freezed
+      age: null == age
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      location: location == freezed
+      location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
               as String,
-      mianjiInfo: mianjiInfo == freezed
+      mianjiInfo: null == mianjiInfo
           ? _value.mianjiInfo
           : mianjiInfo // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      soulCodeImage: soulCodeImage == freezed
+      soulCodeImage: null == soulCodeImage
           ? _value.soulCodeImage
           : soulCodeImage // ignore: cast_nullable_to_non_nullable
               as String,
-      soulName: soulName == freezed
+      soulName: null == soulName
           ? _value.soulName
           : soulName // ignore: cast_nullable_to_non_nullable
               as String,
-      toLocation: toLocation == freezed
+      toLocation: null == toLocation
           ? _value.toLocation
           : toLocation // ignore: cast_nullable_to_non_nullable
               as String,
-      state: state == freezed
+      state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as int,
-      user: user == freezed
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as MyUser,
@@ -292,6 +297,7 @@ class _$_MeetModel implements _MeetModel {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MeetModelCopyWith<_$_MeetModel> get copyWith =>
       __$$_MeetModelCopyWithImpl<_$_MeetModel>(this, _$identity);
 

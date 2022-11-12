@@ -35,34 +35,37 @@ mixin _$IndexProductsModel {
 abstract class $IndexProductsModelCopyWith<$Res> {
   factory $IndexProductsModelCopyWith(
           IndexProductsModel value, $Res Function(IndexProductsModel) then) =
-      _$IndexProductsModelCopyWithImpl<$Res>;
+      _$IndexProductsModelCopyWithImpl<$Res, IndexProductsModel>;
+  @useResult
   $Res call({List<Product> products, int page});
 }
 
 /// @nodoc
-class _$IndexProductsModelCopyWithImpl<$Res>
+class _$IndexProductsModelCopyWithImpl<$Res, $Val extends IndexProductsModel>
     implements $IndexProductsModelCopyWith<$Res> {
   _$IndexProductsModelCopyWithImpl(this._value, this._then);
 
-  final IndexProductsModel _value;
   // ignore: unused_field
-  final $Res Function(IndexProductsModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? products = freezed,
-    Object? page = freezed,
+    Object? products = null,
+    Object? page = null,
   }) {
     return _then(_value.copyWith(
-      products: products == freezed
+      products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
-      page: page == freezed
+      page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -73,31 +76,30 @@ abstract class _$$_IndexProductsModelCopyWith<$Res>
           $Res Function(_$_IndexProductsModel) then) =
       __$$_IndexProductsModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<Product> products, int page});
 }
 
 /// @nodoc
 class __$$_IndexProductsModelCopyWithImpl<$Res>
-    extends _$IndexProductsModelCopyWithImpl<$Res>
+    extends _$IndexProductsModelCopyWithImpl<$Res, _$_IndexProductsModel>
     implements _$$_IndexProductsModelCopyWith<$Res> {
   __$$_IndexProductsModelCopyWithImpl(
       _$_IndexProductsModel _value, $Res Function(_$_IndexProductsModel) _then)
-      : super(_value, (v) => _then(v as _$_IndexProductsModel));
+      : super(_value, _then);
 
-  @override
-  _$_IndexProductsModel get _value => super._value as _$_IndexProductsModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? products = freezed,
-    Object? page = freezed,
+    Object? products = null,
+    Object? page = null,
   }) {
     return _then(_$_IndexProductsModel(
-      products: products == freezed
+      products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<Product>,
-      page: page == freezed
+      page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
@@ -125,6 +127,7 @@ class _$_IndexProductsModel implements _IndexProductsModel {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IndexProductsModelCopyWith<_$_IndexProductsModel> get copyWith =>
       __$$_IndexProductsModelCopyWithImpl<_$_IndexProductsModel>(
           this, _$identity);

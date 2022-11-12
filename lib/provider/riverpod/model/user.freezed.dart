@@ -32,41 +32,45 @@ mixin _$UserDetailModal {
 abstract class $UserDetailModalCopyWith<$Res> {
   factory $UserDetailModalCopyWith(
           UserDetailModal value, $Res Function(UserDetailModal) then) =
-      _$UserDetailModalCopyWithImpl<$Res>;
+      _$UserDetailModalCopyWithImpl<$Res, UserDetailModal>;
+  @useResult
   $Res call({MyUser? user});
 
   $MyUserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
-class _$UserDetailModalCopyWithImpl<$Res>
+class _$UserDetailModalCopyWithImpl<$Res, $Val extends UserDetailModal>
     implements $UserDetailModalCopyWith<$Res> {
   _$UserDetailModalCopyWithImpl(this._value, this._then);
 
-  final UserDetailModal _value;
   // ignore: unused_field
-  final $Res Function(UserDetailModal) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? user = freezed,
   }) {
     return _then(_value.copyWith(
-      user: user == freezed
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as MyUser?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $MyUserCopyWith<$Res>? get user {
     if (_value.user == null) {
       return null;
     }
 
     return $MyUserCopyWith<$Res>(_value.user!, (value) {
-      return _then(_value.copyWith(user: value));
+      return _then(_value.copyWith(user: value) as $Val);
     });
   }
 }
@@ -78,6 +82,7 @@ abstract class _$$_UserDetailModalCopyWith<$Res>
           _$_UserDetailModal value, $Res Function(_$_UserDetailModal) then) =
       __$$_UserDetailModalCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({MyUser? user});
 
   @override
@@ -86,21 +91,19 @@ abstract class _$$_UserDetailModalCopyWith<$Res>
 
 /// @nodoc
 class __$$_UserDetailModalCopyWithImpl<$Res>
-    extends _$UserDetailModalCopyWithImpl<$Res>
+    extends _$UserDetailModalCopyWithImpl<$Res, _$_UserDetailModal>
     implements _$$_UserDetailModalCopyWith<$Res> {
   __$$_UserDetailModalCopyWithImpl(
       _$_UserDetailModal _value, $Res Function(_$_UserDetailModal) _then)
-      : super(_value, (v) => _then(v as _$_UserDetailModal));
+      : super(_value, _then);
 
-  @override
-  _$_UserDetailModal get _value => super._value as _$_UserDetailModal;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? user = freezed,
   }) {
     return _then(_$_UserDetailModal(
-      user: user == freezed
+      user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as MyUser?,
@@ -129,16 +132,16 @@ class _$_UserDetailModal implements _UserDetailModal {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UserDetailModal &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UserDetailModalCopyWith<_$_UserDetailModal> get copyWith =>
       __$$_UserDetailModalCopyWithImpl<_$_UserDetailModal>(this, _$identity);
 

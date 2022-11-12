@@ -6,7 +6,7 @@ import FlutterMacOS
 import Foundation
 
 import dd_check_plugin
-import network_info_plus_macos
+import network_info_plus
 import package_info
 import path_provider_macos
 import sqflite

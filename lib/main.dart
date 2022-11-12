@@ -10,11 +10,7 @@ const apiPort = '80';
 const kDebugMode = false;
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  initNetUtil();
-  initInstanceObject();
-  await initCaches();
-  runApp(const ProviderScope(child: MyApp()));
+  appInit(() => runApp(const ProviderScope(child: MyApp())));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: providers,
-      child: ThemeBuildWidget(themeBuild: (appThemeSetting){
+      child: ThemeBuildWidget(themeBuild: (appThemeSetting) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: '典典小卖部',

@@ -49,7 +49,8 @@ mixin _$MyFavoritesModel {
 abstract class $MyFavoritesModelCopyWith<$Res> {
   factory $MyFavoritesModelCopyWith(
           MyFavoritesModel value, $Res Function(MyFavoritesModel) then) =
-      _$MyFavoritesModelCopyWithImpl<$Res>;
+      _$MyFavoritesModelCopyWithImpl<$Res, MyFavoritesModel>;
+  @useResult
   $Res call(
       {String amount,
       String arrivalPrice,
@@ -63,64 +64,66 @@ abstract class $MyFavoritesModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MyFavoritesModelCopyWithImpl<$Res>
+class _$MyFavoritesModelCopyWithImpl<$Res, $Val extends MyFavoritesModel>
     implements $MyFavoritesModelCopyWith<$Res> {
   _$MyFavoritesModelCopyWithImpl(this._value, this._then);
 
-  final MyFavoritesModel _value;
   // ignore: unused_field
-  final $Res Function(MyFavoritesModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = freezed,
-    Object? arrivalPrice = freezed,
-    Object? createTime = freezed,
-    Object? endTime = freezed,
-    Object? id = freezed,
-    Object? imageUrl = freezed,
-    Object? productId = freezed,
-    Object? title = freezed,
-    Object? type = freezed,
+    Object? amount = null,
+    Object? arrivalPrice = null,
+    Object? createTime = null,
+    Object? endTime = null,
+    Object? id = null,
+    Object? imageUrl = null,
+    Object? productId = null,
+    Object? title = null,
+    Object? type = null,
   }) {
     return _then(_value.copyWith(
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as String,
-      arrivalPrice: arrivalPrice == freezed
+      arrivalPrice: null == arrivalPrice
           ? _value.arrivalPrice
           : arrivalPrice // ignore: cast_nullable_to_non_nullable
               as String,
-      createTime: createTime == freezed
+      createTime: null == createTime
           ? _value.createTime
           : createTime // ignore: cast_nullable_to_non_nullable
               as int,
-      endTime: endTime == freezed
+      endTime: null == endTime
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      imageUrl: imageUrl == freezed
+      imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      productId: productId == freezed
+      productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -131,6 +134,7 @@ abstract class _$$_MyFavoritesModelCopyWith<$Res>
           _$_MyFavoritesModel value, $Res Function(_$_MyFavoritesModel) then) =
       __$$_MyFavoritesModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String amount,
       String arrivalPrice,
@@ -145,61 +149,59 @@ abstract class _$$_MyFavoritesModelCopyWith<$Res>
 
 /// @nodoc
 class __$$_MyFavoritesModelCopyWithImpl<$Res>
-    extends _$MyFavoritesModelCopyWithImpl<$Res>
+    extends _$MyFavoritesModelCopyWithImpl<$Res, _$_MyFavoritesModel>
     implements _$$_MyFavoritesModelCopyWith<$Res> {
   __$$_MyFavoritesModelCopyWithImpl(
       _$_MyFavoritesModel _value, $Res Function(_$_MyFavoritesModel) _then)
-      : super(_value, (v) => _then(v as _$_MyFavoritesModel));
+      : super(_value, _then);
 
-  @override
-  _$_MyFavoritesModel get _value => super._value as _$_MyFavoritesModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? amount = freezed,
-    Object? arrivalPrice = freezed,
-    Object? createTime = freezed,
-    Object? endTime = freezed,
-    Object? id = freezed,
-    Object? imageUrl = freezed,
-    Object? productId = freezed,
-    Object? title = freezed,
-    Object? type = freezed,
+    Object? amount = null,
+    Object? arrivalPrice = null,
+    Object? createTime = null,
+    Object? endTime = null,
+    Object? id = null,
+    Object? imageUrl = null,
+    Object? productId = null,
+    Object? title = null,
+    Object? type = null,
   }) {
     return _then(_$_MyFavoritesModel(
-      amount: amount == freezed
+      amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as String,
-      arrivalPrice: arrivalPrice == freezed
+      arrivalPrice: null == arrivalPrice
           ? _value.arrivalPrice
           : arrivalPrice // ignore: cast_nullable_to_non_nullable
               as String,
-      createTime: createTime == freezed
+      createTime: null == createTime
           ? _value.createTime
           : createTime // ignore: cast_nullable_to_non_nullable
               as int,
-      endTime: endTime == freezed
+      endTime: null == endTime
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      imageUrl: imageUrl == freezed
+      imageUrl: null == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      productId: productId == freezed
+      productId: null == productId
           ? _value.productId
           : productId // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
@@ -250,6 +252,7 @@ class _$_MyFavoritesModel implements _MyFavoritesModel {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_MyFavoritesModelCopyWith<_$_MyFavoritesModel> get copyWith =>
       __$$_MyFavoritesModelCopyWithImpl<_$_MyFavoritesModel>(this, _$identity);
 

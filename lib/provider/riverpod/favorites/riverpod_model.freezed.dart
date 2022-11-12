@@ -36,34 +36,37 @@ mixin _$FavoritesStateModel {
 abstract class $FavoritesStateModelCopyWith<$Res> {
   factory $FavoritesStateModelCopyWith(
           FavoritesStateModel value, $Res Function(FavoritesStateModel) then) =
-      _$FavoritesStateModelCopyWithImpl<$Res>;
+      _$FavoritesStateModelCopyWithImpl<$Res, FavoritesStateModel>;
+  @useResult
   $Res call({List<MyFavoritesModel> favorites, int page});
 }
 
 /// @nodoc
-class _$FavoritesStateModelCopyWithImpl<$Res>
+class _$FavoritesStateModelCopyWithImpl<$Res, $Val extends FavoritesStateModel>
     implements $FavoritesStateModelCopyWith<$Res> {
   _$FavoritesStateModelCopyWithImpl(this._value, this._then);
 
-  final FavoritesStateModel _value;
   // ignore: unused_field
-  final $Res Function(FavoritesStateModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? favorites = freezed,
-    Object? page = freezed,
+    Object? favorites = null,
+    Object? page = null,
   }) {
     return _then(_value.copyWith(
-      favorites: favorites == freezed
+      favorites: null == favorites
           ? _value.favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<MyFavoritesModel>,
-      page: page == freezed
+      page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -74,31 +77,30 @@ abstract class _$$_FavoritesStateModelCopyWith<$Res>
           $Res Function(_$_FavoritesStateModel) then) =
       __$$_FavoritesStateModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<MyFavoritesModel> favorites, int page});
 }
 
 /// @nodoc
 class __$$_FavoritesStateModelCopyWithImpl<$Res>
-    extends _$FavoritesStateModelCopyWithImpl<$Res>
+    extends _$FavoritesStateModelCopyWithImpl<$Res, _$_FavoritesStateModel>
     implements _$$_FavoritesStateModelCopyWith<$Res> {
   __$$_FavoritesStateModelCopyWithImpl(_$_FavoritesStateModel _value,
       $Res Function(_$_FavoritesStateModel) _then)
-      : super(_value, (v) => _then(v as _$_FavoritesStateModel));
+      : super(_value, _then);
 
-  @override
-  _$_FavoritesStateModel get _value => super._value as _$_FavoritesStateModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? favorites = freezed,
-    Object? page = freezed,
+    Object? favorites = null,
+    Object? page = null,
   }) {
     return _then(_$_FavoritesStateModel(
-      favorites: favorites == freezed
+      favorites: null == favorites
           ? _value.favorites
           : favorites // ignore: cast_nullable_to_non_nullable
               as List<MyFavoritesModel>,
-      page: page == freezed
+      page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int,
@@ -126,6 +128,7 @@ class _$_FavoritesStateModel implements _FavoritesStateModel {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FavoritesStateModelCopyWith<_$_FavoritesStateModel> get copyWith =>
       __$$_FavoritesStateModelCopyWithImpl<_$_FavoritesStateModel>(
           this, _$identity);
