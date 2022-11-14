@@ -1,4 +1,4 @@
-import 'package:dataoke_sdk/model/brand_detail_result.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import '../../../common/utils.dart';
 import '../../../util/image_util.dart';

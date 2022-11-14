@@ -1,5 +1,4 @@
-import 'package:dataoke_sdk/jd_api.dart';
-import 'package:dataoke_sdk/model/jd/jd_req_param.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:logger/logger.dart';
 

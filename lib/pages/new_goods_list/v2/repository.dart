@@ -1,6 +1,6 @@
 
 
-import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:loading_more_list/loading_more_list.dart';

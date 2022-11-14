@@ -1,10 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:after_layout/after_layout.dart';
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/brand_detail_result.dart';
-import 'package:dataoke_sdk/model/product.dart';
-import 'package:dataoke_sdk/params/brand_product_param.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 

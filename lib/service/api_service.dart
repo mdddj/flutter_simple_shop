@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:dataoke_sdk/network/util.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import '../common/toast.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 
-
+///自定义加载中状态
 class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
   final BuildContext context;
   final IndicatorStatus indicatorStatus;
@@ -91,6 +91,7 @@ class _LoadingMoreBusying extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
+          SizedBox(height: 12),
           SizedBox(
             width: 15,
             height: 15,

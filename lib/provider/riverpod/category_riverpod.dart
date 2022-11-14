@@ -1,8 +1,7 @@
 // Flutter imports:
 // Package imports:
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart' hide BlogCategory;
 import 'package:dataoke_sdk/model/category.dart';
-import 'package:dataoke_sdk/model/pdd/pdd_category.dart';
 import 'package:flutter/cupertino.dart';
 
 // Project imports:

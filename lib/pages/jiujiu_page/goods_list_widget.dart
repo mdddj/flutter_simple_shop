@@ -1,6 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import './goods_item_widget.dart';

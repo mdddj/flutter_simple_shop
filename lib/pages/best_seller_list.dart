@@ -1,4 +1,4 @@
-import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';

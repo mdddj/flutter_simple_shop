@@ -1,8 +1,6 @@
 // Flutter imports:
 // Package imports:
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/product.dart';
-import 'package:dataoke_sdk/params/nine_nine_param.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 
 

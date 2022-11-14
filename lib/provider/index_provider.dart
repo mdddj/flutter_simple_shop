@@ -1,8 +1,5 @@
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/brand_list_model.dart';
-import 'package:dataoke_sdk/model/carousel_model.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
-import 'package:dataoke_sdk/params/brand_param.dart';
 import 'package:flutter/material.dart';
 import '../util/color_util.dart';
 

@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get_it/get_it.dart';

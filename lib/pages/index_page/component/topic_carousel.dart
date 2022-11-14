@@ -1,9 +1,7 @@
 import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart'
     as my_carousel_comp;
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/carousel_model.dart';
-import 'package:dataoke_sdk/params/activity_link_param.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,5 @@
 // Package imports:
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/product.dart';
-import 'package:dataoke_sdk/params/product_list_param.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 class GoodsListRepository extends LoadingMoreBase<Product> {

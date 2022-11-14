@@ -1,4 +1,4 @@
-import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'index_products_model.freezed.dart';

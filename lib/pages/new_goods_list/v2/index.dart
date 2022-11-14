@@ -1,11 +1,12 @@
-import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
-import 'package:dio/dio.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
+import '../../../constant/objects.dart';
+import '../../../widgets/loading/custom_loading_more_widget.dart';
 import '../../../widgets/waterfall_goods_card.dart';
-import 'appbar.dart';
 import 'goods_list_params_model.dart';
 import 'repository.dart';
 
@@ -42,8 +43,8 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
             itemBuilder: _renderLayout,
             sourceList: repository,
             padding: const EdgeInsets.all(12),
-            extendedListDelegate:
-                const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12)))
+            extendedListDelegate: kWaterfallDefaultExtendedListDelegate,
+            indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new)),
       ],
     );
   }

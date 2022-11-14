@@ -1,4 +1,4 @@
-import 'package:dataoke_sdk/dd_dataoke_sdk.dart';
+import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';

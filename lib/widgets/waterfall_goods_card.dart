@@ -1,5 +1,5 @@
 import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';

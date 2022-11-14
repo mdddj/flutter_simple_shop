@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:dataoke_sdk/model/ff_convert_convert_util.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
+
 
 List<JdNativeProduct> jdNativeProductCovert(String resp) {
   return List<JdNativeProduct>.from((jsonDecode(resp) as List<dynamic>)

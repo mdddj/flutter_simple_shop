@@ -1,5 +1,4 @@
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:loading_more_list/loading_more_list.dart';

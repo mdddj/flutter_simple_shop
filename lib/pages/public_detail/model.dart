@@ -2,7 +2,7 @@
 
 // Package imports:
 import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/model/base/favorite_model.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 
 import '../../modals/pdd_detail_model.dart';
 

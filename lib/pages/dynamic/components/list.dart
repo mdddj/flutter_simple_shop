@@ -1,6 +1,5 @@
 import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/dd_taoke_sdk.dart';
-import 'package:dataoke_sdk/model/product.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';

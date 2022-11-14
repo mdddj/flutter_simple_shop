@@ -8,7 +8,7 @@ class CategoryAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text("产品列表"),
+      title: const Text("产品列表"),
     );
   }
   
