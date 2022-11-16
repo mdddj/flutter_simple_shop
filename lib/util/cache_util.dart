@@ -1,9 +1,7 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:hive/hive.dart';
-import '../modals/app_setting_model.dart';
 
 
-const appSettingHiveKey = 'app-local-setting';
 
 abstract class CacheBase<E> {
   final String boxName;
@@ -49,18 +47,7 @@ class MyCache<E> extends CacheBase<E> {
   MyCache(super.boxName);
 }
 
-///APP本地设置的缓存
-class AppSeetingCache extends MyCache<AppLocalSettingModel>{
-  static String themeKey = 'theme-setting';
-  AppSeetingCache():super(appSettingHiveKey);
-  Future<AppLocalSettingModel> get localSetting async  => await getValue(themeKey,defaultValue: AppLocalSettingModel.defaultSetting());
-  Future<void> changeTheme(int index) async {
-    final setting =await localSetting;
-    kLog('更换主题:$index');
-    setting.themeIndex = index;
-    await setting.save();
-  }
-}
+
 
 
 class CacheFactory {
@@ -70,8 +57,6 @@ class CacheFactory {
     switch (T) {
       case TokenCache:
         return TokenCache() as T;
-      case AppSeetingCache:
-        return AppSeetingCache() as T;
       default:
         return MyCache(boxName ?? "DEFAULT") as T;
     }

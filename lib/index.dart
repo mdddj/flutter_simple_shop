@@ -11,6 +11,5 @@ export 'pages/index.dart';
 export 'provider/index.dart';
 export 'repository/index.dart';
 export 'service/index.dart';
-export 'theme.dart';
 export 'util/index.dart';
 export 'widgets/index.dart';

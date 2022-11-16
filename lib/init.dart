@@ -42,9 +42,8 @@ void initInstanceObject(){
 Future<void> initCaches() async  {
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDirectory.path);
-  Hive.registerAdapter(AppLocalSettingModelAdapter());
   await kApi.objectAdapterInit();
-  await Hive.openBox<AppLocalSettingModel>(appSettingHiveKey);
+  await AppThemeUtil().registerAdapterAndOpenBox();
 }
 
 class MyHttpOverrides extends HttpOverrides {

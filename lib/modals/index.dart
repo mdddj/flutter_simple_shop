@@ -1,5 +1,4 @@
 library modals;
-export './app_setting_model.dart';
 export './blog_category_model.dart';
 export './coupon_data.dart';
 export './favorites_model.dart';

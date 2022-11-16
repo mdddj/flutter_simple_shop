@@ -12,7 +12,6 @@ export 'im_item.dart';
 export 'no_shadow_croll_ehavior.dart';
 export 'service.dart';
 export 'simple_loadmore_base.dart';
-export 'styles.dart';
 export 'toast.dart';
 export 'touch_callback.dart';
 export 'utils.dart';

@@ -6,7 +6,6 @@ import 'package:loading_more_list/loading_more_list.dart';
 
 import '../../common/utils.dart';
 import '../../provider/riverpod/user_riverpod.dart';
-import '../setting/theme_setting.dart';
 import 'header/appbar.dart';
 import 'header/index.dart';
 import 'order/index.dart';
