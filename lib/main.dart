@@ -14,8 +14,22 @@ void main() async {
   appInit(() => runApp(const ProviderScope(child: MyApp())));
 }
 
+///
+///
+/// ```dart
+/// void main(){
+///   print("hello world");
+/// }
+/// ```
+/// * hello world
+///
+/// [https://itbug.shop](https://itbug.shop)
+///
+/// __梁典典__
+///
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final String? title;
+  const MyApp({Key? key,this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ PODS:
   - dd_js_util (0.0.1):
     - Flutter
   - Flutter (1.0.0)
-  - flutter_image_compress (0.0.1):
+  - flutter_image_compress (1.0.0):
     - Flutter
     - Mantle
     - SDWebImage
@@ -106,7 +106,7 @@ SPEC CHECKSUMS:
   dd_check_plugin: f3d378fdfffd915012853d731035c0bbade6ad9f
   dd_js_util: dd9d6c042b6221e3b5eeaba6f2caf186a382aa3d
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_image_compress: fd2b476345226e1a10ea352fa306af95704642c1
+  flutter_image_compress: 5a5e9aee05b6553048b8df1c3bc456d0afaac433
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
   image_picker_ios: b786a5dcf033a8336a657191401bfdf12017dabb
