@@ -6,27 +6,14 @@ import 'package:provider/provider.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.100.44';
+const apiHost = 'http://192.168.199.78';
 const apiPort = '80';
-const kDebugMode = false;
+const kDebugMode = true;
 
 void main() async {
   appInit(() => runApp(const ProviderScope(child: MyApp())));
 }
 
-///
-///
-/// ```dart
-/// void main(){
-///   print("hello world");
-/// }
-/// ```
-/// * hello world
-///
-/// [https://itbug.shop](https://itbug.shop)
-///
-/// __梁典典__
-///
 class MyApp extends StatelessWidget {
   final String? title;
   const MyApp({Key? key,this.title}) : super(key: key);

@@ -24,7 +24,7 @@ void initNetUtil() {
     HttpOverrides.global = MyHttpOverrides();
   }
   if(kDebugMode){
-    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.88');
+    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.78');
   }
 }
 
