@@ -75,7 +75,7 @@ abstract class MyAppCoreApi extends BaseApi {
       return json;
     }on AppException catch(e){
       final ex = WrapJson.fromMyServerError(e);
-      kLog(ex);
+      kLog(ex.data);
       return ex;
     }catch(e){
       kLogErr(e);

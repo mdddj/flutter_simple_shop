@@ -1,7 +1,6 @@
 
 import 'dart:io';
 
-import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -22,9 +21,6 @@ void initNetUtil() {
   BaseApi.host = "$apiHost:$apiPort";
   if(Platform.isAndroid){
     HttpOverrides.global = MyHttpOverrides();
-  }
-  if(kDebugMode){
-    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.78');
   }
 }
 
