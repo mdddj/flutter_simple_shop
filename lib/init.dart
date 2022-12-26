@@ -2,6 +2,7 @@
 import 'dart:io';
 
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -19,8 +20,10 @@ Future<void> appInit(Function start) async {
 
 void initNetUtil() {
   BaseApi.host = "$apiHost:$apiPort";
-  if(Platform.isAndroid){
-    HttpOverrides.global = MyHttpOverrides();
+  if(kIsWeb.not){
+    if(Platform.isAndroid){
+      HttpOverrides.global = MyHttpOverrides();
+    }
   }
 }
 
@@ -36,8 +39,12 @@ void initInstanceObject(){
 
 
 Future<void> initCaches() async  {
-  final appDocumentDirectory = await getApplicationDocumentsDirectory();
-  Hive.init(appDocumentDirectory.path);
+  if(kIsWeb){
+    Hive.initFlutter();
+  }else{
+    final appDocumentDirectory = await getApplicationDocumentsDirectory();
+    Hive.init(appDocumentDirectory.path);
+  }
   await kApi.objectAdapterInit();
   await AppThemeUtil().registerAdapterAndOpenBox();
 }
