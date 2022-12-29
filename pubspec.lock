@@ -105,7 +105,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.2"
+    version: "2.3.3"
   build_runner_core:
     dependency: transitive
     description:
@@ -161,7 +161,7 @@ packages:
       name: carousel_slider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.1"
+    version: "4.2.1"
   characters:
     dependency: transitive
     description:
@@ -246,13 +246,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-  curl_logger_dio_interceptor:
-    dependency: "direct main"
-    description:
-      name: curl_logger_dio_interceptor
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.3"
   dart_style:
     dependency: transitive
     description:
@@ -263,10 +256,10 @@ packages:
   dataoke_sdk:
     dependency: "direct main"
     description:
-      name: dataoke_sdk
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.0"
+      path: "../plugins/dataoke_sdk"
+      relative: true
+    source: path
+    version: "2.1.3"
   date_format:
     dependency: "direct main"
     description:
@@ -274,27 +267,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.7"
-  dbus:
-    dependency: transitive
-    description:
-      name: dbus
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.6"
-  dd_check_plugin:
-    dependency: "direct main"
-    description:
-      name: dd_check_plugin
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.1"
   dd_js_util:
     dependency: "direct main"
     description:
       name: dd_js_util
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.8"
   decimal:
     dependency: transitive
     description:
@@ -302,13 +281,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  dio:
+  diox:
     dependency: "direct main"
     description:
-      name: dio
+      name: diox
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.6"
+    version: "5.0.0-dev.3"
   encrypt:
     dependency: "direct main"
     description:
@@ -324,12 +303,12 @@ packages:
     source: hosted
     version: "6.3.4"
   extended_image_library:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: extended_image_library
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.4.0"
+    version: "3.4.1"
   extended_list:
     dependency: "direct main"
     description:
@@ -386,6 +365,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "9.1.0"
+  fast_immutable_collections:
+    dependency: "direct main"
+    description:
+      name: fast_immutable_collections
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "8.1.0"
   fbroadcast_nullsafety:
     dependency: transitive
     description:
@@ -441,7 +427,7 @@ packages:
       name: flex_color_scheme
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.1"
+    version: "6.1.2"
   flex_seed_scheme:
     dependency: transitive
     description:
@@ -521,7 +507,7 @@ packages:
       name: flutter_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.3"
   flutter_screenutil:
     dependency: transitive
     description:
@@ -535,7 +521,7 @@ packages:
       name: flutter_smart_dialog
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.7.1"
+    version: "4.8.0"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -659,7 +645,7 @@ packages:
       name: hooks_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.3"
   html:
     dependency: "direct main"
     description:
@@ -799,7 +785,7 @@ packages:
       name: loading_animation_widget
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0+3"
+    version: "1.2.0+4"
   loading_more_list:
     dependency: "direct main"
     description:
@@ -870,27 +856,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  network_info_plus:
-    dependency: transitive
-    description:
-      name: network_info_plus
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.1"
-  network_info_plus_platform_interface:
-    dependency: transitive
-    description:
-      name: network_info_plus_platform_interface
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.3"
-  nm:
-    dependency: transitive
-    description:
-      name: nm
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.5.0"
   notus_format:
     dependency: transitive
     description:
@@ -1073,13 +1038,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.0"
-  pretty_dio_logger:
-    dependency: "direct main"
-    description:
-      name: pretty_dio_logger
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.0-beta-1"
   process:
     dependency: transitive
     description:
@@ -1093,7 +1051,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.4"
+    version: "6.0.5"
   pub_semver:
     dependency: transitive
     description:
@@ -1142,7 +1100,7 @@ packages:
       name: riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.3"
   rxdart:
     dependency: transitive
     description:
@@ -1457,5 +1415,5 @@ packages:
     source: hosted
     version: "1.3.0"
 sdks:
-  dart: ">=2.18.4 <3.0.0"
-  flutter: ">=3.3.7"
+  dart: ">=2.18.6 <3.0.0"
+  flutter: ">=3.3.0"

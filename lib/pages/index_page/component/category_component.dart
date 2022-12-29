@@ -1,6 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -165,7 +166,7 @@ class CategoryComponentState extends State<CategoryComponent> {
 
   /// 菜单被点击事件
   /// 不包含扩展项目
-  void _onTap(String? name, List<Category> categorys) {
+  void _onTap(String? name, IList<Category> categorys) {
     var index = -1;
     Category? item;
 

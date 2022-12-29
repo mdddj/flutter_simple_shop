@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
@@ -10,7 +11,6 @@ class NewProductsLoadMore extends LoadingMoreBase<Product> {
   int page = 1;
   bool more = true;
 
-
   @override
   Future<bool> refresh([bool notifyStateChanged = false]) {
     page = 1;
@@ -20,24 +20,31 @@ class NewProductsLoadMore extends LoadingMoreBase<Product> {
 
   @override
   Future<bool> loadData([bool isloadMoreAction = false]) async {
-    final r = await kApi.getProducts(param: ProductListParam(pageId: '$page'));
-    if(page ==  1) clear();
-    if (r != null) {
-      final list = r.list ?? [];
-      if (list.isNotEmpty) {
-        more = true;
-        addAll(list);
-        page++;
-      } else {
-        more = false;
+    try{
+      final r = await kApi.getProducts(param: ProductListParam(pageId: '$page',pageSize: '10'));
+      if(page ==  1) clear();
+      if (r != null) {
+        final list = r.list ?? [];
+        if (list.isNotEmpty) {
+          more = true;
+          addAll(list);
+          page++;
+        } else {
+          more = false;
+        }
+        return true;
       }
-      return true;
+      return false;
+    } on AppException catch( e){
+      print(e.dioError?.error);
+      print(e.dioError?.stackTrace);
+      return false;
     }
-    return false;
   }
 
   @override
   bool get hasMore => more;
+
 }
 
 ///新品小部件

@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -24,7 +25,7 @@ extension BuildContextExt on BuildContext {
   int get categoryLength => categorys.length;
 
   ///App超级分类
-  List<Category> get categorys => read<CategoryState>().categorys;
+  IList<Category> get categorys => read<CategoryState>().categorys;
 }
 
 

@@ -2,6 +2,7 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart' hide BlogCategory;
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/cupertino.dart';
 
 // Project imports:
@@ -10,7 +11,7 @@ import '../../modals/blog_category_model.dart';
 
 
 class CategoryState extends ChangeNotifier {
-  List<Category> categorys = [];
+  IList<Category> categorys =const IListConst([]);
 
   late Category current;
 
@@ -18,15 +19,14 @@ class CategoryState extends ChangeNotifier {
 
   Subcategory? currentSubCategory;
 
-  List<BlogCategory> blogCategorys = [];
+  IList<BlogCategory> blogCategorys = const IListConst([]);
 
-  List<JdOrPddCategory> jdCategory = [];
+  IList<JdOrPddCategory> jdCategory = const IListConst([]);
 
   /// 加载大淘客超级分类数据
   Future<void> init() async {
-    categorys.clear();
     final result = await DdTaokeSdk.instance.getCategorys();
-    categorys.addAll(result);
+    categorys = categorys.addAll(result);
     if (categorys.isNotEmpty) {
       setCurrent(result[0]);
     }
@@ -58,7 +58,7 @@ class CategoryState extends ChangeNotifier {
 
   Future<List<BlogCategory>> getBlogCategory() async {
     final list = await utils.blogApi.getCategorys();
-    blogCategorys = list;
+    blogCategorys = blogCategorys.addAll(list);
     notifyListeners();
     return list;
   }
