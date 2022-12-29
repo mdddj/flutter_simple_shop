@@ -1,8 +1,6 @@
-// Flutter imports:
-// Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
-import 'package:dio/dio.dart';
+import 'package:diox/diox.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

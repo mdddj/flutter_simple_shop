@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:dio/dio.dart';
+import 'package:diox/diox.dart';
 
 /// 请求错误类
 class ErrorEntity {
@@ -15,7 +15,7 @@ class ErrorEntity {
         {
           return ErrorEntity(code: -1, message: '请求取消');
         }
-      case DioErrorType.connectTimeout:
+      case DioErrorType.connectionTimeout:
         {
           return ErrorEntity(code: -1, message: '连接超时');
         }
@@ -27,7 +27,7 @@ class ErrorEntity {
         {
           return ErrorEntity(code: -1, message: '响应超时');
         }
-      case DioErrorType.response:
+      case DioErrorType.badResponse:
         {
           try {
             var errCode = error.response!.statusCode;

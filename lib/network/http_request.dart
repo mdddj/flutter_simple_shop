@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:dio/dio.dart';
+import 'package:diox/diox.dart';
 
 // Project imports:
 import 'aes_util.dart';
@@ -97,7 +97,7 @@ class HttpRequest {
   /// 创建dio实例
   static Dio? createInstance() {
     if (dio == null) {
-      var options = BaseOptions(baseUrl:host, connectTimeout: timeOut);
+      var options = BaseOptions(baseUrl:host, connectTimeout: const Duration(milliseconds: timeOut));
       dio = Dio(options);
     }
     return dio;

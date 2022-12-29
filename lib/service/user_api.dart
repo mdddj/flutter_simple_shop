@@ -1,5 +1,4 @@
-// Package imports:
-import 'package:dio/dio.dart';
+import 'package:diox/diox.dart';
 import 'package:get_it/get_it.dart';
 
 
