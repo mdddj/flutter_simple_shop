@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.199.70';
+const apiHost = 'http://192.168.199.77';
 const apiPort = '80';
 const kDebugMode = true;
 void main() async {
@@ -34,15 +34,6 @@ class MyApp extends StatelessWidget {
         );
       }),
     );
-  }
-}
-
-class ImageV extends StatelessWidget {
-  const ImageV({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Image.asset("ass");
   }
 }
 
