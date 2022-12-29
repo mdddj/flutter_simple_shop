@@ -1,8 +1,6 @@
 
-import 'package:curl_logger_dio_interceptor/curl_logger_dio_interceptor.dart';
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dio/dio.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:diox/diox.dart';
 import '../service/user_api.dart';
 ///添加token到请求头
 class MyInterceptor implements Interceptor {
@@ -39,10 +37,6 @@ abstract class MyAppCoreApi extends BaseApi {
   MyAppCoreApi(String url, {HttpMethod? httpMethod,bool showDetailLog = false})
       : super(url, httpMethod: httpMethod ?? HttpMethod.get) {
     intrtceptors.add(MyInterceptor());
-    if(showDetailLog){
-      intrtceptors.add(CurlLoggerDioInterceptor());
-      intrtceptors.add(PrettyDioLogger());
-    }
   }
 
   @override

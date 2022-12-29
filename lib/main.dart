@@ -9,7 +9,6 @@ import 'index.dart';
 const apiHost = 'http://192.168.199.70';
 const apiPort = '80';
 const kDebugMode = true;
-
 void main() async {
   appInit(() => runApp(const ProviderScope(child: MyApp())));
 }
@@ -17,6 +16,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final String? title;
   const MyApp({Key? key,this.title}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,3 +36,13 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class ImageV extends StatelessWidget {
+  const ImageV({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.asset("ass");
+  }
+}
+
