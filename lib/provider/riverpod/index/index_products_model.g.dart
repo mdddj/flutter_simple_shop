@@ -9,9 +9,7 @@ part of 'index_products_model.dart';
 _$_IndexProductsModel _$$_IndexProductsModelFromJson(
         Map<String, dynamic> json) =>
     _$_IndexProductsModel(
-      products: (json['products'] as List<dynamic>)
-          .map((e) => Product.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      products: json['products'] as List<dynamic>,
       page: json['page'] as int,
     );
 

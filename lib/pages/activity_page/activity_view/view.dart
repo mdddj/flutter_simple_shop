@@ -19,7 +19,7 @@ class ActivityViewPage extends StatefulWidget {
 
 class ActivityViewPageState extends State<ActivityViewPage> {
 
-  List<Product> _products = [];
+  List<ProductModel> _products = [];
 
   @override
   void initState() {

@@ -47,7 +47,6 @@ export 'index_page/store/price_layout.dart';
 export 'index_page/store/store_card.dart';
 export 'jiujiu_page/goods_item_widget.dart';
 export 'jiujiu_page/goods_list_widget.dart';
-export 'jiujiu_page/header_menu.dart';
 export 'jiujiu_page/image_nav.dart';
 export 'jiujiu_page/index_home.dart';
 export 'jiujiu_page/list.dart';

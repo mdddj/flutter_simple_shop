@@ -32,7 +32,7 @@ class IndexColumnWidget extends StatelessWidget {
         TwoColumnCommWidget(
             imageBuilder: (double w, double h) {
               return ExtendedImage.network(
-                products[0].mainPic!,
+                products[0].mainPic,
                 width: w,
                 height: h,
                 borderRadius: BorderRadius.circular(12),
@@ -45,7 +45,7 @@ class IndexColumnWidget extends StatelessWidget {
         if (products.length > 1)
           TwoColumnCommWidget(
             imageBuilder: (double w, double h) {
-              return ExtendedImage.network(products[1].mainPic!,
+              return ExtendedImage.network(products[1].mainPic,
                   width: w,
                   height: h,
                   borderRadius: BorderRadius.circular(12),

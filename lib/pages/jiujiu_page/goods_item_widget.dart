@@ -8,7 +8,7 @@ import '../../widgets/tag_widget.dart';
 
 // 9.9商品卡片布局
 class GoodsItemWidget extends StatelessWidget {
-  final Product goodsItem;
+  final ProductModel goodsItem;
   final Widget? shopWidget;
   final Widget? imageWidget;
   final EdgeInsets? margin;
@@ -37,7 +37,7 @@ class GoodsItemWidget extends StatelessWidget {
             child: Stack(
               children: [
                 SimpleImage(
-                  url: goodsItem.mainPic!,
+                  url: goodsItem.mainPic,
                 ),
                 imageWidget ?? Container()
               ],
@@ -62,7 +62,7 @@ class GoodsItemWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         //标题
-                        Text(goodsItem.dtitle!,
+                        Text(goodsItem.dtitle,
                             style: const TextStyle(
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black),
@@ -71,7 +71,7 @@ class GoodsItemWidget extends StatelessWidget {
                         //店铺
                         shopWidget ??
                             TagWidget(
-                                title: goodsItem.shopName ?? '',
+                                title: goodsItem.shopName,
                                 noBorder: true),
 
                         //券后价

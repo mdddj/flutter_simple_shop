@@ -74,21 +74,21 @@ class DDQWidgetState extends State<DDQWidget> {
               list[0].actualPrice.toString(),
               list[0].originalPrice.toString(),
               list[0].monthSales.toString(),
-              list[0].dtitle!),
+              list[0].dtitle),
           const SizedBox(width: 12),
           _mimiGoodsCard(
               list[1].mainPic,
               list[1].actualPrice.toString(),
               list[1].originalPrice.toString(),
               list[1].monthSales.toString(),
-              list[1].dtitle!),
+              list[1].dtitle),
           const SizedBox(width: 12),
           _mimiGoodsCard(
               list[2].mainPic,
               list[2].actualPrice.toString(),
               list[2].originalPrice.toString(),
               list[2].monthSales.toString(),
-              list[2].dtitle!),
+              list[2].dtitle),
         ],
       );
     }

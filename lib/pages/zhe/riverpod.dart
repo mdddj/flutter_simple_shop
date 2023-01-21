@@ -15,7 +15,7 @@ class ZheState extends ChangeNotifier {
 
   bool loading = true;
 
-  List<Product> products = [];
+  List<ProductModel> products = [];
 
   /// 加载商品
   Future<bool> fetchData() async {

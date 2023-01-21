@@ -23,7 +23,7 @@ class BrandDetailPage extends StatefulWidget {
 
 class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<BrandDetailPage>, LoadingMixin {
   final EasyRefreshController _easyRefreshController = EasyRefreshController();
-  List<Product> products = <Product>[];
+  List<ProductModel> products = <ProductModel>[];
   BrandDetail? brandDetailModel;
   int page = 1;
 

@@ -1,4 +1,3 @@
-// Package imports:
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -6,9 +5,7 @@ import './ddq_provider.dart';
 import './dtk_index_goods_provider.dart';
 import './goods_detail_provider.dart';
 import './goods_list_provider.dart';
-import './nine_goods_provider.dart';
 import '../pages/banjia/resp.dart';
-// Project imports:
 import '../pages/brand_page/provider/brand_provider.dart';
 import '../pages/dynamic/pyq_riverpod.dart';
 import '../pages/dynamic/wph_riverpod.dart';
@@ -30,7 +27,6 @@ List<SingleChildWidget> providers = [
       create: (_) => DtkIndexGoodsModal()),
   ChangeNotifierProvider<GoodsDetailProvider>(
       create: (_) => GoodsDetailProvider()),
-  ChangeNotifierProvider<NineGoodsProvider>(create: (_) => NineGoodsProvider()),
   ChangeNotifierProvider<GoodsListProvider>(create: (_) => GoodsListProvider()),
   ChangeNotifierProvider<DdqProvider>(create: (_)=>DdqProvider()),
   ChangeNotifierProvider<UserProvider>(create: (_)=>UserProvider()),

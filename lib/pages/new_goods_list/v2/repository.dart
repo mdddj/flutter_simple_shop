@@ -8,7 +8,7 @@ import 'package:loading_more_list/loading_more_list.dart';
 import 'goods_list_params_model.dart';
 
 ///产品列表的数据仓库
-class ProductListRepository extends LoadingMoreBase<Product> {
+class ProductListRepository extends LoadingMoreBase<ProductModel> {
 
   late GoodsListParamsModel state; //筛选产品参数
 
@@ -55,7 +55,7 @@ class ProductListRepository extends LoadingMoreBase<Product> {
   }
 
   ///获取新的列表
-  List<Product> getNewList(List<Product> newList) {
+  List<ProductModel> getNewList(List<ProductModel> newList) {
     state.products.addAll(newList);
     return List.from(state.products);
   }

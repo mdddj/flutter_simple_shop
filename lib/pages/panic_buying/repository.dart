@@ -12,7 +12,7 @@ import '../../provider/riverpod/category_riverpod.dart';
 //数据模型
 class PanicBuyingModel extends ChangeNotifier {
   List<Category> cates = [];
-  List<Product> products = [];
+  List<ProductModel> products = [];
   int _page = 1;
   bool changeLoading = false;
 

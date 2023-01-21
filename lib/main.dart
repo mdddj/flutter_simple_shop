@@ -7,14 +7,17 @@ import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
 const apiHost = 'http://192.168.199.77';
-const apiPort = '80';
+const apiPort = "80";
 const kDebugMode = true;
 void main() async {
+
   appInit(() => runApp(const ProviderScope(child: MyApp())));
 }
 
+
 class MyApp extends StatelessWidget {
   final String? title;
+
   const MyApp({Key? key,this.title}) : super(key: key);
 
 
@@ -31,9 +34,9 @@ class MyApp extends StatelessWidget {
           themeMode: appThemeSetting.getThemeMode,
           home: const InitBuildWidget(home: App()),
           builder: FlutterSmartDialog.init(loadingBuilder: MyCustomLoadingWidget.new),
+
         );
       }),
     );
   }
 }
-

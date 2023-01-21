@@ -3,6 +3,8 @@ PODS:
     - Flutter
   - dd_js_util (0.0.1):
     - Flutter
+  - dd_models (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - flutter_image_compress (1.0.0):
     - Flutter
@@ -49,6 +51,7 @@ PODS:
 DEPENDENCIES:
   - dataoke_sdk (from `.symlinks/plugins/dataoke_sdk/ios`)
   - dd_js_util (from `.symlinks/plugins/dd_js_util/ios`)
+  - dd_models (from `.symlinks/plugins/dd_models/ios`)
   - Flutter (from `Flutter`)
   - flutter_image_compress (from `.symlinks/plugins/flutter_image_compress/ios`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
@@ -72,6 +75,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/dataoke_sdk/ios"
   dd_js_util:
     :path: ".symlinks/plugins/dd_js_util/ios"
+  dd_models:
+    :path: ".symlinks/plugins/dd_models/ios"
   Flutter:
     :path: Flutter
   flutter_image_compress:
@@ -94,6 +99,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   dataoke_sdk: aa95616c89b448c7b3f698825a49bed62c9b7b9d
   dd_js_util: dd9d6c042b6221e3b5eeaba6f2caf186a382aa3d
+  dd_models: 5bd836519341310a49aa6c53a2203c300021d790
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_image_compress: 5a5e9aee05b6553048b8df1c3bc456d0afaac433
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a

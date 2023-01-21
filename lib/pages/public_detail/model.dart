@@ -1,15 +1,10 @@
 // 通用类型
-
-// Package imports:
 import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-
 import '../../modals/pdd_detail_model.dart';
-
-// Project imports:
 import '../dynamic/model/wph_detail_resul.dart';
 
-class PublicDetailModel extends FavoriteModel {
+//
+class PublicDetailModel  {
   String type; //类型 ,taobao , jindong, pdd
   String title; // 标题
   String goodsImage; // 产品主图
@@ -55,47 +50,4 @@ class PublicDetailModel extends FavoriteModel {
         sales: '0');
   }
 
-  @override
-  String getAmount() {
-    return coupon;
-  }
-
-  @override
-  String getArrivalPrice() {
-    return '${price - (double.parse(coupon))}';
-  }
-
-  @override
-  String getEndTime() {
-    return "未知";
-  }
-
-  @override
-  String getImageUrl() {
-    return goodsImage;
-  }
-
-  @override
-  String getProductId() {
-    return id;
-  }
-
-  @override
-  String getTitle() {
-    return title;
-  }
-
-  @override
-  String getType() {
-    switch (type) {
-      case "pdd":
-        return "拼多多";
-      case "taobao":
-        return "淘宝";
-      case "jindong":
-        return "京东";
-      default:
-        return "未知";
-    }
-  }
 }

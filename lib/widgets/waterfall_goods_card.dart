@@ -10,7 +10,7 @@ import 'extended_image.dart';
 
 // 瀑布流商品卡片
 class WaterfallGoodsCard extends StatelessWidget {
-  final Product product;
+  final ProductModel product;
 
   const WaterfallGoodsCard(this.product, {Key? key}) : super(key: key);
 
@@ -39,7 +39,7 @@ class WaterfallGoodsCard extends StatelessWidget {
                   const SizedBox(height: 5),
 
                   // 标题
-                  _title(product.dtitle!),
+                  _title(product.dtitle),
 
                   const SizedBox(height: 5),
                   // // 购买理由
@@ -66,7 +66,7 @@ class WaterfallGoodsCard extends StatelessWidget {
                     child: FSuper(
                       lightOrientation: FLightOrientation.LeftBottom,
                       text:
-                          '领 ${NumUtil.getNumByValueDouble(product.couponPrice, 0)} 元券',
+                          '领 ${NumUtil.getNumByValueDouble(product.couponPrice as double?, 0)} 元券',
                       padding:
                           const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
                       strokeColor: context.primaryColor,
@@ -81,7 +81,7 @@ class WaterfallGoodsCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: CouponPriceWidget(
                         actualPrice: product.actualPrice.toString(),
-                        originalPrice: product.originalPrice),
+                        originalPrice: product.originalPrice as double?),
                   ),
                   // Hot(
                   //     text:
@@ -133,7 +133,7 @@ class WaterfallGoodsCard extends StatelessWidget {
 
   // 商品卡片主图
   Widget _image() {
-    var img = product.mainPic!;
+    var img = product.mainPic;
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return SizedBox(

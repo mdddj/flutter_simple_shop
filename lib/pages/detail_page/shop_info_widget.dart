@@ -2,12 +2,10 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
-
-// Project imports:
 import '../../util/image_util.dart';
 
 class ShopInfoWidget extends StatelessWidget {
-  final Product goodsInfo;
+  final ProductModel goodsInfo;
 
   const ShopInfoWidget({required this.goodsInfo,Key? key}):super(key: key);
 
@@ -22,8 +20,8 @@ class ShopInfoWidget extends StatelessWidget {
                 // 商铺logo
                 Container(
                   padding: const EdgeInsets.only(top: 5.0, bottom: 5.0, right: 10.0),
-                  child:goodsInfo.shopLogo!.isNotEmpty? Image.network(
-                    MImageUtils.magesProcessor(goodsInfo.shopLogo!),
+                  child:goodsInfo.shopLogo.isNotEmpty? Image.network(
+                    MImageUtils.magesProcessor(goodsInfo.shopLogo),
                     width: 91,
                     height: 90,
                   ) : Image.asset('assets/images/ava.jpg',width:91,height:90,),
@@ -34,7 +32,7 @@ class ShopInfoWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        goodsInfo.shopName!,
+                        goodsInfo.shopName,
                         style: const TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 12),

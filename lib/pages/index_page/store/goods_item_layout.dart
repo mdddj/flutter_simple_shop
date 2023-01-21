@@ -11,7 +11,7 @@ import 'price_layout.dart';
 
 /// 商品卡片布局
 class StoreGoodsItemLayout extends StatelessWidget {
-  final Product storeGoods;
+  final ProductModel storeGoods;
 
   const StoreGoodsItemLayout({Key? key, required this.storeGoods})
       : super(key: key);
@@ -29,7 +29,7 @@ class StoreGoodsItemLayout extends StatelessWidget {
             children: [
               LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
                 return ExtendedImage.network(
-                  MImageUtils.magesProcessor(storeGoods.mainPic!),
+                  MImageUtils.magesProcessor(storeGoods.mainPic),
                   borderRadius: BorderRadius.circular(5),
                   shape: BoxShape.rectangle,
                   width: constraints.maxWidth,

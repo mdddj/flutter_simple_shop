@@ -7,7 +7,6 @@ export 'goods_detail_provider.dart';
 export 'goods_list_provider.dart';
 export 'index_provider.dart';
 export 'jd_products_provider.dart';
-export 'nine_goods_provider.dart';
 export 'providers.dart';
 export 'riverpod/base.dart';
 export 'riverpod/category_riverpod.dart';

@@ -10,7 +10,7 @@ import '../../widgets/tag_widget.dart';
 
 // 9.9商品卡片布局
 class GoodsItem extends StatelessWidget {
-  final Product goodsItem;
+  final ProductModel goodsItem;
   final int? state;
 
   const GoodsItem({required this.goodsItem, this.state,Key? key}): super(key: key);
@@ -27,7 +27,7 @@ class GoodsItem extends StatelessWidget {
               height: 120,
               width: 120,
               child: SimpleImage(
-                url: goodsItem.mainPic!,
+                url: goodsItem.mainPic,
               )),
           Expanded(
               child: InkWell(
@@ -46,7 +46,7 @@ class GoodsItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         //标题
-                        Text(goodsItem.dtitle!,
+                        Text(goodsItem.dtitle,
                             style: const TextStyle(
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black),

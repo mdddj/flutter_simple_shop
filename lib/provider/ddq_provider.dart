@@ -7,7 +7,7 @@ import '../common/base_provider.dart';
 
 // 钉钉抢状态管理
 class DdqProvider extends ChangeNotifier with BaseProvider {
-  List<Product> goodsList = [];
+  List<ProductModel> goodsList = [];
   List<RoundsList> roundsList = [];
   DateTime? ddqTime;
   int? status;

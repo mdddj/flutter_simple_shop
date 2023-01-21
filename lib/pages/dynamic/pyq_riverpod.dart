@@ -10,7 +10,7 @@ class PyqState extends ChangeNotifier{
 
   int _page = 1;
   bool loading = false;
-  List<Product> products =[];
+  List<ProductModel> products =[];
   bool isQrcode = false;
 
   /// 设置值

@@ -16,6 +16,11 @@ Future<void> appInit(Function start) async {
   start.call();
 }
 
+/// At least one of [home], [routes], [onGenerateRoute], or [builder] must be
+/// non-null. If only [routes] is given, it must include an entry for the
+/// [Navigator.defaultRouteName] (`/`), since that is the route used when the
+/// application is launched with an intent that specifies an otherwise
+/// unsupported route.
 void initNetUtil() {
   BaseApi.host = "$apiHost:$apiPort";
   if (kIsWeb.not && Platform.isAndroid) {

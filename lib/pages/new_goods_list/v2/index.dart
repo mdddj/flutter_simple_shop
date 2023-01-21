@@ -39,7 +39,7 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
   Widget build(BuildContext context) {
     return LoadingMoreCustomScrollView(
       slivers: [
-        LoadingMoreSliverList(SliverListConfig<Product>(
+        LoadingMoreSliverList(SliverListConfig<ProductModel>(
             itemBuilder: _renderLayout,
             sourceList: repository,
             padding: const EdgeInsets.all(12),
@@ -50,7 +50,7 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
   }
 
   ///渲染产品布局
-  Widget _renderLayout(BuildContext context, Product product, int index) {
+  Widget _renderLayout(BuildContext context, ProductModel product, int index) {
     return WaterfallGoodsCard(product);
   }
 

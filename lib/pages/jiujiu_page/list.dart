@@ -29,7 +29,7 @@ class JiuJiuProductList extends StatelessWidget {
   }
 
   // 产品卡片布局
-  Widget renderItem(Product item) {
+  Widget renderItem(ProductModel item) {
     return WaterfallGoodsCard(item);
   }
 }

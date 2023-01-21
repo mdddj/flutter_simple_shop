@@ -35,8 +35,8 @@ class FavoritesAddApi extends MyAppCoreApi {
   FavoritesAddApi() : super("$favoritesPrefix/save", httpMethod: HttpMethod.post);
 
   @Doc(message: "服务器发起请求,添加收藏")
-  static Future<void> doRequeset(FavoriteModel favoriteModel,{VoidCallback? success}) async {
-    final r = await (FavoritesAddApi()).request(data: favoriteModel.getJson());
+  static Future<void> doRequeset(ProductModel favoriteModel,{VoidCallback? success}) async {
+    final r = await (FavoritesAddApi()).request(data: favoriteModel.toJson());
     r.handle(success: success);
   }
 }

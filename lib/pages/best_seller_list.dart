@@ -22,7 +22,7 @@ class BestSellerListPage extends StatefulWidget {
 class BestSellerListPageState extends State<BestSellerListPage> {
 
 
- late  List<Product> _products;
+ late  List<ProductModel> _products;
 
  @override
   void initState() {
@@ -41,7 +41,7 @@ class BestSellerListPageState extends State<BestSellerListPage> {
     );
   }
 
-  Widget _renderItemCell(Product product){
+  Widget _renderItemCell(ProductModel product){
    return utils.widgetUtils.renderProductCard(product);
   }
 }

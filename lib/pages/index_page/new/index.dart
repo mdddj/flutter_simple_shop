@@ -82,7 +82,7 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAli
           }, childCount: 4)),
         ),
         LoadingMoreSliverList(
-          SliverListConfig<Product>(
+          SliverListConfig<ProductModel>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: repository,
               extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(

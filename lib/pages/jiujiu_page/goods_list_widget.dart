@@ -7,7 +7,7 @@ import './goods_item_widget.dart';
 
 class GoodsListWidget extends StatelessWidget {
 
-  final List<Product>? list;
+  final List<ProductModel>? list;
   final bool? isInitLoading;
   const GoodsListWidget({required this.list,this.isInitLoading,Key? key}): super(key: key);
 

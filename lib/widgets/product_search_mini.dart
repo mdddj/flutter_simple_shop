@@ -1,5 +1,4 @@
-// Flutter imports:
-// Package imports:
+
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,7 @@ class ProductSearchMini extends StatefulWidget {
 }
 
 class ProductSearchMiniState extends State<ProductSearchMini> {
-  final List<Product> _products = [];
+  final List<ProductModel> _products = [];
 
   @override
   void initState() {
@@ -50,8 +49,8 @@ class ProductSearchMiniState extends State<ProductSearchMini> {
   Widget itemBuilder(_, int index) {
     final product = _products[index];
     return ListTile(
-      leading: ExtendedImage.network(product.mainPic!),
-      title: Text('${product.dtitle}'),
+      leading: ExtendedImage.network(product.mainPic),
+      title: Text(product.dtitle),
     );
   }
 }

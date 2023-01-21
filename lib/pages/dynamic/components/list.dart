@@ -27,7 +27,7 @@ class PyqList extends StatelessWidget {
     });
   }
 
-  Widget renderItem(Product product) {
+  Widget renderItem(ProductModel product) {
     return Container(
       width: double.infinity,
       alignment: Alignment.center,
@@ -65,7 +65,7 @@ class PyqList extends StatelessWidget {
                   decoration:
                       BoxDecoration(borderRadius: BorderRadius.circular(4)),
                   child: Text(
-                    '创建了${NumUtil.getNumByValueDouble(product.couponPrice, 0)}元券',
+                    '创建了${NumUtil.getNumByValueDouble(product.couponPrice as double?, 0)}元券',
                     style: const TextStyle(color: Colors.pink),
                   ),
                 )
@@ -76,7 +76,7 @@ class PyqList extends StatelessWidget {
               const SizedBox(
           height: 8,
               ),
-              Text('${product.circleText}'),
+              Text(product.circleText),
               Builder(
                 builder: (context) {
                   return Container(
@@ -96,7 +96,7 @@ class PyqList extends StatelessWidget {
                             newViewPage: true);
                       },
                       child: SimpleImage(
-                        url: product.mainPic!,
+                        url: product.mainPic,
                       ),
                     ),
                   ),
@@ -116,7 +116,7 @@ class PyqList extends StatelessWidget {
                                 newViewPage: true);
                           },
                           child: Text(
-                            '${product.dtitle}',
+                            product.dtitle,
                             style: const TextStyle(
                                 color: Colors.grey, fontSize: 14),
                           ),
@@ -137,7 +137,7 @@ class PyqList extends StatelessWidget {
                               onPressed: () async {
                                 final result = await DdTaokeSdk.instance
                                     .getCouponsDetail(
-                                        taobaoGoodsId: '${product.goodsId}');
+                                        taobaoGoodsId: product.goodsId);
                                 if (result != null) {
                                   utils.copy(result.longTpwd,
                                       message: '复制成功,打开淘宝即可领取优惠券');

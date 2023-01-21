@@ -6,14 +6,13 @@ import 'package:flutter/material.dart';
 
 import '../../../common/utils.dart';
 import '../../../util/image_util.dart';
-// Project imports:
 import '../../../util/navigator_util.dart';
 import '../../../widgets/component/coupon_discount.dart';
 import '../../../widgets/simple_price.dart';
 
 /// 品牌的商品列表
 class DetailProductList extends StatelessWidget {
-  final List<Product> list;
+  final List<ProductModel> list;
 
   const DetailProductList({Key? key, required this.list}) : super(key: key);
 
@@ -42,7 +41,7 @@ class DetailProductList extends StatelessWidget {
     );
   }
 
-  Widget _buildData(Product item) {
+  Widget _buildData(ProductModel item) {
     return Container(
       constraints: const BoxConstraints(minHeight: 120),
       child: Column(
@@ -50,7 +49,7 @@ class DetailProductList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            item.title!,
+            item.title,
             style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
           ),
           CouponDiscountShow(value: item.couponPrice.toString().replaceAll('.0', '')),
@@ -64,7 +63,7 @@ class DetailProductList extends StatelessWidget {
   }
 
   // 商品主图
-  Widget _buildImage(Product item) {
+  Widget _buildImage(ProductModel item) {
     var imageSize = const Size(120, 120);
     return Container(
         decoration: BoxDecoration(
@@ -72,7 +71,7 @@ class DetailProductList extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
         child: ExtendedImage.network(
-          MImageUtils.magesProcessor(item.mainPic!),
+          MImageUtils.magesProcessor(item.mainPic),
           width: imageSize.width,
           height: imageSize.height,
           borderRadius: BorderRadius.circular(5),

@@ -8,13 +8,13 @@ import 'package:flutter/material.dart';
 class IndexState extends ChangeNotifier {
   bool indexLoading = false;
 
-  List<Product> products = [];
+  List<ProductModel> products = [];
 
   // 首页推广轮播图
   List<Carousel> carousel = [];
 
   // 每日榜单的商品列表
-  List<Product> hotDayProducts = [];
+  List<ProductModel> hotDayProducts = [];
 
   int _page = 1;
 

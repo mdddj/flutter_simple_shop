@@ -10,7 +10,7 @@ class JiujiuState extends ChangeNotifier {
   int page = 1;
   bool loading = false;
 
-  List<Product> products = [];
+  List<ProductModel> products = [];
 
   ///初始化
   Future<void> init() async {

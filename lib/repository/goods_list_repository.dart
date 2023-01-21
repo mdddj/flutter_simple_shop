@@ -2,7 +2,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
-class GoodsListRepository extends LoadingMoreBase<Product> {
+class GoodsListRepository extends LoadingMoreBase<ProductModel> {
   int pageindex = 1;
   bool _hasMore = true;
   bool forceRefresh = false;

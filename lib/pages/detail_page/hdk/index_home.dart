@@ -42,7 +42,7 @@ class HaoDanKuDetailItem extends ConsumerStatefulWidget {
 
 class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     with TickerProviderStateMixin {
-  Product? info;
+  ProductModel? info;
   CouponLinkResult? couponLinkResult;
   ShopInfo? _shopInfo;
   late Future<String> futureBuildData = initDatas();
@@ -437,7 +437,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                   text: '推荐理由: ',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               TextSpan(
-                  text: '${info!.desc}',
+                  text: info!.desc,
                   style: const TextStyle(color: Colors.grey)),
               TextSpan(
                   text: '复制文案',
@@ -500,7 +500,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                               height: 12,
                             ),
                             Text(
-                              '使用日期:${getTimeStr(info!.couponStartTime ?? '')} - ${getTimeStr(info!.couponEndTime ?? '已过期')}',
+                              '使用日期:${getTimeStr(info!.couponStartTime)} - ${getTimeStr(info!.couponEndTime)}',
                               style: context.textTheme.labelSmall,
                             )
                           ],
@@ -604,7 +604,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         SizedBox(
           width: context.screenWidth,
           child: DrawableStartText(
-            lettersCountOfAfterImage: info!.dtitle!.length,
+            lettersCountOfAfterImage: info!.dtitle.length,
             assetImage: info!.shopType == 1
                 ? 'assets/icons/tianmao2.png'
                 : 'assets/icons/taobao2.png',
@@ -824,7 +824,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   }
 
   List<String> getImages() {
-    var str = info!.imgs ?? '';
+    var str = info!.imgs;
     return str.split(',');
   }
 

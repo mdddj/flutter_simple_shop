@@ -11,7 +11,7 @@ class SearchState extends ChangeNotifier {
   String searchKeyWorlds = '';
   bool initLoading = false;
 
-  List<Product> products = []; // 产品列表
+  List<ProductModel> products = []; // 产品列表
 
   // 加载数据
   // 初始化

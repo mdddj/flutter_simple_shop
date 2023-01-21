@@ -18,7 +18,7 @@ class GoodsListState extends ChangeNotifier {
   String sort = DdSort.defaultSort;
 
   // 列表
-  List<Product> products = [];
+  List<ProductModel> products = [];
 
   // 分页
   int page = 1;

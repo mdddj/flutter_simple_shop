@@ -8,7 +8,7 @@ import 'package:loading_more_list/loading_more_list.dart';
 import '../../../common/utils.dart';
 
 class ProductsList extends StatelessWidget {
-  final List<Product> products;
+  final List<ProductModel> products;
 
   const ProductsList(this.products, {Key? key}) : super(key: key);
 
@@ -28,7 +28,7 @@ class ProductsList extends StatelessWidget {
             children: products.map(itemBuilder).toList()));
   }
 
-  Widget itemBuilder(Product item) {
+  Widget itemBuilder(ProductModel item) {
     return utils.widgetUtils.renderProductCard(item);
   }
 }
