@@ -17,6 +17,7 @@ final initFuture = FutureProvider.family<dynamic, BuildContext>((ref, context) a
     await categoryModel.init(); //加载超级分类数据
     await indexModel.fetch(); //加载双列产品数据
     await KZheTaokeApiWithAppkeyGet.doRequest(ref); //加载折淘客的APP Key
+    ref.read(userRiverpod.notifier).initState();
   } on AppException catch (_) {
     rethrow;
   }

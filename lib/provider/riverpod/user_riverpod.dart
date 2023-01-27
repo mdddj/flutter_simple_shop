@@ -13,9 +13,7 @@ final userRiverpod =
 class UserModel extends StateNotifier<UserDetailModal> {
   final Ref ref;
 
-  UserModel(this.ref) : super(const UserDetailModal(user: null)){
-    initState();
-  }
+  UserModel(this.ref) : super(const UserDetailModal(user: null));
 
   @Doc(message: '登录的方法,登录成功会返回一个jwt token')
   Future<bool> login(String username, String password) async {
