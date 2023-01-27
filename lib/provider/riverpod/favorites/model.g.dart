@@ -10,7 +10,7 @@ _$_MyFavoritesModel _$$_MyFavoritesModelFromJson(Map<String, dynamic> json) =>
     _$_MyFavoritesModel(
       amount: json['amount'] as String,
       arrivalPrice: json['arrivalPrice'] as String,
-      createTime: json['createTime'] as int,
+      createTime: json['createTime'] as String,
       endTime: json['endTime'] as String,
       id: json['id'] as int,
       imageUrl: json['imageUrl'] as String,

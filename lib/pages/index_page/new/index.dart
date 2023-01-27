@@ -90,8 +90,7 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAli
                 crossAxisSpacing: kDefaultPadding,
                 mainAxisSpacing: kDefaultPadding,
               ),
-              padding: const EdgeInsets.all(kDefaultPadding),
-              childCount: repository.length),
+              padding: const EdgeInsets.all(kDefaultPadding)),
         )
       ],
     );

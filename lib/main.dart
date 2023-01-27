@@ -1,3 +1,4 @@
+import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
@@ -6,11 +7,10 @@ import 'package:provider/provider.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.199.77';
+const apiHost = 'http://192.168.0.101';
 const apiPort = "80";
 const kDebugMode = true;
 void main() async {
-
   appInit(() => runApp(const ProviderScope(child: MyApp())));
 }
 
@@ -33,7 +33,12 @@ class MyApp extends StatelessWidget {
           darkTheme: MyAppTheme.darkTheme,
           themeMode: appThemeSetting.getThemeMode,
           home: const InitBuildWidget(home: App()),
-          builder: FlutterSmartDialog.init(loadingBuilder: MyCustomLoadingWidget.new),
+          builder: FlutterSmartDialog.init(loadingBuilder: MyCustomLoadingWidget.new,builder: (c,child){
+            return MediaQuery(data: MediaQuery.of(c).copyWith(
+              textScaleFactor: 0.9,
+              boldText: false
+            ), child: child??const SizedBox());
+          }),
 
         );
       }),

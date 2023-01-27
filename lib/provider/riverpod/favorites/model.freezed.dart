@@ -24,8 +24,8 @@ mixin _$MyFavoritesModel {
   set amount(String value) => throw _privateConstructorUsedError;
   String get arrivalPrice => throw _privateConstructorUsedError;
   set arrivalPrice(String value) => throw _privateConstructorUsedError;
-  int get createTime => throw _privateConstructorUsedError;
-  set createTime(int value) => throw _privateConstructorUsedError;
+  String get createTime => throw _privateConstructorUsedError;
+  set createTime(String value) => throw _privateConstructorUsedError;
   String get endTime => throw _privateConstructorUsedError;
   set endTime(String value) => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
@@ -54,7 +54,7 @@ abstract class $MyFavoritesModelCopyWith<$Res> {
   $Res call(
       {String amount,
       String arrivalPrice,
-      int createTime,
+      String createTime,
       String endTime,
       int id,
       String imageUrl,
@@ -98,7 +98,7 @@ class _$MyFavoritesModelCopyWithImpl<$Res, $Val extends MyFavoritesModel>
       createTime: null == createTime
           ? _value.createTime
           : createTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       endTime: null == endTime
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ abstract class _$$_MyFavoritesModelCopyWith<$Res>
   $Res call(
       {String amount,
       String arrivalPrice,
-      int createTime,
+      String createTime,
       String endTime,
       int id,
       String imageUrl,
@@ -180,7 +180,7 @@ class __$$_MyFavoritesModelCopyWithImpl<$Res>
       createTime: null == createTime
           ? _value.createTime
           : createTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       endTime: null == endTime
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
@@ -231,7 +231,7 @@ class _$_MyFavoritesModel implements _MyFavoritesModel {
   @override
   String arrivalPrice;
   @override
-  int createTime;
+  String createTime;
   @override
   String endTime;
   @override
@@ -268,7 +268,7 @@ abstract class _MyFavoritesModel implements MyFavoritesModel {
   factory _MyFavoritesModel(
       {required String amount,
       required String arrivalPrice,
-      required int createTime,
+      required String createTime,
       required String endTime,
       required int id,
       required String imageUrl,
@@ -286,8 +286,8 @@ abstract class _MyFavoritesModel implements MyFavoritesModel {
   String get arrivalPrice;
   set arrivalPrice(String value);
   @override
-  int get createTime;
-  set createTime(int value);
+  String get createTime;
+  set createTime(String value);
   @override
   String get endTime;
   set endTime(String value);

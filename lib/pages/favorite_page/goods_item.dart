@@ -1,3 +1,4 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
@@ -11,8 +12,7 @@ class FavoriteGoodsItem extends StatelessWidget {
   final List<String>? selectListIds;
   final UserProvider? userProvider;
 
-  const FavoriteGoodsItem({required this.item, required this.isShowEditIcon, this.selectListIds, this.userProvider, Key? key})
-      : super(key: key);
+  const FavoriteGoodsItem({required this.item, required this.isShowEditIcon, this.selectListIds, this.userProvider, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,8 @@ class FavoriteGoodsItem extends StatelessWidget {
           ),
         ),
       ),
-      isShowEditIcon? Positioned(
+      isShowEditIcon
+          ? Positioned(
               right: 10,
               top: 10,
               child: Container(
@@ -110,17 +111,14 @@ class FavoriteGoodsItem extends StatelessWidget {
         strokeWidth: 1,
       );
       if (difference.inDays < 0) {
-        returnWidget = const FSuper(
-          lightOrientation: FLightOrientation.LeftBottom,
-          text: '已失效',
-          padding: EdgeInsets.all(2),
-          strokeColor: Color(0xffc2bfc2),
-          strokeWidth: 1,
+        returnWidget = Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [const Badge(child: Text('已失效')).marginOnly(top: 12)],
         );
       }
       return returnWidget;
     }
 
-    return const SizedBox();
+    return const SizedBox.shrink();
   }
 }

@@ -35,7 +35,12 @@ class CouponPriceWidget extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(left: interval ?? 10.0),
           child: Text(
-            '¥$originalPrice',
+            '原价$originalPrice',
+            style: TextStyle(
+              decoration: TextDecoration.lineThrough,
+              decorationColor: context.colorScheme.error,
+              color: context.colorScheme.secondary
+            ),
           ),
         ),
         //多少折

@@ -66,7 +66,7 @@ class WaterfallGoodsCard extends StatelessWidget {
                     child: FSuper(
                       lightOrientation: FLightOrientation.LeftBottom,
                       text:
-                          '领 ${NumUtil.getNumByValueDouble(product.couponPrice as double?, 0)} 元券',
+                          '领 ${NumUtil.getNumByValueDouble(product.couponPrice.toDouble(), 0)} 元券',
                       padding:
                           const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
                       strokeColor: context.primaryColor,
@@ -81,7 +81,7 @@ class WaterfallGoodsCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: CouponPriceWidget(
                         actualPrice: product.actualPrice.toString(),
-                        originalPrice: product.originalPrice as double?),
+                        originalPrice: product.originalPrice.toDouble()),
                   ),
                   // Hot(
                   //     text:

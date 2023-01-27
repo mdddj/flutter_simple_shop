@@ -14,6 +14,7 @@ class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel,Favorit
 
   @override
   List<MyFavoritesModel> transformResponseData(final WrapJson data) {
+    data.print();
    return List<MyFavoritesModel>.from((data.getListValue('content')).map(MyFavoritesModel.fromJson)).toList();
   }
 

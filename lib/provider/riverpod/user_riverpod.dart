@@ -13,7 +13,9 @@ final userRiverpod =
 class UserModel extends StateNotifier<UserDetailModal> {
   final Ref ref;
 
-  UserModel(this.ref) : super(const UserDetailModal(user: null));
+  UserModel(this.ref) : super(const UserDetailModal(user: null)){
+    initState();
+  }
 
   @Doc(message: '登录的方法,登录成功会返回一个jwt token')
   Future<bool> login(String username, String password) async {
@@ -24,13 +26,15 @@ class UserModel extends StateNotifier<UserDetailModal> {
 
   @Doc(message: '使用jwt token 来加载用户的基本资料')
   Future<void> fetchUserDetail(String token) async {
-    CacheFactory.create<TokenCache>().setToken(token);
-    GetIt.instance.get<UserApi>().token = token;
-    final vUser = await utils.api.getUser(token);
-    if (vUser != null) {
-      state = state.copyWith(user: vUser);
-      toast('欢迎回来,${vUser.nickName}');
-    } else {
+    try{
+      CacheFactory.create<TokenCache>().setToken(token);
+      GetIt.instance.get<UserApi>().token = token;
+      final vUser = await utils.api.getUser(token);
+      if (vUser != null) {
+        state = state.copyWith(user: vUser);
+        toast('欢迎回来,${vUser.nickName}');
+      }
+    } on AppException catch(_){
       toast("获取用户信息失败,请稍后重试");
     }
   }

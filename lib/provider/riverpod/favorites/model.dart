@@ -8,7 +8,7 @@ class MyFavoritesModel with _$MyFavoritesModel {
   factory MyFavoritesModel({
     required String amount,
     required String arrivalPrice,
-    required int createTime,
+    required String createTime,
     required String endTime,
     required int id,
     required String imageUrl,

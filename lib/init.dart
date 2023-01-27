@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -10,17 +11,14 @@ import 'index.dart';
 
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
+  DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.0.101');
   initNetUtil();
   initInstanceObject();
   await initCaches();
   start.call();
 }
 
-/// At least one of [home], [routes], [onGenerateRoute], or [builder] must be
-/// non-null. If only [routes] is given, it must include an entry for the
-/// [Navigator.defaultRouteName] (`/`), since that is the route used when the
-/// application is launched with an intent that specifies an otherwise
-/// unsupported route.
+
 void initNetUtil() {
   BaseApi.host = "$apiHost:$apiPort";
   if (kIsWeb.not && Platform.isAndroid) {

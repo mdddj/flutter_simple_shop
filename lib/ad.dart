@@ -14,9 +14,9 @@ final initFuture = FutureProvider.family<dynamic, BuildContext>((ref, context) a
   try {
     final categoryModel = context.read<CategoryState>();
     final indexModel = context.read<IndexState>();
-    await categoryModel.init();//加载超级分类数据
-    await indexModel.fetch();//加载双列产品数据
-    await KZheTaokeApiWithAppkeyGet.doRequest(ref);//加载折淘客的APP Key
+    await categoryModel.init(); //加载超级分类数据
+    await indexModel.fetch(); //加载双列产品数据
+    await KZheTaokeApiWithAppkeyGet.doRequest(ref); //加载折淘客的APP Key
   } on AppException catch (_) {
     rethrow;
   }
@@ -31,15 +31,15 @@ class InitBuildWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref.watch(initFuture(context)).when(data: (v) => home, error: (e, s) => buildInitError(context, e), loading: InitLoadingWidget.new);
+    return ref.watch(initFuture(context)).when(data: (v) => home, error: (e, s) => buildInitError(context, e,s), loading: InitLoadingWidget.new);
   }
 
-  Widget buildInitError(BuildContext context, e) {
+  Widget buildInitError(BuildContext context, e,s) {
     return Container(
       padding: const EdgeInsets.all(kDefaultPadding),
       color: context.appbarBackgroundColor,
       alignment: Alignment.center,
-      child: Text("启动失败:$e"),
+      child: Text("启动失败:$e\n$s"),
     );
   }
 }

@@ -291,7 +291,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
             crossAxisSpacing: 12,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             children: <Widget>[
-              OutlinedButton(
+              FilledButton(
                   onPressed: () async {
                     if (couponLinkResult != null) {
                       utils.copy(couponLinkResult!.longTpwd ?? '无优惠券',
@@ -892,20 +892,21 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   @Doc(message: '初始化页面数据')
   Future<String> initDatas() async {
     kLog('加载产品信息:${widget.goodsId}');
-    final result = await DdTaokeSdk.instance.getDetailBaseData(
+    try{
+      final result = await kApi.getDetailBaseData(
         productId: widget.goodsId,
       );
-      if (result != null) {
-        if (mounted) {
-          setState(() {
-            info = result.info!;
-            couponLinkResult = result.couponInfo;
-          });
-        }
-      } else {
-        throw AppException.appError(code: 90002,msg: '商品优惠已过期');
+      if (mounted) {
+        setState(() {
+          info = result.info!;
+          couponLinkResult = result.couponInfo;
+        });
       }
-    return 'success';
+      return 'success';
+    }catch(e,s){
+      debugPrintStack(stackTrace: s,label: "获取产品失败:$e");
+      throw AppException.appError(code: 90002,msg: '商品优惠已过期');
+    }
   }
 
   @override
@@ -917,7 +918,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   // 获取widget距离顶部的位置
   double getY(BuildContext buildContext) {
     final box = buildContext.findRenderObject() as RenderBox;
-    //final size = box.size;
     final topLeftPosition = box.localToGlobal(Offset.zero);
     return topLeftPosition.dy;
   }

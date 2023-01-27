@@ -19,11 +19,6 @@ class UserIndexHome extends ConsumerStatefulWidget {
 }
 
 class UserIndexHomeState extends ConsumerState<UserIndexHome> {
-  @override
-  void initState() {
-    super.initState();
-    Future.microtask(ref.read(userRiverpod.notifier).initState);
-  }
 
   @override
   Widget build(BuildContext context) {

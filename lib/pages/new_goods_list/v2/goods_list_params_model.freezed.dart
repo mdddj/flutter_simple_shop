@@ -22,8 +22,8 @@ mixin _$GoodsListParamsModel {
   set subcategor(Subcategory? value) => throw _privateConstructorUsedError;
   String get sort => throw _privateConstructorUsedError;
   set sort(String value) => throw _privateConstructorUsedError;
-  List<ProductModel> get products => throw _privateConstructorUsedError;
-  set products(List<ProductModel> value) => throw _privateConstructorUsedError;
+  List<Product> get products => throw _privateConstructorUsedError;
+  set products(List<Product> value) => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
   set page(int value) => throw _privateConstructorUsedError;
   bool get initLoading => throw _privateConstructorUsedError;
