@@ -1,5 +1,4 @@
 
-import 'package:badges/badges.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list/loading_more_list.dart';
@@ -53,17 +52,11 @@ class BanjiaList extends StatelessWidget {
                       height: 5,
                     ),
                     Badge(
-                      badgeContent: Text(
+                      child: Text(
                         '${item.yijuhua}',
                         style: const TextStyle(color: Colors.pink),
                       ),
-                      shape: BadgeShape.square,
-                      badgeColor: Colors.white,
-                      borderRadius: BorderRadius.circular(6),
-                      elevation: 0,
-                      borderSide: const BorderSide(color: Colors.pinkAccent),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 6, vertical: 2),
+
                     )
                   ],
                 ),

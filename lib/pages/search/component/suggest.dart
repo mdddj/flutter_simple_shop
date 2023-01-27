@@ -1,4 +1,3 @@
-import 'package:badges/badges.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
@@ -84,12 +83,11 @@ class Suggest extends ConsumerWidget {
                       Text(item.theme!),
                       if (item.label!.isNotEmpty)
                         Badge(
-                          badgeContent: Text(
+                          child: Text(
                             item.label!,
                             style: TextStyle(
                                 color: context.primaryColor),
-                          ),
-                          badgeColor: Colors.white,
+                          )
                         ),
                     ],
                   ),
