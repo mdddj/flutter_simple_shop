@@ -290,3 +290,127 @@ abstract class _MyUser implements MyUser {
   _$$_MyUserCopyWith<_$_MyUser> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$A {
+  int get a => throw _privateConstructorUsedError;
+  String? get b => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ACopyWith<A> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ACopyWith<$Res> {
+  factory $ACopyWith(A value, $Res Function(A) then) = _$ACopyWithImpl<$Res, A>;
+  @useResult
+  $Res call({int a, String? b});
+}
+
+/// @nodoc
+class _$ACopyWithImpl<$Res, $Val extends A> implements $ACopyWith<$Res> {
+  _$ACopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? a = null,
+    Object? b = freezed,
+  }) {
+    return _then(_value.copyWith(
+      a: null == a
+          ? _value.a
+          : a // ignore: cast_nullable_to_non_nullable
+              as int,
+      b: freezed == b
+          ? _value.b
+          : b // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ACopyWith<$Res> implements $ACopyWith<$Res> {
+  factory _$$_ACopyWith(_$_A value, $Res Function(_$_A) then) =
+      __$$_ACopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int a, String? b});
+}
+
+/// @nodoc
+class __$$_ACopyWithImpl<$Res> extends _$ACopyWithImpl<$Res, _$_A>
+    implements _$$_ACopyWith<$Res> {
+  __$$_ACopyWithImpl(_$_A _value, $Res Function(_$_A) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? a = null,
+    Object? b = freezed,
+  }) {
+    return _then(_$_A(
+      a: null == a
+          ? _value.a
+          : a // ignore: cast_nullable_to_non_nullable
+              as int,
+      b: freezed == b
+          ? _value.b
+          : b // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_A implements _A {
+  const _$_A({required this.a, this.b});
+
+  @override
+  final int a;
+  @override
+  final String? b;
+
+  @override
+  String toString() {
+    return 'A(a: $a, b: $b)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_A &&
+            (identical(other.a, a) || other.a == a) &&
+            (identical(other.b, b) || other.b == b));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, a, b);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ACopyWith<_$_A> get copyWith =>
+      __$$_ACopyWithImpl<_$_A>(this, _$identity);
+}
+
+abstract class _A implements A {
+  const factory _A({required final int a, final String? b}) = _$_A;
+
+  @override
+  int get a;
+  @override
+  String? get b;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ACopyWith<_$_A> get copyWith => throw _privateConstructorUsedError;
+}

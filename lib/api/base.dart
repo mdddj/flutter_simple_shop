@@ -1,4 +1,5 @@
 
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:diox/diox.dart';
 import '../service/user_api.dart';
@@ -40,31 +41,12 @@ abstract class MyAppCoreApi extends BaseApi {
   }
 
   @override
-  Future<WrapJson> request(
-      {bool showErrorMsg = true,
-      String? loadingText,
-      String contentType = "",
-      Map<String, dynamic>? headers,
-      bool showDefaultLoading = true,
-      data,
-      ResponseType? responseType,
-      bool? nullParams,
-      RequestEncoder? requestEncoder,
-      DioStart? dioStart,bool? returnIsString,bool isFullUrl = false}) async {
+  Future<WrapJson> request([RequestParams? options]) async {
     try{
-      final r = await super.request(
-          showErrorMsg: showErrorMsg,
-          loadingText: loadingText,
-          contentType: contentType,
-          headers: headers,
-          showDefaultLoading: showDefaultLoading,
-          data: data,
-          responseType: responseType,
-          nullParams: nullParams,
-          requestEncoder: requestEncoder,isFullUrl: isFullUrl);
+      final r = await super.request(options);
       final json = WrapJson(r);
       if(json.isSuccess.not){
-        throw AppException.appError(code: 90001,msg: json.message);
+        throw AppException.appError(code:json.getInt('state',defaultValue: 90001),msg: json.message);
       }
       return json;
     }on AppException catch(e){

@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod/riverpod.dart';
@@ -36,7 +37,7 @@ class FavoritesAddApi extends MyAppCoreApi {
 
   @Doc(message: "服务器发起请求,添加收藏")
   static Future<void> doRequeset(ProductModel favoriteModel,{VoidCallback? success}) async {
-    final r = await (FavoritesAddApi()).request(data: favoriteModel.toJson());
+    final r = await (FavoritesAddApi()).request(RequestParams(data: favoriteModel.toJson()));
     r.handle(success: success);
   }
 }
@@ -46,7 +47,7 @@ class FavoritesFindListApi extends MyAppCoreApi with ApiPageMixin {
   FavoritesFindListApi():super('$favoritesPrefix/list',showDetailLog: true);
   static Future<WrapJson> doRequest(int page) async {
     final api = FavoritesFindListApi()..page = page..pageSize=20;
-    return await api.request(showDefaultLoading: false);
+    return await api.request(const RequestParams(showDefaultLoading: false));
   }
 }
 
@@ -65,7 +66,7 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi{
       return cacehData;
     }
     final api = KZheTaokeApiWithAppkeyGet();
-    final r = await api.request(showDefaultLoading: false);
+    final r = await api.request(const RequestParams(showDefaultLoading: false));
     final appKey = r.getString('data');
     await appKey.saveToCaceh("zhe-app-key");
     return appKey ;

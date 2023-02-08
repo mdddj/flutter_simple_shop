@@ -1,7 +1,9 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/theme/model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -11,7 +13,22 @@ import 'index.dart';
 
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
-  DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.0.101');
+  DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.76',customCoverterResponseData: (model){
+    final body = model.body;
+    if(body is Map<String,dynamic> ){
+      final data = body['data'];
+      if(data is String) {
+        try {
+          final map = jsonDecode(data);
+          body['data'] = map;
+          return model.copyWith(body: Map.from(body));
+        } catch (e) {
+          return model;
+        }
+      }
+    }
+    return model;
+  });
   initNetUtil();
   initInstanceObject();
   await initCaches();

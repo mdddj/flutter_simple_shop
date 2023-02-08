@@ -6,7 +6,6 @@ part 'my_user.g.dart';
 
 @freezed
 class MyUser with _$MyUser{
-
   const factory MyUser({
     required int id,
     required String loginNumber,
@@ -17,9 +16,14 @@ class MyUser with _$MyUser{
     required int type,
     required int status,
   }) = _MyUser;
-
   factory MyUser.fromJson(Map<String,Object?> json)=>_$MyUserFromJson(json);
+}
 
+@freezed
+class A with _$A {
+  const factory A({required int a,String? b}) = _A;
+}
 
-
+class B {
+  B({required String a,int? b});
 }

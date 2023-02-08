@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,7 +31,7 @@ class IndexCarousel extends HookWidget {
 
 final kRivCarouseApiFuture = FutureProvider<WrapJson>((ref) async {
   try{
-    return await (KZheTaokeApiWithCarousel()).request(showDefaultLoading: false);
+    return await (KZheTaokeApiWithCarousel()).request(const RequestParams(showDefaultLoading: false));
   }on AppException catch(_){
     rethrow;
   }

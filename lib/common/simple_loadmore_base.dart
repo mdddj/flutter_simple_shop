@@ -1,4 +1,5 @@
 
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
@@ -26,7 +27,7 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
       'pageSize': vPageSize
     };
     var isSuccess = true;
-    final r =  await api.request(showDefaultLoading: false,data: pageParams);
+    final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams));
     isSuccess = r.isSuccess;
     if(r.isSuccess){
       final data = r.getValue('data');
