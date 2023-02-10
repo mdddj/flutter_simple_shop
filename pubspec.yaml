@@ -14,7 +14,7 @@ dependencies:
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.7
-  diox: ^5.0.0-dev.3
+  diox: ^5.0.0
   flutter_spinkit: ^5.1.0
   tab_indicator_styler: ^2.0.0
   provider: ^6.0.5
@@ -24,7 +24,6 @@ dependencies:
   common_utils: ^2.1.0
   extended_image: ^7.0.1
   waterfall_flow: ^3.0.2
-
   extended_list: ^3.0.0
   pull_to_refresh_notification: ^2.3.0
   fsearch_nullsafety: ^2.0.0
@@ -71,7 +70,7 @@ dependencies:
   loading_animation_widget: ^1.2.0+4
   hive_generator: ^2.0.0
   keyboard_actions: ^4.1.0
-  dd_js_util: ^3.0.1
+  dd_js_util: ^3.0.2
   extended_image_library: ^3.4.1
   fast_immutable_collections: ^8.2.0
   dataoke_sdk:
