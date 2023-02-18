@@ -1,7 +1,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:dd_models/models/product.dart';
-import 'package:diox/diox.dart';
+import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'goods_list_params_model.freezed.dart';
