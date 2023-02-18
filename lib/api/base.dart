@@ -1,7 +1,7 @@
 
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:diox/diox.dart';
+import 'package:dio/dio.dart';
 import '../service/user_api.dart';
 ///添加token到请求头
 class MyInterceptor implements Interceptor {
