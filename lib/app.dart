@@ -25,7 +25,6 @@ class App extends ConsumerWidget {
     );
   }
 }
-
 ///app底部导航
 class AppBottomNav extends ConsumerWidget {
   const AppBottomNav({Key? key}) : super(key: key);

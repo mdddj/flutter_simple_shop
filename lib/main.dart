@@ -8,7 +8,7 @@ import 'index.dart';
 import 'r_gen_file.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.0.101';
+const apiHost = 'http://192.168.199.77';
 const apiPort = "80";
 const kDebugMode = true;
 
@@ -30,7 +30,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: '典典小卖部',
-          theme: MyAppTheme.getTheme(appThemeSetting.themeIndex),
+          theme: MyAppTheme.getTheme(appThemeSetting.themeIndex).copyWith(
+            scaffoldBackgroundColor: Colors.grey.shade200
+          ),
           darkTheme: MyAppTheme.darkTheme,
           themeMode: appThemeSetting.getThemeMode,
           home: const InitBuildWidget(home: App()),

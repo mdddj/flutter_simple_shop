@@ -16,7 +16,7 @@ class ProductListRepository extends LoadingMoreBase<ProductModel> {
   bool more = true; //默认还有下一页
 
   @override
-  Future<bool> loadData([bool isloadMoreAction = false]) async  {
+  Future<bool> loadData([bool isLoadMoreAction = false]) async  {
     bool success = false;
     await fetchData((v)=>more=v,(v)=>success=v);
     addAll(state.products);
