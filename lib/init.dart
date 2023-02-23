@@ -14,7 +14,7 @@ import 'index.dart';
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
   DDCheckPluginSetting.showLog = false;
-  DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.77',port: 9998, customCoverterResponseData: (model){
+  DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.78',port: 9998, customCoverterResponseData: (model){
     final body = model.response?.data;
     if(body is Map<String,dynamic> ){
       final data = body['data'];

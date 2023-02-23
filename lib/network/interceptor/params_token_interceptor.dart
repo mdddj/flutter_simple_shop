@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:diox/diox.dart';
+import 'package:dio/dio.dart';
 
 // Project imports:
 import '../http_request.dart';

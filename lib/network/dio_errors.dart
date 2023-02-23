@@ -1,5 +1,5 @@
 // Package imports:
-import 'package:diox/diox.dart';
+import 'package:dio/dio.dart';
 
 /// 请求错误类
 class ErrorEntity {

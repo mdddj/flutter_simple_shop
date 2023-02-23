@@ -13,11 +13,11 @@ import 'package:pull_to_refresh_notification/pull_to_refresh_notification.dart';
     //it should more than 18, so that RefreshProgressIndicator can be shown fully
     if (info?.refreshWidget != null &&
         offset > 18.0 &&
-        mode != RefreshIndicatorMode.error) {
+        mode != PullToRefreshIndicatorMode.error) {
     }
 
     Widget child;
-    if (mode == RefreshIndicatorMode.error) {
+    if (mode == PullToRefreshIndicatorMode.error) {
       child = GestureDetector(
           onTap: () {
             // refreshNotification;
@@ -40,15 +40,15 @@ import 'package:pull_to_refresh_notification/pull_to_refresh_notification.dart';
           ));
     } else {
       var modeStr = '下拉刷新';
-      if (mode != null && mode == RefreshIndicatorMode.armed) {
+      if (mode != null && mode == PullToRefreshIndicatorMode.armed) {
         modeStr = '松手刷新';
-      } else if (mode != null && mode == RefreshIndicatorMode.snap) {
+      } else if (mode != null && mode == PullToRefreshIndicatorMode.snap) {
         modeStr = '请求数据中';
-      } else if (mode != null && mode == RefreshIndicatorMode.canceled) {
+      } else if (mode != null && mode == PullToRefreshIndicatorMode.canceled) {
         modeStr = '操作取消';
-      } else if (mode != null && mode == RefreshIndicatorMode.done) {
+      } else if (mode != null && mode == PullToRefreshIndicatorMode.done) {
         modeStr = '刷新成功';
-      } else if (mode != null && mode == RefreshIndicatorMode.refresh) {
+      } else if (mode != null && mode == PullToRefreshIndicatorMode.refresh) {
         modeStr = '正在刷新';
       }
       child = Container(
