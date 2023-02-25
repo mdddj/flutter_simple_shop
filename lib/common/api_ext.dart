@@ -13,9 +13,10 @@ extension WrapJsonEx on WrapJson {
     }
   }
 
-  void simpleToast(){
+  void simpleToast({VoidCallback? ifOk}){
     if (isSuccess) {
       toast(message);
+      ifOk?.call();
     } else {
       showIosDialog(message);
     }

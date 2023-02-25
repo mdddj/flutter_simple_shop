@@ -41,9 +41,9 @@ abstract class MyAppCoreApi extends BaseApi {
   @override
   Future<WrapJson> request([RequestParams? options]) async {
     options ??= const RequestParams();
-    intrtceptors.clear();
-    if (!intrtceptors.contains(token)) {
-      intrtceptors.add(token);
+    interceptions.clear();
+    if (!interceptions.contains(token)) {
+      interceptions.add(token);
     }
     try {
       final r = await super.request(options.copyWith(interceptorCall: (it) {
@@ -60,10 +60,8 @@ abstract class MyAppCoreApi extends BaseApi {
       return json;
     } on AppException catch (e) {
       final ex = WrapJson.fromMyServerError(e);
-      kLog(ex.data);
       return ex;
     } catch (e) {
-      kLogErr(e);
       return WrapJson.fromMyServerError(AppException.appError(code: 9000, msg: "系统错误"));
     }
   }

@@ -8,10 +8,11 @@ import '../../../../index.dart';
 /// 首页导航栏
 class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
   final TabController tabController;
-  const IndexHomeAppbar({Key? key,required this.tabController}) : super(key: key);
 
-  Future<void> navTo(BuildContext context)  async {
-    await context.navToWidget(to:const SearchPage());
+  const IndexHomeAppbar({Key? key, required this.tabController}) : super(key: key);
+
+  Future<void> navTo(BuildContext context) async {
+    await context.navToWidget(to: const SearchPage());
   }
 
   @override
@@ -27,7 +28,7 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
           'assets/svg/diandian.svg',
           width: 34,
           height: 34,
-          color: context.iconColor,
+          colorFilter: ColorFilter.mode(context.iconColor ?? Colors.red, BlendMode.srcIn),
         ),
       ),
       actions: [
@@ -40,7 +41,7 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(48),
         child: Consumer<IndexState>(
-          builder: (BuildContext context,value, Widget? child) {
+          builder: (BuildContext context, value, Widget? child) {
             final loading = value.indexLoading;
             final categoryWidgets = utils.widgetUtils.categoryTabs(context);
             return LayoutBuilder(
@@ -68,7 +69,8 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
                               return;
                             }
                             final category = context.read<CategoryState>().getCategoryByIndex(index - 1);
-                            context.navToWidget(to:NewGoodsList(
+                            context.navToWidget(
+                                to: NewGoodsList(
                               category: category,
                               initIndex: context.read<CategoryState>().getIndexWithCategory(category),
                             ));

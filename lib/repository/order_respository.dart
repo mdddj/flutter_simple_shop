@@ -17,7 +17,7 @@ class OrderRespository extends LoadingMoreBase<OrderAuditObject>{
   bool get hasMore => _hasMore;
   
   @override
-  Future<bool> loadData([bool isloadMoreAction = false]) async {
+  Future<bool> loadData([bool isLoadMoreAction = false]) async {
     
     var isSuccess = false;
     

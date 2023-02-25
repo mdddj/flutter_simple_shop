@@ -3,7 +3,7 @@ import 'package:dd_js_util/dd_js_util.dart';
 import '../../../../api/apis.dart';
 import '../../../../index.dart';
 
-class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel,FavoritesFindListApi> {
+class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel, FavoritesFindListApi> {
   @override
   FavoritesFindListApi get api => FavoritesFindListApi();
 
@@ -15,7 +15,6 @@ class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel,Favorit
   @override
   List<MyFavoritesModel> transformResponseData(final WrapJson data) {
     data.print();
-   return List<MyFavoritesModel>.from((data.getListValue('content')).map(MyFavoritesModel.fromJson)).toList();
+    return List<MyFavoritesModel>.from((data.getListValue('content')).map(MyFavoritesModel.fromJson)).toList();
   }
-
 }

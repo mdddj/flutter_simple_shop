@@ -31,7 +31,7 @@ class ApplyPageState extends State<ApplyPage> {
                   margin: EdgeInsets.zero,
                   header: Text(
                     '请填写面基信息',
-                    style: context.textTheme.headline6,
+                    style: context.textTheme.titleLarge,
                   ),
                   backgroundColor: Colors.transparent,
                   children: [
@@ -88,7 +88,7 @@ class ApplyPageState extends State<ApplyPage> {
                   children: [
                     Text(
                       '上传你的生活照。(10张)',
-                      style: context.textTheme.headline6?.copyWith(fontSize: 14),
+                      style: context.textTheme.titleLarge?.copyWith(fontSize: 14),
                     ),
                     const SizedBox(
                       height: 5,

@@ -5,7 +5,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
 import '../../common/utils.dart';
-import '../../provider/riverpod/user_riverpod.dart';
 import 'header/appbar.dart';
 import 'header/index.dart';
 import 'order/index.dart';
@@ -19,7 +18,6 @@ class UserIndexHome extends ConsumerStatefulWidget {
 }
 
 class UserIndexHomeState extends ConsumerState<UserIndexHome> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +25,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
         child: Column(
           children: <Widget>[
             Container(
-              decoration:  BoxDecoration(color: context.primaryColor),
+              decoration: BoxDecoration(color: context.primaryColor),
               child: Column(children: [
                 const UserHomeAppBar(),
                 _buildHeaderWidget(),
@@ -61,9 +59,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
           _renderMenuItem('地址管理', svgIcon: 'assets/svg/user/dz.svg', color: Colors.deepOrangeAccent),
           _renderMenuItem('我的收藏', svgIcon: 'assets/svg/user/sc.svg', color: Colors.blueAccent),
           _renderMenuItem('切换主题',
-              svgIcon: 'assets/svg/user/zhuti.svg',
-              color: Colors.pink,
-              onTap: () => context.navToWidget(to: const ThemeSettingPage())),
+              svgIcon: 'assets/svg/user/zhuti.svg', color: Colors.pink, onTap: () => context.navToWidget(to: const ThemeSettingPage())),
           _renderMenuItem('意见反馈', svgIcon: 'assets/svg/user/yj.svg', color: Colors.orangeAccent),
           _renderMenuItem('设置', svgIcon: 'assets/svg/user/sz.svg', color: Colors.blue),
         ]),
@@ -84,8 +80,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
                 padding: const EdgeInsets.all(2),
                 width: double.infinity,
                 height: double.infinity,
-                child: const Card(
-                ),
+                child: const Card(),
               ));
         },
         scrollDirection: Axis.horizontal,
@@ -94,8 +89,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
   }
 
 // 菜单项目
-  Widget _renderMenuItem(String title,
-      {String? svgIcon, VoidCallback? onTap, Widget? child, Color? color, Widget? actions}) {
+  Widget _renderMenuItem(String title, {String? svgIcon, VoidCallback? onTap, Widget? child, Color? color, Widget? actions}) {
     return Column(
       children: [
         ListTile(
@@ -105,7 +99,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
                   svgIcon,
                   width: 22,
                   height: 22,
-                  color: color,
+                  colorFilter: ColorFilter.mode(color ?? Colors.grey.shade200, BlendMode.srcIn),
                 ),
           title: Row(
             children: [Text(title), const Spacer(), actions ?? const SizedBox()],
@@ -145,7 +139,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
 
   Widget _countItem(String key, String value) {
     return Column(children: [
-      Text(value, style: context.textTheme.subtitle1),
+      Text(value, style: context.textTheme.titleMedium),
       const SizedBox(
         height: 6,
       ),

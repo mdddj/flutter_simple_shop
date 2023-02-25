@@ -29,7 +29,7 @@ class MeetItemLayout extends StatelessWidget {
               ],
             ),
             const SizedBox(height: kDefaultPadding),
-            Text(meetModel.content,style: meetModel.isEmptyConent ? context.textTheme.bodyMedium : context.textTheme.bodyText1,),
+            Text(meetModel.content,style: meetModel.isEmptyConent ? context.textTheme.bodyMedium : context.textTheme.bodyLarge,),
           ],
         ),
       ),

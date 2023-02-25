@@ -132,9 +132,10 @@ class WhiteIndexState extends State<WhiteIndex> {
             }
           }),
           buildSvgPictureIcon('assets/svg/tupian.svg', 80, onTap: () async {
+            final width = context.screenWidth;
             final file = await utils.selectFile();
             if (file != null) {
-              insertText("<img src='https://static.saintic.com/picbed/huang/2021/06/12/1623466301058.jpg' width='${context.screenWidth}' height='100' alt=""/>");
+              insertText("<img src='https://static.saintic.com/picbed/huang/2021/06/12/1623466301058.jpg' width='$width' height='100' alt=""/>");
               insertText('如果您觉得这个开源项目不错,扫码支持一下哦~');
             }
           }),

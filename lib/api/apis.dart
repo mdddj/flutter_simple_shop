@@ -8,6 +8,7 @@ import '../index.dart';
 import 'base.dart';
 import 'model/email_register_params.dart';
 import 'model/get_email_valid_code.dart';
+import 'model/login_params.dart';
 
 mixin ApiPageMixin on MyAppCoreApi {
   set page(int v) => params['page'] = v;
@@ -53,6 +54,13 @@ class FavoritesFindListApi extends MyAppCoreApi with ApiPageMixin {
       ..page = page
       ..pageSize = 20;
     return await api.request(const RequestParams(showDefaultLoading: false));
+  }
+}
+
+//删除收藏
+class FavoritesRemoveApi extends MyAppCoreApi {
+  FavoritesRemoveApi(int id) : super("$favoritesPrefix/remove", httpMethod: HttpMethod.post) {
+    super.params.addAll({"idValue": id});
   }
 }
 
@@ -106,6 +114,16 @@ class MyApiWithSendEmailValidCode extends MyAppCoreApi {
 ///邮箱注册接口
 class MyApiWithEmailRegister extends MyAppCoreApi {
   MyApiWithEmailRegister(EmailRegisterParams params) : super("/api/user-public/email-valid", httpMethod: HttpMethod.post) {
+    super.params.addAll(params.toJson());
+  }
+
+  @override
+  bool get isRemoveUserToken => true;
+}
+
+///登录接口
+class MyApiWithLogin extends MyAppCoreApi {
+  MyApiWithLogin(LoginParams params) : super("/api/user-public/login", httpMethod: HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
 

@@ -1,8 +1,11 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 
+import '../../api/apis.dart';
+import '../../common/api_ext.dart';
 import '../../index.dart';
 
 // 收藏商品列表卡片布局
@@ -11,53 +14,70 @@ class FavoriteGoodsItem extends StatelessWidget {
   final bool isShowEditIcon; //是否显示选中按钮
   final List<String>? selectListIds;
   final UserProvider? userProvider;
+  final FavoritesRepository repository;
 
-  const FavoriteGoodsItem({required this.item, required this.isShowEditIcon, this.selectListIds, this.userProvider, Key? key}) : super(key: key);
+  const FavoriteGoodsItem(
+      {required this.item, required this.isShowEditIcon, this.selectListIds, this.userProvider, Key? key, required this.repository})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(children: <Widget>[
-      Card(
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Row(
-            children: <Widget>[
-              ExtendedImageWidget(
-                src: MImageUtils.magesProcessor(item.imageUrl),
-                height: 90,
-                width: 90,
-              ),
-              const SizedBox(
-                width: 12,
-              ),
-              Expanded(
-                child: GestureDetector(
-                  onTap: () => NavigatorUtil.gotoGoodsDetailPage(context, item.productId),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(
-                        alignment: Alignment.topLeft,
-                        child: Column(
-                          children: <Widget>[
-                            TitleWidget(title: item.title),
-                            const SizedBox(height: 5.0),
-                            CouponPriceWidget(
-                              actualPrice: item.arrivalPrice,
-                              originalPrice: double.tryParse(item.amount),
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        child: _calcDateHowLong(),
-                      )
-                    ],
-                  ),
+      Slidable(
+        key: ValueKey(item.id),
+        endActionPane: ActionPane(
+            extentRatio: 0.2,
+            motion: const ScrollMotion(), children: [
+          SlidableAction(
+            onPressed: _removeItem,
+            backgroundColor: const Color(0xFFFE4A49),
+            foregroundColor: Colors.white,
+            icon: Icons.delete,
+            label: '删除',
+          )
+        ]),
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Row(
+              children: <Widget>[
+                ExtendedImageWidget(
+                  src: MImageUtils.magesProcessor(item.imageUrl),
+                  height: 90,
+                  width: 90,
                 ),
-              )
-            ],
+                const SizedBox(
+                  width: 12,
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () => NavigatorUtil.gotoGoodsDetailPage(context, item.productId),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            children: <Widget>[
+                              TitleWidget(title: item.title),
+                              const SizedBox(height: 5.0),
+                              CouponPriceWidget(
+                                actualPrice: item.arrivalPrice,
+                                originalPrice: double.tryParse(item.amount),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: _calcDateHowLong(),
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -68,9 +88,7 @@ class FavoriteGoodsItem extends StatelessWidget {
               child: Container(
                 width: 100,
                 height: 250,
-                decoration: const BoxDecoration(
-//              color: Colors.grey,
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
+                decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15))),
                 child: Checkbox(
                   value: isSelectValue(),
                   onChanged: (value) {
@@ -85,6 +103,16 @@ class FavoriteGoodsItem extends StatelessWidget {
             )
           : Container()
     ]);
+  }
+
+  ///删除
+  void _removeItem(BuildContext ctx) {
+    FavoritesRemoveApi(item.id).request().then((value) {
+      value.simpleToast(
+          ifOk: () => repository
+            ..removeWhere((element) => element.id == item.id)
+            ..setState());
+    });
   }
 
   //计算是否在将在删除列表中

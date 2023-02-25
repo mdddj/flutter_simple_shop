@@ -7,7 +7,7 @@ class PddRecommendListResp extends LoadingMoreBase<PddGoods> {
   bool forceRefresh = false;
 
   @override
-  Future<bool> loadData([bool isloadMoreAction = false]) async {
+  Future<bool> loadData([bool isLoadMoreAction = false]) async {
     return true;
   }
 

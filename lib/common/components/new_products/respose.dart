@@ -20,7 +20,7 @@ class NewProductsLoadMore extends LoadingMoreBase<Product> {
   }
 
   @override
-  Future<bool> loadData([bool isloadMoreAction = false]) async {
+  Future<bool> loadData([bool isLoadMoreAction = false]) async {
     try{
       final r = await kApi.getProducts(param: ProductListParam(pageId: '$page',pageSize: '10'));
       if(page ==  1) clear();

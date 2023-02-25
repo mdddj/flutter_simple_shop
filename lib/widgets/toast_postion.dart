@@ -84,7 +84,7 @@ class Toast {
                 )),
           ));
       //插入到整个布局的最上层
-      overlayState!.insert(_overlayEntry!);
+      overlayState.insert(_overlayEntry!);
     } else {
       //重新绘制UI，类似setState
       _overlayEntry!.markNeedsBuild();

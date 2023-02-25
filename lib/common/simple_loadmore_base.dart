@@ -18,7 +18,7 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
   }
 
   @override
-  Future<bool> loadData([bool isloadMoreAction = false]) async  {
+  Future<bool> loadData([bool isLoadMoreAction = false]) async  {
     if(vPage == 0){
       clear();
     }

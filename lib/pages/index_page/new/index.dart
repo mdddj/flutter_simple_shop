@@ -121,11 +121,11 @@ class IndexProductTitle extends StatelessWidget {
             'assets/svg/rmtj.svg',
             width: 120,
             height: 30,
-            color: context.iconColor,
+            colorFilter: ColorFilter.mode(context.iconColor ?? Colors.red, BlendMode.srcIn),
           ),
           Text(
             '* 每20分钟更新一次',
-            style: context.textTheme.bodyText2?.copyWith(color: Colors.grey, fontSize: 12),
+            style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey, fontSize: 12),
           )
         ],
       ),

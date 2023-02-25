@@ -1,3 +1,4 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -186,7 +187,7 @@ class HeaderIndex extends ConsumerWidget {
                           'assets/svg/qq.svg',
                           width: 32,
                           height: 32,
-                          color: Colors.white,
+                          colorFilter:  ColorFilter.mode(context.iconColor ?? Colors.red, BlendMode.srcIn),
                         ),
                         const SizedBox(
                           width: 12,
@@ -195,7 +196,7 @@ class HeaderIndex extends ConsumerWidget {
                           'assets/svg/wechat.svg',
                           width: 28,
                           height: 28,
-                          color: Colors.white,
+                          colorFilter:  const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                         )
                       ],
                     )

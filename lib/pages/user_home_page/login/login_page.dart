@@ -1,12 +1,26 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import '../../../api/model/login_params.dart';
+import '../../../assets.dart';
 import '../../../common/utils.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import 'register_page.dart';
+
+///登录方式
+enum LoginType {
+  account("account", "账号"),
+  email("email", "邮箱"),
+  phone("phone", "手机号");
+
+  const LoginType(this.type, this.title);
+
+  final String type;
+  final String title;
+}
 
 // 用户登入页面
 class UserLoginPage extends ConsumerStatefulWidget {
@@ -21,15 +35,12 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
   bool loading = false; // 是否登录中
   final usernameEditController = TextEditingController(text: 'admin');
   final passwordEditController = TextEditingController(text: '123456');
+  LoginType _loginType = LoginType.account;
+  IList<LoginType> _showTypes = const IListConst([LoginType.email, LoginType.phone]);
 
   @override
   Widget build(BuildContext context) {
-    return buildScaffold(context);
-  }
-
-  @override
-  void initState() {
-    super.initState();
+    return buildScaffold(context).editPage;
   }
 
   //跳转到注册页面
@@ -51,11 +62,12 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                renderLogo(),
                 // 用户名输入框
                 TextField(
-                  decoration: const InputDecoration(
-                    hintText: '请输入登录账号',
-                    labelText: '账号',
+                  decoration: InputDecoration(
+                    hintText: '请输入$_accountLabel',
+                    labelText: _accountLabel,
                   ),
                   controller: usernameEditController,
                 ),
@@ -68,6 +80,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                     labelText: '密码',
                   ),
                   controller: passwordEditController,
+                  obscureText: true,
                 ),
 
                 const SizedBox(
@@ -75,7 +88,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                 ),
                 renderLoginButton(),
                 const SizedBox(height: 12),
-                renderRegisterButton()
+                _moreActions
               ],
             ),
           ),
@@ -86,28 +99,42 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
           // 页面关闭按钮
           Positioned(
             left: 12,
-            top: context.paddingTop+ 12,
-            child: GestureDetector(
-                onTap: context.pop, child: const Icon(Icons.close)),
+            top: context.paddingTop + 12,
+            child: GestureDetector(onTap: context.pop, child: const Icon(Icons.close)),
           )
         ],
       ),
     );
   }
 
-  // 登录按钮
-  Widget renderLoginButton() {
-    return SizedBox(
-        width: double.infinity,
-        child: ElevatedButton(onPressed: _submit, child: const Text('登录')));
+  String get _accountLabel {
+    return _loginType.title;
   }
 
-// 注册按钮
-  Widget renderRegisterButton() {
-    return SizedBox(
-        width: double.infinity,
-        child:
-            TextButton(onPressed: _navToRegisterPage, child: const Text('注册')));
+  // 登录按钮
+  Widget renderLoginButton() {
+    return SizedBox(width: double.infinity, child: ElevatedButton(onPressed: _submit, child: const Text('登录')));
+  }
+
+  Widget get _moreActions {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('用户注册').click(_navToRegisterPage),
+        const VerticalDivider(),
+        ..._showTypes.map((element) => Text("${element.title}登录").marginOnly(right: 5).click(() => _changeLoginType(element))).toList()
+      ],
+    );
+  }
+
+  ///切换登录方式
+  void _changeLoginType(LoginType type) {
+    setState(() {
+      _loginType = type;
+      _showTypes = const IListConst<LoginType>(LoginType.values).remove(type);
+    });
+    usernameEditController.clear();
+    passwordEditController.clear();
   }
 
   // 协议
@@ -126,8 +153,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                 isAgree = !isAgree;
               });
             },
-            child: Icon(
-                isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
+            child: Icon(isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 5.0),
@@ -135,13 +161,9 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
               lightOrientation: controller.FLightOrientation.LeftBottom,
               text: '我已阅读并同意',
               spans: [
-                TextSpan(
-                    text: '用户协议',
-                    style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(text: '用户协议', style: TextStyle(decoration: TextDecoration.underline)),
                 TextSpan(text: '和', style: TextStyle()),
-                TextSpan(
-                    text: '隐私政策',
-                    style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(text: '隐私政策', style: TextStyle(decoration: TextDecoration.underline)),
               ],
             ),
           ),
@@ -152,52 +174,32 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
 
   // 顶部logo
   Widget renderLogo() {
-    return Center(
-      child: Container(
-          margin: const EdgeInsets.only(top: 12),
-          width: 80,
-          height: 80,
-          alignment: Alignment.center,
-          decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(10.0))),
-          child: Stack(
-            children: [
-              const SizedBox(
-                width: 80,
-                height: 80,
-              ),
-              Positioned(
-                left: 0,
-                top: 0,
-                child: SvgPicture.asset(
-                  'assets/svg/diandian.svg',
-                  width: 80,
-                  height: 80,
-                  color: Colors.pink,
-                ),
-              )
-            ],
-          )),
-    );
+    return Image.asset(
+      Assets.assetsImagesLogoPng,
+      width: 80,
+      height: 80,
+    ).center.marginOnly(bottom: 12);
   }
 
   /// 登录
   Future<void> _submit() async {
     context.hideKeyBoard();
     final nav = Navigator.of(context);
-
     final username = usernameEditController.text;
     final password = passwordEditController.text;
     if (username.isEmpty || password.isEmpty) {
-      utils.showMessage('请输入用户名或者密码');
+      utils.showMessage('请检查${_loginType.title}或者密码');
       return;
     }
-
-    final success =
-        await ref.read(userRiverpod.notifier).login(username, password);
+    final success = await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
     if (success) {
       nav.pop();
     }
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    if (!mounted) return;
+    super.setState(fn);
   }
 }

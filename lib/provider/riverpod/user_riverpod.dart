@@ -1,6 +1,9 @@
 import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory;
 import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import '../../api/apis.dart';
+import '../../api/model/login_params.dart';
+import '../../common/api_ext.dart';
 import '../../common/utils.dart';
 import '../../service/user_api.dart';
 import '../../util/cache_util.dart';
@@ -16,10 +19,15 @@ class UserModel extends StateNotifier<UserDetailModal> {
   UserModel(this.ref) : super(const UserDetailModal(user: null));
 
   @Doc(message: '登录的方法,登录成功会返回一个jwt token')
-  Future<bool> login(String username, String password) async {
-    return await utils.api.login(username, password, loginFail: (msg) {
-      utils.showMessage(msg);
-    }, tokenHandle: fetchUserDetail);
+  Future<bool> login(LoginParams params) async {
+    final response = await MyApiWithLogin(params).request();
+    if(response.isSuccess){
+      fetchUserDetail(response.getString("data"));
+      return true;
+    }else{
+      response.simpleToast();
+      return false;
+    }
   }
 
   @Doc(message: '使用jwt token 来加载用户的基本资料')

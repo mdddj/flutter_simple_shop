@@ -30,7 +30,7 @@ class GoodsListRepository extends LoadingMoreBase<ProductModel> {
   }
 
   @override
-  Future<bool> loadData([bool isloadMoreAction = false]) async {
+  Future<bool> loadData([bool isLoadMoreAction = false]) async {
     var isSuccess = false;
     final result = await DdTaokeSdk.instance.getProducts(
         param: ProductListParam(
