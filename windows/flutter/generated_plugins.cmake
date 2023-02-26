@@ -4,7 +4,6 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   dd_check_plugin
-  dd_js_util
   dd_models
   network_info_plus
   permission_handler_windows

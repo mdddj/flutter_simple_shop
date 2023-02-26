@@ -1,5 +1,6 @@
 // Flutter imports:
 // Package imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
@@ -15,37 +16,31 @@ class DetailImagesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      margin: const EdgeInsets.only(top: 10, bottom: 10.0),
-      child: ListView(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        children: <Widget>[
-          // 文字
-          if (!hideTitle)
-            Container(
-              padding: const EdgeInsets.only(top: 5.0),
-              child: Flex(
-                direction: Axis.horizontal,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const <Widget>[DetailSimpleBorderButton(text: '详情', isCurrent: true), DetailSimpleBorderButton(text: '推荐', isCurrent: false)],
-              ),
-            ),
-          images != null
-              ? Column(
-                  children: _bulidImagesList(),
-                )
-              : Container(
-                  margin: const EdgeInsets.only(top: 10.0),
-                  child: const Center(
-                    child: Text('暂无图文'),
-                  )),
+    return ListView(
+      padding: EdgeInsets.zero,
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      children: <Widget>[
+        // 文字
+        if (!hideTitle)
           Container(
-            height: 100,
-          )
-        ],
-      ),
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Flex(
+              direction: Axis.horizontal,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const <Widget>[DetailSimpleBorderButton(text: '详情', isCurrent: true), DetailSimpleBorderButton(text: '推荐', isCurrent: false)],
+            ),
+          ),
+        images != null && images!.isNotEmpty
+            ? Column(
+                children: _bulidImagesList(),
+              )
+            : Container(
+                margin: const EdgeInsets.only(top: 10.0),
+                child: const Center(
+                  child: Text('暂无图文'),
+                )),
+      ],
     );
   }
 

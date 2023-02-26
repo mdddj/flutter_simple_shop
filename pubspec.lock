@@ -173,10 +173,10 @@ packages:
     dependency: "direct main"
     description:
       name: carousel_pro_nullsafety
-      sha256: "172ae7ce645d9bf2193b7bab3633bf969c347b2f2ab29ae44545fced5e71692a"
+      sha256: "2b45788fb88f55f5d58ec2f2c0d1430bcb1096fec57969052bb831a68c9609d0"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.2"
+    version: "2.0.0"
   carousel_slider:
     dependency: "direct main"
     description:
@@ -315,10 +315,10 @@ packages:
     dependency: "direct main"
     description:
       name: dd_js_util
-      sha256: "80cc71d70c9f7bdef8735315e770614f800a62743a60d20c46a926cea3569cb4"
+      sha256: defdf8fe4c1c6dccfb030b52c92dccf23299ac1550a08c1bfb58aa2eaebaa559
       url: "https://pub.dev"
     source: hosted
-    version: "3.1.4"
+    version: "3.1.6"
   dd_models:
     dependency: "direct main"
     description:
@@ -473,10 +473,10 @@ packages:
     dependency: transitive
     description:
       name: ffloat_nullsafety
-      sha256: "51d9a8ee48229ded961f92eaab09eb87ecb2dbac98c3c7f4654a16bbda35a962"
+      sha256: a5db61396f2217b49185adc2c72b3a5265a7c963f36a8265cf0dc901e714e011
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.1"
+    version: "3.3.6"
   file:
     dependency: transitive
     description:
@@ -635,10 +635,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_swiper_null_safety_flutter3
-      sha256: "7edeff42f65a09a1f4587c8e450430b68b2e5c084ee09b182bdfca4c11cc4b7d"
+      sha256: ebd62ab62a7a424bf25a647d2a7a9cc0ec66ab347d4f9748a28a6c566872fcd1
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.1"
   flutter_syntax_view:
     dependency: "direct main"
     description:
@@ -757,7 +757,7 @@ packages:
     source: hosted
     version: "0.15.1"
   http:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: http
       sha256: "6aa2946395183537c8b880962d935877325d6a09a2867c3970c05c0fed6ac482"
@@ -909,7 +909,7 @@ packages:
     source: hosted
     version: "1.2.0+4"
   loading_more_list:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       path: "../../hlx/github/loading_more_list"
       relative: true
@@ -918,9 +918,11 @@ packages:
   loading_more_list_library:
     dependency: transitive
     description:
-      path: "../../hlx/github/loading_more_list_library"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "21d23f3123205b29581bf5df4548b50285052b79"
+      url: "https://github.com/mdddj/loading_more_list_library"
+    source: git
     version: "2.0.1"
   logger:
     dependency: "direct main"
@@ -1211,7 +1213,7 @@ packages:
     source: hosted
     version: "4.2.4"
   provider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: provider
       sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
@@ -1657,4 +1659,4 @@ packages:
     version: "1.4.0"
 sdks:
   dart: ">=2.19.2 <3.0.0"
-  flutter: ">=3.7.4"
+  flutter: ">=3.7.3"

@@ -4,6 +4,7 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod/riverpod.dart';
 import '../common/extend/string.dart';
+import '../freezed/add_favorites_params.dart';
 import '../index.dart';
 import 'base.dart';
 import 'model/email_register_params.dart';
@@ -39,8 +40,8 @@ class FavoritesAddApi extends MyAppCoreApi {
   FavoritesAddApi() : super("$favoritesPrefix/save", httpMethod: HttpMethod.post);
 
   @Doc(message: "服务器发起请求,添加收藏")
-  static Future<void> doRequeset(ProductModel favoriteModel, {VoidCallback? success}) async {
-    final r = await (FavoritesAddApi()).request(RequestParams(data: favoriteModel.toJson()));
+  static Future<void> doRequeset(AddFavoritesParams params, {VoidCallback? success}) async {
+    final r = await (FavoritesAddApi()).request(RequestParams(data: params.toJson()));
     r.handle(success: success);
   }
 }

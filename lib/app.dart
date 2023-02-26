@@ -3,12 +3,13 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'index.dart';
+import 'pages/jiujiu_page/new/widget.dart';
 
 const kNavIconSize = 23.0;
-final _homeModuleShowIndex = StateProvider((ref) => 0);
+final homeModuleShowIndex = StateProvider((ref) => 0);
 
 ///APP主要页面
-const _pages = <Widget>[IndexHomeNew(), JiujiuIndexHome(), CategoryIndexPage(), FavoriteIndexHome(), UserIndexHome()];
+const _pages = <Widget>[IndexHomeNew(), JiuJiuIndex(), CategoryIndexPage(), FavoriteIndexHome(), UserIndexHome()];
 
 ///APP主体框架
 class App extends ConsumerWidget {
@@ -18,25 +19,26 @@ class App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: LazyIndexedStack(
-        index: ref.watch(_homeModuleShowIndex),
+        index: ref.watch(homeModuleShowIndex),
         children: _pages,
       ),
       bottomNavigationBar: const AppBottomNav(),
     );
   }
 }
+
 ///app底部导航
 class AppBottomNav extends ConsumerWidget {
   const AppBottomNav({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentIndex = ref.watch(_homeModuleShowIndex);
+    final currentIndex = ref.watch(homeModuleShowIndex);
     return BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         onTap: ((index) {
-          ref.read(_homeModuleShowIndex.notifier).state = index;
+          ref.read(homeModuleShowIndex.notifier).state = index;
         }),
         items: [
           BottomNavigationBarItem(label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),

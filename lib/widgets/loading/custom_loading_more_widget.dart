@@ -1,8 +1,10 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 
+import '../../app.dart';
 import '../../assets.dart';
 
 ///自定义加载中状态
@@ -109,11 +111,11 @@ class _LoadingMoreBusying extends StatelessWidget {
 }
 
 ///无数据
-class _Empty extends StatelessWidget {
+class _Empty extends ConsumerWidget {
   const _Empty({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30),
       alignment: Alignment.center,
@@ -132,7 +134,9 @@ class _Empty extends StatelessWidget {
           ),
           Text("暂时没有数据呢~", style: context.textTheme.bodyLarge),
           const SizedBox(height: 12,),
-          FilledButton(onPressed: (){}, child: const Text('浏览购物'))
+          FilledButton(onPressed: (){
+            ref.read(homeModuleShowIndex.notifier).state = 0;
+          }, child: const Text('浏览购物'))
         ],
       ),
     );

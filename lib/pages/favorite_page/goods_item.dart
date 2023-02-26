@@ -1,8 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 
 import '../../api/apis.dart';
 import '../../common/api_ext.dart';
@@ -45,34 +43,38 @@ class FavoriteGoodsItem extends StatelessWidget {
                   src: MImageUtils.magesProcessor(item.imageUrl),
                   height: 90,
                   width: 90,
+                  radius: 5.borderRadius,
                 ),
                 const SizedBox(
                   width: 12,
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () => NavigatorUtil.gotoGoodsDetailPage(context, item.productId),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Container(
-                          alignment: Alignment.topLeft,
-                          child: Column(
-                            children: <Widget>[
-                              TitleWidget(title: item.title),
-                              const SizedBox(height: 5.0),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minHeight: 90
+                    ),
+                    child: GestureDetector(
+                      onTap: () => NavigatorUtil.gotoGoodsDetailPage(context, item.productId),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          TitleWidget(title: item.title),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
                               CouponPriceWidget(
                                 actualPrice: item.arrivalPrice,
                                 originalPrice: double.tryParse(item.amount),
+                              ),
+                              const SizedBox(height: 4,),
+                              Badge(
+                                label: _calcDateHowLong(),
                               )
                             ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: double.infinity,
-                          child: _calcDateHowLong(),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 )
@@ -131,13 +133,7 @@ class FavoriteGoodsItem extends StatelessWidget {
     var endTime = DateTime.tryParse(item.endTime);
     if (endTime != null) {
       var difference = endTime.difference(now);
-      Widget returnWidget = FSuper(
-        lightOrientation: FLightOrientation.LeftBottom,
-        text: '剩余有效期${difference.inDays}天${difference.inHours % 24}小时',
-        padding: const EdgeInsets.all(2),
-        strokeColor: const Color(0xffFF7043),
-        strokeWidth: 1,
-      );
+      Widget returnWidget = Text('剩余有效期${difference.inDays}天${difference.inHours % 24}小时');
       if (difference.inDays < 0) {
         returnWidget = Row(
           mainAxisSize: MainAxisSize.min,
