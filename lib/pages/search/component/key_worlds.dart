@@ -1,19 +1,19 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../provider/riverpod/search_riverpod.dart';
 import '../list.dart';
 
 /// 搜索关键字组件
-class SearchKeyWorlds extends StatefulWidget {
+class SearchKeyWorlds extends ConsumerStatefulWidget {
   const SearchKeyWorlds({Key? key}) : super(key: key);
 
   @override
   SearchKeyWorldsState createState() => SearchKeyWorldsState();
 }
 
-class SearchKeyWorldsState extends State<SearchKeyWorlds> {
+class SearchKeyWorldsState extends ConsumerState<SearchKeyWorlds> {
   List<String> _keyWorlds = List.generate(10, (index) => '        ');
 
   @override
@@ -45,7 +45,8 @@ class SearchKeyWorldsState extends State<SearchKeyWorlds> {
   Widget _item(String item) {
     return InkWell(
       onTap: () {
-        context.read<SearchState>().loadData(worlds: item);
+
+        ref.read(searchRiverpod).loadData(worlds: item);
         context.navToWidget(to: SearchListIndex(value: item));
       },
       child: Chip(

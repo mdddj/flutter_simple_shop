@@ -29,7 +29,7 @@ dependencies:
   carousel_slider: ^4.2.1
   shimmer: ^2.0.0
   flutter_svg: ^2.0.2
-  extended_text: ^10.0.0
+  extended_text: ^10.0.1
   animated_text_kit: ^4.2.2
   html: ^0.15.2
   extended_tabs: ^4.0.2
@@ -73,13 +73,14 @@ dependencies:
   flutter_slidable: ^2.0.0
   loading_more_list_fast: ^6.0.0+1
   loading_more_list_library_fast: ^3.0.0+1
+  extended_text_field: ^11.0.1
   dd_js_util: ^3.2.1
+  dd_models: ^0.0.2
+  dd_check_plugin: ^2.1.1
   dataoke_sdk:
     path: ../plugins/dataoke_sdk
-  extended_text_field:
-    path: ../../hlx/github/extended_text_field
-  dd_check_plugin:
-    path: ../../hlx/github/dd_check_plugin
+
+
 
 
 

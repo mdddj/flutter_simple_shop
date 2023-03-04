@@ -3,14 +3,16 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../../provider/riverpod/category_riverpod.dart';
 
-
+final panicBuyingModelRiverpod = ChangeNotifierProvider(PanicBuyingModel.new);
 //数据模型
 class PanicBuyingModel extends ChangeNotifier {
+  final Ref ref;
+
   List<Category> cates = [];
   List<ProductModel> products = [];
   int _page = 1;
@@ -18,6 +20,8 @@ class PanicBuyingModel extends ChangeNotifier {
 
   String rankType = '1';
   String cid = '';
+
+  PanicBuyingModel(this.ref);
 
   /// 页面初始化
   Future<void> init(BuildContext context) async {
@@ -51,7 +55,7 @@ class PanicBuyingModel extends ChangeNotifier {
     }
     if (index > 1) {
       /// 获取选中哪个分类
-      final categorys = context.read<CategoryState>().categorys;
+      final categorys = ref.read(categoryRiverpod).categorys;
       final myCid = categorys[index - 2].cid;
       cid = '$myCid';
     }

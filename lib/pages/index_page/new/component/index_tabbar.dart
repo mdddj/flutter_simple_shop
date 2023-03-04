@@ -1,6 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 import '../../../../common/components/jd/jd_category_mini_widget.dart';
@@ -51,12 +51,14 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
 
   Widget categoryWidget(){
 
-    return Consumer<JdProductsProviderState>(builder: (BuildContext context, value, Widget? child) {
+    return Consumer(builder: (BuildContext context, ref, Widget? child) {
+      final value = ref.watch(jdProductsRiverpod);
       final curr = value.selectProductTypeId;
       return JdCategoryMiniWidget(selectId: curr,onSelect: (model){
-        context.read<JdProductsProviderState>().products.clear();
-        context.read<JdProductsProviderState>().setSelectProductTypeId(model.id);
-        context.read<JdProductsProviderState>().fetchData();
+        final jdRed = ref.read(jdProductsRiverpod);
+        jdRed.products.clear();
+        jdRed.setSelectProductTypeId(model.id);
+        jdRed.fetchData();
       },).height(36);
     },
     );

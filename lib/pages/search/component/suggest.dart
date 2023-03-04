@@ -3,7 +3,6 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:provider/provider.dart' hide FutureProvider;
 import '../../../common/widgets/hot.dart';
 import '../../../provider/riverpod/search_riverpod.dart';
 import '../../../widgets/extended_image.dart';
@@ -35,7 +34,7 @@ class Suggest extends ConsumerWidget {
             ),
             ref.watch(_riverpodSuggest).when(data: (list){
               return Wrap(
-                children: list.map((e)=>_renderItem(e,context)).toList(),
+                children: list.map((e)=>_renderItem(e,context,ref)).toList(),
               );
             }, error: (e,s)=>const Text("加载热搜榜失败"), loading: ()=>const CupertinoActivityIndicator())
           ],
@@ -44,10 +43,10 @@ class Suggest extends ConsumerWidget {
     );
   }
 
-  Widget _renderItem(HotSearchWorlds item,BuildContext context) {
+  Widget _renderItem(HotSearchWorlds item,BuildContext context,WidgetRef ref) {
     return GestureDetector(
       onTap: () {
-        context.read<SearchState>().loadData(worlds: item.words);
+        ref.read(searchRiverpod).loadData(worlds: item.words);
         context.navToWidget(to: SearchListIndex(value: item.words ?? ''));
       },
       child: Padding(

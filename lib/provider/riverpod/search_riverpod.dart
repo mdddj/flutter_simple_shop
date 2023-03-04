@@ -2,8 +2,9 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-
+final searchRiverpod = ChangeNotifierProvider((ref) => SearchState());
 class SearchState extends ChangeNotifier {
   String type = '0';
   int page = 1;

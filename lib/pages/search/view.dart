@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:provider/provider.dart';
 import '../../provider/riverpod/search_riverpod.dart';
 import '../../widgets/appbar_search.dart';
 import 'component/helper_show.dart';
@@ -8,7 +8,7 @@ import 'component/key_worlds.dart';
 import 'component/suggest.dart';
 
 /// 搜索页面
-class SearchPage extends StatefulWidget {
+class SearchPage extends ConsumerStatefulWidget {
   final String initSearchKeyWord; // 初始化搜索关键字
 
   const SearchPage({Key? key, this.initSearchKeyWord = ''}) : super(key: key);
@@ -17,7 +17,7 @@ class SearchPage extends StatefulWidget {
   SearchPageState createState() => SearchPageState();
 }
 
-class SearchPageState extends State<SearchPage> {
+class SearchPageState extends ConsumerState<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class SearchPageState extends State<SearchPage> {
       appBar: SAppBarSearch(
         value: widget.initSearchKeyWord,
         onSearch: (String value) {
-          context.read<SearchState>().loadData(worlds: value);
+          ref.read(searchRiverpod).loadData(worlds: value);
         },
       ),
       body: const CustomScrollView(slivers: [

@@ -7,6 +7,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 // Project imports:
 import '../../provider/riverpod/category_riverpod.dart';
 
+
+final goodsListRiverpod = ChangeNotifierProvider((ref) => GoodsListState());
+
 class GoodsListState extends ChangeNotifier {
   // 主分类
   late Category category;

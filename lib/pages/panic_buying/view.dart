@@ -2,8 +2,7 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:provider/provider.dart';
-
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 // Project imports:
 import '../../widgets/simple_appbar.dart';
 import 'components/categorys.dart';
@@ -17,21 +16,21 @@ import 'repository.dart';
 /// @Description 功能描述  排行榜页面
 /// @Date 创建时间 2021年6月19日 14:38:39
 ///
-class PanicBuyingPage extends StatefulWidget {
+class PanicBuyingPage extends ConsumerStatefulWidget {
   const PanicBuyingPage({Key? key}) : super(key: key);
 
   @override
   PanicBuyingPageState createState() => PanicBuyingPageState();
 }
 
-class PanicBuyingPageState extends State<PanicBuyingPage> {
+class PanicBuyingPageState extends ConsumerState<PanicBuyingPage> {
   final EasyRefreshController easyRefreshController = EasyRefreshController();
 
   @override
   void initState() {
     super.initState();
     Future.microtask(() async {
-      await context.read<PanicBuyingModel>().init(context);
+      ref.read(panicBuyingModelRiverpod).init(context);
     });
   }
 
@@ -49,7 +48,7 @@ class PanicBuyingPageState extends State<PanicBuyingPage> {
               text: '全天榜',
             ),
           ],
-          onTap: (index)=> context.read<PanicBuyingModel>().tabChanged(index,context),
+          onTap: (index)=> ref.read(panicBuyingModelRiverpod).tabChanged(index,context),
         ),
         bottomHeight: 48,
       ),
@@ -62,12 +61,10 @@ class PanicBuyingPageState extends State<PanicBuyingPage> {
               const SliverToBoxAdapter(
                 child: ViewStatusWithPanicBuy(),
               ),
-              Consumer<PanicBuyingModel>(builder: (BuildContext context, value, Widget? child) {
-                return ProductsList(value.products);
-              },)
+              ProductsList(ref.watch(panicBuyingModelRiverpod.select((value) => value.products)))
             ],
             onLoad: () async {
-              final result = await context.read<PanicBuyingModel>().nextPage();
+              final result = await ref.read(panicBuyingModelRiverpod).nextPage();
               easyRefreshController.finishLoad(noMore: result);
             },
             footer: MaterialFooter(),

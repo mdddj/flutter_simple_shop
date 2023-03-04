@@ -12,7 +12,7 @@ class GoodsListParamsModel with _$GoodsListParamsModel {
       {required Category category,
       Subcategory? subcategor,
       @Default(DdSort.defaultSort) String sort,
-      required List<ProductModel> products,
+      required List<Product> products,
       required int page,
       required bool initLoading,
       CancelToken? cancelToken}) = _GoodsListParamsModel;

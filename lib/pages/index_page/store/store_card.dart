@@ -1,24 +1,22 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../provider/index_provider.dart';
 
 // 品牌特卖
-class StoreItemCard extends StatelessWidget {
+class StoreItemCard extends ConsumerWidget {
   final ListElement storeInfo;
 
   const StoreItemCard({Key? key, required this.storeInfo}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return _buildInfo(context).marginOnly(top: 6);
+  Widget build(BuildContext context,WidgetRef ref) {
+    return _buildInfo(context,ref).marginOnly(top: 6);
   }
 
-  Widget _buildInfo(BuildContext context) {
-    var bgColor =
-        Provider.of<IndexProvider>(context).brandBgColorMap[storeInfo.brandId];
-    bgColor = bgColor ?? Colors.grey[200];
+  Widget _buildInfo(BuildContext context,WidgetRef ref) {
+    final bgColor = ref.read(indexProviderRiverpod).brandBgColorMap[storeInfo.brandId] ?? Colors.grey[200];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(

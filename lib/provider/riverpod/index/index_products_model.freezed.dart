@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$IndexProductsModel {
-  List<ProductModel> get products => throw _privateConstructorUsedError;
+  List<Product> get products => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,7 @@ abstract class $IndexProductsModelCopyWith<$Res> {
           IndexProductsModel value, $Res Function(IndexProductsModel) then) =
       _$IndexProductsModelCopyWithImpl<$Res, IndexProductsModel>;
   @useResult
-  $Res call({List<ProductModel> products, int page});
+  $Res call({List<Product> products, int page});
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$IndexProductsModelCopyWithImpl<$Res, $Val extends IndexProductsModel>
       products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<ProductModel>,
+              as List<Product>,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -70,7 +70,7 @@ abstract class _$$_IndexProductsModelCopyWith<$Res>
       __$$_IndexProductsModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ProductModel> products, int page});
+  $Res call({List<Product> products, int page});
 }
 
 /// @nodoc
@@ -91,7 +91,7 @@ class __$$_IndexProductsModelCopyWithImpl<$Res>
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<ProductModel>,
+              as List<Product>,
       page: null == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -104,12 +104,12 @@ class __$$_IndexProductsModelCopyWithImpl<$Res>
 
 class _$_IndexProductsModel implements _IndexProductsModel {
   _$_IndexProductsModel(
-      {required final List<ProductModel> products, required this.page})
+      {required final List<Product> products, required this.page})
       : _products = products;
 
-  final List<ProductModel> _products;
+  final List<Product> _products;
   @override
-  List<ProductModel> get products {
+  List<Product> get products {
     if (_products is EqualUnmodifiableListView) return _products;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_products);
@@ -146,11 +146,11 @@ class _$_IndexProductsModel implements _IndexProductsModel {
 
 abstract class _IndexProductsModel implements IndexProductsModel {
   factory _IndexProductsModel(
-      {required final List<ProductModel> products,
+      {required final List<Product> products,
       required final int page}) = _$_IndexProductsModel;
 
   @override
-  List<ProductModel> get products;
+  List<Product> get products;
   @override
   int get page;
   @override

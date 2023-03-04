@@ -1,7 +1,11 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../util/color_util.dart';
+
+
+final indexProviderRiverpod = ChangeNotifierProvider((ref) => IndexProvider());
 
 /// 首页状态管理
 class IndexProvider extends ChangeNotifier {

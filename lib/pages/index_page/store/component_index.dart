@@ -1,22 +1,15 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:provider/provider.dart';
-
-// Project imports:
-import '../../../common/utils.dart';
-import '../../../provider/index_provider.dart';
-import '../component/component_title.dart';
-import 'goods_card.dart';
-import 'store_card.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import '../../../index.dart';
 
 /// 首页推荐商店模块
-class StoreComponentIndex extends StatelessWidget {
+class StoreComponentIndex extends ConsumerWidget {
   const StoreComponentIndex({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final storeData = context.watch<IndexProvider>().storeData;
+  Widget build(BuildContext context,WidgetRef ref) {
+    final storeData =ref.read(indexProviderRiverpod.select((value) => value.storeData));
     if (storeData != null) {
       return Container(
         padding: const EdgeInsets.symmetric(horizontal: 12),

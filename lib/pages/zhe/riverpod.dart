@@ -2,13 +2,13 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-// Project imports:
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../provider/riverpod/category_riverpod.dart';
 
+final zheRiverpod = ChangeNotifierProvider(ZheState.new);
 
 class ZheState extends ChangeNotifier {
+  final Ref ref;
   int _page = 1;
   final int _pageSize = 20;
   String cid = '';
@@ -16,6 +16,8 @@ class ZheState extends ChangeNotifier {
   bool loading = true;
 
   List<ProductModel> products = [];
+
+  ZheState(this.ref);
 
   /// 加载商品
   Future<bool> fetchData() async {
@@ -32,7 +34,7 @@ class ZheState extends ChangeNotifier {
   }
 
   void onTabChange(int index,BuildContext context) {
-    final categorys = context.read<CategoryState>().categorys;
+    final categorys = ref.read(categoryRiverpod).categorys;
     if (index == 0) {
       cid = '';
     } else {

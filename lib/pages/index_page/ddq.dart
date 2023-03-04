@@ -3,8 +3,7 @@
 // Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import './index_layout.dart';
 // Project imports:
@@ -14,51 +13,45 @@ import '../../widgets/extended_image.dart';
 import 'component/component_title.dart';
 
 // 钉钉抢
-class DDQWidget extends StatefulWidget {
+class DDQWidget extends ConsumerStatefulWidget {
   const DDQWidget({Key? key}) : super(key: key);
 
   @override
   DDQWidgetState createState() => DDQWidgetState();
 }
 
-class DDQWidgetState extends State<DDQWidget> {
+class DDQWidgetState extends ConsumerState<DDQWidget> {
   final GlobalKey globalKey = GlobalKey();
   DdqProvider? ddqProvider;
   bool isLoading = true;
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<DdqProvider>(
-      builder: (context, ddqProvider, _) {
-
-        final loading = ddqProvider.initLoading;
-
-        return IndexPublicLayout(
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            child: Column(
-              children: <Widget>[
-                 ComponentTitle(
-                  title: '限时抢购',
-                  height: 24,
-                  onTap: ()=>NavigatorUtil.goTODdqPage(context),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 500),
-                    child: loading ? Container(
-                      height: 200,
-                      alignment: Alignment.center,
-                      child: const CupertinoActivityIndicator(),
-                    ) : _buildWidgetGoosList()),
-                const SizedBox(height: 12,)
-              ],
+    final loading = ref.watch(ddqRiverpod.select((value) => value.initLoading));
+    return IndexPublicLayout(
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        child: Column(
+          children: <Widget>[
+            ComponentTitle(
+              title: '限时抢购',
+              height: 24,
+              onTap: ()=>NavigatorUtil.goTODdqPage(context),
             ),
-          ),
-        );
-      },
+            const SizedBox(
+              height: 12,
+            ),
+            AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                child: loading ? Container(
+                  height: 200,
+                  alignment: Alignment.center,
+                  child: const CupertinoActivityIndicator(),
+                ) : _buildWidgetGoosList()),
+            const SizedBox(height: 12,)
+          ],
+        ),
+      ),
     );
   }
 
@@ -162,19 +155,4 @@ class DDQWidgetState extends State<DDQWidget> {
     );
   }
 
-  @override
-  void didChangeDependencies() async {
-    var ddqProvider = Provider.of<DdqProvider>(context);
-    if (this.ddqProvider != ddqProvider) {
-      this.ddqProvider = ddqProvider;
-      await Future.delayed(const Duration(seconds: 1), () {
-        ddqProvider.loadData();
-      });
-
-      setState(() {
-        isLoading = false;
-      });
-    }
-    super.didChangeDependencies();
-  }
 }

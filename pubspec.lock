@@ -307,10 +307,11 @@ packages:
   dd_check_plugin:
     dependency: "direct main"
     description:
-      path: "../../hlx/github/dd_check_plugin"
-      relative: true
-    source: path
-    version: "2.1.0"
+      name: dd_check_plugin
+      sha256: ed1ef7c18c85a19cb3dae0f7212027c3a2e376cfebfd379fbde47aaad37a39eb
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.1"
   dd_js_util:
     dependency: "direct main"
     description:
@@ -320,7 +321,7 @@ packages:
     source: hosted
     version: "3.2.1"
   dd_models:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: dd_models
       sha256: "032ac50397735e71fbafe62cfb69010ba21526f2d6796e9b693ec454ad316ac7"
@@ -411,25 +412,26 @@ packages:
     dependency: "direct main"
     description:
       name: extended_text
-      sha256: c0f92379321193aaf29d7d0a29ea61886a0dcf30ea455b03fb793ab518cd799a
+      sha256: "3f555a60f63ff51d5080f5eed89e65bc18f17b69e01f4e16cadfd0cb3b49f42a"
       url: "https://pub.dev"
     source: hosted
-    version: "10.0.0"
+    version: "10.0.1"
   extended_text_field:
     dependency: "direct main"
     description:
-      path: "../../hlx/github/extended_text_field"
-      relative: true
-    source: path
-    version: "10.2.0"
+      name: extended_text_field
+      sha256: aadb1d215422fc07708ecd4ac5d7bff477ad3c2ed264bba887f2b458a4ebe3ed
+      url: "https://pub.dev"
+    source: hosted
+    version: "11.0.1"
   extended_text_library:
     dependency: transitive
     description:
       name: extended_text_library
-      sha256: "3538b6ab1c177071b7897bc059d666ba289a042d2142e9f647b7ccbc3e65496b"
+      sha256: "6d06b0ac53a09989e9864549f133c19c676d1456c5ee9470e2483f3cb1900f6e"
       url: "https://pub.dev"
     source: hosted
-    version: "9.1.1"
+    version: "10.0.0"
   fast_immutable_collections:
     dependency: "direct main"
     description:
