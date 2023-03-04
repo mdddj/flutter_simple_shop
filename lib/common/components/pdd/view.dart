@@ -1,7 +1,7 @@
 import 'package:common_utils/common_utils.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 
 // Project imports:

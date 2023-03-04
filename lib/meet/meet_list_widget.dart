@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import 'list.dart';
 import 'meet_item_layout.dart';

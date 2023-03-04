@@ -3,12 +3,12 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import 'goods_list_params_model.dart';
 
 ///产品列表的数据仓库
-class ProductListRepository extends LoadingMoreBase<ProductModel> {
+class ProductListRepository extends LoadingModel<ProductModel> {
 
   late GoodsListParamsModel state; //筛选产品参数
 

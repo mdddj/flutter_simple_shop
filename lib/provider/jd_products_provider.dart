@@ -1,9 +1,12 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 
 import '../common/components/jd/product_model.dart';
 
+
+final jdProductsRiverpod  = ChangeNotifierProvider((ref) => JdProductsProviderState());
 
 /// 京东产品的状态
 class JdProductsProviderState extends ChangeNotifier {

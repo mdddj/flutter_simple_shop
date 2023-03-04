@@ -1,8 +1,7 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-// Package imports:
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 /// 功能组组件
 class MyWrap extends StatelessWidget {

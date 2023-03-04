@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../../modals/blog_category_model.dart';
 import '../../../../provider/riverpod/category_riverpod.dart';
 
@@ -13,8 +13,8 @@ class BlogCategorys extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Consumer<CategoryState>(builder: (context,value,child){
-      final blogCates = value.blogCategorys;
+    return Consumer(builder: (context,ref,child){
+      final blogCates = ref.watch(categoryRiverpod.select((value) => value.blogCategorys));
       if (blogCates.isEmpty) return Container();
       return WaterfallFlow.count(
         crossAxisCount: 4,

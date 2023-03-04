@@ -1,22 +1,22 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import './left_widget.dart';
 import './right_widget.dart';
 import '../../constant/style.dart';
 import '../../provider/riverpod/category_riverpod.dart';
 import '../../widgets/edit_page_handle.dart';
 
-class CategoryIndexPage extends StatefulWidget {
+class CategoryIndexPage extends ConsumerStatefulWidget {
   const CategoryIndexPage({Key? key}) : super(key: key);
 
   @override
   CategoryIndexPageState createState() => CategoryIndexPageState();
 }
 
-class CategoryIndexPageState extends State<CategoryIndexPage> {
+class CategoryIndexPageState extends ConsumerState<CategoryIndexPage> {
   int current = 0;
 
   @override
@@ -38,10 +38,10 @@ class CategoryIndexPageState extends State<CategoryIndexPage> {
         ),
       ),
       body: EditePageHandle(
-        child: Consumer<CategoryState>(
-          builder: (BuildContext context, value, Widget? child) {
-            final categorys = value.categorys;
-            final current = value.current;
+        child: Builder(
+          builder: (context) {
+            final categorys = ref.watch(categoryRiverpod.select((value) => value.categorys));
+            final current = ref.watch(categoryRiverpod.select((value) => value.current));
             if (categorys.isEmpty) {
               return const Text('没有数据');
             }
@@ -60,7 +60,7 @@ class CategoryIndexPageState extends State<CategoryIndexPage> {
                           itemCount: categorys.length,
                           itemBuilder: (context, index) {
                             return GestureDetector(
-                              onTap: () => context.read<CategoryState>().setCurrent(categorys[index]),
+                              onTap: () => ref.read(categoryRiverpod).setCurrent(categorys[index]),
                               child: LeftWidgetItem(item: categorys[index], isCurrent: current.cid == categorys[index].cid),
                             );
                           }),
@@ -79,7 +79,7 @@ class CategoryIndexPageState extends State<CategoryIndexPage> {
                     )
                   ],
                 ));
-          },
+          }
         ),
       ),
     );

@@ -2,15 +2,15 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:loading_more_list/loading_more_list.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../common/utils.dart';
 import '../widgets/simple_appbar.dart';
 import 'index_page/new/index_riverpod.dart';
 
 /// 畅销榜单页面
-class BestSellerListPage extends StatefulWidget {
+class BestSellerListPage extends ConsumerStatefulWidget {
   const BestSellerListPage({Key? key}) : super(key: key);
 
   static void nav(BuildContext context)=>context.navToWidget(to:const BestSellerListPage());
@@ -19,7 +19,7 @@ class BestSellerListPage extends StatefulWidget {
   BestSellerListPageState createState() => BestSellerListPageState();
 }
 
-class BestSellerListPageState extends State<BestSellerListPage> {
+class BestSellerListPageState extends ConsumerState<BestSellerListPage> {
 
 
  late  List<ProductModel> _products;
@@ -27,7 +27,9 @@ class BestSellerListPageState extends State<BestSellerListPage> {
  @override
   void initState() {
     super.initState();
-    _products = context.read<IndexState>().hotDayProducts;
+    delayFunction(() {
+      _products = ref.read(indexStateRiverpod).hotDayProducts;
+    });
   }
   @override
   Widget build(BuildContext context) {

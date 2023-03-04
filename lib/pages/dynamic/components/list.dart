@@ -3,8 +3,8 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../../common/utils.dart';
 import '../../../util/navigator_util.dart';
@@ -12,19 +12,17 @@ import '../../../widgets/extended_image.dart';
 import '../../../widgets/simple_price.dart';
 import '../pyq_riverpod.dart';
 
-class PyqList extends StatelessWidget {
+class PyqList extends ConsumerWidget {
   const PyqList({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Consumer<PyqState>(builder: (c, v, ch) {
-      final product = v.products;
-      if (product.isEmpty) return const SliverToBoxAdapter();
-      return SliverWaterfallFlow.count(
-        crossAxisCount: 1,
-        children: product.map(renderItem).toList(),
-      );
-    });
+  Widget build(BuildContext context,WidgetRef ref) {
+    final product = ref.watch(pyqRiverpod.select((value) => value.products));
+    if (product.isEmpty) return const SliverToBoxAdapter();
+    return SliverWaterfallFlow.count(
+      crossAxisCount: 1,
+      children: product.map(renderItem).toList(),
+    );
   }
 
   Widget renderItem(ProductModel product) {

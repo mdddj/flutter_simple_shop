@@ -2,8 +2,9 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-
+final indexStateRiverpod = ChangeNotifierProvider((ref) => IndexState());
 /// 首页状态
 class IndexState extends ChangeNotifier {
   bool indexLoading = false;

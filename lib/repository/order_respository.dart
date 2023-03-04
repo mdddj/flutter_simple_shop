@@ -1,9 +1,9 @@
 
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../modals/order_list_model.dart';
 
-class OrderRespository extends LoadingMoreBase<OrderAuditObject>{
+class OrderRespository extends LoadingModel<OrderAuditObject>{
 
   int pageIndex = 1; // 默认第一页
   bool _hasMore = true; // 是否还存在下一页

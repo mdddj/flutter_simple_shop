@@ -4,12 +4,13 @@ import 'package:dataoke_sdk/dataoke_sdk.dart' hide BlogCategory;
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../../common/utils.dart';
 import '../../modals/blog_category_model.dart';
 
-
+final categoryRiverpod = ChangeNotifierProvider((ref) => CategoryState());
 class CategoryState extends ChangeNotifier {
   IList<Category> categorys =const IListConst([]);
 

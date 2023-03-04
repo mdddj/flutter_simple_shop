@@ -5,6 +5,10 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+
+final pyqRiverpod = ChangeNotifierProvider((ref) => PyqState());
 
 class PyqState extends ChangeNotifier{
 

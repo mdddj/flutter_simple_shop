@@ -1,7 +1,7 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../index.dart';
 import '../../widgets/loading/custom_loading_more_widget.dart';
 import '../../widgets/login_tip_widget.dart';

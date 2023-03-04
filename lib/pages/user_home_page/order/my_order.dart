@@ -2,7 +2,7 @@
 // Package imports:
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import 'package:pull_to_refresh_notification/pull_to_refresh_notification.dart';
 
 // Project imports:

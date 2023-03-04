@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../api/apis.dart';
 import '../../../common/utils.dart';
 import '../../../freezed/add_favorites_params.dart';

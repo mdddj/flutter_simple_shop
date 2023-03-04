@@ -1,5 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
 import '../../../index.dart';
 import 'types.dart';

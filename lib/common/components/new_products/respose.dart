@@ -1,14 +1,14 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_models/models/product.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
 import '../../../widgets/waterfall_goods_card.dart';
 import '../../utils.dart';
 
 
-class NewProductsLoadMore extends LoadingMoreBase<Product> {
+class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
   int page = 1;
   bool more = true;
 
@@ -59,7 +59,7 @@ class _NewProductWidgetState extends State<NewProductWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingMoreSliverList(SliverListConfig<Product>(
+    return LoadingMoreSliverList(SliverListConfig<ProductModel>(
         itemBuilder: (c, ite, index) {
           return WaterfallGoodsCard(ite);
         },

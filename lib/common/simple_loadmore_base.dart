@@ -1,7 +1,7 @@
 
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
 import '../api/apis.dart';
 

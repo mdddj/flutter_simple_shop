@@ -1,8 +1,7 @@
 
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
-import 'package:provider/provider.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../../../common/utils.dart';
 import '../../../../../config/app_config.dart';
 import '../../../../../service/api_service.dart';
@@ -14,7 +13,6 @@ import '../../../../panic_buying/view.dart';
 import '../../../../pinduoduo/search/view.dart';
 import '../../../../zhe/view.dart';
 import '../../index_card_wrapper.dart';
-import '../../index_riverpod.dart';
 import '../../waimai/index.dart';
 import 'menu_item.dart';
 import 'model.dart';
@@ -44,8 +42,6 @@ List<Widget> buildIndexGridMenuItems(BuildContext context) {
             title: '美团领券',
             image: mtwmImage,
             onTap: () async {
-              final indexState = context.read<IndexState>();
-              indexState.changeLoadingState(true);
               await tkApi.meituan({'actId': '2', 'linkType': '1'},
                   mapHandle: (data) async {
                     final url = (data['data'] ?? '').toString();
@@ -54,12 +50,9 @@ List<Widget> buildIndexGridMenuItems(BuildContext context) {
                     }
                   });
 
-              indexState.changeLoadingState(false);
             },
             isAssets: true,
             onLongTap: () async {
-              final indexStateProvider = context.read<IndexState>();
-              indexStateProvider.changeLoadingState(true);
               await tkApi.meituan({'actId': '2', 'linkType': '1'},
                   mapHandle: (data) async {
                     final url = (data['data'] ?? '').toString();
@@ -69,7 +62,6 @@ List<Widget> buildIndexGridMenuItems(BuildContext context) {
                           .showSimpleDialog('领券链接复制成功,打开浏览器粘贴即可', title: '获取链接成功');
                     }
                   });
-              indexStateProvider.changeLoadingState(false);
             })),
 
     /// 排行榜

@@ -15,7 +15,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final _emailController = TextEditingController(text: "413153189@qq.com");
+  final _emailController = TextEditingController();
   final _codeController = TextEditingController();
   final _passController = TextEditingController();
   final _finalPassController = TextEditingController();
@@ -105,7 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
       onEnd: () => setState(() => _disableGetCodeBtn = false),
       interval: const Duration(seconds: 1),
       endTime: DateTime.now().add(const Duration(seconds: 60)).toIso8601String(),
-    );
+    ).marginOnly(right: 12);
   }
 
   //注册用户
@@ -125,7 +125,6 @@ class _RegisterPageState extends State<RegisterPage> {
       toast('请输入邮箱');
       return;
     }
-    _formKey.currentState?.reset();
     context.hideKeyBoard();
     MyApiWithSendEmailValidCode(GetEmailValidCodeParams(email: _email)).request().then((value) {
       value.simpleToast();

@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:after_layout/after_layout.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list/loading_more_list.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import './ddq.dart';
 import 'new/component/carousel.dart';

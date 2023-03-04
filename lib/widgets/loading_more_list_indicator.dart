@@ -1,9 +1,10 @@
 // Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
-// Package imports:
-import 'package:loading_more_list/loading_more_list.dart';
+// Package imports
 
 class LoadingMoreListCostumIndicator extends StatelessWidget {
   final IndicatorStatus status;
