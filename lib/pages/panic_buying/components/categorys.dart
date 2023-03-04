@@ -2,11 +2,11 @@
 // Package imports:
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-// Project imports:
-import '../../../common/utils.dart';
+import '../../../index.dart';
 
-class BottomCategoryTabs extends StatelessWidget implements PreferredSizeWidget  {
+class BottomCategoryTabs extends ConsumerWidget implements PreferredSizeWidget  {
   final List<Tab>? insets;
   final ValueChanged<int>? onTap;
   final int? initIndex;
@@ -14,9 +14,9 @@ class BottomCategoryTabs extends StatelessWidget implements PreferredSizeWidget 
   const BottomCategoryTabs({this.insets, this.onTap, this.initIndex,Key? key}):super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     var myInsets = insets ?? [];
-    final categoryWidgets = utils.widgetUtils.categoryTabs(context);
+    final categoryWidgets = ref.watch(categoryRiverpod.select((value) => value.categorys)).map((element) => Tab(text: element.cname));
     return Container(
       alignment: Alignment.centerLeft,
       child: DefaultTabController(

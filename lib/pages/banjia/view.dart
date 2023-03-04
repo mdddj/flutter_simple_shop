@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../../widgets/float_widget.dart';
@@ -14,14 +14,14 @@ import 'component/list.dart';
 import 'resp.dart';
 
 // 每日半价页面
-class BanjiaIndex extends StatefulWidget {
+class BanjiaIndex extends ConsumerStatefulWidget {
   const BanjiaIndex({Key? key}) : super(key: key);
 
   @override
   BanjiaIndexState createState() => BanjiaIndexState();
 }
 
-class BanjiaIndexState extends State<BanjiaIndex> {
+class BanjiaIndexState extends ConsumerState<BanjiaIndex> {
   final ScrollController scrollController = ScrollController();
 
   bool showTopButton = false;
@@ -29,7 +29,7 @@ class BanjiaIndexState extends State<BanjiaIndex> {
   @override
   void initState() {
     Future.microtask(() {
-      context.read<BanjiaResp>().init();
+      ref.read(banjiaRiveroid).init();
     });
     scrollController.addListener(() {
       if (scrollController.offset >= 200) {
@@ -49,8 +49,11 @@ class BanjiaIndexState extends State<BanjiaIndex> {
     super.initState();
   }
 
+
   @override
   Widget build(BuildContext context) {
+    final list = ref.watch(banjiaRiveroid.select((value) => value.products));
+    final loading = ref.watch(banjiaRiveroid.select((value) => value.loading));
     return Scaffold(
       appBar: const SimpleAppBar(
         title: '每日半价',
@@ -61,15 +64,10 @@ class BanjiaIndexState extends State<BanjiaIndex> {
           delegate: FloatWidget(child: const BanjiaSessions(), height: 48),
           pinned: true,
         ),
-        Consumer<BanjiaResp>(
-          builder: (BuildContext context,
-              value, Widget? child) {
-            final list = value.products;
-            final loading = value.loading;
-            if(loading) return const SliverToBoxAdapter(child: LoadingWidget());
-            return BanjiaList(products: list);
-          },
-        )
+        Builder(builder: (_){
+          if(loading) return const SliverToBoxAdapter(child: LoadingWidget());
+          return BanjiaList(products: list);
+        })
       ]),
       floatingActionButton: showTopButton
           ? FloatingActionButton(

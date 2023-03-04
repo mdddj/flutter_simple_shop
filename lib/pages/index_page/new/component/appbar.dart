@@ -1,12 +1,11 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
-
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../../index.dart';
 
 /// 首页导航栏
-class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
+class IndexHomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
   final TabController tabController;
 
   const IndexHomeAppbar({Key? key, required this.tabController}) : super(key: key);
@@ -16,7 +15,7 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     return SAppBarSearch(
       hintText: '输入关键字,例如:"辣条"',
       onTap: () => navTo(context),
@@ -40,60 +39,47 @@ class IndexHomeAppbar extends StatelessWidget implements PreferredSizeWidget {
       ],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(48),
-        child: Consumer<IndexState>(
-          builder: (BuildContext context, value, Widget? child) {
-            final loading = value.indexLoading;
-            final categoryWidgets = utils.widgetUtils.categoryTabs(context);
-            return LayoutBuilder(
-              builder: (BuildContext context, BoxConstraints constraints) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    AnimatedContainer(
-                      duration: const Duration(milliseconds: 800),
-                      height: 46,
-                      child: Container(
-                        alignment: Alignment.centerLeft,
-                        child: TabBar(
-                          controller: tabController,
-                          isScrollable: true,
-                          tabs: [
-                            const Tab(
-                              text: '精选',
-                            ),
-                            ...categoryWidgets
-                          ],
-                          onTap: (int index) {
-                            if (index == 0) {
-                              return;
-                            }
-                            final category = context.read<CategoryState>().getCategoryByIndex(index - 1);
-                            context.navToWidget(
-                                to: NewGoodsList(
-                              category: category,
-                              initIndex: context.read<CategoryState>().getIndexWithCategory(category),
-                            ));
-                          },
-                        ),
+        child:Builder(builder: (_){
+          return LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 800),
+                    height: 46,
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: TabBar(
+                        controller: tabController,
+                        isScrollable: true,
+                        tabs: [
+                          const Tab(
+                            text: '精选',
+                          ),
+                          ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map((element) => Tab(text: element.cname,))
+
+                        ],
+                        onTap: (int index) {
+                          if (index == 0) {
+                            return;
+                          }
+                          final category = ref.read(categoryRiverpod).getCategoryByIndex(index - 1);
+                          context.navToWidget(
+                              to: NewGoodsList(
+                                category: category,
+                                initIndex: ref.read(categoryRiverpod).getIndexWithCategory(category),
+                              ));
+                        },
                       ),
                     ),
-                    AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      child: loading
-                          ? const LinearProgressIndicator(
-                              minHeight: 2.0,
-                            )
-                          : Container(
-                              height: 2.0,
-                            ),
-                    )
-                  ],
-                );
-              },
-            );
-          },
-        ),
+                  ),
+                ],
+              );
+            },
+          );
+        }),
       ),
       isSliveWidget: true,
     );

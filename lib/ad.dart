@@ -2,8 +2,6 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:provider/provider.dart' hide FutureProvider;
-
 import 'api/apis.dart';
 import 'index.dart';
 
@@ -12,8 +10,8 @@ const kLogoSize = 90.0;
 ///初始化请求
 final initFuture = FutureProvider.family<dynamic, BuildContext>((ref, context) async {
   try {
-    final categoryModel = context.read<CategoryState>();
-    final indexModel = context.read<IndexState>();
+    final categoryModel = ref.read(categoryRiverpod);
+    final indexModel = ref.read(indexStateRiverpod);
     await categoryModel.init(); //加载超级分类数据
     await indexModel.fetch(); //加载双列产品数据
     await KZheTaokeApiWithAppkeyGet.doRequest(ref); //加载折淘客的APP Key

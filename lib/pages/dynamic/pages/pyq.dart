@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 // Package imports:
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../components/list.dart';
@@ -10,21 +10,21 @@ import '../loading.dart';
 import '../pyq_riverpod.dart';
 
 /// 朋友圈
-class PyqView extends StatefulWidget {
+class PyqView extends ConsumerStatefulWidget {
   const PyqView({Key? key}) : super(key: key);
 
   @override
   PyqViewState createState() => PyqViewState();
 }
 
-class PyqViewState extends State<PyqView> {
+class PyqViewState extends ConsumerState<PyqView> {
 
 
   @override
   void initState() {
     super.initState();
     Future.microtask(() {
-      context.read<PyqState>().fetchData();
+      ref.read(pyqRiverpod).fetchData();
     });
   }
 
@@ -36,7 +36,7 @@ class PyqViewState extends State<PyqView> {
         PyqList()
       ],
       onLoad: ()async{
-        await context.read<PyqState>().nextPage();
+        await ref.read(pyqRiverpod).nextPage();
       },
       footer: MaterialFooter(),
     );

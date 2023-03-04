@@ -9,15 +9,15 @@ import '../../../common/components/new_products/respose.dart';
 import '../../../index.dart';
 
 /// 新版首页
-class IndexHomeNew extends StatefulWidget {
+class IndexHomeNew extends ConsumerStatefulWidget {
   const IndexHomeNew({Key? key}) : super(key: key);
 
   @override
   IndexHomeNewState createState() => IndexHomeNewState();
 }
 
-class IndexHomeNewState extends State<IndexHomeNew> with SingleTickerProviderStateMixin {
-  late TabController tabController = TabController(length: context.categoryLength + 1, vsync: this);
+class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerProviderStateMixin {
+  late TabController tabController = TabController(length: ref.watch(categoryRiverpod.select((value) => value.categorys)).length + 1, vsync: this);
 
   @override
   void initState() {
@@ -36,7 +36,7 @@ class IndexHomeNewState extends State<IndexHomeNew> with SingleTickerProviderSta
       },
       body: TabBarView(
         controller: tabController,
-        children: [const HomeWidgets(), ...context.categorys.map(CategoryGoodsList.new).toList()],
+        children: [const HomeWidgets(), ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map(CategoryGoodsList.new).toList()],
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import './goods_item.dart';
 import './sliver_app_bar_delegate.dart';
@@ -8,15 +8,15 @@ import '../../provider/ddq_provider.dart';
 import '../../widgets/ddq_times_widget.dart';
 
 /// 钉钉抢的页面
-class DdqIndexHome extends StatefulWidget {
+class DdqIndexHome extends ConsumerStatefulWidget {
   const DdqIndexHome({Key? key}) : super(key: key);
 
   @override
   DdqIndexHomeState createState() => DdqIndexHomeState();
 }
 
-class DdqIndexHomeState extends State<DdqIndexHome> {
-  late DdqProvider ddqProvider = context.watch<DdqProvider>();
+class DdqIndexHomeState extends ConsumerState<DdqIndexHome> {
+  late DdqProvider ddqProvider = ref.watch(ddqRiverpod);
   int? cur;
 
   @override

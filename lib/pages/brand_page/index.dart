@@ -2,9 +2,10 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 // Project imports:
@@ -15,14 +16,14 @@ import 'category_delegate.dart';
 import 'components/item.dart';
 
 /// 品牌列表页面
-class BrandListPage extends StatefulWidget {
+class BrandListPage extends ConsumerStatefulWidget {
   const BrandListPage({Key? key}) : super(key: key);
 
   @override
   BrandListPageState createState() => BrandListPageState();
 }
 
-class BrandListPageState extends State<BrandListPage> with LoadingMixin {
+class BrandListPageState extends ConsumerState<BrandListPage> with LoadingMixin {
   final CategoryController _categoryController = CategoryController();
   final EasyRefreshController _easyRefreshController = EasyRefreshController();
   int page = 1;
@@ -33,7 +34,9 @@ class BrandListPageState extends State<BrandListPage> with LoadingMixin {
   @override
   void initState() {
     super.initState();
-    cid = context.read<CategoryState>().categorys[0].cid;
+    delayFunction(() {
+      cid = ref.read(categoryRiverpod).categorys[0].cid;
+    });
     Future.microtask(init);
   }
 

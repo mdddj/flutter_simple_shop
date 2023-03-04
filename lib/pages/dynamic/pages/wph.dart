@@ -1,7 +1,7 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../widgets/extended_image.dart';
 import '../../index_page/store/price_layout.dart';
@@ -10,32 +10,30 @@ import '../../public_detail/view.dart';
 import '../wph_riverpod.dart';
 
 /// 唯品会精编商品列表
-class WeipinhuiJinBianGoods extends StatefulWidget {
+class WeipinhuiJinBianGoods extends ConsumerStatefulWidget {
   const WeipinhuiJinBianGoods({Key? key}) : super(key: key);
 
   @override
   WeipinhuiJinBianGoodsState createState() => WeipinhuiJinBianGoodsState();
 }
 
-class WeipinhuiJinBianGoodsState extends State<WeipinhuiJinBianGoods> {
+class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
   @override
   void initState() {
     super.initState();
-    context.read<WphState>().init();
+    delayFunction(() {
+      ref.read(wphRiveroid).init();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final list = ref.watch(wphRiveroid.select((value) =>value.products));
     return EasyRefresh.custom(
       slivers: [
-        Consumer<WphState>(
-          builder: (BuildContext context,value, Widget? child) {
-            final list = value.products;
-            return SliverList(delegate: SliverChildBuilderDelegate((_, index) => renderItem(list[index]), childCount: list.length));
-          },
-        )
+     SliverList(delegate: SliverChildBuilderDelegate((_, index) => renderItem(list[index]), childCount: list.length))
       ],
-      onLoad: context.read<WphState>().nextPage,
+      onLoad: ref.read(wphRiveroid).nextPage,
     );
   }
 

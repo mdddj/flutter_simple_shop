@@ -1,9 +1,7 @@
+import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_models/models/product.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../constant/style.dart';
-import '../provider/riverpod/category_riverpod.dart';
 import '../widgets/component/custom_loading.dart';
 import '../widgets/waterfall_goods_card.dart';
 
@@ -20,9 +18,8 @@ abstract class WidgetUtilService {
 
   Widget loading(double width, double height, {double? radius});
 
-  List<Widget> categoryTabs(BuildContext context);
 
-  Widget renderProductCard(Product product);
+  Widget renderProductCard(ProductModel product);
 }
 
 class WidgetUtils extends WidgetUtilService {
@@ -55,19 +52,10 @@ class WidgetUtils extends WidgetUtilService {
     );
   }
 
-  @override
-  List<Widget> categoryTabs(BuildContext context) {
-    return context
-        .read<CategoryState>()
-        .categorys
-        .map((e) => Tab(
-              text: e.cname,
-            ))
-        .toList();
-  }
+
 
   @override
-  Widget renderProductCard(Product product) {
+  Widget renderProductCard(ProductModel product) {
     return WaterfallGoodsCard(product);
   }
 

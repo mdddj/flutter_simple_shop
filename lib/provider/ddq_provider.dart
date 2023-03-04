@@ -2,9 +2,11 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../common/base_provider.dart';
 
+final ddqRiverpod = ChangeNotifierProvider((ref) => DdqProvider());
 // 钉钉抢状态管理
 class DdqProvider extends ChangeNotifier with BaseProvider {
   List<ProductModel> goodsList = [];

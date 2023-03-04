@@ -6,21 +6,21 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../common/utils.dart';
 import '../../activity_page/activity_view/view.dart';
 import '../new/index_riverpod.dart';
 
 /// 首頁輪播圖
-class IndexTopicComponentCarousel extends StatelessWidget {
+class IndexTopicComponentCarousel extends ConsumerWidget {
   final List<Carousel> list;
 
   const IndexTopicComponentCarousel({Key? key, required this.list})
       : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     return AspectRatio(
       aspectRatio: 2.53,
       child: Swiper(
@@ -32,7 +32,7 @@ class IndexTopicComponentCarousel extends StatelessWidget {
         pagination: const SwiperPagination(),
         onTap: (int index) async {
 
-          final stateProivder = context.read<IndexState>();
+          final stateProivder = ref.read(indexStateRiverpod);
           final item = list[index];
           if (item.sourceType == 1) {
             context.navToWidget(to: ActivityViewPage(

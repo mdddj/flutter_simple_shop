@@ -2,35 +2,30 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import '../resp.dart';
 
-class BanjiaSessions extends StatelessWidget {
+class BanjiaSessions extends ConsumerWidget {
   const BanjiaSessions({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Consumer<BanjiaResp>(
-      builder: (BuildContext context,
-          value, Widget? child) {
-        final sessions = value.sessions;
-        if (sessions.isEmpty) return Container();
-        final curr = value.currTime;
-        return Container(
-            color: Colors.pink,
-            height: 48,
-            child: ListView.builder(
-              itemBuilder: (_, index) => renderItem(sessions[index], curr,context),
-              itemCount: sessions.length,
-              scrollDirection: Axis.horizontal,
-            ));
-      },
-    );
+  Widget build(BuildContext context,WidgetRef ref) {
+    final sessions = ref.watch(banjiaRiveroid.select((value) => value.sessions));
+    final curr = ref.watch(banjiaRiveroid.select((value) => value.currTime));
+    if (sessions.isEmpty) return const SizedBox();
+    return Container(
+        color: Colors.pink,
+        height: 48,
+        child: ListView.builder(
+          itemBuilder: (_, index) => renderItem(sessions[index], curr,context,ref),
+          itemCount: sessions.length,
+          scrollDirection: Axis.horizontal,
+        ));
   }
 
-  Widget renderItem(SessionsList item, String curr,BuildContext context) {
+  Widget renderItem(SessionsList item, String curr,BuildContext context,WidgetRef ref) {
     final isCurr = item.hpdTime == curr;
     var showText = '';
     if (item.status == '0') {
@@ -43,7 +38,7 @@ class BanjiaSessions extends StatelessWidget {
 
     return GestureDetector(
       onTap: (){
-        context.read<BanjiaResp>().onChange(item.hpdTime!);
+       ref.read(banjiaRiveroid).onChange(item.hpdTime!);
       },
       child: Container(
         height: double.infinity,

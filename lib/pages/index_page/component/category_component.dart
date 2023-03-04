@@ -3,8 +3,7 @@
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 // Project imports:
 import '../../../constant/style.dart';
 import '../../../provider/riverpod/category_riverpod.dart';
@@ -12,7 +11,7 @@ import 'category_item_layout.dart';
 import 'category_notification_stream.dart';
 
 /// 通用分类插件
-class CategoryComponent extends StatefulWidget {
+class CategoryComponent extends ConsumerStatefulWidget {
   final List<InsetCustomItem>? extendItems;
   final SelectWithItem? onSelect;
   final TextStyle? textStyle;
@@ -27,7 +26,7 @@ class CategoryComponent extends StatefulWidget {
   CategoryComponentState createState() => CategoryComponentState();
 }
 
-class CategoryComponentState extends State<CategoryComponent> {
+class CategoryComponentState extends ConsumerState<CategoryComponent> {
   int _current = 0;
   CategoryChildPosition? _categoryChildPosition;
   final ValueNotifier<CategoryChildPosition?> _valueNotifier = ValueNotifier<CategoryChildPosition?>(
@@ -63,7 +62,7 @@ class CategoryComponentState extends State<CategoryComponent> {
 
   @override
   Widget build(BuildContext context) {
-    final categorys = context.read<CategoryState>().categorys;
+    final categorys = ref.watch(categoryRiverpod.select((value) => value.categorys));
     var extendItemsLength = widget.extendItems == null ? 0 : widget.extendItems!.length;
     return Stack(
       children: [
