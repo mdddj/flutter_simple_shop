@@ -59,9 +59,11 @@ abstract class MyAppCoreApi extends BaseApi {
       }
       return json;
     } on AppException catch (e) {
+      kLogErr(e);
       final ex = WrapJson.fromMyServerError(e);
       return ex;
     } catch (e) {
+      kLogErr(e);
       return WrapJson.fromMyServerError(AppException.appError(code: 9000, msg: "系统错误"));
     }
   }

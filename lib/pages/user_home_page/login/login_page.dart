@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../api/model/login_params.dart';
 import '../../../assets.dart';
 import '../../../common/utils.dart';
+import '../../../exception/app.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import 'register_page.dart';
 
@@ -191,9 +192,12 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
       utils.showMessage('请检查${_loginType.title}或者密码');
       return;
     }
-    final success = await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
-    if (success) {
+    try {
+      final nav = context.nav;
+       await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
       nav.pop();
+    } on AppRuntimeException catch (e) {
+      toast(e.msg);
     }
   }
 

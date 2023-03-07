@@ -22,12 +22,17 @@ MyUser _$MyUserFromJson(Map<String, dynamic> json) {
 mixin _$MyUser {
   int get id => throw _privateConstructorUsedError;
   String get loginNumber => throw _privateConstructorUsedError;
-  String get nickName => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
+  String get loginTime => throw _privateConstructorUsedError;
+  bool get enabled => throw _privateConstructorUsedError;
+  bool get accountNonExpired => throw _privateConstructorUsedError;
+  bool get accountNonLocked => throw _privateConstructorUsedError;
+  bool get credentialsNonExpired => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,12 +47,17 @@ abstract class $MyUserCopyWith<$Res> {
   $Res call(
       {int id,
       String loginNumber,
-      String nickName,
+      String username,
       String email,
       String picture,
       String phone,
       int type,
-      int status});
+      int status,
+      String loginTime,
+      bool enabled,
+      bool accountNonExpired,
+      bool accountNonLocked,
+      bool credentialsNonExpired});
 }
 
 /// @nodoc
@@ -65,12 +75,17 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
   $Res call({
     Object? id = null,
     Object? loginNumber = null,
-    Object? nickName = null,
+    Object? username = null,
     Object? email = null,
     Object? picture = null,
     Object? phone = null,
     Object? type = null,
     Object? status = null,
+    Object? loginTime = null,
+    Object? enabled = null,
+    Object? accountNonExpired = null,
+    Object? accountNonLocked = null,
+    Object? credentialsNonExpired = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -81,9 +96,9 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
           ? _value.loginNumber
           : loginNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      nickName: null == nickName
-          ? _value.nickName
-          : nickName // ignore: cast_nullable_to_non_nullable
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -105,6 +120,26 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as int,
+      loginTime: null == loginTime
+          ? _value.loginTime
+          : loginTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      enabled: null == enabled
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      accountNonExpired: null == accountNonExpired
+          ? _value.accountNonExpired
+          : accountNonExpired // ignore: cast_nullable_to_non_nullable
+              as bool,
+      accountNonLocked: null == accountNonLocked
+          ? _value.accountNonLocked
+          : accountNonLocked // ignore: cast_nullable_to_non_nullable
+              as bool,
+      credentialsNonExpired: null == credentialsNonExpired
+          ? _value.credentialsNonExpired
+          : credentialsNonExpired // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -118,12 +153,17 @@ abstract class _$$_MyUserCopyWith<$Res> implements $MyUserCopyWith<$Res> {
   $Res call(
       {int id,
       String loginNumber,
-      String nickName,
+      String username,
       String email,
       String picture,
       String phone,
       int type,
-      int status});
+      int status,
+      String loginTime,
+      bool enabled,
+      bool accountNonExpired,
+      bool accountNonLocked,
+      bool credentialsNonExpired});
 }
 
 /// @nodoc
@@ -138,12 +178,17 @@ class __$$_MyUserCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? loginNumber = null,
-    Object? nickName = null,
+    Object? username = null,
     Object? email = null,
     Object? picture = null,
     Object? phone = null,
     Object? type = null,
     Object? status = null,
+    Object? loginTime = null,
+    Object? enabled = null,
+    Object? accountNonExpired = null,
+    Object? accountNonLocked = null,
+    Object? credentialsNonExpired = null,
   }) {
     return _then(_$_MyUser(
       id: null == id
@@ -154,9 +199,9 @@ class __$$_MyUserCopyWithImpl<$Res>
           ? _value.loginNumber
           : loginNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      nickName: null == nickName
-          ? _value.nickName
-          : nickName // ignore: cast_nullable_to_non_nullable
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
           ? _value.email
@@ -178,6 +223,26 @@ class __$$_MyUserCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as int,
+      loginTime: null == loginTime
+          ? _value.loginTime
+          : loginTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      enabled: null == enabled
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      accountNonExpired: null == accountNonExpired
+          ? _value.accountNonExpired
+          : accountNonExpired // ignore: cast_nullable_to_non_nullable
+              as bool,
+      accountNonLocked: null == accountNonLocked
+          ? _value.accountNonLocked
+          : accountNonLocked // ignore: cast_nullable_to_non_nullable
+              as bool,
+      credentialsNonExpired: null == credentialsNonExpired
+          ? _value.credentialsNonExpired
+          : credentialsNonExpired // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -187,13 +252,18 @@ class __$$_MyUserCopyWithImpl<$Res>
 class _$_MyUser implements _MyUser {
   const _$_MyUser(
       {required this.id,
-      required this.loginNumber,
-      required this.nickName,
-      required this.email,
-      required this.picture,
-      required this.phone,
-      required this.type,
-      required this.status});
+      this.loginNumber = '',
+      this.username = '',
+      this.email = '',
+      this.picture = '',
+      this.phone = '',
+      this.type = -1,
+      this.status = -1,
+      this.loginTime = '',
+      this.enabled = false,
+      this.accountNonExpired = false,
+      this.accountNonLocked = false,
+      this.credentialsNonExpired = false});
 
   factory _$_MyUser.fromJson(Map<String, dynamic> json) =>
       _$$_MyUserFromJson(json);
@@ -201,23 +271,45 @@ class _$_MyUser implements _MyUser {
   @override
   final int id;
   @override
+  @JsonKey()
   final String loginNumber;
   @override
-  final String nickName;
+  @JsonKey()
+  final String username;
   @override
+  @JsonKey()
   final String email;
   @override
+  @JsonKey()
   final String picture;
   @override
+  @JsonKey()
   final String phone;
   @override
+  @JsonKey()
   final int type;
   @override
+  @JsonKey()
   final int status;
+  @override
+  @JsonKey()
+  final String loginTime;
+  @override
+  @JsonKey()
+  final bool enabled;
+  @override
+  @JsonKey()
+  final bool accountNonExpired;
+  @override
+  @JsonKey()
+  final bool accountNonLocked;
+  @override
+  @JsonKey()
+  final bool credentialsNonExpired;
 
   @override
   String toString() {
-    return 'MyUser(id: $id, loginNumber: $loginNumber, nickName: $nickName, email: $email, picture: $picture, phone: $phone, type: $type, status: $status)';
+    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired)';
   }
 
   @override
@@ -228,19 +320,41 @@ class _$_MyUser implements _MyUser {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.loginNumber, loginNumber) ||
                 other.loginNumber == loginNumber) &&
-            (identical(other.nickName, nickName) ||
-                other.nickName == nickName) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.picture, picture) || other.picture == picture) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.loginTime, loginTime) ||
+                other.loginTime == loginTime) &&
+            (identical(other.enabled, enabled) || other.enabled == enabled) &&
+            (identical(other.accountNonExpired, accountNonExpired) ||
+                other.accountNonExpired == accountNonExpired) &&
+            (identical(other.accountNonLocked, accountNonLocked) ||
+                other.accountNonLocked == accountNonLocked) &&
+            (identical(other.credentialsNonExpired, credentialsNonExpired) ||
+                other.credentialsNonExpired == credentialsNonExpired));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, loginNumber, nickName, email,
-      picture, phone, type, status);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      loginNumber,
+      username,
+      email,
+      picture,
+      phone,
+      type,
+      status,
+      loginTime,
+      enabled,
+      accountNonExpired,
+      accountNonLocked,
+      credentialsNonExpired);
 
   @JsonKey(ignore: true)
   @override
@@ -259,13 +373,18 @@ class _$_MyUser implements _MyUser {
 abstract class _MyUser implements MyUser {
   const factory _MyUser(
       {required final int id,
-      required final String loginNumber,
-      required final String nickName,
-      required final String email,
-      required final String picture,
-      required final String phone,
-      required final int type,
-      required final int status}) = _$_MyUser;
+      final String loginNumber,
+      final String username,
+      final String email,
+      final String picture,
+      final String phone,
+      final int type,
+      final int status,
+      final String loginTime,
+      final bool enabled,
+      final bool accountNonExpired,
+      final bool accountNonLocked,
+      final bool credentialsNonExpired}) = _$_MyUser;
 
   factory _MyUser.fromJson(Map<String, dynamic> json) = _$_MyUser.fromJson;
 
@@ -274,7 +393,7 @@ abstract class _MyUser implements MyUser {
   @override
   String get loginNumber;
   @override
-  String get nickName;
+  String get username;
   @override
   String get email;
   @override
@@ -286,131 +405,17 @@ abstract class _MyUser implements MyUser {
   @override
   int get status;
   @override
+  String get loginTime;
+  @override
+  bool get enabled;
+  @override
+  bool get accountNonExpired;
+  @override
+  bool get accountNonLocked;
+  @override
+  bool get credentialsNonExpired;
+  @override
   @JsonKey(ignore: true)
   _$$_MyUserCopyWith<_$_MyUser> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$A {
-  int get a => throw _privateConstructorUsedError;
-  String? get b => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ACopyWith<A> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ACopyWith<$Res> {
-  factory $ACopyWith(A value, $Res Function(A) then) = _$ACopyWithImpl<$Res, A>;
-  @useResult
-  $Res call({int a, String? b});
-}
-
-/// @nodoc
-class _$ACopyWithImpl<$Res, $Val extends A> implements $ACopyWith<$Res> {
-  _$ACopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? a = null,
-    Object? b = freezed,
-  }) {
-    return _then(_value.copyWith(
-      a: null == a
-          ? _value.a
-          : a // ignore: cast_nullable_to_non_nullable
-              as int,
-      b: freezed == b
-          ? _value.b
-          : b // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_ACopyWith<$Res> implements $ACopyWith<$Res> {
-  factory _$$_ACopyWith(_$_A value, $Res Function(_$_A) then) =
-      __$$_ACopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int a, String? b});
-}
-
-/// @nodoc
-class __$$_ACopyWithImpl<$Res> extends _$ACopyWithImpl<$Res, _$_A>
-    implements _$$_ACopyWith<$Res> {
-  __$$_ACopyWithImpl(_$_A _value, $Res Function(_$_A) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? a = null,
-    Object? b = freezed,
-  }) {
-    return _then(_$_A(
-      a: null == a
-          ? _value.a
-          : a // ignore: cast_nullable_to_non_nullable
-              as int,
-      b: freezed == b
-          ? _value.b
-          : b // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_A implements _A {
-  const _$_A({required this.a, this.b});
-
-  @override
-  final int a;
-  @override
-  final String? b;
-
-  @override
-  String toString() {
-    return 'A(a: $a, b: $b)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_A &&
-            (identical(other.a, a) || other.a == a) &&
-            (identical(other.b, b) || other.b == b));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, a, b);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_ACopyWith<_$_A> get copyWith =>
-      __$$_ACopyWithImpl<_$_A>(this, _$identity);
-}
-
-abstract class _A implements A {
-  const factory _A({required final int a, final String? b}) = _$_A;
-
-  @override
-  int get a;
-  @override
-  String? get b;
-  @override
-  @JsonKey(ignore: true)
-  _$$_ACopyWith<_$_A> get copyWith => throw _privateConstructorUsedError;
 }

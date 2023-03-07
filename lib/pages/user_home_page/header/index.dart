@@ -124,7 +124,7 @@ class HeaderIndex extends ConsumerWidget {
             Column(
               children: [
                 Text(
-                  user.nickName,
+                  user.username.isNotEmpty ? user.username : '未设置昵称',
                   style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,

@@ -15,7 +15,7 @@ class DefaultUsernameWidget extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(user.nickName,style: context.textTheme.titleMedium,),
+          Text(user.username,style: context.textTheme.titleMedium,),
         ],
       ),
     );

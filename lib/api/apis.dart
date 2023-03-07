@@ -95,9 +95,7 @@ class MeetRequestAdd extends MyAppCoreApi {
 ///查询面基申请记录
 class SelectMeetListData extends MyAppCoreApi with ApiPageMixin {
   SelectMeetListData._() : super('/api/mianji/list');
-
   static SelectMeetListData get _instance => SelectMeetListData._();
-
   factory SelectMeetListData() => _instance;
 }
 
@@ -123,7 +121,8 @@ class MyApiWithEmailRegister extends MyAppCoreApi {
 
 ///登录接口
 class MyApiWithLogin extends MyAppCoreApi {
-  MyApiWithLogin(LoginParams params) : super("/api/user-public/login", httpMethod: HttpMethod.post) {
+  MyApiWithLogin(LoginParams params) : super(params.getApiPath, httpMethod: HttpMethod.post) {
+    kLog(params.toJson());
     super.params.addAll(params.toJson());
   }
 

@@ -8,22 +8,19 @@ part 'my_user.g.dart';
 class MyUser with _$MyUser{
   const factory MyUser({
     required int id,
-    required String loginNumber,
-    required String nickName,
-    required String email,
-    required String picture,
-    required String phone,
-    required int type,
-    required int status,
+    @Default('') String loginNumber,
+    @Default('') String username,
+    @Default('') String email,
+    @Default('') String picture,
+    @Default('') String phone,
+    @Default(-1) int type,
+    @Default(-1) int status,
+    @Default('') String loginTime,
+    @Default(false) bool enabled,
+    @Default(false) bool accountNonExpired,
+    @Default(false) bool accountNonLocked,
+    @Default(false) bool credentialsNonExpired,
+
   }) = _MyUser;
   factory MyUser.fromJson(Map<String,Object?> json)=>_$MyUserFromJson(json);
-}
-
-@freezed
-class A with _$A {
-  const factory A({required int a,String? b}) = _A;
-}
-
-class B {
-  B({required String a,int? b});
 }

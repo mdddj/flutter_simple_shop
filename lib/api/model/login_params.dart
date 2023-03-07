@@ -4,6 +4,19 @@ part 'login_params.freezed.dart';
 part 'login_params.g.dart';
 
 
+extension LoginParamsEx on LoginParams {
+  String get getApiPath {
+    switch(logintype){
+      case 'account':
+      return '/api/user-public/login';
+      case 'email':
+      return '/api/user-public/login-by-email';
+      default:
+       return '';
+    }
+  }
+}
+
 @freezed
 class LoginParams with _$LoginParams {
   const factory LoginParams({

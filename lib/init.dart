@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dd_check_plugin/dd_check_plugin.dart';
+import 'package:dd_check_plugin/model/send_model.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/theme/model.dart';
 import 'package:flutter/foundation.dart';
@@ -14,22 +15,20 @@ import 'index.dart';
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
   DDCheckPluginSetting.showLog = false;
-  DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.100.50',port: 9998, customCoverterResponseData: (model){
-    final body = model.response?.data;
-    if(body is Map<String,dynamic> ){
-      final data = body['data'];
-      if(data is String) {
-        try {
-          final map = jsonDecode(data);
-          body['data'] = map;
-          return model.copyWith(body: Map.from(body));
-        } catch (e) {
-          return model;
-        }
-      }
-    }
-    return model;
-  });
+  // DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.76',port: 9998, customCoverterResponseData: (model){
+  //   final body = model.response?.data;
+  //   return isValue<Map<String,dynamic>>(body).isNotNull<SendResponseModel?>((value) {
+  //    return  isValue<String>(body['data']).isNotNull<SendResponseModel?>((value2) {
+  //      try {
+  //        final map = jsonDecode(value2);
+  //        body['data'] = map;
+  //        return model.copyWith(body: Map.from(body));
+  //      } catch (e) {
+  //        return model;
+  //      }
+  //     });
+  //   }) ?? model;
+  // });
   initNetUtil();
   initInstanceObject();
   await initCaches();
