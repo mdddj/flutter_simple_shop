@@ -1,4 +1,3 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory;
 import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -65,5 +64,11 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
   @override
   void setUserInfoToProvider(MyUser user) {
     state = state.copyWith(user: user);
+  }
+
+  @override
+  void logout() {
+    state = state.copyWith(user: null);
+    GetIt.instance.get<UserApi>().token = null;
   }
 }

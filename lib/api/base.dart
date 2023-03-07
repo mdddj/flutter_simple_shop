@@ -59,7 +59,7 @@ abstract class MyAppCoreApi extends BaseApi {
       }
       return json;
     } on AppException catch (e) {
-      kLogErr(e);
+      kLogErr('$e\n${e.dioError?.requestOptions.uri}');
       final ex = WrapJson.fromMyServerError(e);
       return ex;
     } catch (e) {

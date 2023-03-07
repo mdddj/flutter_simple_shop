@@ -4,10 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../../common/utils.dart';
-import 'header/appbar.dart';
-import 'header/index.dart';
-import 'order/index.dart';
+import '../../index.dart';
 
 /// 用户主页布局
 class UserIndexHome extends ConsumerStatefulWidget {
@@ -37,6 +34,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
             utils.widgetUtils.marginTop(),
             _renderMenus(),
             utils.widgetUtils.marginTop(),
+            OutlinedButton(onPressed: ()=>ref.read(userRiverpod.notifier).logout(), child: const Text("退出登录"))
           ],
         ),
       ),

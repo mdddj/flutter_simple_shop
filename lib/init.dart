@@ -15,20 +15,20 @@ import 'index.dart';
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
   DDCheckPluginSetting.showLog = false;
-  // DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.76',port: 9998, customCoverterResponseData: (model){
-  //   final body = model.response?.data;
-  //   return isValue<Map<String,dynamic>>(body).isNotNull<SendResponseModel?>((value) {
-  //    return  isValue<String>(body['data']).isNotNull<SendResponseModel?>((value2) {
-  //      try {
-  //        final map = jsonDecode(value2);
-  //        body['data'] = map;
-  //        return model.copyWith(body: Map.from(body));
-  //      } catch (e) {
-  //        return model;
-  //      }
-  //     });
-  //   }) ?? model;
-  // });
+  DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.78',port: 9998, customCoverterResponseData: (model){
+    final body = model.response?.data;
+    return isValue<Map<String,dynamic>>(body).isNotNull<SendResponseModel?>((value) {
+     return  isValue<String>(body['data']).isNotNull<SendResponseModel?>((value2) {
+       try {
+         final map = jsonDecode(value2);
+         body['data'] = map;
+         return model.copyWith(body: Map.from(body));
+       } catch (e) {
+         return model;
+       }
+      });
+    }) ?? model;
+  });
   initNetUtil();
   initInstanceObject();
   await initCaches();

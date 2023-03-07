@@ -11,6 +11,7 @@ class MyUser with _$MyUser{
     @Default('') String loginNumber,
     @Default('') String username,
     @Default('') String email,
+    @Default('未设置昵称') String nickName,
     @Default('') String picture,
     @Default('') String phone,
     @Default(-1) int type,

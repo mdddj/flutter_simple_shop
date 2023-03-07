@@ -4,7 +4,10 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../common/index.dart';
+
 final indexStateRiverpod = ChangeNotifierProvider((ref) => IndexState());
+
 /// 首页状态
 class IndexState extends ChangeNotifier {
   bool indexLoading = false;
@@ -21,8 +24,8 @@ class IndexState extends ChangeNotifier {
 
   // 获取畅销榜单商品
   Future<void> getHotDayProducts() async {
-    final result =  await DdTaokeSdk.instance.getHotDayProduct(param: HotdayParam(pageSize: '50', pageId: '1'));
-    hotDayProducts = result?.list??[];
+    final result = await kApi.getHotDayProduct(param: HotdayParam(pageSize: '50', pageId: '1'));
+    hotDayProducts = result?.list ?? [];
     notifyListeners();
   }
 
@@ -33,8 +36,7 @@ class IndexState extends ChangeNotifier {
   }
 
   Future<void> fetch() async {
-    final result = await DdTaokeSdk.instance
-        .getProducts(param: ProductListParam(pageId: '$_page'));
+    final result = await kApi.getProducts(param: ProductListParam(pageId: '$_page'));
     if (result != null) {
       products.addAll(result.list ?? []);
     }
@@ -45,8 +47,8 @@ class IndexState extends ChangeNotifier {
 
   // 加载轮播图
   Future<void> getAllCarousel() async {
-   final result = await DdTaokeSdk.instance.getCarousel();
-   carousel = result;
+    final result = await kApi.getCarousel();
+    carousel = result;
   }
 
   Future<void> nextPage() async {

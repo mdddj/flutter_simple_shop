@@ -185,7 +185,6 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
   /// 登录
   Future<void> _submit() async {
     context.hideKeyBoard();
-    final nav = Navigator.of(context);
     final username = usernameEditController.text;
     final password = passwordEditController.text;
     if (username.isEmpty || password.isEmpty) {

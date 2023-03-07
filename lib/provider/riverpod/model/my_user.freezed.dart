@@ -24,6 +24,7 @@ mixin _$MyUser {
   String get loginNumber => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String get nickName => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
@@ -49,6 +50,7 @@ abstract class $MyUserCopyWith<$Res> {
       String loginNumber,
       String username,
       String email,
+      String nickName,
       String picture,
       String phone,
       int type,
@@ -77,6 +79,7 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
     Object? loginNumber = null,
     Object? username = null,
     Object? email = null,
+    Object? nickName = null,
     Object? picture = null,
     Object? phone = null,
     Object? type = null,
@@ -103,6 +106,10 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickName: null == nickName
+          ? _value.nickName
+          : nickName // ignore: cast_nullable_to_non_nullable
               as String,
       picture: null == picture
           ? _value.picture
@@ -155,6 +162,7 @@ abstract class _$$_MyUserCopyWith<$Res> implements $MyUserCopyWith<$Res> {
       String loginNumber,
       String username,
       String email,
+      String nickName,
       String picture,
       String phone,
       int type,
@@ -180,6 +188,7 @@ class __$$_MyUserCopyWithImpl<$Res>
     Object? loginNumber = null,
     Object? username = null,
     Object? email = null,
+    Object? nickName = null,
     Object? picture = null,
     Object? phone = null,
     Object? type = null,
@@ -206,6 +215,10 @@ class __$$_MyUserCopyWithImpl<$Res>
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      nickName: null == nickName
+          ? _value.nickName
+          : nickName // ignore: cast_nullable_to_non_nullable
               as String,
       picture: null == picture
           ? _value.picture
@@ -255,6 +268,7 @@ class _$_MyUser implements _MyUser {
       this.loginNumber = '',
       this.username = '',
       this.email = '',
+      this.nickName = '未设置昵称',
       this.picture = '',
       this.phone = '',
       this.type = -1,
@@ -279,6 +293,9 @@ class _$_MyUser implements _MyUser {
   @override
   @JsonKey()
   final String email;
+  @override
+  @JsonKey()
+  final String nickName;
   @override
   @JsonKey()
   final String picture;
@@ -309,7 +326,7 @@ class _$_MyUser implements _MyUser {
 
   @override
   String toString() {
-    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired)';
+    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired)';
   }
 
   @override
@@ -323,6 +340,8 @@ class _$_MyUser implements _MyUser {
             (identical(other.username, username) ||
                 other.username == username) &&
             (identical(other.email, email) || other.email == email) &&
+            (identical(other.nickName, nickName) ||
+                other.nickName == nickName) &&
             (identical(other.picture, picture) || other.picture == picture) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.type, type) || other.type == type) &&
@@ -346,6 +365,7 @@ class _$_MyUser implements _MyUser {
       loginNumber,
       username,
       email,
+      nickName,
       picture,
       phone,
       type,
@@ -376,6 +396,7 @@ abstract class _MyUser implements MyUser {
       final String loginNumber,
       final String username,
       final String email,
+      final String nickName,
       final String picture,
       final String phone,
       final int type,
@@ -396,6 +417,8 @@ abstract class _MyUser implements MyUser {
   String get username;
   @override
   String get email;
+  @override
+  String get nickName;
   @override
   String get picture;
   @override

@@ -1,4 +1,3 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../provider/riverpod/model/my_user.dart';

@@ -284,9 +284,10 @@ packages:
   dataoke_sdk:
     dependency: "direct main"
     description:
-      path: "../plugins/dataoke_sdk"
-      relative: true
-    source: path
+      name: dataoke_sdk
+      sha256: b4447231da73396750f8a9b57497afc3a696f39f70aa58675bc74f93e75ec5c9
+      url: "https://pub.dev"
+    source: hosted
     version: "2.2.1"
   date_format:
     dependency: "direct main"
