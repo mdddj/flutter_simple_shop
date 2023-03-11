@@ -66,6 +66,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
   }
 
   /// 浏览历史列表
+
   Widget _renderHistoryList() {
     return SizedBox(
       width: double.infinity,

@@ -15,7 +15,7 @@ class IndexHomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
   }
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SAppBarSearch(
       hintText: '输入关键字,例如:"辣条"',
       onTap: () => navTo(context),
@@ -39,47 +39,32 @@ class IndexHomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
       ],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(48),
-        child:Builder(builder: (_){
-          return LayoutBuilder(
-            builder: (BuildContext context, BoxConstraints constraints) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  AnimatedContainer(
-                    duration: const Duration(milliseconds: 800),
-                    height: 46,
-                    child: Container(
-                      alignment: Alignment.centerLeft,
-                      child: TabBar(
-                        controller: tabController,
-                        isScrollable: true,
-                        tabs: [
-                          const Tab(
-                            text: '精选',
-                          ),
-                          ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map((element) => Tab(text: element.cname,))
-
-                        ],
-                        onTap: (int index) {
-                          if (index == 0) {
-                            return;
-                          }
-                          final category = ref.read(categoryRiverpod).getCategoryByIndex(index - 1);
-                          context.navToWidget(
-                              to: NewGoodsList(
-                                category: category,
-                                initIndex: ref.read(categoryRiverpod).getIndexWithCategory(category),
-                              ));
-                        },
-                      ),
-                    ),
-                  ),
-                ],
-              );
+        child: SizedBox(
+          height: 48,
+          child: TabBar(
+            controller: tabController,
+            isScrollable: true,
+            tabs: [
+              const Tab(
+                text: '精选',
+              ),
+              ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map((element) => Tab(
+                    text: element.cname,
+                  ))
+            ],
+            onTap: (int index) {
+              if (index == 0) {
+                return;
+              }
+              final category = ref.read(categoryRiverpod).getCategoryByIndex(index - 1);
+              context.navToWidget(
+                  to: NewGoodsList(
+                category: category,
+                initIndex: ref.read(categoryRiverpod).getIndexWithCategory(category),
+              ));
             },
-          );
-        }),
+          ),
+        ),
       ),
       isSliveWidget: true,
     );

@@ -317,10 +317,10 @@ packages:
     dependency: "direct main"
     description:
       name: dd_js_util
-      sha256: da21395ab7516d41f731dd9ab991e342c760e7855ffa20bcc1d38cf2445b340b
+      sha256: "6471c9666179d1f5d31fc338e354b84f0687267aff8ba31df59d5dace0866526"
       url: "https://pub.dev"
     source: hosted
-    version: "3.2.5"
+    version: "3.3.1"
   dd_models:
     dependency: "direct main"
     description:
@@ -341,10 +341,10 @@ packages:
     dependency: "direct main"
     description:
       name: dio
-      sha256: "3709d74615bba5e443eb141f6a7f4bcc4788f8fae6f743edadfb79c2a8e6287e"
+      sha256: "2644a9e0965a7aa3deb09cb8ce4081db4450c178f472818c8cd34216a3070d7b"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.1"
+    version: "5.0.2"
   encrypt:
     dependency: "direct main"
     description:
@@ -591,18 +591,18 @@ packages:
     dependency: transitive
     description:
       name: flutter_riverpod
-      sha256: "40c0d7d03ccd24fa32ea08dcfc4df9bb92c4c26c9a91938945da3be10ed8ca83"
+      sha256: "3ea325c2de7ef2589023413c489875467730b2c1d822759efedd3e0e28a906c9"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.0"
+    version: "2.3.1"
   flutter_screenutil:
     dependency: transitive
     description:
       name: flutter_screenutil
-      sha256: "8e049ecdc1a62c90e6bf0e9c8398ace8dde81b92889c70cfe06281d79d59113a"
+      sha256: "0a122936b450324cbdfd51be0819cc6fcebb093eb65585e9cd92263f7a1a8a39"
       url: "https://pub.dev"
     source: hosted
-    version: "5.6.1"
+    version: "5.7.0"
   flutter_slidable:
     dependency: "direct main"
     description:
@@ -615,10 +615,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_smart_dialog
-      sha256: "2f2f3ed0dbd6c924b24e27b681bef44e36e7e5e3e78486706a7562088395f9fa"
+      sha256: "10e2673e7c5ffad023b89818e9eacab696573110848b76d58c050b0e84eb29e1"
       url: "https://pub.dev"
     source: hosted
-    version: "4.8.2+5"
+    version: "4.9.0+1"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -631,10 +631,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_svg
-      sha256: "97c5b291b4fd34ae4f55d6a4c05841d4d0ed94952e033c5a6529e1b47b4d2a29"
+      sha256: "017cb37b3e9bee44cc800e35469f295d537484602f02ce6ceb5876236cc7e1fe"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3"
   flutter_swiper_null_safety_flutter3:
     dependency: "direct main"
     description:
@@ -748,10 +748,10 @@ packages:
     dependency: "direct main"
     description:
       name: hooks_riverpod
-      sha256: "048d5d912b9e5ef9db4d274d201a2bfe4270e5694ff5c6719b593d4ae9c512c7"
+      sha256: f62f1450c0f5b6f8914cc9d971488c6fb0f1e36e5e1c9b726e8f95688d6ee462
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.0"
+    version: "2.3.1"
   html:
     dependency: "direct main"
     description:
@@ -812,10 +812,10 @@ packages:
     dependency: transitive
     description:
       name: image_picker
-      sha256: "715d68a53d6bcc2eae26005097dc74c375a04c0d7c0e657da84deebbbbbf51ed"
+      sha256: "64b21d9f0e065f9ab0e4dde458076226c97382cc0c6949144cb874c62bf8e9f8"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.6+4"
+    version: "0.8.7"
   image_picker_android:
     dependency: transitive
     description:
@@ -916,18 +916,18 @@ packages:
     dependency: "direct main"
     description:
       name: loading_more_list_fast
-      sha256: f6bd122cc1a77a537fa3c957eee3f27c342004e0ca168b295bf628011b06d6bb
+      sha256: "3db3ec7070979faf1c920313b5097a025c71ac641a665987480704dcdf0db107"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.0+1"
+    version: "6.0.1"
   loading_more_list_library_fast:
     dependency: "direct main"
     description:
       name: loading_more_list_library_fast
-      sha256: "7fd44173785ae05b904f9a33009646d8073f09c09b64f88c1b2bb6d586c48ca2"
+      sha256: df92f6b8f6958675735d2db1485ad66b9c96e955dc481a2b7650bb5bc6b1e2b8
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0+1"
+    version: "3.0.1"
   logger:
     dependency: "direct main"
     description:
@@ -969,13 +969,13 @@ packages:
     source: hosted
     version: "0.2.0"
   meta:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: meta
-      sha256: "12307e7f0605ce3da64cf0db90e5fcab0869f3ca03f76be6bb2991ce0a55e82b"
+      sha256: "6c268b42ed578a53088d834796959e4a1814b5e9e164f147f580a386e5decf42"
       url: "https://pub.dev"
     source: hosted
-    version: "1.9.0"
+    version: "1.8.0"
   mime:
     dependency: transitive
     description:
@@ -1268,18 +1268,18 @@ packages:
     dependency: "direct main"
     description:
       name: responsive_builder
-      sha256: "22a9f79e1a70a163cb8c69440cefc2d976c10c689a0fd5682a5e855cd408cc93"
+      sha256: e23ef8ce1191f878dd50d28f1496d659fc923718dbfd407b121bb167f95ba090
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.3"
+    version: "0.6.4"
   riverpod:
     dependency: "direct main"
     description:
       name: riverpod
-      sha256: c5aea6c3fed340707f013a023a37ab388bf45611a8a4f7e76b5e9007eb76cd25
+      sha256: "7da5a0febdb7fd0e4340f7b7023cb8f17cf7acd405b1e67a0e98bf574085bfa5"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.0"
+    version: "2.3.1"
   rxdart:
     dependency: transitive
     description:
@@ -1561,26 +1561,26 @@ packages:
     dependency: transitive
     description:
       name: vector_graphics
-      sha256: "254348b40251c995cf8301ac715486c8cfa0a93b7fdc4dbd495a30f04db1fb44"
+      sha256: "2f317d969a9f1eb59d1890643107da749698b7c08c4b0532fc95c8a7130d2803"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.3"
   vector_graphics_codec:
     dependency: transitive
     description:
       name: vector_graphics_codec
-      sha256: "143c290b762646c696c63be5d976bde7379ea892cb6868ddc5a17cbc56e71411"
+      sha256: "13cccfda2dd61232a19dfb769b7a907e2ab23aabfebb9053c81e29c6c11b1766"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.3"
   vector_graphics_compiler:
     dependency: transitive
     description:
       name: vector_graphics_compiler
-      sha256: "3190cc26d9ebda686bafb9721bb6a74c6d358700f4fc978a0f2cba6912daff86"
+      sha256: "524c9889a1327401124fe068840a8867f0d57987c1219a2a696ade629ec2bec3"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.3"
   vector_math:
     dependency: transitive
     description:
@@ -1662,5 +1662,5 @@ packages:
     source: hosted
     version: "1.4.0"
 sdks:
-  dart: ">=2.19.3 <3.0.0"
+  dart: ">=2.19.4 <3.0.0"
   flutter: ">=3.7.3"

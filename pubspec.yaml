@@ -3,7 +3,7 @@ description: 典典的小卖部,淘客版本 qq群667186542
 version: 2.1.1
 
 environment:
-  sdk: ">=2.19.3 <3.0.0"
+  sdk: ">=2.19.4 <3.0.0"
 
 dependencies:
   flutter:
@@ -14,7 +14,7 @@ dependencies:
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.7
-  dio: ^5.0.1
+  dio: ^5.0.2
   flutter_spinkit: ^5.1.0
   tab_indicator_styler: ^2.0.0
   flutter_easyrefresh: ^2.2.2
@@ -28,7 +28,7 @@ dependencies:
   fsearch_nullsafety: ^2.0.0
   carousel_slider: ^4.2.1
   shimmer: ^2.0.0
-  flutter_svg: ^2.0.2
+  flutter_svg: ^2.0.3
   extended_text: ^10.0.1
   animated_text_kit: ^4.2.2
   html: ^0.15.2
@@ -46,7 +46,7 @@ dependencies:
   get_it: ^7.2.0
   logger: ^1.2.2
   shelf_proxy: ^1.0.2
-  responsive_builder: ^0.6.3
+  responsive_builder: ^0.6.4
   bubble_tab_indicator: ^0.1.6
   badges: ^3.0.2
   carousel_pro_nullsafety: ^2.0.0
@@ -58,8 +58,8 @@ dependencies:
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^3.0.1
   path_provider: ^2.0.13
-  riverpod: ^2.3.0
-  hooks_riverpod: ^2.3.0
+  riverpod: ^2.3.1
+  hooks_riverpod: ^2.3.1
   flutter_smart_dialog: ^4.9.0+1
   hive_flutter: ^1.1.0
   flex_color_scheme: ^6.1.2
@@ -71,10 +71,10 @@ dependencies:
   extended_image_library: ^3.4.1
   fast_immutable_collections: ^9.0.0
   flutter_slidable: ^2.0.0
-  loading_more_list_fast: ^6.0.0+1
-  loading_more_list_library_fast: ^3.0.0+1
+  loading_more_list_fast: ^6.0.1
+  loading_more_list_library_fast: ^3.0.1
   extended_text_field: ^11.0.1
-  dd_js_util: ^3.2.6
+  dd_js_util: ^3.3.1
   dd_models: ^0.0.2
   dd_check_plugin: ^2.1.1
   dataoke_sdk: ^2.2.1
@@ -86,9 +86,6 @@ dev_dependencies:
   freezed: ^2.3.2
   json_serializable: ^6.6.1
 
-
-dependency_overrides:
-  meta: ^1.9.0
 
 flutter:
   uses-material-design: true

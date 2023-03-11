@@ -7,7 +7,6 @@ class SAppBarSearch extends StatefulWidget implements PreferredSizeWidget {
       this.autoFocus = false,
       this.focusNode,
       this.controller,
-      this.height = 40,
       this.value,
       this.leading,
       this.suffix,
@@ -26,9 +25,6 @@ class SAppBarSearch extends StatefulWidget implements PreferredSizeWidget {
   final bool autoFocus;
   final FocusNode? focusNode;
   final TextEditingController? controller;
-
-  // 输入框高度 默认40
-  final double height;
 
   // 默认值
   final String? value;
@@ -123,10 +119,10 @@ class SAppBarSearchState extends State<SAppBarSearch> {
     if (!isTextEmpty) {
       return GestureDetector(
         onTap: _onClearInput,
-        child: SizedBox(
-          width: widget.height,
-          height: widget.height,
-          child: const Icon(Icons.cancel, size: 22, color: Color(0xFF999999)),
+        child: const SizedBox(
+          width: kToolbarHeight,
+          height: kToolbarHeight,
+          child: Icon(Icons.cancel, size: 22, color: Color(0xFF999999)),
         ),
       );
     }
@@ -169,16 +165,15 @@ class SAppBarSearchState extends State<SAppBarSearch> {
       leadingWidth: isFocus ? 15 : (widget.leadingWidth ?? kToolbarHeight),
       title: Container(
         margin: EdgeInsets.only(right: right, left: left),
-        height: widget.height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(widget.borderRadius),
         ),
         child: Row(
           children: [
-            SizedBox(
-              width: widget.height,
-              height: widget.height,
-              child: const Icon(Icons.search, size: 22, color: Color(0xFF999999)),
+            const SizedBox(
+              width:kToolbarHeight,
+              height: kToolbarHeight,
+              child: Icon(Icons.search, size: 22, color: Color(0xFF999999)),
             ),
             Expanded(
               child: TextField(
@@ -208,16 +203,16 @@ class SAppBarSearchState extends State<SAppBarSearch> {
       leadingWidth: isFocus ? 15 : (widget.leadingWidth ?? kToolbarHeight),
       title: Container(
         margin: EdgeInsets.only(right: right, left: left),
-        height: widget.height,
+        height: kToolbarHeight,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(widget.borderRadius),
         ),
         child: Row(
           children: [
-            SizedBox(
-              width: widget.height,
-              height: widget.height,
-              child: const Icon(Icons.search),
+            const SizedBox(
+              width: kToolbarHeight,
+              height: kToolbarHeight,
+              child: Icon(Icons.search),
             ),
             Expanded(
               child: TextField(

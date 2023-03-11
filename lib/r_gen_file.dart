@@ -124,6 +124,7 @@ class MyAssets {
 
   static const assetsIconsStep1Png = 'assets/icons/step1.png';
 
+
   static const assetsIconsStep2Png = 'assets/icons/step2.png';
 
   static const assetsIconsStep3Png = 'assets/icons/step3.png';
