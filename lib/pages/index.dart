@@ -52,7 +52,6 @@ export 'new_goods_list/components/sort_widget.dart';
 export 'new_goods_list/components/subcategory_view.dart';
 export 'new_goods_list/riverpod.dart';
 export 'new_goods_list/v2/index.dart';
-export 'new_goods_list/view.dart';
 export 'panic_buying/components/appbar.dart';
 export 'panic_buying/components/categorys.dart';
 export 'panic_buying/components/daojishi.dart';

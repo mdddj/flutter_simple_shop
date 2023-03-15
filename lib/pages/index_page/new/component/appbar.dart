@@ -53,15 +53,7 @@ class IndexHomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
                   ))
             ],
             onTap: (int index) {
-              if (index == 0) {
-                return;
-              }
-              final category = ref.read(categoryRiverpod).getCategoryByIndex(index - 1);
-              context.navToWidget(
-                  to: NewGoodsList(
-                category: category,
-                initIndex: ref.read(categoryRiverpod).getIndexWithCategory(category),
-              ));
+
             },
           ),
         ),

@@ -2,9 +2,9 @@ import 'package:dataoke_sdk/model/category.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../provider/riverpod/category_riverpod.dart';
 import '../../widgets/extended_image.dart';
-import '../new_goods_list/view.dart';
+import '../new_goods_list/v2/index.dart';
+import '../new_goods_list/v2/page.dart';
 
 class RightWidgetItme extends ConsumerWidget {
   final Subcategory item;
@@ -16,11 +16,7 @@ class RightWidgetItme extends ConsumerWidget {
   Widget build(BuildContext context,WidgetRef ref) {
     return GestureDetector(
       onTap: () {
-        context.navToWidget(to: NewGoodsList(
-          category: category,
-          subcategory: item,
-          initIndex: ref.read(categoryRiverpod).getIndexWithCategory(category),
-        ));
+        context.navToWidget(to: CategoryListPage(category: category));
       },
       child: Column(
         children: <Widget>[
