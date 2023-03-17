@@ -7,16 +7,17 @@ part of 'meet_model.dart';
 // **************************************************************************
 
 _$_MeetModel _$$_MeetModelFromJson(Map<String, dynamic> json) => _$_MeetModel(
-      aboutDiandian: json['aboutDiandian'] as String,
-      age: json['age'] as int,
+      aboutDiandian: json['aboutDiandian'] as String? ?? '',
+      age: json['age'] as int? ?? 0,
       id: json['id'] as int,
-      location: json['location'] as String,
-      mianjiInfo: json['mianjiInfo'] as String,
-      name: json['name'] as String,
-      soulCodeImage: json['soulCodeImage'] as String,
-      soulName: json['soulName'] as String,
-      toLocation: json['toLocation'] as String,
-      state: json['state'] as int,
+      location: json['location'] as String? ?? '',
+      mianjiInfo: json['mianjiInfo'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      soulCodeImage: json['soulCodeImage'] as String? ?? '',
+      soulName: json['soulName'] as String? ?? '',
+      toLocation: json['toLocation'] as String? ?? '',
+      createDate: json['createDate'] as String? ?? '',
+      state: json['state'] as int? ?? 0,
       user: MyUser.fromJson(json['user'] as Map<String, dynamic>),
       images: json['images'] == null
           ? const IListConst([])
@@ -35,6 +36,7 @@ Map<String, dynamic> _$$_MeetModelToJson(_$_MeetModel instance) =>
       'soulCodeImage': instance.soulCodeImage,
       'soulName': instance.soulName,
       'toLocation': instance.toLocation,
+      'createDate': instance.createDate,
       'state': instance.state,
       'user': instance.user,
       'images': instance.images.toJson(

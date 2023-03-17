@@ -22,7 +22,8 @@ class _MeetListWidgetState extends State<MeetListWidget> {
       slivers: [
         LoadingMoreSliverList(SliverListConfig<MeetModel>(
           itemBuilder:MeetItemLayout.new,
-          sourceList: repository
+          sourceList: repository,
+          padding: const EdgeInsets.only(top: 12)
         ))
       ],
     );

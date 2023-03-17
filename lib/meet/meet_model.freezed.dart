@@ -21,29 +21,18 @@ MeetModel _$MeetModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MeetModel {
   String get aboutDiandian => throw _privateConstructorUsedError;
-  set aboutDiandian(String value) => throw _privateConstructorUsedError;
   int get age => throw _privateConstructorUsedError;
-  set age(int value) => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
-  set id(int value) => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
-  set location(String value) => throw _privateConstructorUsedError;
   String get mianjiInfo => throw _privateConstructorUsedError;
-  set mianjiInfo(String value) => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  set name(String value) => throw _privateConstructorUsedError;
   String get soulCodeImage => throw _privateConstructorUsedError;
-  set soulCodeImage(String value) => throw _privateConstructorUsedError;
   String get soulName => throw _privateConstructorUsedError;
-  set soulName(String value) => throw _privateConstructorUsedError;
   String get toLocation => throw _privateConstructorUsedError;
-  set toLocation(String value) => throw _privateConstructorUsedError;
+  String get createDate => throw _privateConstructorUsedError;
   int get state => throw _privateConstructorUsedError;
-  set state(int value) => throw _privateConstructorUsedError;
   MyUser get user => throw _privateConstructorUsedError;
-  set user(MyUser value) => throw _privateConstructorUsedError;
   IList<FileInfo> get images => throw _privateConstructorUsedError;
-  set images(IList<FileInfo> value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -66,6 +55,7 @@ abstract class $MeetModelCopyWith<$Res> {
       String soulCodeImage,
       String soulName,
       String toLocation,
+      String createDate,
       int state,
       MyUser user,
       IList<FileInfo> images});
@@ -95,6 +85,7 @@ class _$MeetModelCopyWithImpl<$Res, $Val extends MeetModel>
     Object? soulCodeImage = null,
     Object? soulName = null,
     Object? toLocation = null,
+    Object? createDate = null,
     Object? state = null,
     Object? user = null,
     Object? images = null,
@@ -135,6 +126,10 @@ class _$MeetModelCopyWithImpl<$Res, $Val extends MeetModel>
       toLocation: null == toLocation
           ? _value.toLocation
           : toLocation // ignore: cast_nullable_to_non_nullable
+              as String,
+      createDate: null == createDate
+          ? _value.createDate
+          : createDate // ignore: cast_nullable_to_non_nullable
               as String,
       state: null == state
           ? _value.state
@@ -177,6 +172,7 @@ abstract class _$$_MeetModelCopyWith<$Res> implements $MeetModelCopyWith<$Res> {
       String soulCodeImage,
       String soulName,
       String toLocation,
+      String createDate,
       int state,
       MyUser user,
       IList<FileInfo> images});
@@ -205,6 +201,7 @@ class __$$_MeetModelCopyWithImpl<$Res>
     Object? soulCodeImage = null,
     Object? soulName = null,
     Object? toLocation = null,
+    Object? createDate = null,
     Object? state = null,
     Object? user = null,
     Object? images = null,
@@ -246,6 +243,10 @@ class __$$_MeetModelCopyWithImpl<$Res>
           ? _value.toLocation
           : toLocation // ignore: cast_nullable_to_non_nullable
               as String,
+      createDate: null == createDate
+          ? _value.createDate
+          : createDate // ignore: cast_nullable_to_non_nullable
+              as String,
       state: null == state
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
@@ -265,17 +266,18 @@ class __$$_MeetModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_MeetModel implements _MeetModel {
-  _$_MeetModel(
-      {required this.aboutDiandian,
-      required this.age,
+  const _$_MeetModel(
+      {this.aboutDiandian = '',
+      this.age = 0,
       required this.id,
-      required this.location,
-      required this.mianjiInfo,
-      required this.name,
-      required this.soulCodeImage,
-      required this.soulName,
-      required this.toLocation,
-      required this.state,
+      this.location = '',
+      this.mianjiInfo = '',
+      this.name = '',
+      this.soulCodeImage = '',
+      this.soulName = '',
+      this.toLocation = '',
+      this.createDate = '',
+      this.state = 0,
       required this.user,
       this.images = const IListConst([])});
 
@@ -283,35 +285,92 @@ class _$_MeetModel implements _MeetModel {
       _$$_MeetModelFromJson(json);
 
   @override
-  String aboutDiandian;
-  @override
-  int age;
-  @override
-  int id;
-  @override
-  String location;
-  @override
-  String mianjiInfo;
-  @override
-  String name;
-  @override
-  String soulCodeImage;
-  @override
-  String soulName;
-  @override
-  String toLocation;
-  @override
-  int state;
-  @override
-  MyUser user;
+  @JsonKey()
+  final String aboutDiandian;
   @override
   @JsonKey()
-  IList<FileInfo> images;
+  final int age;
+  @override
+  final int id;
+  @override
+  @JsonKey()
+  final String location;
+  @override
+  @JsonKey()
+  final String mianjiInfo;
+  @override
+  @JsonKey()
+  final String name;
+  @override
+  @JsonKey()
+  final String soulCodeImage;
+  @override
+  @JsonKey()
+  final String soulName;
+  @override
+  @JsonKey()
+  final String toLocation;
+  @override
+  @JsonKey()
+  final String createDate;
+  @override
+  @JsonKey()
+  final int state;
+  @override
+  final MyUser user;
+  @override
+  @JsonKey()
+  final IList<FileInfo> images;
 
   @override
   String toString() {
-    return 'MeetModel(aboutDiandian: $aboutDiandian, age: $age, id: $id, location: $location, mianjiInfo: $mianjiInfo, name: $name, soulCodeImage: $soulCodeImage, soulName: $soulName, toLocation: $toLocation, state: $state, user: $user, images: $images)';
+    return 'MeetModel(aboutDiandian: $aboutDiandian, age: $age, id: $id, location: $location, mianjiInfo: $mianjiInfo, name: $name, soulCodeImage: $soulCodeImage, soulName: $soulName, toLocation: $toLocation, createDate: $createDate, state: $state, user: $user, images: $images)';
   }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MeetModel &&
+            (identical(other.aboutDiandian, aboutDiandian) ||
+                other.aboutDiandian == aboutDiandian) &&
+            (identical(other.age, age) || other.age == age) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.location, location) ||
+                other.location == location) &&
+            (identical(other.mianjiInfo, mianjiInfo) ||
+                other.mianjiInfo == mianjiInfo) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.soulCodeImage, soulCodeImage) ||
+                other.soulCodeImage == soulCodeImage) &&
+            (identical(other.soulName, soulName) ||
+                other.soulName == soulName) &&
+            (identical(other.toLocation, toLocation) ||
+                other.toLocation == toLocation) &&
+            (identical(other.createDate, createDate) ||
+                other.createDate == createDate) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.user, user) || other.user == user) &&
+            const DeepCollectionEquality().equals(other.images, images));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      aboutDiandian,
+      age,
+      id,
+      location,
+      mianjiInfo,
+      name,
+      soulCodeImage,
+      soulName,
+      toLocation,
+      createDate,
+      state,
+      user,
+      const DeepCollectionEquality().hash(images));
 
   @JsonKey(ignore: true)
   @override
@@ -328,59 +387,50 @@ class _$_MeetModel implements _MeetModel {
 }
 
 abstract class _MeetModel implements MeetModel {
-  factory _MeetModel(
-      {required String aboutDiandian,
-      required int age,
-      required int id,
-      required String location,
-      required String mianjiInfo,
-      required String name,
-      required String soulCodeImage,
-      required String soulName,
-      required String toLocation,
-      required int state,
-      required MyUser user,
-      IList<FileInfo> images}) = _$_MeetModel;
+  const factory _MeetModel(
+      {final String aboutDiandian,
+      final int age,
+      required final int id,
+      final String location,
+      final String mianjiInfo,
+      final String name,
+      final String soulCodeImage,
+      final String soulName,
+      final String toLocation,
+      final String createDate,
+      final int state,
+      required final MyUser user,
+      final IList<FileInfo> images}) = _$_MeetModel;
 
   factory _MeetModel.fromJson(Map<String, dynamic> json) =
       _$_MeetModel.fromJson;
 
   @override
   String get aboutDiandian;
-  set aboutDiandian(String value);
   @override
   int get age;
-  set age(int value);
   @override
   int get id;
-  set id(int value);
   @override
   String get location;
-  set location(String value);
   @override
   String get mianjiInfo;
-  set mianjiInfo(String value);
   @override
   String get name;
-  set name(String value);
   @override
   String get soulCodeImage;
-  set soulCodeImage(String value);
   @override
   String get soulName;
-  set soulName(String value);
   @override
   String get toLocation;
-  set toLocation(String value);
+  @override
+  String get createDate;
   @override
   int get state;
-  set state(int value);
   @override
   MyUser get user;
-  set user(MyUser value);
   @override
   IList<FileInfo> get images;
-  set images(IList<FileInfo> value);
   @override
   @JsonKey(ignore: true)
   _$$_MeetModelCopyWith<_$_MeetModel> get copyWith =>
