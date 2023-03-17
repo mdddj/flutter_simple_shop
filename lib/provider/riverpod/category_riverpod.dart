@@ -2,6 +2,7 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart' hide BlogCategory;
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -25,6 +26,7 @@ class CategoryState extends ChangeNotifier {
   IList<JdOrPddCategory> jdCategory = const IListConst([]);
 
   /// 加载大淘客超级分类数据
+  @Doc(message: '加载超级分类数据')
   Future<void> init() async {
     final result = await DdTaokeSdk.instance.getCategorys();
     categorys = categorys.addAll(result);

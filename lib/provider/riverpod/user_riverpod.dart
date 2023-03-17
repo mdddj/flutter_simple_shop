@@ -3,7 +3,6 @@ import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../api/apis.dart';
 import '../../api/model/login_params.dart';
-import '../../common/utils.dart';
 import '../../exception/app.dart';
 import '../../freezed/login_result_model.dart';
 import '../../pages/user_home_page/login/login_base.dart';
@@ -34,26 +33,7 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
     }
   }
 
-  @Doc(message: '使用jwt token 来加载用户的基本资料')
-  Future<void> fetchUserDetail(String token) async {
-    try{
-      final vUser = await utils.api.getUser(token);
-      if (vUser != null) {
-        state = state.copyWith(user: vUser);
-        ifCall(vUser.username.isNotEmpty, () => toast('欢迎回来,${vUser.username}'));
-      }
-    } on AppException catch(_){
-      toast("获取用户信息失败,请稍后重试");
-    }
-  }
 
-  @Doc(message: '页面初始化执行函数,从缓存中取出token,然后加载用户信息')
-  void initState() async {
-    final t = await CacheFactory.create<TokenCache>().userToken;
-    if (t.isNotEmpty) {
-      fetchUserDetail(t);
-    }
-  }
 
   @override
   void setTokenToCatch(String token) {

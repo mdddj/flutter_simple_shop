@@ -73,6 +73,7 @@ class KZheTaokeApiWithCarousel extends MyAppCoreApi {
 class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi {
   KZheTaokeApiWithAppkeyGet() : super('/api/zhe/app-key');
 
+  @Doc(message: '加载折淘客的APP Key')
   static Future<String> doRequest(Ref ref) async {
     final cacehData = await TokenCache.instance.getValue('zhe-app-key', defaultValue: '');
     if (cacehData.isNotEmpty) {

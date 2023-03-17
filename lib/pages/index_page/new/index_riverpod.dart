@@ -1,6 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -35,6 +36,7 @@ class IndexState extends ChangeNotifier {
     notifyListeners();
   }
 
+  @Doc(message: '加载双列产品数据')
   Future<void> fetch() async {
     final result = await kApi.getProducts(param: ProductListParam(pageId: '$_page'));
     if (result != null) {

@@ -2,6 +2,7 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+import '../../common/view.dart';
 import '../../index.dart';
 import '../../widgets/loading/custom_loading_more_widget.dart';
 import '../../widgets/login_tip_widget.dart';
@@ -34,29 +35,14 @@ class _FavoriteIndexHomeState extends ConsumerState<FavoriteIndexHome> with Auto
   bool get wantKeepAlive => true;
 }
 
-//列表
-class _FavoritesListWidget extends StatefulWidget {
-  const _FavoritesListWidget({Key? key}) : super(key: key);
-
+class _FavoritesListWidget extends View {
   @override
-  State<_FavoritesListWidget> createState() => _FavoritesListWidgetState();
-}
-
-class _FavoritesListWidgetState extends State<_FavoritesListWidget> {
-  final _response = FavoritesRepository();
-  @override
-  Widget build(BuildContext context) {
+  Widget renderView(BuildContext context, ApplicationModel appCore) {
     return LoadingMoreList(ListConfig<MyFavoritesModel>(
         itemBuilder: (context, model, index) {
-          return FavoriteGoodsItem(item: model, isShowEditIcon: false, repository: _response,);
+          return FavoriteGoodsItem(item: model, isShowEditIcon: false, repository: appCore.favoritesRepository);
         },
-        sourceList: _response,
+        sourceList: appCore.favoritesRepository,
         indicatorBuilder: CustomLoadingMoreWidget.new));
-  }
-
-  @override
-  void dispose() {
-    _response.dispose();
-    super.dispose();
   }
 }
