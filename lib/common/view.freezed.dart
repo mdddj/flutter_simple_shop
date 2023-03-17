@@ -155,6 +155,7 @@ mixin _$ApplicationModel {
   WidgetRef get ref => throw _privateConstructorUsedError;
   FavoritesRepository get favoritesRepository =>
       throw _privateConstructorUsedError;
+  IList<Category> get categorys => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApplicationModelCopyWith<ApplicationModel> get copyWith =>
@@ -170,7 +171,8 @@ abstract class $ApplicationModelCopyWith<$Res> {
   $Res call(
       {BuildContext context,
       WidgetRef ref,
-      FavoritesRepository favoritesRepository});
+      FavoritesRepository favoritesRepository,
+      IList<Category> categorys});
 }
 
 /// @nodoc
@@ -189,6 +191,7 @@ class _$ApplicationModelCopyWithImpl<$Res, $Val extends ApplicationModel>
     Object? context = null,
     Object? ref = null,
     Object? favoritesRepository = null,
+    Object? categorys = null,
   }) {
     return _then(_value.copyWith(
       context: null == context
@@ -203,6 +206,10 @@ class _$ApplicationModelCopyWithImpl<$Res, $Val extends ApplicationModel>
           ? _value.favoritesRepository
           : favoritesRepository // ignore: cast_nullable_to_non_nullable
               as FavoritesRepository,
+      categorys: null == categorys
+          ? _value.categorys
+          : categorys // ignore: cast_nullable_to_non_nullable
+              as IList<Category>,
     ) as $Val);
   }
 }
@@ -218,7 +225,8 @@ abstract class _$$_ApplicationModelCopyWith<$Res>
   $Res call(
       {BuildContext context,
       WidgetRef ref,
-      FavoritesRepository favoritesRepository});
+      FavoritesRepository favoritesRepository,
+      IList<Category> categorys});
 }
 
 /// @nodoc
@@ -235,6 +243,7 @@ class __$$_ApplicationModelCopyWithImpl<$Res>
     Object? context = null,
     Object? ref = null,
     Object? favoritesRepository = null,
+    Object? categorys = null,
   }) {
     return _then(_$_ApplicationModel(
       context: null == context
@@ -249,6 +258,10 @@ class __$$_ApplicationModelCopyWithImpl<$Res>
           ? _value.favoritesRepository
           : favoritesRepository // ignore: cast_nullable_to_non_nullable
               as FavoritesRepository,
+      categorys: null == categorys
+          ? _value.categorys
+          : categorys // ignore: cast_nullable_to_non_nullable
+              as IList<Category>,
     ));
   }
 }
@@ -259,7 +272,8 @@ class _$_ApplicationModel implements _ApplicationModel {
   const _$_ApplicationModel(
       {required this.context,
       required this.ref,
-      required this.favoritesRepository});
+      required this.favoritesRepository,
+      this.categorys = const IListConst([])});
 
   @override
   final BuildContext context;
@@ -267,10 +281,13 @@ class _$_ApplicationModel implements _ApplicationModel {
   final WidgetRef ref;
   @override
   final FavoritesRepository favoritesRepository;
+  @override
+  @JsonKey()
+  final IList<Category> categorys;
 
   @override
   String toString() {
-    return 'ApplicationModel(context: $context, ref: $ref, favoritesRepository: $favoritesRepository)';
+    return 'ApplicationModel(context: $context, ref: $ref, favoritesRepository: $favoritesRepository, categorys: $categorys)';
   }
 
   @override
@@ -281,12 +298,17 @@ class _$_ApplicationModel implements _ApplicationModel {
             (identical(other.context, context) || other.context == context) &&
             (identical(other.ref, ref) || other.ref == ref) &&
             const DeepCollectionEquality()
-                .equals(other.favoritesRepository, favoritesRepository));
+                .equals(other.favoritesRepository, favoritesRepository) &&
+            const DeepCollectionEquality().equals(other.categorys, categorys));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, context, ref,
-      const DeepCollectionEquality().hash(favoritesRepository));
+  int get hashCode => Object.hash(
+      runtimeType,
+      context,
+      ref,
+      const DeepCollectionEquality().hash(favoritesRepository),
+      const DeepCollectionEquality().hash(categorys));
 
   @JsonKey(ignore: true)
   @override
@@ -297,10 +319,10 @@ class _$_ApplicationModel implements _ApplicationModel {
 
 abstract class _ApplicationModel implements ApplicationModel {
   const factory _ApplicationModel(
-          {required final BuildContext context,
-          required final WidgetRef ref,
-          required final FavoritesRepository favoritesRepository}) =
-      _$_ApplicationModel;
+      {required final BuildContext context,
+      required final WidgetRef ref,
+      required final FavoritesRepository favoritesRepository,
+      final IList<Category> categorys}) = _$_ApplicationModel;
 
   @override
   BuildContext get context;
@@ -308,6 +330,8 @@ abstract class _ApplicationModel implements ApplicationModel {
   WidgetRef get ref;
   @override
   FavoritesRepository get favoritesRepository;
+  @override
+  IList<Category> get categorys;
   @override
   @JsonKey(ignore: true)
   _$$_ApplicationModelCopyWith<_$_ApplicationModel> get copyWith =>

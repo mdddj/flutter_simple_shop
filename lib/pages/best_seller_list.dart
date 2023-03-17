@@ -22,15 +22,8 @@ class BestSellerListPage extends ConsumerStatefulWidget {
 class BestSellerListPageState extends ConsumerState<BestSellerListPage> {
 
 
- late  List<ProductModel> _products;
+ late final  List<ProductModel> _products = ref.read(indexStateRiverpod).hotDayProducts;
 
- @override
-  void initState() {
-    super.initState();
-    delayFunction(() {
-      _products = ref.read(indexStateRiverpod).hotDayProducts;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

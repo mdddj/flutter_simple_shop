@@ -27,13 +27,14 @@ class CategoryState extends ChangeNotifier {
 
   /// 加载大淘客超级分类数据
   @Doc(message: '加载超级分类数据')
-  Future<void> init() async {
+  Future<IList<Category>> init() async {
     final result = await DdTaokeSdk.instance.getCategorys();
-    categorys = categorys.addAll(result);
+    categorys = result.lock;
     if (categorys.isNotEmpty) {
       setCurrent(result[0]);
     }
     notifyListeners();
+    return categorys;
   }
 
   /// 加载京东的分类数据

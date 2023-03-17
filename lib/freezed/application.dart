@@ -9,11 +9,12 @@ import '../pages/index_page/new/index_riverpod.dart';
 import '../provider/riverpod/category_riverpod.dart';
 
 final application = FutureProvider.family<ApplicationModel,ApplocationContext>((ref,ctx) async {
-  final model = builderDefaultApplication(ctx);
+  var model = builderDefaultApplication(ctx);
   try {
-    await ref.read(categoryRiverpod).init();
+    final categorys = await ref.read(categoryRiverpod).init();
     await ref.read(indexStateRiverpod).fetch();
     await KZheTaokeApiWithAppkeyGet.doRequest(ref);
+    model = model.copyWith(categorys: categorys);
   } on AppException catch (_) {
     rethrow;
   }

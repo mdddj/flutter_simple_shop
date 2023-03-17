@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dataoke_sdk/dataoke_sdk.dart' hide tryCatch;
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
@@ -11,18 +11,17 @@ import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_f
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../../api/apis.dart';
 import '../../../common/utils.dart';
 import '../../../freezed/add_favorites_params.dart';
 import '../../../modals/shop_info.dart';
 import '../../../util/image_util.dart';
 import '../../../widgets/extended_image.dart';
+import '../../../widgets/favorite_add_btn.dart';
 import '../../../widgets/loading_widget.dart';
 import '../../../widgets/my_drawable_start_text.dart';
 import '../../../widgets/no_data.dart';
 import '../../../widgets/round_underline_tab_indicator.dart';
 import '../../../widgets/simple_price.dart';
-import '../../user_home_page/ext.dart';
 import '../detail_imgs_widget.dart';
 
 //是否展示轮播图上面的返回箭头
@@ -243,14 +242,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     );
   }
 
-  @Doc(message: '添加收藏')
-  Future<void> addFavorite() async {
-    if (ref.isLogin.not) {
-      toast('请先登录');
-      return;
-    }
-    if (info != null) {
-      FavoritesAddApi.doRequeset(AddFavoritesParams(
+  AddFavoritesParams get _addFavoritesParams {
+    return AddFavoritesParams(
         productid: info!.goodsId,
         type: "淘宝",
         endtime: info!.couponEndTime,
@@ -258,10 +251,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         title: info!.dtitle,
         amount: '${info!.originalPrice}',
         arrivalprice: '${info!.actualPrice}'
-      ), success: () {
-
-      });
-    }
+    );
   }
 
   Widget buildBottomRow(BuildContext context) {
@@ -269,7 +259,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.home)),
-        IconButton(onPressed: addFavorite, icon: const Icon(Icons.favorite)),
+        FavoriteAddBtn(_addFavoritesParams),
         Expanded(
           child: WaterfallFlow.count(
             crossAxisCount: 2,

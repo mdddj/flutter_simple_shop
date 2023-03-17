@@ -1,4 +1,3 @@
-import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
@@ -11,14 +10,14 @@ class InitLoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: (c, x) => Container(
+      home: Container(
         color: Colors.white,
         child: Stack(
           children: [
             Positioned(
               left: 0,
               right: 0,
-              top: c.paddingTop + 100,
+              top: 120,
               child: ExtendedImage.asset(
                 'assets/images/logo.png',
                 enableMemoryCache: true,
@@ -26,11 +25,11 @@ class InitLoadingWidget extends StatelessWidget {
                 height: kLogoSize,
               ),
             ),
-            Positioned(
-              bottom: c.paddingBottom + 12,
+            const Positioned(
+              bottom:  42,
               left: 0,
               right: 0,
-              child: const Center(
+              child: Center(
                 child: SizedBox(width: 30, height: 30, child: CircularProgressIndicator()),
               ),
             )

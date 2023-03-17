@@ -1,9 +1,11 @@
+import 'package:dataoke_sdk/model/category.dart';
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../freezed/application.dart';
-import '../provider/riverpod/favorites/repository/favorites_repository.dart';
+import '../index.dart';
 
 part 'view.freezed.dart';
 
@@ -20,11 +22,17 @@ class ApplicationModel with _$ApplicationModel {
     required BuildContext context,
     required WidgetRef ref,
     required FavoritesRepository favoritesRepository,
+    @Default(IListConst([])) IList<Category> categorys,
   }) = _ApplicationModel;
 }
 
 ApplicationModel builderDefaultApplication(ApplocationContext ctx) {
   return ApplicationModel(context: ctx.context, ref: ctx.ref, favoritesRepository: FavoritesRepository());
+}
+
+
+extension ApplicationModelEx on ApplicationModel {
+  IList<Category> get watchCategory => ref.watch(categoryRiverpod.select((value) => value.categorys));
 }
 
 ///自定义封装view

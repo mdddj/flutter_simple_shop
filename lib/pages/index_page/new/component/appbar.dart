@@ -1,11 +1,11 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import '../../../../common/view.dart';
 import '../../../../index.dart';
 
 /// 首页导航栏
-class IndexHomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
+class IndexHomeAppbar extends View implements PreferredSizeWidget {
   final TabController tabController;
 
   const IndexHomeAppbar({Key? key, required this.tabController}) : super(key: key);
@@ -14,8 +14,13 @@ class IndexHomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
     await context.navToWidget(to: const SearchPage());
   }
 
+
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Size get preferredSize => const Size.fromHeight(48);
+
+  @override
+  Widget renderView(BuildContext context, ApplicationModel appCore) {
     return SAppBarSearch(
       hintText: '输入关键字,例如:"辣条"',
       onTap: () => navTo(context),
@@ -48,9 +53,9 @@ class IndexHomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
               const Tab(
                 text: '精选',
               ),
-              ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map((element) => Tab(
-                    text: element.cname,
-                  ))
+              ...appCore.watchCategory.map((element) => Tab(
+                text: element.cname,
+              ))
             ],
             onTap: (int index) {
 
@@ -61,7 +66,4 @@ class IndexHomeAppbar extends ConsumerWidget implements PreferredSizeWidget {
       isSliveWidget: true,
     );
   }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(48);
 }

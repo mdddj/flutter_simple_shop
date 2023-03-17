@@ -29,6 +29,8 @@ extension WrapJsonExt on WrapJson {
       showIosDialog(message);
     }
   }
+
+  Map<String,dynamic> get getDataMap => getMap('data');
 }
 
 ///收藏夹接口的前缀
@@ -39,9 +41,9 @@ class FavoritesAddApi extends MyAppCoreApi {
   FavoritesAddApi() : super("$favoritesPrefix/save", httpMethod: HttpMethod.post);
 
   @Doc(message: "服务器发起请求,添加收藏")
-  static Future<void> doRequeset(AddFavoritesParams params, {VoidCallback? success}) async {
+  static Future<WrapJson> doRequeset(AddFavoritesParams params) async {
     final r = await (FavoritesAddApi()).request(RequestParams(data: params.toJson()));
-    r.handle(success: success);
+    return r;
   }
 }
 

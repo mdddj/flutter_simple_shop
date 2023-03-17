@@ -8,6 +8,11 @@ import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../common/components/new_products/respose.dart';
 import '../../../index.dart';
 
+
+
+
+
+
 /// 新版首页
 class IndexHomeNew extends ConsumerStatefulWidget {
   const IndexHomeNew({Key? key}) : super(key: key);
@@ -19,10 +24,6 @@ class IndexHomeNew extends ConsumerStatefulWidget {
 class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerProviderStateMixin {
   late TabController tabController = TabController(length: ref.watch(categoryRiverpod.select((value) => value.categorys)).length + 1, vsync: this);
 
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +42,6 @@ class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerPro
     );
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    tabController.dispose();
-  }
 }
 
 class HomeWidgets extends ConsumerStatefulWidget {
