@@ -1,4 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
 import '../../../../api/apis.dart';
 import '../../../../index.dart';
@@ -16,5 +17,13 @@ class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel, Favori
   List<MyFavoritesModel> transformResponseData(final WrapJson data) {
     data.print();
     return List<MyFavoritesModel>.from((data.getListValue('content')).map(MyFavoritesModel.fromJson)).toList();
+  }
+
+  void delete(MyFavoritesModel model){
+    array=array.remove(model);
+    if(array.isEmpty){
+      indicatorStatus = IndicatorStatus.empty;
+    }
+    setState();
   }
 }

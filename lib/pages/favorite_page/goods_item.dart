@@ -23,9 +23,7 @@ class FavoriteGoodsItem extends StatelessWidget {
     return Stack(children: <Widget>[
       Slidable(
         key: ValueKey(item.id),
-        endActionPane: ActionPane(
-            extentRatio: 0.2,
-            motion: const ScrollMotion(), children: [
+        endActionPane: ActionPane(extentRatio: 0.2, motion: const ScrollMotion(), children: [
           SlidableAction(
             onPressed: _removeItem,
             backgroundColor: const Color(0xFFFE4A49),
@@ -50,9 +48,7 @@ class FavoriteGoodsItem extends StatelessWidget {
                 ),
                 Expanded(
                   child: ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      minHeight: 90
-                    ),
+                    constraints: const BoxConstraints(minHeight: 90),
                     child: GestureDetector(
                       onTap: () => NavigatorUtil.gotoGoodsDetailPage(context, item.productId),
                       child: Column(
@@ -67,7 +63,9 @@ class FavoriteGoodsItem extends StatelessWidget {
                                 actualPrice: item.arrivalPrice,
                                 originalPrice: double.tryParse(item.amount),
                               ),
-                              const SizedBox(height: 4,),
+                              const SizedBox(
+                                height: 4,
+                              ),
                               Badge(
                                 label: _calcDateHowLong(),
                               )
@@ -110,10 +108,7 @@ class FavoriteGoodsItem extends StatelessWidget {
   ///删除
   void _removeItem(BuildContext ctx) {
     FavoritesRemoveApi(item.id).request().then((value) {
-      value.simpleToast(
-          ifOk: () => repository
-            ..removeWhere((element) => element.id == item.id)
-            ..setState());
+      value.simpleToast(ifOk: () => repository.delete(item));
     });
   }
 
