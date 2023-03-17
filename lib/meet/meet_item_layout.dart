@@ -3,7 +3,6 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../constant/index.dart';
 import '../widgets/default_avatar_widget.dart';
 import '../widgets/default_user_name.dart';
 import 'meet_model.dart';
