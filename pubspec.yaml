@@ -78,6 +78,7 @@ dependencies:
   dd_models: ^0.0.2
   dd_check_plugin: ^2.1.1
   dataoke_sdk: ^2.2.1
+  permission_handler: ^10.2.0
 
 
 dev_dependencies:

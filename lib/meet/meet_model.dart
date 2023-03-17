@@ -1,6 +1,8 @@
 
 
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import '../freezed/file_info.dart';
 import '../provider/riverpod/model/my_user.dart';
 part 'meet_model.g.dart';
 part 'meet_model.freezed.dart';
@@ -18,7 +20,8 @@ class MeetModel with _$MeetModel {
     required String soulName,
     required String toLocation,
     required int state,
-    required MyUser user
+    required MyUser user,
+   @Default(IListConst([])) IList<FileInfo> images
 }) = _MeetModel;
   factory MeetModel.fromJson(dynamic json) => _$MeetModelFromJson(json);
 

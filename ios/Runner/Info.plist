@@ -72,5 +72,9 @@
 	<false/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>梁典典想访问你的相册</string>
+	<key>NSCameraUsageDescription</key>
+	<string>梁典典想访问你的相机</string>
 </dict>
 </plist>

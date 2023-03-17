@@ -42,7 +42,7 @@ abstract class View extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ctx = ApplocationContext(context, ref);
-    final applicationModel = ref.watch(application(ctx)).value ?? builderDefaultApplication(ctx);
+    final applicationModel = ref.read(application(ctx)).value ?? builderDefaultApplication(ctx);
     return renderView(context, applicationModel);
   }
 

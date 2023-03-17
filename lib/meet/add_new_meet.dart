@@ -1,9 +1,10 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 
 import '../api/apis.dart';
-import '../constant/style.dart';
+import '../common/view.dart';
 
 ///线下面基申请页面
 class AddNewMeet extends StatefulWidget {
@@ -31,11 +32,12 @@ class _AddNewMeetState extends State<AddNewMeet> {
   final fAddressToFocusNode = FocusNode(); // 你想去面基的地点
   final fTimeWithDDFocusNode = FocusNode(); //你和典典认识多久了
 
-
   ///提交数据
   Future<void> submitData() async {
     final api = MeetRequestAdd();
-    api.params.addAll({});
+    api.params.addAll({
+      
+    });
     final response = await api.request();
     response.handle();
   }
@@ -46,53 +48,51 @@ class _AddNewMeetState extends State<AddNewMeet> {
       appBar: '申请面基'.appbar,
       body: KeyboardActions(
         config: _buildConfig,
-        child: ListView(
-          padding: const EdgeInsets.all(kDefaultPadding),
+        child: CupertinoListSection(
+          margin: const EdgeInsets.all(12),
+          header: const Text('填写基本信息'),
+          footer: CupertinoButton.filled(onPressed: submitData, child: const Text('提交申请')).center,
           children: [
-            Column(
-              children: [
-                MyTextField(
-                  placeholder: '姓名',
-                  controller: ctrlName,
-                  focusNode: fNameFocusNode,
-                ),
-                MyTextField(
-                  placeholder: '年龄',
-                  controller: ctrlAge,
-                  focusNode: fAgeFocusNode,
-                ),
-                MyTextField(
-                  placeholder: 'Soul用户名',
-                  controller: ctrlSoulName,
-                  focusNode: fSoulNameFocusNode,
-                ),
-                MyTextField(
-                  placeholder: '面基详情描述',
-                  controller: ctrlInfo,
-                  focusNode: fInfoFocusNode,
-                ),
-              ],
+            MyTextField(
+              placeholder: '怎么称呼您',
+              controller: ctrlName,
+              focusNode: fNameFocusNode,
+              icon: const Icon(CupertinoIcons.profile_circled),
             ),
-            Column(
-              children: [
-                MyTextField(
-                  placeholder: '你的居住地',
-                  controller: ctrlAddressYour,
-                  focusNode: fAddressYourFocusNode,
-                ),
-                MyTextField(
-                  placeholder: '你想面基的地点',
-                  controller: ctrlAddressTo,
-                  focusNode: fAddressToFocusNode,
-                ),
-                MyTextField(
-                  placeholder: '你和典典认识多久了',
-                  controller: ctrlTimeWithDD,
-                  focusNode: fTimeWithDDFocusNode,
-                )
-              ],
+            MyTextField(
+              placeholder: '(选填)年龄',
+              controller: ctrlAge,
+              focusNode: fAgeFocusNode,
             ),
-            ElevatedButton(onPressed: submitData, child: const Text('发送申请'))
+            MyTextField(
+              placeholder: '(选填)Soul用户名',
+              controller: ctrlSoulName,
+              focusNode: fSoulNameFocusNode,
+            ),
+            MyTextField(
+              placeholder: '面基详情描述,比如:吃饭看电影爬山',
+              controller: ctrlInfo,
+              focusNode: fInfoFocusNode,
+            ),
+            MyTextField(
+              placeholder: '你所在的区域',
+              controller: ctrlAddressYour,
+              focusNode: fAddressYourFocusNode,
+              icon: const Icon(CupertinoIcons.location),
+            ),
+            MyTextField(
+              placeholder: '你想去的面基地点',
+              controller: ctrlAddressTo,
+              focusNode: fAddressToFocusNode,
+              icon: const Icon(CupertinoIcons.map),
+            ),
+            MyTextField(
+              placeholder: '(选填)你和典典认识多久了',
+              controller: ctrlTimeWithDD,
+              focusNode: fTimeWithDDFocusNode,
+            ),
+            const PhotoUploadWidget()
+
           ],
         ),
       ),
@@ -110,6 +110,27 @@ class _AddNewMeetState extends State<AddNewMeet> {
       KeyboardActionsItem(focusNode: fTimeWithDDFocusNode),
     ]);
   }
+
+  
+}
+
+
+///上传自拍表单
+class PhotoUploadWidget extends View {
+  const PhotoUploadWidget({super.key});
+
+  @override
+  Widget renderView(BuildContext context, ApplicationModel appCore) {
+    return  CupertinoListTile(
+      backgroundColor: context.colorScheme.surfaceVariant,
+      leading: const Icon(CupertinoIcons.photo),
+      title: Text('添加自拍或者生活照',style: context.textTheme.titleMedium?.copyWith(
+        color: context.primaryColor
+      )),
+      subtitle: const PictureSelection(multipleChoice: true),
+    );
+  }
+
 }
 
 ///自定义表单
@@ -117,19 +138,21 @@ class MyTextField extends StatelessWidget {
   final String? placeholder;
   final TextEditingController? controller;
   final FocusNode? focusNode;
+  final Widget? icon;
 
-  const MyTextField({Key? key, this.placeholder, this.controller, this.focusNode}) : super(key: key);
+  const MyTextField({Key? key, this.placeholder, this.controller, this.focusNode, this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextField(
+    return CupertinoListTile(
+      leading: icon ?? const Text(''),
+      title: CupertinoTextField(
         controller: controller,
         focusNode: focusNode,
         maxLines: 5,
         minLines: 1,
-        decoration: InputDecoration(hintText: placeholder, filled: true, fillColor: context.theme.highlightColor,labelText: placeholder),
+        placeholder: placeholder,
+        decoration: const BoxDecoration(border: Border.fromBorderSide(BorderSide.none)),
       ),
     );
   }

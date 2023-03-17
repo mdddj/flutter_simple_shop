@@ -11,15 +11,17 @@ const apiHost = 'http://192.168.199.98';
 const apiPort = "80";
 const kDebugMode = true;
 
+
+
 void main() async {
   appInit(() => runApp(const ProviderScope(child: Root())));
 }
 
-class Root extends ApplicationWidget {
+class Root extends View {
   const Root({super.key});
 
   @override
-  Widget buildApplication(ApplicationModel applicationModel) {
+  Widget renderView(BuildContext context, ApplicationModel appCore) {
     return ThemeBuildWidget(themeBuild: (theme) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -27,7 +29,7 @@ class Root extends ApplicationWidget {
         theme: MyAppTheme.getTheme(theme.themeIndex),
         darkTheme: MyAppTheme.darkTheme,
         themeMode: theme.getThemeMode,
-        home: const App(),
+        home: const MyApp(),
         builder: FlutterSmartDialog.init(
             loadingBuilder: MyCustomLoadingWidget.new,
             builder: (c, child) =>
@@ -36,13 +38,4 @@ class Root extends ApplicationWidget {
     });
   }
 
-  @override
-  Widget buildErrorWidget(Object e, Object s, WidgetRef ref) {
-    return const Text("APP启动失败.");
-  }
-
-  @override
-  Widget buildInitLoadingWidget(WidgetRef ref) {
-    return const InitLoadingWidget();
-  }
 }

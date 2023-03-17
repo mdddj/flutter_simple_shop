@@ -18,6 +18,10 @@ _$_MeetModel _$$_MeetModelFromJson(Map<String, dynamic> json) => _$_MeetModel(
       toLocation: json['toLocation'] as String,
       state: json['state'] as int,
       user: MyUser.fromJson(json['user'] as Map<String, dynamic>),
+      images: json['images'] == null
+          ? const IListConst([])
+          : IList<FileInfo>.fromJson(json['images'],
+              (value) => FileInfo.fromJson(value as Map<String, dynamic>)),
     );
 
 Map<String, dynamic> _$$_MeetModelToJson(_$_MeetModel instance) =>
@@ -33,4 +37,7 @@ Map<String, dynamic> _$$_MeetModelToJson(_$_MeetModel instance) =>
       'toLocation': instance.toLocation,
       'state': instance.state,
       'user': instance.user,
+      'images': instance.images.toJson(
+        (value) => value,
+      ),
     };

@@ -42,6 +42,8 @@ mixin _$MeetModel {
   set state(int value) => throw _privateConstructorUsedError;
   MyUser get user => throw _privateConstructorUsedError;
   set user(MyUser value) => throw _privateConstructorUsedError;
+  IList<FileInfo> get images => throw _privateConstructorUsedError;
+  set images(IList<FileInfo> value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,7 +67,8 @@ abstract class $MeetModelCopyWith<$Res> {
       String soulName,
       String toLocation,
       int state,
-      MyUser user});
+      MyUser user,
+      IList<FileInfo> images});
 
   $MyUserCopyWith<$Res> get user;
 }
@@ -94,6 +97,7 @@ class _$MeetModelCopyWithImpl<$Res, $Val extends MeetModel>
     Object? toLocation = null,
     Object? state = null,
     Object? user = null,
+    Object? images = null,
   }) {
     return _then(_value.copyWith(
       aboutDiandian: null == aboutDiandian
@@ -140,6 +144,10 @@ class _$MeetModelCopyWithImpl<$Res, $Val extends MeetModel>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as MyUser,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as IList<FileInfo>,
     ) as $Val);
   }
 
@@ -170,7 +178,8 @@ abstract class _$$_MeetModelCopyWith<$Res> implements $MeetModelCopyWith<$Res> {
       String soulName,
       String toLocation,
       int state,
-      MyUser user});
+      MyUser user,
+      IList<FileInfo> images});
 
   @override
   $MyUserCopyWith<$Res> get user;
@@ -198,6 +207,7 @@ class __$$_MeetModelCopyWithImpl<$Res>
     Object? toLocation = null,
     Object? state = null,
     Object? user = null,
+    Object? images = null,
   }) {
     return _then(_$_MeetModel(
       aboutDiandian: null == aboutDiandian
@@ -244,6 +254,10 @@ class __$$_MeetModelCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as MyUser,
+      images: null == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as IList<FileInfo>,
     ));
   }
 }
@@ -262,7 +276,8 @@ class _$_MeetModel implements _MeetModel {
       required this.soulName,
       required this.toLocation,
       required this.state,
-      required this.user});
+      required this.user,
+      this.images = const IListConst([])});
 
   factory _$_MeetModel.fromJson(Map<String, dynamic> json) =>
       _$$_MeetModelFromJson(json);
@@ -289,10 +304,13 @@ class _$_MeetModel implements _MeetModel {
   int state;
   @override
   MyUser user;
+  @override
+  @JsonKey()
+  IList<FileInfo> images;
 
   @override
   String toString() {
-    return 'MeetModel(aboutDiandian: $aboutDiandian, age: $age, id: $id, location: $location, mianjiInfo: $mianjiInfo, name: $name, soulCodeImage: $soulCodeImage, soulName: $soulName, toLocation: $toLocation, state: $state, user: $user)';
+    return 'MeetModel(aboutDiandian: $aboutDiandian, age: $age, id: $id, location: $location, mianjiInfo: $mianjiInfo, name: $name, soulCodeImage: $soulCodeImage, soulName: $soulName, toLocation: $toLocation, state: $state, user: $user, images: $images)';
   }
 
   @JsonKey(ignore: true)
@@ -321,7 +339,8 @@ abstract class _MeetModel implements MeetModel {
       required String soulName,
       required String toLocation,
       required int state,
-      required MyUser user}) = _$_MeetModel;
+      required MyUser user,
+      IList<FileInfo> images}) = _$_MeetModel;
 
   factory _MeetModel.fromJson(Map<String, dynamic> json) =
       _$_MeetModel.fromJson;
@@ -359,6 +378,9 @@ abstract class _MeetModel implements MeetModel {
   @override
   MyUser get user;
   set user(MyUser value);
+  @override
+  IList<FileInfo> get images;
+  set images(IList<FileInfo> value);
   @override
   @JsonKey(ignore: true)
   _$$_MeetModelCopyWith<_$_MeetModel> get copyWith =>

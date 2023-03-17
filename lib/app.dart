@@ -1,7 +1,9 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'common/view.dart';
 import 'index.dart';
 import 'pages/jiujiu_page/new/widget.dart';
 
@@ -10,6 +12,27 @@ final homeModuleShowIndex = StateProvider((ref) => 0);
 
 ///APP主要页面
 const _pages = <Widget>[IndexHomeNew(), JiuJiuIndex(), CategoryIndexPage(), FavoriteIndexHome(), UserIndexHome()];
+
+
+
+class MyApp extends ApplicationWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget buildApplication(ApplicationModel applicationModel) =>const App();
+
+  @override
+  Widget buildErrorWidget(Object e, Object s, WidgetRef ref) {
+    return const Text('启动失败.');
+  }
+
+  @override
+  Widget buildInitLoadingWidget(WidgetRef ref) {
+    return const InitLoadingWidget();
+  }
+
+}
+
 
 ///APP主体框架
 class App extends ConsumerWidget {
