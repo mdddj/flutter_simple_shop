@@ -4,6 +4,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -29,7 +30,9 @@ class PyqState extends ChangeNotifier{
       loading = true;
       notifyListeners();
     }
-    final result = await DdTaokeSdk.instance.getWechat(param: WechatParam(pageId: '$_page',sort: '2'));
+    final result = await DdTaokeSdk.instance.getWechat(param: WechatParam(pageId: '$_page',sort: '2'), requestParamsBuilder: (RequestParams requestParams) {
+      return requestParams;
+    });
     if(result!=null){
       products.addAll(result.list??[]);
     }

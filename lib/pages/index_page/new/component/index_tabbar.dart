@@ -58,7 +58,6 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
         final jdRed = ref.read(jdProductsRiverpod);
         jdRed.products.clear();
         jdRed.setSelectProductTypeId(model.id);
-        jdRed.fetchData();
       },).height(36);
     },
     );

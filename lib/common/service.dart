@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import '../provider/riverpod/model/my_user.dart';
@@ -44,8 +45,9 @@ class Api extends ApiService {
   @override
   Future<MyUser?> getUser(String token) async {
     final result = await request.get('/api/get-user-by-token',
-        data: {'token': token},
-        isTaokeApi: false);
+        isTaokeApi: false,requestParams: RequestParams(
+          data: {'token': token}
+        ));
     if (result.isNotEmpty) {
       try {
         return MyUser.fromJson(jsonDecode(result));
@@ -63,22 +65,5 @@ class Api extends ApiService {
     }
   }
 
-  Future<String> post(String url, Map<String, dynamic> data) async {
-    return request.post(url,
-        data: data,
-        isTaokeApi: false);
-  }
 
-  Future<String> get(String url,
-      {Map<String, dynamic>? data,
-      ResultDataMapHandle? mapHandle,
-      ApiError? error,
-      ValueChanged<dynamic>? otherDataHandle}) async {
-    return request.get(url,
-        data: data,
-        mapData: mapHandle,
-        error: error,
-        isTaokeApi: false,
-        otherDataHandle: otherDataHandle);
-  }
 }

@@ -1,6 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
@@ -33,16 +34,26 @@ class WaimaiDetailState extends State<WaimaiDetail>  {
     super.initState();
     delayFunction(() async  {
       SmartDialog.showLoading(msg: '加载中');
-      final result = await DdTaokeSdk.instance.getActivityLink(
-          ActivityLinkParam(
-              promotionSceneId:
-              widget.type == '1' ? '20150318019998877' : '1585018034441'));
-      SmartDialog.dismiss();
-      if (mounted && result != null) {
-        setState(() {
-          model = result;
+      try{
+        final result = await kApi.getActivityLink(
+            ActivityLinkParam(
+                promotionSceneId:
+                widget.type == '1' ? '20150318019998877' : '1585018034441'), requestParamsBuilder: (RequestParams requestParams) {
+              return requestParams;
         });
+        SmartDialog.dismiss();
+        if (mounted && result != null) {
+          setState(() {
+            model = result;
+          });
+        }
+      }catch(e,s){
+        kLogErr(e);
+        kLogErr(s);
+        SmartDialog.dismiss();
+        showIosDialog(e.toString());
       }
+
     });
   }
 
@@ -176,4 +187,5 @@ class WaimaiDetailState extends State<WaimaiDetail>  {
       ),
     );
   }
+
 }

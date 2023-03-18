@@ -1,6 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -20,7 +21,9 @@ class DdqProvider extends ChangeNotifier with BaseProvider {
   /// 加载数据
   Future<void> loadData() async {
     setLoading(true);
-    final result = await DdTaokeSdk.instance.getDdq();
+    final result = await DdTaokeSdk.instance.getDdq(requestParamsBuilder: (RequestParams requestParams) {
+      return requestParams;
+    });
     setLoading(false);
     if (result != null) {
       goodsList.addAll(result.goodsList ?? []);

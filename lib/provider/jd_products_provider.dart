@@ -1,7 +1,5 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:logger/logger.dart';
 
 import '../common/components/jd/product_model.dart';
 
@@ -19,17 +17,5 @@ class JdProductsProviderState extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// 加载京东返回的数据
-  Future<void> fetchData() async {
-    if (selectProductTypeId != null) {
-      final result = await JdApi.instance
-          .getProducts(JdReqParam(eliteId: int.parse(selectProductTypeId!)));
-      try {
-        products.addAll(jdNativeProductCovert(result));
-      } catch (e, s) {
-        Logger().e('$e\n$s');
-      }
-      notifyListeners();
-    }
-  }
+
 }

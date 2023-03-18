@@ -2,11 +2,12 @@
 // Package imports:
 import 'package:after_layout/after_layout.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 // Project imports:
-import '../../common/widgets/loading_mixin.dart';
+import '../../common/index.dart';
 import '../../widgets/loading_widget.dart';
 import 'components/detail_brand_info.dart';
 import 'components/detail_product_list.dart';
@@ -51,7 +52,9 @@ class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<
   Future<void> load() async {
     _easyRefreshController.callLoad();
     page++;
-    final result = await DdTaokeSdk.instance.getBrandDetail(param: BrandProductParam(brandId: widget.brandId, pageId: '$page', pageSize: '20'));
+    final result = await kApi.getBrandDetail(param: BrandProductParam(brandId: widget.brandId, pageId: '$page', pageSize: '20'), requestParamsBuilder: (RequestParams requestParams) {
+      return requestParams;
+    });
     if (result != null) {
       products.addAll(result.list ?? []);
       _easyRefreshController.finishLoad(noMore: (result.list ?? []).length > 20);
@@ -77,7 +80,9 @@ class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<
   @override
   void afterFirstLayout(BuildContext context) async {
     setLoading(true);
-    final result = await DdTaokeSdk.instance.getBrandDetail(param: BrandProductParam(brandId: widget.brandId, pageId: '1', pageSize: '20'));
+    final result = await DdTaokeSdk.instance.getBrandDetail(param: BrandProductParam(brandId: widget.brandId, pageId: '1', pageSize: '20'), requestParamsBuilder: (RequestParams requestParams) {
+      return requestParams;
+    });
     if (result != null) {
       products.addAll(result.list ?? []);
     }

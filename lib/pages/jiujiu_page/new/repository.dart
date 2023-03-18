@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
 import '../../../index.dart';
@@ -16,7 +17,9 @@ class JiujiuRepository extends LoadingMoreBase<ProductModel> {
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
     if (_page == 1) clear();
     try {
-      final value = await kApi.getNineNineProducts(param: NineNineParam(nineCid: type.paramsValue, pageId: '$_page', pageSize: '20'));
+      final value = await kApi.getNineNineProducts(param: NineNineParam(nineCid: type.paramsValue, pageId: '$_page', pageSize: '20'), requestParamsBuilder: (RequestParams requestParams) {
+        return requestParams;
+      });
       if (value != null) {
         final list = value.list ?? [];
         addAll(list);

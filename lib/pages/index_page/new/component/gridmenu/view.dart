@@ -1,10 +1,11 @@
 
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+import '../../../../../api/apis.dart';
 import '../../../../../common/utils.dart';
 import '../../../../../config/app_config.dart';
-import '../../../../../service/api_service.dart';
 import '../../../../banjia/view.dart';
 import '../../../../brand_page/index.dart';
 import '../../../../jd/recommend/view.dart';
@@ -42,27 +43,20 @@ List<Widget> buildIndexGridMenuItems(BuildContext context) {
             title: '美团领券',
             image: mtwmImage,
             onTap: () async {
-              await tkApi.meituan({'actId': '2', 'linkType': '1'},
-                  mapHandle: (data) async {
-                    final url = (data['data'] ?? '').toString();
-                    if (url.isNotEmpty) {
-                      await utils.urlOpen(url);
-                    }
-                  });
+
+
+              final response = await MeituanCoupon().request(const RequestParams(data:{'actId': '2', 'linkType': '1'} ));
+              if(response.isSuccess){
+                response.print();
+                final url = response.getString("data");
+                if(url.isNotEmpty){
+                  await utils.urlOpen(url);
+                }
+              }
 
             },
             isAssets: true,
-            onLongTap: () async {
-              await tkApi.meituan({'actId': '2', 'linkType': '1'},
-                  mapHandle: (data) async {
-                    final url = (data['data'] ?? '').toString();
-                    if (url.isNotEmpty) {
-                      utils.copy(url, message: '领券链接复制成功,打开浏览器粘贴即可');
-                      await utils.widgetUtils
-                          .showSimpleDialog('领券链接复制成功,打开浏览器粘贴即可', title: '获取链接成功');
-                    }
-                  });
-            })),
+           )),
 
     /// 排行榜
     GridMenuItem(

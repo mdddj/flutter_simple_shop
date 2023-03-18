@@ -1,5 +1,6 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -57,8 +58,9 @@ class GoodsListState extends ChangeNotifier {
             pageId: '$page',
             sort: sort,
             cids: '${subcategory == null ? category.cid : ''}',
-            subcid: '${subcategory == null ? '' : subcategory!.subcid}'),
-        cancelToken: cancelToken);
+            subcid: '${subcategory == null ? '' : subcategory!.subcid}'),requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
     if (result != null) {
       products.addAll(result.list ?? []);
     }

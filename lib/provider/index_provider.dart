@@ -1,5 +1,6 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../util/color_util.dart';
@@ -52,7 +53,9 @@ class IndexProvider extends ChangeNotifier {
   Future<void> fetchStores() async {
     final result = await DdTaokeSdk.instance.getBrandList(
         param: BrandListParam(
-            cid: categorys[0].cid.toString(), pageId: '1', pageSize: '1'));
+            cid: categorys[0].cid.toString(), pageId: '1', pageSize: '1'), requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
     storeData = result;
     await getBrandBgColors();
     notifyListeners();

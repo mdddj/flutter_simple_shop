@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "98d1d33ed129b372846e862de23a0fc365745f4d7b5e786ce667fcbbb7ac5c07"
+      sha256: "503361166f4a100e0d7eb7fb5a62c6f0322512f2bcb48d6922caf98f24b0ab90"
       url: "https://pub.dev"
     source: hosted
-    version: "55.0.0"
+    version: "56.0.0"
   after_layout:
     dependency: "direct main"
     description:
@@ -21,10 +21,10 @@ packages:
     dependency: "direct dev"
     description:
       name: analyzer
-      sha256: "881348aed9b0b425882c97732629a6a31093c8ff20fc4b3b03fb9d3d50a3a126"
+      sha256: "93fcd81a6716e69864516750590cf1e699420615046bda19100238aa7b429785"
       url: "https://pub.dev"
     source: hosted
-    version: "5.7.1"
+    version: "5.8.0"
   animated_text_kit:
     dependency: "direct main"
     description:
@@ -285,10 +285,10 @@ packages:
     dependency: "direct main"
     description:
       name: dataoke_sdk
-      sha256: b4447231da73396750f8a9b57497afc3a696f39f70aa58675bc74f93e75ec5c9
+      sha256: "4ffdfeff4293f510b41e842b4bcecf96689a1a8a0d6d9d65b4a6305f6fc27b1f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.1"
+    version: "2.3.0"
   date_format:
     dependency: "direct main"
     description:
@@ -317,10 +317,10 @@ packages:
     dependency: "direct main"
     description:
       name: dd_js_util
-      sha256: a0fbfa8f59f32882565c1440eb57ecab0a540de5202a259092d5dd4dbc9b7570
+      sha256: d5b0f963324068cefddbccc50e100f7fab571228abafd679a51b949416e34ab2
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.6"
+    version: "3.4.0"
   dd_models:
     dependency: "direct main"
     description:
@@ -341,10 +341,10 @@ packages:
     dependency: "direct main"
     description:
       name: dio
-      sha256: "2644a9e0965a7aa3deb09cb8ce4081db4450c178f472818c8cd34216a3070d7b"
+      sha256: "3e5c4a94d112540d0c9a6b7f3969832e1604eb8cde0f88d0808382f9f632100b"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.2"
+    version: "5.0.3"
   encrypt:
     dependency: "direct main"
     description:
@@ -615,10 +615,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_smart_dialog
-      sha256: a477c9e5b5b93b481b7d565413858d038b2c1a5b3583db84f8627be7223d5ed7
+      sha256: de4c4ff47ee2c859df5bdcbf607ef9251ff1e8e698aaa533efb6de5ea4a56323
       url: "https://pub.dev"
     source: hosted
-    version: "4.9.0+3"
+    version: "4.9.0+4"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -1284,10 +1284,10 @@ packages:
     dependency: transitive
     description:
       name: saver_gallery
-      sha256: b55bc91a40fad283dd5aa04133a4821e099a3b6c58b8861b20e770d00730e80d
+      sha256: "3131bba4257f69901437c0f1ebd692201ca5f34512d42667513a3802f1c171d1"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "2.0.1"
   shelf:
     dependency: "direct main"
     description:
@@ -1663,4 +1663,4 @@ packages:
     version: "1.4.0"
 sdks:
   dart: ">=2.19.4 <3.0.0"
-  flutter: ">=3.7.3"
+  flutter: ">=3.7.7"

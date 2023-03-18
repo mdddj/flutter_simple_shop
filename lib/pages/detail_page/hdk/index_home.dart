@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart' hide tryCatch;
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
@@ -812,7 +813,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     kLog('加载产品信息:${widget.goodsId}');
     try {
       final result = await kApi.getDetailBaseData(
-        productId: widget.goodsId,
+        productId: widget.goodsId, requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+      },
       );
       if (mounted) {
         setState(() {

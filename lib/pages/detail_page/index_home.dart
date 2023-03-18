@@ -1,5 +1,3 @@
-// Flutter imports:
-// Package imports:
 import 'package:common_utils/common_utils.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +8,6 @@ import './detail_imgs_widget.dart';
 import './swiper_widget.dart';
 // Project imports:
 import '../../constant/color.dart';
-import '../../service/api_service.dart';
 import '../../widgets/coupon_price.dart';
 import '../../widgets/icon_block_widget.dart';
 import '../../widgets/no_data.dart';
@@ -18,7 +15,7 @@ import '../../widgets/title_widget.dart';
 import '../dynamic/model/wph_detail_resul.dart';
 
 //小部件
-
+///产品详情首页
 class DetailIndex extends StatefulWidget {
   final String weipinhuiId;
 
@@ -351,11 +348,11 @@ class DetailIndexState extends State<DetailIndex> {
   void initState() {
     super.initState();
     Future.microtask(() async {
-      final result = await tkApi.getWphProductInfo(widget.weipinhuiId);
-      setState(() {
-        weipinhuiDetail = result;
-        loadIng = false;
-      });
+      // final result = await tkApi.getWphProductInfo(widget.weipinhuiId);
+      // setState(() {
+      //   weipinhuiDetail = result;
+      //   loadIng = false;
+      // });
     });
   }
 }

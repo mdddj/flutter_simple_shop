@@ -1,6 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 
 // Project imports:
@@ -23,7 +24,9 @@ class BrandProvider extends ChangeNotifier {
     lists.clear();
     page = 1;
     final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'));
+        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'), requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
     if (result != null) {
       lists.addAll(result.lists ?? []);
     }
@@ -34,7 +37,9 @@ class BrandProvider extends ChangeNotifier {
   Future<void> load() async {
     page = page + 1;
     final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'));
+        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'), requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
     if (result != null) {
       lists.addAll(result.lists ?? []);
     }

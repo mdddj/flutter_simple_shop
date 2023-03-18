@@ -5,7 +5,6 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import '../service/blog_api.dart';
 import '../service/user_api.dart';
 import '../util/navigator_util.dart';
 import 'service.dart';
@@ -17,7 +16,6 @@ class Utils {
   NavigatorUtil get routerUtils => GetIt.instance.get<NavigatorUtil>();
   Api get api => GetIt.instance.get<Api>();
   UserApi get userApi => GetIt.instance.get<UserApi>();
-  BlogApi get blogApi => GetIt.instance.get<BlogApi>();
 
   // 显示一条消息
   void showMessage(String msg) {

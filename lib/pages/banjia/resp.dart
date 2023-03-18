@@ -1,5 +1,6 @@
 
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -26,7 +27,9 @@ class BanjiaResp extends ChangeNotifier {
     notifyListeners();
 
     final result =
-        await DdTaokeSdk.instance.getHalfdayProducts(sessions: currTime);
+        await DdTaokeSdk.instance.getHalfdayProducts(sessions: currTime, requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+        });
 
     if (result != null) {
       products.addAll(result.halfPriceInfo!.list ?? []);

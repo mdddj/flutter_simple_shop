@@ -1,5 +1,6 @@
 import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
@@ -135,7 +136,9 @@ class PyqList extends ConsumerWidget {
                               onPressed: () async {
                                 final result = await DdTaokeSdk.instance
                                     .getCouponsDetail(
-                                        taobaoGoodsId: product.goodsId);
+                                        taobaoGoodsId: product.goodsId, requestParamsBuilder: (RequestParams requestParams) {
+                                          return requestParams;
+                                });
                                 if (result != null) {
                                   utils.copy(result.longTpwd,
                                       message: '复制成功,打开淘宝即可领取优惠券');

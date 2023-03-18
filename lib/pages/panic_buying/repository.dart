@@ -2,6 +2,7 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -32,7 +33,9 @@ class PanicBuyingModel extends ChangeNotifier {
   Future<bool> loadRealTimeProduct() async {
     final result = await DdTaokeSdk.instance.getTopProducts(
         param: TopParam(
-            rankType: rankType, pageId: '$_page', cid: cid, pageSize: '20'));
+            rankType: rankType, pageId: '$_page', cid: cid, pageSize: '20'), requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
     if (result.isNotEmpty) {
       products.addAll(result);
     }

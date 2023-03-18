@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
@@ -22,7 +23,9 @@ class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
     try{
-      final r = await kApi.getProducts(param: ProductListParam(pageId: '$page',pageSize: '10'));
+      final r = await kApi.getProducts(param: ProductListParam(pageId: '$page',pageSize: '10'), requestParamsBuilder: (RequestParams requestParams) {
+        return requestParams;
+      });
       if(page ==  1) clear();
       if (r != null) {
         final list = r.list ?? [];

@@ -1,5 +1,6 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
 class GoodsListRepository extends LoadingMoreBase<ProductModel> {
@@ -38,7 +39,9 @@ class GoodsListRepository extends LoadingMoreBase<ProductModel> {
             sort: '$sortStr',
             brand: '$brand',
             cids: '$cids',
-            subcid: '$subcid'));
+            subcid: '$subcid'), requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
 
     if (result != null) {
       addAll(result.list ?? []);

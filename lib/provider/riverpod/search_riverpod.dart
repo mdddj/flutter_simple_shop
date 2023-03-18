@@ -1,6 +1,7 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -29,7 +30,9 @@ class SearchState extends ChangeNotifier {
             keyWords: searchKeyWorlds,
             pageSize: '$pageSize',
             type: type,
-            pageId: '$page'));
+            pageId: '$page'), requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
     if (result != null) {
       products.addAll(result.list ?? []);
       page++;
@@ -45,7 +48,9 @@ class SearchState extends ChangeNotifier {
             keyWords: searchKeyWorlds,
             pageSize: '$pageSize',
             type: type,
-            pageId: '$page'));
+            pageId: '$page'), requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
     if (result != null) {
       products.addAll(result.list ?? []);
       page++;

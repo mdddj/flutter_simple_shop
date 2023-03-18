@@ -132,3 +132,9 @@ class MyApiWithLogin extends MyAppCoreApi {
   @override
   bool get isRemoveUserToken => true;
 }
+
+//美团领券
+class MeituanCoupon extends MyAppCoreApi {
+  MeituanCoupon():super('/api/zhe/mt/tg');
+
+}

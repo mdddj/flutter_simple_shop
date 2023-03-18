@@ -2,6 +2,7 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
@@ -45,7 +46,9 @@ class BrandListPageState extends ConsumerState<BrandListPage> with LoadingMixin 
       setLoading(true);
     }
     final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(cid: '$cid', pageId: '$page', pageSize: '$size'));
+        param: BrandListParam(cid: '$cid', pageId: '$page', pageSize: '$size'), requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+    });
     if (result != null) {
       lists.addAll(result.lists ?? []);
     }

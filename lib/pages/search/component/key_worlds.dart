@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -58,7 +59,9 @@ class SearchKeyWorldsState extends ConsumerState<SearchKeyWorlds> {
   @override
   void initState() {
     Future.microtask(() async {
-      final result = await DdTaokeSdk.instance.getSuggest();
+      final result = await DdTaokeSdk.instance.getSuggest(requestParamsBuilder: (RequestParams requestParams) {
+        return requestParams;
+      });
       if (mounted) {
         _keyWorlds.clear();
         setState(() {

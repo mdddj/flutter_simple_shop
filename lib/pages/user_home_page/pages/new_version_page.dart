@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../common/widgets/loading_mixin.dart';
 import '../../../constant/style.dart';
-import '../../../service/api_service.dart';
 import '../../../widgets/edit_page_handle.dart';
 import '../../../widgets/simple_appbar.dart';
 
@@ -36,12 +35,12 @@ class NewVersionPageState extends State<NewVersionPage> with LoadingMixin {
                 TextField(controller: downUrlController, decoration: const InputDecoration(hintText: '版本下载网址')),
                 ElevatedButton(
                   onPressed: () async {
-                    final text = textEditingController.text;
-                    final desc = descController.text;
-                    final url = downUrlController.text;
-                    setLoading(true);
-                    await tkApi.setNewVersionNumber(text, desc, url);
-                    setLoading(false);
+                    // final text = textEditingController.text;
+                    // final desc = descController.text;
+                    // final url = downUrlController.text;
+                    // setLoading(true);
+                    // await tkApi.setNewVersionNumber(text, desc, url);
+                    // setLoading(false);
                   },
                   child: const Text('提交'),
                 )

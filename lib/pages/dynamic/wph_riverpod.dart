@@ -4,8 +4,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-// Project imports:
-import '../../service/api_service.dart';
 
 
 final wphRiveroid = ChangeNotifierProvider((ref) => WphState());
@@ -18,10 +16,6 @@ class WphState extends ChangeNotifier {
 
 
   Future<void> init() async {
-    await tkApi.getWphJbProducts(page,valueChanged: (list){
-      products.addAll(list);
-    });
-    notifyListeners();
   }
 
 

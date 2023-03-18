@@ -1,6 +1,7 @@
 
 
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
@@ -39,8 +40,7 @@ class ProductListRepository extends LoadingModel<ProductModel> {
             sort: state.sort,
             cids: '${state.subcategor == null ? state.category.cid : ''}',
             subcid:
-            '${state.subcategor == null ? '' : state.subcategor!.subcid}'),
-        cancelToken: state.cancelToken);
+            '${state.subcategor == null ? '' : state.subcategor!.subcid}'), requestParamsBuilder: (RequestParams requestParams) { return requestParams; });
     if (result != null) {
       final resultProducts = getNewList(result.list ?? []);
       state = state.copyWith(

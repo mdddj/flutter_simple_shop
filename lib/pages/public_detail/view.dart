@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:logger/logger.dart';
-import '../../common/utils.dart';
-import '../../service/api_service.dart';
 import '../../util/image_util.dart';
 import '../../widgets/extended_image.dart';
 import '../../widgets/loading_widget.dart';
@@ -255,31 +253,12 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
   Future<PublicDetailModel?> fetchData() async {
     switch (widget.type) {
       case 'pdd':
-        return await getPxxDetail();
       case 'wph':
-        return await getWphDetail();
       default:
       return null;
     }
   }
 
-  /// 加载唯品会详情
-  Future<PublicDetailModel?> getWphDetail() async {
-    final result = await tkApi.getWphProductInfo(widget.goodsId);
-    if (result != null) {
-      return PublicDetailModel.fromWph(result);
-    }
-    return null;
-  }
-
-  /// 加载拼夕夕商品详情
-  Future<PublicDetailModel?> getPxxDetail() async {
-    final result = await tkApi.ppdDetail(widget.goodsId);
-    if (result != null) {
-      return PublicDetailModel.fromPdd(result);
-    }
-    return null;
-  }
 
   @override
   Future<void> onGetCoupon() async {
@@ -287,7 +266,6 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
     if (info != null) {
       switch (info!.type) {
         case '拼多多':
-          await pxxGet();
           break;
         default:
           break;
@@ -295,18 +273,6 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
     }
   }
 
-  /// 平夕夕领券
-  Future<void> pxxGet({bool onShare = false}) async {
-    final urls = await tkApi.pddCovert(widget.goodsId); // 获取转换成功的链接对象
-    if (urls != null) {
-      if (onShare) {
-        utils.copy(urls['mobile_short_url'], message: '链接已复制');
-        return;
-      }
-
-      await utils.openLink(urls['mobile_short_url'], urlYs: 'pinduoduo://');
-    }
-  }
 
   @override
   Future<void> onShare() async {}

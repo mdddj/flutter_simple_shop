@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
@@ -28,7 +29,9 @@ class ActivityViewPageState extends State<ActivityViewPage> {
   }
 
   Future<void> getData() async {
-   final products = await DdTaokeSdk.instance.getTopicProducts(widget.id, 50, 1);
+   final products = await DdTaokeSdk.instance.getTopicProducts(widget.id, 50, 1, requestParamsBuilder: (RequestParams requestParams) {
+     return requestParams;
+   });
    if(mounted){
      setState(() {
        _products = products;

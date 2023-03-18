@@ -1,5 +1,5 @@
-
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
@@ -8,8 +8,7 @@ class ProductSearchMini extends StatefulWidget {
   // 搜索关键字
   final String keyWorlds;
 
-  const ProductSearchMini({Key? key, required this.keyWorlds})
-      : super(key: key);
+  const ProductSearchMini({Key? key, required this.keyWorlds}) : super(key: key);
 
   @override
   ProductSearchMiniState createState() => ProductSearchMiniState();
@@ -23,11 +22,10 @@ class ProductSearchMiniState extends State<ProductSearchMini> {
     super.initState();
     Future.microtask(() async {
       final result = await DdTaokeSdk.instance.superSearch(
-          param: SuperSearchParam(
-              keyWords: widget.keyWorlds,
-              pageSize: '50',
-              type: '1',
-              pageId: '1'));
+          param: SuperSearchParam(keyWords: widget.keyWorlds, pageSize: '50', type: '1', pageId: '1'),
+          requestParamsBuilder: (RequestParams requestParams) {
+            return requestParams;
+          });
       if (result != null) {
         if (mounted) {
           setState(() {

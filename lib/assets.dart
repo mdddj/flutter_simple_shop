@@ -74,6 +74,8 @@ class Assets {
 
   static const assetsSvgTuwenSvg = 'assets/svg/tuwen.svg';
 
+  static const assetsSvgWepaySvg = 'assets/svg/wepay.svg';
+
   static const assetsSvgBanjiaSvg = 'assets/svg/banjia.svg';
 
   static const assetsSvgJinhaoSvg = 'assets/svg/jinhao.svg';

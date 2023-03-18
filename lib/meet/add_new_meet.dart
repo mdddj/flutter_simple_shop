@@ -1,9 +1,11 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 
 import '../api/apis.dart';
+import '../assets.dart';
 import '../common/view.dart';
 
 ///线下面基申请页面
@@ -35,9 +37,7 @@ class _AddNewMeetState extends State<AddNewMeet> {
   ///提交数据
   Future<void> submitData() async {
     final api = MeetRequestAdd();
-    api.params.addAll({
-      
-    });
+    api.params.addAll({});
     final response = await api.request();
     response.handle();
   }
@@ -91,8 +91,8 @@ class _AddNewMeetState extends State<AddNewMeet> {
               controller: ctrlTimeWithDD,
               focusNode: fTimeWithDDFocusNode,
             ),
-            const PhotoUploadWidget()
-
+            CupertinoListTile(title:  Text('需支付50元不鸽保证金,结束后原路退回',style: context.textTheme.titleMedium,), leading: SvgPicture.asset(Assets.assetsSvgWepaySvg)),
+            const PhotoUploadWidget(),
           ],
         ),
       ),
@@ -110,10 +110,7 @@ class _AddNewMeetState extends State<AddNewMeet> {
       KeyboardActionsItem(focusNode: fTimeWithDDFocusNode),
     ]);
   }
-
-  
 }
-
 
 ///上传自拍表单
 class PhotoUploadWidget extends View {
@@ -121,16 +118,13 @@ class PhotoUploadWidget extends View {
 
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
-    return  CupertinoListTile(
+    return CupertinoListTile(
       backgroundColor: context.colorScheme.surfaceVariant,
       leading: const Icon(CupertinoIcons.photo),
-      title: Text('添加自拍或者生活照',style: context.textTheme.titleMedium?.copyWith(
-        color: context.primaryColor
-      )),
+      title: Text('添加自拍或者生活照', style: context.textTheme.titleMedium?.copyWith(color: context.primaryColor)),
       subtitle: const PictureSelection(multipleChoice: true),
     );
   }
-
 }
 
 ///自定义表单

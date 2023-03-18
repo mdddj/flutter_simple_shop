@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -15,7 +16,9 @@ class IndexProductsState extends StateNotifier<IndexProductsModel> {
     if(isRefresh){
       state = IndexProductsModel(products: [],page: 1);
     }
-    final r = await DdTaokeSdk.instance.getProducts(param: ProductListParam(pageId: '${state.page}'));
+    final r = await DdTaokeSdk.instance.getProducts(param: ProductListParam(pageId: '${state.page}'), requestParamsBuilder: (RequestParams requestParams) {
+      return requestParams;
+    });
     if(r!=null){
       final products = state.products;
       products.addAll(r.list??[]);
