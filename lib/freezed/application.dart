@@ -13,8 +13,8 @@ final application = FutureProvider.family<ApplicationModel,ApplocationContext>((
   try {
     final categorys = await ref.read(categoryRiverpod).init();
     await ref.read(indexStateRiverpod).fetch();
-    await KZheTaokeApiWithAppkeyGet.doRequest(ref);
-    model = model.copyWith(categorys: categorys);
+    final zheKey = await KZheTaokeApiWithAppkeyGet.doRequest(ref);
+    model = model.copyWith(categorys: categorys,zheApiKey: zheKey);
   } on AppException catch (_) {
     rethrow;
   }

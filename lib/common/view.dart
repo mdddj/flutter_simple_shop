@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../api/zhe_api.dart';
 import '../freezed/application.dart';
 import '../index.dart';
 
@@ -23,13 +24,22 @@ class ApplicationModel with _$ApplicationModel {
     required WidgetRef ref,
     required FavoritesRepository favoritesRepository,
     @Default(IListConst([])) IList<Category> categorys,
+    @Default('') String zheApiKey,
+    required ApplocationContext applocationContext
   }) = _ApplicationModel;
 }
 
 ApplicationModel builderDefaultApplication(ApplocationContext ctx) {
-  return ApplicationModel(context: ctx.context, ref: ctx.ref, favoritesRepository: FavoritesRepository());
+  return ApplicationModel(context: ctx.context, ref: ctx.ref, favoritesRepository: FavoritesRepository(), applocationContext: ctx);
 }
 
+
+extension ApplicationContextEx on ApplocationContext {
+  Future<String> get meituanWaimai async {
+    final response = await MeituanApi(ref, {'actId': '2', 'linkType': '1'}).request();
+    return response.getString("data");
+  }
+}
 
 extension ApplicationModelEx on ApplicationModel {
   IList<Category> get watchCategory => ref.watch(categoryRiverpod.select((value) => value.categorys));

@@ -8,6 +8,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../modals/blog_category_model.dart';
 
+extension CategoryRiverpodEx on WidgetRef {
+  IList<Category> get categorys => watch(categoryRiverpod.select((value) => value.categorys));
+}
 final categoryRiverpod = ChangeNotifierProvider((ref) => CategoryState());
 class CategoryState extends ChangeNotifier {
   IList<Category> categorys =const IListConst([]);
