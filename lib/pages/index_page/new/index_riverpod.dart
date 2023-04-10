@@ -3,6 +3,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_models/models/carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -42,7 +43,7 @@ class IndexState extends ChangeNotifier {
   @Doc(message: '加载双列产品数据')
   Future<void> fetch() async {
     final result = await kApi.getProducts(param: ProductListParam(pageId: '$_page'), requestParamsBuilder: (RequestParams requestParams) {
-      return requestParams;
+      return requestParams.copyWith(showDefaultLoading: false);
     });
     if (result != null) {
       products.addAll(result.list ?? []);

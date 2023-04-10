@@ -7,8 +7,8 @@ import 'common/view.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
-const apiHost = 'http://192.168.199.83';
-const apiPort = "80";
+const apiHost = 'https://itbug.shop';
+const apiPort = "9443";
 const kDebugMode = true;
 
 
@@ -23,10 +23,16 @@ class Root extends View {
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
     return ThemeBuildWidget(themeBuild: (theme) {
+      final themeValue = MyAppTheme.getTheme(theme.themeIndex);
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: MyAppTheme.getTheme(theme.themeIndex),
+        theme: themeValue.copyWith(
+          cardTheme: themeValue.cardTheme.copyWith(
+            color: context.colorScheme.surfaceVariant,
+            elevation: 0
+          )
+        ),
         darkTheme: MyAppTheme.darkTheme,
         themeMode: theme.getThemeMode,
         home: const MyApp(),
@@ -36,6 +42,10 @@ class Root extends View {
                 MediaQuery(data: MediaQuery.of(c).copyWith(textScaleFactor: 0.9, boldText: false), child: child ?? const SizedBox())),
       );
     });
+  }
+
+  void test() {
+
   }
 
 }

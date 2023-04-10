@@ -1,4 +1,5 @@
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -10,6 +11,20 @@ import '../index.dart';
 
 part 'view.freezed.dart';
 
+final appModel = StateNotifierProvider.family<AppModelState, ApplicationModel, ApplocationContext>(AppModelState.new);
+
+class AppModelState extends StateNotifier<ApplicationModel> {
+  final Ref ref;
+  final ApplocationContext applocationContext;
+
+  AppModelState(this.ref, this.applocationContext) : super(builderDefaultApplication(applocationContext));
+
+  ApplicationModel setNewState(ApplicationModel Function(ApplicationModel old) newState) {
+    state = newState.call(state);
+    return state;
+  }
+}
+
 ///启动参数
 @freezed
 class ApplocationContext with _$ApplocationContext {
@@ -19,20 +34,16 @@ class ApplocationContext with _$ApplocationContext {
 /// app全局模型
 @freezed
 class ApplicationModel with _$ApplicationModel {
-  const factory ApplicationModel({
-    required BuildContext context,
-    required WidgetRef ref,
-    required FavoritesRepository favoritesRepository,
-    @Default(IListConst([])) IList<Category> categorys,
-    @Default('') String zheApiKey,
-    required ApplocationContext applocationContext
-  }) = _ApplicationModel;
+  const factory ApplicationModel(
+      {required BuildContext context,
+      required WidgetRef ref,
+      required FavoritesRepository favoritesRepository,
+      required ApplocationContext applocationContext}) = _ApplicationModel;
 }
 
 ApplicationModel builderDefaultApplication(ApplocationContext ctx) {
   return ApplicationModel(context: ctx.context, ref: ctx.ref, favoritesRepository: FavoritesRepository(), applocationContext: ctx);
 }
-
 
 extension ApplicationContextEx on ApplocationContext {
   Future<String> get meituanWaimai async {
@@ -52,7 +63,8 @@ abstract class View extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ctx = ApplocationContext(context, ref);
-    final applicationModel = ref.read(application(ctx)).value ?? builderDefaultApplication(ctx);
+    final applicationModel = ref.read(appModel(ctx).select((value) => value));
+    kLog(applicationModel);
     return renderView(context, applicationModel);
   }
 

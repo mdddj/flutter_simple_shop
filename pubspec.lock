@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "503361166f4a100e0d7eb7fb5a62c6f0322512f2bcb48d6922caf98f24b0ab90"
+      sha256: d74f051467a841ce893a50ebeb420b7a5695f985d2781e22b3927fbc849aea45
       url: "https://pub.dev"
     source: hosted
-    version: "56.0.0"
+    version: "57.0.0"
   after_layout:
     dependency: "direct main"
     description:
@@ -21,10 +21,10 @@ packages:
     dependency: "direct dev"
     description:
       name: analyzer
-      sha256: "93fcd81a6716e69864516750590cf1e699420615046bda19100238aa7b429785"
+      sha256: b665679cdccab0c754e65021f01087c6fab07a0b13659dd58827f765739b40f8
       url: "https://pub.dev"
     source: hosted
-    version: "5.8.0"
+    version: "5.9.0"
   animated_text_kit:
     dependency: "direct main"
     description:
@@ -285,10 +285,10 @@ packages:
     dependency: "direct main"
     description:
       name: dataoke_sdk
-      sha256: "4ffdfeff4293f510b41e842b4bcecf96689a1a8a0d6d9d65b4a6305f6fc27b1f"
+      sha256: "2796bc970d29ee8f2219e3bb34e6e8ca93b1c346c75595fa9be70e9853d02c5f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.0"
+    version: "2.3.1"
   date_format:
     dependency: "direct main"
     description:
@@ -317,18 +317,18 @@ packages:
     dependency: "direct main"
     description:
       name: dd_js_util
-      sha256: d5b0f963324068cefddbccc50e100f7fab571228abafd679a51b949416e34ab2
+      sha256: "96ee5c7cdd9687ed7c2e51bc1b82f5502110c5d0e82224ce7f7e4b7661bef775"
       url: "https://pub.dev"
     source: hosted
-    version: "3.4.0"
+    version: "3.4.2"
   dd_models:
     dependency: "direct main"
     description:
       name: dd_models
-      sha256: "032ac50397735e71fbafe62cfb69010ba21526f2d6796e9b693ec454ad316ac7"
+      sha256: "2fa2ba708439c25c08280daed8b36cc7bcca9acf959e83c11865efeba3f13419"
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.3"
   decimal:
     dependency: transitive
     description:
@@ -1068,10 +1068,10 @@ packages:
     dependency: "direct main"
     description:
       name: path_provider
-      sha256: "04890b994ee89bfa80bf3080bfec40d5a92c5c7a785ebb02c13084a099d2b6f9"
+      sha256: c7edf82217d4b2952b2129a61d3ad60f1075b9299e629e149a8d2e39c2e6aad4
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.13"
+    version: "2.0.14"
   path_provider_android:
     dependency: transitive
     description:

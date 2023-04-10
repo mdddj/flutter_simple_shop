@@ -1,6 +1,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:dd_js_util/api/request_params.dart';
+import 'package:dd_models/models/carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../util/color_util.dart';

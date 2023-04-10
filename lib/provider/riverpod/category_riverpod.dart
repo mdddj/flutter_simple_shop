@@ -6,6 +6,7 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import '../../common/utils.dart';
 import '../../modals/blog_category_model.dart';
 
 extension CategoryRiverpodEx on WidgetRef {
@@ -28,7 +29,8 @@ class CategoryState extends ChangeNotifier {
   /// 加载大淘客超级分类数据
   @Doc(message: '加载超级分类数据')
   Future<IList<Category>> init() async {
-    final result = await DdTaokeSdk.instance.getCategorys();
+    kLog('加载分类数据: init...');
+    final result = await kApi.getCategorys();
     categorys = result.lock;
     if (categorys.isNotEmpty) {
       setCurrent(result[0]);

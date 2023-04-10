@@ -24,9 +24,11 @@ class FavoriteAddBtn extends View {
     final r = await FavoritesAddApi.doRequeset(params);
     r.handle(success: () {
       kLog(r.data);
-      tryCatch(() {
-        applicationModel.favoritesRepository..add(MyFavoritesModel.fromJson(r.getDataMap))..setState();
-      });
+      try{
+        // applicationModel.favoritesRepository.addNew(MyFavoritesModel.fromJson(r.getDataMap));
+      }catch(e){
+        kLogErr('$e');
+      }
     });
   }
 }

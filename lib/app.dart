@@ -22,7 +22,8 @@ class MyApp extends ApplicationWidget {
 
   @override
   Widget buildErrorWidget(Object e, Object s, WidgetRef ref) {
-    return const Text('启动失败.');
+    kLogErr('$e\n$s');
+    return const InitLoadingWidget(isError: true);
   }
 
   @override
@@ -50,26 +51,10 @@ class App extends ConsumerWidget {
 }
 
 ///app底部导航
-class AppBottomNav extends ConsumerWidget {
+class AppBottomNav extends View {
   const AppBottomNav({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final currentIndex = ref.watch(homeModuleShowIndex);
-    return BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
-        onTap: ((index) {
-          ref.read(homeModuleShowIndex.notifier).state = index;
-        }),
-        items: [
-          BottomNavigationBarItem(label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
-          BottomNavigationBarItem(label: '9.9包邮', icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
-          BottomNavigationBarItem(label: '分类', icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
-          BottomNavigationBarItem(label: '收藏', icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
-          BottomNavigationBarItem(label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
-        ]);
-  }
+
 
   Widget _buildIcon(int currentIndex, int index, String filename, BuildContext context) {
     return IfWidget(
@@ -88,5 +73,28 @@ class AppBottomNav extends ConsumerWidget {
               enableMemoryCache: true,
               color: context.iconColor,
             ));
+  }
+
+  @override
+  Widget renderView(BuildContext context, ApplicationModel appCore) {
+    final currentIndex = appCore.ref.watch(homeModuleShowIndex);
+    return BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: currentIndex,
+        onTap: ((index) {
+          appCore.ref.read(homeModuleShowIndex.notifier).state = index;
+          if(index == 3){
+            delayFunction(() {
+              appCore.favoritesRepository.refresh(true);
+            });
+          }
+        }),
+        items: [
+          BottomNavigationBarItem(label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
+          BottomNavigationBarItem(label: '9.9包邮', icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
+          BottomNavigationBarItem(label: '分类', icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
+          BottomNavigationBarItem(label: '收藏', icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
+          BottomNavigationBarItem(label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
+        ]);
   }
 }

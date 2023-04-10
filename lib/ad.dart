@@ -6,7 +6,8 @@ const kLogoSize = 90.0;
 
 ///初始化启动小部件
 class InitLoadingWidget extends StatelessWidget {
-  const InitLoadingWidget({Key? key}) : super(key: key);
+  final bool isError;
+  const InitLoadingWidget({Key? key,  this.isError = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +26,14 @@ class InitLoadingWidget extends StatelessWidget {
               height: kLogoSize,
             ),
           ),
-          const Positioned(
+           Positioned(
             bottom:  42,
             left: 0,
             right: 0,
             child: Center(
-              child: SizedBox(width: 30, height: 30, child: CircularProgressIndicator()),
+              child: Container(
+                  alignment: Alignment.center,
+                  width: 100, height: 30, child: isError ? const Text('服务繁忙') : const CircularProgressIndicator()),
             ),
           )
         ],

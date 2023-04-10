@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_models/models/carousel.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
@@ -37,12 +38,12 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
           final item = list[index];
           if (item.sourceType == 1) {
             context.navToWidget(to: ActivityViewPage(
-                id: '${item.topicId!}', title: item.topicName!));
+                id: '${item.topicId}', title: item.topicName));
           }
           if (item.sourceType == 2) {
             stateProivder.changeLoadingState(true);
             final result = await DdTaokeSdk.instance.getActivityLink(
-                ActivityLinkParam(promotionSceneId: item.activityId!), requestParamsBuilder: (RequestParams requestParams) {
+                ActivityLinkParam(promotionSceneId: item.activityId), requestParamsBuilder: (RequestParams requestParams) {
                   return requestParams;
             });
             if (result != null) {
@@ -50,8 +51,8 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
             }
             stateProivder.changeLoadingState(false);
           }
-          if ((item.link ?? '').isNotEmpty) {
-            await utils.openLink(item.link!);
+          if ((item.link).isNotEmpty) {
+            await utils.openLink(item.link);
           }
         },
       ),
@@ -73,9 +74,7 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
       onImageChange: (a, b) {},
       onImageTap: (index) {
         final clickItem = list[index];
-        if (clickItem.link != null) {
-          utils.openLink(clickItem.link!);
-        }
+        utils.openLink(clickItem.link);
       },
       autoplay: true,
     );
@@ -85,7 +84,7 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
     return Builder(
       builder: (BuildContext context) {
         return ExtendedImage.network(
-          item.topicImage!,
+          item.topicImage,
           fit: BoxFit.cover,
           borderRadius: const BorderRadius.all(Radius.circular(5)),
           shape: BoxShape.rectangle,

@@ -155,8 +155,6 @@ mixin _$ApplicationModel {
   WidgetRef get ref => throw _privateConstructorUsedError;
   FavoritesRepository get favoritesRepository =>
       throw _privateConstructorUsedError;
-  IList<Category> get categorys => throw _privateConstructorUsedError;
-  String get zheApiKey => throw _privateConstructorUsedError;
   ApplocationContext get applocationContext =>
       throw _privateConstructorUsedError;
 
@@ -175,8 +173,6 @@ abstract class $ApplicationModelCopyWith<$Res> {
       {BuildContext context,
       WidgetRef ref,
       FavoritesRepository favoritesRepository,
-      IList<Category> categorys,
-      String zheApiKey,
       ApplocationContext applocationContext});
 
   $ApplocationContextCopyWith<$Res> get applocationContext;
@@ -198,8 +194,6 @@ class _$ApplicationModelCopyWithImpl<$Res, $Val extends ApplicationModel>
     Object? context = null,
     Object? ref = null,
     Object? favoritesRepository = null,
-    Object? categorys = null,
-    Object? zheApiKey = null,
     Object? applocationContext = null,
   }) {
     return _then(_value.copyWith(
@@ -215,14 +209,6 @@ class _$ApplicationModelCopyWithImpl<$Res, $Val extends ApplicationModel>
           ? _value.favoritesRepository
           : favoritesRepository // ignore: cast_nullable_to_non_nullable
               as FavoritesRepository,
-      categorys: null == categorys
-          ? _value.categorys
-          : categorys // ignore: cast_nullable_to_non_nullable
-              as IList<Category>,
-      zheApiKey: null == zheApiKey
-          ? _value.zheApiKey
-          : zheApiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       applocationContext: null == applocationContext
           ? _value.applocationContext
           : applocationContext // ignore: cast_nullable_to_non_nullable
@@ -252,8 +238,6 @@ abstract class _$$_ApplicationModelCopyWith<$Res>
       {BuildContext context,
       WidgetRef ref,
       FavoritesRepository favoritesRepository,
-      IList<Category> categorys,
-      String zheApiKey,
       ApplocationContext applocationContext});
 
   @override
@@ -274,8 +258,6 @@ class __$$_ApplicationModelCopyWithImpl<$Res>
     Object? context = null,
     Object? ref = null,
     Object? favoritesRepository = null,
-    Object? categorys = null,
-    Object? zheApiKey = null,
     Object? applocationContext = null,
   }) {
     return _then(_$_ApplicationModel(
@@ -291,14 +273,6 @@ class __$$_ApplicationModelCopyWithImpl<$Res>
           ? _value.favoritesRepository
           : favoritesRepository // ignore: cast_nullable_to_non_nullable
               as FavoritesRepository,
-      categorys: null == categorys
-          ? _value.categorys
-          : categorys // ignore: cast_nullable_to_non_nullable
-              as IList<Category>,
-      zheApiKey: null == zheApiKey
-          ? _value.zheApiKey
-          : zheApiKey // ignore: cast_nullable_to_non_nullable
-              as String,
       applocationContext: null == applocationContext
           ? _value.applocationContext
           : applocationContext // ignore: cast_nullable_to_non_nullable
@@ -314,8 +288,6 @@ class _$_ApplicationModel implements _ApplicationModel {
       {required this.context,
       required this.ref,
       required this.favoritesRepository,
-      this.categorys = const IListConst([]),
-      this.zheApiKey = '',
       required this.applocationContext});
 
   @override
@@ -325,17 +297,11 @@ class _$_ApplicationModel implements _ApplicationModel {
   @override
   final FavoritesRepository favoritesRepository;
   @override
-  @JsonKey()
-  final IList<Category> categorys;
-  @override
-  @JsonKey()
-  final String zheApiKey;
-  @override
   final ApplocationContext applocationContext;
 
   @override
   String toString() {
-    return 'ApplicationModel(context: $context, ref: $ref, favoritesRepository: $favoritesRepository, categorys: $categorys, zheApiKey: $zheApiKey, applocationContext: $applocationContext)';
+    return 'ApplicationModel(context: $context, ref: $ref, favoritesRepository: $favoritesRepository, applocationContext: $applocationContext)';
   }
 
   @override
@@ -347,9 +313,6 @@ class _$_ApplicationModel implements _ApplicationModel {
             (identical(other.ref, ref) || other.ref == ref) &&
             const DeepCollectionEquality()
                 .equals(other.favoritesRepository, favoritesRepository) &&
-            const DeepCollectionEquality().equals(other.categorys, categorys) &&
-            (identical(other.zheApiKey, zheApiKey) ||
-                other.zheApiKey == zheApiKey) &&
             (identical(other.applocationContext, applocationContext) ||
                 other.applocationContext == applocationContext));
   }
@@ -360,8 +323,6 @@ class _$_ApplicationModel implements _ApplicationModel {
       context,
       ref,
       const DeepCollectionEquality().hash(favoritesRepository),
-      const DeepCollectionEquality().hash(categorys),
-      zheApiKey,
       applocationContext);
 
   @JsonKey(ignore: true)
@@ -376,8 +337,6 @@ abstract class _ApplicationModel implements ApplicationModel {
           {required final BuildContext context,
           required final WidgetRef ref,
           required final FavoritesRepository favoritesRepository,
-          final IList<Category> categorys,
-          final String zheApiKey,
           required final ApplocationContext applocationContext}) =
       _$_ApplicationModel;
 
@@ -387,10 +346,6 @@ abstract class _ApplicationModel implements ApplicationModel {
   WidgetRef get ref;
   @override
   FavoritesRepository get favoritesRepository;
-  @override
-  IList<Category> get categorys;
-  @override
-  String get zheApiKey;
   @override
   ApplocationContext get applocationContext;
   @override

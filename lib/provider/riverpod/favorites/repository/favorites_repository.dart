@@ -29,4 +29,11 @@ class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel, Favori
     }
     setState();
   }
+
+  // void addNew(MyFavoritesModel model){
+  //   // array = array.insert(0, model);
+  //   // setState();
+  //   kLog('添加后数量.${array.length}');
+  //   refresh(true);
+  // }
 }
