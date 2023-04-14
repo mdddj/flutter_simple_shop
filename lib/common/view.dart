@@ -1,5 +1,4 @@
 import 'package:dataoke_sdk/model/category.dart';
-import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -64,7 +63,6 @@ abstract class View extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final ctx = ApplocationContext(context, ref);
     final applicationModel = ref.read(appModel(ctx).select((value) => value));
-    kLog(applicationModel);
     return renderView(context, applicationModel);
   }
 

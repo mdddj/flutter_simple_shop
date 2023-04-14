@@ -29,7 +29,6 @@ class CategoryState extends ChangeNotifier {
   /// 加载大淘客超级分类数据
   @Doc(message: '加载超级分类数据')
   Future<IList<Category>> init() async {
-    kLog('加载分类数据: init...');
     final result = await kApi.getCategorys();
     categorys = result.lock;
     if (categorys.isNotEmpty) {

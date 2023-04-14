@@ -22,7 +22,9 @@ class MyApp extends ApplicationWidget {
 
   @override
   Widget buildErrorWidget(Object e, Object s, WidgetRef ref) {
-    kLogErr('$e\n$s');
+    if(e is AppException){
+      kLog(e.message);
+    }
     return const InitLoadingWidget(isError: true);
   }
 

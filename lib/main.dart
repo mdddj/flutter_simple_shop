@@ -6,10 +6,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'common/view.dart';
 import 'index.dart';
 
-/// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '443'
+/// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9443'
 const apiHost = 'https://itbug.shop';
-const apiPort = "9443";
-const kDebugMode = true;
+const apiPort = "9445";
+const kAppDebugMode = false;
 
 
 
