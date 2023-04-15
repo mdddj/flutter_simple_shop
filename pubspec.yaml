@@ -49,7 +49,7 @@ dependencies:
   shelf_proxy: ^1.0.2
   responsive_builder: ^0.6.4
   bubble_tab_indicator: ^0.1.6
-  badges: ^3.1.0
+  badges: ^3.1.1
   carousel_pro_nullsafety: ^2.0.0
   flutter_markdown: ^0.6.14
   zefyrka: ^1.4.0
@@ -71,14 +71,14 @@ dependencies:
   keyboard_actions: ^4.2.0
   extended_image_library: ^3.4.1
   fast_immutable_collections: ^9.0.0
-  flutter_slidable: ^2.0.0
+  flutter_slidable: ^3.0.0
   loading_more_list_fast: ^6.0.1
   loading_more_list_library_fast: ^3.0.1
   extended_text_field: ^11.0.1
   dd_js_util: ^3.5.4
   dd_models: ^0.0.3
   dd_check_plugin: ^2.2.1
-  dataoke_sdk: ^2.3.2
+  dataoke_sdk: ^2.3.3
   permission_handler: ^10.2.0
 
 

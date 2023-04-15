@@ -1,6 +1,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+import '../../../widgets/loading/custom_loading_more_widget.dart';
 import '../../../widgets/waterfall_goods_card.dart';
 import 'repository.dart';
 import 'types.dart';
@@ -45,12 +46,17 @@ class _Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingMoreList(ListConfig<ProductModel>(
-        itemBuilder: (ctx, item, index) {
-          return WaterfallGoodsCard(item);
-        },
-        sourceList: repository,
-        padding: const EdgeInsets.all(8),
-        extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8)));
+    return LoadingMoreCustomScrollView(
+      slivers: [
+        LoadingMoreSliverList(SliverListConfig<ProductModel>(
+            itemBuilder: (ctx, item, index) {
+              return WaterfallGoodsCard(item);
+            },
+            sourceList: repository,
+            padding: const EdgeInsets.all(8),
+            indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
+            extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8)))
+      ],
+    );
   }
 }

@@ -18,7 +18,7 @@ class JiujiuRepository extends LoadingMoreBase<ProductModel> {
     if (_page == 1) clear();
     try {
       final value = await kApi.getNineNineProducts(param: NineNineParam(nineCid: type.paramsValue, pageId: '$_page', pageSize: '20'), requestParamsBuilder: (RequestParams requestParams) {
-        return requestParams;
+        return requestParams.copyWith(showDefaultLoading: false);
       });
       if (value != null) {
         final list = value.list ?? [];

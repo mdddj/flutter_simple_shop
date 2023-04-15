@@ -55,7 +55,9 @@ class IndexState extends ChangeNotifier {
 
   // 加载轮播图
   Future<void> getAllCarousel() async {
-    final result = await kApi.getCarousel();
+    final result = await kApi.getCarousel(requestParamsBuilder: (o){
+      return o.copyWith(showDefaultLoading: false);
+    });
     carousel = result;
   }
 

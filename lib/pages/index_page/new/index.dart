@@ -7,6 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../common/components/new_products/respose.dart';
 import '../../../index.dart';
+import '../../../widgets/loading/custom_loading_more_widget.dart';
 
 
 
@@ -81,6 +82,7 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAli
           SliverListConfig<ProductModel>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: repository,
+              indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
               extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: kDefaultPadding,

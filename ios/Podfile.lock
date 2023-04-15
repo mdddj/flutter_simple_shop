@@ -104,7 +104,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   dataoke_sdk: aa95616c89b448c7b3f698825a49bed62c9b7b9d
-  dd_check_plugin: f3d378fdfffd915012853d731035c0bbade6ad9f
+  dd_check_plugin: fadd604fdabcd4c8674046cbda00aeda61646a03
   dd_models: 5bd836519341310a49aa6c53a2203c300021d790
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_image_compress: 5a5e9aee05b6553048b8df1c3bc456d0afaac433

@@ -1,5 +1,3 @@
-
-
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dio/dio.dart';
@@ -10,16 +8,15 @@ import 'goods_list_params_model.dart';
 
 ///产品列表的数据仓库
 class ProductListRepository extends LoadingModel<ProductModel> {
-
   late GoodsListParamsModel state; //筛选产品参数
 
-  int page = 1;//默认第一页
+  int page = 1; //默认第一页
   bool more = true; //默认还有下一页
 
   @override
-  Future<bool> loadData([bool isLoadMoreAction = false]) async  {
+  Future<bool> loadData([bool isLoadMoreAction = false]) async {
     bool success = false;
-    await fetchData((v)=>more=v,(v)=>success=v);
+    await fetchData((v) => more = v, (v) => success = v);
     addAll(state.products);
     return success;
   }
@@ -32,24 +29,23 @@ class ProductListRepository extends LoadingModel<ProductModel> {
   }
 
   // 加载数据
-  Future<void> fetchData(ValueChanged<bool> nomoreHandle,ValueChanged<bool> loadState) async {
+  Future<void> fetchData(ValueChanged<bool> nomoreHandle, ValueChanged<bool> loadState) async {
     state = state.copyWith(cancelToken: CancelToken());
     final result = await DdTaokeSdk.instance.getProducts(
         param: ProductListParam(
             pageId: '${state.page}',
             sort: state.sort,
             cids: '${state.subcategor == null ? state.category.cid : ''}',
-            subcid:
-            '${state.subcategor == null ? '' : state.subcategor!.subcid}'), requestParamsBuilder: (RequestParams requestParams) { return requestParams; });
+            subcid: '${state.subcategor == null ? '' : state.subcategor!.subcid}'),
+        requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams.copyWith(showDefaultLoading: false);
+        });
     if (result != null) {
       final resultProducts = getNewList(result.list ?? []);
-      state = state.copyWith(
-          products: resultProducts,
-          page: state.page++,
-          initLoading: false);
+      state = state.copyWith(products: resultProducts, page: state.page++, initLoading: false);
       loadState.call(true);
       nomoreHandle.call(resultProducts.isNotEmpty);
-    }else{
+    } else {
       loadState.call(false);
     }
   }
@@ -59,5 +55,4 @@ class ProductListRepository extends LoadingModel<ProductModel> {
     state.products.addAll(newList);
     return List.from(state.products);
   }
-
 }

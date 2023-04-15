@@ -814,7 +814,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     try {
       final result = await kApi.getDetailBaseData(
         productId: widget.goodsId, requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
+          return requestParams.copyWith(showDefaultLoading: false);
       },
       );
       if (mounted) {

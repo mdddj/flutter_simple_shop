@@ -37,16 +37,12 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingMoreCustomScrollView(
-      slivers: [
-        LoadingMoreSliverList(SliverListConfig<ProductModel>(
-            itemBuilder: _renderLayout,
-            sourceList: repository,
-            padding: const EdgeInsets.all(12),
-            extendedListDelegate: kWaterfallDefaultExtendedListDelegate,
-            indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new)),
-      ],
-    );
+    return LoadingMoreList(ListConfig<ProductModel>(
+        itemBuilder: _renderLayout,
+        sourceList: repository,
+        padding: const EdgeInsets.all(12),
+        extendedListDelegate: kWaterfallDefaultExtendedListDelegate,
+        indicatorBuilder: CustomLoadingMoreWidget.new));
   }
 
   ///渲染产品布局

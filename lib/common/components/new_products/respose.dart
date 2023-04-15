@@ -24,7 +24,7 @@ class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
     try{
       final r = await kApi.getProducts(param: ProductListParam(pageId: '$page',pageSize: '10'), requestParamsBuilder: (RequestParams requestParams) {
-        return requestParams;
+        return requestParams.copyWith(showDefaultLoading: false);
       });
       if(page ==  1) clear();
       if (r != null) {

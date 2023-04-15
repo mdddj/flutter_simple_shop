@@ -15,7 +15,11 @@ class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomLoadingMoreWidget(context, indicatorStatus).toSliverWidget;
+    return CustomLoadingMoreWidget(
+      context,
+      indicatorStatus,
+      isSliver: true,
+    );
   }
 }
 
@@ -36,6 +40,9 @@ class CustomLoadingMoreWidget extends StatelessWidget {
         break;
       case IndicatorStatus.fullScreenBusying:
         child = const _FullScreenBusying();
+        if(isSliver){
+          child = SliverFillRemaining(child: child);
+        }
         break;
       case IndicatorStatus.loadingMoreBusying:
         child = const _LoadingMoreBusying();
@@ -53,7 +60,7 @@ class CustomLoadingMoreWidget extends StatelessWidget {
         child = const SizedBox();
         break;
     }
-    return isSliver ? child.toSliverWidget : child;
+    return child;
   }
 }
 
@@ -87,25 +94,7 @@ class _LoadingMoreBusying extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          SizedBox(height: 12),
-          SizedBox(
-            width: 15,
-            height: 15,
-            child: CircularProgressIndicator(),
-          ),
-          SizedBox(
-            height: 12,
-          ),
-          Text('加载中')
-        ],
-      ),
-    );
+    return const CircularProgressIndicator().defaultPadding12.center;
   }
 }
 
@@ -114,7 +103,7 @@ class _Empty extends ConsumerWidget {
   const _Empty({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30),
       alignment: Alignment.center,
@@ -132,10 +121,14 @@ class _Empty extends ConsumerWidget {
             height: 20,
           ),
           Text("暂时没有数据呢~", style: context.textTheme.bodyLarge),
-          const SizedBox(height: 12,),
-          FilledButton(onPressed: (){
-            ref.read(homeModuleShowIndex.notifier).state = 0;
-          }, child: const Text('浏览购物'))
+          const SizedBox(
+            height: 12,
+          ),
+          FilledButton(
+              onPressed: () {
+                ref.read(homeModuleShowIndex.notifier).state = 0;
+              },
+              child: const Text('浏览购物'))
         ],
       ),
     );
