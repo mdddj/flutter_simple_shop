@@ -43,9 +43,9 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
             ))
       ],
       bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(48),
+        preferredSize: const Size.fromHeight(38),
         child: SizedBox(
-          height: 48,
+          height:38,
           child: TabBar(
             controller: tabController,
             isScrollable: true,

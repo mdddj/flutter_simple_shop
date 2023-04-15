@@ -27,9 +27,6 @@ import '../detail_imgs_widget.dart';
 //是否展示轮播图上面的返回箭头
 final satteShowBackButton = StateProvider((ref) => true);
 
-//是否在顶部展示导航条
-final stateShowAppbar = StateProvider((ref) => false);
-
 //详情页面
 class HaoDanKuDetailItem extends ConsumerStatefulWidget {
   final String goodsId;
@@ -45,7 +42,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
   CouponLinkResult? couponLinkResult;
   ShopInfo? _shopInfo;
   late Future<String> futureBuildData = initDatas();
-  double _appbarOpaction = 0;
   int curentSwaiperIndex = 0;
   double ztlHei = MediaQueryData.fromWindow(window).padding.top; // 转态栏高度
   double _topAppbarHei = 0; // 顶部显影工具条的高度
@@ -55,7 +51,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
   late TabController _tabController;
   final ScrollController _scrollController = ScrollController();
   final GlobalKey _swaperGlogbalKey = GlobalKey();
-  final GlobalKey _appbarGlogbalKey = GlobalKey();
   final GlobalKey _detailImagesGlogbalKey = GlobalKey();
 
   @override
@@ -74,9 +69,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
       } else if (t > 1.0) {
         t = 1.0;
       }
-      setState(() {
-        _appbarOpaction = t;
-      });
 
       //计算详情widget到顶部距离
       var topHei = getY(_detailImagesGlogbalKey.currentContext!);
@@ -106,10 +98,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
       var scrollHeight = _scrollController.offset;
       if (scrollHeight >= 2) {
         ref.read(satteShowBackButton.notifier).state = false;
-        ref.read(stateShowAppbar.notifier).state = true;
       } else {
         ref.read(satteShowBackButton.notifier).state = true;
-        ref.read(stateShowAppbar.notifier).state = false;
       }
       var t = scrollHeight / (MediaQuery.of(context).size.width * 0.85);
       if (scrollHeight == 0) {
@@ -120,9 +110,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
       } else if (scrollHeight < 200) {
         _showToTopButton = false;
       }
-      setState(() {
-        _appbarOpaction = t;
-      });
     });
   }
 
@@ -151,11 +138,11 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
 
   Widget buildCustomScrollViewShop() {
     return Scaffold(
+      appBar:  buildOpacityAppbar(),
       body: NotificationListener<LayoutChangedNotification>(
         onNotification: (notification) {
           if (_topAppbarHei == 0) {
             setState(() {
-              _topAppbarHei = (_appbarGlogbalKey.currentContext?.size?.height ?? 0) + MediaQueryData.fromWindow(window).padding.top;
               _initImagesTopHei = getY(_detailImagesGlogbalKey.currentContext!);
             });
             addScrollListener();
@@ -168,6 +155,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
                 controller: _scrollController,
                 headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
                   return <Widget>[
+
                     SliverToBoxAdapter(
                       child: buildGoodsSwiper(),
                     ),
@@ -183,7 +171,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
                   ];
                 },
                 body: buildGoodsDetailImaegs()),
-            buildOpacityAppbar(),
+
             // 返回顶部按钮
 
             Positioned(
@@ -239,7 +227,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        _renderBottomItem('帮助', Icons.help),
+        // _renderBottomItem('帮助', Icons.help),
         FavoriteAddBtn(_addFavoritesParams),
         const SizedBox(
           width: 12,
@@ -634,21 +622,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     return Stack(
       children: <Widget>[
         buildContainer(swiper: swiper),
-        AnimatedPositioned(
-          duration: const Duration(milliseconds: 100),
-          left: 12,
-          top: ref.watch(satteShowBackButton) ? (12 + context.paddingTop) : -12,
-          child: GestureDetector(
-            onTap: context.pop,
-            child: CircleAvatar(
-              backgroundColor: Colors.black26.withOpacity(.3),
-              child: const Icon(
-                Icons.chevron_left,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
         Positioned(
           right: 12,
           bottom: 12,
@@ -666,61 +639,38 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
   }
 
   // 顶部显影appbar
-  Widget buildOpacityAppbar() {
-    final isShow = ref.watch(stateShowAppbar);
-    if (isShow.not) {
-      return const SizedBox();
-    }
-    return Opacity(
-      opacity: _appbarOpaction,
-      child: Container(
-        key: _appbarGlogbalKey,
-        padding: EdgeInsets.only(left: 12, right: 12, top: context.paddingTop),
-        height: kToolbarHeight + context.paddingTop,
-        width: context.screenWidth,
-        decoration: BoxDecoration(boxShadow: const [BoxShadow(color: Colors.black26)], color: context.appbarBackgroundColor),
-        child: Row(
-          children: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.chevron_left,
-                color: context.iconColor,
-              ),
+  AppBar buildOpacityAppbar() {
+    return AppBar(
+      title: Row(
+        children: <Widget>[
+          Expanded(
+            child: TabBar(
+                indicator: RoundUnderlineTabIndicator(
+                    insets: const EdgeInsets.only(bottom: 3),
+                    borderSide: BorderSide(
+                      width: 2,
+                      color: context.primaryColor,
+                    )),
+                tabs: const [
+                  Tab(text: '宝贝'),
+                  Tab(text: '详情'),
+                  Tab(text: '推荐'),
+                ],
+                controller: _tabController,
+                onTap: tabOnChange,
+                labelColor: context.primaryColor),
+          ),
+          const SizedBox(
+            width: 12,
+          ),
+          Container(
+            alignment: Alignment.centerRight,
+            child: const Icon(
+              Icons.more_horiz,
               color: Colors.black,
-              onPressed: () => Navigator.pop(context),
             ),
-            const SizedBox(
-              width: 12,
-            ),
-            Expanded(
-              child: TabBar(
-                  indicator: RoundUnderlineTabIndicator(
-                      insets: const EdgeInsets.only(bottom: 3),
-                      borderSide: BorderSide(
-                        width: 2,
-                        color: context.primaryColor,
-                      )),
-                  tabs: const [
-                    Tab(text: '宝贝'),
-                    Tab(text: '详情'),
-                    Tab(text: '推荐'),
-                  ],
-                  controller: _tabController,
-                  onTap: tabOnChange,
-                  labelColor: context.primaryColor),
-            ),
-            const SizedBox(
-              width: 12,
-            ),
-            Container(
-              alignment: Alignment.centerRight,
-              child: const Icon(
-                Icons.more_horiz,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -23,14 +23,31 @@ class Root extends View {
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
     return ThemeBuildWidget(themeBuild: (theme) {
-      final themeValue = MyAppTheme.getTheme(theme.themeIndex);
+      final themeValue = ThemeData.light(useMaterial3: true);
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
         theme: themeValue.copyWith(
+          scaffoldBackgroundColor: Colors.grey.shade200,
           cardTheme: themeValue.cardTheme.copyWith(
-            color: context.colorScheme.surfaceVariant,
-            elevation: 0
+            color: Colors.white,
+            elevation: 0.3
+          ),
+          appBarTheme: themeValue.appBarTheme.copyWith(
+            backgroundColor: Colors.white,
+            elevation: 0.3,
+            surfaceTintColor: Colors.white
+          ),
+          primaryColor: Colors.pink,
+          colorScheme: themeValue.colorScheme.copyWith(
+            primary: Colors.pink,
+          ),
+          tabBarTheme: themeValue.tabBarTheme.copyWith(
+            labelColor: Colors.pink,
+            unselectedLabelColor: Colors.black,
+            dividerColor: Colors.pink,
+            indicatorColor: Colors.pink,
+            labelStyle: const TextStyle(fontWeight: FontWeight.bold)
           )
         ),
         darkTheme: MyAppTheme.darkTheme,

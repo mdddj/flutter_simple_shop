@@ -12,7 +12,7 @@ BoxShadow boxShaow = const BoxShadow(
 const kHomeCateTabHeight = 35.0;
 
 // 默认边距
-const kDefaultPadding = 12.0;
+const kDefaultPadding = 8.0;
 
 // 圆角
-const kDefaultRadius= 12.0;
+const kDefaultRadius= 8.0;
