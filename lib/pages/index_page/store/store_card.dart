@@ -1,12 +1,12 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_models/models/brand.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../provider/index_provider.dart';
 
 // 品牌特卖
 class StoreItemCard extends ConsumerWidget {
-  final ListElement storeInfo;
+  final BrandItem storeInfo;
 
   const StoreItemCard({Key? key, required this.storeInfo}) : super(key: key);
 
@@ -16,7 +16,7 @@ class StoreItemCard extends ConsumerWidget {
   }
 
   Widget _buildInfo(BuildContext context,WidgetRef ref) {
-    final bgColor = ref.read(indexProviderRiverpod).brandBgColorMap[storeInfo.brandId] ?? Colors.grey[200];
+    final bgColor = ref.read(indexProviderRiverpod).brandBgColorMap[storeInfo.brandid] ?? Colors.grey[200];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
@@ -41,7 +41,7 @@ class StoreItemCard extends ConsumerWidget {
                   ),
                   const SizedBox(width: 12),
                   Text(
-                    storeInfo.brandName!,
+                    storeInfo.brandname,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
@@ -62,7 +62,7 @@ class StoreItemCard extends ConsumerWidget {
 
   Image _buildLogo() {
     return Image.network(
-      storeInfo.brandLogo!,
+      storeInfo.brandlogo,
       width: 36,
       height: 36,
     );

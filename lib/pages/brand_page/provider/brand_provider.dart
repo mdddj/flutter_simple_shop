@@ -2,6 +2,7 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/api/request_params.dart';
+import 'package:dd_models/models/brand.dart';
 import 'package:flutter/material.dart';
 
 // Project imports:
@@ -11,7 +12,7 @@ class BrandProvider extends ChangeNotifier {
   int page = 1;
   int size = 10;
   String cid = '';
-  List<ListElement> lists = [];
+  List<BrandItem> lists = [];
   String brandId = '';
   int pageId = 1;
   int pageSize = 20;
@@ -28,7 +29,7 @@ class BrandProvider extends ChangeNotifier {
           return requestParams;
     });
     if (result != null) {
-      lists.addAll(result.lists ?? []);
+      lists.addAll(result.lists);
     }
     notifyListeners();
   }
@@ -41,7 +42,7 @@ class BrandProvider extends ChangeNotifier {
           return requestParams;
     });
     if (result != null) {
-      lists.addAll(result.lists ?? []);
+      lists.addAll(result.lists);
     }
     notifyListeners();
   }

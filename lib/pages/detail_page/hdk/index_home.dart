@@ -11,7 +11,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../common/utils.dart';
 import '../../../freezed/add_favorites_params.dart';
 import '../../../modals/shop_info.dart';
@@ -151,95 +150,77 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
   }
 
   Widget buildCustomScrollViewShop() {
-    return NotificationListener<LayoutChangedNotification>(
-      onNotification: (notification) {
-        if (_topAppbarHei == 0) {
-          setState(() {
-            _topAppbarHei = (_appbarGlogbalKey.currentContext?.size?.height ?? 0) + MediaQueryData.fromWindow(window).padding.top;
-            _initImagesTopHei = getY(_detailImagesGlogbalKey.currentContext!);
-          });
-          addScrollListener();
-        }
-        return true;
-      },
-      child: Stack(
-        children: <Widget>[
-          NestedScrollView(
-              controller: _scrollController,
-              headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-                return <Widget>[
-                  SliverToBoxAdapter(
-                    child: buildGoodsSwiper(),
-                  ),
-                  buildSliverToBoxAdapterOne(),
-                  buildSliverToBoxAdapterTwo(),
-                  buildSliverToBoxAdapterThree(),
-                  buildSliverToBoxAdapterFour(),
-                  buildSliverToBoxAdapterFive(),
-                  buildSliverToBoxAdapterSix(),
-                  buildSliverToBoxAdapterPlaceholder(),
-                  buildSliverToBoxAdapterShop(),
-                  buildSliverToBoxAdapterPlaceholder(),
-                ];
-              },
-              body: buildGoodsDetailImaegs()),
-          buildOpacityAppbar(),
-          // 返回顶部按钮
+    return Scaffold(
+      body: NotificationListener<LayoutChangedNotification>(
+        onNotification: (notification) {
+          if (_topAppbarHei == 0) {
+            setState(() {
+              _topAppbarHei = (_appbarGlogbalKey.currentContext?.size?.height ?? 0) + MediaQueryData.fromWindow(window).padding.top;
+              _initImagesTopHei = getY(_detailImagesGlogbalKey.currentContext!);
+            });
+            addScrollListener();
+          }
+          return true;
+        },
+        child: Stack(
+          children: <Widget>[
+            NestedScrollView(
+                controller: _scrollController,
+                headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+                  return <Widget>[
+                    SliverToBoxAdapter(
+                      child: buildGoodsSwiper(),
+                    ),
+                    buildSliverToBoxAdapterOne(),
+                    buildSliverToBoxAdapterTwo(),
+                    buildSliverToBoxAdapterThree(),
+                    buildSliverToBoxAdapterFour(),
+                    buildSliverToBoxAdapterFive(),
+                    buildSliverToBoxAdapterSix(),
+                    buildSliverToBoxAdapterPlaceholder(),
+                    buildSliverToBoxAdapterShop(),
+                    buildSliverToBoxAdapterPlaceholder(),
+                  ];
+                },
+                body: buildGoodsDetailImaegs()),
+            buildOpacityAppbar(),
+            // 返回顶部按钮
 
-          Positioned(
-            bottom: 80 + MediaQuery.of(context).padding.bottom,
-            right: 12,
-            child: InkWell(
-              onTap: () {
-                _scrollController.animateTo(0, duration: const Duration(milliseconds: 600), curve: Curves.ease);
-              },
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: const BorderRadius.all(Radius.circular(35)),
-                    border: Border.all(width: .5, color: Colors.black26.withOpacity(.2))),
-                child: const Icon(
-                  Icons.vertical_align_top,
-                  color: Colors.black,
+            Positioned(
+              bottom: MediaQuery.of(context).padding.bottom,
+              right: 12,
+              child: InkWell(
+                onTap: () {
+                  _scrollController.animateTo(0, duration: const Duration(milliseconds: 600), curve: Curves.ease);
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(Radius.circular(35)),
+                      border: Border.all(width: .5, color: Colors.black26.withOpacity(.2))),
+                  child: const Icon(
+                    Icons.vertical_align_top,
+                    color: Colors.black,
+                  ),
                 ),
               ),
-            ),
-          ).visible(_showToTopButton),
-
-          //底部操作栏
-          Positioned(
-            bottom: 0,
-            left: 0,
-            child: Container(
-              decoration: BoxDecoration(color: context.theme.bottomAppBarTheme.color),
-              width: context.screenWidth,
-              height: kToolbarHeight + context.paddingBottom,
-              child: Row(
-                children: [
-                  const SizedBox(
-                    width: 12,
-                  ),
-                  _renderBottomItem('帮助', Icons.help),
-                  Expanded(child: buildBottomRow(context)),
-                ],
-              ),
-            ),
-          )
-        ],
+            ).visible(_showToTopButton),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        height: 100,
+        child: buildBottomRow(context),
       ),
     );
   }
 
   ///底部操作区域菜单图标+文字
   Widget _renderBottomItem(String key, IconData icon) {
-    return Container(
-      height: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [Icon(icon), const SizedBox(height: 2), Text(key)],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [Icon(icon)],
     );
   }
 
@@ -251,40 +232,36 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         imageurl: info!.mainPic,
         title: info!.dtitle,
         amount: '${info!.originalPrice}',
-        arrivalprice: '${info!.actualPrice}'
-    );
+        arrivalprice: '${info!.actualPrice}');
   }
 
   Widget buildBottomRow(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.home)),
+        _renderBottomItem('帮助', Icons.help),
         FavoriteAddBtn(_addFavoritesParams),
-        Expanded(
-          child: WaterfallFlow.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-            children: <Widget>[
-              FilledButton(
-                  onPressed: () async {
-                    if (couponLinkResult != null) {
-                      utils.copy(couponLinkResult!.longTpwd ?? '无优惠券', message: '复制成功,打开淘宝APP领取优惠券');
-                    }
-                  },
-                  child: const Text('复制口令')),
-              ElevatedButton(
-                  onPressed: () async {
-                    if (couponLinkResult != null) {
-                      await utils.openTaobao(couponLinkResult!.couponClickUrl ?? 'https://itbug.shop');
-                    }
-                  },
-                  child: const Text('立即领券')),
-            ],
-          ),
+        const SizedBox(
+          width: 12,
         ),
+        FilledButton(
+                onPressed: () async {
+                  if (couponLinkResult != null) {
+                    await utils.openTaobao(couponLinkResult!.couponClickUrl ?? 'https://itbug.shop');
+                  }
+                },
+                child: const Text('立即领券'))
+            .expanded,
+        const SizedBox(
+          width: 12,
+        ),
+        ElevatedButton(
+            onPressed: () async {
+              if (couponLinkResult != null) {
+                utils.copy(couponLinkResult!.longTpwd ?? '无优惠券', message: '复制成功,打开淘宝APP领取优惠券');
+              }
+            },
+            child: const Text('复制口令')),
         const SizedBox(
           width: 12,
         )
@@ -303,7 +280,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
             alignment: Alignment.topLeft,
             child: const Text(
               '宝贝详情',
-              style: TextStyle( fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
           DetailImagesWidget(
@@ -660,7 +637,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         AnimatedPositioned(
           duration: const Duration(milliseconds: 100),
           left: 12,
-          top: ref.watch(satteShowBackButton) ? (12+context.paddingTop) : -12,
+          top: ref.watch(satteShowBackButton) ? (12 + context.paddingTop) : -12,
           child: GestureDetector(
             onTap: context.pop,
             child: CircleAvatar(
@@ -755,7 +732,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     );
   }
 
-
   String getTimeStr(String time) {
     return DateUtil.formatDateStr(time, format: DateFormats.y_mo_d);
   }
@@ -813,9 +789,10 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     kLog('加载产品信息:${widget.goodsId}');
     try {
       final result = await kApi.getDetailBaseData(
-        productId: widget.goodsId, requestParamsBuilder: (RequestParams requestParams) {
+        productId: widget.goodsId,
+        requestParamsBuilder: (RequestParams requestParams) {
           return requestParams.copyWith(showDefaultLoading: false);
-      },
+        },
       );
       if (mounted) {
         setState(() {

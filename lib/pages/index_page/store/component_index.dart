@@ -22,10 +22,10 @@ class StoreComponentIndex extends ConsumerWidget {
               children: [
                 utils.widgetUtils.marginTop(height: 12),
                 const ComponentTitle(title: '今日品牌推荐', height: 24),
-                StoreItemCard(storeInfo: storeData.lists![0]),
+                StoreItemCard(storeInfo: storeData.lists[0]),
                 utils.widgetUtils.marginTop(),
                 StoreGoodsCard(
-                  storeInfo: storeData.lists![0],
+                  storeInfo: storeData.lists[0],
                 ),
                 utils.widgetUtils.marginTop()
               ],

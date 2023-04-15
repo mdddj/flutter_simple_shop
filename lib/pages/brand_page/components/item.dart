@@ -1,5 +1,5 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_models/models/brand.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../util/image_util.dart';
@@ -9,7 +9,7 @@ import '../brand_detail.dart';
 
 /// 品牌布局
 class BrandItemCard extends StatelessWidget {
-  final ListElement storeInfo;
+  final BrandItem storeInfo;
 
   const BrandItemCard({Key? key, required this.storeInfo}) : super(key: key);
 
@@ -29,7 +29,7 @@ class BrandItemCard extends StatelessWidget {
   Widget _buildHeader(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        await context.navToWidget(to: BrandDetailPage(brandId: storeInfo.brandId.toString()));
+        await context.navToWidget(to: BrandDetailPage(brandId: storeInfo.brandid.toString()));
       },
       child: Flex(
         direction: Axis.horizontal,
@@ -42,7 +42,7 @@ class BrandItemCard extends StatelessWidget {
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                 ),
                 child: Image.network(
-                  MImageUtils.magesProcessor(storeInfo.brandLogo!),
+                  MImageUtils.magesProcessor(storeInfo.brandlogo),
                   width: 50,
                   height: 50,
                 ),
@@ -56,20 +56,20 @@ class BrandItemCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '${storeInfo.brandName}',
+                        storeInfo.brandname,
                         style: const TextStyle(
                             fontSize: 14,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        '已售${Numeral(storeInfo.sales!)}件 >',
+                        '已售${Numeral(storeInfo.sales)}件 >',
                         style: TextStyle(fontSize: 12, color: Colors.grey[500]),
                       )
                     ],
                   ),
                   Text(
-                    '单品低至${storeInfo.maxDiscount}折  |  领券最高减${storeInfo.maxDiscountAmount}',
+                    '单品低至${storeInfo.maxdiscount}折  |  领券最高减${storeInfo.maxdiscountamount}',
                     style:
                         const TextStyle(fontSize: 12, color: Colors.redAccent),
                   )
@@ -89,11 +89,11 @@ class BrandItemCard extends StatelessWidget {
       shrinkWrap: true,
       crossAxisSpacing: 12,
       physics: const NeverScrollableScrollPhysics(),
-      children: [
-        StoreGoodsItemLayout(storeGoods: storeInfo.goodsList![0]),
-        StoreGoodsItemLayout(storeGoods: storeInfo.goodsList![1]),
-        StoreGoodsItemLayout(storeGoods: storeInfo.goodsList![2]),
-      ],
+      children:storeInfo.goodslist.isNotEmpty ? [
+        StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[0]),
+        StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[1]),
+        StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[2]),
+      ] : [],
     );
   }
 

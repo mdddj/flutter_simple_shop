@@ -1,6 +1,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:dd_js_util/api/request_params.dart';
+import 'package:dd_models/models/brand.dart';
 import 'package:dd_models/models/carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -65,10 +66,10 @@ class IndexProvider extends ChangeNotifier {
   /// 获取品牌logo的主要背景颜色
   Future<void> getBrandBgColors() async {
     if (storeData != null) {
-      if (storeData!.lists!.isNotEmpty) {
-        for (final info in storeData!.lists!) {
-          var color = await ColorUtil.getImageMainColor(info.brandLogo!);
-          brandBgColorMap[info.brandId] = color;
+      if (storeData!.lists.isNotEmpty) {
+        for (final info in storeData!.lists) {
+          var color = await ColorUtil.getImageMainColor(info.brandlogo);
+          brandBgColorMap[info.brandid] = color;
         }
         notifyListeners();
       }

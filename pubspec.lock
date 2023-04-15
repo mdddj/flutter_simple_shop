@@ -284,10 +284,9 @@ packages:
   dataoke_sdk:
     dependency: "direct main"
     description:
-      name: dataoke_sdk
-      sha256: "8696c48773fd2fb720974d82417d8670087f51c3a10f0febee641d9faad6862b"
-      url: "https://pub.dev"
-    source: hosted
+      path: "../plugins/dataoke_sdk"
+      relative: true
+    source: path
     version: "2.3.3"
   date_format:
     dependency: "direct main"
@@ -324,10 +323,9 @@ packages:
   dd_models:
     dependency: "direct main"
     description:
-      name: dd_models
-      sha256: "2fa2ba708439c25c08280daed8b36cc7bcca9acf959e83c11865efeba3f13419"
-      url: "https://pub.dev"
-    source: hosted
+      path: "../plugins/dataoke_sdk/dd_models"
+      relative: true
+    source: path
     version: "0.0.3"
   decimal:
     dependency: transitive
