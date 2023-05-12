@@ -1,7 +1,3 @@
-// Dart imports:
-import 'dart:ui';
-
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 double pw(BuildContext context){
@@ -13,5 +9,5 @@ double ph(BuildContext context){
 }
 
 double bodyHeight(BuildContext context){
-  return ph(context) - kToolbarHeight - MediaQueryData.fromWindow(window).padding.top;
+  return ph(context) - kToolbarHeight - MediaQueryData.fromView(View.of(context)).padding.top;
 }

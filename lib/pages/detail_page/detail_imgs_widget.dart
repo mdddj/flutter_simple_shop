@@ -24,10 +24,10 @@ class DetailImagesWidget extends StatelessWidget {
         if (!hideTitle)
           Container(
             padding: const EdgeInsets.only(top: 5.0),
-            child: Flex(
+            child: const Flex(
               direction: Axis.horizontal,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[DetailSimpleBorderButton(text: '详情', isCurrent: true), DetailSimpleBorderButton(text: '推荐', isCurrent: false)],
+              children: <Widget>[DetailSimpleBorderButton(text: '详情', isCurrent: true), DetailSimpleBorderButton(text: '推荐', isCurrent: false)],
             ),
           ),
         images != null && images!.isNotEmpty

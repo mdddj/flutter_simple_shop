@@ -51,8 +51,8 @@ class WriteBlogPageState extends State<WriteBlogPage> {
                 )),
             renderComponent(
                 title: '操作',
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                   ],
                 ))
           ],

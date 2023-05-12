@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart' hide tryCatch;
 import 'package:dd_js_util/api/request_params.dart';
@@ -43,8 +42,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
   ShopInfo? _shopInfo;
   late Future<String> futureBuildData = initDatas();
   int curentSwaiperIndex = 0;
-  double ztlHei = MediaQueryData.fromWindow(window).padding.top; // 转态栏高度
-  double _topAppbarHei = 0; // 顶部显影工具条的高度
+  double get ztlHei => MediaQueryData.fromView(View.of(context)).padding.top; // 转态栏高度
+  final double _topAppbarHei = 0; // 顶部显影工具条的高度
   double _initImagesTopHei = 0; // 图片详情距离顶部的高度 (包含转态栏)
   bool _showToTopButton = false; // 显示返回顶部按钮
 
@@ -204,13 +203,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     );
   }
 
-  ///底部操作区域菜单图标+文字
-  Widget _renderBottomItem(String key, IconData icon) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [Icon(icon)],
-    );
-  }
 
   AddFavoritesParams get _addFavoritesParams {
     return AddFavoritesParams(

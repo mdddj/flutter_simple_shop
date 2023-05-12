@@ -10,11 +10,11 @@ class JDCategory extends StatelessWidget {
     return Container(
       height: 100,
       margin: const EdgeInsets.symmetric(horizontal: 12,vertical: 6),
-      child: SingleChildScrollView(
+      child: const SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         child: Row(
-          children: const [
+          children: [
             JDCategoryItem(
                 id: 'id', name: '日用', svgName: 'assets/svg/cate/riyongpin.svg',color: Colors.blue,),
             JDCategoryItem(

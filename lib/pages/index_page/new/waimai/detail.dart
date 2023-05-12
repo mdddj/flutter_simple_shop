@@ -82,11 +82,11 @@ class WaimaiDetailState extends State<WaimaiDetail>  {
   /// 领取规则
   Widget rendenGuize() {
     const style = TextStyle(color: Colors.white);
-    return Padding(
-      padding: const EdgeInsets.all(12),
+    return const Padding(
+      padding: EdgeInsets.all(12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text('规则说明:', style: style),
           Text('1.每天最高可领20元红包。', style: style),
           Text('2.使用红包时下单手机号码必须与收餐人手机号码、领取红包时输入的手机号码一致。', style: style),

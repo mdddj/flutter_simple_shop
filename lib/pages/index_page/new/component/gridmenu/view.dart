@@ -1,5 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide View;
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../../../common/utils.dart';
 import '../../../../../common/view.dart';

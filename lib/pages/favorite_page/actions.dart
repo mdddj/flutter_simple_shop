@@ -27,11 +27,11 @@ class FavoritesActionWidget extends ConsumerWidget {
             width: 12,
           ),
           // 操作
-          Expanded(
+          const Expanded(
             child: Row(
               mainAxisAlignment:
               MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
+              children: <Widget>[
 
               ],
             ),

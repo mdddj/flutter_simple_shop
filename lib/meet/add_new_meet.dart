@@ -1,6 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart' hide View;
+import 'package:flutter/material.dart' hide View;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 

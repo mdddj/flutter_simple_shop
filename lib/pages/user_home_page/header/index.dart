@@ -62,10 +62,10 @@ class HeaderIndex extends ConsumerWidget {
               ),
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     '会员可享有多项特权',
                     style: TextStyle(

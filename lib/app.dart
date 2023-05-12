@@ -1,6 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide View;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'common/view.dart';
 import 'index.dart';
@@ -12,17 +12,15 @@ final homeModuleShowIndex = StateProvider((ref) => 0);
 ///APP主要页面
 const _pages = <Widget>[IndexHomeNew(), JiuJiuIndex(), CategoryIndexPage(), FavoriteIndexHome(), UserIndexHome()];
 
-
-
 class MyApp extends ApplicationWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget buildApplication(ApplicationModel applicationModel) =>const App();
+  Widget buildApplication(ApplicationModel applicationModel) => const App();
 
   @override
   Widget buildErrorWidget(Object e, Object s, WidgetRef ref) {
-    if(e is AppException){
+    if (e is AppException) {
       kLog(e.message);
     }
     return const InitLoadingWidget(isError: true);
@@ -32,9 +30,7 @@ class MyApp extends ApplicationWidget {
   Widget buildInitLoadingWidget(WidgetRef ref) {
     return const InitLoadingWidget();
   }
-
 }
-
 
 ///APP主体框架
 class App extends ConsumerWidget {
@@ -55,8 +51,6 @@ class App extends ConsumerWidget {
 ///app底部导航
 class AppBottomNav extends View {
   const AppBottomNav({Key? key}) : super(key: key);
-
-
 
   Widget _buildIcon(int currentIndex, int index, String filename, BuildContext context) {
     return IfWidget(
@@ -85,7 +79,7 @@ class AppBottomNav extends View {
         currentIndex: currentIndex,
         onTap: ((index) {
           appCore.ref.read(homeModuleShowIndex.notifier).state = index;
-          if(index == 3){
+          if (index == 3) {
             delayFunction(() {
               appCore.favoritesRepository.refresh(true);
             });

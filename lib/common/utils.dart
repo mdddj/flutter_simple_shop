@@ -61,7 +61,7 @@ class Utils {
 
   // 复制
   void copy(String? text, {String? message}) {
-    Clipboard.setData(ClipboardData(text: text));
+    Clipboard.setData(ClipboardData(text: text ?? ""));
     showMessage(message ?? '复制成功');
   }
 

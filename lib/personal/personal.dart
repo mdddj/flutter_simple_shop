@@ -32,11 +32,11 @@ class Personal extends StatelessWidget {
                     child: Image.asset('assets/images/ava.png',width: 70.0,height: 70.0,),
                   ),
                   //用户名和账号显示
-                  Expanded(
+                  const Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const <Widget>[
+                      children: <Widget>[
                         Text(
                           '典典',
                           style: TextStyle(fontSize: 18.0,color: Color(0xFF353535)),

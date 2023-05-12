@@ -86,9 +86,9 @@ class DetailIndexState extends State<DetailIndex> {
                           //信息展示
                           Container(
                             padding: const EdgeInsets.only(left: 20, right: 20),
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const <Widget>[
+                              children: <Widget>[
                                 Text('月销:', style: TextStyle(color: Colors.grey)),
                                 Text('两小时销量:', style: TextStyle(color: Colors.grey)),
                                 Text('当天销量:', style: TextStyle(color: Colors.grey)),

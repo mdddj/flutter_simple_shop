@@ -85,8 +85,8 @@ class DDQWidgetState extends ConsumerState<DDQWidget> {
         ],
       );
     }
-    return Row(
-      children: const <Widget>[],
+    return const Row(
+      children: <Widget>[],
     );
   }
 

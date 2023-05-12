@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:after_layout/after_layout.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
@@ -84,7 +83,7 @@ class IndexHomeState extends State<IndexHome>
   // 监听主滑动距离
   void _addMainScrollListening() {
     var topAppbarHei =
-        111 + MediaQueryData.fromWindow(window).padding.top; // 顶部搜索框和选项卡高度
+        111 + MediaQueryData.fromView(View.of(context)).padding.top; // 顶部搜索框和选项卡高度
     _mainScrollController.addListener(() {
       var titleTopHei = _titleLocationHandler();
       if (titleTopHei <= topAppbarHei) {

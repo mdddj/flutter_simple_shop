@@ -13,8 +13,8 @@ class IndexAppbarWithDesktop extends StatelessWidget implements PreferredSizeWid
       centerTitle: true,
       title: Container(
         color: Colors.grey,
-        child: Row(
-          children: const [
+        child: const Row(
+          children: [
             Text('典典的小卖部')
           ],
         ),

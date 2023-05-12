@@ -23,9 +23,9 @@ Widget loadingState(ExtendedImageState state) {
         onTap: () {
           state.reLoadImage();
         },
-        child: Stack(
+        child: const Stack(
           fit: StackFit.expand,
-          children: const <Widget>[
+          children: <Widget>[
             Center(
               child: Text('图片加载失败'),
             )

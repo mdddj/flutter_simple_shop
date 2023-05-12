@@ -6,7 +6,7 @@ PODS:
   - dd_models (0.0.1):
     - Flutter
   - Flutter (1.0.0)
-  - flutter_image_compress (1.0.0):
+  - flutter_image_compress_common (1.0.0):
     - Flutter
     - Mantle
     - SDWebImage
@@ -39,10 +39,10 @@ PODS:
     - Flutter
   - saver_gallery (0.0.1):
     - Flutter
-  - SDWebImage (5.15.2):
-    - SDWebImage/Core (= 5.15.2)
-  - SDWebImage/Core (5.15.2)
-  - SDWebImageWebPCoder (0.10.1):
+  - SDWebImage (5.15.6):
+    - SDWebImage/Core (= 5.15.6)
+  - SDWebImage/Core (5.15.6)
+  - SDWebImageWebPCoder (0.11.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
   - sqflite (0.0.2):
@@ -56,7 +56,7 @@ DEPENDENCIES:
   - dd_check_plugin (from `.symlinks/plugins/dd_check_plugin/ios`)
   - dd_models (from `.symlinks/plugins/dd_models/ios`)
   - Flutter (from `Flutter`)
-  - flutter_image_compress (from `.symlinks/plugins/flutter_image_compress/ios`)
+  - flutter_image_compress_common (from `.symlinks/plugins/flutter_image_compress_common/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - network_info_plus (from `.symlinks/plugins/network_info_plus/ios`)
   - package_info (from `.symlinks/plugins/package_info/ios`)
@@ -83,8 +83,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/dd_models/ios"
   Flutter:
     :path: Flutter
-  flutter_image_compress:
-    :path: ".symlinks/plugins/flutter_image_compress/ios"
+  flutter_image_compress_common:
+    :path: ".symlinks/plugins/flutter_image_compress_common/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   network_info_plus:
@@ -107,7 +107,7 @@ SPEC CHECKSUMS:
   dd_check_plugin: fadd604fdabcd4c8674046cbda00aeda61646a03
   dd_models: 5bd836519341310a49aa6c53a2203c300021d790
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_image_compress: 5a5e9aee05b6553048b8df1c3bc456d0afaac433
+  flutter_image_compress_common: ec1d45c362c9d30a3f6a0426c297f47c52007e3e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   image_picker_ios: b786a5dcf033a8336a657191401bfdf12017dabb
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
@@ -117,8 +117,8 @@ SPEC CHECKSUMS:
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
   saver_gallery: 2b4e584106fde2407ab51560f3851564963e6b78
-  SDWebImage: 8ab87d4b3e5cc4927bd47f78db6ceb0b94442577
-  SDWebImageWebPCoder: 4851414d9f8894e328e8b97c93ea4f4f4e4418ae
+  SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
+  SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   url_launcher_ios: ae1517e5e344f5544fb090b079e11f399dfbe4d2
 

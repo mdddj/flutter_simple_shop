@@ -1,10 +1,4 @@
-// Dart imports:
-import 'dart:ui';
-
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Project imports:
 import '../../constant/style.dart';
 
 // 首页滑动置顶一
@@ -28,10 +22,10 @@ class IndexFlexdHeaderWidget extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => kToolbarHeight + kHomeCateTabHeight + MediaQueryData.fromWindow(window).padding.top;
+  double get maxExtent => kToolbarHeight + kHomeCateTabHeight + 12;
 
   @override
-  double get minExtent => kToolbarHeight + kHomeCateTabHeight + MediaQueryData.fromWindow(window).padding.top;
+  double get minExtent => kToolbarHeight + kHomeCateTabHeight + 12;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {

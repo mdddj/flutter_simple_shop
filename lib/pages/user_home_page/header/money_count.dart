@@ -13,8 +13,8 @@ class MoneyCounterWidget extends StatelessWidget {
   }
 
   Widget _itemBuilder(innerContext, int index) {
-    return Column(
-      children: const [Text('100'), Text('累计提现')],
+    return const Column(
+      children: [Text('100'), Text('累计提现')],
     );
   }
 }

@@ -1,8 +1,8 @@
 
 
-class AppRuntimeException implements Exception {
+    class AppRuntimeException implements Exception {
   final String msg;
-  AppRuntimeException(this.msg);
+         AppRuntimeException(this.msg);
 
   @override
   String toString() {

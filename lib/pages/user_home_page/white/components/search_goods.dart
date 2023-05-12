@@ -12,8 +12,8 @@ class SearchProduct extends StatelessWidget {
       appBar: AppBar(title: const Text('搜索产品'),),
       body: SizedBox(
         height: context.kBodyHeight,
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             SizedBox(
               height: kToolbarHeight,
               child: CupertinoSearchTextField(),
