@@ -5,9 +5,6 @@ import '../../../../api/apis.dart';
 import '../../../../index.dart';
 
 class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel, FavoritesFindListApi> {
-  FavoritesRepository._();
-  static FavoritesRepository get _instance => FavoritesRepository._();
-  factory FavoritesRepository() => _instance;
 
   @override
   FavoritesFindListApi get api => FavoritesFindListApi();

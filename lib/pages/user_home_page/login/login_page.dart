@@ -51,7 +51,6 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
 
   Scaffold buildScaffold(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       body: Stack(
         children: <Widget>[

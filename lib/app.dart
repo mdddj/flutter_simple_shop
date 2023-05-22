@@ -3,6 +3,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'common/view.dart';
+import 'freezed/application.dart';
 import 'index.dart';
 import 'pages/jiujiu_page/new/widget.dart';
 
@@ -19,11 +20,11 @@ class MyApp extends ApplicationWidget {
   Widget buildApplication(ApplicationModel applicationModel) => const App();
 
   @override
-  Widget buildErrorWidget(Object e, Object s, WidgetRef ref) {
+  Widget buildErrorWidget(Object e, Object s,BuildContext context, WidgetRef ref) {
     if (e is AppException) {
       kLog(e.message);
     }
-    return const InitLoadingWidget(isError: true);
+    return   InitLoadingWidget(isError: true,retry: ()=>ref.invalidate(application(ApplocationContext(context, ref))),);
   }
 
   @override

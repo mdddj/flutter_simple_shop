@@ -1,11 +1,6 @@
-import 'package:extended_text_field/extended_text_field.dart'
-    show handleSpecialTextSpanDelete;
-
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// Project imports:
 import '../pages/user_home_page/white/my_special_text_span_builder.dart';
 
 class InputUtils {
@@ -93,7 +88,7 @@ class InputUtils {
     final oldTextSpan = MySpecialTextSpanBuilder(context: context).build(
       myValue.text,
     );
-    value = handleSpecialTextSpanDelete(value, myValue, oldTextSpan, null);
+    // value = handleSpecialTextSpanDelete(value, myValue, oldTextSpan, null);
     controller.value = value;
   }
 

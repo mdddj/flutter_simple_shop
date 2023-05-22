@@ -79,7 +79,6 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi {
   static Future<String> doRequest(Ref ref) async {
     final cacehData = await TokenCache.instance.getValue('zhe-app-key', defaultValue: '');
     if (cacehData.isNotEmpty) {
-      kLog('加载这淘客APPkey成功:$cacehData');
       ref.read(riverpodZhetaokeAppKeyState.notifier).state = cacehData;
       return cacehData;
     }
@@ -126,7 +125,6 @@ class MyApiWithEmailRegister extends MyAppCoreApi {
 ///登录接口
 class MyApiWithLogin extends MyAppCoreApi {
   MyApiWithLogin(LoginParams params) : super(params.getApiPath, httpMethod: HttpMethod.post) {
-    kLog(params.toJson());
     super.params.addAll(params.toJson());
   }
 

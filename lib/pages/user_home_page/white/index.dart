@@ -298,9 +298,9 @@ class WhiteIndexState extends State<WhiteIndex> {
       selection: TextSelection.collapsed(offset: start),
     );
 
-    final oldTextSpan = _mySpecialTextSpanBuilder.build(myValue.text);
+    // final oldTextSpan = _mySpecialTextSpanBuilder.build(myValue.text);
 
-    value = handleSpecialTextSpanDelete(value, myValue, oldTextSpan, null);
+    // value = handleSpecialTextSpanDelete(value, myValue, oldTextSpan, null);
 
     _textEditingController.value = value;
   }

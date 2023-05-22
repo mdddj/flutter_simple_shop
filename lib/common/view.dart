@@ -2,6 +2,7 @@ import 'package:dataoke_sdk/model/category.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../api/zhe_api.dart';
@@ -41,7 +42,7 @@ class ApplicationModel with _$ApplicationModel {
 }
 
 ApplicationModel builderDefaultApplication(ApplocationContext ctx) {
-  return ApplicationModel(context: ctx.context, ref: ctx.ref, favoritesRepository: FavoritesRepository(), applocationContext: ctx);
+  return ApplicationModel(context: ctx.context, ref: ctx.ref, favoritesRepository: GetIt.instance.get<FavoritesRepository>(), applocationContext: ctx);
 }
 
 extension ApplicationContextEx on ApplocationContext {
@@ -78,10 +79,10 @@ abstract class ApplicationWidget extends ConsumerWidget {
     final ctx = ApplocationContext(context, ref);
     return ref
         .watch(application(ctx))
-        .when(data: buildApplication, error: (e, s) => buildErrorWidget(e, s, ref), loading: () => buildInitLoadingWidget(ref));
+        .when(data: buildApplication, error: (e, s) => buildErrorWidget(e, s,context, ref), loading: () => buildInitLoadingWidget(ref),skipLoadingOnRefresh: false);
   }
 
-  Widget buildErrorWidget(Object e, Object s, WidgetRef ref);
+  Widget buildErrorWidget(Object e, Object s,BuildContext context, WidgetRef ref);
 
   Widget buildInitLoadingWidget(WidgetRef ref);
 
