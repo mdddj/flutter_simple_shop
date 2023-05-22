@@ -55,7 +55,7 @@ extension ApplicationContextEx on ApplocationContext {
 extension ApplicationModelEx on ApplicationModel {
   IList<Category> get watchCategory => ref.watch(categoryRiverpod.select((value) => value.categorys));
 }
-
+typedef MyView = View;
 ///自定义封装view
 abstract class View extends ConsumerWidget {
   const View({super.key});

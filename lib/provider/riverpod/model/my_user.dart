@@ -21,7 +21,21 @@ class MyUser with _$MyUser{
     @Default(false) bool accountNonExpired,
     @Default(false) bool accountNonLocked,
     @Default(false) bool credentialsNonExpired,
-
+    @Default(Vip.none) Vip vip
   }) = _MyUser;
   factory MyUser.fromJson(Map<String,Object?> json)=>_$MyUserFromJson(json);
+}
+
+@JsonEnum(valueField: 'vip')
+enum Vip {
+  @JsonValue(0)
+  none,
+  @JsonValue(1)
+  vip,
+
+  @JsonValue(2)
+  superVip,
+
+  @JsonValue(3)
+  specialVip
 }

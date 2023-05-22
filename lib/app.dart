@@ -20,11 +20,14 @@ class MyApp extends ApplicationWidget {
   Widget buildApplication(ApplicationModel applicationModel) => const App();
 
   @override
-  Widget buildErrorWidget(Object e, Object s,BuildContext context, WidgetRef ref) {
+  Widget buildErrorWidget(Object e, Object s, BuildContext context, WidgetRef ref) {
     if (e is AppException) {
       kLog(e.message);
     }
-    return   InitLoadingWidget(isError: true,retry: ()=>ref.invalidate(application(ApplocationContext(context, ref))),);
+    return InitLoadingWidget(
+      isError: true,
+      retry: () => ref.invalidate(application(ApplocationContext(context, ref))),
+    );
   }
 
   @override
@@ -80,11 +83,6 @@ class AppBottomNav extends View {
         currentIndex: currentIndex,
         onTap: ((index) {
           appCore.ref.read(homeModuleShowIndex.notifier).state = index;
-          if (index == 3) {
-            delayFunction(() {
-              appCore.favoritesRepository.refresh(true);
-            });
-          }
         }),
         items: [
           BottomNavigationBarItem(label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
@@ -95,3 +93,5 @@ class AppBottomNav extends View {
         ]);
   }
 }
+
+

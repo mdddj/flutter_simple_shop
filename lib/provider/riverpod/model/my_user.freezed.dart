@@ -34,6 +34,7 @@ mixin _$MyUser {
   bool get accountNonExpired => throw _privateConstructorUsedError;
   bool get accountNonLocked => throw _privateConstructorUsedError;
   bool get credentialsNonExpired => throw _privateConstructorUsedError;
+  Vip get vip => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,7 +60,8 @@ abstract class $MyUserCopyWith<$Res> {
       bool enabled,
       bool accountNonExpired,
       bool accountNonLocked,
-      bool credentialsNonExpired});
+      bool credentialsNonExpired,
+      Vip vip});
 }
 
 /// @nodoc
@@ -89,6 +91,7 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
     Object? accountNonExpired = null,
     Object? accountNonLocked = null,
     Object? credentialsNonExpired = null,
+    Object? vip = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -147,6 +150,10 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
           ? _value.credentialsNonExpired
           : credentialsNonExpired // ignore: cast_nullable_to_non_nullable
               as bool,
+      vip: null == vip
+          ? _value.vip
+          : vip // ignore: cast_nullable_to_non_nullable
+              as Vip,
     ) as $Val);
   }
 }
@@ -171,7 +178,8 @@ abstract class _$$_MyUserCopyWith<$Res> implements $MyUserCopyWith<$Res> {
       bool enabled,
       bool accountNonExpired,
       bool accountNonLocked,
-      bool credentialsNonExpired});
+      bool credentialsNonExpired,
+      Vip vip});
 }
 
 /// @nodoc
@@ -198,6 +206,7 @@ class __$$_MyUserCopyWithImpl<$Res>
     Object? accountNonExpired = null,
     Object? accountNonLocked = null,
     Object? credentialsNonExpired = null,
+    Object? vip = null,
   }) {
     return _then(_$_MyUser(
       id: null == id
@@ -256,6 +265,10 @@ class __$$_MyUserCopyWithImpl<$Res>
           ? _value.credentialsNonExpired
           : credentialsNonExpired // ignore: cast_nullable_to_non_nullable
               as bool,
+      vip: null == vip
+          ? _value.vip
+          : vip // ignore: cast_nullable_to_non_nullable
+              as Vip,
     ));
   }
 }
@@ -277,7 +290,8 @@ class _$_MyUser implements _MyUser {
       this.enabled = false,
       this.accountNonExpired = false,
       this.accountNonLocked = false,
-      this.credentialsNonExpired = false});
+      this.credentialsNonExpired = false,
+      this.vip = Vip.none});
 
   factory _$_MyUser.fromJson(Map<String, dynamic> json) =>
       _$$_MyUserFromJson(json);
@@ -323,10 +337,13 @@ class _$_MyUser implements _MyUser {
   @override
   @JsonKey()
   final bool credentialsNonExpired;
+  @override
+  @JsonKey()
+  final Vip vip;
 
   @override
   String toString() {
-    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired)';
+    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, vip: $vip)';
   }
 
   @override
@@ -354,7 +371,8 @@ class _$_MyUser implements _MyUser {
             (identical(other.accountNonLocked, accountNonLocked) ||
                 other.accountNonLocked == accountNonLocked) &&
             (identical(other.credentialsNonExpired, credentialsNonExpired) ||
-                other.credentialsNonExpired == credentialsNonExpired));
+                other.credentialsNonExpired == credentialsNonExpired) &&
+            (identical(other.vip, vip) || other.vip == vip));
   }
 
   @JsonKey(ignore: true)
@@ -374,7 +392,8 @@ class _$_MyUser implements _MyUser {
       enabled,
       accountNonExpired,
       accountNonLocked,
-      credentialsNonExpired);
+      credentialsNonExpired,
+      vip);
 
   @JsonKey(ignore: true)
   @override
@@ -405,7 +424,8 @@ abstract class _MyUser implements MyUser {
       final bool enabled,
       final bool accountNonExpired,
       final bool accountNonLocked,
-      final bool credentialsNonExpired}) = _$_MyUser;
+      final bool credentialsNonExpired,
+      final Vip vip}) = _$_MyUser;
 
   factory _MyUser.fromJson(Map<String, dynamic> json) = _$_MyUser.fromJson;
 
@@ -437,6 +457,8 @@ abstract class _MyUser implements MyUser {
   bool get accountNonLocked;
   @override
   bool get credentialsNonExpired;
+  @override
+  Vip get vip;
   @override
   @JsonKey(ignore: true)
   _$$_MyUserCopyWith<_$_MyUser> get copyWith =>

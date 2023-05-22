@@ -21,6 +21,7 @@ _$_MyUser _$$_MyUserFromJson(Map<String, dynamic> json) => _$_MyUser(
       accountNonExpired: json['accountNonExpired'] as bool? ?? false,
       accountNonLocked: json['accountNonLocked'] as bool? ?? false,
       credentialsNonExpired: json['credentialsNonExpired'] as bool? ?? false,
+      vip: $enumDecodeNullable(_$VipEnumMap, json['vip']) ?? Vip.none,
     );
 
 Map<String, dynamic> _$$_MyUserToJson(_$_MyUser instance) => <String, dynamic>{
@@ -38,4 +39,12 @@ Map<String, dynamic> _$$_MyUserToJson(_$_MyUser instance) => <String, dynamic>{
       'accountNonExpired': instance.accountNonExpired,
       'accountNonLocked': instance.accountNonLocked,
       'credentialsNonExpired': instance.credentialsNonExpired,
+      'vip': _$VipEnumMap[instance.vip]!,
     };
+
+const _$VipEnumMap = {
+  Vip.none: 0,
+  Vip.vip: 1,
+  Vip.superVip: 2,
+  Vip.specialVip: 3,
+};
