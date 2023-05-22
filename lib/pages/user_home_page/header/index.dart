@@ -9,6 +9,7 @@ import '../../../constant/style.dart';
 import '../../../provider/riverpod/model/my_user.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import '../../../util/navigator_util.dart';
+import 'vip_header.dart';
 
 const kAvatarHeight = 58.0;
 
@@ -35,73 +36,13 @@ class HeaderIndex extends ConsumerWidget {
             const SizedBox(
               height: 44,
             ),
-            _renderVip()
+            const VipHeader()
           ],
         ),
       ),
     );
   }
 
-// 开通会员
-  Widget _renderVip() {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.orange.shade200,
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(8), topRight: Radius.circular(8))),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 80,
-            height: 60,
-            child: Center(
-              child: Image.asset(
-                'assets/images/vip.png',
-                width: 38,
-                height: 38,
-              ),
-            ),
-          ),
-          const Expanded(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '会员可享有多项特权',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text('未开通特权', style: TextStyle(color: Colors.black))
-                ]),
-          ),
-          Center(
-            child: SizedBox(
-              width: 100,
-              height: 38,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.black),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100)))),
-                child: const Text(
-                  '免费激活',
-                  style: TextStyle(color: Colors.yellow),
-                ),
-                onPressed: () {
-                  // 激活会员
-                },
-              ),
-            ),
-          ),
-          const SizedBox(
-            width: 12,
-          )
-        ],
-      ),
-    );
-  }
 
   
 

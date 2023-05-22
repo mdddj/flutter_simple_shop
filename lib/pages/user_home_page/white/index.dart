@@ -21,7 +21,6 @@ class WhiteIndex extends StatefulWidget {
 }
 
 class WhiteIndexState extends State<WhiteIndex> {
-  late final MySpecialTextSpanBuilder _mySpecialTextSpanBuilder = MySpecialTextSpanBuilder(context: context);
   final TextEditingController _textEditingController = TextEditingController();
   final GlobalKey _key = GlobalKey();
 

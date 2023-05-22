@@ -135,5 +135,10 @@ class MyApiWithLogin extends MyAppCoreApi {
 ///美团领券
 class MeituanCoupon extends MyAppCoreApi {
   MeituanCoupon():super('/api/zhe/mt/tg');
+}
 
+
+///开通会员接口
+class MyOpenVipApi extends MyAppCoreApi {
+  MyOpenVipApi():super("/api/open-vip",httpMethod: HttpMethod.post);
 }

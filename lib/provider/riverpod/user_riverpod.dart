@@ -51,4 +51,10 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
     state = state.copyWith(user: null);
     GetIt.instance.get<UserApi>().token = null;
   }
+
+
+  //更新用户会员状态
+  void openVip() {
+    state = state.copyWith(user: state.user?.copyWith(vip: Vip.vip));
+  }
 }

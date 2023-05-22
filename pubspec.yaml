@@ -86,6 +86,7 @@ dev_dependencies:
   analyzer: ^5.13.0
   freezed: ^2.3.4
   json_serializable: ^6.7.0
+  custom_lint: ^0.4.0
 
 
 flutter:

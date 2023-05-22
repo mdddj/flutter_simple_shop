@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../pages/user_home_page/white/my_special_text_span_builder.dart';
 
 class InputUtils {
   const InputUtils._();
@@ -75,7 +74,6 @@ class InputUtils {
       return;
     }
     // Delete the previous character.
-    final myValue = controller.value;
     final previousCodeUnit = text.codeUnitAt(textSelection.start - 1);
     final offset = _isUtf16Surrogate(previousCodeUnit) ? 2 : 1;
     final newStart = textSelection.start - offset;
@@ -84,9 +82,6 @@ class InputUtils {
     var value = TextEditingValue(
       text: newText,
       selection: TextSelection.collapsed(offset: newStart),
-    );
-    final oldTextSpan = MySpecialTextSpanBuilder(context: context).build(
-      myValue.text,
     );
     // value = handleSpecialTextSpanDelete(value, myValue, oldTextSpan, null);
     controller.value = value;
