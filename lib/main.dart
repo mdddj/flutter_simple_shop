@@ -9,9 +9,9 @@ import 'index.dart';
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
 // const apiHost = 'https://itbug.shop';
 // const apiPort = "9445";
-const apiHost = "http://192.168.199.79";
-const apiPort = "80";
-const kAppDebugMode = true;
+const apiHost = "https://itbug.shop";
+const apiPort = "9445";
+const kAppDebugMode = false;
 
 void main() async {
   appInit(() => runApp(const ProviderScope(child: Root())));

@@ -341,18 +341,18 @@ packages:
     dependency: "direct main"
     description:
       name: dd_check_plugin
-      sha256: d60adae29acb014f6b30c0f315cfff5ce6f4d1a6cb7c0a1f0f074f7b927ac69d
+      sha256: b2993d7315d21df2cd2d8fdecde5d153dbcae9aca612d403007839bf9ea3437b
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.2"
+    version: "2.3.3"
   dd_js_util:
     dependency: "direct main"
     description:
       name: dd_js_util
-      sha256: cdc60a67e1ad04d10cc2d14ef264761a204d8f81837b09e73066ff8b9a576d1e
+      sha256: c5860643e0e6023dc30389041b80a0a20b5b3eb48b0690d4646bdeb2a8f739a6
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.2"
+    version: "4.0.3"
   dd_models:
     dependency: "direct main"
     description:
@@ -651,14 +651,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.6"
-  flutter_screenutil:
-    dependency: transitive
-    description:
-      name: flutter_screenutil
-      sha256: "63c84d7da6b5f0733f86b01e3d20db2baadbf0fc9b43e5967c2cfb84dfa1e998"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.8.1"
   flutter_slidable:
     dependency: "direct main"
     description:
@@ -1036,10 +1028,10 @@ packages:
     dependency: transitive
     description:
       name: network_info_plus
-      sha256: e1a960d206c01bbb8ff77e7b3fa80698d8969385741a6208e9f71fe7816af38f
+      sha256: "5a79c244070fb7f7d10fbcfa24eed315252b4e662f42658029871d31afdbba9e"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0"
+    version: "4.0.1"
   network_info_plus_platform_interface:
     dependency: transitive
     description:
@@ -1332,10 +1324,10 @@ packages:
     dependency: "direct main"
     description:
       name: shelf_proxy
-      sha256: cf9883f9ec7fe9d3fb076724d627dd5d9a3c8d07cde7ef5c3f51813d1d732abe
+      sha256: a71d2307f4393211930c590c3d2c00630f6c5a7a77edc1ef6436dfd85a6a7ee3
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.4"
   shelf_web_socket:
     dependency: transitive
     description:

@@ -14,10 +14,10 @@
 
 
 
-切换线上接口,在`main.dart`第`27`行替换
+在线预览: https://itbug.shop:9445
 
+API
 ```dart
-
 const apiHost = 'https://itbug.shop';
 const apiPort = '9445';
 ```
