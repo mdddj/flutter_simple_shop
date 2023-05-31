@@ -5,6 +5,8 @@ import '../../api/apis.dart';
 import '../../api/model/login_params.dart';
 import '../../exception/app.dart';
 import '../../freezed/login_result_model.dart';
+import '../../index.dart';
+import '../../init.dart';
 import '../../pages/user_home_page/login/login_base.dart';
 import '../../service/user_api.dart';
 import '../../util/cache_util.dart';
@@ -56,5 +58,17 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
   //更新用户会员状态
   void openVip() {
     state = state.copyWith(user: state.user?.copyWith(vip: Vip.vip));
+  }
+
+
+  ///app 启动后尝试更新用户信息
+  void startAppTryLogin(){ 
+    CacheFactory.create<TokenCache>().userToken.then((value) {
+      if(value.isNotEmpty){
+        ///token获取用户信息
+        wtfLog("启动尝试自动登录:$value");
+        getIt.get<Api>().getUser(value).then((user)=>state = state.copyWith(user: user));
+      }
+    });
   }
 }

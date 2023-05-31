@@ -45,8 +45,11 @@ class Api extends ApiService {
   @override
   Future<MyUser?> getUser(String token) async {
     final result = await request.get('/api/get-user-by-token',
-        isTaokeApi: false,requestParams: RequestParams(
-          data: {'token': token}
+        isTaokeApi: false,requestParams:  RequestParams(
+          headers: {
+            "Authorization":token,
+          },
+          showDefaultLoading: false
         ));
     if (result.isNotEmpty) {
       try {

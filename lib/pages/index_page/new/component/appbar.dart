@@ -44,23 +44,20 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
       ],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(38),
-        child: SizedBox(
-          height:38,
-          child: TabBar(
-            controller: tabController,
-            isScrollable: true,
-            tabs: [
-              const Tab(
-                text: '精选',
-              ),
-              ...appCore.watchCategory.map((element) => Tab(
-                text: element.cname,
-              ))
-            ],
-            onTap: (int index) {
+        child: TabBar(
+          controller: tabController,
+          isScrollable: true,
+          tabs: [
+            const Tab(
+              text: '精选',
+            ),
+            ...appCore.watchCategory.map((element) => Tab(
+              text: element.cname,
+            ))
+          ],
+          onTap: (int index) {
 
-            },
-          ),
+          },
         ),
       ),
       isSliveWidget: true,

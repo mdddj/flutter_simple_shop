@@ -6,6 +6,8 @@ part 'add_favorites_params.g.dart';
 
 @freezed
 class AddFavoritesParams with _$AddFavoritesParams {
+
+
   const factory AddFavoritesParams({
       @JsonKey(name: 'productId') @Default('')  String productid,
       @JsonKey(name: 'type') @Default('')  String type,
@@ -16,7 +18,11 @@ class AddFavoritesParams with _$AddFavoritesParams {
       @JsonKey(name: 'arrivalPrice') @Default('')  String arrivalprice,
       @JsonKey(name: 'createTime') @Default('')  String createtime,
     }) = _AddFavoritesParams;
-  
+
   factory AddFavoritesParams.fromJson(Map<String, dynamic> json) => _$AddFavoritesParamsFromJson(json);
+
+
+
 }
+
 

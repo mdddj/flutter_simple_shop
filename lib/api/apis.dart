@@ -1,7 +1,7 @@
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../common/extend/string.dart';
 import '../freezed/add_favorites_params.dart';
 import '../index.dart';

@@ -38,8 +38,6 @@ class Root extends View {
             tabBarTheme: themeValue.tabBarTheme.copyWith(
                 labelColor: Colors.pink,
                 unselectedLabelColor: Colors.black,
-                dividerColor: Colors.pink,
-                indicatorColor: Colors.pink,
                 labelStyle: const TextStyle(fontWeight: FontWeight.bold))),
         darkTheme: MyAppTheme.darkTheme,
         themeMode: theme.getThemeMode,

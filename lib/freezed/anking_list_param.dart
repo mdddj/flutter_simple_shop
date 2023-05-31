@@ -17,3 +17,4 @@ class AnkingListParam with _$AnkingListParam {
 
 }
 
+

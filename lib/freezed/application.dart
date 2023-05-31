@@ -10,6 +10,7 @@ final application = FutureProvider.family<ApplicationModel, ApplocationContext>(
     await ref.read(categoryRiverpod).init();
     await ref.read(indexStateRiverpod.notifier).fetch();
     await KZheTaokeApiWithAppkeyGet.doRequest(ref);
+    ref.read(userRiverpod.notifier).startAppTryLogin();
     return ref.read(appModel(ctx));
   } on AppException catch (_) {
     rethrow;

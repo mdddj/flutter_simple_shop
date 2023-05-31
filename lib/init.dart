@@ -46,6 +46,8 @@ void initNetUtil() {
   }
 }
 
+final getIt = GetIt.instance;
+
 void initInstanceObject() {
   GetIt.instance.registerSingleton<Utils>(Utils());
   GetIt.instance.registerSingleton<WidgetUtils>(WidgetUtils());
