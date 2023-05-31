@@ -13,6 +13,14 @@ class JiujiuRepository extends LoadingMoreBase<ProductModel> {
   int _page = 1;
   bool _hasMore = true;
 
+
+  @override
+  Future<bool> refresh([bool notifyStateChanged = false]) {
+    _page = 1;
+    _hasMore = true;
+    return super.refresh(notifyStateChanged);
+  }
+
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
     if (_page == 1) clear();

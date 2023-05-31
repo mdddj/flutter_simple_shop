@@ -14,6 +14,7 @@ class MeetListLoadMore extends SimpleLoadingMoreBaes<MeetModel,SelectMeetListDat
   @override
   SelectMeetListData get api => SelectMeetListData();
 
+
   @override
   bool transformIsNomore(WrapJson data) {
     return data.getValue('last') as bool;

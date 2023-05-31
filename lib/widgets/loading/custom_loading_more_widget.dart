@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
-import '../../app.dart';
 import '../../assets.dart';
 import '../../index.dart';
 
@@ -11,8 +10,8 @@ import '../../index.dart';
 class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
   final BuildContext context;
   final IndicatorStatus indicatorStatus;
-
-  const CustomLoadingMoreWidgetWithSliver(this.context, this.indicatorStatus, {Key? key}) : super(key: key);
+  final  VoidCallback? retry;
+  const CustomLoadingMoreWidgetWithSliver(this.context, this.indicatorStatus, {Key? key, this.retry}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +19,7 @@ class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
       context,
       indicatorStatus,
       isSliver: true,
+      retry: retry,
     );
   }
 }
@@ -29,15 +29,15 @@ class CustomLoadingMoreWidget extends StatelessWidget {
   final BuildContext context;
   final IndicatorStatus indicatorStatus;
   final bool isSliver;
-
-  const CustomLoadingMoreWidget(this.context, this.indicatorStatus, {Key? key, this.isSliver = false}) : super(key: key);
+  final VoidCallback? retry;
+  const CustomLoadingMoreWidget(this.context, this.indicatorStatus, {Key? key, this.isSliver = false, this.retry}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     late Widget child;
     switch (indicatorStatus) {
       case IndicatorStatus.fullScreenError:
-        child = const _FullScreenError();
+        child =  SliverFillRemaining(child: _FullScreenError(retry: retry,),);
         break;
       case IndicatorStatus.fullScreenBusying:
         child = const _FullScreenBusying();
@@ -67,14 +67,23 @@ class CustomLoadingMoreWidget extends StatelessWidget {
 
 ///全面模式下出现异常
 class _FullScreenError extends StatelessWidget {
-  const _FullScreenError({Key? key}) : super(key: key);
+  final VoidCallback? retry;
+  const _FullScreenError({Key? key, this.retry}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(vertical: 30),
-      child: const Text("服务繁忙,请稍后重试 (-1)"),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text("服务繁忙,请稍后重试 (-1)"),
+          if(retry!=null)
+          FilledButton(onPressed: retry, child: const Text("刷新重试")).margin(12)
+        ],
+      ),
     );
   }
 }

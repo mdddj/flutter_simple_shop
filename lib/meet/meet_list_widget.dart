@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
+import '../widgets/loading/custom_loading_more_widget.dart';
 import 'list.dart';
 import 'meet_item_layout.dart';
 import 'meet_model.dart';
@@ -23,6 +24,12 @@ class _MeetListWidgetState extends State<MeetListWidget> {
         LoadingMoreSliverList(SliverListConfig<MeetModel>(
           itemBuilder:MeetItemLayout.new,
           sourceList: repository,
+          indicatorBuilder:(context, status) {
+            
+          return CustomLoadingMoreWidgetWithSliver(context,status,retry: (){
+            repository.refresh(true);
+          });
+          },
           padding: const EdgeInsets.only(top: 12)
         ))
       ],

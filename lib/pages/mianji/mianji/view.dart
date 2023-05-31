@@ -26,7 +26,7 @@ class MianjiPageState extends State<MianjiPage> {
 
   /// 构建操作区域。
   Widget _buildAction() {
-    return  ElevatedButton(
+    return  TextButton(
         onPressed: () {
           context.navToWidget(to: const AddNewMeet());
         },

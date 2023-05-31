@@ -54,7 +54,11 @@ class _Item extends StatelessWidget {
             },
             sourceList: repository,
             padding: const EdgeInsets.all(8),
-            indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
+            indicatorBuilder:(context, status) {
+              return CustomLoadingMoreWidgetWithSliver(context,status,retry: (){
+                repository.refresh(true);
+              },);
+            },
             extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8)))
       ],
     );
