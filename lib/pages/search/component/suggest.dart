@@ -1,12 +1,9 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../common/widgets/hot.dart';
-import '../../../provider/riverpod/search_riverpod.dart';
-import '../../../widgets/extended_image.dart';
-import '../list.dart';
+import '../../../index.dart';
+import '../../../widgets/riverpod_error.dart';
 
 
 final _riverpodSuggest = FutureProvider.autoDispose((ref) async {
@@ -25,9 +22,17 @@ class Suggest extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              '热搜榜',
-              style: TextStyle(fontSize: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  '热搜榜',
+                  style: TextStyle(fontSize: 16),
+                ),
+                Text('刷新',style: TextStyle(color: context.primaryColor),).click(() {
+                  ref.invalidate(_riverpodSuggest);
+                })
+              ],
             ),
             const SizedBox(
               height: 12,
@@ -36,7 +41,9 @@ class Suggest extends ConsumerWidget {
               return Wrap(
                 children: list.map((e)=>_renderItem(e,context,ref)).toList(),
               );
-            }, error: (e,s)=>const Text("加载热搜榜失败"), loading: ()=>const CupertinoActivityIndicator())
+            }, error: (e,s)=>RiverpodErrorWidget(message: '加载热搜榜单失败',retry: (){
+              ref.invalidate(_riverpodSuggest);
+            },), loading: ()=>const MyLoading().padding(12).center,skipLoadingOnRefresh: false)
           ],
         ),
       ),

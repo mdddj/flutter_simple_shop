@@ -1,8 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../provider/riverpod/search_riverpod.dart';
-import '../../widgets/appbar_search.dart';
 import 'component/helper_show.dart';
 import 'component/key_worlds.dart';
 import 'component/suggest.dart';
@@ -22,11 +22,13 @@ class SearchPageState extends ConsumerState<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SAppBarSearch(
-        value: widget.initSearchKeyWord,
-        onSearch: (String value) {
-          ref.read(searchRiverpod).loadData(worlds: value);
-        },
+      appBar: AppBar(
+        title: CupertinoSearchTextField(
+          onSubmitted: (keyword){
+            ref.read(searchRiverpod).loadData(worlds: keyword);
+          },
+          placeholder: '输入关键字',
+        ),
       ),
       body: const CustomScrollView(slivers: [
         SliverToBoxAdapter(

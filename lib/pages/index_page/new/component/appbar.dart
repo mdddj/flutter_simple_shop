@@ -1,4 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:flutter/cupertino.dart' hide View;
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../common/view.dart';
@@ -21,11 +22,21 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
 
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
-    return SAppBarSearch(
-      hintText: '输入关键字,例如:"辣条"',
-      onTap: () => navTo(context),
-      readOnly: true,
+    return SliverAppBar(
       leadingWidth: 58,
+      title:  Container(
+        padding: const EdgeInsets.all(4),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey.shade100),borderRadius: 12.borderRadius
+        ),
+        child: Row(
+          children: [
+            const Icon(CupertinoIcons.search,color: Colors.grey,size: 16),
+            const SizedBox(width: 6,),
+            Text('搜索产品,比如:辣条',style: context.textTheme.bodyMedium,)
+          ],
+        ),
+      ).click(() => navTo(context)),
       leading: Container(
         alignment: Alignment.center,
         child: SvgPicture.asset(
@@ -60,7 +71,6 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
           },
         ),
       ),
-      isSliveWidget: true,
     );
   }
 }

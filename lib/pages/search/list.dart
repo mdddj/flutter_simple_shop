@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../provider/riverpod/search_riverpod.dart';
-import '../../widgets/appbar_search.dart';
 import 'component/initloading_status.dart';
 import 'component/product_list.dart';
 
@@ -15,9 +14,9 @@ class SearchListIndex extends ConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref) {
     return Scaffold(
-      appBar: SAppBarSearch(
-        value: value,
-        onSearch: (String value)=> ref.read(searchRiverpod).loadData(worlds: value),
+      appBar: AppBar(
+        // value: value,
+        // onSearch: (String value)=> ref.read(searchRiverpod).loadData(worlds: value),
       ),
       body: EasyRefresh.custom(
         slivers: const [

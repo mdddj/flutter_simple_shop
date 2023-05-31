@@ -2,7 +2,6 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import '../../../modals/pdd_search_item_model.dart';
-import '../../../widgets/appbar_search.dart';
 import '../../../widgets/component/coupon_discount.dart';
 import '../../../widgets/extended_image.dart';
 import '../../../widgets/simple_price.dart';
@@ -30,9 +29,9 @@ class SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     final products = [];
     return Scaffold(
-      appBar: SAppBarSearch(
-        hintText: '搜索拼多多隐藏优惠券',
-        onSearch: (keywold){},
+      appBar: AppBar(
+        // hintText: '搜索拼多多隐藏优惠券',
+        // onSearch: (keywold){},
       ),
       body: EasyRefresh.custom(slivers: [
         SliverFillRemaining(

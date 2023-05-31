@@ -1,7 +1,6 @@
 library widgets;
 
 
-export 'appbar_search.dart';
 export 'category/jd_category.dart';
 export 'component/coupon_discount.dart';
 export 'component/custom_loading.dart';
