@@ -1,8 +1,11 @@
 // Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
+
+import '../index.dart';
 
 // Package imports
 
@@ -28,36 +31,12 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
         widget = Container(height: 0.0);
         break;
       case IndicatorStatus.loadingMoreBusying:
-        widget = Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(right: 5.0),
-              height: 15.0,
-              width: 15.0,
-              child: getIndicator(context),
-            ),
-            Text(text ?? '加载中...')
-          ],
-        );
-        widget = _setbackground(false, widget, 35.0);
+        widget = const MyLoading();
+        widget = _setbackground(false, widget, 35.0,context);
         break;
       case IndicatorStatus.fullScreenBusying:
-        widget = Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(right: 5.0),
-              height: 15.0,
-              width: 15.0,
-              child: getIndicator(context),
-            ),
-            Text(text ?? '加载中...')
-          ],
-        );
-        widget = _setbackground(true, widget, double.infinity);
+        widget = const MyLoading();
+        widget = _setbackground(true, widget, double.infinity,context);
         if (isSliver) {
           widget = SliverFillRemaining(
             child: widget,
@@ -76,7 +55,7 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
         widget = Text(
           text ?? '加载失败,请重试.',
         );
-        widget = _setbackground(false, widget, 35.0);
+        widget = _setbackground(false, widget, 35.0,context);
         if (tryAgain != null) {
           widget = GestureDetector(
             onTap: () {
@@ -90,7 +69,7 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
         widget = Text(
           text ?? '加载失败,请重试.',
         );
-        widget = _setbackground(true, widget, double.infinity);
+        widget = _setbackground(true, widget, double.infinity,context);
         if (tryAgain != null) {
           widget = GestureDetector(
             onTap: () {
@@ -115,14 +94,14 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
         break;
       case IndicatorStatus.noMoreLoad:
         widget = Text(text ?? '没有更多了.');
-        widget = _setbackground(false, widget, 35.0);
+        widget = _setbackground(false, widget, 35.0,context);
         break;
       case IndicatorStatus.empty:
         widget = EmptyWidget(
           text ?? '空空如也.',
           emptyWidget: emptyWidget,
         );
-        widget = _setbackground(true, widget, double.infinity);
+        widget = _setbackground(true, widget, double.infinity,context);
         if (isSliver) {
           widget = SliverFillRemaining(
             child: widget,
@@ -141,11 +120,11 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
     return widget;
   }
 
-  Widget _setbackground(bool full, Widget widget, double height) {
+  Widget _setbackground(bool full, Widget widget, double height,BuildContext context) {
     widget = Container(
         width: double.infinity,
         height: height,
-        color: backgroundColor ?? Colors.grey[200],
+        color: context.theme.scaffoldBackgroundColor,
         alignment: Alignment.center,
         child: widget);
     return widget;

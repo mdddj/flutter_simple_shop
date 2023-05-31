@@ -1,60 +1,36 @@
 // Flutter imports:
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 
-final searchRiverpod = ChangeNotifierProvider((ref) => SearchState());
-class SearchState extends ChangeNotifier {
-  String type = '0';
-  int page = 1;
-  int pageSize = 20;
-  String searchKeyWorlds = '';
-  bool initLoading = false;
+import '../../index.dart';
 
-  List<ProductModel> products = []; // 产品列表
+class SearchRepository extends MyLoadingModel<ProductModel> {
+  var _page = 1;
+  var _hasMore = true;
+  final String searchKeyWorlds;
 
-  // 加载数据
-  // 初始化
-  Future<void> loadData({String? worlds}) async {
-    if (worlds != null) {
-      searchKeyWorlds = worlds;
-      products.clear();
-      page = 1;
-      initLoading = true;
-      notifyListeners();
-    }
-    final result = await DdTaokeSdk.instance.superSearch(
+  SearchRepository(this.searchKeyWorlds);
+
+  @override
+  Future<bool> loadData([bool isLoadMoreAction = false]) async {
+    final result = await kApi.superSearch(
         param: SuperSearchParam(
-            keyWords: searchKeyWorlds,
-            pageSize: '$pageSize',
-            type: type,
-            pageId: '$page'), requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-    });
+          keyWords: searchKeyWorlds,
+          pageId: _page.toString(),
+          pageSize: '20',
+          type: '0',
+        ),
+        requestParamsBuilder: (r) => r.copyWith(showDefaultLoading: false));
     if (result != null) {
-      products.addAll(result.list ?? []);
-      page++;
-      initLoading = false;
-      notifyListeners();
+      addAll(result.list ?? []);
+      _page++;
+      _hasMore = (result.list ?? []).isNotEmpty;
+      return true;
     }
+    return false;
   }
 
-  /// 加载下一页
-  Future<void> nextPage() async {
-    final result = await DdTaokeSdk.instance.superSearch(
-        param: SuperSearchParam(
-            keyWords: searchKeyWorlds,
-            pageSize: '$pageSize',
-            type: type,
-            pageId: '$page'), requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-    });
-    if (result != null) {
-      products.addAll(result.list ?? []);
-      page++;
-      notifyListeners();
-    }
-  }
+  @override
+  bool get hasMore => _hasMore;
 }

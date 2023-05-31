@@ -3,7 +3,6 @@ import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../provider/riverpod/search_riverpod.dart';
 import '../list.dart';
 
 /// 搜索关键字组件
@@ -46,8 +45,6 @@ class SearchKeyWorldsState extends ConsumerState<SearchKeyWorlds> {
   Widget _item(String item) {
     return InkWell(
       onTap: () {
-
-        ref.read(searchRiverpod).loadData(worlds: item);
         context.navToWidget(to: SearchListIndex(value: item));
       },
       child: Chip(

@@ -28,7 +28,7 @@ class Root extends View {
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
         theme: themeValue.copyWith(
-            scaffoldBackgroundColor: Colors.grey.shade200,
+            scaffoldBackgroundColor: Colors.white,
             cardTheme: themeValue.cardTheme.copyWith(color: Colors.white, elevation: 0.3),
             appBarTheme: themeValue.appBarTheme.copyWith(backgroundColor: Colors.white, elevation: 0.3, surfaceTintColor: Colors.white),
             primaryColor: Colors.pink,

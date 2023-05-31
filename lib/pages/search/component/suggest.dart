@@ -53,7 +53,6 @@ class Suggest extends ConsumerWidget {
   Widget _renderItem(HotSearchWorlds item,BuildContext context,WidgetRef ref) {
     return GestureDetector(
       onTap: () {
-        ref.read(searchRiverpod).loadData(worlds: item.words);
         context.navToWidget(to: SearchListIndex(value: item.words ?? ''));
       },
       child: Padding(

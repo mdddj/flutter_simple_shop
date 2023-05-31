@@ -1,9 +1,11 @@
+import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../provider/riverpod/search_riverpod.dart';
-import 'component/initloading_status.dart';
-import 'component/product_list.dart';
+import '../../widgets/loading_more_list_indicator.dart';
+import '../../widgets/waterfall_goods_card.dart';
 
 /// 搜索结果页面
 class SearchListIndex extends ConsumerWidget {
@@ -12,22 +14,25 @@ class SearchListIndex extends ConsumerWidget {
   const SearchListIndex({Key? key, required this.value}) : super(key: key);
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        // value: value,
-        // onSearch: (String value)=> ref.read(searchRiverpod).loadData(worlds: value),
+        title: Text('搜索:$value'),
       ),
-      body: EasyRefresh.custom(
-        slivers: const [
-          SearchInitLoadingStatus(),
-          SliverToBoxAdapter(
-            child: SearchProductList(),
-          )
-        ],
-        onLoad: ref.read(searchRiverpod).nextPage,
-        footer: MaterialFooter(),
-      ),
+      body: MyLoadingMoreList(MyListConfig<ProductModel>(
+          itemBuilder: _itemBuilder,
+          sourceList: SearchRepository(value),
+          padding: const EdgeInsets.all(8),
+          indicatorBuilder:(context, status) {
+            return LoadingMoreListCostumIndicator(status);
+          },
+          extendedListDelegate:
+              const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8))),
     );
+  }
+
+  Widget _itemBuilder(BuildContext context, ProductModel item, int index) {
+    return WaterfallGoodsCard(item);
   }
 }

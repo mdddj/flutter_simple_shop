@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 import '../../app.dart';
 import '../../assets.dart';
+import '../../index.dart';
 
 ///自定义加载中状态
 class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
@@ -94,7 +95,7 @@ class _LoadingMoreBusying extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CircularProgressIndicator().defaultPadding12.center;
+    return const MyLoading().defaultPadding12.center;
   }
 }
 

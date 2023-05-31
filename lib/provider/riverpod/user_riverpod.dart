@@ -6,10 +6,7 @@ import '../../api/model/login_params.dart';
 import '../../exception/app.dart';
 import '../../freezed/login_result_model.dart';
 import '../../index.dart';
-import '../../init.dart';
 import '../../pages/user_home_page/login/login_base.dart';
-import '../../service/user_api.dart';
-import '../../util/cache_util.dart';
 import 'model/my_user.dart';
 import 'model/user.dart';
 
