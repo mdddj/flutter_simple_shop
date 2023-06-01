@@ -64,6 +64,7 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
       if(value.isNotEmpty){
         ///token获取用户信息
         wtfLog("启动尝试自动登录:$value");
+        getIt.get<UserApi>().token = value;
         getIt.get<Api>().getUser(value).then((user)=>state = state.copyWith(user: user));
       }
     });

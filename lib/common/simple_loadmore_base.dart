@@ -4,6 +4,7 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
 import '../api/apis.dart';
+import '../index.dart';
 
 abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMoreBase<T> {
   int vPageSize = 20;
@@ -26,7 +27,8 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
       'pageSize': vPageSize
     };
     var isSuccess = true;
-    final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams,responseResultCallback: wtfLog));
+    final token = await getIt.get<Api>().getAuthorizationHeader();
+    final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams,responseResultCallback: wtfLog,headers: token));
     isSuccess = r.isSuccess;
     if(r.isSuccess){
       final data = r.getValue('data');

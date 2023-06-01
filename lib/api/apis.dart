@@ -100,6 +100,7 @@ class SelectMeetListData extends MyAppCoreApi with ApiPageMixin {
   SelectMeetListData._() : super('/api/mianji/list');
   static SelectMeetListData get _instance => SelectMeetListData._();
   factory SelectMeetListData() => _instance;
+
 }
 
 ///获取邮箱验证码接口

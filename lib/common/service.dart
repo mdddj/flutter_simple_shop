@@ -3,8 +3,8 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import '../index.dart';
 import '../provider/riverpod/model/my_user.dart';
-import 'utils.dart';
 
 abstract class ApiService {
   /// 登入
@@ -68,5 +68,15 @@ class Api extends ApiService {
     }
   }
 
+  Future<Map<String,dynamic>> getAuthorizationHeader() async {
+    final token =await CacheFactory.create<TokenCache>().userToken;
+    if(token.isNotEmpty){
+      return {
+        "Authorization": token
+      };
+    }
+    return <String,dynamic>{};
+
+  }
 
 }

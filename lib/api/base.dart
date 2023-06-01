@@ -55,7 +55,8 @@ abstract class MyAppCoreApi extends BaseApi {
       }));
       final json = WrapJson(r);
       if (json.isSuccess.not) {
-        throw AppException.appError(code: json.getInt('state', defaultValue: 90001), msg: json.message);
+          json.print();
+        throw AppException.appError(code: json.getInt('state', defaultValue: 90001), msg: json.message,data: json.getValue('data'));
       }
       return json;
     } on AppException catch (e) {

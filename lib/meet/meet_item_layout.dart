@@ -19,38 +19,68 @@ class MeetItemLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0,
-      color: context.colorScheme.surfaceVariant,
-      margin: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ListTile(
-            leading: DefaultAvatarWidget(
-              meetModel.user.picture,
-              size: 50,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ListTile(
+              leading: DefaultAvatarWidget(
+                meetModel.user.picture,
+                size: 50,
+              ),
+              title: DefaultUsernameWidget(meetModel.user),
+              subtitle: Text(meetModel.createDate),
             ),
-            title: DefaultUsernameWidget(meetModel.user),
-            subtitle: Text(meetModel.createDate),
-          ),
-          ListTile(
-            title: Text(
-              meetModel.content,
-              style: meetModel.isEmptyConent ? context.textTheme.bodyMedium : context.textTheme.bodyMedium,
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                elevation: 0,
+                color: context.colorScheme.surfaceVariant,
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('称呼:${meetModel.name}'),
+                      Text("年龄:${meetModel.age}"),
+                      Text("地址:${meetModel.location}"),
+                      Text("面基地点:${meetModel.toLocation}"),
+                      Text("面基事件:${meetModel.mianjiInfo}"),
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-
-          //图片列表
-          WaterfallFlow.count(
-            shrinkWrap: true,
-            padding: const EdgeInsets.all(12),
-            physics: const NeverScrollableScrollPhysics(),
-            mainAxisSpacing: 8,
-            crossAxisSpacing: 8,
-            crossAxisCount: 3,
-            children: [...meetModel.images.map((element) => ExtendedImage.network(element.url,borderRadius: BorderRadius.circular(8),shape: BoxShape.rectangle,))],
-          )
-        ],
+      
+            //图片列表
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text('自拍'),
+                  WaterfallFlow.count(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8,
+                    crossAxisCount: 5,
+                    children: [...meetModel.images.map((element) => ExtendedImage.network(element.url,borderRadius: BorderRadius.circular(8),shape: BoxShape.rectangle,))],
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(onPressed: (){}, child: Text('接受面基')),
+                const SizedBox(width: 12),
+                FilledButton(onPressed: (){}, child: const Text("查看面基记录"))
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
