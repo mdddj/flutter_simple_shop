@@ -60,7 +60,7 @@ DEPENDENCIES:
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - network_info_plus (from `.symlinks/plugins/network_info_plus/ios`)
   - package_info (from `.symlinks/plugins/package_info/ios`)
-  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - saver_gallery (from `.symlinks/plugins/saver_gallery/ios`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
@@ -92,7 +92,7 @@ EXTERNAL SOURCES:
   package_info:
     :path: ".symlinks/plugins/package_info/ios"
   path_provider_foundation:
-    :path: ".symlinks/plugins/path_provider_foundation/ios"
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
   permission_handler_apple:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
   saver_gallery:
@@ -112,7 +112,7 @@ SPEC CHECKSUMS:
   image_picker_ios: b786a5dcf033a8336a657191401bfdf12017dabb
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
   Mantle: c5aa8794a29a022dfbbfc9799af95f477a69b62d
-  network_info_plus: b78876159360f5580608c2cea620d6ceffabd0ad
+  network_info_plus: 122280582fe2fa2bbb8681a4269745cd5c3a9b32
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
@@ -124,4 +124,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d7fbf063a5c8edf909dae1c54074aac3a35ea1ef
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1

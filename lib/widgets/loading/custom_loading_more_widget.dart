@@ -37,7 +37,10 @@ class CustomLoadingMoreWidget extends StatelessWidget {
     late Widget child;
     switch (indicatorStatus) {
       case IndicatorStatus.fullScreenError:
-        child =  SliverFillRemaining(child: _FullScreenError(retry: retry,),);
+        child =  _FullScreenError(retry: retry);
+        if(isSliver){
+          child = SliverFillRemaining(child: child);
+        }
         break;
       case IndicatorStatus.fullScreenBusying:
         child = const _FullScreenBusying();
@@ -50,6 +53,9 @@ class CustomLoadingMoreWidget extends StatelessWidget {
         break;
       case IndicatorStatus.empty:
         child = const _Empty();
+        if(isSliver){
+          child = SliverFillRemaining(child: child);
+        }
         break;
       case IndicatorStatus.error:
         child = const _Error();
@@ -79,9 +85,10 @@ class _FullScreenError extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text("服务繁忙,请稍后重试 (-1)"),
+          SvgPicture.asset('assets/svg/err.svg',width: context.screenWidth * 0.2,colorFilter: ColorFilter.mode(context.colorScheme.secondary, BlendMode.srcIn),).padding(12),
+           Text("服务繁忙,请稍后重试 (-1)",style: TextStyle(color: context.colorScheme.secondary),),
           if(retry!=null)
-          FilledButton(onPressed: retry, child: const Text("刷新重试")).margin(12)
+          FilledButton(onPressed: retry, child: const Text("刷新重试")).margin(44)
         ],
       ),
     );

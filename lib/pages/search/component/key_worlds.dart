@@ -57,7 +57,7 @@ class SearchKeyWorldsState extends ConsumerState<SearchKeyWorlds> {
   void initState() {
     Future.microtask(() async {
       final result = await DdTaokeSdk.instance.getSuggest(requestParamsBuilder: (RequestParams requestParams) {
-        return requestParams;
+        return requestParams.copyWith(showDefaultLoading: false);
       });
       if (mounted) {
         _keyWorlds.clear();

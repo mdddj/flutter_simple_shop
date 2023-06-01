@@ -31,7 +31,11 @@ List<Widget> buildIndexGridMenuItems(ApplocationContext applocationContext) {
     /// 领券
     GridMenuItem(
         item: GridMenuModel(
-            title: '饿了吗', image: elmImage, isAssets: true, onTap: () => applocationContext.context.navToWidget(to: const WaimaiIndex()))),
+            title: '饿了吗',
+            image: elmImage,
+            isAssets: true,
+            onTap: () => applocationContext.context
+                .navToWidget(to: const WaimaiIndex()))),
 
     GridMenuItem(
         item: GridMenuModel(
@@ -47,31 +51,66 @@ List<Widget> buildIndexGridMenuItems(ApplocationContext applocationContext) {
     /// 排行榜
     GridMenuItem(
         item: GridMenuModel(
-            title: '排行榜', image: phbImage, onTap: () => applocationContext.context.navToWidget(to: const PanicBuyingPage()), isAssets: true)),
+            title: '排行榜',
+            image: phbImage,
+            onTap: () => applocationContext.context
+                .navToWidget(to: const PanicBuyingPage()),
+            isAssets: true)),
 
     /// 折上折
     GridMenuItem(
-        item:
-            GridMenuModel(title: '折上折', image: zheImage, onTap: () => applocationContext.context.navToWidget(to: const ZheIndex()), isAssets: true)),
+        item: GridMenuModel(
+            title: '折上折',
+            image: zheImage,
+            onTap: () =>
+                applocationContext.context.navToWidget(to: const ZheIndex()),
+            isAssets: true)),
 
     GridMenuItem(
         item: GridMenuModel(
-            title: '每日半价', image: banjiaImage, onTap: () => applocationContext.context.navToWidget(to: const BanjiaIndex()), isAssets: true)),
-
-    GridMenuItem(item: GridMenuModel(title: '拼夕夕', image: 'assets/svg/pdd.svg', onTap: () => const SearchPage(), isAssets: true)),
-    GridMenuItem(item: GridMenuModel(title: '8折话费', image: chf, onTap: () => utils.openLink(appConfig['huafeiUrl'].toString()), isAssets: true)),
-
-    GridMenuItem(
-        item:
-            GridMenuModel(title: '精选品牌', image: pp, onTap: () => applocationContext.context.navToWidget(to: const BrandListPage()), isAssets: true)),
+            title: '每日半价',
+            image: banjiaImage,
+            onTap: () =>
+                applocationContext.context.navToWidget(to: const BanjiaIndex()),
+            isAssets: true)),
 
     GridMenuItem(
-        item:
-            GridMenuModel(title: '京东好货', image: jd, onTap: () => applocationContext.context.navToWidget(to: const RecommendPage()), isAssets: true)),
+        item: GridMenuModel(
+            title: '拼夕夕',
+            image: 'assets/svg/pdd.svg',
+            onTap: () => const SearchPage(),
+            isAssets: true)),
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '8折话费',
+            image: chf,
+            onTap: () => utils.openLink(appConfig['huafeiUrl'].toString()),
+            isAssets: true)),
+
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '精选品牌',
+            image: pp,
+            onTap: () => applocationContext.context
+                .navToWidget(to: const BrandListPage()),
+            isAssets: true)),
+
+    GridMenuItem(
+        item: GridMenuModel(
+            title: '京东好货',
+            image: jd,
+            onTap: () => applocationContext.context
+                .navToWidget(to: const RecommendPage()),
+            isAssets: true)),
 
     /// 面基专区
     GridMenuItem(
-        item: GridMenuModel(title: '典典面基', image: pyq, onTap: () => applocationContext.context.navToWidget(to: const MianjiPage()), isAssets: true)),
+        item: GridMenuModel(
+            title: '典典面基',
+            image: pyq,
+            onTap: () =>
+                applocationContext.context.navToWidget(to: const MianjiPage()),
+            isAssets: true)),
   ];
 }
 

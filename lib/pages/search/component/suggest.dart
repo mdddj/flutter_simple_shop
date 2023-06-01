@@ -7,7 +7,7 @@ import '../../../widgets/riverpod_error.dart';
 
 
 final _riverpodSuggest = FutureProvider.autoDispose((ref) async {
-  return await DdTaokeSdk.instance.getHotSearchWorlds();
+  return await DdTaokeSdk.instance.getHotSearchWorlds(requestParamsBuilder: (r)=>r.copyWith(showDefaultLoading: false));
 });
 
 ///热搜榜

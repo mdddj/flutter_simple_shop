@@ -9,7 +9,6 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
   int vPageSize = 20;
   int vPage = 0;
   bool nomore = false;
-
   @override
   Future<bool> refresh([bool notifyStateChanged = false]) {
     vPage = 0;
@@ -27,7 +26,7 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
       'pageSize': vPageSize
     };
     var isSuccess = true;
-    final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams));
+    final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams,responseResultCallback: wtfLog));
     isSuccess = r.isSuccess;
     if(r.isSuccess){
       final data = r.getValue('data');
@@ -50,6 +49,7 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
 
   @override
   bool get hasMore => !nomore ;
+
 
 
 }

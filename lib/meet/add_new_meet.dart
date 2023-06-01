@@ -39,6 +39,7 @@ class _AddNewMeetState extends State<AddNewMeet> {
     final api = MeetRequestAdd();
     api.params.addAll({});
     final response = await api.request();
+    response.print();
     response.handle();
   }
 

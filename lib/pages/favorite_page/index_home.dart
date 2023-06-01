@@ -43,6 +43,10 @@ class _FavoritesListWidget extends View {
           return FavoriteGoodsItem(item: model, isShowEditIcon: false, repository: appCore.favoritesRepository);
         },
         sourceList: appCore.favoritesRepository,
-        indicatorBuilder: CustomLoadingMoreWidget.new));
+        indicatorBuilder:(context, status) {
+          return CustomLoadingMoreWidget(context,status,retry: (){
+              appCore.favoritesRepository.refresh(true);
+          });
+        },));
   }
 }

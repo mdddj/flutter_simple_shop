@@ -12,8 +12,8 @@ class LoginTipWidget extends StatelessWidget {
     return Center(
       child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
           const Text('请先登录进行下一步操作'),
-          12.h,
-          ElevatedButton(onPressed: () {
+          const SizedBox(height: 33,),
+          FilledButton(onPressed: () {
             context.navToWidget(to: const UserLoginPage());
           }, child: const Text("登录"))
         ]),
