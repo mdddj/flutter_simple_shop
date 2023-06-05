@@ -22,10 +22,11 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
     if(vPage == 0){
       clear();
     }
-    final pageParams = {
+    final pageParams = <String,dynamic>{
       'page': vPage,
       'pageSize': vPageSize
     };
+    pageParams.addAll(otherParams);
     var isSuccess = true;
     final token = await getIt.get<Api>().getAuthorizationHeader();
     final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams,responseResultCallback: wtfLog,headers: token));
@@ -40,6 +41,9 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
     return isSuccess;
   }
 
+
+  Map<String,dynamic> get otherParams => <String,dynamic>{};
+
   A get api;
 
   ///将服务器返回的数据转换成所需要的模型
@@ -47,7 +51,9 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
 
   /// return [true] 没有更多了
   /// return [false] 还有下一页
-  bool transformIsNomore(WrapJson data);
+  bool transformIsNomore(WrapJson data){
+    return (data.getValue('last') as bool?)??true;
+  }
 
   @override
   bool get hasMore => !nomore ;

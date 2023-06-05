@@ -2,7 +2,6 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import '../constant/style.dart';
-import '../widgets/component/custom_loading.dart';
 import '../widgets/waterfall_goods_card.dart';
 
 /// 组件工具类
@@ -48,7 +47,7 @@ class WidgetUtils extends WidgetUtilService {
     return Skeleton(
       width: width,
       height: height,
-      cornerRadius: radius ?? 4, child: const SizedBox(),
+      borderRadius: BorderRadius.all(Radius.circular(radius??0)),
     );
   }
 

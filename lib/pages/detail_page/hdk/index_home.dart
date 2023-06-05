@@ -197,7 +197,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        height: 100,
         child: buildBottomRow(context),
       ),
     );

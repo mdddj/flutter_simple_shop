@@ -44,7 +44,8 @@ class Api extends ApiService {
 
   @override
   Future<MyUser?> getUser(String token) async {
-    final result = await request.get('/api/get-user-by-token',
+    try {
+      final result = await request.get('/api/get-user-by-token',
         isTaokeApi: false,requestParams:  RequestParams(
           headers: {
             "Authorization":token,
@@ -57,6 +58,10 @@ class Api extends ApiService {
       } catch (e,s) {
         Logger().d("用户数据解析失败:$e\n$s");
       }
+    }
+    } catch (e) {
+       CacheFactory.create<TokenCache>().cleanToken();
+     return null; 
     }
     return null;
   }

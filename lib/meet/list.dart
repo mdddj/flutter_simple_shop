@@ -22,7 +22,6 @@ class MeetListLoadMore extends SimpleLoadingMoreBaes<MeetModel,SelectMeetListDat
 
   @override
   List<MeetModel> transformResponseData(WrapJson data) {
-    data.print();
     return List<MeetModel>.from(data.getListValue('content').map(MeetModel.fromJson)).toList();
   }
 

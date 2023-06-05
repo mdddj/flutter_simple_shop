@@ -10,14 +10,13 @@ class DefaultUsernameWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(user.nickName,style: context.textTheme.titleMedium,),
-        ],
-      ),
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(user.nickName,style: context.textTheme.titleMedium?.copyWith(
+          fontWeight: FontWeight.bold
+        )),
+      ],
     );
   }
 }

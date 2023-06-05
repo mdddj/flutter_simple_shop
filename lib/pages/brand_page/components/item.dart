@@ -1,4 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/my_image.dart';
 import 'package:dd_models/models/brand.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
@@ -41,11 +42,7 @@ class BrandItemCard extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                 ),
-                child: Image.network(
-                  MImageUtils.magesProcessor(storeInfo.brandlogo),
-                  width: 50,
-                  height: 50,
-                ),
+                child: ImageView(image: MyImage.network(url: MImageUtils.magesProcessor(storeInfo.brandlogo),params: ImageParams(size: 50,borderRadius: BorderRadius.circular(8)))),
               ),
               1),
           _buildHeaderFlexCore(

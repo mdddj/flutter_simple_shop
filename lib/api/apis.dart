@@ -97,10 +97,17 @@ class MeetRequestAdd extends MyAppCoreApi {
 
 ///查询面基申请记录
 class SelectMeetListData extends MyAppCoreApi with ApiPageMixin {
-  SelectMeetListData._() : super('/api/mianji/list');
-  static SelectMeetListData get _instance => SelectMeetListData._();
-  factory SelectMeetListData() => _instance;
+  SelectMeetListData() : super('/api/mianji/list');
+}
 
+///查询资源动态列表
+class SelectMyRsourceListData extends MyAppCoreApi with ApiPageMixin {
+  SelectMyRsourceListData():super("/api/app/resource/list");
+}
+
+///发布动态的接口
+class MyResourceCreateApi extends MyAppCoreApi {
+  MyResourceCreateApi():super('/api/app/resource/new',httpMethod: HttpMethod.post);
 }
 
 ///获取邮箱验证码接口

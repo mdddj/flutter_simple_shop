@@ -10,13 +10,17 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
+
+import 'api/apis.dart';
+import 'api/base.dart';
+import 'api/tkapi.dart';
 import 'index.dart';
 
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
   DDCheckPluginSetting.showLog = false;
   if(kAppDebugMode){
-    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.79',port: 9998, customCoverterResponseData: (model){
+    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.73',port: 9999, customCoverterResponseData: (model){
       final body = model.response?.data;
       return isValue<Map<String,dynamic>>(body).isNotNull<SendResponseModel?>((value) {
         return  isValue<String>(body['data']).isNotNull<SendResponseModel?>((value2) {
@@ -55,6 +59,10 @@ void initInstanceObject() {
   GetIt.instance.registerSingleton<Api>(Api());
   GetIt.instance.registerSingleton<UserApi>(UserApi());
   GetIt.instance.registerSingleton<FavoritesRepository>(FavoritesRepository());
+  getIt.registerSingleton<MyTokenInterceptor>( MyTokenInterceptor());
+  getIt.registerSingleton(MyTaokeApiWithSimilarProducts());
+  getIt.registerSingleton(SelectMyRsourceListData());
+  getIt.registerSingleton(MyResourceCreateApi());
 }
 
 Future<void> initCaches() async {

@@ -41,6 +41,8 @@ class TokenCache extends CacheBase<String> {
   }
   Future<String> get userToken => _getToken();
 
+  void cleanToken() => openBox().then((value) => value.delete(tokenKey));
+
 }
 
 class MyCache<E> extends CacheBase<E> {

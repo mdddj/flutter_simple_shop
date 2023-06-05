@@ -3,21 +3,24 @@ import 'package:dd_js_util/model/picture_selection_item.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart' hide View;
 import 'package:flutter/material.dart' hide View;
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 
 import '../api/apis.dart';
 import '../common/view.dart';
+import '../index.dart';
+import '../widgets/login_tip_widget.dart';
 import 'model/params.dart';
 
 ///线下面基申请页面
-class AddNewMeet extends StatefulWidget {
+class AddNewMeet extends ConsumerStatefulWidget {
   const AddNewMeet({Key? key}) : super(key: key);
 
   @override
-  State<AddNewMeet> createState() => _AddNewMeetState();
+  ConsumerState<AddNewMeet> createState() => _AddNewMeetState();
 }
 
-class _AddNewMeetState extends State<AddNewMeet> {
+class _AddNewMeetState extends ConsumerState<AddNewMeet> {
   final ctrlName = TextEditingController(); //姓名
   final ctrlAge = TextEditingController(); //年龄
   final ctrlSoulName = TextEditingController(); //soul昵称
@@ -60,7 +63,7 @@ var files = <MultipartFile>[];
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: '申请面基'.appbar,
-      body: KeyboardActions(
+      body: ref.isLogin.not ? const LoginTipWidget() : KeyboardActions(
         config: _buildConfig,
         child: CupertinoListSection(
           margin: const EdgeInsets.all(12),

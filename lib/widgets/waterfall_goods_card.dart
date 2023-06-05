@@ -103,7 +103,7 @@ class WaterfallGoodsCard extends StatelessWidget {
   Widget renderShopType(BuildContext context) {
     final text = product.shopType == 0 ? '淘宝' : '天猫';
     return Container(
-      padding: const EdgeInsets.all(2),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
       decoration: BoxDecoration(
           color: context.primaryColor, borderRadius: BorderRadius.circular(3)),
       child: Text(text,style: TextStyle(

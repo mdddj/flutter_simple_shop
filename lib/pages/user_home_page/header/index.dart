@@ -1,11 +1,14 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/my_image.dart';
 import 'package:extended_image/extended_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../common/utils.dart';
 import '../../../constant/style.dart';
+import '../../../index.dart';
 import '../../../provider/riverpod/model/my_user.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import '../../../util/navigator_util.dart';
@@ -55,7 +58,7 @@ class HeaderIndex extends ConsumerWidget {
             utils.widgetUtils.marginRight(),
             // 用户头像
             ExtendedImage.network(
-              'https://s3.bmp.ovh/imgs/2022/03/63a168e31a3ae7e0.jpeg',
+              user.picture,
               width: kAvatarHeight,
               height: kAvatarHeight,
               borderRadius: BorderRadius.circular(50),
@@ -147,5 +150,17 @@ class HeaderIndex extends ConsumerWidget {
             ),
       ),
     );
+  }
+}
+
+
+class LoginUserAvatar extends ConsumerWidget {
+
+  const LoginUserAvatar({super.key});
+
+  @override
+  Widget build(BuildContext context,WidgetRef ref) {
+    final user = ref.user!;
+    return ImageView(image: MyImage.network(url: user.picture,params: ImageParams(size: 30,borderRadius: BorderRadius.circular(100),errorWidget: const Icon(CupertinoIcons.person).center)));
   }
 }

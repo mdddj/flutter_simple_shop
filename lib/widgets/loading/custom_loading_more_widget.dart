@@ -11,7 +11,8 @@ class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
   final BuildContext context;
   final IndicatorStatus indicatorStatus;
   final  VoidCallback? retry;
-  const CustomLoadingMoreWidgetWithSliver(this.context, this.indicatorStatus, {Key? key, this.retry}) : super(key: key);
+  final Widget? emptyChild;
+  const CustomLoadingMoreWidgetWithSliver(this.context, this.indicatorStatus, {Key? key, this.retry, this.emptyChild}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
       indicatorStatus,
       isSliver: true,
       retry: retry,
+      emptyChild: emptyChild,
     );
   }
 }
@@ -30,7 +32,8 @@ class CustomLoadingMoreWidget extends StatelessWidget {
   final IndicatorStatus indicatorStatus;
   final bool isSliver;
   final VoidCallback? retry;
-  const CustomLoadingMoreWidget(this.context, this.indicatorStatus, {Key? key, this.isSliver = false, this.retry}) : super(key: key);
+  final Widget? emptyChild;
+  const CustomLoadingMoreWidget(this.context, this.indicatorStatus, {Key? key, this.isSliver = false, this.retry, this.emptyChild}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +55,7 @@ class CustomLoadingMoreWidget extends StatelessWidget {
         child = const _LoadingMoreBusying();
         break;
       case IndicatorStatus.empty:
-        child = const _Empty();
+        child =  _Empty(child: emptyChild,);
         if(isSliver){
           child = SliverFillRemaining(child: child);
         }
@@ -117,7 +120,8 @@ class _LoadingMoreBusying extends StatelessWidget {
 
 ///无数据
 class _Empty extends ConsumerWidget {
-  const _Empty({Key? key}) : super(key: key);
+  final Widget? child;
+  const _Empty({Key? key,this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -141,7 +145,7 @@ class _Empty extends ConsumerWidget {
           const SizedBox(
             height: 12,
           ),
-          FilledButton(
+          child ?? FilledButton(
               onPressed: () {
                 ref.read(homeModuleShowIndex.notifier).state = 0;
               },

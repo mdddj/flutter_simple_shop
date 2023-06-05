@@ -1,10 +1,11 @@
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dio/dio.dart';
+import '../init.dart';
 import '../service/user_api.dart';
 
 ///添加token到请求头
-class MyInterceptor implements Interceptor {
+class MyTokenInterceptor implements Interceptor {
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
     handler.next(err);
@@ -34,7 +35,7 @@ abstract class MyAppCoreApiWithPager extends MyAppCoreApi {
 abstract class MyAppCoreApi extends BaseApi {
   MyAppCoreApi(String url, {HttpMethod? httpMethod, bool showDetailLog = false}) : super(url, httpMethod: httpMethod ?? HttpMethod.get);
 
-  final token = MyInterceptor();
+  final token = getIt.get<MyTokenInterceptor>();
 
   bool get isRemoveUserToken => false;
 
@@ -42,17 +43,11 @@ abstract class MyAppCoreApi extends BaseApi {
   Future<WrapJson> request([RequestParams? options]) async {
     options ??= const RequestParams();
     interceptions.clear();
-    if (!interceptions.contains(token)) {
+    if (!interceptions.contains(token) && isRemoveUserToken.not) {
       interceptions.add(token);
     }
     try {
-      final r = await super.request(options.copyWith(interceptorCall: (it) {
-        final list = List<Interceptor>.from(it);
-        if (isRemoveUserToken) {
-          list.removeWhere((element) => element is MyInterceptor);
-        }
-        return list;
-      }));
+      final r = await super.request(options);
       final json = WrapJson(r);
       if (json.isSuccess.not) {
           json.print();

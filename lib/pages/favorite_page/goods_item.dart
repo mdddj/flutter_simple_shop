@@ -130,10 +130,7 @@ class FavoriteGoodsItem extends StatelessWidget {
       var difference = endTime.difference(now);
       Widget returnWidget = Text('剩余有效期${difference.inDays}天${difference.inHours % 24}小时');
       if (difference.inDays < 0) {
-        returnWidget = Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [const Badge(child: Text('已失效')).marginOnly(top: 12)],
-        );
+        returnWidget =  const Text('已失效');
       }
       return returnWidget;
     }

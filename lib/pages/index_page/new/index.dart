@@ -28,14 +28,10 @@ class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerPro
 
   @override
   Widget build(BuildContext context) {
-    return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-        return [
-          IndexHomeAppbar(
-            tabController: tabController,
-          ),
-        ];
-      },
+    return Scaffold(
+      appBar: IndexHomeAppbar(
+        tabController: tabController,
+      ),
       body: TabBarView(
         controller: tabController,
         children: [const HomeWidgets(), ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map(CategoryGoodsList.new).toList()],

@@ -28,7 +28,7 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
       setTokenToCatch(model.token);
       return model;
     }else{
-      throw AppRuntimeException('登录失败:${response.message}');
+      throw AppRuntimeException(response.message);
     }
   }
 

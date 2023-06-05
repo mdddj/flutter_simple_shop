@@ -18,11 +18,11 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
 
 
   @override
-  Size get preferredSize => const Size.fromHeight(48);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight+38);
 
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
-    return SliverAppBar(
+    return AppBar(
       leadingWidth: 58,
       title:  Container(
         padding: const EdgeInsets.all(4),

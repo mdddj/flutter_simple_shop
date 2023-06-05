@@ -1,8 +1,10 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:extended_image/extended_image.dart';
+import 'package:dd_js_util/model/my_image.dart';
+import 'package:dd_js_util/model/picture_selection_item.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
+import '../resource/page.dart';
 import '../widgets/default_avatar_widget.dart';
 import '../widgets/default_user_name.dart';
 import 'meet_model.dart';
@@ -19,68 +21,75 @@ class MeetItemLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListTile(
-              leading: DefaultAvatarWidget(
-                meetModel.user.picture,
-                size: 50,
-              ),
-              title: DefaultUsernameWidget(meetModel.user),
-              subtitle: Text(meetModel.createDate),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ListTile(
+            isThreeLine: true,
+            leading: DefaultAvatarWidget(
+              meetModel.user.picture,
+              size: 40,
             ),
-            SizedBox(
-              width: double.infinity,
-              child: Card(
-                elevation: 0,
-                color: context.colorScheme.surfaceVariant,
-                child: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('称呼:${meetModel.name}'),
-                      Text("年龄:${meetModel.age}"),
-                      Text("地址:${meetModel.location}"),
-                      Text("面基地点:${meetModel.toLocation}"),
-                      Text("面基事件:${meetModel.mianjiInfo}"),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-      
-            //图片列表
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            title: DefaultUsernameWidget(meetModel.user),
+            subtitle: Text(meetModel.createDate,style: context.textTheme.labelSmall?.copyWith(
+              color: Colors.grey
+            )),
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: Card(
+              elevation: 0,
+              color: context.colorScheme.surfaceVariant,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('自拍'),
-                  WaterfallFlow.count(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    mainAxisSpacing: 8,
-                    crossAxisSpacing: 8,
-                    crossAxisCount: 5,
-                    children: [...meetModel.images.map((element) => ExtendedImage.network(element.url,borderRadius: BorderRadius.circular(8),shape: BoxShape.rectangle,))],
-                  ),
+                  Text('称呼:${meetModel.name}'),
+                  Text("年龄:${meetModel.age}"),
+                  Text("地址:${meetModel.location}"),
+                  Text("面基地点:${meetModel.toLocation}"),
+                  Text("面基事件:${meetModel.mianjiInfo}"),
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+          ),
+
+          //图片列表
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextButton(onPressed: (){}, child: Text('接受面基')),
-                const SizedBox(width: 12),
-                FilledButton(onPressed: (){}, child: const Text("查看面基记录"))
+                const Text('自拍').marginOnly(bottom: 12),
+                WaterfallFlow.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 8,
+                  crossAxisCount: 5,
+                  children: [...meetModel.images.map((element) =>
+                      ImageView(image: MyImage.network(url: element.url,params: ImageParams(size: double.infinity,borderRadius: 12.borderRadius,fit: BoxFit.cover))).constraintBox((size, child) => SizedBox(
+                        width: size.maxWidth,
+                        height: size.maxWidth,
+                        child: child.clipRadius(12).click(() {
+                          context.navToWidget(to: ImagePreview(images: meetModel.images.map((element2) => PictureSelectionItemModel.network(url: element2.url)).toList(),index:
+                            meetModel.images.indexOf(element)));
+                        }),
+                      )))],
+                ),
               ],
-            )
-          ],
-        ),
+            ),
+          ).visible(meetModel.images.isNotEmpty),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton(onPressed: (){}, child: const Text('接受面基')),
+              const SizedBox(width: 12),
+              FilledButton(onPressed: (){
+                context.navToWidget(to: const MyResourcePage(name: '典典的面基记录'));
+              }, child: const Text("查看面基记录"))
+            ],
+          )
+        ],
       ),
     );
   }

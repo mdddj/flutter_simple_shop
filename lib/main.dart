@@ -11,7 +11,7 @@ const apiHost = 'http://192.168.100.55';
 const apiPort = "80";
 // const apiHost = "https://itbug.shop";
 // const apiPort = "9445";
-const kAppDebugMode = false;
+const kAppDebugMode = true;
 
 void main() async {
   appInit(() => runApp(const ProviderScope(child: Root())));
@@ -23,22 +23,11 @@ class Root extends View {
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
     return ThemeBuildWidget(themeBuild: (theme) {
-      final themeValue = ThemeData.light(useMaterial3: true);
+      final themeValue = MyAppTheme.getTheme(theme.themeIndex);
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: themeValue.copyWith(
-            scaffoldBackgroundColor: Colors.white,
-            cardTheme: themeValue.cardTheme.copyWith(color: Colors.white, elevation: 0.3),
-            appBarTheme: themeValue.appBarTheme.copyWith(backgroundColor: Colors.white, elevation: 0.3, surfaceTintColor: Colors.white),
-            primaryColor: Colors.pink,
-            colorScheme: themeValue.colorScheme.copyWith(
-              primary: Colors.pink,
-            ),
-            tabBarTheme: themeValue.tabBarTheme.copyWith(
-                labelColor: Colors.pink,
-                unselectedLabelColor: Colors.black,
-                labelStyle: const TextStyle(fontWeight: FontWeight.bold))),
+        theme: themeValue,
         darkTheme: MyAppTheme.darkTheme,
         themeMode: theme.getThemeMode,
         home: const MyApp(),
