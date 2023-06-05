@@ -17,8 +17,9 @@
 
 macos安装包: <a href="https://github.com/mdddj/flutter_simple_shop/releases/download/3.0.0/flutter_simple_shop_macos.app.zip">下载</a>
 
-API
+
 ```dart
+//api lib/main.dart
 const apiHost = 'https://itbug.shop';
 const apiPort = '9445';
 ```
@@ -70,7 +71,7 @@ const apiPort = '9445';
 
 ## 关于本项目
 
-淘宝客APP, 群号706438100
+淘宝客APP
 
 # 项目截图
 
