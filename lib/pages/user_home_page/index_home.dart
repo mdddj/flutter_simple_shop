@@ -1,10 +1,10 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../index.dart';
+import 'pages/resource_list.dart';
 
 /// 用户主页布局
 class UserIndexHome extends ConsumerStatefulWidget {
@@ -18,125 +18,69 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(color: context.primaryColor),
-              child: Column(children: [
-                const UserHomeAppBar(),
-                _buildHeaderWidget(),
-              ]),
-            ),
-            utils.widgetUtils.marginTop(),
-            _renderUserValues(),
-            const OrderIndex(),
-            utils.widgetUtils.marginTop(),
-            _renderMenus(),
-            utils.widgetUtils.marginTop(),
-            OutlinedButton(onPressed: ()=>ref.read(userRiverpod.notifier).logout(), child: const Text("退出登录"))
-          ],
-        ),
+      body: MyLoadingMoreCustomScrollView(
+        slivers: [
+          Container(
+            decoration: BoxDecoration(color: context.primaryColor),
+            child: Column(children: [
+              const UserHomeAppBar(),
+              _buildHeaderWidget(),
+            ]),
+          ).toSliverWidget,
+          _renderUserValues().toSliverWidget,
+          const UserResourceWidget()
+        ]
       ),
     );
   }
 
-// 渲染个人中心菜单
-  Widget _renderMenus() {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: Column(children: [
-          _renderMenuItem('浏览历史',
-              svgIcon: 'assets/svg/user/llls.svg',
-              color: Colors.green,
-              child: _renderHistoryList(),
-              actions: IconButton(onPressed: () {}, icon: Icon(Icons.delete, size: 22, color: Colors.grey.shade400))),
-          _renderMenuItem('我的钱包', svgIcon: 'assets/svg/user/qb.svg', color: Colors.red),
-          _renderMenuItem('我的分销', svgIcon: 'assets/svg/user/fx.svg', color: Colors.greenAccent),
-          _renderMenuItem('地址管理', svgIcon: 'assets/svg/user/dz.svg', color: Colors.deepOrangeAccent),
-          _renderMenuItem('我的收藏', svgIcon: 'assets/svg/user/sc.svg', color: Colors.blueAccent),
-          _renderMenuItem('切换主题',
-              svgIcon: 'assets/svg/user/zhuti.svg', color: Colors.pink, onTap: () => context.navToWidget(to: const ThemeSettingPage())),
-          _renderMenuItem('意见反馈', svgIcon: 'assets/svg/user/yj.svg', color: Colors.orangeAccent),
-          _renderMenuItem('设置', svgIcon: 'assets/svg/user/sz.svg', color: Colors.blue),
-        ]),
-      ),
-    );
-  }
 
-  /// 浏览历史列表
 
-  Widget _renderHistoryList() {
-    return SizedBox(
-      width: double.infinity,
-      height: 80,
-      child: ListView.builder(
-        itemBuilder: (_, i) {
-          return AspectRatio(
-              aspectRatio: 1,
-              child: Container(
-                padding: const EdgeInsets.all(2),
-                width: double.infinity,
-                height: double.infinity,
-                child: const Card(),
-              ));
-        },
-        scrollDirection: Axis.horizontal,
-      ),
-    );
-  }
 
-// 菜单项目
-  Widget _renderMenuItem(String title, {String? svgIcon, VoidCallback? onTap, Widget? child, Color? color, Widget? actions}) {
-    return Column(
-      children: [
-        ListTile(
-          leading: svgIcon == null
-              ? null
-              : SvgPicture.asset(
-                  svgIcon,
-                  width: 22,
-                  height: 22,
-                  colorFilter: ColorFilter.mode(color ?? Colors.grey.shade200, BlendMode.srcIn),
-                ),
-          title: Row(
-            children: [Text(title), const Spacer(), actions ?? const SizedBox()],
-          ),
-          onTap: onTap,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: child ?? const SizedBox(),
-        )
-      ],
-    );
-  }
+
+
 
 // 用户订单和优惠券,余额等数据
   Widget _renderUserValues() {
-    return Card(
+    return const Card(
         child: Padding(
-      padding: const EdgeInsets.all(18.0),
-      child: _renderCounts(),
+      padding: EdgeInsets.all(18.0),
+      child: UserTokens(),
     ));
   }
 
-  Widget _renderCounts() {
+
+
+
+
+// 用户中心的头部
+  Widget _buildHeaderWidget() {
+    return const HeaderIndex();
+  }
+}
+
+class UserTokens extends ConsumerWidget {
+  const UserTokens({super.key});
+
+  @override
+  Widget build(BuildContext context,WidgetRef ref) {
+    final user = ref.user;
+    if(user == null){
+      return const SizedBox();
+    }
     return WaterfallFlow.count(
       crossAxisCount: 3,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       children: [
-        _countItem('余额', '102.43'),
-        _countItem('优惠券', '32张'),
-        _countItem('积分', '289'),
+        _countItem('令牌','${user.openAiTokens}',context),
+        _countItem('优惠券', '32张',context),
+        _countItem('积分', '289',context),
       ],
     );
   }
-
-  Widget _countItem(String key, String value) {
+  Widget _countItem(String key, String value,BuildContext context) {
     return Column(children: [
       Text(value, style: context.textTheme.titleMedium),
       const SizedBox(
@@ -145,9 +89,5 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
       Text(key, style: context.textTheme.bodySmall)
     ]);
   }
-
-// 用户中心的头部
-  Widget _buildHeaderWidget() {
-    return const HeaderIndex();
-  }
 }
+

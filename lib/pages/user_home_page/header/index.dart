@@ -6,12 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../common/utils.dart';
-import '../../../constant/style.dart';
 import '../../../index.dart';
 import '../../../provider/riverpod/model/my_user.dart';
-import '../../../provider/riverpod/user_riverpod.dart';
-import '../../../util/navigator_util.dart';
 import 'vip_header.dart';
 
 const kAvatarHeight = 58.0;

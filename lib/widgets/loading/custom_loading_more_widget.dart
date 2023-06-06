@@ -63,6 +63,12 @@ class CustomLoadingMoreWidget extends StatelessWidget {
       case IndicatorStatus.error:
         child = const _Error();
         break;
+      case IndicatorStatus.noMoreLoad:
+        child = Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(child: Text('没有更多了',style: context.textTheme.labelMedium?.copyWith(color: Colors.grey))),
+        );
+        break;
       case IndicatorStatus.none:
         child = const _Nothing();
         break;
@@ -81,18 +87,20 @@ class _FullScreenError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Align(
       alignment: Alignment.center,
-      padding: const EdgeInsets.symmetric(vertical: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset('assets/svg/err.svg',width: context.screenWidth * 0.2,colorFilter: ColorFilter.mode(context.colorScheme.secondary, BlendMode.srcIn),).padding(12),
-           Text("服务繁忙,请稍后重试 (-1)",style: TextStyle(color: context.colorScheme.secondary),),
-          if(retry!=null)
-          FilledButton(onPressed: retry, child: const Text("刷新重试")).margin(44)
-        ],
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(vertical: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset('assets/svg/err.svg',width: context.screenWidth * 0.2,colorFilter: ColorFilter.mode(context.colorScheme.secondary, BlendMode.srcIn),).padding(12),
+             Text("服务繁忙,请稍后重试 (-1)",style: TextStyle(color: context.colorScheme.secondary),),
+            if(retry!=null)
+            FilledButton(onPressed: retry, child: const Text("刷新重试")).margin(32)
+          ],
+        ),
       ),
     );
   }
@@ -176,12 +184,8 @@ class _Nothing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      height: 200,
-      width: double.infinity,
-      child: Center(
-        child: Text("空空如也"),
-      ),
+    return const Center(
+      child: Text("我也是有底线的哦～"),
     );
   }
 }

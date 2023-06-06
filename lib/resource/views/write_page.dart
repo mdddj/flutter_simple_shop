@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import '../../api/apis.dart';
 import '../../common/api_ext.dart';
 import '../../index.dart';
-import '../../meet/add_new_meet.dart';
-import '../../pages/user_home_page/header/index.dart';
 
 ///资源发布页面
 class MyResourceWritePage extends StatefulWidget {
@@ -119,8 +117,8 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   ///获取操作小部件
   Widget _builderActionButton() {
     return Container(
-      padding: EdgeInsets.all(6),
-      child: Column(
+      padding: const EdgeInsets.all(6),
+      child: const Column(
         children: [
           Row(
             children: [

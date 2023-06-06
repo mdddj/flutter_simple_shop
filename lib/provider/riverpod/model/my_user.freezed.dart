@@ -35,6 +35,9 @@ mixin _$MyUser {
   bool get accountNonLocked => throw _privateConstructorUsedError;
   bool get credentialsNonExpired => throw _privateConstructorUsedError;
   Vip get vip => throw _privateConstructorUsedError;
+  num get openAiTokens => throw _privateConstructorUsedError;
+  bool get openAiFlag => throw _privateConstructorUsedError;
+  Enterprise? get enterprise => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -61,7 +64,12 @@ abstract class $MyUserCopyWith<$Res> {
       bool accountNonExpired,
       bool accountNonLocked,
       bool credentialsNonExpired,
-      Vip vip});
+      Vip vip,
+      num openAiTokens,
+      bool openAiFlag,
+      Enterprise? enterprise});
+
+  $EnterpriseCopyWith<$Res>? get enterprise;
 }
 
 /// @nodoc
@@ -92,6 +100,9 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
     Object? accountNonLocked = null,
     Object? credentialsNonExpired = null,
     Object? vip = null,
+    Object? openAiTokens = null,
+    Object? openAiFlag = null,
+    Object? enterprise = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -154,7 +165,31 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
           ? _value.vip
           : vip // ignore: cast_nullable_to_non_nullable
               as Vip,
+      openAiTokens: null == openAiTokens
+          ? _value.openAiTokens
+          : openAiTokens // ignore: cast_nullable_to_non_nullable
+              as num,
+      openAiFlag: null == openAiFlag
+          ? _value.openAiFlag
+          : openAiFlag // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enterprise: freezed == enterprise
+          ? _value.enterprise
+          : enterprise // ignore: cast_nullable_to_non_nullable
+              as Enterprise?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $EnterpriseCopyWith<$Res>? get enterprise {
+    if (_value.enterprise == null) {
+      return null;
+    }
+
+    return $EnterpriseCopyWith<$Res>(_value.enterprise!, (value) {
+      return _then(_value.copyWith(enterprise: value) as $Val);
+    });
   }
 }
 
@@ -179,7 +214,13 @@ abstract class _$$_MyUserCopyWith<$Res> implements $MyUserCopyWith<$Res> {
       bool accountNonExpired,
       bool accountNonLocked,
       bool credentialsNonExpired,
-      Vip vip});
+      Vip vip,
+      num openAiTokens,
+      bool openAiFlag,
+      Enterprise? enterprise});
+
+  @override
+  $EnterpriseCopyWith<$Res>? get enterprise;
 }
 
 /// @nodoc
@@ -207,6 +248,9 @@ class __$$_MyUserCopyWithImpl<$Res>
     Object? accountNonLocked = null,
     Object? credentialsNonExpired = null,
     Object? vip = null,
+    Object? openAiTokens = null,
+    Object? openAiFlag = null,
+    Object? enterprise = freezed,
   }) {
     return _then(_$_MyUser(
       id: null == id
@@ -269,6 +313,18 @@ class __$$_MyUserCopyWithImpl<$Res>
           ? _value.vip
           : vip // ignore: cast_nullable_to_non_nullable
               as Vip,
+      openAiTokens: null == openAiTokens
+          ? _value.openAiTokens
+          : openAiTokens // ignore: cast_nullable_to_non_nullable
+              as num,
+      openAiFlag: null == openAiFlag
+          ? _value.openAiFlag
+          : openAiFlag // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enterprise: freezed == enterprise
+          ? _value.enterprise
+          : enterprise // ignore: cast_nullable_to_non_nullable
+              as Enterprise?,
     ));
   }
 }
@@ -291,7 +347,10 @@ class _$_MyUser implements _MyUser {
       this.accountNonExpired = false,
       this.accountNonLocked = false,
       this.credentialsNonExpired = false,
-      this.vip = Vip.none});
+      this.vip = Vip.none,
+      this.openAiTokens = 0,
+      this.openAiFlag = false,
+      this.enterprise});
 
   factory _$_MyUser.fromJson(Map<String, dynamic> json) =>
       _$$_MyUserFromJson(json);
@@ -340,10 +399,18 @@ class _$_MyUser implements _MyUser {
   @override
   @JsonKey()
   final Vip vip;
+  @override
+  @JsonKey()
+  final num openAiTokens;
+  @override
+  @JsonKey()
+  final bool openAiFlag;
+  @override
+  final Enterprise? enterprise;
 
   @override
   String toString() {
-    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, vip: $vip)';
+    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, vip: $vip, openAiTokens: $openAiTokens, openAiFlag: $openAiFlag, enterprise: $enterprise)';
   }
 
   @override
@@ -372,7 +439,13 @@ class _$_MyUser implements _MyUser {
                 other.accountNonLocked == accountNonLocked) &&
             (identical(other.credentialsNonExpired, credentialsNonExpired) ||
                 other.credentialsNonExpired == credentialsNonExpired) &&
-            (identical(other.vip, vip) || other.vip == vip));
+            (identical(other.vip, vip) || other.vip == vip) &&
+            (identical(other.openAiTokens, openAiTokens) ||
+                other.openAiTokens == openAiTokens) &&
+            (identical(other.openAiFlag, openAiFlag) ||
+                other.openAiFlag == openAiFlag) &&
+            (identical(other.enterprise, enterprise) ||
+                other.enterprise == enterprise));
   }
 
   @JsonKey(ignore: true)
@@ -393,7 +466,10 @@ class _$_MyUser implements _MyUser {
       accountNonExpired,
       accountNonLocked,
       credentialsNonExpired,
-      vip);
+      vip,
+      openAiTokens,
+      openAiFlag,
+      enterprise);
 
   @JsonKey(ignore: true)
   @override
@@ -425,7 +501,10 @@ abstract class _MyUser implements MyUser {
       final bool accountNonExpired,
       final bool accountNonLocked,
       final bool credentialsNonExpired,
-      final Vip vip}) = _$_MyUser;
+      final Vip vip,
+      final num openAiTokens,
+      final bool openAiFlag,
+      final Enterprise? enterprise}) = _$_MyUser;
 
   factory _MyUser.fromJson(Map<String, dynamic> json) = _$_MyUser.fromJson;
 
@@ -460,7 +539,297 @@ abstract class _MyUser implements MyUser {
   @override
   Vip get vip;
   @override
+  num get openAiTokens;
+  @override
+  bool get openAiFlag;
+  @override
+  Enterprise? get enterprise;
+  @override
   @JsonKey(ignore: true)
   _$$_MyUserCopyWith<_$_MyUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Enterprise _$EnterpriseFromJson(Map<String, dynamic> json) {
+  return _Enterprise.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Enterprise {
+  @JsonKey(name: 'enable')
+  bool get enable => throw _privateConstructorUsedError;
+  @JsonKey(name: 'id')
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'phone')
+  String get phone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'profile')
+  String get profile => throw _privateConstructorUsedError;
+  @JsonKey(name: 'qq')
+  String get qq => throw _privateConstructorUsedError;
+  @JsonKey(name: 'wechat')
+  String get wechat => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EnterpriseCopyWith<Enterprise> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EnterpriseCopyWith<$Res> {
+  factory $EnterpriseCopyWith(
+          Enterprise value, $Res Function(Enterprise) then) =
+      _$EnterpriseCopyWithImpl<$Res, Enterprise>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'enable') bool enable,
+      @JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'phone') String phone,
+      @JsonKey(name: 'profile') String profile,
+      @JsonKey(name: 'qq') String qq,
+      @JsonKey(name: 'wechat') String wechat});
+}
+
+/// @nodoc
+class _$EnterpriseCopyWithImpl<$Res, $Val extends Enterprise>
+    implements $EnterpriseCopyWith<$Res> {
+  _$EnterpriseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? enable = null,
+    Object? id = null,
+    Object? name = null,
+    Object? phone = null,
+    Object? profile = null,
+    Object? qq = null,
+    Object? wechat = null,
+  }) {
+    return _then(_value.copyWith(
+      enable: null == enable
+          ? _value.enable
+          : enable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      profile: null == profile
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as String,
+      qq: null == qq
+          ? _value.qq
+          : qq // ignore: cast_nullable_to_non_nullable
+              as String,
+      wechat: null == wechat
+          ? _value.wechat
+          : wechat // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_EnterpriseCopyWith<$Res>
+    implements $EnterpriseCopyWith<$Res> {
+  factory _$$_EnterpriseCopyWith(
+          _$_Enterprise value, $Res Function(_$_Enterprise) then) =
+      __$$_EnterpriseCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'enable') bool enable,
+      @JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'phone') String phone,
+      @JsonKey(name: 'profile') String profile,
+      @JsonKey(name: 'qq') String qq,
+      @JsonKey(name: 'wechat') String wechat});
+}
+
+/// @nodoc
+class __$$_EnterpriseCopyWithImpl<$Res>
+    extends _$EnterpriseCopyWithImpl<$Res, _$_Enterprise>
+    implements _$$_EnterpriseCopyWith<$Res> {
+  __$$_EnterpriseCopyWithImpl(
+      _$_Enterprise _value, $Res Function(_$_Enterprise) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? enable = null,
+    Object? id = null,
+    Object? name = null,
+    Object? phone = null,
+    Object? profile = null,
+    Object? qq = null,
+    Object? wechat = null,
+  }) {
+    return _then(_$_Enterprise(
+      enable: null == enable
+          ? _value.enable
+          : enable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      profile: null == profile
+          ? _value.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as String,
+      qq: null == qq
+          ? _value.qq
+          : qq // ignore: cast_nullable_to_non_nullable
+              as String,
+      wechat: null == wechat
+          ? _value.wechat
+          : wechat // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Enterprise extends _Enterprise {
+  const _$_Enterprise(
+      {@JsonKey(name: 'enable') this.enable = false,
+      @JsonKey(name: 'id') this.id = 0,
+      @JsonKey(name: 'name') this.name = '',
+      @JsonKey(name: 'phone') this.phone = '',
+      @JsonKey(name: 'profile') this.profile = '',
+      @JsonKey(name: 'qq') this.qq = '',
+      @JsonKey(name: 'wechat') this.wechat = ''})
+      : super._();
+
+  factory _$_Enterprise.fromJson(Map<String, dynamic> json) =>
+      _$$_EnterpriseFromJson(json);
+
+  @override
+  @JsonKey(name: 'enable')
+  final bool enable;
+  @override
+  @JsonKey(name: 'id')
+  final int id;
+  @override
+  @JsonKey(name: 'name')
+  final String name;
+  @override
+  @JsonKey(name: 'phone')
+  final String phone;
+  @override
+  @JsonKey(name: 'profile')
+  final String profile;
+  @override
+  @JsonKey(name: 'qq')
+  final String qq;
+  @override
+  @JsonKey(name: 'wechat')
+  final String wechat;
+
+  @override
+  String toString() {
+    return 'Enterprise(enable: $enable, id: $id, name: $name, phone: $phone, profile: $profile, qq: $qq, wechat: $wechat)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Enterprise &&
+            (identical(other.enable, enable) || other.enable == enable) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.profile, profile) || other.profile == profile) &&
+            (identical(other.qq, qq) || other.qq == qq) &&
+            (identical(other.wechat, wechat) || other.wechat == wechat));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, enable, id, name, phone, profile, qq, wechat);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_EnterpriseCopyWith<_$_Enterprise> get copyWith =>
+      __$$_EnterpriseCopyWithImpl<_$_Enterprise>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_EnterpriseToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Enterprise extends Enterprise {
+  const factory _Enterprise(
+      {@JsonKey(name: 'enable') final bool enable,
+      @JsonKey(name: 'id') final int id,
+      @JsonKey(name: 'name') final String name,
+      @JsonKey(name: 'phone') final String phone,
+      @JsonKey(name: 'profile') final String profile,
+      @JsonKey(name: 'qq') final String qq,
+      @JsonKey(name: 'wechat') final String wechat}) = _$_Enterprise;
+  const _Enterprise._() : super._();
+
+  factory _Enterprise.fromJson(Map<String, dynamic> json) =
+      _$_Enterprise.fromJson;
+
+  @override
+  @JsonKey(name: 'enable')
+  bool get enable;
+  @override
+  @JsonKey(name: 'id')
+  int get id;
+  @override
+  @JsonKey(name: 'name')
+  String get name;
+  @override
+  @JsonKey(name: 'phone')
+  String get phone;
+  @override
+  @JsonKey(name: 'profile')
+  String get profile;
+  @override
+  @JsonKey(name: 'qq')
+  String get qq;
+  @override
+  @JsonKey(name: 'wechat')
+  String get wechat;
+  @override
+  @JsonKey(ignore: true)
+  _$$_EnterpriseCopyWith<_$_Enterprise> get copyWith =>
       throw _privateConstructorUsedError;
 }

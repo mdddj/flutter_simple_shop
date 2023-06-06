@@ -19,20 +19,21 @@ import 'index.dart';
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
   DDCheckPluginSetting.showLog = false;
-  if(kAppDebugMode){
-    DdCheckPlugin.instance.init(BaseApi.getDio(),initHost: '192.168.199.73',port: 9999, customCoverterResponseData: (model){
+  if (kAppDebugMode) {
+    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: '192.168.199.80', port: 9999, customCoverterResponseData: (model) {
       final body = model.response?.data;
-      return isValue<Map<String,dynamic>>(body).isNotNull<SendResponseModel?>((value) {
-        return  isValue<String>(body['data']).isNotNull<SendResponseModel?>((value2) {
-          try {
-            final map = jsonDecode(value2);
-            body['data'] = map;
-            return model.copyWith(body: Map.from(body));
-          } catch (e) {
-            return model;
-          }
-        });
-      }) ?? model;
+      return isValue<Map<String, dynamic>>(body).isNotNull<SendResponseModel?>((value) {
+            return isValue<String>(body['data']).isNotNull<SendResponseModel?>((value2) {
+              try {
+                final map = jsonDecode(value2);
+                body['data'] = map;
+                return model.copyWith(body: Map.from(body));
+              } catch (e) {
+                return model;
+              }
+            });
+          }) ??
+          model;
     });
   }
 
@@ -41,7 +42,6 @@ Future<void> appInit(Function start) async {
   await initCaches();
   start.call();
 }
-
 
 void initNetUtil() {
   BaseApi.host = "$apiHost:$apiPort";
@@ -53,16 +53,17 @@ void initNetUtil() {
 final getIt = GetIt.instance;
 
 void initInstanceObject() {
-  GetIt.instance.registerSingleton<Utils>(Utils());
-  GetIt.instance.registerSingleton<WidgetUtils>(WidgetUtils());
-  GetIt.instance.registerSingleton<NavigatorUtil>(NavigatorUtil());
-  GetIt.instance.registerSingleton<Api>(Api());
-  GetIt.instance.registerSingleton<UserApi>(UserApi());
-  GetIt.instance.registerSingleton<FavoritesRepository>(FavoritesRepository());
-  getIt.registerSingleton<MyTokenInterceptor>( MyTokenInterceptor());
+  getIt.registerSingleton<Utils>(Utils());
+  getIt.registerSingleton<WidgetUtils>(WidgetUtils());
+  getIt.registerSingleton<NavigatorUtil>(NavigatorUtil());
+  getIt.registerSingleton<Api>(Api());
+  getIt.registerSingleton<UserApi>(UserApi());
+  getIt.registerSingleton<FavoritesRepository>(FavoritesRepository());
+  getIt.registerSingleton<MyTokenInterceptor>(MyTokenInterceptor());
   getIt.registerSingleton(MyTaokeApiWithSimilarProducts());
   getIt.registerSingleton(SelectMyRsourceListData());
   getIt.registerSingleton(MyResourceCreateApi());
+  getIt.registerSingleton(MyResourceListApi());
 }
 
 Future<void> initCaches() async {

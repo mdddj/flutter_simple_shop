@@ -1,9 +1,10 @@
 
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_more_list_library_fast/src/loading_more_list_library.dart';
 
+import '../freezed/resource_category.dart';
 import '../widgets/loading/custom_loading_more_widget.dart';
+import '../widgets/resource_widegt.dart';
 import 'repository/my_resource_repository.dart';
 
 
@@ -20,14 +21,14 @@ class _MyResourceListWidgetState extends State<MyResourceListWidget> {
   late final _repository = MyResourceRepository(widget.name);
   @override
   Widget build(BuildContext context) {
-    return MyLoadingMoreSliverList(MySliverListConfig<WrapJson>(itemBuilder: _itemBuilder,sourceList: _repository,indicatorBuilder: _indicatorBuilder,lock: false));
+    return MyLoadingMoreSliverList(MySliverListConfig<Resource>(itemBuilder: _itemBuilder,sourceList: _repository,indicatorBuilder: _indicatorBuilder,lock: false));
   }
 
-  Widget _itemBuilder(BuildContext context, WrapJson item, int index) {
-    return Container();
+  Widget _itemBuilder(BuildContext context, Resource item, int index) {
+    return ResourceWidget(resource: item);
   }
 
-  Widget? _indicatorBuilder(BuildContext context, IndicatorStatus status) {
+  Widget? _indicatorBuilder(BuildContext context,  status) {
     return CustomLoadingMoreWidgetWithSliver(context, status,retry: (){
       _repository.refresh(true);
     },emptyChild: widget.emptyChild);

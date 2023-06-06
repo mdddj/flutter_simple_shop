@@ -22,6 +22,11 @@ _$_MyUser _$$_MyUserFromJson(Map<String, dynamic> json) => _$_MyUser(
       accountNonLocked: json['accountNonLocked'] as bool? ?? false,
       credentialsNonExpired: json['credentialsNonExpired'] as bool? ?? false,
       vip: $enumDecodeNullable(_$VipEnumMap, json['vip']) ?? Vip.none,
+      openAiTokens: json['openAiTokens'] as num? ?? 0,
+      openAiFlag: json['openAiFlag'] as bool? ?? false,
+      enterprise: json['enterprise'] == null
+          ? null
+          : Enterprise.fromJson(json['enterprise'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MyUserToJson(_$_MyUser instance) => <String, dynamic>{
@@ -40,6 +45,9 @@ Map<String, dynamic> _$$_MyUserToJson(_$_MyUser instance) => <String, dynamic>{
       'accountNonLocked': instance.accountNonLocked,
       'credentialsNonExpired': instance.credentialsNonExpired,
       'vip': _$VipEnumMap[instance.vip]!,
+      'openAiTokens': instance.openAiTokens,
+      'openAiFlag': instance.openAiFlag,
+      'enterprise': instance.enterprise,
     };
 
 const _$VipEnumMap = {
@@ -48,3 +56,25 @@ const _$VipEnumMap = {
   Vip.superVip: 2,
   Vip.specialVip: 3,
 };
+
+_$_Enterprise _$$_EnterpriseFromJson(Map<String, dynamic> json) =>
+    _$_Enterprise(
+      enable: json['enable'] as bool? ?? false,
+      id: json['id'] as int? ?? 0,
+      name: json['name'] as String? ?? '',
+      phone: json['phone'] as String? ?? '',
+      profile: json['profile'] as String? ?? '',
+      qq: json['qq'] as String? ?? '',
+      wechat: json['wechat'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$$_EnterpriseToJson(_$_Enterprise instance) =>
+    <String, dynamic>{
+      'enable': instance.enable,
+      'id': instance.id,
+      'name': instance.name,
+      'phone': instance.phone,
+      'profile': instance.profile,
+      'qq': instance.qq,
+      'wechat': instance.wechat,
+    };

@@ -21,7 +21,10 @@ class MyUser with _$MyUser{
     @Default(false) bool accountNonExpired,
     @Default(false) bool accountNonLocked,
     @Default(false) bool credentialsNonExpired,
-    @Default(Vip.none) Vip vip
+    @Default(Vip.none) Vip vip,
+    @Default(0) num openAiTokens,
+    @Default(false) bool openAiFlag,
+    Enterprise? enterprise
   }) = _MyUser;
   factory MyUser.fromJson(Map<String,Object?> json)=>_$MyUserFromJson(json);
 }
@@ -38,4 +41,23 @@ enum Vip {
 
   @JsonValue(3)
   specialVip
+}
+
+//公司
+@freezed
+class Enterprise with _$Enterprise {
+  const Enterprise._();
+
+  const factory Enterprise({
+    @JsonKey(name: 'enable') @Default(false)  bool enable,
+    @JsonKey(name: 'id') @Default(0)  int id,
+    @JsonKey(name: 'name') @Default('')  String name,
+    @JsonKey(name: 'phone') @Default('')  String phone,
+    @JsonKey(name: 'profile') @Default('')  String profile,
+    @JsonKey(name: 'qq') @Default('')  String qq,
+    @JsonKey(name: 'wechat') @Default('')  String wechat,
+  }) = _Enterprise;
+
+  factory Enterprise.fromJson(Map<String, dynamic> json) => _$EnterpriseFromJson(json);
+
 }

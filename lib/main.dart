@@ -7,7 +7,7 @@ import 'common/view.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const apiHost = 'http://192.168.100.55';
+const apiHost = 'http://192.168.199.80';
 const apiPort = "80";
 // const apiHost = "https://itbug.shop";
 // const apiPort = "9445";
@@ -27,7 +27,7 @@ class Root extends View {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: themeValue,
+        theme: _builderTheme(themeValue),
         darkTheme: MyAppTheme.darkTheme,
         themeMode: theme.getThemeMode,
         home: const MyApp(),
@@ -38,4 +38,18 @@ class Root extends View {
       );
     });
   }
+}
+
+
+
+///自定义主题
+ThemeData _builderTheme(ThemeData theme) {
+ return theme.copyWith(
+   cardTheme: theme.cardTheme.copyWith(
+     elevation: 0,
+     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero,side: BorderSide.none),
+     margin: EdgeInsets.zero,
+     color: Colors.white
+   )
+ );
 }

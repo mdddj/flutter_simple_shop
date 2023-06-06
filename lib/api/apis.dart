@@ -30,7 +30,7 @@ extension WrapJsonExt on WrapJson {
     }
   }
 
-  Map<String,dynamic> get getDataMap => getMap('data');
+  Map<String, dynamic> get getDataMap => getMap('data');
 }
 
 ///收藏夹接口的前缀
@@ -102,12 +102,12 @@ class SelectMeetListData extends MyAppCoreApi with ApiPageMixin {
 
 ///查询资源动态列表
 class SelectMyRsourceListData extends MyAppCoreApi with ApiPageMixin {
-  SelectMyRsourceListData():super("/api/app/resource/list");
+  SelectMyRsourceListData() : super("/api/app/resource/list");
 }
 
 ///发布动态的接口
 class MyResourceCreateApi extends MyAppCoreApi {
-  MyResourceCreateApi():super('/api/app/resource/new',httpMethod: HttpMethod.post);
+  MyResourceCreateApi() : super('/api/app/resource/new', httpMethod: HttpMethod.post);
 }
 
 ///获取邮箱验证码接口
@@ -142,11 +142,15 @@ class MyApiWithLogin extends MyAppCoreApi {
 
 ///美团领券
 class MeituanCoupon extends MyAppCoreApi {
-  MeituanCoupon():super('/api/zhe/mt/tg');
+  MeituanCoupon() : super('/api/zhe/mt/tg');
 }
-
 
 ///开通会员接口
 class MyOpenVipApi extends MyAppCoreApi {
-  MyOpenVipApi():super("/api/open-vip",httpMethod: HttpMethod.post);
+  MyOpenVipApi() : super("/api/open-vip", httpMethod: HttpMethod.post);
+}
+
+///用户发布的动态
+class MyResourceListApi extends MyAppCoreApi with ApiPageMixin {
+  MyResourceListApi() : super('/api/app/resource/release');
 }

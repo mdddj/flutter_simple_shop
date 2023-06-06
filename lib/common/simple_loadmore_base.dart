@@ -29,7 +29,7 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
     pageParams.addAll(otherParams);
     var isSuccess = true;
     final token = await getIt.get<Api>().getAuthorizationHeader();
-    final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams,responseResultCallback: wtfLog,headers: token));
+    final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams,headers: token));
     isSuccess = r.isSuccess;
     if(r.isSuccess){
       final data = r.getValue('data');
