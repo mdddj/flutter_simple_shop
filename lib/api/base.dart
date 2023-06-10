@@ -7,7 +7,7 @@ import '../service/user_api.dart';
 ///添加token到请求头
 class MyTokenInterceptor implements Interceptor {
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     handler.next(err);
   }
 

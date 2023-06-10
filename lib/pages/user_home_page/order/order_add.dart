@@ -1,16 +1,11 @@
-// Dart imports:
 import 'dart:math';
-
-// Package imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
-// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 
-// Project imports:
-import '../../../util/system_toast.dart';
 
 class OrderAddIndexPage extends StatefulWidget {
   const OrderAddIndexPage({Key? key}) : super(key: key);
@@ -63,7 +58,7 @@ class OrderAddState extends State<OrderAddIndexPage> {
                 // 获取文本框订单编号
                 var orderNumber = textEditingController.value.text;
                 if(orderNumber.length!=19){
-                  SystemToast.show('订单编号格式不正确');
+                  toast('订单编号格式不正确');
                   return;
                 }
               },

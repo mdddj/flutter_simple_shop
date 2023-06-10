@@ -3,7 +3,6 @@ import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../api/apis.dart';
 import '../../api/model/login_params.dart';
-import '../../exception/app.dart';
 import '../../freezed/login_result_model.dart';
 import '../../index.dart';
 import '../../pages/user_home_page/login/login_base.dart';
@@ -28,7 +27,7 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
       setTokenToCatch(model.token);
       return model;
     }else{
-      throw AppRuntimeException(response.message);
+      throw AppException(code: response.getInt('state'), message: response.message);
     }
   }
 

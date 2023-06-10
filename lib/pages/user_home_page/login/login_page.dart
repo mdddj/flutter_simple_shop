@@ -7,7 +7,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../api/model/login_params.dart';
 import '../../../assets.dart';
 import '../../../common/utils.dart';
-import '../../../exception/app.dart';
 import '../../../provider/riverpod/user_riverpod.dart';
 import 'register_page.dart';
 
@@ -194,8 +193,8 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
       final nav = context.nav;
        await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
       nav.pop();
-    } on AppRuntimeException catch (e) {
-      toast(e.msg);
+    } on AppException catch (e) {
+      toast(e.message);
     }
   }
 

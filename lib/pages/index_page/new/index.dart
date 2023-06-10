@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../common/components/new_products/respose.dart';
+import '../../../constant/context.dart';
 import '../../../index.dart';
 import '../../../widgets/loading/custom_loading_more_widget.dart';
 
@@ -55,31 +56,28 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAli
     super.build(context);
     return LoadingMoreCustomScrollView(
       slivers: [
-        SliverPadding(
-          padding: const EdgeInsets.all(kDefaultPadding),
-          sliver: SliverList(
-              delegate: SliverChildBuilderDelegate((context, index) {
-            switch (index) {
-              case 0:
+        SliverList(
+            delegate: SliverChildBuilderDelegate((context, index) {
+              switch (index) {
+                case 1:
                 return const IndexCarousel();
-              case 1:
-                return const GridMenuComponent();
-              case 2:
-                return const IndexColumnWidget();
-              case 3:
-                return const IndexProductTitle();
-              default:
-                return const SizedBox();
-            }
-          }, childCount: 4)),
-        ),
+                case 0:
+                  return const GridMenuComponent();
+                case 2:
+                  return const IndexColumnWidget();
+                case 3:
+                  return const IndexProductTitle();
+                default:
+                  return const SizedBox();
+              }
+            }, childCount: 4)),
         LoadingMoreSliverList(
           SliverListConfig<ProductModel>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: repository,
               indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
-              extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+              extendedListDelegate:  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                crossAxisCount: context.waterfallFlowCrossAxisCount,
                 crossAxisSpacing: kDefaultPadding,
                 mainAxisSpacing: kDefaultPadding,
               ),

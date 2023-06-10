@@ -9,25 +9,25 @@ class ErrorEntity {
   ErrorEntity({this.code, this.message});
 
   // 错误信息
-  ErrorEntity createErrorEntity(DioError error) {
+  ErrorEntity createErrorEntity(DioException error) {
     switch (error.type) {
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
         {
           return ErrorEntity(code: -1, message: '请求取消');
         }
-      case DioErrorType.connectionTimeout:
+      case DioExceptionType.connectionTimeout:
         {
           return ErrorEntity(code: -1, message: '连接超时');
         }
-      case DioErrorType.sendTimeout:
+      case DioExceptionType.sendTimeout:
         {
           return ErrorEntity(code: -1, message: '请求超时');
         }
-      case DioErrorType.receiveTimeout:
+      case DioExceptionType.receiveTimeout:
         {
           return ErrorEntity(code: -1, message: '响应超时');
         }
-      case DioErrorType.badResponse:
+      case DioExceptionType.badResponse:
         {
           try {
             var errCode = error.response!.statusCode;

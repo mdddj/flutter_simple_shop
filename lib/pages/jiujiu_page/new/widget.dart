@@ -1,6 +1,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+import '../../../constant/context.dart';
 import '../../../widgets/loading/custom_loading_more_widget.dart';
 import '../../../widgets/waterfall_goods_card.dart';
 import 'repository.dart';
@@ -24,6 +25,7 @@ class _JiuJiuIndexState extends State<JiuJiuIndex> with SingleTickerProviderStat
         bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48),
             child: TabBar(
+              isScrollable: context.tabIsScrollable,
                 tabs: ninenineTypes
                     .map((element) => Tab(
                           text: element.title,
@@ -59,7 +61,7 @@ class _Item extends StatelessWidget {
                 repository.refresh(true);
               },);
             },
-            extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8)))
+            extendedListDelegate:  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 8, crossAxisSpacing: 8)))
       ],
     );
   }

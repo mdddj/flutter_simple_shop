@@ -6,6 +6,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart' hide Consumer;
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../../api/apis.dart';
 import '../../component/topic_carousel.dart';
 import '../index_riverpod.dart';
@@ -20,7 +21,20 @@ class IndexCarousel extends ConsumerWidget {
     if(data.isEmpty){
       return const ZhetaokeCarouselWidget();
     }
-    return IndexTopicComponentCarousel(list: data);
+    return WaterfallFlow.count(
+      padding: const EdgeInsets.all(8),
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      crossAxisCount: 2,children: [
+      IndexTopicComponentCarousel(list: data),
+      LayoutBuilder(builder: _builder)
+    ],);
+  }
+
+  Widget _builder(BuildContext context, BoxConstraints constraints) {
+    return Container(
+
+    );
   }
 }
 

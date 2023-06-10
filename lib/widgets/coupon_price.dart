@@ -39,13 +39,13 @@ class CouponPriceWidget extends StatelessWidget {
             style: TextStyle(
               decoration: TextDecoration.lineThrough,
               decorationColor: context.colorScheme.error,
-              color: context.colorScheme.inversePrimary,
+              color: context.colorScheme.onSecondary,
               fontSize: 12
             ),
           ),
         ),
         //多少折
-        showDiscount != null && showDiscount! ? _buildDiscount() : Container()
+        showDiscount != null && showDiscount! ? _buildDiscount() : const SizedBox()
       ],
     );
   }

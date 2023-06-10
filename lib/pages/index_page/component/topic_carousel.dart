@@ -4,8 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/my_image.dart';
 import 'package:dd_models/models/carousel.dart';
-import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -14,7 +14,7 @@ import '../../../common/utils.dart';
 import '../../activity_page/activity_view/view.dart';
 import '../new/index_riverpod.dart';
 
-/// 首頁輪播圖
+/// 首頁輪播圖 
 class IndexTopicComponentCarousel extends ConsumerWidget {
   final List<Carousel> list;
 
@@ -83,11 +83,10 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
   Widget renderItem(Carousel item) {
     return Builder(
       builder: (BuildContext context) {
-        return ExtendedImage.network(
-          item.topicImage,
-          fit: BoxFit.cover,
-          borderRadius: const BorderRadius.all(Radius.circular(5)),
+        return ImageView( image: MyImage.network(url: item.topicImage,params: ImageParams(
           shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(12)
+        )),
         );
       },
     );

@@ -35,7 +35,7 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - permission_handler_apple (9.0.4):
+  - permission_handler_apple (9.1.0):
     - Flutter
   - saver_gallery (0.0.1):
     - Flutter
@@ -115,7 +115,7 @@ SPEC CHECKSUMS:
   network_info_plus: 122280582fe2fa2bbb8681a4269745cd5c3a9b32
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
-  permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
+  permission_handler_apple: 8f116445eff3c0e7c65ad60f5fef5490aa94b4e4
   saver_gallery: 2b4e584106fde2407ab51560f3851564963e6b78
   SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
   SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499

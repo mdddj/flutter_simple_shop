@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+import '../../constant/context.dart';
 import './left_widget.dart';
 import './right_widget.dart';
 import '../../constant/style.dart';
@@ -46,16 +47,17 @@ class CategoryIndexPageState extends ConsumerState<CategoryIndexPage> {
               return const Text('没有数据');
             }
             return SizedBox(
-                width: MediaQuery
-                    .of(context)
-                    .size
-                    .width,
-                height: context.screenHeight - kToolbarHeight - context.paddingTop,
+                width: context.screenWidth,
+                height: context.kBodyHeight,
                 child: Row(
                   children: <Widget>[
                     //左侧
-                    SizedBox(
+                    Container(
                       width: 80,
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                        color: context.colorScheme.background
+                      ),
                       child: ListView.builder(
                           itemCount: categorys.length,
                           itemBuilder: (context, index) {
@@ -70,7 +72,7 @@ class CategoryIndexPageState extends ConsumerState<CategoryIndexPage> {
                     Expanded(
                       child: WaterfallFlow.builder(
                         padding: const EdgeInsets.all(kDefaultPadding),
-                        gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 3, mainAxisSpacing: 12, crossAxisSpacing: 20),
+                        gridDelegate:  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 12, crossAxisSpacing: 20),
                         itemBuilder: (context, sIndex) {
                           return RightWidgetItme(category: current, item: current.subcategories[sIndex]);
                         },

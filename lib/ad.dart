@@ -6,9 +6,9 @@ const kLogoSize = 90.0;
 
 ///初始化启动小部件
 class InitLoadingWidget extends StatelessWidget {
-  final bool isError;
+  final String?  errorMessage;
   final VoidCallback? retry;
-  const InitLoadingWidget({Key? key,  this.isError = false, this.retry}) : super(key: key);
+  const InitLoadingWidget({Key? key,  this.errorMessage, this.retry}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +36,14 @@ class InitLoadingWidget extends StatelessWidget {
                 children: [
                   Container(
                       alignment: Alignment.center,
-                      width: 100, height: 30, child: isError ? const Text('服务繁忙') : const CircularProgressIndicator()),
+                      width: 100, height: 30, child: errorMessage!=null ?  Text(errorMessage!) : const SizedBox(
+                    width: 30,
+                    height: 30,
+                    child: CircularProgressIndicator(),
+                  )),
                     FilledButton(onPressed: (){
                       retry?.call();
-                    }, child: const Text("重试")).visible(isError)
+                    }, child: const Text("重试")).marginOnly(top: 12).visible(errorMessage!=null)
                 ],
               ),
             ),

@@ -88,7 +88,7 @@ class HttpRequest {
           onError(result.state,result.message,url);
         }
       }
-    } on DioError catch (_) {
+    } on DioException catch (_) {
       return '';
     }
     return '';

@@ -7,7 +7,7 @@ import 'common/view.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const apiHost = 'http://192.168.199.80';
+const apiHost = 'http://192.168.199.85';
 const apiPort = "80";
 // const apiHost = "https://itbug.shop";
 // const apiPort = "9445";
@@ -47,9 +47,13 @@ ThemeData _builderTheme(ThemeData theme) {
  return theme.copyWith(
    cardTheme: theme.cardTheme.copyWith(
      elevation: 0,
-     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero,side: BorderSide.none),
+     shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),side: BorderSide.none),
      margin: EdgeInsets.zero,
      color: Colors.white
+   ),
+   appBarTheme: theme.appBarTheme.copyWith(
+     elevation: 0,
+     backgroundColor: Colors.white,shadowColor: Colors.white
    )
  );
 }
