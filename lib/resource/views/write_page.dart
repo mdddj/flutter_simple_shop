@@ -6,19 +6,21 @@ import 'package:flutter/material.dart';
 
 import '../../api/apis.dart';
 import '../../common/api_ext.dart';
+import '../../freezed/pager.dart';
 import '../../index.dart';
 
 ///资源发布页面
 class MyResourceWritePage extends StatefulWidget {
-  final String categoryName;
+  final DynWriteParams params;
 
-  const MyResourceWritePage({super.key, required this.categoryName});
+  const MyResourceWritePage({super.key, required this.params});
 
   @override
   State<MyResourceWritePage> createState() => _MyResourceWritePageState();
 }
 
 class _MyResourceWritePageState extends State<MyResourceWritePage> {
+  DynWriteParams get params => widget.params;
   final PictureSelectionController _selectionController = PictureSelectionController();
   var content = "";
   var title = "";
@@ -98,7 +100,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   Future<void> _submit() async {
     final api = getIt.get<MyResourceCreateApi>();
     final files = await _getFiles();
-    api.formData = FormData.fromMap({"files": files, "content": content, "cateName": widget.categoryName});
+    api.formData = FormData.fromMap({"files": files, "content": content, "cateName": params.name});
     final r = await api.request(const R());
     r.print();
     r.simpleToast();

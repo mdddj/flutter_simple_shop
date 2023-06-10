@@ -23,6 +23,8 @@ mixin _$HomeMenu {
   Widget? get icon => throw _privateConstructorUsedError;
   @JsonKey(name: 'image')
   String get image => throw _privateConstructorUsedError;
+  String? get routerPath => throw _privateConstructorUsedError;
+  Object? get extra => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeMenuCopyWith<HomeMenu> get copyWith =>
@@ -38,7 +40,9 @@ abstract class $HomeMenuCopyWith<$Res> {
       {@JsonKey(name: 'title') String title,
       @JsonKey(name: 'svgPath') String svgpath,
       Widget? icon,
-      @JsonKey(name: 'image') String image});
+      @JsonKey(name: 'image') String image,
+      String? routerPath,
+      Object? extra});
 }
 
 /// @nodoc
@@ -58,6 +62,8 @@ class _$HomeMenuCopyWithImpl<$Res, $Val extends HomeMenu>
     Object? svgpath = null,
     Object? icon = freezed,
     Object? image = null,
+    Object? routerPath = freezed,
+    Object? extra = freezed,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -76,6 +82,11 @@ class _$HomeMenuCopyWithImpl<$Res, $Val extends HomeMenu>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      routerPath: freezed == routerPath
+          ? _value.routerPath
+          : routerPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extra: freezed == extra ? _value.extra : extra,
     ) as $Val);
   }
 }
@@ -91,7 +102,9 @@ abstract class _$$_HomeMenuCopyWith<$Res> implements $HomeMenuCopyWith<$Res> {
       {@JsonKey(name: 'title') String title,
       @JsonKey(name: 'svgPath') String svgpath,
       Widget? icon,
-      @JsonKey(name: 'image') String image});
+      @JsonKey(name: 'image') String image,
+      String? routerPath,
+      Object? extra});
 }
 
 /// @nodoc
@@ -109,6 +122,8 @@ class __$$_HomeMenuCopyWithImpl<$Res>
     Object? svgpath = null,
     Object? icon = freezed,
     Object? image = null,
+    Object? routerPath = freezed,
+    Object? extra = freezed,
   }) {
     return _then(_$_HomeMenu(
       title: null == title
@@ -127,6 +142,11 @@ class __$$_HomeMenuCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
+      routerPath: freezed == routerPath
+          ? _value.routerPath
+          : routerPath // ignore: cast_nullable_to_non_nullable
+              as String?,
+      extra: freezed == extra ? _value.extra : extra,
     ));
   }
 }
@@ -138,7 +158,9 @@ class _$_HomeMenu extends _HomeMenu {
       {@JsonKey(name: 'title') this.title = '',
       @JsonKey(name: 'svgPath') this.svgpath = '',
       this.icon,
-      @JsonKey(name: 'image') this.image = ''})
+      @JsonKey(name: 'image') this.image = '',
+      this.routerPath,
+      this.extra})
       : super._();
 
   @override
@@ -152,10 +174,14 @@ class _$_HomeMenu extends _HomeMenu {
   @override
   @JsonKey(name: 'image')
   final String image;
+  @override
+  final String? routerPath;
+  @override
+  final Object? extra;
 
   @override
   String toString() {
-    return 'HomeMenu(title: $title, svgpath: $svgpath, icon: $icon, image: $image)';
+    return 'HomeMenu(title: $title, svgpath: $svgpath, icon: $icon, image: $image, routerPath: $routerPath, extra: $extra)';
   }
 
   @override
@@ -166,11 +192,15 @@ class _$_HomeMenu extends _HomeMenu {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.svgpath, svgpath) || other.svgpath == svgpath) &&
             (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.image, image) || other.image == image));
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.routerPath, routerPath) ||
+                other.routerPath == routerPath) &&
+            const DeepCollectionEquality().equals(other.extra, extra));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, title, svgpath, icon, image);
+  int get hashCode => Object.hash(runtimeType, title, svgpath, icon, image,
+      routerPath, const DeepCollectionEquality().hash(extra));
 
   @JsonKey(ignore: true)
   @override
@@ -184,7 +214,9 @@ abstract class _HomeMenu extends HomeMenu {
       {@JsonKey(name: 'title') final String title,
       @JsonKey(name: 'svgPath') final String svgpath,
       final Widget? icon,
-      @JsonKey(name: 'image') final String image}) = _$_HomeMenu;
+      @JsonKey(name: 'image') final String image,
+      final String? routerPath,
+      final Object? extra}) = _$_HomeMenu;
   const _HomeMenu._() : super._();
 
   @override
@@ -198,6 +230,10 @@ abstract class _HomeMenu extends HomeMenu {
   @override
   @JsonKey(name: 'image')
   String get image;
+  @override
+  String? get routerPath;
+  @override
+  Object? get extra;
   @override
   @JsonKey(ignore: true)
   _$$_HomeMenuCopyWith<_$_HomeMenu> get copyWith =>

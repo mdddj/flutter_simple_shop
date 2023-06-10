@@ -7,26 +7,29 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../freezed/pager.dart';
+import '../router.dart';
 import 'view.dart';
-import 'views/write_page.dart';
 
 class MyResourcePage extends StatefulWidget {
-  final String name;
-  const MyResourcePage({super.key, required this.name});
+  final DynPageParams params;
+  const MyResourcePage({super.key, required this.params});
 
   @override
   State<MyResourcePage> createState() => _MyResourcePageState();
 }
 
 class _MyResourcePageState extends State<MyResourcePage> {
+  DynPageParams get params => widget.params;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.name),),
+      appBar: AppBar(title: Text(params.name),),
       body: MyLoadingMoreCustomScrollView(
         slivers: [
-          MyResourceListWidget(name: widget.name,emptyChild: _builderEmptyWidget())
+          MyResourceListWidget(name: params.name,emptyChild: _builderEmptyWidget())
         ],
       ),
       floatingActionButton: FloatingActionButton(onPressed:_gotoWrite,child: const Icon(CupertinoIcons.add)),
@@ -39,6 +42,6 @@ class _MyResourcePageState extends State<MyResourcePage> {
 
   ///去发布页面
   void _gotoWrite(){
-     context.navToWidget(to:  MyResourceWritePage(categoryName: widget.name,));
+    context.push(pagerUtil.resourceWrite.routername,extra: DynWriteParams(name: params.name));
   }
 }

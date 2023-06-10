@@ -13,6 +13,8 @@ class HomeMenu with _$HomeMenu {
       @JsonKey(name: 'svgPath') @Default('')  String svgpath,
        Widget? icon,
       @JsonKey(name: 'image') @Default('')  String image,
+      String? routerPath,
+    Object? extra
     }) = _HomeMenu;
   
 

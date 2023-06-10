@@ -10,6 +10,7 @@ import 'freezed/appbar_menu.dart';
 import 'freezed/application.dart';
 import 'index.dart';
 import 'pages/jiujiu_page/new/widget.dart';
+import 'widgets/logo.dart';
 
 const kNavIconSize = 23.0;
 final homeModuleShowIndex = StateProvider((ref) => 0);
@@ -59,25 +60,34 @@ class App extends ConsumerWidget {
         );
       case DeviceScreenType.desktop:
         return Scaffold(
-          backgroundColor: Colors.grey.shade200,
           body: Row(
             children: [
               NavigationRail(
+                leading: const Logo().padding(12),
                 elevation: 5,
                 extended: false,
+                labelType: NavigationRailLabelType.selected,
                 destinations: bottomMenus.map((element) {
                   return NavigationRailDestination(icon: Image.asset(element.getAssetPath(currentIndex == bottomMenus.indexOf(element)),width:kNavIconSize,height:kNavIconSize,), label: Text(element.title));
                 }).toList(), selectedIndex: currentIndex,
                 onDestinationSelected: (v){
                   ref.read(homeModuleShowIndex.notifier).state = v;
                 },
+                trailing: Expanded(
+                  child: Column(
+                    children: [
+                      const Spacer(),
+                      IconButton(onPressed: (){}, icon: const Icon(Icons.settings)),
+                      const SizedBox(height: 22)
+                    ],
+                  ),
+                ),
               ),
               Expanded(
                 child: Center(
                   child: Container(
                     height: context.screenHeight,
                     alignment: Alignment.center,
-                    width: context.screenWidth * 0.4,
                     child: LazyIndexedStack(
                       index: ref.watch(homeModuleShowIndex),
                       children: _pages,

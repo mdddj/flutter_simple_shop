@@ -6,19 +6,19 @@ extension ContextEx on BuildContext {
   ///每行显示多少个产品
   int get waterfallFlowCrossAxisCount {
     var crossAxisCount = 2;
-    // switch (deviceScreenType) {
-    //   case DeviceScreenType.desktop:
-    //     crossAxisCount = 6;
-    //     break;
-    //   case DeviceScreenType.tablet:
-    //     crossAxisCount = 4;
-    //     break;
-    //   case DeviceScreenType.mobile:
-    //     crossAxisCount = 2;
-    //     break;
-    //   default:
-    //     break;
-    // }
+    switch (deviceScreenType) {
+      case DeviceScreenType.desktop:
+        crossAxisCount = 6;
+        break;
+      case DeviceScreenType.tablet:
+        crossAxisCount = 4;
+        break;
+      case DeviceScreenType.mobile:
+        crossAxisCount = 2;
+        break;
+      default:
+        break;
+    }
     return crossAxisCount;
   }
 

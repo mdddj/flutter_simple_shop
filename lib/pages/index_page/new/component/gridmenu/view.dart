@@ -1,6 +1,7 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../../../common/utils.dart';
 import '../../../../../common/view.dart';
@@ -142,17 +143,24 @@ class HomeMenuLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints){
-        return Padding(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            children: [
-              if(homeMenu.svgpath.isNotEmpty)
-                ImageWrapper(child: SvgPicture.asset(homeMenu.svgpath,width: constraints.maxWidth,height: constraints.maxWidth)),
-              if(homeMenu.icon!=null)
-                ImageWrapper(child: homeMenu.icon!),
-              const SizedBox(height: 6),
-              Text(homeMenu.title,style: context.textTheme.bodySmall)
-            ],
+        return InkWell(
+          onTap: (){
+            if(homeMenu.routerPath!=null){
+              context.push(homeMenu.routerPath!,extra: homeMenu.extra);
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              children: [
+                if(homeMenu.svgpath.isNotEmpty)
+                  ImageWrapper(child: SvgPicture.asset(homeMenu.svgpath,width: constraints.maxWidth,height: constraints.maxWidth)),
+                if(homeMenu.icon!=null)
+                  ImageWrapper(child: homeMenu.icon!),
+                const SizedBox(height: 6),
+                Text(homeMenu.title,style: context.textTheme.bodySmall)
+              ],
+            ),
           ),
         );
       }

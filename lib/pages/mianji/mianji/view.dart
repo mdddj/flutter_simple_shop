@@ -1,7 +1,7 @@
-import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import '../../../meet/add_new_meet.dart';
+import 'package:go_router/go_router.dart';
 import '../../../meet/meet_list_widget.dart';
+import '../../../router.dart';
 import '../../../widgets/simple_appbar.dart';
 
 // 面基动态
@@ -28,7 +28,7 @@ class MianjiPageState extends State<MianjiPage> {
   Widget _buildAction() {
     return  TextButton(
         onPressed: () {
-          context.navToWidget(to: const AddNewMeet());
+          context.push(pagerUtil.meetAdd.routername);
         },
         child: const Text('申请面基'));
   }

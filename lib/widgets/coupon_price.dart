@@ -39,7 +39,6 @@ class CouponPriceWidget extends StatelessWidget {
             style: TextStyle(
               decoration: TextDecoration.lineThrough,
               decorationColor: context.colorScheme.error,
-              color: context.colorScheme.onSecondary,
               fontSize: 12
             ),
           ),

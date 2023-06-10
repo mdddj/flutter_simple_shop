@@ -1,13 +1,15 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/theme/model.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import 'common/view.dart';
 import 'index.dart';
+import 'router.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const apiHost = 'http://192.168.199.85';
+const ip = '192.168.199.88';
+const apiHost = 'http://$ip';
 const apiPort = "80";
 // const apiHost = "https://itbug.shop";
 // const apiPort = "9445";
@@ -23,14 +25,15 @@ class Root extends View {
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
     return ThemeBuildWidget(themeBuild: (theme) {
-      final themeValue = MyAppTheme.getTheme(theme.themeIndex);
-      return MaterialApp(
+      // final themeValue = MyAppTheme.getTheme(theme.themeIndex);
+      //_builderTheme(themeValue)
+      return MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: _builderTheme(themeValue),
-        darkTheme: MyAppTheme.darkTheme,
+        theme: ThemeData.light(useMaterial3: true),
+        darkTheme: ThemeData.dark(useMaterial3: true),
         themeMode: theme.getThemeMode,
-        home: const MyApp(),
+        routerConfig: routers,
         builder: FlutterSmartDialog.init(
             loadingBuilder: MyCustomLoadingWidget.new,
             builder: (c, child) =>
@@ -43,17 +46,17 @@ class Root extends View {
 
 
 ///自定义主题
-ThemeData _builderTheme(ThemeData theme) {
- return theme.copyWith(
-   cardTheme: theme.cardTheme.copyWith(
-     elevation: 0,
-     shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),side: BorderSide.none),
-     margin: EdgeInsets.zero,
-     color: Colors.white
-   ),
-   appBarTheme: theme.appBarTheme.copyWith(
-     elevation: 0,
-     backgroundColor: Colors.white,shadowColor: Colors.white
-   )
- );
-}
+// ThemeData _builderTheme(ThemeData theme) {
+//  return theme.copyWith(
+//    cardTheme: theme.cardTheme.copyWith(
+//      elevation: 0,
+//      shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),side: BorderSide.none),
+//      margin: EdgeInsets.zero,
+//      color: Colors.white
+//    ),
+//    appBarTheme: theme.appBarTheme.copyWith(
+//      elevation: 0,
+//      backgroundColor: Colors.white,shadowColor: Colors.white
+//    )
+//  );
+// }

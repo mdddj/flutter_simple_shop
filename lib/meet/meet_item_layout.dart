@@ -2,9 +2,10 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/my_image.dart';
 import 'package:dd_js_util/model/picture_selection_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../resource/page.dart';
+import '../router.dart';
 import '../widgets/default_avatar_widget.dart';
 import '../widgets/default_user_name.dart';
 import 'meet_model.dart';
@@ -85,7 +86,7 @@ class MeetItemLayout extends StatelessWidget {
               TextButton(onPressed: (){}, child: const Text('接受面基')),
               const SizedBox(width: 12),
               FilledButton(onPressed: (){
-                context.navToWidget(to: const MyResourcePage(name: '典典的面基记录'));
+                context.push('${pagerUtil.resourceList.routername}典典的面基记录');
               }, child: const Text("查看面基记录"))
             ],
           )

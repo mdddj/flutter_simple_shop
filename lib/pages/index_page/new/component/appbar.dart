@@ -1,9 +1,9 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart' hide View;
 import 'package:flutter/material.dart' hide View;
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../common/view.dart';
 import '../../../../index.dart';
+import '../../../../widgets/logo.dart';
 
 /// 首页导航栏
 class IndexHomeAppbar extends View implements PreferredSizeWidget {
@@ -37,15 +37,7 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
           ],
         ),
       ).click(() => navTo(context)),
-      leading: Container(
-        alignment: Alignment.center,
-        child: SvgPicture.asset(
-          'assets/svg/diandian.svg',
-          width: 34,
-          height: 34,
-          colorFilter: ColorFilter.mode(context.iconColor ?? Colors.red, BlendMode.srcIn),
-        ),
-      ),
+      leading: const Logo(),
       actions: [
         IconButton(
             onPressed: () {},

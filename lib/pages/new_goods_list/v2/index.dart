@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../../../constant/objects.dart';
+import '../../../constant/context.dart';
 import '../../../widgets/loading/custom_loading_more_widget.dart';
 import '../../../widgets/waterfall_goods_card.dart';
 import 'goods_list_params_model.dart';
@@ -41,7 +41,7 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
         itemBuilder: _renderLayout,
         sourceList: repository,
         padding: const EdgeInsets.all(12),
-        extendedListDelegate: kWaterfallDefaultExtendedListDelegate,
+        extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, crossAxisSpacing: 12, mainAxisSpacing: 12),
         indicatorBuilder: CustomLoadingMoreWidget.new));
   }
 
