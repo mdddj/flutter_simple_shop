@@ -11,20 +11,30 @@ class ResourceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    wtfLog(resource.toJson());
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(resource.title,style: context.textTheme.titleLarge).marginOnly(bottom: 12).visible(resource.title.isNotEmpty),
-            Text(resource.content),
-            const SizedBox(height: 12),
-            builderHeader()
-          ],
-        ),
-      ),
+    return LayoutBuilder(
+      builder: (context,constraints) {
+        return Card(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if(resource.hasImages && resource.imageSize == 1)
+                AspectRatio(aspectRatio: resource.firstImage.width / resource.firstImage.height ,child: ImageView(image: MyImage.network(url: resource.firstImageUrl,params: const ImageParams(size: double.infinity)))),
+
+              Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  children: [
+                    Text(resource.title,style: context.textTheme.titleLarge).marginOnly(bottom: 12).visible(resource.title.isNotEmpty),
+                    Text(resource.content),
+                    const SizedBox(height: 12),
+                    builderHeader(),
+                  ],
+                ),
+              )
+            ],
+          ),
+        );
+      }
     );
   }
 
@@ -41,6 +51,7 @@ class ResourceWidget extends StatelessWidget {
       ],
     );
   }
+
 
   Widget get _avater {
     return ImageView(

@@ -3,6 +3,8 @@ PODS:
     - FlutterMacOS
   - dd_models (0.0.1):
     - FlutterMacOS
+  - file_selector_macos (0.0.1):
+    - FlutterMacOS
   - FlutterMacOS (1.0.0)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -23,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - dd_check_plugin (from `Flutter/ephemeral/.symlinks/plugins/dd_check_plugin/macos`)
   - dd_models (from `Flutter/ephemeral/.symlinks/plugins/dd_models/macos`)
+  - file_selector_macos (from `Flutter/ephemeral/.symlinks/plugins/file_selector_macos/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
   - network_info_plus (from `Flutter/ephemeral/.symlinks/plugins/network_info_plus/macos`)
   - package_info (from `Flutter/ephemeral/.symlinks/plugins/package_info/macos`)
@@ -39,6 +42,8 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/dd_check_plugin/macos
   dd_models:
     :path: Flutter/ephemeral/.symlinks/plugins/dd_models/macos
+  file_selector_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/file_selector_macos/macos
   FlutterMacOS:
     :path: Flutter/ephemeral
   network_info_plus:
@@ -55,6 +60,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   dd_check_plugin: 3818bec884da9815e35f7bedbb185f288fc391d8
   dd_models: feb4983a9d00577d535665e2a6f843afc7d68314
+  file_selector_macos: 0f85c1108e2fd597b58246bc0b0c1cb483d7593b
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   network_info_plus: f4fbc7877ab7b3294500d9441dfa53cd54972d05

@@ -9,7 +9,7 @@ extension WrapJsonEx on WrapJson {
       toast(message);
       context.pop();
     } else {
-      context.showSimpleDialog(message);
+      dialog(message);
     }
   }
 
@@ -18,7 +18,13 @@ extension WrapJsonEx on WrapJson {
       toast(message);
       ifOk?.call();
     } else {
-      showIosDialog(message);
+      dialog(message);
     }
   }
+}
+
+
+///显示一个系统弹窗
+void dialog(String message) {
+  showIosDialog(message,okText: '我知道了',cancelText: '取消',title: const Text('系统提示'));
 }

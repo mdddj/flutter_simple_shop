@@ -207,21 +207,21 @@ mixin _$PagerParams {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String name) dyn,
+    required TResult Function(String name, String emptyText) dyn,
     required TResult Function(String name) dynWrite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String name)? dyn,
+    TResult? Function(String name, String emptyText)? dyn,
     TResult? Function(String name)? dynWrite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String name)? dyn,
+    TResult Function(String name, String emptyText)? dyn,
     TResult Function(String name)? dynWrite,
     required TResult orElse(),
   }) =>
@@ -317,7 +317,7 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String name) dyn,
+    required TResult Function(String name, String emptyText) dyn,
     required TResult Function(String name) dynWrite,
   }) {
     return $default();
@@ -327,7 +327,7 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String name)? dyn,
+    TResult? Function(String name, String emptyText)? dyn,
     TResult? Function(String name)? dynWrite,
   }) {
     return $default?.call();
@@ -337,7 +337,7 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String name)? dyn,
+    TResult Function(String name, String emptyText)? dyn,
     TResult Function(String name)? dynWrite,
     required TResult orElse(),
   }) {
@@ -403,7 +403,7 @@ abstract class _$$DynPageParamsCopyWith<$Res> {
           _$DynPageParams value, $Res Function(_$DynPageParams) then) =
       __$$DynPageParamsCopyWithImpl<$Res>;
   @useResult
-  $Res call({String name});
+  $Res call({String name, String emptyText});
 }
 
 /// @nodoc
@@ -418,11 +418,16 @@ class __$$DynPageParamsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
+    Object? emptyText = null,
   }) {
     return _then(_$DynPageParams(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      emptyText: null == emptyText
+          ? _value.emptyText
+          : emptyText // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -431,7 +436,10 @@ class __$$DynPageParamsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DynPageParams extends DynPageParams {
-  _$DynPageParams({required this.name, final String? $type})
+  _$DynPageParams(
+      {required this.name,
+      this.emptyText = '暂无动态，快去发布一条吧',
+      final String? $type})
       : $type = $type ?? 'dyn',
         super._();
 
@@ -440,13 +448,16 @@ class _$DynPageParams extends DynPageParams {
 
   @override
   final String name;
+  @override
+  @JsonKey()
+  final String emptyText;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'PagerParams.dyn(name: $name)';
+    return 'PagerParams.dyn(name: $name, emptyText: $emptyText)';
   }
 
   @override
@@ -454,12 +465,14 @@ class _$DynPageParams extends DynPageParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DynPageParams &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.emptyText, emptyText) ||
+                other.emptyText == emptyText));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode => Object.hash(runtimeType, name, emptyText);
 
   @JsonKey(ignore: true)
   @override
@@ -471,32 +484,32 @@ class _$DynPageParams extends DynPageParams {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String name) dyn,
+    required TResult Function(String name, String emptyText) dyn,
     required TResult Function(String name) dynWrite,
   }) {
-    return dyn(name);
+    return dyn(name, emptyText);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String name)? dyn,
+    TResult? Function(String name, String emptyText)? dyn,
     TResult? Function(String name)? dynWrite,
   }) {
-    return dyn?.call(name);
+    return dyn?.call(name, emptyText);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String name)? dyn,
+    TResult Function(String name, String emptyText)? dyn,
     TResult Function(String name)? dynWrite,
     required TResult orElse(),
   }) {
     if (dyn != null) {
-      return dyn(name);
+      return dyn(name, emptyText);
     }
     return orElse();
   }
@@ -544,13 +557,15 @@ class _$DynPageParams extends DynPageParams {
 }
 
 abstract class DynPageParams extends PagerParams {
-  factory DynPageParams({required final String name}) = _$DynPageParams;
+  factory DynPageParams({required final String name, final String emptyText}) =
+      _$DynPageParams;
   DynPageParams._() : super._();
 
   factory DynPageParams.fromJson(Map<String, dynamic> json) =
       _$DynPageParams.fromJson;
 
   String get name;
+  String get emptyText;
   @JsonKey(ignore: true)
   _$$DynPageParamsCopyWith<_$DynPageParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -630,7 +645,7 @@ class _$DynWriteParams extends DynWriteParams {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String name) dyn,
+    required TResult Function(String name, String emptyText) dyn,
     required TResult Function(String name) dynWrite,
   }) {
     return dynWrite(name);
@@ -640,7 +655,7 @@ class _$DynWriteParams extends DynWriteParams {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String name)? dyn,
+    TResult? Function(String name, String emptyText)? dyn,
     TResult? Function(String name)? dynWrite,
   }) {
     return dynWrite?.call(name);
@@ -650,7 +665,7 @@ class _$DynWriteParams extends DynWriteParams {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String name)? dyn,
+    TResult Function(String name, String emptyText)? dyn,
     TResult Function(String name)? dynWrite,
     required TResult orElse(),
   }) {

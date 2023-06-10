@@ -8,7 +8,7 @@ import 'index.dart';
 import 'router.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const ip = '192.168.199.88';
+const ip = '192.168.100.55';
 const apiHost = 'http://$ip';
 const apiPort = "80";
 // const apiHost = "https://itbug.shop";

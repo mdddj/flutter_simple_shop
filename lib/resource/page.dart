@@ -37,7 +37,7 @@ class _MyResourcePageState extends State<MyResourcePage> {
   }
 
   Widget _builderEmptyWidget() {
-    return FilledButton.tonal(onPressed:_gotoWrite, child: const Text("快去分享一条面基瞬间吧")).marginOnly(top: 22);
+    return FilledButton.tonal(onPressed:_gotoWrite, child:  Text(params.emptyText)).marginOnly(top: 22);
   }
 
   ///去发布页面

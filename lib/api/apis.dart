@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../common/extend/string.dart';
 import '../freezed/add_favorites_params.dart';
+import '../freezed/resource_category.dart';
 import '../index.dart';
 import 'base.dart';
 import 'model/email_register_params.dart';
@@ -38,11 +39,13 @@ const favoritesPrefix = '/api/user/favorites';
 
 ///添加到收藏夹接口
 class FavoritesAddApi extends MyAppCoreApi {
-  FavoritesAddApi() : super("$favoritesPrefix/save", httpMethod: HttpMethod.post);
+  FavoritesAddApi()
+      : super("$favoritesPrefix/save", httpMethod: HttpMethod.post);
 
   @Doc(message: "服务器发起请求,添加收藏")
   static Future<WrapJson> doRequeset(AddFavoritesParams params) async {
-    final r = await (FavoritesAddApi()).request(RequestParams(data: params.toJson()));
+    final r =
+        await (FavoritesAddApi()).request(RequestParams(data: params.toJson()));
     return r;
   }
 }
@@ -61,7 +64,8 @@ class FavoritesFindListApi extends MyAppCoreApi with ApiPageMixin {
 
 //删除收藏
 class FavoritesRemoveApi extends MyAppCoreApi {
-  FavoritesRemoveApi(int id) : super("$favoritesPrefix/remove", httpMethod: HttpMethod.post) {
+  FavoritesRemoveApi(int id)
+      : super("$favoritesPrefix/remove", httpMethod: HttpMethod.post) {
     super.params.addAll({"idValue": id});
   }
 }
@@ -77,7 +81,8 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi {
 
   @Doc(message: '加载折淘客的APP Key')
   static Future<String> doRequest(Ref ref) async {
-    final cacehData = await TokenCache.instance.getValue('zhe-app-key', defaultValue: '');
+    final cacehData =
+        await TokenCache.instance.getValue('zhe-app-key', defaultValue: '');
     if (cacehData.isNotEmpty) {
       ref.read(riverpodZhetaokeAppKeyState.notifier).state = cacehData;
       return cacehData;
@@ -107,14 +112,14 @@ class SelectMyRsourceListData extends MyAppCoreApi with ApiPageMixin {
 
 ///发布动态的接口
 class MyResourceCreateApi extends MyAppCoreApi {
-  MyResourceCreateApi() : super('/api/app/resource/new', httpMethod: HttpMethod.post);
+  MyResourceCreateApi()
+      : super('/api/app/resource/new', httpMethod: HttpMethod.post);
 }
 
 ///获取邮箱验证码接口
 class MyApiWithSendEmailValidCode extends MyAppCoreApi {
-  MyApiWithSendEmailValidCode(GetEmailValidCodeParams params) : super("/api/user-public/email-register", httpMethod: HttpMethod.post) {
-    super.params.addAll(params.toJson());
-  }
+  MyApiWithSendEmailValidCode()
+      : super("/api/user-public/email-register", httpMethod: HttpMethod.post);
 
   @override
   bool get isRemoveUserToken => true;
@@ -122,7 +127,8 @@ class MyApiWithSendEmailValidCode extends MyAppCoreApi {
 
 ///邮箱注册接口
 class MyApiWithEmailRegister extends MyAppCoreApi {
-  MyApiWithEmailRegister(EmailRegisterParams params) : super("/api/user-public/email-valid", httpMethod: HttpMethod.post) {
+  MyApiWithEmailRegister(EmailRegisterParams params)
+      : super("/api/user-public/email-valid", httpMethod: HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
 
@@ -132,7 +138,8 @@ class MyApiWithEmailRegister extends MyAppCoreApi {
 
 ///登录接口
 class MyApiWithLogin extends MyAppCoreApi {
-  MyApiWithLogin(LoginParams params) : super(params.getApiPath, httpMethod: HttpMethod.post) {
+  MyApiWithLogin(LoginParams params)
+      : super(params.getApiPath, httpMethod: HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
 
@@ -153,4 +160,16 @@ class MyOpenVipApi extends MyAppCoreApi {
 ///用户发布的动态
 class MyResourceListApi extends MyAppCoreApi with ApiPageMixin {
   MyResourceListApi() : super('/api/app/resource/release');
+}
+
+///查找动态分类
+class MyFindResourceCategoryApi extends MyAppCoreApi {
+  MyFindResourceCategoryApi()
+      : super('/api/app/resource/find-resource-category');
+   Future<ResourceCategory> doRequest(String name) async {
+    final result = await getIt
+        .get<MyFindResourceCategoryApi>()
+        .request(R(data: {"name": name},showDefaultLoading: false));
+    return ResourceCategory.fromJson(result.data);
+  }
 }

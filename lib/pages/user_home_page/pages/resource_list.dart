@@ -1,5 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 import '../../../api/apis.dart';
@@ -20,7 +21,7 @@ class UserResourceWidget extends StatefulWidget {
 }
 
 class _UserResourceWidgetState extends State<UserResourceWidget> {
-  final _repository = UserResourceListRepository();
+  final _repository = GetIt.instance.get<UserResourceListRepository>();
 
   @override
   Widget build(BuildContext context) {

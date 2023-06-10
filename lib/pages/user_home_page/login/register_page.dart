@@ -5,6 +5,7 @@ import '../../../api/apis.dart';
 import '../../../api/model/email_register_params.dart';
 import '../../../api/model/get_email_valid_code.dart';
 import '../../../common/api_ext.dart';
+import '../../../index.dart';
 
 // 注册页面
 class RegisterPage extends StatefulWidget {
@@ -126,7 +127,7 @@ class _RegisterPageState extends State<RegisterPage> {
       return;
     }
     context.hideKeyBoard();
-    MyApiWithSendEmailValidCode(GetEmailValidCodeParams(email: _email)).request().then((value) {
+    getIt.get<MyApiWithSendEmailValidCode>().request(R(data: GetEmailValidCodeParams(email: _email).toJson())).then((value) {
       value.simpleToast();
       if(value.isSuccess){
         _countDownController.start();

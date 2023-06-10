@@ -15,13 +15,14 @@ import 'api/apis.dart';
 import 'api/base.dart';
 import 'api/tkapi.dart';
 import 'index.dart';
+import 'pages/user_home_page/pages/resource_list.dart';
 import 'router.dart';
 
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
   DDCheckPluginSetting.showLog = false;
   if (kAppDebugMode) {
-    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9998, customCoverterResponseData: (model) {
+    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9999, customCoverterResponseData: (model) {
       final body = model.response?.data;
       return isValue<Map<String, dynamic>>(body).isNotNull<SendResponseModel?>((value) {
             return isValue<String>(body['data']).isNotNull<SendResponseModel?>((value2) {
@@ -66,6 +67,9 @@ void initInstanceObject() {
   getIt.registerSingleton(MyResourceCreateApi());
   getIt.registerSingleton(MyResourceListApi());
   getIt.registerSingleton(PagerUtil());
+  getIt.registerSingleton(UserResourceListRepository());
+  getIt.registerSingleton(MyFindResourceCategoryApi());
+  getIt.registerSingleton(MyApiWithSendEmailValidCode());
 }
 
 Future<void> initCaches() async {

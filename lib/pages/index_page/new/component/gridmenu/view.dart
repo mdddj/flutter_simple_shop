@@ -158,7 +158,9 @@ class HomeMenuLayout extends StatelessWidget {
                 if(homeMenu.icon!=null)
                   ImageWrapper(child: homeMenu.icon!),
                 const SizedBox(height: 6),
-                Text(homeMenu.title,style: context.textTheme.bodySmall)
+                Text(homeMenu.title,style: context.textTheme.labelSmall?.copyWith(
+                  fontSize: homeMenu.title.length>4?10:null
+                ))
               ],
             ),
           ),

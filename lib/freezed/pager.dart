@@ -23,7 +23,7 @@ class Pager with _$Pager {
 class PagerParams with _$PagerParams {
   const PagerParams._();
   const factory PagerParams() = _PagerParams;
-  factory PagerParams.dyn({required String name}) = DynPageParams;
+  factory PagerParams.dyn({required String name, @Default('暂无动态，快去发布一条吧') String emptyText}) = DynPageParams;
   factory PagerParams.dynWrite({required String name}) = DynWriteParams;
   factory PagerParams.fromJson(Map<String, dynamic> json) => _$PagerParamsFromJson(json);
 }

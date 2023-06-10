@@ -31,12 +31,14 @@ Map<String, dynamic> _$$_PagerParamsToJson(_$_PagerParams instance) =>
 _$DynPageParams _$$DynPageParamsFromJson(Map<String, dynamic> json) =>
     _$DynPageParams(
       name: json['name'] as String,
+      emptyText: json['emptyText'] as String? ?? '暂无动态，快去发布一条吧',
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$DynPageParamsToJson(_$DynPageParams instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'emptyText': instance.emptyText,
       'runtimeType': instance.$type,
     };
 
