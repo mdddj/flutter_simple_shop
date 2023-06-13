@@ -8,7 +8,7 @@ import 'index.dart';
 import 'router.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const ip = '192.168.100.55';
+const ip = '192.168.199.79';
 const apiHost = 'http://$ip';
 const apiPort = "80";
 // const apiHost = "https://itbug.shop";
@@ -25,8 +25,6 @@ class Root extends View {
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
     return ThemeBuildWidget(themeBuild: (theme) {
-      // final themeValue = MyAppTheme.getTheme(theme.themeIndex);
-      //_builderTheme(themeValue)
       return MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',

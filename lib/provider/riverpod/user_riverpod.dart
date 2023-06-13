@@ -11,9 +11,9 @@ import 'model/user.dart';
 
 final userRiverpod =
     StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
-
+typedef UpdateModelCall<T> = T Function(T oldModel);
 // 用户信息
-class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
+class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
   final Ref ref;
 
   UserModel(this.ref) : super(const UserDetailModal(user: null));
@@ -22,12 +22,14 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
   Future<LoginResultModel> login(LoginParams params) async {
     final response = await MyApiWithLogin(params).request();
     if(response.isSuccess){
+
       final model = LoginResultModel.fromJson(response.getMap("data"));
       setUserInfoToProvider(model.user);
       setTokenToCatch(model.token);
       return model;
     }else{
-      throw AppException(code: response.getInt('state'), message: response.message);
+      response.print();
+      throw AppException(code: response.getInt('state'), message: response.getString('message'));
     }
   }
 
@@ -61,11 +63,17 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase{
   void startAppTryLogin(){ 
     CacheFactory.create<TokenCache>().userToken.then((value) {
       if(value.isNotEmpty){
-        ///token获取用户信息
-        wtfLog("启动尝试自动登录:$value");
+        actionLog("尝试自动登录", "token", value);
         getIt.get<UserApi>().token = value;
         getIt.get<Api>().getUser(value).then((user)=>state = state.copyWith(user: user));
       }
     });
+  }
+
+  void updateUser(UpdateModelCall<MyUser> update){
+    final user = state.user;
+    if(user!=null){
+      state = state.copyWith(user: update.call(user));
+    }
   }
 }

@@ -68,7 +68,7 @@ class App extends ConsumerWidget {
                 extended: false,
                 labelType: NavigationRailLabelType.selected,
                 destinations: bottomMenus.map((element) {
-                  return NavigationRailDestination(icon: Image.asset(element.getAssetPath(currentIndex == bottomMenus.indexOf(element)),width:kNavIconSize,height:kNavIconSize,), label: Text(element.title));
+                  return NavigationRailDestination(icon: Image.asset(element.getAssetPath(currentIndex == bottomMenus.indexOf(element)),width:kNavIconSize,height:kNavIconSize,color: context.isDarkModel ? Colors.white : null,), label: Text(element.title));
                 }).toList(), selectedIndex: currentIndex,
                 onDestinationSelected: (v){
                   ref.read(homeModuleShowIndex.notifier).state = v;

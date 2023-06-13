@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../index.dart';
 import '../../../provider/riverpod/model/my_user.dart';
+import '../setting/update_avatar.dart';
 import 'vip_header.dart';
 
 const kAvatarHeight = 58.0;
@@ -30,7 +31,7 @@ class HeaderIndex extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             utils.widgetUtils.marginTop(),
-            AnimatedSwitcher(duration: const Duration(milliseconds: 300),child: user==null ? _loginWidgetLayout(context) : _loginSuccessLayout(user) ,),
+            AnimatedSwitcher(duration: const Duration(milliseconds: 300),child: user==null ? _loginWidgetLayout(context) : _loginSuccessLayout(context, user) ,),
             // _renderCounts(),
             const SizedBox(
               height: 44,
@@ -46,22 +47,21 @@ class HeaderIndex extends ConsumerWidget {
   
 
   /// 已登录显示
-  Widget _loginSuccessLayout(MyUser user) {
+  Widget _loginSuccessLayout(BuildContext context, MyUser user) {
     return Column(
       children: [
         Row(
           children: [
-            utils.widgetUtils.marginRight(),
+            const SizedBox(width: 12),
             // 用户头像
-            ExtendedImage.network(
-              user.picture,
-              width: kAvatarHeight,
-              height: kAvatarHeight,
-              borderRadius: BorderRadius.circular(50),
-              shape: BoxShape.rectangle,
-            ),
-            utils.widgetUtils.marginRight(),
+            user.getAvatar(size: 68).click(() async {
+              await showDialog(context: context, builder: (_){
+                return const UpdateUserAvatarWidget();
+              });
+            }),
+            const SizedBox(width: 12),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   user.username.isNotEmpty ? user.username : '未设置昵称',
@@ -70,10 +70,13 @@ class HeaderIndex extends ConsumerWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: 25),
                 ),
+                if(user.loginNumber.isNotEmpty)
                 Text(
                   'ID: ${user.loginNumber}',
                   style: const TextStyle(color: Colors.white54),
-                )
+                ),
+                if(user.email.isNotEmpty)
+                  Text(user.email,style: const TextStyle(color: Colors.white54))
               ],
             )
             // 昵称

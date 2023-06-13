@@ -173,3 +173,8 @@ class MyFindResourceCategoryApi extends MyAppCoreApi {
     return ResourceCategory.fromJson(result.data);
   }
 }
+
+///修改用户头像接口
+class MyUpdateUserAvatarApi extends MyAppCoreApi {
+  MyUpdateUserAvatarApi():super('/api/update-avatar',httpMethod: HttpMethod.post);
+}

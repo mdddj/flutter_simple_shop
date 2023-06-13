@@ -5,6 +5,8 @@ PODS:
     - Flutter
   - dd_models (0.0.1):
     - Flutter
+  - file_selector_ios (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - flutter_image_compress_common (1.0.0):
     - Flutter
@@ -55,6 +57,7 @@ DEPENDENCIES:
   - dataoke_sdk (from `.symlinks/plugins/dataoke_sdk/ios`)
   - dd_check_plugin (from `.symlinks/plugins/dd_check_plugin/ios`)
   - dd_models (from `.symlinks/plugins/dd_models/ios`)
+  - file_selector_ios (from `.symlinks/plugins/file_selector_ios/ios`)
   - Flutter (from `Flutter`)
   - flutter_image_compress_common (from `.symlinks/plugins/flutter_image_compress_common/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
@@ -81,6 +84,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/dd_check_plugin/ios"
   dd_models:
     :path: ".symlinks/plugins/dd_models/ios"
+  file_selector_ios:
+    :path: ".symlinks/plugins/file_selector_ios/ios"
   Flutter:
     :path: Flutter
   flutter_image_compress_common:
@@ -106,6 +111,7 @@ SPEC CHECKSUMS:
   dataoke_sdk: aa95616c89b448c7b3f698825a49bed62c9b7b9d
   dd_check_plugin: fadd604fdabcd4c8674046cbda00aeda61646a03
   dd_models: 5bd836519341310a49aa6c53a2203c300021d790
+  file_selector_ios: 8c25d700d625e1dcdd6599f2d927072f2254647b
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_image_compress_common: ec1d45c362c9d30a3f6a0426c297f47c52007e3e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a

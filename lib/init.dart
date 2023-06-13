@@ -21,6 +21,7 @@ import 'router.dart';
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
   DDCheckPluginSetting.showLog = false;
+  BaseApi.showLog = false;
   if (kAppDebugMode) {
     DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9999, customCoverterResponseData: (model) {
       final body = model.response?.data;
@@ -36,7 +37,7 @@ Future<void> appInit(Function start) async {
             });
           }) ??
           model;
-    });
+    },version: DataFormatVersions.version_1);
   }
 
   initNetUtil();
@@ -70,6 +71,8 @@ void initInstanceObject() {
   getIt.registerSingleton(UserResourceListRepository());
   getIt.registerSingleton(MyFindResourceCategoryApi());
   getIt.registerSingleton(MyApiWithSendEmailValidCode());
+  getIt.registerSingleton(MImageUtils());
+  getIt.registerSingleton(MyUpdateUserAvatarApi());
 }
 
 Future<void> initCaches() async {

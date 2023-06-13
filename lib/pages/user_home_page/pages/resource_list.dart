@@ -34,8 +34,8 @@ class _UserResourceWidgetState extends State<UserResourceWidget> {
         extendedListDelegate:
             SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: context.waterfallFlowCrossAxisCount,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8)));
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 12)));
   }
 
   @override
