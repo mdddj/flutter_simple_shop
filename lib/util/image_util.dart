@@ -39,7 +39,7 @@ class MImageUtils{
 
 class _SelectImage extends StatelessWidget {
 
-  const _SelectImage({super.key});
+  const _SelectImage();
 
   @override
   Widget build(BuildContext context) {

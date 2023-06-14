@@ -52,12 +52,10 @@ abstract class MyAppCoreApi extends BaseApi {
     try {
       final r = await super.request(options);
       final json = WrapJson(r);
-
       if (json.isSuccess.not) {
           json.print();
         throw AppException.appError(code: json.getInt('state', defaultValue: 90001), msg: json.message,data: json.getValue('data'));
       }
-
       return json;
     } on AppException catch (e) {
       wtfLog('$e');

@@ -7,8 +7,6 @@ import '../../../api/apis.dart';
 import '../../../common/api_ext.dart';
 import '../../../freezed/resource_category.dart';
 import '../../../index.dart';
-import '../../../init.dart';
-import '../../../util/image_util.dart';
 
 ///设置用户头像
 class UpdateUserAvatarWidget extends ConsumerStatefulWidget {

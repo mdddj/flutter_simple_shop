@@ -8,7 +8,6 @@ import '../freezed/resource_category.dart';
 import '../index.dart';
 import 'base.dart';
 import 'model/email_register_params.dart';
-import 'model/get_email_valid_code.dart';
 import 'model/login_params.dart';
 
 mixin ApiPageMixin on MyAppCoreApi {
