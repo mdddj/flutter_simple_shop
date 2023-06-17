@@ -33,10 +33,9 @@ class UserLoginPage extends ConsumerStatefulWidget {
 class UserLoginPageState extends ConsumerState<UserLoginPage> {
   bool isAgree = false; // 是否同意协议
   bool loading = false; // 是否登录中
-  final usernameEditController = TextEditingController(text: 'admin');
-  final passwordEditController = TextEditingController(text: '123456');
-  LoginType _loginType = LoginType.account;
-  IList<LoginType> _showTypes = const IListConst([LoginType.email, LoginType.phone]);
+  final usernameEditController = TextEditingController(text: '');
+  final passwordEditController = TextEditingController(text: '');
+  LoginType _loginType = LoginType.email;
 
   @override
   Widget build(BuildContext context) {
@@ -50,58 +49,68 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
 
   Scaffold buildScaffold(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      body: Stack(
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.all(20),
-            height: context.screenHeight,
-            width: context.screenWidth,
-            child: Column(
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        padding: EdgeInsets.all(context.screenWidth * 0.1),
+        height: context.screenHeight,
+        child: Column(
+          children: <Widget>[
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                renderLogo(),
-                // 用户名输入框
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: '请输入$_accountLabel',
-                    labelText: _accountLabel,
-                  ),
-                  controller: usernameEditController,
-                ),
+                SizedBox(height: context.screenHeight * 0.16),
+                Text('登录',
+                    style: context.textTheme.titleLarge
+                        ?.copyWith(fontWeight: FontWeight.bold, fontSize: 53)),
+                SizedBox(height: context.screenHeight * 0.032),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        decoration: InputDecoration(
+                          hintText: '请输入邮箱',
+                          labelText: _accountLabel,
+                        ),
+                        controller: usernameEditController,
+                      ),
 
-                utils.widgetUtils.marginTop(height: 20),
-                // 密码输入框
-                TextField(
-                  decoration: const InputDecoration(
-                    hintText: '请输入登录密码',
-                    labelText: '密码',
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      // 密码输入框
+                      TextField(
+                        decoration: const InputDecoration(
+                          hintText: '请输入密码',
+                          labelText: '密码',
+                        ),
+                        controller: passwordEditController,
+                        obscureText: true,
+                      ),
+                    ],
                   ),
-                  controller: passwordEditController,
-                  obscureText: true,
                 ),
-
                 const SizedBox(
                   height: 40,
                 ),
                 renderLoginButton(),
-                const SizedBox(height: 12),
-                _moreActions
               ],
             ),
-          ),
+            const Spacer(),
+            _moreActions
+            // // 协议按钮
+            // renderXieyi(),
 
-          // 协议按钮
-          renderXieyi(),
-
-          // 页面关闭按钮
-          Positioned(
-            left: 12,
-            top: context.paddingTop + 12,
-            child: GestureDetector(onTap: context.pop, child: const Icon(Icons.close)),
-          )
-        ],
+            // // 页面关闭按钮
+            // Positioned(
+            //   left: 12,
+            //   top: context.paddingTop + 12,
+            //   child: GestureDetector(
+            //       onTap: context.pop, child: const Icon(Icons.close)),
+            // )
+          ],
+        ),
       ),
     );
   }
@@ -112,7 +121,9 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
 
   // 登录按钮
   Widget renderLoginButton() {
-    return SizedBox(width: double.infinity, child: ElevatedButton(onPressed: _submit, child: const Text('登录')));
+    return SizedBox(
+        width: double.infinity,
+        child: FilledButton(onPressed: _submit, child: const Text('登录')));
   }
 
   Widget get _moreActions {
@@ -120,8 +131,12 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text('用户注册').click(_navToRegisterPage),
-        const VerticalDivider(),
-        ..._showTypes.map((element) => Text("${element.title}登录").marginOnly(right: 5).click(() => _changeLoginType(element))).toList()
+        // const VerticalDivider(),
+        // ..._showTypes
+        //     .map((element) => Text("${element.title}登录")
+        //         .marginOnly(right: 5)
+        //         .click(() => _changeLoginType(element)))
+        //     .toList()
       ],
     );
   }
@@ -130,7 +145,6 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
   void _changeLoginType(LoginType type) {
     setState(() {
       _loginType = type;
-      _showTypes = const IListConst<LoginType>(LoginType.values).remove(type);
     });
     usernameEditController.clear();
     passwordEditController.clear();
@@ -152,7 +166,8 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                 isAgree = !isAgree;
               });
             },
-            child: Icon(isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
+            child: Icon(
+                isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 5.0),
@@ -160,9 +175,13 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
               lightOrientation: controller.FLightOrientation.LeftBottom,
               text: '我已阅读并同意',
               spans: [
-                TextSpan(text: '用户协议', style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(
+                    text: '用户协议',
+                    style: TextStyle(decoration: TextDecoration.underline)),
                 TextSpan(text: '和', style: TextStyle()),
-                TextSpan(text: '隐私政策', style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(
+                    text: '隐私政策',
+                    style: TextStyle(decoration: TextDecoration.underline)),
               ],
             ),
           ),
@@ -191,7 +210,10 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
     }
     try {
       final nav = context.nav;
-       await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
+      await ref.read(userRiverpod.notifier).login(LoginParams(
+          loginnumber: username,
+          password: password,
+          logintype: _loginType.type));
       nav.pop();
     } on AppException catch (e) {
       toast(e.message);

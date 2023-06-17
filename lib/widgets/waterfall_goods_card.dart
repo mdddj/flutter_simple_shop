@@ -22,7 +22,11 @@ class WaterfallGoodsCard extends StatelessWidget {
               newViewPage: true);
         },
         child: Card(
+          elevation: 0.01,
           margin: EdgeInsets.zero,
+          color: context.colorScheme.surface,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: Padding(
               padding: const EdgeInsets.only(bottom: 12),
               child: Column(
@@ -67,11 +71,11 @@ class WaterfallGoodsCard extends StatelessWidget {
                       lightOrientation: FLightOrientation.LeftBottom,
                       text:
                           '领 ${NumUtil.getNumByValueDouble(product.couponPrice.toDouble(), 0)} 元券',
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 3),
                       strokeColor: context.primaryColor,
                       corner: FCorner.all(50),
-                      style:  TextStyle(color: context.primaryColor),
+                      style: TextStyle(color: context.primaryColor),
                     ),
                   ),
 
@@ -106,9 +110,10 @@ class WaterfallGoodsCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 4),
       decoration: BoxDecoration(
           color: context.primaryColor, borderRadius: BorderRadius.circular(3)),
-      child: Text(text,style: TextStyle(
-        color: context.colorScheme.inversePrimary
-      ),),
+      child: Text(
+        text,
+        style: TextStyle(color: context.colorScheme.inversePrimary),
+      ),
     );
   }
 
@@ -142,7 +147,7 @@ class WaterfallGoodsCard extends StatelessWidget {
             child: SimpleImage(
               url: img,
               radius: const BorderRadius.only(
-                  topLeft: Radius.circular(5), topRight: Radius.circular(5)),
+                  topLeft: Radius.circular(12), topRight: Radius.circular(12)),
             ));
       },
     );

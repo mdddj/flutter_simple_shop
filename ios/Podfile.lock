@@ -1,4 +1,7 @@
 PODS:
+  - connectivity_plus (0.0.1):
+    - Flutter
+    - ReachabilitySwift
   - dataoke_sdk (0.0.1):
     - Flutter
   - dd_check_plugin (0.0.1):
@@ -22,6 +25,7 @@ PODS:
     - FlutterMacOS
   - permission_handler_apple (9.1.0):
     - Flutter
+  - ReachabilitySwift (5.0.0)
   - saver_gallery (0.0.1):
     - Flutter
   - sqflite (0.0.2):
@@ -31,6 +35,7 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - dataoke_sdk (from `.symlinks/plugins/dataoke_sdk/ios`)
   - dd_check_plugin (from `.symlinks/plugins/dd_check_plugin/ios`)
   - dd_models (from `.symlinks/plugins/dd_models/ios`)
@@ -48,8 +53,11 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - FMDB
+    - ReachabilitySwift
 
 EXTERNAL SOURCES:
+  connectivity_plus:
+    :path: ".symlinks/plugins/connectivity_plus/ios"
   dataoke_sdk:
     :path: ".symlinks/plugins/dataoke_sdk/ios"
   dd_check_plugin:
@@ -78,6 +86,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
+  connectivity_plus: 07c49e96d7fc92bc9920617b83238c4d178b446a
   dataoke_sdk: aa95616c89b448c7b3f698825a49bed62c9b7b9d
   dd_check_plugin: fadd604fdabcd4c8674046cbda00aeda61646a03
   dd_models: 5bd836519341310a49aa6c53a2203c300021d790
@@ -89,10 +98,11 @@ SPEC CHECKSUMS:
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
   permission_handler_apple: 8f116445eff3c0e7c65ad60f5fef5490aa94b4e4
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   saver_gallery: 2b4e584106fde2407ab51560f3851564963e6b78
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   url_launcher_ios: ae1517e5e344f5544fb090b079e11f399dfbe4d2
 
-PODFILE CHECKSUM: d7fbf063a5c8edf909dae1c54074aac3a35ea1ef
+PODFILE CHECKSUM: 288f3c61f7f72e56bb2d0ccf0e9175d6aa71fdd1
 
 COCOAPODS: 1.12.1

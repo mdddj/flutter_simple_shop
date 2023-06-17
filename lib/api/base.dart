@@ -1,6 +1,7 @@
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import '../init.dart';
 import '../service/user_api.dart';
 
@@ -13,7 +14,10 @@ class MyTokenInterceptor implements Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers.addAll({"Authorization": UserApi.userToken});
+    final token = UserApi.userToken;
+    if(token.isNotEmpty){
+      options.headers.addAll({"Authorization": token });
+    }
     handler.next(options);
   }
 
@@ -53,12 +57,13 @@ abstract class MyAppCoreApi extends BaseApi {
       final r = await super.request(options);
       final json = WrapJson(r);
       if (json.isSuccess.not) {
-          json.print();
+          json.print((){
+            debugPrint("链接:$url");
+          });
         throw AppException.appError(code: json.getInt('state', defaultValue: 90001), msg: json.message,data: json.getValue('data'));
       }
       return json;
     } on AppException catch (e) {
-      wtfLog('$e');
       final ex = WrapJson.fromMyServerError(e);
       return ex;
     } catch (e) {

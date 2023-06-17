@@ -18,27 +18,19 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MyLoadingMoreCustomScrollView(
-        slivers: [
-          Container(
-            decoration: BoxDecoration(color: context.primaryColor),
-            child: Column(children: [
-              const UserHomeAppBar(),
-              _buildHeaderWidget(),
-            ]),
-          ).toSliverWidget,
-          _renderUserValues().toSliverWidget,
-          const UserResourceWidget()
-        ]
-      ),
+      body: MyLoadingMoreCustomScrollView(slivers: [
+        Container(
+          decoration: BoxDecoration(color: context.primaryColor),
+          child: Column(children: [
+            const UserHomeAppBar(),
+            _buildHeaderWidget(),
+          ]),
+        ).toSliverWidget,
+        _renderUserValues().toSliverWidget,
+        if (ref.isLogin) const UserResourceWidget()
+      ]),
     );
   }
-
-
-
-
-
-
 
 // 用户订单和优惠券,余额等数据
   Widget _renderUserValues() {
@@ -48,10 +40,6 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
       child: UserTokens(),
     ));
   }
-
-
-
-
 
 // 用户中心的头部
   Widget _buildHeaderWidget() {
@@ -63,9 +51,9 @@ class UserTokens extends ConsumerWidget {
   const UserTokens({super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.user;
-    if(user == null){
+    if (user == null) {
       return const SizedBox();
     }
     return WaterfallFlow.count(
@@ -74,13 +62,14 @@ class UserTokens extends ConsumerWidget {
       physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       children: [
-        _countItem('令牌','${user.openAiTokens}',context),
-        _countItem('优惠券', '32张',context),
-        _countItem('积分', '289',context),
+        _countItem('令牌', '${user.openAiTokens}', context),
+        _countItem('优惠券', '32张', context),
+        _countItem('积分', '289', context),
       ],
     );
   }
-  Widget _countItem(String key, String value,BuildContext context) {
+
+  Widget _countItem(String key, String value, BuildContext context) {
     return Column(children: [
       Text(value, style: context.textTheme.titleMedium),
       const SizedBox(
@@ -90,4 +79,3 @@ class UserTokens extends ConsumerWidget {
     ]);
   }
 }
-

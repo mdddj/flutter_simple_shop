@@ -32,6 +32,7 @@ extension UserEx on MyUser {
             url: picture,
             params: ImageParams(
                 size: size,
+                fit: BoxFit.cover,
                 borderRadius: BorderRadius.circular(size / 2),
                 shape: BoxShape.rectangle)));
   }

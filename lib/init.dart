@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_check_plugin/model/send_model.dart';
 import 'package:dd_js_util/dd_js_util.dart';
@@ -10,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
-
 import 'api/apis.dart';
 import 'api/base.dart';
 import 'api/tkapi.dart';
@@ -20,13 +20,16 @@ import 'router.dart';
 
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();
-  DDCheckPluginSetting.showLog = false;
-  BaseApi.showLog = false;
+  final result = await (Connectivity().checkConnectivity());
+  wtfLog(result);
   if (kAppDebugMode) {
-    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9999, customCoverterResponseData: (model) {
+    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9999,
+        customCoverterResponseData: (model) {
       final body = model.response?.data;
-      return isValue<Map<String, dynamic>>(body).isNotNull<SendResponseModel?>((value) {
-            return isValue<String>(body['data']).isNotNull<SendResponseModel?>((value2) {
+      return isValue<Map<String, dynamic>>(body)
+              .isNotNull<SendResponseModel?>((value) {
+            return isValue<String>(body['data'])
+                .isNotNull<SendResponseModel?>((value2) {
               try {
                 final map = jsonDecode(value2);
                 body['data'] = map;
@@ -37,7 +40,7 @@ Future<void> appInit(Function start) async {
             });
           }) ??
           model;
-    },version: DataFormatVersions.version_1);
+    }, version: DataFormatVersions.version_1);
   }
 
   initNetUtil();
@@ -73,6 +76,7 @@ void initInstanceObject() {
   getIt.registerSingleton(MyApiWithSendEmailValidCode());
   getIt.registerSingleton(MImageUtils());
   getIt.registerSingleton(MyUpdateUserAvatarApi());
+  getIt.registerSingleton(MyDeleteUserResourceApi());
 }
 
 Future<void> initCaches() async {
@@ -89,6 +93,8 @@ Future<void> initCaches() async {
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
-    return super.createHttpClient(context)..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

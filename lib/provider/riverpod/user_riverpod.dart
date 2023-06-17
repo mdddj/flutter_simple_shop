@@ -67,7 +67,10 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
         getIt
             .get<Api>()
             .getUser(value)
-            .then((user) => state = state.copyWith(user: user));
+            .then((user) {
+          state = state.copyWith(user: user);
+          GetIt.instance.get<UserApi>().token = user == null ? '' : value;
+        });
       }
     });
   }

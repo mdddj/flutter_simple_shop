@@ -177,3 +177,9 @@ class MyFindResourceCategoryApi extends MyAppCoreApi {
 class MyUpdateUserAvatarApi extends MyAppCoreApi {
   MyUpdateUserAvatarApi():super('/api/update-avatar',httpMethod: HttpMethod.post);
 }
+
+
+///删除用户动态接口
+class MyDeleteUserResourceApi extends MyAppCoreApi {
+  MyDeleteUserResourceApi():super('/api/app/resource/delete',httpMethod: HttpMethod.delete);
+}

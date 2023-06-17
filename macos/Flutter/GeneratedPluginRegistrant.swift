@@ -5,6 +5,7 @@
 import FlutterMacOS
 import Foundation
 
+import connectivity_plus
 import dd_check_plugin
 import dd_models
 import file_selector_macos
@@ -15,6 +16,7 @@ import sqflite
 import url_launcher_macos
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
+  ConnectivityPlugin.register(with: registry.registrar(forPlugin: "ConnectivityPlugin"))
   DdCheckPlugin.register(with: registry.registrar(forPlugin: "DdCheckPlugin"))
   DdModelsPlugin.register(with: registry.registrar(forPlugin: "DdModelsPlugin"))
   FileSelectorPlugin.register(with: registry.registrar(forPlugin: "FileSelectorPlugin"))

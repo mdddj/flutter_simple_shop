@@ -8,7 +8,7 @@ import 'index.dart';
 import 'router.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const ip = '192.168.199.78';
+const ip = '192.168.100.55';
 const apiHost = 'http://$ip';
 const apiPort = "80";
 // const apiHost = "https://itbug.shop";
@@ -34,8 +34,10 @@ class Root extends View {
         routerConfig: routers,
         builder: FlutterSmartDialog.init(
             loadingBuilder: MyCustomLoadingWidget.new,
-            builder: (c, child) =>
-                MediaQuery(data: MediaQuery.of(c).copyWith(textScaleFactor: 0.9, boldText: false), child: child ?? const SizedBox())),
+            builder: (c, child) => MediaQuery(
+                data: MediaQuery.of(c)
+                    .copyWith(textScaleFactor: 0.9, boldText: false),
+                child: child ?? const SizedBox())),
       );
     });
   }
