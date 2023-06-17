@@ -23,7 +23,7 @@ Future<void> appInit(Function start) async {
   final result = await (Connectivity().checkConnectivity());
   wtfLog(result);
   if (kAppDebugMode) {
-    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9999,
+    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9998,
         customCoverterResponseData: (model) {
       final body = model.response?.data;
       return isValue<Map<String, dynamic>>(body)

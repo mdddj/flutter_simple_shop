@@ -218,7 +218,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        // _renderBottomItem('帮助', Icons.help),
         FavoriteAddBtn(_addFavoritesParams),
         const SizedBox(
           width: 12,
@@ -234,7 +233,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         const SizedBox(
           width: 12,
         ),
-        ElevatedButton(
+        OutlinedButton(
             onPressed: () async {
               if (couponLinkResult != null) {
                 utils.copy(couponLinkResult!.longTpwd ?? '无优惠券', message: '复制成功,打开淘宝APP领取优惠券');

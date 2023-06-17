@@ -66,6 +66,9 @@ var files = <MultipartFile>[];
       body: ref.isLogin.not ? const LoginTipWidget() : KeyboardActions(
         config: _buildConfig,
         child: CupertinoListSection(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),color: context.cardColor,border: Border.all(width: 1,color: context.primaryColor)
+          ),
           margin: const EdgeInsets.all(12),
           header: const Text('填写基本信息'),
           footer: CupertinoButton.filled(onPressed: submitData, child: const Text('提交申请')).center,

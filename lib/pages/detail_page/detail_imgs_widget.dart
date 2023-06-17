@@ -51,12 +51,11 @@ class DetailImagesWidget extends StatelessWidget {
         var src = _getUrl(item.img!);
 
         imagesWidget.add(AspectRatio(
-          aspectRatio: double.parse(item.width!) / double.parse(item.height!),
+          aspectRatio: 1,
           child: ExtendedImage.network(
             src,
-            fit: BoxFit.fill,
-            cache: true,
-            
+            fit: BoxFit.cover,
+
           ),
         ));
       }

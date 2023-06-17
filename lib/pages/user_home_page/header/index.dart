@@ -159,6 +159,9 @@ class LoginUserAvatar extends ConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref) {
     final user = ref.user!;
-    return ImageView(image: MyImage.network(url: user.picture,params: ImageParams(size: 30,borderRadius: BorderRadius.circular(100),errorWidget: const Icon(CupertinoIcons.person).center)));
+    return ImageView(image: MyImage.network(url: user.picture,params: ImageParams(size: 30,borderRadius: BorderRadius.circular(15),
+        fit: BoxFit.cover,
+        shape: BoxShape.circle,
+        errorWidget: const Icon(CupertinoIcons.person).center)));
   }
 }

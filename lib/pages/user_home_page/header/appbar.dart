@@ -1,10 +1,13 @@
 // Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 // Package imports:
 
 // Project imports:
 import '../../../common/utils.dart';
+import '../../../router.dart';
 
 class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const UserHomeAppBar({Key? key}) : super(key: key);
@@ -19,16 +22,18 @@ class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.qr_code,
+              Icons.line_axis,
               color: Colors.white,
             )),
         IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.push(pagerUtil.setting.routername);
+            },
             icon: const Icon(
-              Icons.notifications,
+              Icons.settings,
               color: Colors.white,
             )),
-        utils.widgetUtils.marginRight()
+        const SizedBox(width: 12)
       ],
     );
   }

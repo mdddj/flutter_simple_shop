@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
@@ -5,6 +6,7 @@ import 'app.dart';
 import 'freezed/pager.dart';
 import 'meet/add_new_meet.dart';
 import 'pages/mianji/mianji/view.dart';
+import 'pages/user_home_page/setting/index.dart';
 import 'resource/page.dart';
 import 'resource/views/write_page.dart';
 PagerUtil pagerUtil = GetIt.instance.get<PagerUtil>();
@@ -22,6 +24,7 @@ class PagerUtil {
 
   ///面基申请
   Pager get meetAdd => const Pager(routername: '/meet/add');
+  Pager get setting => const Pager(routername: '/setting');
 }
 
 ///页面路由
@@ -43,6 +46,9 @@ final routers = GoRouter(
     },),
     GoRoute(path: pagerUtil.meetAdd.routername,builder: (context, state) {
       return const AddNewMeet();
+    },),
+    GoRoute(path: pagerUtil.setting.routername,builder: (context, state) {
+      return const SettingIndex();
     },)
   ],
 );
