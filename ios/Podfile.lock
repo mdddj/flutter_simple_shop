@@ -8,28 +8,11 @@ PODS:
   - file_selector_ios (0.0.1):
     - Flutter
   - Flutter (1.0.0)
-  - flutter_image_compress_common (1.0.0):
-    - Flutter
-    - Mantle
-    - SDWebImage
-    - SDWebImageWebPCoder
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - image_picker_ios (0.0.1):
     - Flutter
-  - libwebp (1.2.4):
-    - libwebp/demux (= 1.2.4)
-    - libwebp/mux (= 1.2.4)
-    - libwebp/webp (= 1.2.4)
-  - libwebp/demux (1.2.4):
-    - libwebp/webp
-  - libwebp/mux (1.2.4):
-    - libwebp/demux
-  - libwebp/webp (1.2.4)
-  - Mantle (2.2.0):
-    - Mantle/extobjc (= 2.2.0)
-  - Mantle/extobjc (2.2.0)
   - network_info_plus (0.0.1):
     - Flutter
   - package_info (0.0.1):
@@ -41,12 +24,6 @@ PODS:
     - Flutter
   - saver_gallery (0.0.1):
     - Flutter
-  - SDWebImage (5.15.6):
-    - SDWebImage/Core (= 5.15.6)
-  - SDWebImage/Core (5.15.6)
-  - SDWebImageWebPCoder (0.11.0):
-    - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.15)
   - sqflite (0.0.2):
     - Flutter
     - FMDB (>= 2.7.5)
@@ -59,7 +36,6 @@ DEPENDENCIES:
   - dd_models (from `.symlinks/plugins/dd_models/ios`)
   - file_selector_ios (from `.symlinks/plugins/file_selector_ios/ios`)
   - Flutter (from `Flutter`)
-  - flutter_image_compress_common (from `.symlinks/plugins/flutter_image_compress_common/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - network_info_plus (from `.symlinks/plugins/network_info_plus/ios`)
   - package_info (from `.symlinks/plugins/package_info/ios`)
@@ -72,10 +48,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - FMDB
-    - libwebp
-    - Mantle
-    - SDWebImage
-    - SDWebImageWebPCoder
 
 EXTERNAL SOURCES:
   dataoke_sdk:
@@ -88,8 +60,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/file_selector_ios/ios"
   Flutter:
     :path: Flutter
-  flutter_image_compress_common:
-    :path: ".symlinks/plugins/flutter_image_compress_common/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
   network_info_plus:
@@ -113,18 +83,13 @@ SPEC CHECKSUMS:
   dd_models: 5bd836519341310a49aa6c53a2203c300021d790
   file_selector_ios: 8c25d700d625e1dcdd6599f2d927072f2254647b
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_image_compress_common: ec1d45c362c9d30a3f6a0426c297f47c52007e3e
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   image_picker_ios: b786a5dcf033a8336a657191401bfdf12017dabb
-  libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
-  Mantle: c5aa8794a29a022dfbbfc9799af95f477a69b62d
   network_info_plus: 122280582fe2fa2bbb8681a4269745cd5c3a9b32
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
   permission_handler_apple: 8f116445eff3c0e7c65ad60f5fef5490aa94b4e4
   saver_gallery: 2b4e584106fde2407ab51560f3851564963e6b78
-  SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
-  SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   url_launcher_ios: ae1517e5e344f5544fb090b079e11f399dfbe4d2
 
