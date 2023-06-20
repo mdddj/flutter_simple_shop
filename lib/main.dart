@@ -1,4 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/app_local_setting_model.dart';
+import 'package:dd_js_util/theme/model.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,26 +9,38 @@ import 'common/view.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const ip = '192.168.199.76';
+const ip = '192.168.199.77';
 const apiHost = 'http://$ip';
 const apiPort = "80";
 const kAppDebugMode = true;
 
+
+///程序入口
 void main() async {
-  appInit(() => runApp(const ProviderScope(child: Root())));
+  appInit(() => runApp(const ProviderScope(child: DdShop())));
 }
 
-class Root extends View {
-  const Root({super.key});
+///典典小卖部
+class DdShop extends View {
+  const DdShop({super.key});
 
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
-    return ThemeBuildWidget(themeBuild: (theme) {
+    return ThemeBuildWidget(themeBuild: (AppLocalSettingModel theme) {
+      final themeData = MyAppTheme.getTheme(theme.themeIndex);
+      final darkTheme = MyAppTheme.darkTheme;
+      const fontFamily = 'LXGWWenKaiMono';
       return MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: ThemeData(useMaterial3: true, fontFamily: "LXGWWenKaiMono",brightness: Brightness.light),
-        darkTheme: ThemeData(useMaterial3: true,fontFamily: "LXGWWenKaiMono",brightness: Brightness.dark),
+        theme: themeData.copyWith(
+          useMaterial3: true,
+          textTheme: themeData.textTheme.apply(fontFamily: fontFamily)
+        ),
+        darkTheme: darkTheme.copyWith(
+          useMaterial3: true,
+          textTheme: darkTheme.textTheme.apply(fontFamily: fontFamily)
+        ),
         themeMode: theme.getThemeMode,
         routerConfig: routers,
         builder: FlutterSmartDialog.init(
@@ -41,19 +55,3 @@ class Root extends View {
 }
 
 
-
-///自定义主题
-// ThemeData _builderTheme(ThemeData theme) {
-//  return theme.copyWith(
-//    cardTheme: theme.cardTheme.copyWith(
-//      elevation: 0,
-//      shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),side: BorderSide.none),
-//      margin: EdgeInsets.zero,
-//      color: Colors.white
-//    ),
-//    appBarTheme: theme.appBarTheme.copyWith(
-//      elevation: 0,
-//      backgroundColor: Colors.white,shadowColor: Colors.white
-//    )
-//  );
-// }

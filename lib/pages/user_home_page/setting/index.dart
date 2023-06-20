@@ -1,7 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-
-import 'update_name.dart';
+part of pages;
 
 ///设置页面
 class SettingIndex extends StatelessWidget {

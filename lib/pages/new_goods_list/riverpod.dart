@@ -22,7 +22,7 @@ class GoodsListState extends ChangeNotifier {
   bool loading = false;
 
   // 关闭
-  CancelToken? cancelToken;
+  dio.CancelToken? cancelToken;
 
   void setCategory(Category c, Subcategory? sc, {bool isInit = false}) {
     category = c;
@@ -45,7 +45,7 @@ class GoodsListState extends ChangeNotifier {
 
   // 加载数据
   Future<void> fetchData() async {
-    cancelToken = CancelToken();
+    cancelToken = dio.CancelToken();
     final result = await DdTaokeSdk.instance.getProducts(
         param: ProductListParam(
             pageId: '$page',

@@ -32,7 +32,6 @@ import 'pages/index.dart';
 import 'pages/jiujiu_page/new/widget.dart';
 import 'pages/mianji/mianji/view.dart';
 import 'pages/user_home_page/pages/resource_list.dart';
-import 'pages/user_home_page/setting/index.dart';
 import 'provider/index.dart';
 import 'resource/view.dart';
 import 'service/user_api.dart';

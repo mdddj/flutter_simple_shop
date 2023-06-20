@@ -1,11 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../../api/apis.dart';
-import '../../../common/api_ext.dart';
-import '../../../index.dart';
-import '../../index.dart';
+part of pages;
 
 ///修改昵称页面
 class UpdateUserNamePage extends ConsumerStatefulWidget {

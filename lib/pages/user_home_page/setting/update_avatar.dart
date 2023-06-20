@@ -1,12 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../../api/apis.dart';
-import '../../../common/api_ext.dart';
-import '../../../freezed/resource_category.dart';
-import '../../../index.dart';
+part of pages;
 
 ///设置用户头像
 class UpdateUserAvatarWidget extends ConsumerStatefulWidget {
@@ -17,7 +9,7 @@ class UpdateUserAvatarWidget extends ConsumerStatefulWidget {
 }
 
 class _UpdateUserAvatarWidgetState extends ConsumerState<UpdateUserAvatarWidget> {
-  MultipartFile? file ;
+  dio.MultipartFile? file ;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -48,7 +40,7 @@ class _UpdateUserAvatarWidgetState extends ConsumerState<UpdateUserAvatarWidget>
               ),
               FilledButton(onPressed: file != null ? () async {
                  final nav = context.nav;
-                final data = FormData.fromMap({
+                final data = dio.FormData.fromMap({
                   "file":file
                 });
                 final result = await getIt.get<MyUpdateUserAvatarApi>().request(R(data: data));

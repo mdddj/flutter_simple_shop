@@ -1,11 +1,13 @@
 part of index;
 
-Future<void> appInit(Function start) async {
+
+/// 初始化
+Future<void> appInit(VoidCallback start) async {
   WidgetsFlutterBinding.ensureInitialized();
   final result = await (Connectivity().checkConnectivity());
   wtfLog(result);
   if (kAppDebugMode) {
-    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9998,
+    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9999,
         customCoverterResponseData: (model) {
       final body = model.response?.data;
       return isValue<Map<String, dynamic>>(body)
