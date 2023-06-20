@@ -187,3 +187,5 @@ part 'user_home_page/setting/index.dart';
 part 'user_home_page/setting/update_avatar.dart';
 part 'user_home_page/setting/update_name.dart';
 part 'user_home_page/setting/update_string_attr.dart';
+part 'user_home_page/setting/update_city.dart';
+part 'user_home_page/setting/update_job.dart';

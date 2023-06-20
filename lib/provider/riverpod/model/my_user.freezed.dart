@@ -34,6 +34,8 @@ mixin _$MyUser {
   bool get accountNonExpired => throw _privateConstructorUsedError;
   bool get accountNonLocked => throw _privateConstructorUsedError;
   bool get credentialsNonExpired => throw _privateConstructorUsedError;
+  String get city => throw _privateConstructorUsedError;
+  String get job => throw _privateConstructorUsedError;
   Vip get vip => throw _privateConstructorUsedError;
   num get openAiTokens => throw _privateConstructorUsedError;
   bool get openAiFlag => throw _privateConstructorUsedError;
@@ -64,6 +66,8 @@ abstract class $MyUserCopyWith<$Res> {
       bool accountNonExpired,
       bool accountNonLocked,
       bool credentialsNonExpired,
+      String city,
+      String job,
       Vip vip,
       num openAiTokens,
       bool openAiFlag,
@@ -99,6 +103,8 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
     Object? accountNonExpired = null,
     Object? accountNonLocked = null,
     Object? credentialsNonExpired = null,
+    Object? city = null,
+    Object? job = null,
     Object? vip = null,
     Object? openAiTokens = null,
     Object? openAiFlag = null,
@@ -161,6 +167,14 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
           ? _value.credentialsNonExpired
           : credentialsNonExpired // ignore: cast_nullable_to_non_nullable
               as bool,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      job: null == job
+          ? _value.job
+          : job // ignore: cast_nullable_to_non_nullable
+              as String,
       vip: null == vip
           ? _value.vip
           : vip // ignore: cast_nullable_to_non_nullable
@@ -214,6 +228,8 @@ abstract class _$$_MyUserCopyWith<$Res> implements $MyUserCopyWith<$Res> {
       bool accountNonExpired,
       bool accountNonLocked,
       bool credentialsNonExpired,
+      String city,
+      String job,
       Vip vip,
       num openAiTokens,
       bool openAiFlag,
@@ -247,6 +263,8 @@ class __$$_MyUserCopyWithImpl<$Res>
     Object? accountNonExpired = null,
     Object? accountNonLocked = null,
     Object? credentialsNonExpired = null,
+    Object? city = null,
+    Object? job = null,
     Object? vip = null,
     Object? openAiTokens = null,
     Object? openAiFlag = null,
@@ -309,6 +327,14 @@ class __$$_MyUserCopyWithImpl<$Res>
           ? _value.credentialsNonExpired
           : credentialsNonExpired // ignore: cast_nullable_to_non_nullable
               as bool,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      job: null == job
+          ? _value.job
+          : job // ignore: cast_nullable_to_non_nullable
+              as String,
       vip: null == vip
           ? _value.vip
           : vip // ignore: cast_nullable_to_non_nullable
@@ -347,6 +373,8 @@ class _$_MyUser implements _MyUser {
       this.accountNonExpired = false,
       this.accountNonLocked = false,
       this.credentialsNonExpired = false,
+      this.city = "",
+      this.job = "",
       this.vip = Vip.none,
       this.openAiTokens = 0,
       this.openAiFlag = false,
@@ -398,6 +426,12 @@ class _$_MyUser implements _MyUser {
   final bool credentialsNonExpired;
   @override
   @JsonKey()
+  final String city;
+  @override
+  @JsonKey()
+  final String job;
+  @override
+  @JsonKey()
   final Vip vip;
   @override
   @JsonKey()
@@ -410,7 +444,7 @@ class _$_MyUser implements _MyUser {
 
   @override
   String toString() {
-    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, vip: $vip, openAiTokens: $openAiTokens, openAiFlag: $openAiFlag, enterprise: $enterprise)';
+    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, city: $city, job: $job, vip: $vip, openAiTokens: $openAiTokens, openAiFlag: $openAiFlag, enterprise: $enterprise)';
   }
 
   @override
@@ -439,6 +473,8 @@ class _$_MyUser implements _MyUser {
                 other.accountNonLocked == accountNonLocked) &&
             (identical(other.credentialsNonExpired, credentialsNonExpired) ||
                 other.credentialsNonExpired == credentialsNonExpired) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.job, job) || other.job == job) &&
             (identical(other.vip, vip) || other.vip == vip) &&
             (identical(other.openAiTokens, openAiTokens) ||
                 other.openAiTokens == openAiTokens) &&
@@ -450,26 +486,29 @@ class _$_MyUser implements _MyUser {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      loginNumber,
-      username,
-      email,
-      nickName,
-      picture,
-      phone,
-      type,
-      status,
-      loginTime,
-      enabled,
-      accountNonExpired,
-      accountNonLocked,
-      credentialsNonExpired,
-      vip,
-      openAiTokens,
-      openAiFlag,
-      enterprise);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        loginNumber,
+        username,
+        email,
+        nickName,
+        picture,
+        phone,
+        type,
+        status,
+        loginTime,
+        enabled,
+        accountNonExpired,
+        accountNonLocked,
+        credentialsNonExpired,
+        city,
+        job,
+        vip,
+        openAiTokens,
+        openAiFlag,
+        enterprise
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -501,6 +540,8 @@ abstract class _MyUser implements MyUser {
       final bool accountNonExpired,
       final bool accountNonLocked,
       final bool credentialsNonExpired,
+      final String city,
+      final String job,
       final Vip vip,
       final num openAiTokens,
       final bool openAiFlag,
@@ -536,6 +577,10 @@ abstract class _MyUser implements MyUser {
   bool get accountNonLocked;
   @override
   bool get credentialsNonExpired;
+  @override
+  String get city;
+  @override
+  String get job;
   @override
   Vip get vip;
   @override

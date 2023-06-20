@@ -57,6 +57,8 @@ class MyUser with _$MyUser {
       @Default(false) bool accountNonExpired,
       @Default(false) bool accountNonLocked,
       @Default(false) bool credentialsNonExpired,
+        @Default("") String city,
+        @Default("") String job,
       @Default(Vip.none) Vip vip,
       @Default(0) num openAiTokens,
       @Default(false) bool openAiFlag,

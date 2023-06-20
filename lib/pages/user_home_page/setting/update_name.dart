@@ -8,7 +8,7 @@ class UpdateUserNamePage extends ConsumerWidget {
   Widget build(BuildContext context,WidgetRef ref) {
     return UpdateStringAttrWidget<MyUpdateUserNameApi>(paramsName: "name", title: "修改昵称", initHintValue: "${ref.user?.nickName}", successCallback: (str){
               ref.read(userRiverpod.notifier).updateUser(
-            (oldModel) => oldModel.copyWith(nickName: str));
+            (MyUser oldModel) => oldModel.copyWith(nickName: str));
     });
   }
 }
