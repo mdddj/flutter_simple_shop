@@ -10,8 +10,6 @@ import 'index.dart';
 const ip = '192.168.199.76';
 const apiHost = 'http://$ip';
 const apiPort = "80";
-// const apiHost = "https://itbug.shop";
-// const apiPort = "9445";
 const kAppDebugMode = true;
 
 void main() async {
@@ -27,8 +25,8 @@ class Root extends View {
       return MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: ThemeData(useMaterial3: true, fontFamily: "LXGWWenKai"),
-        darkTheme: ThemeData.dark(useMaterial3: true),
+        theme: ThemeData(useMaterial3: true, fontFamily: "LXGWWenKaiMono",brightness: Brightness.light),
+        darkTheme: ThemeData(useMaterial3: true,fontFamily: "LXGWWenKaiMono",brightness: Brightness.dark),
         themeMode: theme.getThemeMode,
         routerConfig: routers,
         builder: FlutterSmartDialog.init(

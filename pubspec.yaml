@@ -110,9 +110,9 @@ flutter:
     - assets/images/waimai/hb/
 
   fonts:
-    - family: LXGWWenKai
+    - family: LXGWWenKaiMono
       fonts:
-        - asset: assets/font/LXGWWenKai-Bold.ttf
+        - asset: assets/font/LXGWWenKaiMono-Bold.ttf
           weight: 700
-        - asset: assets/font/LXGWWenKai-Light.ttf
-        - asset: assets/font/LXGWWenKai-Regular.ttf
+        - asset: assets/font/LXGWWenKaiMono-Light.ttf
+        - asset: assets/font/LXGWWenKaiMono-Regular.ttf
