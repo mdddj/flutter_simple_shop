@@ -1,7 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:extended_image/extended_image.dart';
-import 'package:flutter/material.dart';
+part of pages;
 
 class ImageNav extends StatelessWidget {
   final Text? title;
@@ -11,7 +8,15 @@ class ImageNav extends StatelessWidget {
   final int? width;
   final int? height;
 
-  const ImageNav({this.title, this.subTitle, this.src, this.onTap,this.width,this.height,Key? key}): super(key: key);
+  const ImageNav(
+      {this.title,
+      this.subTitle,
+      this.src,
+      this.onTap,
+      this.width,
+      this.height,
+      Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,6 @@ class ImageNav extends StatelessWidget {
         onTap: onTap,
         child: Stack(
           children: <Widget>[
-
             // 图片
             ExtendedImage.network(
               src!,

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../util/image_util.dart';
 import '../../../util/number_cover.dart';
-import '../../index_page/store/goods_item_layout.dart';
+import '../../index.dart';
 import '../brand_detail.dart';
 
 /// 品牌布局
@@ -30,7 +30,8 @@ class BrandItemCard extends StatelessWidget {
   Widget _buildHeader(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        await context.navToWidget(to: BrandDetailPage(brandId: storeInfo.brandid.toString()));
+        await context.navToWidget(
+            to: BrandDetailPage(brandId: storeInfo.brandid.toString()));
       },
       child: Flex(
         direction: Axis.horizontal,
@@ -42,7 +43,11 @@ class BrandItemCard extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                 ),
-                child: ImageView(image: MyImage.network(url: MImageUtils.magesProcessor(storeInfo.brandlogo),params: ImageParams(size: 50,borderRadius: BorderRadius.circular(8)))),
+                child: ImageView(
+                    image: MyImage.network(
+                        url: MImageUtils.magesProcessor(storeInfo.brandlogo),
+                        params: ImageParams(
+                            size: 50, borderRadius: BorderRadius.circular(8)))),
               ),
               1),
           _buildHeaderFlexCore(
@@ -86,11 +91,13 @@ class BrandItemCard extends StatelessWidget {
       shrinkWrap: true,
       crossAxisSpacing: 12,
       physics: const NeverScrollableScrollPhysics(),
-      children:storeInfo.goodslist.isNotEmpty ? [
-        StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[0]),
-        StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[1]),
-        StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[2]),
-      ] : [],
+      children: storeInfo.goodslist.isNotEmpty
+          ? [
+              StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[0]),
+              StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[1]),
+              StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[2]),
+            ]
+          : [],
     );
   }
 

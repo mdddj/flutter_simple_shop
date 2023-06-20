@@ -1,11 +1,7 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
+part of provider;
 
-import '../../../../api/apis.dart';
-import '../../../../index.dart';
-
-class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel, FavoritesFindListApi> {
-
+class FavoritesRepository
+    extends SimpleLoadingMoreBaes<MyFavoritesModel, FavoritesFindListApi> {
   @override
   FavoritesFindListApi get api => FavoritesFindListApi();
 
@@ -16,12 +12,14 @@ class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel, Favori
 
   @override
   List<MyFavoritesModel> transformResponseData(final WrapJson data) {
-    return List<MyFavoritesModel>.from((data.getListValue('content')).map(MyFavoritesModel.fromJson)).toList();
+    return List<MyFavoritesModel>.from(
+            (data.getListValue('content')).map(MyFavoritesModel.fromJson))
+        .toList();
   }
 
-  void delete(MyFavoritesModel model){
-    array=array.remove(model);
-    if(array.isEmpty){
+  void delete(MyFavoritesModel model) {
+    array = array.remove(model);
+    if (array.isEmpty) {
       indicatorStatus = IndicatorStatus.empty;
     }
     setState();

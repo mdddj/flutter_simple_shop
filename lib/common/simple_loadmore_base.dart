@@ -1,12 +1,7 @@
+part of common;
 
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
-
-import '../api/apis.dart';
-import '../index.dart';
-
-abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMoreBase<T> {
+abstract class SimpleLoadingMoreBaes<T, A extends ApiPageMixin>
+    extends LoadingMoreBase<T> {
   int vPageSize = 20;
   int vPage = 0;
   bool nomore = false;
@@ -18,22 +13,20 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
   }
 
   @override
-  Future<bool> loadData([bool isLoadMoreAction = false]) async  {
-    if(vPage == 0){
+  Future<bool> loadData([bool isLoadMoreAction = false]) async {
+    if (vPage == 0) {
       clear();
     }
-    final pageParams = <String,dynamic>{
-      'page': vPage,
-      'pageSize': vPageSize
-    };
+    final pageParams = <String, dynamic>{'page': vPage, 'pageSize': vPageSize};
     pageParams.addAll(otherParams);
     var isSuccess = true;
     final token = await getIt.get<Api>().getAuthorizationHeader();
-    final r =  await api.request(RequestParams(showDefaultLoading: false,data: pageParams,headers: token));
+    final r = await api.request(RequestParams(
+        showDefaultLoading: false, data: pageParams, headers: token));
     isSuccess = r.isSuccess;
-    if(r.isSuccess){
+    if (r.isSuccess) {
       final data = r.getValue('data');
-      final list  = transformResponseData(WrapJson(data));
+      final list = transformResponseData(WrapJson(data));
       nomore = transformIsNomore(WrapJson(data));
       addAll(list);
       vPage++;
@@ -41,8 +34,7 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
     return isSuccess;
   }
 
-
-  Map<String,dynamic> get otherParams => <String,dynamic>{};
+  Map<String, dynamic> get otherParams => <String, dynamic>{};
 
   A get api;
 
@@ -51,13 +43,10 @@ abstract class SimpleLoadingMoreBaes<T,A extends ApiPageMixin> extends LoadingMo
 
   /// return [true] 没有更多了
   /// return [false] 还有下一页
-  bool transformIsNomore(WrapJson data){
-    return (data.getValue('last') as bool?)??true;
+  bool transformIsNomore(WrapJson data) {
+    return (data.getValue('last') as bool?) ?? true;
   }
 
   @override
-  bool get hasMore => !nomore ;
-
-
-
+  bool get hasMore => !nomore;
 }

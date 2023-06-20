@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of pages;
 
 /// 帮助组件
 class HelperComp extends StatelessWidget {

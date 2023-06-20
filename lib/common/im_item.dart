@@ -1,12 +1,7 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
-
-// Project imports:
-import './touch_callback.dart';
+part of common;
 
 //通用列表项
 class ImItem extends StatelessWidget {
-
   //标题
   final String title;
 
@@ -16,16 +11,16 @@ class ImItem extends StatelessWidget {
   //图标
   final Icon? icon;
 
-
-  const ImItem({Key? key,required this.title, this.imagePath, this.icon}) : super(key:key);
+  const ImItem({Key? key, required this.title, this.imagePath, this.icon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return TouchCallBack(
-      onParessed: (){
+      onParessed: () {
         //判断点击的项
-        switch(title){
+        switch (title) {
           case '好友动态':
             //路由到好友动态页面
             Navigator.pushNamed(context, '/friends');
@@ -41,25 +36,27 @@ class ImItem extends StatelessWidget {
           children: <Widget>[
             //图标获取图片
             Container(
-              margin: const EdgeInsets.only(left: 22.0,right: 20.0),
-              child: imagePath!=null?Image.asset(imagePath!,width: 32.0,height: 32.0,):
-              SizedBox(
-                height: 32.0,
-                width: 32.0,
-                child: icon,
-              ),
+              margin: const EdgeInsets.only(left: 22.0, right: 20.0),
+              child: imagePath != null
+                  ? Image.asset(
+                      imagePath!,
+                      width: 32.0,
+                      height: 32.0,
+                    )
+                  : SizedBox(
+                      height: 32.0,
+                      width: 32.0,
+                      child: icon,
+                    ),
             ),
             //标题
             Text(
               title,
-              style: const TextStyle(fontSize: 16.0,color: Color(0xFF353535)),
+              style: const TextStyle(fontSize: 16.0, color: Color(0xFF353535)),
             )
           ],
         ),
       ),
     );
-
   }
 }
-
-

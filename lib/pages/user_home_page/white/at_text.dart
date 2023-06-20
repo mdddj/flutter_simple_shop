@@ -1,8 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:extended_text_field/extended_text_field.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+part of pages;
 
 class AtText extends SpecialText {
   static const String flag = '@';
@@ -12,7 +8,8 @@ class AtText extends SpecialText {
   /// 是否显示@somebody的背景
   final bool showAtBackground;
 
-  AtText(TextStyle textStyle, SpecialTextGestureTapCallback? onTap, {this.showAtBackground = false, this.start, this.onAtTextTap})
+  AtText(TextStyle textStyle, SpecialTextGestureTapCallback? onTap,
+      {this.showAtBackground = false, this.start, this.onAtTextTap})
       : super(
           flag,
           ' ',
@@ -21,7 +18,8 @@ class AtText extends SpecialText {
 
   @override
   InlineSpan finishText() {
-    TextStyle? textStyle = this.textStyle?.copyWith(color: Colors.pinkAccent, fontSize: 16.0);
+    TextStyle? textStyle =
+        this.textStyle?.copyWith(color: Colors.pinkAccent, fontSize: 16.0);
 
     final atText = toString();
 
@@ -35,7 +33,14 @@ class AtText extends SpecialText {
             ///插入符号可以移动到特殊文本中
             deleteAll: true,
             style: textStyle,
-            recognizer: (TapGestureRecognizer()..onTap = () => onAtTextTap?.call(atText)))
-        : SpecialTextSpan(text: atText, actualText: atText, start: start!, style: textStyle, recognizer: (TapGestureRecognizer()..onTap = () => onAtTextTap?.call(atText)));
+            recognizer: (TapGestureRecognizer()
+              ..onTap = () => onAtTextTap?.call(atText)))
+        : SpecialTextSpan(
+            text: atText,
+            actualText: atText,
+            start: start!,
+            style: textStyle,
+            recognizer: (TapGestureRecognizer()
+              ..onTap = () => onAtTextTap?.call(atText)));
   }
 }

@@ -1,13 +1,10 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
-
+part of pages;
 // Package imports:
 
 /// 预览markdown
 class MarkDownPreview extends StatelessWidget {
   final String data;
-  const MarkDownPreview({Key? key,required this.data}) : super(key: key);
+  const MarkDownPreview({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +14,7 @@ class MarkDownPreview extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [
-            MarkdownBody(data: data)
-          ],
+          children: [MarkdownBody(data: data)],
         ),
       ),
     );

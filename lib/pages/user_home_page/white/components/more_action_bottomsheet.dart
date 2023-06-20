@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of pages;
 
 // 更多操作
 class MoreActions extends StatelessWidget {
@@ -6,10 +6,10 @@ class MoreActions extends StatelessWidget {
 
   const MoreActions({Key? key, required this.actions}) : super(key: key);
 
-
   /// 显示
-  static Future<void> show(List<ListTile> actions,BuildContext context) async {
-    await showModalBottomSheet(context: context, builder: (_)=>MoreActions(actions: actions));
+  static Future<void> show(List<ListTile> actions, BuildContext context) async {
+    await showModalBottomSheet(
+        context: context, builder: (_) => MoreActions(actions: actions));
   }
 
   @override

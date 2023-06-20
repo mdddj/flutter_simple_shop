@@ -1,11 +1,9 @@
-import 'dart:convert';
-
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-
+part of common;
 
 List<JdNativeProduct> jdNativeProductCovert(String resp) {
-  return List<JdNativeProduct>.from((jsonDecode(resp) as List<dynamic>)
-      .map(JdNativeProduct.fromJson)).toList();
+  return List<JdNativeProduct>.from(
+          (jsonDecode(resp) as List<dynamic>).map(JdNativeProduct.fromJson))
+      .toList();
 }
 
 class JdNativeProduct {
@@ -45,7 +43,7 @@ class JdNativeProduct {
   });
 
   factory JdNativeProduct.fromJson(dynamic e) {
-    final jsonRes = e as Map<String,dynamic>;
+    final jsonRes = e as Map<String, dynamic>;
     final List<int>? forbidTypes =
         jsonRes['forbidTypes'] is List ? <int>[] : null;
     if (forbidTypes != null) {

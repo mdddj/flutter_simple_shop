@@ -1,6 +1,4 @@
-
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+part of pages;
 
 ///操作小部件
 class FavoritesActionWidget extends ConsumerWidget {
@@ -16,9 +14,8 @@ class FavoritesActionWidget extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Checkbox(
-                value:true,
-                onChanged: (v) {
-                },
+                value: true,
+                onChanged: (v) {},
               ),
               const Text('全选')
             ],
@@ -29,16 +26,12 @@ class FavoritesActionWidget extends ConsumerWidget {
           // 操作
           const Expanded(
             child: Row(
-              mainAxisAlignment:
-              MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-
-              ],
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[],
             ),
           )
         ],
       ),
     );
   }
-
 }

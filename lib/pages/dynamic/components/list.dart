@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../../../common/utils.dart';
+import '../../../common/index.dart';
 import '../../../util/navigator_util.dart';
 import '../../../widgets/extended_image.dart';
 import '../../../widgets/simple_price.dart';
@@ -17,7 +17,7 @@ class PyqList extends ConsumerWidget {
   const PyqList({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final product = ref.watch(pyqRiverpod.select((value) => value.products));
     if (product.isEmpty) return const SliverToBoxAdapter();
     return SliverWaterfallFlow.count(
@@ -72,101 +72,101 @@ class PyqList extends ConsumerWidget {
             ),
           ),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const SizedBox(
-          height: 8,
-              ),
-              Text(product.circleText),
-              Builder(
-                builder: (context) {
-                  return Container(
-                    margin: const EdgeInsets.only(bottom: 12,top: 12),
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8)),
-          child: Row(
-            children: [
-                  SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: GestureDetector(
-                      onTap: () {
-                        NavigatorUtil.gotoGoodsDetailPage(
-                            context, '${product.id}',
-                            newViewPage: true);
-                      },
-                      child: SimpleImage(
-                        url: product.mainPic,
+            const SizedBox(
+              height: 8,
+            ),
+            Text(product.circleText),
+            Builder(builder: (context) {
+              return Container(
+                margin: const EdgeInsets.only(bottom: 12, top: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 80,
+                      height: 80,
+                      child: GestureDetector(
+                        onTap: () {
+                          NavigatorUtil.gotoGoodsDetailPage(
+                              context, '${product.id}',
+                              newViewPage: true);
+                        },
+                        child: SimpleImage(
+                          url: product.mainPic,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 12,
-                  ),
-                  Container(
-                    constraints: const BoxConstraints(minHeight: 80),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            NavigatorUtil.gotoGoodsDetailPage(
-                                context, '${product.id}',
-                                newViewPage: true);
-                          },
-                          child: Text(
-                            product.dtitle,
-                            style: const TextStyle(
-                                color: Colors.grey, fontSize: 14),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SimplePrice(
-                              price: '${product.actualPrice}',
-                              hideText: '',
-                              orignPrice: '${product.originalPrice}',
-                              fontSize: 22,
-                              color: Colors.pink,
-                            ),
-                            FButton(
-                              text: '复制口令',
-                              color: Colors.white,
-                              onPressed: () async {
-                                final result = await DdTaokeSdk.instance
-                                    .getCouponsDetail(
-                                        taobaoGoodsId: product.goodsId, requestParamsBuilder: (RequestParams requestParams) {
-                                          return requestParams;
-                                });
-                                if (result != null) {
-                                  utils.copy(result.longTpwd,
-                                      message: '复制成功,打开淘宝即可领取优惠券');
-                                }
-                              },
-                              strokeWidth: 1,
-                              strokeColor: Colors.grey.shade200,
-                              clickEffect: true,
-                              corner: FCorner.all(28),
-                              shadowColor: Colors.grey.shade100,
-                              shadowBlur: 10,
-                              highlightColor: Colors.green.shade50,
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 5),
-                              style: const TextStyle(
-                                  color: Colors.pinkAccent, fontSize: 12),
-                            ),
-                          ],
-                        )
-                      ],
+                    const SizedBox(
+                      width: 12,
                     ),
-                  )
-            ],
-          ),
-                  );
-                }
-              )
-            ])
+                    Container(
+                      constraints: const BoxConstraints(minHeight: 80),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              NavigatorUtil.gotoGoodsDetailPage(
+                                  context, '${product.id}',
+                                  newViewPage: true);
+                            },
+                            child: Text(
+                              product.dtitle,
+                              style: const TextStyle(
+                                  color: Colors.grey, fontSize: 14),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SimplePrice(
+                                price: '${product.actualPrice}',
+                                hideText: '',
+                                orignPrice: '${product.originalPrice}',
+                                fontSize: 22,
+                                color: Colors.pink,
+                              ),
+                              FButton(
+                                text: '复制口令',
+                                color: Colors.white,
+                                onPressed: () async {
+                                  final result = await DdTaokeSdk.instance
+                                      .getCouponsDetail(
+                                          taobaoGoodsId: product.goodsId,
+                                          requestParamsBuilder:
+                                              (RequestParams requestParams) {
+                                            return requestParams;
+                                          });
+                                  if (result != null) {
+                                    utils.copy(result.longTpwd,
+                                        message: '复制成功,打开淘宝即可领取优惠券');
+                                  }
+                                },
+                                strokeWidth: 1,
+                                strokeColor: Colors.grey.shade200,
+                                clickEffect: true,
+                                corner: FCorner.all(28),
+                                shadowColor: Colors.grey.shade100,
+                                shadowBlur: 10,
+                                highlightColor: Colors.green.shade50,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                style: const TextStyle(
+                                    color: Colors.pinkAccent, fontSize: 12),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              );
+            })
+          ])
         ],
       ),
     );

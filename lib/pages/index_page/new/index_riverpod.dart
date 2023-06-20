@@ -1,13 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_models/models/carousel.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../../common/index.dart';
+part of pages;
 
 final indexStateRiverpod = ChangeNotifierProvider((ref) => IndexState());
 
@@ -27,9 +18,11 @@ class IndexState extends ChangeNotifier {
 
   // 获取畅销榜单商品
   Future<void> getHotDayProducts() async {
-    final result = await kApi.getHotDayProduct(param: HotdayParam(pageSize: '50', pageId: '1'), requestParamsBuilder: (RequestParams requestParams) {
-      return requestParams;
-    });
+    final result = await kApi.getHotDayProduct(
+        param: HotdayParam(pageSize: '50', pageId: '1'),
+        requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+        });
     hotDayProducts = result?.list ?? [];
     notifyListeners();
   }
@@ -42,9 +35,11 @@ class IndexState extends ChangeNotifier {
 
   @Doc(message: '加载双列产品数据')
   Future<void> fetch() async {
-    final result = await kApi.getProducts(param: ProductListParam(pageId: '$_page'), requestParamsBuilder: (RequestParams requestParams) {
-      return requestParams.copyWith(showDefaultLoading: false);
-    });
+    final result = await kApi.getProducts(
+        param: ProductListParam(pageId: '$_page'),
+        requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams.copyWith(showDefaultLoading: false);
+        });
     if (result != null) {
       products.addAll(result.list ?? []);
     }
@@ -55,7 +50,7 @@ class IndexState extends ChangeNotifier {
 
   // 加载轮播图
   Future<void> getAllCarousel() async {
-    final result = await kApi.getCarousel(requestParamsBuilder: (o){
+    final result = await kApi.getCarousel(requestParamsBuilder: (o) {
       return o.copyWith(showDefaultLoading: false);
     });
     carousel = result;

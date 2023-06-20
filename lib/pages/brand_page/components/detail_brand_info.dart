@@ -1,23 +1,20 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
-import '../../../common/utils.dart';
+import '../../../common/index.dart';
 import '../../../util/image_util.dart';
 
 /// 品牌信息卡片
 class BrandDetailView extends StatelessWidget {
   final BrandDetail brandDetailModel;
 
-  const BrandDetailView(
-      {Key? key, required this.brandDetailModel})
+  const BrandDetailView({Key? key, required this.brandDetailModel})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(12),
-      decoration: const BoxDecoration(
-        color: Colors.white
-      ),
+      decoration: const BoxDecoration(color: Colors.white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,8 +35,17 @@ class BrandDetailView extends StatelessWidget {
           style: const TextStyle(
               fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(width: 12,),
-        InkWell(onTap:()=> showInfo(context),child: Icon(Icons.info_outline_rounded,color: Colors.black.withOpacity(.5),size: 15,),)
+        const SizedBox(
+          width: 12,
+        ),
+        InkWell(
+          onTap: () => showInfo(context),
+          child: Icon(
+            Icons.info_outline_rounded,
+            color: Colors.black.withOpacity(.5),
+            size: 15,
+          ),
+        )
       ],
     );
   }
@@ -51,10 +57,9 @@ class BrandDetailView extends StatelessWidget {
           width: 50,
           height: 50,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(55),
-            color: Colors.white,
-            border: Border.all(color: Colors.grey.shade200)
-          ),
+              borderRadius: BorderRadius.circular(55),
+              color: Colors.white,
+              border: Border.all(color: Colors.grey.shade200)),
           child: Image.network(
             MImageUtils.magesProcessor(brandDetailModel.brandLogo!),
             width: 50,
@@ -62,18 +67,22 @@ class BrandDetailView extends StatelessWidget {
             fit: BoxFit.contain,
           ),
         ),
-        const SizedBox(width: 12,),
+        const SizedBox(
+          width: 12,
+        ),
         _buildName(context)
       ],
     );
   }
 
-  void showInfo(BuildContext context){
-    showDialog(context: context,builder: (context){
-      return AlertDialog(
-        title: const Text('关于品牌'),
-        content: Text(brandDetailModel.brandDesc!),
-      );
-    });
+  void showInfo(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('关于品牌'),
+            content: Text(brandDetailModel.brandDesc!),
+          );
+        });
   }
 }

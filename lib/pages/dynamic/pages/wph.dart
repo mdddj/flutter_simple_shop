@@ -4,7 +4,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../widgets/extended_image.dart';
-import '../../index_page/store/price_layout.dart';
+import '../../index.dart';
 import '../../public_detail/view.dart';
 // Project imports:
 import '../wph_riverpod.dart';
@@ -28,10 +28,13 @@ class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
 
   @override
   Widget build(BuildContext context) {
-    final list = ref.watch(wphRiveroid.select((value) =>value.products));
+    final list = ref.watch(wphRiveroid.select((value) => value.products));
     return EasyRefresh.custom(
       slivers: [
-     SliverList(delegate: SliverChildBuilderDelegate((_, index) => renderItem(list[index]), childCount: list.length))
+        SliverList(
+            delegate: SliverChildBuilderDelegate(
+                (_, index) => renderItem(list[index]),
+                childCount: list.length))
       ],
       onLoad: ref.read(wphRiveroid).nextPage,
     );
@@ -40,8 +43,9 @@ class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
   /// 唯品会卡片布局
   Widget renderItem(dynamic item) {
     return GestureDetector(
-      onTap: (){
-         context.navToWidget(to: PublicDetailView(goodsId: item['id'].toString(), type: 'wph'));
+      onTap: () {
+        context.navToWidget(
+            to: PublicDetailView(goodsId: item['id'].toString(), type: 'wph'));
       },
       child: Card(
         elevation: 0,
@@ -75,14 +79,21 @@ class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
                         Row(
                           children: [
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                              decoration: BoxDecoration(color: Colors.pink, borderRadius: BorderRadius.circular(5)),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(
+                                  color: Colors.pink,
+                                  borderRadius: BorderRadius.circular(5)),
                               child: const Text(
                                 '特卖价',
-                                style: TextStyle(fontSize: 10, color: Colors.white),
+                                style: TextStyle(
+                                    fontSize: 10, color: Colors.white),
                               ),
                             ),
-                            PriceLayout(original: '${item['quanhou_price']}'.replaceAll('.00', ''), discounts: ''),
+                            PriceLayout(
+                                original: '${item['quanhou_price']}'
+                                    .replaceAll('.00', ''),
+                                discounts: ''),
                           ],
                         )
                       ],
@@ -95,7 +106,6 @@ class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
                   )
                 ],
               ),
-
             ],
           ),
         ),

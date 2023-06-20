@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of pages;
 
 /// 导航条
 class AppbarWithPanicBuying extends StatelessWidget {

@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../../common/widgets/loading_mixin.dart';
-import '../../../constant/style.dart';
-import '../../../widgets/edit_page_handle.dart';
-import '../../../widgets/simple_appbar.dart';
+part of pages;
 
 /// 上传新版本页面
 class NewVersionPage extends StatefulWidget {
@@ -31,8 +27,12 @@ class NewVersionPageState extends State<NewVersionPage> with LoadingMixin {
                   controller: textEditingController,
                   decoration: const InputDecoration(hintText: '输入版本号'),
                 ),
-                TextField(controller: descController, decoration: const InputDecoration(hintText: '输入版本更新内容')),
-                TextField(controller: downUrlController, decoration: const InputDecoration(hintText: '版本下载网址')),
+                TextField(
+                    controller: descController,
+                    decoration: const InputDecoration(hintText: '输入版本更新内容')),
+                TextField(
+                    controller: downUrlController,
+                    decoration: const InputDecoration(hintText: '版本下载网址')),
                 ElevatedButton(
                   onPressed: () async {
                     // final text = textEditingController.text;

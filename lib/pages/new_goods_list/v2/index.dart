@@ -1,14 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dataoke_sdk/model/category.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-
-import '../../../constant/context.dart';
-import '../../../widgets/loading/custom_loading_more_widget.dart';
-import '../../../widgets/waterfall_goods_card.dart';
-import 'goods_list_params_model.dart';
-import 'repository.dart';
+part of pages;
 
 ///新的产品列表页面
 class CategoryGoodsList extends ConsumerStatefulWidget {
@@ -27,7 +17,8 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
   ProductListRepository repository = ProductListRepository();
 
   //页面所需要的参数
-  late GoodsListParamsModel state = GoodsListParamsModel(category: widget.category, initLoading: true, page: 1, products: []);
+  late GoodsListParamsModel state = GoodsListParamsModel(
+      category: widget.category, initLoading: true, page: 1, products: []);
 
   @override
   void initState() {
@@ -41,7 +32,11 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
         itemBuilder: _renderLayout,
         sourceList: repository,
         padding: const EdgeInsets.all(12),
-        extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, crossAxisSpacing: 12, mainAxisSpacing: 12),
+        extendedListDelegate:
+            SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                crossAxisCount: context.waterfallFlowCrossAxisCount,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12),
         indicatorBuilder: CustomLoadingMoreWidget.new));
   }
 

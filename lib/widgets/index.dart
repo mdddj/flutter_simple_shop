@@ -1,5 +1,7 @@
 library widgets;
 
+import 'package:dd_js_util/dd_js_util.dart';
+import 'package:flutter/material.dart';
 
 export 'category/jd_category.dart';
 export 'component/coupon_discount.dart';
@@ -36,3 +38,4 @@ export 'toast_postion.dart';
 export 'up_down_btn_widget.dart';
 export 'waterfall_goods_card.dart';
 export 'wrap.dart';
+part 'input/setting_input.dart';

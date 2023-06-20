@@ -1,7 +1,6 @@
 library util;
 export 'cache_util.dart';
 export 'color_util.dart';
-export 'extended_util.dart';
 export 'fluro_convert_util.dart';
 export 'image_util.dart';
 export 'input_utils.dart';

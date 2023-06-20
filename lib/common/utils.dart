@@ -1,15 +1,7 @@
-import 'dart:io';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:get_it/get_it.dart';
-import 'package:logger/logger.dart';
-import 'package:url_launcher/url_launcher_string.dart';
-import '../service/user_api.dart';
-import '../util/navigator_util.dart';
-import 'service.dart';
-import 'widget_util.dart';
+part of common;
+
 DdTaokeSdk get kApi => DdTaokeSdk.instance;
+
 /// 工具类
 class Utils {
   WidgetUtils get widgetUtils => GetIt.instance.get<WidgetUtils>();
@@ -28,7 +20,7 @@ class Utils {
 
   // 选择文件
   Future<File?> selectFile() async {
-    if ( Platform.isWindows) {
+    if (Platform.isWindows) {
       // final file = OpenFilePicker()
       //   ..filterSpecification = {
       //     '图片文件 (*.jpg; *.png)': '*.jpg;*.png',
@@ -80,7 +72,7 @@ class Utils {
   }
 
   // 跳转url
-  Future<void> urlOpen(String url) async{
+  Future<void> urlOpen(String url) async {
     if (await canLaunchUrlString(url)) {
       await launchUrlString(url);
     }
@@ -117,7 +109,6 @@ class Utils {
     }
     return myUrl;
   }
-
 }
 
 Utils get utils => GetIt.instance.get<Utils>();

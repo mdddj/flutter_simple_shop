@@ -1,7 +1,7 @@
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
 
-import 'index.dart';
+import '../../index.dart';
 
 class CategoryListPage extends StatelessWidget {
   final Category category;
@@ -10,7 +10,9 @@ class CategoryListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(category.cname),),
+      appBar: AppBar(
+        title: Text(category.cname),
+      ),
       body: CategoryGoodsList(category),
     );
   }

@@ -1,8 +1,7 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
-import '../index_page/component/category_component.dart';
+import '../index.dart';
 
 class CategoryDelegate extends SliverPersistentHeaderDelegate {
   final SelectWithItem onSelect;
@@ -10,7 +9,8 @@ class CategoryDelegate extends SliverPersistentHeaderDelegate {
   CategoryDelegate(this.onSelect, this.controller);
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
         height: kToolbarHeight,
         alignment: Alignment.center,
@@ -28,5 +28,6 @@ class CategoryDelegate extends SliverPersistentHeaderDelegate {
   double get minExtent => kToolbarHeight;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
+      false;
 }

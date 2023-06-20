@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import 'grid_menu.dart';
+part of pages;
 
 /// 2020年11月17日 22:48:26
 /// 首页的网格菜单列表
@@ -23,7 +20,6 @@ class GridMenuListState extends State<GridMenuList> {
   void initState() {
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {

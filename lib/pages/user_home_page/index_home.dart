@@ -1,10 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-
-import '../../index.dart';
-import 'pages/resource_list.dart';
+part of pages;
 
 /// 用户主页布局
 class UserIndexHome extends ConsumerStatefulWidget {
@@ -26,7 +20,7 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
             _buildHeaderWidget(),
           ]),
         ).toSliverWidget,
-        _renderUserValues().toSliverWidget,
+        // _renderUserValues().toSliverWidget,
         if (ref.isLogin) const UserResourceWidget()
       ]),
     );

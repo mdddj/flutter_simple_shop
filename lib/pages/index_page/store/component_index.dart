@@ -1,7 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../index.dart';
+part of pages;
 
 /// 首页推荐商店模块
 class StoreComponentIndex extends ConsumerWidget {

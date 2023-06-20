@@ -1,11 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../provider/riverpod/search_riverpod.dart';
-import '../../widgets/loading_more_list_indicator.dart';
-import '../../widgets/waterfall_goods_card.dart';
+part of pages;
 
 /// 搜索结果页面
 class SearchListIndex extends ConsumerWidget {
@@ -23,7 +16,7 @@ class SearchListIndex extends ConsumerWidget {
           itemBuilder: _itemBuilder,
           sourceList: SearchRepository(value),
           padding: const EdgeInsets.all(8),
-          indicatorBuilder:(context, status) {
+          indicatorBuilder: (context, status) {
             return LoadingMoreListCostumIndicator(status);
           },
           extendedListDelegate:

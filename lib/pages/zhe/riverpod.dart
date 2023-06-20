@@ -4,7 +4,8 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../provider/riverpod/category_riverpod.dart';
+
+import '../../provider/index.dart';
 
 final zheRiverpod = ChangeNotifierProvider(ZheState.new);
 
@@ -24,9 +25,10 @@ class ZheState extends ChangeNotifier {
   Future<bool> fetchData() async {
     final result = await DdTaokeSdk.instance.getDiscountTwoProduct(
         param: DiscountTwoParam(
-            pageSize: '$_pageSize', sort: '2', pageId: '$_page', cids: cid), requestParamsBuilder: (RequestParams requestParams) {
+            pageSize: '$_pageSize', sort: '2', pageId: '$_page', cids: cid),
+        requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
-    });
+        });
     if (result != null) {
       products.addAll(result.list ?? []);
     }
@@ -36,7 +38,7 @@ class ZheState extends ChangeNotifier {
     return result != null && (result.list ?? []).length < _pageSize;
   }
 
-  void onTabChange(int index,BuildContext context) {
+  void onTabChange(int index, BuildContext context) {
     final categorys = ref.read(categoryRiverpod).categorys;
     if (index == 0) {
       cid = '';

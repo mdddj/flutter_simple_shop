@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of pages;
 
 /// 2020年11月18日09:45:15
 /// 轮播图模型设计
@@ -17,5 +16,6 @@ class IndexCarouselItemModel {
       this.title,
       this.intro,
       this.clickType,
-      this.params,this.onTap}); // 参数
+      this.params,
+      this.onTap}); // 参数
 }

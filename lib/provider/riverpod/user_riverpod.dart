@@ -1,13 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory;
-import 'package:get_it/get_it.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../api/apis.dart';
-import '../../api/model/login_params.dart';
-import '../../freezed/login_result_model.dart';
-import '../../index.dart';
-import '../../pages/user_home_page/login/login_base.dart';
-import 'model/my_user.dart';
-import 'model/user.dart';
+part of provider;
 
 final userRiverpod =
     StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
@@ -64,10 +55,7 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
       if (value.isNotEmpty) {
         actionLog("尝试自动登录", "token", value);
         getIt.get<UserApi>().token = value;
-        getIt
-            .get<Api>()
-            .getUser(value)
-            .then((user) {
+        getIt.get<Api>().getUser(value).then((user) {
           state = state.copyWith(user: user);
           GetIt.instance.get<UserApi>().token = user == null ? '' : value;
         });

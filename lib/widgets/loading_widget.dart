@@ -1,6 +1,6 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import '../util/extended_util.dart';
 
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({Key? key}) : super(key: key);
@@ -9,8 +9,8 @@ class LoadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height:bodyHeight(context),
-      width: pw(context),
+      height: context.kBodyHeight,
+      width: context.screenWidth,
       child: const Center(
         child: CircularProgressIndicator(backgroundColor: Colors.red),
       ),

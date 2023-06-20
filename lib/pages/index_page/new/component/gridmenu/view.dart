@@ -1,24 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart' hide View;
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../../../../common/utils.dart';
-import '../../../../../common/view.dart';
-import '../../../../../freezed/home_menu.dart';
-import '../../../../../widgets/image_wrapper.dart';
-import '../../../../banjia/view.dart';
-import '../../../../brand_page/index.dart';
-import '../../../../jd/recommend/view.dart';
-import '../../../../mianji/mianji/view.dart';
-import '../../../../panic_buying/view.dart';
-import '../../../../pinduoduo/search/view.dart';
-import '../../../../zhe/view.dart';
-import '../../../model/menus.dart';
-import '../../index_card_wrapper.dart';
-import '../../waimai/index.dart';
-import 'menu_item.dart';
-import 'model.dart';
+part of pages;
 
 const elmImage = 'assets/svg/elm_logo.svg';
 const phbImage = 'assets/svg/phb.svg';
@@ -29,8 +9,6 @@ const chf = 'assets/svg/chf.svg'; // 充话费
 const pp = 'assets/svg/pp.svg'; // 品牌
 const jd = 'assets/svg/jd.svg'; // 京东
 const pyq = 'assets/svg/pyq.svg'; // 朋友圈
-
-
 
 List<Widget> buildIndexGridMenuItems(ApplocationContext applocationContext) {
   return [
@@ -137,36 +115,35 @@ class GridMenuComponent extends View {
 
 class HomeMenuLayout extends StatelessWidget {
   final HomeMenu homeMenu;
-  const HomeMenuLayout(this.homeMenu,{super.key});
+  const HomeMenuLayout(this.homeMenu, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints){
-        return InkWell(
-          onTap: (){
-            if(homeMenu.routerPath!=null){
-              context.push(homeMenu.routerPath!,extra: homeMenu.extra);
-            }
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              children: [
-                if(homeMenu.svgpath.isNotEmpty)
-                  ImageWrapper(child: SvgPicture.asset(homeMenu.svgpath,width: constraints.maxWidth,height: constraints.maxWidth)),
-                if(homeMenu.icon!=null)
-                  ImageWrapper(child: homeMenu.icon!),
-                const SizedBox(height: 6),
-                Text(homeMenu.title,style: context.textTheme.labelSmall?.copyWith(
-                  fontSize: homeMenu.title.length>4?10:null
-                ))
-              ],
-            ),
+    return LayoutBuilder(builder: (context, constraints) {
+      return InkWell(
+        onTap: () {
+          if (homeMenu.routerPath != null) {
+            context.push(homeMenu.routerPath!, extra: homeMenu.extra);
+          }
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            children: [
+              if (homeMenu.svgpath.isNotEmpty)
+                ImageWrapper(
+                    child: SvgPicture.asset(homeMenu.svgpath,
+                        width: constraints.maxWidth,
+                        height: constraints.maxWidth)),
+              if (homeMenu.icon != null) ImageWrapper(child: homeMenu.icon!),
+              const SizedBox(height: 6),
+              Text(homeMenu.title,
+                  style: context.textTheme.labelSmall?.copyWith(
+                      fontSize: homeMenu.title.length > 4 ? 10 : null))
+            ],
           ),
-        );
-      }
-    );
+        ),
+      );
+    });
   }
-
 }

@@ -1,11 +1,4 @@
-import 'dart:math';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
-import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-
+part of pages;
 
 class OrderAddIndexPage extends StatefulWidget {
   const OrderAddIndexPage({Key? key}) : super(key: key);
@@ -16,7 +9,7 @@ class OrderAddIndexPage extends StatefulWidget {
 
 class OrderAddState extends State<OrderAddIndexPage> {
   double svgSize = 220.0;
-  double placeholderHeight =12;
+  double placeholderHeight = 12;
   TextEditingController textEditingController = TextEditingController();
 
   @override
@@ -54,10 +47,9 @@ class OrderAddState extends State<OrderAddIndexPage> {
               text: '绑定',
               color: Colors.pinkAccent,
               onPressed: () async {
-
                 // 获取文本框订单编号
                 var orderNumber = textEditingController.value.text;
-                if(orderNumber.length!=19){
+                if (orderNumber.length != 19) {
                   toast('订单编号格式不正确');
                   return;
                 }
@@ -69,7 +61,7 @@ class OrderAddState extends State<OrderAddIndexPage> {
             ),
             buildPlaceHolderSizedBox(),
             FSuper(
-              lightOrientation: controller.FLightOrientation.LeftBottom,
+              lightOrientation: FLightOrientation.LeftBottom,
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(
                   (16.0 + 25.0 + 12), 8, (0.0 + 8.0), 8),
@@ -82,9 +74,8 @@ class OrderAddState extends State<OrderAddIndexPage> {
               textAlign: TextAlign.left,
               spans: const [
                 TextSpan(
-                  text: '\n只有通过本站链接购买的订单才能审核通过并获得奖励,否则绑定失败.(多次绑定失败将封号处理)',
-                  style: TextStyle(color: Colors.black26)
-                )
+                    text: '\n只有通过本站链接购买的订单才能审核通过并获得奖励,否则绑定失败.(多次绑定失败将封号处理)',
+                    style: TextStyle(color: Colors.black26))
               ],
               child1: Transform.rotate(
                 angle: pi,
@@ -110,7 +101,6 @@ class OrderAddState extends State<OrderAddIndexPage> {
   }
 
   SizedBox buildPlaceHolderSizedBox() => SizedBox(height: placeholderHeight);
-
 
   @override
   void dispose() {

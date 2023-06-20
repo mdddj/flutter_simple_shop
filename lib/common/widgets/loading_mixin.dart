@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/cupertino.dart';
+part of common;
 
 mixin LoadingMixin<T extends StatefulWidget> on State<T> {
   bool loadingState = false;

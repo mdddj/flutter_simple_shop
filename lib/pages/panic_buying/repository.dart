@@ -1,15 +1,7 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dataoke_sdk/model/category.dart';
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-// Project imports:
-import '../../provider/riverpod/category_riverpod.dart';
+part of pages;
 
 final panicBuyingModelRiverpod = ChangeNotifierProvider(PanicBuyingModel.new);
+
 //数据模型
 class PanicBuyingModel extends ChangeNotifier {
   final Ref ref;
@@ -26,16 +18,17 @@ class PanicBuyingModel extends ChangeNotifier {
 
   /// 页面初始化
   Future<void> init(BuildContext context) async {
-    tabChanged(0,context);
+    tabChanged(0, context);
   }
 
   // 加载实时榜单商品
   Future<bool> loadRealTimeProduct() async {
     final result = await DdTaokeSdk.instance.getTopProducts(
         param: TopParam(
-            rankType: rankType, pageId: '$_page', cid: cid, pageSize: '20'), requestParamsBuilder: (RequestParams requestParams) {
+            rankType: rankType, pageId: '$_page', cid: cid, pageSize: '20'),
+        requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
-    });
+        });
     if (result.isNotEmpty) {
       products.addAll(result);
     }
@@ -45,7 +38,7 @@ class PanicBuyingModel extends ChangeNotifier {
   }
 
   // 选项卡被切换
-  void tabChanged(int index,BuildContext context) {
+  void tabChanged(int index, BuildContext context) {
     products.clear();
     changeLoading = true;
     notifyListeners();

@@ -1,10 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tab_indicator_styler/tab_indicator_styler.dart';
-
-import '../../../../common/components/jd/jd_category_mini_widget.dart';
-import '../../../../provider/jd_products_provider.dart';
+part of pages;
 
 class IndexTabbar extends SliverPersistentHeaderDelegate {
   final TabController tabController;
@@ -12,7 +6,8 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
   IndexTabbar(this.tabController);
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       width: double.infinity,
       alignment: Alignment.center,
@@ -38,34 +33,41 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
               controller: tabController,
               isScrollable: true,
               labelColor: Colors.black,
-              indicator: MaterialIndicator(color: Colors.green,height: 5,horizontalPadding: 16,bottomLeftRadius: 15,bottomRightRadius: 15,topLeftRadius: 15,topRightRadius: 15),
+              indicator: MaterialIndicator(
+                  color: Colors.green,
+                  height: 5,
+                  horizontalPadding: 16,
+                  bottomLeftRadius: 15,
+                  bottomRightRadius: 15,
+                  topLeftRadius: 15,
+                  topRightRadius: 15),
             ),
-            if(tabController.index==2)
-            categoryWidget()
+            if (tabController.index == 2) categoryWidget()
           ],
         ),
       ),
     );
   }
 
-
-  Widget categoryWidget(){
-
-    return Consumer(builder: (BuildContext context, ref, Widget? child) {
-      final value = ref.watch(jdProductsRiverpod);
-      final curr = value.selectProductTypeId;
-      return JdCategoryMiniWidget(selectId: curr,onSelect: (model){
-        final jdRed = ref.read(jdProductsRiverpod);
-        jdRed.products.clear();
-        jdRed.setSelectProductTypeId(model.id);
-      },).height(36);
-    },
+  Widget categoryWidget() {
+    return Consumer(
+      builder: (BuildContext context, ref, Widget? child) {
+        final value = ref.watch(jdProductsRiverpod);
+        final curr = value.selectProductTypeId;
+        return JdCategoryMiniWidget(
+          selectId: curr,
+          onSelect: (model) {
+            final jdRed = ref.read(jdProductsRiverpod);
+            jdRed.products.clear();
+            jdRed.setSelectProductTypeId(model.id);
+          },
+        ).height(36);
+      },
     );
   }
 
-
   int get index => tabController.index;
-  double get calcHei => index==2 ? 40+36+20 : 50;
+  double get calcHei => index == 2 ? 40 + 36 + 20 : 50;
 
   @override
   double get maxExtent => calcHei;
@@ -74,16 +76,15 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
   double get minExtent => calcHei;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
+      false;
 }
-
 
 class IndexJdCategory extends SliverPersistentHeaderDelegate {
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return  const SizedBox(
-        height: 36,
-        child: JdCategoryMiniWidget());
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return const SizedBox(height: 36, child: JdCategoryMiniWidget());
   }
 
   @override
@@ -93,7 +94,8 @@ class IndexJdCategory extends SliverPersistentHeaderDelegate {
   double get minExtent => 36;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
+      false;
 }
 
 class PindSliverWidget extends SliverPersistentHeaderDelegate {
@@ -101,8 +103,9 @@ class PindSliverWidget extends SliverPersistentHeaderDelegate {
 
   PindSliverWidget(this.child);
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return  child;
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return child;
   }
 
   @override
@@ -112,7 +115,8 @@ class PindSliverWidget extends SliverPersistentHeaderDelegate {
   double get minExtent => 36;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
+      false;
 }
 
 ///Android Studio Chipmunk | 2021.2.1 Patch 1

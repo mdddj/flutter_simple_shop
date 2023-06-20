@@ -1,16 +1,4 @@
-import 'dart:convert';
-import 'dart:math';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:extended_text_field/extended_text_field.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../../../common/utils.dart';
-import '../../../util/input_utils.dart';
-import 'components/code_input.dart';
-import 'components/more_action_bottomsheet.dart';
-import 'components/search_goods.dart';
-import 'my_special_text_span_builder.dart';
-import 'views/markdown_preview.dart';
+part of pages;
 
 // 发布页面
 class WhiteIndex extends StatefulWidget {
@@ -27,7 +15,8 @@ class WhiteIndexState extends State<WhiteIndex> {
   final FocusNode _focusNode = FocusNode();
   double _keyboardHeight = 267.0;
 
-  bool get showCustomKeyBoard => activeEmojiGird || activeAtGrid || activeDollarGrid || activeImageGrid;
+  bool get showCustomKeyBoard =>
+      activeEmojiGird || activeAtGrid || activeDollarGrid || activeImageGrid;
   bool activeEmojiGird = false;
   bool activeAtGrid = false;
   bool activeDollarGrid = false;
@@ -38,7 +27,8 @@ class WhiteIndexState extends State<WhiteIndex> {
   Widget build(BuildContext context) {
     var keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
     if (keyboardHeight > 0) {
-      activeEmojiGird = activeAtGrid = activeDollarGrid = activeImageGrid = false;
+      activeEmojiGird =
+          activeAtGrid = activeDollarGrid = activeImageGrid = false;
     }
 
     _keyboardHeight = max(_keyboardHeight, keyboardHeight);
@@ -72,7 +62,11 @@ class WhiteIndexState extends State<WhiteIndex> {
                   expands: true,
                   cursorColor: Colors.pinkAccent,
                   controller: _textEditingController,
-                  specialTextSpanBuilder: MySpecialTextSpanBuilder(showAtBackground: false, goodsCardOnTapCallBack: deleteOneGoodsCard, atTextOnTap: onAtTextTap,context: context),
+                  specialTextSpanBuilder: MySpecialTextSpanBuilder(
+                      showAtBackground: false,
+                      goodsCardOnTapCallBack: deleteOneGoodsCard,
+                      atTextOnTap: onAtTextTap,
+                      context: context),
                   focusNode: _focusNode,
                   maxLines: null,
                   style: const TextStyle(textBaseline: TextBaseline.alphabetic),
@@ -106,8 +100,7 @@ class WhiteIndexState extends State<WhiteIndex> {
   }
 
   /// @ 用户被点击
-  void onAtTextTap(dynamic text) {
-  }
+  void onAtTextTap(dynamic text) {}
 
   ///
   /// 底部工具栏
@@ -134,7 +127,9 @@ class WhiteIndexState extends State<WhiteIndex> {
             final width = context.screenWidth;
             final file = await utils.selectFile();
             if (file != null) {
-              insertText("<img src='https://static.saintic.com/picbed/huang/2021/06/12/1623466301058.jpg' width='$width' height='100' alt=""/>");
+              insertText(
+                  "<img src='https://static.saintic.com/picbed/huang/2021/06/12/1623466301058.jpg' width='$width' height='100' alt="
+                  "/>");
               insertText('如果您觉得这个开源项目不错,扫码支持一下哦~');
             }
           }),
@@ -152,9 +147,9 @@ class WhiteIndexState extends State<WhiteIndex> {
               ListTile(
                 title: const Text('预览正文内容'),
                 onTap: () {
-                  context.pop();
+                  Navigator.pop(context);
                   final data = _textEditingController.text;
-                 context.navToWidget(to:  MarkDownPreview(data: data));
+                  context.navToWidget(to: MarkDownPreview(data: data));
                 },
                 leading: const Icon(Icons.preview),
               ),
@@ -166,10 +161,12 @@ class WhiteIndexState extends State<WhiteIndex> {
               ListTile(
                 title: const Text('插入代码'),
                 onTap: () async {
-                  context.pop();
-                  final result = await context.navToWidget(to:  const CodeInputPage());
+                  Navigator.pop(context);
+                  final result =
+                      await context.navToWidget(to: const CodeInputPage());
                   if (result != null) {
-                    insertText('<code content="${result['code']}" language="${result['type']}" codeEnd/>');
+                    insertText(
+                        '<code content="${result['code']}" language="${result['type']}" codeEnd/>');
                   }
                 },
                 leading: const Icon(Icons.code),
@@ -179,7 +176,7 @@ class WhiteIndexState extends State<WhiteIndex> {
                 onTap: () {},
                 leading: const Icon(Icons.tag),
               ),
-            ],context);
+            ], context);
           }),
           buildSvgPictureIcon('assets/svg/jianpan.svg', 80, onTap: () {
             if (_focusNode.hasFocus) {
@@ -208,14 +205,16 @@ class WhiteIndexState extends State<WhiteIndex> {
   // emoji 面板
   Widget _emoJiList() {
     return FutureBuilder(
-        future: DefaultAssetBundle.of(context).loadString('assets/json/emoji.json'),
+        future:
+            DefaultAssetBundle.of(context).loadString('assets/json/emoji.json'),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<dynamic> data = json.decode(snapshot.data.toString());
             return Container(
               height: _keyboardHeight,
               width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.only(left: 5, top: 5, right: 5, bottom: 5),
+              padding:
+                  const EdgeInsets.only(left: 5, top: 5, right: 5, bottom: 5),
               color: Colors.white,
               child: GridView.custom(
                 padding: const EdgeInsets.all(3),
@@ -244,12 +243,15 @@ class WhiteIndexState extends State<WhiteIndex> {
               ),
             );
           }
-          return const Center(child: SizedBox(width: 40, height: 40, child: CircularProgressIndicator()));
+          return const Center(
+              child: SizedBox(
+                  width: 40, height: 40, child: CircularProgressIndicator()));
         });
   }
 
   void insertText(String text) {
-    InputUtils.insertText(text: text, controller: _textEditingController,state: this);
+    InputUtils.insertText(
+        text: text, controller: _textEditingController, state: this);
   }
 
   // 删除一个商品卡片
@@ -271,7 +273,9 @@ class WhiteIndexState extends State<WhiteIndex> {
 
   // 把光标位置移动到最后
   void moveCursorToLast() {
-    _textEditingController.selection = TextSelection.fromPosition(TextPosition(offset: _textEditingController.value.text.length, affinity: TextAffinity.downstream));
+    _textEditingController.selection = TextSelection.fromPosition(TextPosition(
+        offset: _textEditingController.value.text.length,
+        affinity: TextAffinity.downstream));
     _focusNode.requestFocus();
   }
 

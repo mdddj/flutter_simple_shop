@@ -1,7 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-
-import '../../../../common/utils.dart';
+part of pages;
 
 /// 代码输入组件
 class CodeInputPage extends StatefulWidget {
@@ -35,7 +32,8 @@ class CodeInputPageState extends State<CodeInputPage> {
                 const PopupMenuItem(value: 'Java', child: Text('Java')),
                 const PopupMenuItem(value: 'Kotlin', child: Text('Kotlin')),
                 const PopupMenuItem(value: 'Swift', child: Text('Swift')),
-                const PopupMenuItem(value: 'JavaScript', child: Text('JavaScript')),
+                const PopupMenuItem(
+                    value: 'JavaScript', child: Text('JavaScript')),
                 const PopupMenuItem(value: 'YAML', child: Text('YAML')),
               ];
             },
@@ -48,7 +46,7 @@ class CodeInputPageState extends State<CodeInputPage> {
           IconButton(
               onPressed: () {
                 final myCodes = Uri.encodeComponent(textEditingController.text);
-                Navigator.pop(context,{'code': myCodes, 'type': _type});
+                Navigator.pop(context, {'code': myCodes, 'type': _type});
               },
               icon: const Icon(Icons.check)),
           utils.widgetUtils.marginRight()

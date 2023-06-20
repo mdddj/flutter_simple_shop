@@ -2,10 +2,10 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import './goods_item.dart';
 import './sliver_app_bar_delegate.dart';
-import '../../provider/ddq_provider.dart';
+import '../../provider/index.dart';
 import '../../widgets/ddq_times_widget.dart';
+import 'goods_item.dart';
 
 /// 钉钉抢的页面
 class DdqIndexHome extends ConsumerStatefulWidget {
@@ -41,7 +41,7 @@ class DdqIndexHomeState extends ConsumerState<DdqIndexHome> {
                 SliverPersistentHeader(
                   delegate: SliverAppBarDelegate(
                       maxHeight: 75,
-                      minHeight:75,
+                      minHeight: 75,
                       child: const Center(
                         child: Text('我是有底线的~~'),
                       )),
@@ -65,7 +65,7 @@ class DdqIndexHomeState extends ConsumerState<DdqIndexHome> {
   Widget _title() {
     return Positioned(
         left: 0,
-        top: 22+ context.paddingTop,
+        top: 22 + context.paddingTop,
         right: 0,
         child: Container(
             alignment: Alignment.center,
@@ -102,7 +102,7 @@ class DdqIndexHomeState extends ConsumerState<DdqIndexHome> {
   Widget _buildSliverAppBar() {
     return SliverAppBar(
       automaticallyImplyLeading: false,
-      expandedHeight: 170 ,
+      expandedHeight: 170,
       elevation: 0,
       backgroundColor: Colors.transparent,
       pinned: true,
@@ -133,7 +133,6 @@ class DdqIndexHomeState extends ConsumerState<DdqIndexHome> {
               ),
             )));
   }
-
 
   Widget _buildList() {
     return SliverList(

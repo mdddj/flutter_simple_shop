@@ -15,8 +15,8 @@ class ResourceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return GestureDetector(
-        onLongPress: (){
-          if(menu!=null){
+        onLongPress: () {
+          if (menu != null) {
             menu?.show(context);
           }
         },
@@ -31,13 +31,19 @@ class ResourceWidget extends StatelessWidget {
                     child: ImageView(
                         image: MyImage.network(
                             url: resource.firstImageUrl,
-                            params:  ImageParams(size: double.infinity,borderRadius: BorderRadius.circular(12),shape: BoxShape.rectangle,fit: BoxFit.cover)))),
+                            params: ImageParams(
+                                size: double.infinity,
+                                borderRadius: BorderRadius.circular(12),
+                                shape: BoxShape.rectangle,
+                                fit: BoxFit.cover)))),
               Padding(
                 padding: const EdgeInsets.all(12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(resource.title, style: context.textTheme.titleLarge)
+                    Text(resource.title,
+                            style: context.textTheme.titleLarge
+                                ?.copyWith(fontWeight: FontWeight.w700))
                         .marginOnly(bottom: 12)
                         .visible(resource.title.isNotEmpty),
                     Text(resource.content),

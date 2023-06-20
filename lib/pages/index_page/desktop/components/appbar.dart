@@ -1,8 +1,8 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of pages;
 
 /// 桌面端的导航条
-class IndexAppbarWithDesktop extends StatelessWidget implements PreferredSizeWidget {
+class IndexAppbarWithDesktop extends StatelessWidget
+    implements PreferredSizeWidget {
   const IndexAppbarWithDesktop({Key? key}) : super(key: key);
 
   @override
@@ -14,9 +14,7 @@ class IndexAppbarWithDesktop extends StatelessWidget implements PreferredSizeWid
       title: Container(
         color: Colors.grey,
         child: const Row(
-          children: [
-            Text('典典的小卖部')
-          ],
+          children: [Text('典典的小卖部')],
         ),
       ),
     );

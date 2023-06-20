@@ -1,13 +1,8 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../index.dart';
-import '../../../widgets/riverpod_error.dart';
-
+part of pages;
 
 final _riverpodSuggest = FutureProvider.autoDispose((ref) async {
-  return await DdTaokeSdk.instance.getHotSearchWorlds(requestParamsBuilder: (r)=>r.copyWith(showDefaultLoading: false));
+  return await DdTaokeSdk.instance.getHotSearchWorlds(
+      requestParamsBuilder: (r) => r.copyWith(showDefaultLoading: false));
 });
 
 ///热搜榜
@@ -15,7 +10,7 @@ class Suggest extends ConsumerWidget {
   const Suggest({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(12),
@@ -29,7 +24,10 @@ class Suggest extends ConsumerWidget {
                   '热搜榜',
                   style: TextStyle(fontSize: 16),
                 ),
-                Text('刷新',style: TextStyle(color: context.primaryColor),).click(() {
+                Text(
+                  '刷新',
+                  style: TextStyle(color: context.primaryColor),
+                ).click(() {
                   ref.invalidate(_riverpodSuggest);
                 })
               ],
@@ -37,20 +35,29 @@ class Suggest extends ConsumerWidget {
             const SizedBox(
               height: 12,
             ),
-            ref.watch(_riverpodSuggest).when(data: (list){
-              return Wrap(
-                children: list.map((e)=>_renderItem(e,context,ref)).toList(),
-              );
-            }, error: (e,s)=>RiverpodErrorWidget(message: '加载热搜榜单失败',retry: (){
-              ref.invalidate(_riverpodSuggest);
-            },), loading: ()=>const MyLoading().padding(12).center,skipLoadingOnRefresh: false)
+            ref.watch(_riverpodSuggest).when(
+                data: (list) {
+                  return Wrap(
+                    children:
+                        list.map((e) => _renderItem(e, context, ref)).toList(),
+                  );
+                },
+                error: (e, s) => RiverpodErrorWidget(
+                      message: '加载热搜榜单失败',
+                      retry: () {
+                        ref.invalidate(_riverpodSuggest);
+                      },
+                    ),
+                loading: () => const MyLoading().padding(12).center,
+                skipLoadingOnRefresh: false)
           ],
         ),
       ),
     );
   }
 
-  Widget _renderItem(HotSearchWorlds item,BuildContext context,WidgetRef ref) {
+  Widget _renderItem(
+      HotSearchWorlds item, BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () {
         context.navToWidget(to: SearchListIndex(value: item.words ?? ''));
@@ -88,12 +95,10 @@ class Suggest extends ConsumerWidget {
                       Text(item.theme!),
                       if (item.label!.isNotEmpty)
                         Badge(
-                          child: Text(
-                            item.label!,
-                            style: TextStyle(
-                                color: context.primaryColor),
-                          )
-                        ),
+                            child: Text(
+                          item.label!,
+                          style: TextStyle(color: context.primaryColor),
+                        )),
                     ],
                   ),
                   const SizedBox(

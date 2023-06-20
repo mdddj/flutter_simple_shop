@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../constant/style.dart';
+
+import '../../constant/index.dart';
 
 // 首页滑动置顶一
 class IndexFlexdHeaderWidget extends SliverPersistentHeaderDelegate {
@@ -9,7 +10,8 @@ class IndexFlexdHeaderWidget extends SliverPersistentHeaderDelegate {
   IndexFlexdHeaderWidget({this.child, this.color});
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 1000),
       color: color,

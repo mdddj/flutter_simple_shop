@@ -1,9 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:flutter/material.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-
-// Project imports:
-import '../../../common/utils.dart';
+part of pages;
 
 class ProductsList extends StatelessWidget {
   final List<ProductModel> products;

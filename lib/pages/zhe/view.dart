@@ -5,8 +5,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../widgets/loading_widget.dart';
 import '../../widgets/simple_appbar.dart';
-import '../panic_buying/components/categorys.dart';
-import '../panic_buying/components/list.dart';
+import '../index.dart';
 import 'riverpod.dart';
 
 class ZheIndex extends ConsumerStatefulWidget {
@@ -24,7 +23,7 @@ class ZheIndexState extends ConsumerState<ZheIndex> {
   void initState() {
     super.initState();
     Future.microtask(() async {
-      ref.read(zheRiverpod).onTabChange(0,context);
+      ref.read(zheRiverpod).onTabChange(0, context);
     });
   }
 
@@ -36,7 +35,7 @@ class ZheIndexState extends ConsumerState<ZheIndex> {
       appBar: SimpleAppBar(
         title: '折上折 - 拍两件更优惠',
         bottom: BottomCategoryTabs(
-          onTap:(index) => ref.read(zheRiverpod).onTabChange(index,context),
+          onTap: (index) => ref.read(zheRiverpod).onTabChange(index, context),
           insets: const [
             Tab(
               text: '推荐',
@@ -63,7 +62,7 @@ class ZheIndexState extends ConsumerState<ZheIndex> {
         },
         footer: MaterialFooter(),
         header: MaterialHeader(),
-        onRefresh: ()async {
+        onRefresh: () async {
           await ref.read(zheRiverpod).refresh();
         },
       ),

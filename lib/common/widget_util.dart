@@ -1,8 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import '../constant/style.dart';
-import '../widgets/waterfall_goods_card.dart';
+part of common;
 
 /// 组件工具类
 abstract class WidgetUtilService {
@@ -17,12 +13,10 @@ abstract class WidgetUtilService {
 
   Widget loading(double width, double height, {double? radius});
 
-
   Widget renderProductCard(ProductModel product);
 }
 
 class WidgetUtils extends WidgetUtilService {
-
   @override
   Widget marginTop({double? height}) {
     return SizedBox(
@@ -47,15 +41,12 @@ class WidgetUtils extends WidgetUtilService {
     return Skeleton(
       width: width,
       height: height,
-      borderRadius: BorderRadius.all(Radius.circular(radius??0)),
+      borderRadius: BorderRadius.all(Radius.circular(radius ?? 0)),
     );
   }
-
-
 
   @override
   Widget renderProductCard(ProductModel product) {
     return WaterfallGoodsCard(product);
   }
-
 }

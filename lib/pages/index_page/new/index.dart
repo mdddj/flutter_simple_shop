@@ -1,18 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart' hide NestedScrollView;
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../../common/components/new_products/respose.dart';
-import '../../../constant/context.dart';
-import '../../../index.dart';
-import '../../../widgets/loading/custom_loading_more_widget.dart';
-
-
-
-
-
+part of pages;
 
 /// 新版首页
 class IndexHomeNew extends ConsumerStatefulWidget {
@@ -22,9 +8,14 @@ class IndexHomeNew extends ConsumerStatefulWidget {
   IndexHomeNewState createState() => IndexHomeNewState();
 }
 
-class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerProviderStateMixin {
-  late TabController tabController = TabController(length: ref.watch(categoryRiverpod.select((value) => value.categorys)).length + 1, vsync: this);
-
+class IndexHomeNewState extends ConsumerState<IndexHomeNew>
+    with SingleTickerProviderStateMixin {
+  late TabController tabController = TabController(
+      length: ref
+              .watch(categoryRiverpod.select((value) => value.categorys))
+              .length +
+          1,
+      vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +25,16 @@ class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerPro
       ),
       body: TabBarView(
         controller: tabController,
-        children: [const HomeWidgets(), ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map(CategoryGoodsList.new).toList()],
+        children: [
+          const HomeWidgets(),
+          ...ref
+              .watch(categoryRiverpod.select((value) => value.categorys))
+              .map(CategoryGoodsList.new)
+              .toList()
+        ],
       ),
     );
   }
-
 }
 
 class HomeWidgets extends ConsumerStatefulWidget {
@@ -48,7 +44,8 @@ class HomeWidgets extends ConsumerStatefulWidget {
   ConsumerState<HomeWidgets> createState() => _HomeWidgetsState();
 }
 
-class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAliveClientMixin {
+class _HomeWidgetsState extends ConsumerState<HomeWidgets>
+    with AutomaticKeepAliveClientMixin {
   final repository = NewProductsLoadMore();
 
   @override
@@ -58,25 +55,26 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAli
       slivers: [
         SliverList(
             delegate: SliverChildBuilderDelegate((context, index) {
-              switch (index) {
-                case 1:
-                return const IndexCarousel();
-                case 0:
-                  return const GridMenuComponent();
-                case 2:
-                  return const IndexColumnWidget();
-                case 3:
-                  return const IndexProductTitle();
-                default:
-                  return const SizedBox();
-              }
-            }, childCount: 4)),
+          switch (index) {
+            case 1:
+              return const IndexCarousel();
+            case 0:
+              return const GridMenuComponent();
+            case 2:
+              return const IndexColumnWidget();
+            case 3:
+              return const IndexProductTitle();
+            default:
+              return const SizedBox();
+          }
+        }, childCount: 4)),
         LoadingMoreSliverList(
           SliverListConfig<ProductModel>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: repository,
               indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
-              extendedListDelegate:  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+              extendedListDelegate:
+                  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: context.waterfallFlowCrossAxisCount,
                 crossAxisSpacing: kDefaultPadding,
                 mainAxisSpacing: kDefaultPadding,
@@ -112,11 +110,13 @@ class IndexProductTitle extends StatelessWidget {
             'assets/svg/rmtj.svg',
             width: 120,
             height: 30,
-            colorFilter: ColorFilter.mode(context.iconColor ?? Colors.red, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+                context.iconColor ?? Colors.red, BlendMode.srcIn),
           ),
           Text(
             '* 每20分钟更新一次',
-            style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey, fontSize: 12),
+            style: context.textTheme.bodyMedium
+                ?.copyWith(color: Colors.grey, fontSize: 12),
           )
         ],
       ),
@@ -130,7 +130,8 @@ class IndexProducts extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final products = ref.watch(riverpodIndexProducts.select((value) => value.products));
+    final products =
+        ref.watch(riverpodIndexProducts.select((value) => value.products));
     return SliverPadding(
         padding: const EdgeInsets.all(8),
         sliver: SliverWaterfallFlow.count(

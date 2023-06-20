@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../provider/riverpod/user_riverpod.dart';
+import '../../../provider/index.dart';
 
 class UserSettingPage extends ConsumerStatefulWidget {
   const UserSettingPage({super.key});
@@ -19,19 +19,44 @@ class _UserSettingPageState extends ConsumerState<UserSettingPage> {
       child: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(children: [
-          MyMenu(title:'浏览历史',
+          MyMenu(
+              title: '浏览历史',
               svgIcon: 'assets/svg/user/llls.svg',
               color: Colors.green,
-              actions: IconButton(onPressed: () {}, icon: Icon(Icons.delete, size: 22, color: Colors.grey.shade400)),
+              actions: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.delete,
+                      size: 22, color: Colors.grey.shade400)),
               child: _renderHistoryList()),
-          const MyMenu(title:'我的钱包', svgIcon: 'assets/svg/user/qb.svg', color: Colors.red),
-          const MyMenu(title:'我的分销', svgIcon: 'assets/svg/user/fx.svg', color: Colors.greenAccent),
-          const MyMenu(title:'地址管理', svgIcon: 'assets/svg/user/dz.svg', color: Colors.deepOrangeAccent),
-          const MyMenu(title:'我的收藏', svgIcon: 'assets/svg/user/sc.svg', color: Colors.blueAccent),
-          MyMenu(title:'切换主题',
-              svgIcon: 'assets/svg/user/zhuti.svg', color: Colors.pink, onTap: () => context.navToWidget(to: const ThemeSettingPage())),
-          const MyMenu(title:'意见反馈', svgIcon: 'assets/svg/user/yj.svg', color: Colors.orangeAccent),
-          const MyMenu(title:'设置', svgIcon: 'assets/svg/user/sz.svg', color: Colors.blue),
+          const MyMenu(
+              title: '我的钱包',
+              svgIcon: 'assets/svg/user/qb.svg',
+              color: Colors.red),
+          const MyMenu(
+              title: '我的分销',
+              svgIcon: 'assets/svg/user/fx.svg',
+              color: Colors.greenAccent),
+          const MyMenu(
+              title: '地址管理',
+              svgIcon: 'assets/svg/user/dz.svg',
+              color: Colors.deepOrangeAccent),
+          const MyMenu(
+              title: '我的收藏',
+              svgIcon: 'assets/svg/user/sc.svg',
+              color: Colors.blueAccent),
+          MyMenu(
+              title: '切换主题',
+              svgIcon: 'assets/svg/user/zhuti.svg',
+              color: Colors.pink,
+              onTap: () => context.navToWidget(to: const ThemeSettingPage())),
+          const MyMenu(
+              title: '意见反馈',
+              svgIcon: 'assets/svg/user/yj.svg',
+              color: Colors.orangeAccent),
+          const MyMenu(
+              title: '设置',
+              svgIcon: 'assets/svg/user/sz.svg',
+              color: Colors.blue),
         ]),
       ),
     );
@@ -59,7 +84,9 @@ class _UserSettingPageState extends ConsumerState<UserSettingPage> {
     );
   }
 
-  Widget get logoutBtn =>    OutlinedButton(onPressed: ()=>ref.read(userRiverpod.notifier).logout(), child: const Text("退出登录"));
+  Widget get logoutBtn => OutlinedButton(
+      onPressed: () => ref.read(userRiverpod.notifier).logout(),
+      child: const Text("退出登录"));
 }
 
 class MyMenu extends StatelessWidget {
@@ -69,7 +96,14 @@ class MyMenu extends StatelessWidget {
   final Widget? child;
   final Color? color;
   final Widget? actions;
-  const MyMenu({super.key, required this.title, this.svgIcon, this.onTap, this.child, this.color, this.actions});
+  const MyMenu(
+      {super.key,
+      required this.title,
+      this.svgIcon,
+      this.onTap,
+      this.child,
+      this.color,
+      this.actions});
 
   @override
   Widget build(BuildContext context) {
@@ -79,13 +113,18 @@ class MyMenu extends StatelessWidget {
           leading: svgIcon == null
               ? null
               : SvgPicture.asset(
-            svgIcon!,
-            width: 22,
-            height: 22,
-            colorFilter: ColorFilter.mode(color ?? Colors.grey.shade200, BlendMode.srcIn),
-          ),
+                  svgIcon!,
+                  width: 22,
+                  height: 22,
+                  colorFilter: ColorFilter.mode(
+                      color ?? Colors.grey.shade200, BlendMode.srcIn),
+                ),
           title: Row(
-            children: [Text(title), const Spacer(), actions ?? const SizedBox()],
+            children: [
+              Text(title),
+              const Spacer(),
+              actions ?? const SizedBox()
+            ],
           ),
           onTap: onTap,
         ),

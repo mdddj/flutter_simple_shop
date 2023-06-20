@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of pages;
 
 class IndexHomeBanner extends StatelessWidget {
   final info =
@@ -11,40 +10,41 @@ class IndexHomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[MaterialBanner(
-        content: Text(
-          info,
-          style: const TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Colors.purple,
-        leading: const Icon(Icons.warning, color: Colors.yellow),
-        padding: const EdgeInsetsDirectional.only(start: 16.0, top: 2.0,end: 2),
-        leadingPadding:const EdgeInsetsDirectional.only(end: 16.0) ,
-        actions: <Widget>[
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text(
-              'I KNOW',
-              style: TextStyle(
-                  color: Colors.purple,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14),
-            ),
+      children: <Widget>[
+        MaterialBanner(
+          content: Text(
+            info,
+            style: const TextStyle(color: Colors.white),
           ),
-
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text(
-              'I IGNORE',
-              style: TextStyle(
-                  color: Colors.purple,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14),
+          backgroundColor: Colors.purple,
+          leading: const Icon(Icons.warning, color: Colors.yellow),
+          padding:
+              const EdgeInsetsDirectional.only(start: 16.0, top: 2.0, end: 2),
+          leadingPadding: const EdgeInsetsDirectional.only(end: 16.0),
+          actions: <Widget>[
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text(
+                'I KNOW',
+                style: TextStyle(
+                    color: Colors.purple,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14),
+              ),
             ),
-          ),
-        ],
-      )],
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text(
+                'I IGNORE',
+                style: TextStyle(
+                    color: Colors.purple,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14),
+              ),
+            ),
+          ],
+        )
+      ],
     );
   }
-
 }

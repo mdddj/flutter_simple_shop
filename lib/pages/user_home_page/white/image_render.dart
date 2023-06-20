@@ -1,10 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:extended_image/extended_image.dart';
-import 'package:extended_text_field/extended_text_field.dart';
-import 'package:flutter/material.dart';
-import 'package:html/parser.dart';
+part of pages;
 
 // 在输入框渲染一张图片
 class ImageText extends SpecialText {
@@ -12,7 +6,7 @@ class ImageText extends SpecialText {
   final int? start;
   final BuildContext context;
 
-  ImageText(TextStyle textStyle,this.context, {this.start, this.onClick})
+  ImageText(TextStyle textStyle, this.context, {this.start, this.onClick})
       : super(ImageText.flag, '/>', textStyle);
   String? _imageUrl;
 

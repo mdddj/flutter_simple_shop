@@ -1,16 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
-import 'package:fcontrol_nullsafety/fdefine.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-
-// Project imports:
-import '../../../../common/utils.dart';
-import '../../../../widgets/simple_appbar.dart';
+part of pages;
 
 ///
 /// @Author 梁典典
@@ -26,20 +14,21 @@ class WaimaiDetail extends StatefulWidget {
   WaimaiDetailState createState() => WaimaiDetailState();
 }
 
-class WaimaiDetailState extends State<WaimaiDetail>  {
+class WaimaiDetailState extends State<WaimaiDetail> {
   ActivityLinkResult? model;
 
   @override
   void initState() {
     super.initState();
-    delayFunction(() async  {
+    delayFunction(() async {
       SmartDialog.showLoading(msg: '加载中');
-      try{
+      try {
         final result = await kApi.getActivityLink(
             ActivityLinkParam(
                 promotionSceneId:
-                widget.type == '1' ? '20150318019998877' : '1585018034441'), requestParamsBuilder: (RequestParams requestParams) {
-              return requestParams;
+                    widget.type == '1' ? '20150318019998877' : '1585018034441'),
+            requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
         });
         SmartDialog.dismiss();
         if (mounted && result != null) {
@@ -47,13 +36,12 @@ class WaimaiDetailState extends State<WaimaiDetail>  {
             model = result;
           });
         }
-      }catch(e,s){
+      } catch (e, s) {
         kLogErr(e);
         kLogErr(s);
         SmartDialog.dismiss();
         showIosDialog(e.toString());
       }
-
     });
   }
 
@@ -187,5 +175,4 @@ class WaimaiDetailState extends State<WaimaiDetail>  {
       ),
     );
   }
-
 }

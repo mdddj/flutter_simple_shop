@@ -1,13 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-
-import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../freezed/anking_list_param.dart';
-import '../../index.dart';
-import 'repository_v2.dart';
+part of pages;
 
 ///
 /// @Author 梁典典
@@ -22,10 +13,12 @@ class PanicBuyingPage extends ConsumerStatefulWidget {
   PanicBuyingPageState createState() => PanicBuyingPageState();
 }
 
-class PanicBuyingPageState extends ConsumerState<PanicBuyingPage> with SingleTickerProviderStateMixin {
+class PanicBuyingPageState extends ConsumerState<PanicBuyingPage>
+    with SingleTickerProviderStateMixin {
   final EasyRefreshController easyRefreshController = EasyRefreshController();
 
-  late final TabController _tabController = TabController(length: ref.categorys.length + 2, vsync: this);
+  late final TabController _tabController =
+      TabController(length: ref.categorys.length + 2, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +48,8 @@ class PanicBuyingPageState extends ConsumerState<PanicBuyingPage> with SingleTic
         children: [
           const _ViewItem(AnkingListParam(rank: '1', cid: '')),
           const _ViewItem(AnkingListParam(rank: '2', cid: '')),
-          ...ref.categorys.map((element) => _ViewItem(AnkingListParam(rank: '1', cid: '${element.cid}')))
+          ...ref.categorys.map((element) =>
+              _ViewItem(AnkingListParam(rank: '1', cid: '${element.cid}')))
         ],
       ),
     );
@@ -78,8 +72,10 @@ class _ViewItem extends StatefulWidget {
   State<_ViewItem> createState() => _ViewItemState();
 }
 
-class _ViewItemState extends State<_ViewItem> with AutomaticKeepAliveClientMixin {
-  late final RankingListRepository _repository = RankingListRepository(widget.param);
+class _ViewItemState extends State<_ViewItem>
+    with AutomaticKeepAliveClientMixin {
+  late final RankingListRepository _repository =
+      RankingListRepository(widget.param);
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +84,9 @@ class _ViewItemState extends State<_ViewItem> with AutomaticKeepAliveClientMixin
         itemBuilder: _itemBuilder,
         sourceList: _repository,
         padding: const EdgeInsets.all(8),
-        extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8)));
+        extendedListDelegate:
+            const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8)));
   }
 
   Widget _itemBuilder(BuildContext context, ProductModel item, int index) {
@@ -105,4 +103,5 @@ class _ViewItemState extends State<_ViewItem> with AutomaticKeepAliveClientMixin
   bool get wantKeepAlive => true;
 }
 
-void toPanicBuyPage(BuildContext context) => context.navToWidget(to: const PanicBuyingPage());
+void toPanicBuyPage(BuildContext context) =>
+    context.navToWidget(to: const PanicBuyingPage());

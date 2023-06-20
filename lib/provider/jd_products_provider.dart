@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+part of provider;
 
-import '../common/components/jd/product_model.dart';
-
-
-final jdProductsRiverpod  = ChangeNotifierProvider((ref) => JdProductsProviderState());
+final jdProductsRiverpod =
+    ChangeNotifierProvider((ref) => JdProductsProviderState());
 
 /// 京东产品的状态
 class JdProductsProviderState extends ChangeNotifier {
@@ -16,6 +13,4 @@ class JdProductsProviderState extends ChangeNotifier {
     selectProductTypeId = id;
     notifyListeners();
   }
-
-
 }

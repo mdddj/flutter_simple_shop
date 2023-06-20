@@ -1,12 +1,8 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:flutter_svg/flutter_svg.dart';
+part of common;
 
 class Hot extends StatelessWidget {
   final String text;
-  const Hot({Key? key,required this.text}) : super(key: key);
+  const Hot({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +12,11 @@ class Hot extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          SvgPicture.asset('assets/svg/hot.svg',width: 22,height: 22),
+          SvgPicture.asset('assets/svg/hot.svg', width: 22, height: 22),
           Expanded(
             child: Text(
               text,
-              style: TextStyle(
-                  fontSize: 10,
-                  color: Colors.grey.shade400),
+              style: TextStyle(fontSize: 10, color: Colors.grey.shade400),
             ),
           )
         ],

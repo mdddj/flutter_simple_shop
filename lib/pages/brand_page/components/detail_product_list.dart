@@ -4,7 +4,7 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common/utils.dart';
+import '../../../common/index.dart';
 import '../../../util/image_util.dart';
 import '../../../util/navigator_util.dart';
 import '../../../widgets/component/coupon_discount.dart';
@@ -18,14 +18,17 @@ class DetailProductList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(delegate: SliverChildBuilderDelegate(_builderList, childCount: list.length));
+    return SliverList(
+        delegate:
+            SliverChildBuilderDelegate(_builderList, childCount: list.length));
   }
 
   Widget _builderList(BuildContext context, int index) {
     var brandDetailGoodsList = list[index];
     return GestureDetector(
       onTap: () {
-        NavigatorUtil.gotoGoodsDetailPage(context, brandDetailGoodsList.id.toString());
+        NavigatorUtil.gotoGoodsDetailPage(
+            context, brandDetailGoodsList.id.toString());
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
@@ -50,9 +53,11 @@ class DetailProductList extends StatelessWidget {
         children: [
           Text(
             item.title,
-            style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+                color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
           ),
-          CouponDiscountShow(value: item.couponPrice.toString().replaceAll('.0', '')),
+          CouponDiscountShow(
+              value: item.couponPrice.toString().replaceAll('.0', '')),
           SimplePrice(
             price: item.actualPrice.toString(),
             orignPrice: item.originalPrice.toString(),

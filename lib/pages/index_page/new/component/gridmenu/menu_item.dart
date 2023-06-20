@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../../common/utils.dart';
-import '../../../../../widgets/extended_image.dart';
-import 'model.dart';
+part of pages;
 
 ///
 /// @Author 梁典典
@@ -29,7 +25,11 @@ class GridMenuItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [renderImage(constraints), utils.widgetUtils.marginTop(), renderTitle()],
+              children: [
+                renderImage(constraints),
+                utils.widgetUtils.marginTop(),
+                renderTitle()
+              ],
             ),
           ),
         );
@@ -39,19 +39,16 @@ class GridMenuItem extends StatelessWidget {
 
   // 标题
   Widget renderTitle() {
-    return DefaultTextStyle.merge(child: Text(item.title), maxLines: 1, overflow: TextOverflow.ellipsis);
+    return DefaultTextStyle.merge(
+        child: Text(item.title), maxLines: 1, overflow: TextOverflow.ellipsis);
   }
 
   // 图片
   Widget renderImage(BoxConstraints constraints) {
     final size = constraints.maxWidth * 0.5;
     if (item.icon != null) {
-      return SizedBox(
-      width: size,
-        height: size,
-        child: item.icon!);
+      return SizedBox(width: size, height: size, child: item.icon!);
     }
-
 
     final svgComp = SvgPicture.asset(item.image);
     final imageComp = SimpleImage(url: item.image);

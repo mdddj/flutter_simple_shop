@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+part of constant;
 
 extension ContextEx on BuildContext {
-
   ///每行显示多少个产品
   int get waterfallFlowCrossAxisCount {
     var crossAxisCount = 2;
@@ -21,7 +19,6 @@ extension ContextEx on BuildContext {
     }
     return crossAxisCount;
   }
-
 
   /// tab是否为滚动样式
   bool get tabIsScrollable {
@@ -42,5 +39,6 @@ extension ContextEx on BuildContext {
     return result;
   }
 
-  DeviceScreenType get deviceScreenType => getDeviceType(MediaQuery.of(this).size);
+  DeviceScreenType get deviceScreenType =>
+      getDeviceType(MediaQuery.of(this).size);
 }

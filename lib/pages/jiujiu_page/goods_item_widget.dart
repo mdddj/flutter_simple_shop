@@ -1,10 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import '../../common/utils.dart';
-import '../../util/navigator_util.dart';
-import '../../widgets/extended_image.dart';
-import '../../widgets/tag_widget.dart';
+part of pages;
 
 // 9.9商品卡片布局
 class GoodsItemWidget extends StatelessWidget {
@@ -71,8 +65,7 @@ class GoodsItemWidget extends StatelessWidget {
                         //店铺
                         shopWidget ??
                             TagWidget(
-                                title: goodsItem.shopName,
-                                noBorder: true),
+                                title: goodsItem.shopName, noBorder: true),
 
                         //券后价
                         Container(

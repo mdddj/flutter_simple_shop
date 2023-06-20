@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of pages;
 
 /// 2020年11月17日 22:41:38
 /// 首页网格菜单模型
@@ -12,8 +11,8 @@ class IndexGridMenuItemModel {
   Widget? widget; // 跳转到的页面
   VoidCallback? onTap; // 点击事件
 
-  IndexGridMenuItemModel(this.title, this.iconUrl, this.clickType, {this.params, this.widget, this.onTap}); // 参数
-
+  IndexGridMenuItemModel(this.title, this.iconUrl, this.clickType,
+      {this.params, this.widget, this.onTap}); // 参数
 }
 
 /// 点击事件响应类型

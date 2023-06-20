@@ -1,16 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/picture_selection_item.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
-
-import '../../api/apis.dart';
-import '../../common/api_ext.dart';
-import '../../constant/context.dart';
-import '../../freezed/pager.dart';
-import '../../freezed/resource_category.dart';
-import '../../index.dart';
-import '../../pages/user_home_page/pages/resource_list.dart';
+part of resource;
 
 ///资源发布页面
 class MyResourceWritePage extends StatefulWidget {
@@ -24,7 +12,8 @@ class MyResourceWritePage extends StatefulWidget {
 
 class _MyResourceWritePageState extends State<MyResourceWritePage> {
   DynWriteParams get params => widget.params;
-  final PictureSelectionController _selectionController = PictureSelectionController();
+  final PictureSelectionController _selectionController =
+      PictureSelectionController();
   var content = "";
   var title = "";
 
@@ -39,7 +28,10 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
           onPressed: context.pop,
           child: const Text('取消'),
         ),
-        actions: [FilledButton(onPressed: _submit, child: const Text("发布")), const SizedBox(width: 12)],
+        actions: [
+          FilledButton(onPressed: _submit, child: const Text("发布")),
+          const SizedBox(width: 12)
+        ],
       ),
       body: BodyExpandedWidget(
         bottom: _builderActionButton(),
@@ -47,7 +39,9 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
           child: Column(
             children: [
               TextField(
-                decoration: _decoration("取个标题吧，非必须").copyWith(prefixIcon: const LoginUserAvatar().padding(6), prefixIconColor: Colors.transparent),
+                decoration: _decoration("取个标题吧，非必须").copyWith(
+                    prefixIcon: const LoginUserAvatar().padding(6),
+                    prefixIconColor: Colors.transparent),
                 onChanged: (v) => title = v,
               ),
               Divider(
@@ -90,7 +84,8 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
     );
   }
 
-  UnderlineInputBorder get _inputBorder => const UnderlineInputBorder(borderSide: BorderSide.none);
+  UnderlineInputBorder get _inputBorder =>
+      const UnderlineInputBorder(borderSide: BorderSide.none);
 
   InputDecoration _decoration(String hint) {
     return InputDecoration(
@@ -106,10 +101,15 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   Future<void> _submit() async {
     final api = getIt.get<MyResourceCreateApi>();
     final files = await _getFiles();
-    api.formData = FormData.fromMap({"files": files, "content": content, "cateName": params.name,"title":title});
+    api.formData = FormData.fromMap({
+      "files": files,
+      "content": content,
+      "cateName": params.name,
+      "title": title
+    });
     final r = await api.request(const R());
-    r.simpleToast(ifOk: (){
-      GetIt.instance.get<UserResourceListRepository>().refresh(true);//刷新
+    r.simpleToast(ifOk: () {
+      GetIt.instance.get<UserResourceListRepository>().refresh(true); //刷新
     });
   }
 
@@ -117,7 +117,8 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   Future<List<MultipartFile>> _getFiles() async {
     var files = <MultipartFile>[];
     await Future.forEach(_selectionController.getFiles, (element) async {
-      final mf = await MultipartFile.fromFile(element.localFilePath?.path ?? '');
+      final mf =
+          await MultipartFile.fromFile(element.localFilePath?.path ?? '');
       files.add(mf);
     });
     return files;
@@ -127,19 +128,16 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   Widget _builderActionButton() {
     return Container(
       padding: const EdgeInsets.all(6),
-      child:  Column(
+      child: Column(
         children: [
           Row(
-            children: [
-              SelectResCategory(initCategoryName: params.name)
-            ],
+            children: [SelectResCategory(initCategoryName: params.name)],
           )
         ],
       ),
     );
   }
 }
-
 
 ///选择分类的小部件
 class SelectResCategory extends StatefulWidget {
@@ -151,7 +149,6 @@ class SelectResCategory extends StatefulWidget {
 }
 
 class _SelectResCategoryState extends State<SelectResCategory> {
-
   ResourceCategory? selectResCategory;
 
   @override
@@ -162,22 +159,22 @@ class _SelectResCategoryState extends State<SelectResCategory> {
     });
   }
 
-
   ///加载对象
   Future<void> _getCategoryInfo(String name) async {
-    try{
-      if(name.isEmpty){
+    try {
+      if (name.isEmpty) {
         setState(() {
           selectResCategory = null;
         });
         return;
       }
-      final result =  await getIt.get<MyFindResourceCategoryApi>().doRequest(name);
+      final result =
+          await getIt.get<MyFindResourceCategoryApi>().doRequest(name);
       wtfLog(result.toJson());
       setState(() {
         selectResCategory = result;
       });
-    }catch(e,s){
+    } catch (e, s) {
       wtfLog('${e.runtimeType}\n获取失败:$e\n$s');
     }
   }
@@ -188,23 +185,21 @@ class _SelectResCategoryState extends State<SelectResCategory> {
       width: context.screenWidth * 0.5,
       height: 50,
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(children: [
-            IconButton(onPressed: (){}, icon: const Icon(Icons.search)),
-            Chip(label: Text(widget.initCategoryName)),
-            //后面放一些推荐的
-      ],)),
-
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+              Chip(label: Text(widget.initCategoryName)),
+              //后面放一些推荐的
+            ],
+          )),
     );
   }
 
   @override
   void setState(VoidCallback fn) {
-    if(mounted){
+    if (mounted) {
       super.setState(fn);
     }
   }
 }
-
-
-

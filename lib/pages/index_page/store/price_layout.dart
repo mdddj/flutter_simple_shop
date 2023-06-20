@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of pages;
 
 /// 价钱布局
 class PriceLayout extends StatelessWidget {

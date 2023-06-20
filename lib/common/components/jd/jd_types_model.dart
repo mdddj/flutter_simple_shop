@@ -1,7 +1,8 @@
+part of common;
 
 class JdTypeModel {
   String name;
   String id;
 
-  JdTypeModel({required this.id,required this.name});
+  JdTypeModel({required this.id, required this.name});
 }

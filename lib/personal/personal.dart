@@ -1,14 +1,10 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
-import '../common/im_item.dart';
-import '../common/touch_callback.dart';
+import '../common/index.dart';
 
 // 我的页面
 class Personal extends StatelessWidget {
   const Personal({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +18,18 @@ class Personal extends StatelessWidget {
             color: Colors.white,
             height: 80.0,
             child: TouchCallBack(
-              onParessed: (){},
+              onParessed: () {},
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   //添加头像
                   Container(
-                    margin: const EdgeInsets.only(left: 12.0,right: 15.0),
-                    child: Image.asset('assets/images/ava.png',width: 70.0,height: 70.0,),
+                    margin: const EdgeInsets.only(left: 12.0, right: 15.0),
+                    child: Image.asset(
+                      'assets/images/ava.png',
+                      width: 70.0,
+                      height: 70.0,
+                    ),
                   ),
                   //用户名和账号显示
                   const Expanded(
@@ -39,19 +39,25 @@ class Personal extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           '典典',
-                          style: TextStyle(fontSize: 18.0,color: Color(0xFF353535)),
+                          style: TextStyle(
+                              fontSize: 18.0, color: Color(0xFF353535)),
                         ),
                         Text(
                           '账号 liangdiandian',
-                          style: TextStyle(fontSize: 14.0,color: Color(0xFFa9a9a9)),
+                          style: TextStyle(
+                              fontSize: 14.0, color: Color(0xFFa9a9a9)),
                         )
                       ],
                     ),
                   ),
                   //二维码图片显示
                   Container(
-                    margin: const EdgeInsets.only(left: 12.0,right: 15.0),
-                    child: Image.asset('assets/images/ewm.png',width: 24.0,height: 24.0,),
+                    margin: const EdgeInsets.only(left: 12.0, right: 15.0),
+                    child: Image.asset(
+                      'assets/images/ewm.png',
+                      width: 24.0,
+                      height: 24.0,
+                    ),
                   ),
                 ],
               ),
@@ -71,5 +77,3 @@ class Personal extends StatelessWidget {
     );
   }
 }
-
-

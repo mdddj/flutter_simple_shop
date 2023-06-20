@@ -1,11 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:extended_image/extended_image.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../../provider/jd_products_provider.dart';
-import 'product_model.dart';
+part of common;
 
 /// 首页的京东列表
 class JdProductsView extends StatefulWidget {
@@ -23,9 +16,9 @@ class JdProductsViewState extends State<JdProductsView> {
 
   Widget renderListWidget() {
     return Consumer(
-      builder: (BuildContext context,
-           ref, Widget? child) {
-        final products = ref.watch(jdProductsRiverpod.select((value) => value.products));
+      builder: (BuildContext context, ref, Widget? child) {
+        final products =
+            ref.watch(jdProductsRiverpod.select((value) => value.products));
 
         return EasyRefresh.custom(slivers: [
           SliverWaterfallFlow.count(

@@ -1,9 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-
-import '../../index.dart';
+part of provider;
 
 class SearchRepository extends MyLoadingModel<ProductModel> {
   var _page = 1;

@@ -1,14 +1,12 @@
-import 'package:extended_text_field/extended_text_field.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_syntax_view/flutter_syntax_view.dart';
-import 'package:html/parser.dart';
+part of pages;
 
 class CodeText extends SpecialText {
   static const String flag = '<code';
   final int start;
   final SpecialTextGestureTapCallback? onWidgetTap;
 
-  CodeText(TextStyle textStyle, {required this.start, this.onWidgetTap}) : super(flag, 'codeEnd/>', textStyle);
+  CodeText(TextStyle textStyle, {required this.start, this.onWidgetTap})
+      : super(flag, 'codeEnd/>', textStyle);
 
   @override
   InlineSpan finishText() {

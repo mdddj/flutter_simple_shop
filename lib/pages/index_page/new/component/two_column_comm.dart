@@ -1,11 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:extended_image/extended_image.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-
-import '../../../../index.dart';
-
+part of pages;
 
 typedef IndexTwoColumnImageWidgetBuild = ExtendedImage Function(
     double w, double h);
@@ -14,9 +7,10 @@ class IndexColumnWidget extends ConsumerWidget {
   const IndexColumnWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
-    final products = ref.watch(indexStateRiverpod.select((value) => value.hotDayProducts));
-    if(products.isEmpty){
+  Widget build(BuildContext context, WidgetRef ref) {
+    final products =
+        ref.watch(indexStateRiverpod.select((value) => value.hotDayProducts));
+    if (products.isEmpty) {
       return const SizedBox();
     }
     return WaterfallFlow.count(
@@ -41,7 +35,7 @@ class IndexColumnWidget extends ConsumerWidget {
             },
             title: '畅销榜单',
             subTitle: '所有人,买它',
-            onTap:()=> BestSellerListPage.nav(context)),
+            onTap: () => BestSellerListPage.nav(context)),
         if (products.length > 1)
           TwoColumnCommWidget(
             imageBuilder: (double w, double h) {

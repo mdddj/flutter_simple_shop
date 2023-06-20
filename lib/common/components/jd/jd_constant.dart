@@ -1,5 +1,4 @@
-
-import 'jd_types_model.dart';
+part of common;
 
 final jdTypes = <JdTypeModel>[
   JdTypeModel(id: '1', name: '好券商品'),

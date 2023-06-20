@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../../../common/utils.dart';
+import '../../../common/index.dart';
 import '../../../widgets/simple_appbar.dart';
 
 class ActivityViewPage extends StatefulWidget {
@@ -19,7 +19,6 @@ class ActivityViewPage extends StatefulWidget {
 }
 
 class ActivityViewPageState extends State<ActivityViewPage> {
-
   List<ProductModel> _products = [];
 
   @override
@@ -29,14 +28,15 @@ class ActivityViewPageState extends State<ActivityViewPage> {
   }
 
   Future<void> getData() async {
-   final products = await DdTaokeSdk.instance.getTopicProducts(widget.id, 50, 1, requestParamsBuilder: (RequestParams requestParams) {
-     return requestParams;
-   });
-   if(mounted){
-     setState(() {
-       _products = products;
-     });
-   }
+    final products = await DdTaokeSdk.instance.getTopicProducts(
+        widget.id, 50, 1, requestParamsBuilder: (RequestParams requestParams) {
+      return requestParams;
+    });
+    if (mounted) {
+      setState(() {
+        _products = products;
+      });
+    }
   }
 
   @override
@@ -46,7 +46,14 @@ class ActivityViewPageState extends State<ActivityViewPage> {
       body: EasyRefresh.custom(slivers: [
         SliverPadding(
             padding: const EdgeInsets.all(12),
-            sliver: SliverWaterfallFlow.count(crossAxisCount: 2,mainAxisSpacing: 12,crossAxisSpacing: 12,children: _products.map((e) => utils.widgetUtils.renderProductCard(e)).toList(),))
+            sliver: SliverWaterfallFlow.count(
+              crossAxisCount: 2,
+              mainAxisSpacing: 12,
+              crossAxisSpacing: 12,
+              children: _products
+                  .map((e) => utils.widgetUtils.renderProductCard(e))
+                  .toList(),
+            ))
       ]),
     );
   }

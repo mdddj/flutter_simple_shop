@@ -1,8 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/model/category.dart';
-import 'package:extended_image/extended_image.dart';
-import 'package:flutter/material.dart';
+part of pages;
 
 class SubCategoryView extends StatelessWidget {
   final ValueChanged<Subcategory>? changeSubcategory;
@@ -22,19 +18,23 @@ class SubCategoryView extends StatelessWidget {
   }
 
   /// 一行滑动版本
-  Widget _renderSubCategoryList(List<Subcategory> showSubcategorys){
+  Widget _renderSubCategoryList(List<Subcategory> showSubcategorys) {
     return SizedBox(
       height: 30,
-      child: ListView.builder(itemBuilder: (_,index){
-        return _rederItem(showSubcategorys[index]);
-      },itemCount: showSubcategorys.length,scrollDirection: Axis.horizontal,),
+      child: ListView.builder(
+        itemBuilder: (_, index) {
+          return _rederItem(showSubcategorys[index]);
+        },
+        itemCount: showSubcategorys.length,
+        scrollDirection: Axis.horizontal,
+      ),
     );
   }
 
   /// 一行滑动版本的子项布局
-  Widget _rederItem(Subcategory item){
+  Widget _rederItem(Subcategory item) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         if (subcategory == null) {
           changeSubcategory?.call(item);
           return;
@@ -45,17 +45,20 @@ class SubCategoryView extends StatelessWidget {
       },
       child: Container(
         alignment: Alignment.center,
-        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
         margin: const EdgeInsets.only(left: 12),
         decoration: BoxDecoration(
-          color: subcategory != null &&
-              subcategory!.subcid == item.subcid ? Colors.pink.shade50 : Colors.grey.shade200,
-          borderRadius: BorderRadius.circular(50)
+            color: subcategory != null && subcategory!.subcid == item.subcid
+                ? Colors.pink.shade50
+                : Colors.grey.shade200,
+            borderRadius: BorderRadius.circular(50)),
+        child: Text(
+          item.subcname,
+          style: TextStyle(
+              color: subcategory != null && subcategory!.subcid == item.subcid
+                  ? Colors.pink
+                  : null),
         ),
-        child: Text(item.subcname,style: TextStyle(
-          color:  subcategory != null &&
-              subcategory!.subcid == item.subcid ? Colors.pink : null
-        ),),
       ),
     );
   }

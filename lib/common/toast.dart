@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'utils.dart';
+part of common;
 
 void showToast(String text) {
   utils.showMessage(text);
 }
 
-void showConfirmDialog(BuildContext context, String content, Function confirmCallback) {
+void showConfirmDialog(
+    BuildContext context, String content, Function confirmCallback) {
   showDialog(
       context: context,
       builder: (context) {

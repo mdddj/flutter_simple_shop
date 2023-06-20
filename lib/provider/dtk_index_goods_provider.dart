@@ -1,10 +1,4 @@
-
-// Flutter imports:
-import 'package:flutter/material.dart';
-
-import '../modals/goods_list_modal.dart';
-import '../modals/rank_data.dart';
-
+part of provider;
 
 class DtkIndexGoodsModal extends ChangeNotifier {
   List<Datum>? goods = [];
@@ -29,6 +23,5 @@ class DtkIndexGoodsModal extends ChangeNotifier {
   }
 
   // 获取榜单数据
-  void getRankGoodsList() async {
-  }
+  void getRankGoodsList() async {}
 }

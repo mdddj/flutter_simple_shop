@@ -1,8 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_models/models/brand.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../provider/index_provider.dart';
+part of pages;
 
 // 品牌特卖
 class StoreItemCard extends ConsumerWidget {
@@ -11,12 +7,14 @@ class StoreItemCard extends ConsumerWidget {
   const StoreItemCard({Key? key, required this.storeInfo}) : super(key: key);
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
-    return _buildInfo(context,ref).marginOnly(top: 6);
+  Widget build(BuildContext context, WidgetRef ref) {
+    return _buildInfo(context, ref).marginOnly(top: 6);
   }
 
-  Widget _buildInfo(BuildContext context,WidgetRef ref) {
-    final bgColor = ref.read(indexProviderRiverpod).brandBgColorMap[storeInfo.brandid] ?? Colors.grey[200];
+  Widget _buildInfo(BuildContext context, WidgetRef ref) {
+    final bgColor =
+        ref.read(indexProviderRiverpod).brandBgColorMap[storeInfo.brandid] ??
+            Colors.grey[200];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(

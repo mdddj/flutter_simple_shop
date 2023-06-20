@@ -1,16 +1,4 @@
-import 'package:common_utils/common_utils.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import 'package:show_up_animation/show_up_animation.dart';
-
-// Project imports:
-import '../../../modals/pdd_product.dart';
-import '../../../pages/public_detail/view.dart';
-import '../../../widgets/component/coupon_discount.dart';
-import '../../../widgets/extended_image.dart';
-import '../../../widgets/simple_price.dart';
-import 'resp.dart';
+part of common;
 
 class PddRecommendListView extends StatefulWidget {
   const PddRecommendListView({Key? key}) : super(key: key);
@@ -26,7 +14,8 @@ class PddRecommendListViewState extends State<PddRecommendListView> {
   Widget build(BuildContext context) {
     return LoadingMoreList(
       ListConfig<PddGoods>(
-        extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+        extendedListDelegate:
+            const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 12,
           mainAxisSpacing: 12,
@@ -46,10 +35,12 @@ class PddRecommendListViewState extends State<PddRecommendListView> {
       builder: (BuildContext context, BoxConstraints constraints) {
         return GestureDetector(
           onTap: () {
-            context.navToWidget(to: PublicDetailView(goodsId: item.goodsSign, type: 'pdd'));
+            context.navToWidget(
+                to: PublicDetailView(goodsId: item.goodsSign, type: 'pdd'));
           },
           child: Container(
-              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(5)),
               child: Column(
                 children: [
                   renderImage(constraints, item),
@@ -67,11 +58,17 @@ class PddRecommendListViewState extends State<PddRecommendListView> {
                         const SizedBox(
                           height: 6,
                         ),
-                        SimplePrice(price: MoneyUtil.changeF2Y(item.minGroupPrice)),
+                        SimplePrice(
+                            price: MoneyUtil.changeF2Y(item.minGroupPrice)),
                         const SizedBox(
                           height: 12,
                         ),
-                        ShowUpAnimation(animationDuration: const Duration(milliseconds: 300), child: CouponDiscountShow(value: MoneyUtil.changeF2Y(item.couponDiscount).replaceAll('.00', '')))
+                        ShowUpAnimation(
+                            animationDuration:
+                                const Duration(milliseconds: 300),
+                            child: CouponDiscountShow(
+                                value: MoneyUtil.changeF2Y(item.couponDiscount)
+                                    .replaceAll('.00', '')))
                       ],
                     ),
                   )
@@ -88,7 +85,8 @@ class PddRecommendListViewState extends State<PddRecommendListView> {
       height: constraints.maxWidth,
       child: SimpleImage(
         url: item.goodsImageUrl,
-        radius: const BorderRadius.only(topRight: Radius.circular(5), topLeft: Radius.circular(5)),
+        radius: const BorderRadius.only(
+            topRight: Radius.circular(5), topLeft: Radius.circular(5)),
       ),
     );
   }

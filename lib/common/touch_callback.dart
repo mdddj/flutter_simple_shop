@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of common;
 
 //触摸回调组件
 class TouchCallBack extends StatefulWidget {
@@ -30,13 +29,13 @@ class TouchCallBackState extends State<TouchCallBack> {
     return GestureDetector(
       //使用Container容器包裹
       onTap: widget.onParessed,
-      onPanDown: (d){
-        if(widget.isfeed==false)return;
+      onPanDown: (d) {
+        if (widget.isfeed == false) return;
         setState(() {
           color = widget.background;
         });
       },
-      onPanCancel: (){
+      onPanCancel: () {
         setState(() {
           color = Colors.transparent;
         });

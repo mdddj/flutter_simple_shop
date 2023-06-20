@@ -1,21 +1,20 @@
-// Flutter imports:
-// Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 
 import './up_down_btn_widget.dart';
-// Project imports:
-import '../provider/ddq_provider.dart';
+import '../provider/index.dart';
 
 class DdqTimesWidget extends StatelessWidget {
- final  List<RoundsList>? timesList;
- final DdqProvider? ddqProvider;
+  final List<RoundsList>? timesList;
+  final DdqProvider? ddqProvider;
 
-  const DdqTimesWidget({required this.timesList,required this.ddqProvider,Key? key}):super(key: key);
+  const DdqTimesWidget(
+      {required this.timesList, required this.ddqProvider, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
+    return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: _buildTimes(),
@@ -49,7 +48,7 @@ class DdqTimesWidget extends StatelessWidget {
           ddqProvider!.timeChange(timeItem.ddqTime, timeItem.status);
         },
         child:
-        UpDownBtnWidget(upText: upText, downText: downText, isCur: isCur),
+            UpDownBtnWidget(upText: upText, downText: downText, isCur: isCur),
       ));
     }
     return list;

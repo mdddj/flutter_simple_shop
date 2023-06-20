@@ -1,20 +1,14 @@
+part of pages;
 
-
-// Dart imports:
-import 'dart:async';
-
-// Flutter imports:
-import 'package:flutter/material.dart';
-
-class CategoryNotificationStreamUtil{
+class CategoryNotificationStreamUtil {
   CategoryNotificationStreamUtil._internal() {
     init();
   }
 
   factory CategoryNotificationStreamUtil() => _instance;
 
-  static final CategoryNotificationStreamUtil _instance = CategoryNotificationStreamUtil._internal();
-
+  static final CategoryNotificationStreamUtil _instance =
+      CategoryNotificationStreamUtil._internal();
 
   StreamController? _controller;
   Stream? _stream;
@@ -28,14 +22,14 @@ class CategoryNotificationStreamUtil{
   void init() {
     _controller ??= StreamController.broadcast();
     _stream ??= _controller!.stream;
-    if(_controller!.isClosed){
+    if (_controller!.isClosed) {
       _controller = null;
       _stream = null;
       init();
     }
   }
 
-  void notifiy(Notification notification){
+  void notifiy(Notification notification) {
     init();
     _controller!.sink.add(notification);
   }

@@ -1,7 +1,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../../constant/context.dart';
+import '../../../constant/index.dart';
 import '../../../widgets/loading/custom_loading_more_widget.dart';
 import '../../../widgets/waterfall_goods_card.dart';
 import 'repository.dart';
@@ -14,8 +14,10 @@ class JiuJiuIndex extends StatefulWidget {
   State<JiuJiuIndex> createState() => _JiuJiuIndexState();
 }
 
-class _JiuJiuIndexState extends State<JiuJiuIndex> with SingleTickerProviderStateMixin {
-  late final _tabController = TabController(length: ninenineTypes.length, vsync: this);
+class _JiuJiuIndexState extends State<JiuJiuIndex>
+    with SingleTickerProviderStateMixin {
+  late final _tabController =
+      TabController(length: ninenineTypes.length, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class _JiuJiuIndexState extends State<JiuJiuIndex> with SingleTickerProviderStat
         bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48),
             child: TabBar(
-              isScrollable: context.tabIsScrollable,
+                isScrollable: context.tabIsScrollable,
                 tabs: ninenineTypes
                     .map((element) => Tab(
                           text: element.title,
@@ -35,7 +37,9 @@ class _JiuJiuIndexState extends State<JiuJiuIndex> with SingleTickerProviderStat
       ),
       body: TabBarView(
         controller: _tabController,
-        children: ninenineTypes.map((element) => _Item(repository: JiujiuRepository(element))).toList(),
+        children: ninenineTypes
+            .map((element) => _Item(repository: JiujiuRepository(element)))
+            .toList(),
       ),
     );
   }
@@ -56,12 +60,20 @@ class _Item extends StatelessWidget {
             },
             sourceList: repository,
             padding: const EdgeInsets.all(8),
-            indicatorBuilder:(context, status) {
-              return CustomLoadingMoreWidgetWithSliver(context,status,retry: (){
-                repository.refresh(true);
-              },);
+            indicatorBuilder: (context, status) {
+              return CustomLoadingMoreWidgetWithSliver(
+                context,
+                status,
+                retry: () {
+                  repository.refresh(true);
+                },
+              );
             },
-            extendedListDelegate:  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 8, crossAxisSpacing: 8)))
+            extendedListDelegate:
+                SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: context.waterfallFlowCrossAxisCount,
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8)))
       ],
     );
   }

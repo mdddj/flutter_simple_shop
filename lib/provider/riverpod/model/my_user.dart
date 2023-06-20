@@ -7,6 +7,8 @@ part 'my_user.freezed.dart';
 
 part 'my_user.g.dart';
 
+
+const anonymousUser = MyUser(id: 0,nickName: "匿名用户");
 extension UserEx on MyUser {
   ///显示的昵称
   String get getShowUserName {

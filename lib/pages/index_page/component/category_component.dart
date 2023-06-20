@@ -1,14 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/model/category.dart';
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-// Project imports:
-import '../../../constant/style.dart';
-import '../../../provider/riverpod/category_riverpod.dart';
-import 'category_item_layout.dart';
-import 'category_notification_stream.dart';
+part of pages;
 
 /// 通用分类插件
 class CategoryComponent extends ConsumerStatefulWidget {
@@ -19,7 +9,12 @@ class CategoryComponent extends ConsumerStatefulWidget {
   final CategoryController? controller;
 
   const CategoryComponent(
-      {Key? key, this.extendItems, this.onSelect, this.textStyle, this.controller, this.currentStyle})
+      {Key? key,
+      this.extendItems,
+      this.onSelect,
+      this.textStyle,
+      this.controller,
+      this.currentStyle})
       : super(key: key);
 
   @override
@@ -29,8 +24,9 @@ class CategoryComponent extends ConsumerStatefulWidget {
 class CategoryComponentState extends ConsumerState<CategoryComponent> {
   int _current = 0;
   CategoryChildPosition? _categoryChildPosition;
-  final ValueNotifier<CategoryChildPosition?> _valueNotifier = ValueNotifier<CategoryChildPosition?>(
-      CategoryChildPosition(count: 0, position: <int, Offset>{}, size: <int, Size>{}));
+  final ValueNotifier<CategoryChildPosition?> _valueNotifier =
+      ValueNotifier<CategoryChildPosition?>(CategoryChildPosition(
+          count: 0, position: <int, Offset>{}, size: <int, Size>{}));
 
   @override
   void initState() {
@@ -38,7 +34,8 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
     _bindController();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       setState(() {
-        _categoryChildPosition = CategoryChildPosition(count: 0, position: <int, Offset>{}, size: <int, Size>{});
+        _categoryChildPosition = CategoryChildPosition(
+            count: 0, position: <int, Offset>{}, size: <int, Size>{});
       });
     });
   }
@@ -62,8 +59,10 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
 
   @override
   Widget build(BuildContext context) {
-    final categorys = ref.watch(categoryRiverpod.select((value) => value.categorys));
-    var extendItemsLength = widget.extendItems == null ? 0 : widget.extendItems!.length;
+    final categorys =
+        ref.watch(categoryRiverpod.select((value) => value.categorys));
+    var extendItemsLength =
+        widget.extendItems == null ? 0 : widget.extendItems!.length;
     return Stack(
       children: [
         Container(
@@ -71,7 +70,7 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
           height: kHomeCateTabHeight,
           margin: const EdgeInsets.only(bottom: 5),
           child: NotificationListener(
-            onNotification: (dynamic notification){
+            onNotification: (dynamic notification) {
               CategoryNotificationStreamUtil().notifiy(notification);
               return true;
             },
@@ -82,9 +81,12 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
                 itemBuilder: (context, index) {
                   var insetCustomItem = _indexIsExtendWidget(index);
                   if (insetCustomItem != null) {
-                    return GestureDetector(onTap: insetCustomItem.onTap, child: insetCustomItem.child);
+                    return GestureDetector(
+                        onTap: insetCustomItem.onTap,
+                        child: insetCustomItem.child);
                   } else {
-                    final mainCategory = categorys[index - _getCountWhereInCategoryIndex(index)];
+                    final mainCategory =
+                        categorys[index - _getCountWhereInCategoryIndex(index)];
                     return GestureDetector(
                       onTap: () {
                         _onTap(mainCategory.cname, categorys);
@@ -115,8 +117,8 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
   Widget _buildPoint() {
     final offset = _valueNotifier.value!.position![_current];
     final size = _valueNotifier.value!.size![_current];
-    if(offset!=null&&size!=null) {
-      final widgetWidth = size.width-12;
+    if (offset != null && size != null) {
+      final widgetWidth = size.width - 12;
       return AnimatedPositioned(
           bottom: 0,
           left: offset.dx,
@@ -125,9 +127,7 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
             width: widgetWidth,
             height: 1.5,
             decoration: BoxDecoration(
-              color: Theme
-                  .of(context)
-                  .primaryColor,
+              color: Theme.of(context).primaryColor,
               borderRadius: const BorderRadius.all(Radius.circular(15)),
             ),
           ));
@@ -176,10 +176,9 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
         break;
       }
     }
-    if(item!=null){
+    if (item != null) {
       widget.onSelect?.call(index, item);
     }
-
   }
 
   /// 判断下标是否需要插入自定义布局
@@ -232,7 +231,6 @@ class CategoryController {
   }
 
   CategoryComponentState get state => _state;
-
 }
 
 class CategoryChildPosition {

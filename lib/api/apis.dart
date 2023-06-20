@@ -1,19 +1,38 @@
+library api;
+
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../common/extend/string.dart';
 import '../freezed/add_favorites_params.dart';
+import '../freezed/report.dart';
 import '../freezed/resource_category.dart';
 import '../index.dart';
 import 'base.dart';
 import 'model/email_register_params.dart';
 import 'model/login_params.dart';
+part 'report.dart';
 
 mixin ApiPageMixin on MyAppCoreApi {
   set page(int v) => params['page'] = v;
 
   set pageSize(int v) => params['pageSize'] = v;
+}
+
+abstract class AppCoreApiWithT<T> extends BaseApi {
+  AppCoreApiWithT(String url, HttpMethod httpMethod)
+      : super(url, httpMethod: httpMethod);
+  @override
+  Future<T> request([RequestParams? options]) async {
+    final result = await super.request(options);
+    if (result is Map<String, dynamic>) {
+      final wrapJson = WrapJson(result);
+      return fromJson(wrapJson.getMap("data"));
+    }
+    throw AppException(code: 509, message: "解析数据失败");
+  }
+
+  T fromJson(Map<String, dynamic> json);
 }
 
 extension WrapJsonExt on WrapJson {
@@ -161,25 +180,32 @@ class MyResourceListApi extends MyAppCoreApi with ApiPageMixin {
   MyResourceListApi() : super('/api/app/resource/release');
 }
 
+///修改用户昵称
+class MyUpdateUserNameApi extends MyAppCoreApi {
+  MyUpdateUserNameApi()
+      : super('/api/update-username', httpMethod: HttpMethod.post);
+}
+
 ///查找动态分类
 class MyFindResourceCategoryApi extends MyAppCoreApi {
   MyFindResourceCategoryApi()
       : super('/api/app/resource/find-resource-category');
-   Future<ResourceCategory> doRequest(String name) async {
+  Future<ResourceCategory> doRequest(String name) async {
     final result = await getIt
         .get<MyFindResourceCategoryApi>()
-        .request(R(data: {"name": name},showDefaultLoading: false));
+        .request(R(data: {"name": name}, showDefaultLoading: false));
     return ResourceCategory.fromJson(result.data);
   }
 }
 
 ///修改用户头像接口
 class MyUpdateUserAvatarApi extends MyAppCoreApi {
-  MyUpdateUserAvatarApi():super('/api/update-avatar',httpMethod: HttpMethod.post);
+  MyUpdateUserAvatarApi()
+      : super('/api/update-avatar', httpMethod: HttpMethod.post);
 }
-
 
 ///删除用户动态接口
 class MyDeleteUserResourceApi extends MyAppCoreApi {
-  MyDeleteUserResourceApi():super('/api/app/resource/delete',httpMethod: HttpMethod.delete);
+  MyDeleteUserResourceApi()
+      : super('/api/app/resource/delete', httpMethod: HttpMethod.delete);
 }

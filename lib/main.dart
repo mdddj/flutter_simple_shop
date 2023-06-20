@@ -8,7 +8,7 @@ import 'index.dart';
 import 'router.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const ip = '192.168.100.55';
+const ip = '192.168.199.76';
 const apiHost = 'http://$ip';
 const apiPort = "80";
 // const apiHost = "https://itbug.shop";
@@ -28,7 +28,7 @@ class Root extends View {
       return MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
-        theme: ThemeData.light(useMaterial3: true),
+        theme: ThemeData(useMaterial3: true, fontFamily: "LXGWWenKai"),
         darkTheme: ThemeData.dark(useMaterial3: true),
         themeMode: theme.getThemeMode,
         routerConfig: routers,

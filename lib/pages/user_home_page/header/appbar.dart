@@ -1,13 +1,4 @@
-// Flutter imports:
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-// Package imports:
-
-// Project imports:
-import '../../../common/utils.dart';
-import '../../../router.dart';
+part of pages;
 
 class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const UserHomeAppBar({Key? key}) : super(key: key);

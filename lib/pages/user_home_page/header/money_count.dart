@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of pages;
 
 /// 提现相关
 class MoneyCounterWidget extends StatelessWidget {

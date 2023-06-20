@@ -1,10 +1,4 @@
-import 'dart:convert';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
-import '../index.dart';
-import '../provider/riverpod/model/my_user.dart';
+part of common;
 
 abstract class ApiService {
   /// 登入
@@ -46,22 +40,20 @@ class Api extends ApiService {
   Future<MyUser?> getUser(String token) async {
     try {
       final result = await request.get('/api/get-user-by-token',
-        isTaokeApi: false,requestParams:  RequestParams(
-          headers: {
-            "Authorization":token,
-          },
-          showDefaultLoading: false
-        ));
-    if (result.isNotEmpty) {
-      try {
-        return MyUser.fromJson(jsonDecode(result));
-      } catch (e,s) {
-        Logger().d("用户数据解析失败:$e\n$s");
+          isTaokeApi: false,
+          requestParams: RequestParams(headers: {
+            "Authorization": token,
+          }, showDefaultLoading: false));
+      if (result.isNotEmpty) {
+        try {
+          return MyUser.fromJson(jsonDecode(result));
+        } catch (e, s) {
+          Logger().d("用户数据解析失败:$e\n$s");
+        }
       }
-    }
     } catch (e) {
-       CacheFactory.create<TokenCache>().cleanToken();
-     return null; 
+      CacheFactory.create<TokenCache>().cleanToken();
+      return null;
     }
     return null;
   }
@@ -73,15 +65,11 @@ class Api extends ApiService {
     }
   }
 
-  Future<Map<String,dynamic>> getAuthorizationHeader() async {
-    final token =await CacheFactory.create<TokenCache>().userToken;
-    if(token.isNotEmpty){
-      return {
-        "Authorization": token
-      };
+  Future<Map<String, dynamic>> getAuthorizationHeader() async {
+    final token = await CacheFactory.create<TokenCache>().userToken;
+    if (token.isNotEmpty) {
+      return {"Authorization": token};
     }
-    return <String,dynamic>{};
-
+    return <String, dynamic>{};
   }
-
 }

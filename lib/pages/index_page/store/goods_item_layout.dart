@@ -1,13 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/my_image.dart';
-import 'package:dd_models/models/brand.dart';
-import 'package:flutter/material.dart';
-
-import '../../../util/image_util.dart';
-import '../../../util/navigator_util.dart';
-import 'price_layout.dart';
+part of pages;
 
 /// 商品卡片布局
 class StoreGoodsItemLayout extends StatelessWidget {
@@ -27,15 +18,21 @@ class StoreGoodsItemLayout extends StatelessWidget {
         children: [
           Stack(
             children: [
-              LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-                return ImageView(image: MyImage.network(url: MImageUtils.magesProcessor(storeGoods.mainpic),params: ImageParams(
-                  size: constraints.maxWidth,
-                  borderRadius: BorderRadius.circular(12)
-                )));
-              },).clipRadius(12),
+              LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) {
+                  return ImageView(
+                      image: MyImage.network(
+                          url: MImageUtils.magesProcessor(storeGoods.mainpic),
+                          params: ImageParams(
+                              size: constraints.maxWidth,
+                              borderRadius: BorderRadius.circular(12))));
+                },
+              ).clipRadius(12),
             ],
           ),
-          const SizedBox(height: 6,),
+          const SizedBox(
+            height: 6,
+          ),
           PriceLayout(
               original: '${storeGoods.actualprice}'.replaceAll('.0', ''),
               discounts: '${storeGoods.originprice}'.replaceAll('.0', ''))
@@ -43,5 +40,4 @@ class StoreGoodsItemLayout extends StatelessWidget {
       ),
     );
   }
-
 }

@@ -4,7 +4,6 @@ import 'package:get_it/get_it.dart';
 import 'package:waterfall_flow/waterfall_flow.dart';
 
 import '../../../api/apis.dart';
-import '../../../constant/context.dart';
 import '../../../freezed/app_action_menu.dart';
 import '../../../freezed/resource_category.dart';
 import '../../../index.dart';
@@ -25,17 +24,20 @@ class UserResourceWidget extends StatefulWidget {
 class _UserResourceWidgetState extends State<UserResourceWidget> {
   final _repository = GetIt.instance.get<UserResourceListRepository>();
 
-  AppActionMenu  actionMenu(Resource resource){
+  AppActionMenu actionMenu(Resource resource) {
     return AppActionMenu(actions: [
-      ListTile(title: const Text('删除'),onTap: (){
-        context.pop();
-        LB.show<WrapJson,MyDeleteUserResourceApi>(getIt.get<MyDeleteUserResourceApi>(), successResult: successResult,params: R(data: {
-          "id":resource.id
-        }));
-      },leading: const Icon(Icons.delete))
-    ],title: "操作");
+      ListTile(
+          title: const Text('删除'),
+          onTap: () {
+            context.pop();
+            LB.show<WrapJson, MyDeleteUserResourceApi>(
+                getIt.get<MyDeleteUserResourceApi>(),
+                successResult: successResult,
+                params: R(data: {"id": resource.id}));
+          },
+          leading: const Icon(Icons.delete))
+    ], title: "操作");
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,7 @@ class _UserResourceWidgetState extends State<UserResourceWidget> {
   }
 
   Widget _itemBuilder(BuildContext context, Resource item, int index) {
-    return ResourceWidget(resource: item,menu: actionMenu(item));
+    return ResourceWidget(resource: item, menu: actionMenu(item));
   }
 
   Widget? _indicatorBuilder(BuildContext context, status) {

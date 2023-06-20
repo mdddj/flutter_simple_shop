@@ -109,3 +109,10 @@ flutter:
     - assets/json/
     - assets/images/waimai/hb/
 
+  fonts:
+    - family: LXGWWenKai
+      fonts:
+        - asset: assets/font/LXGWWenKai-Bold.ttf
+          weight: 700
+        - asset: assets/font/LXGWWenKai-Light.ttf
+        - asset: assets/font/LXGWWenKai-Regular.ttf

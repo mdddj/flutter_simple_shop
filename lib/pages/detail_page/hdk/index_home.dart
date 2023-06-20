@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../common/utils.dart';
+import '../../../common/index.dart';
 import '../../../freezed/add_favorites_params.dart';
 import '../../../modals/shop_info.dart';
 import '../../../util/image_util.dart';
@@ -36,13 +36,15 @@ class HaoDanKuDetailItem extends ConsumerStatefulWidget {
   HaoDanKuDetailItemState createState() => HaoDanKuDetailItemState();
 }
 
-class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with TickerProviderStateMixin {
+class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
+    with TickerProviderStateMixin {
   ProductModel? info;
   CouponLinkResult? couponLinkResult;
   ShopInfo? _shopInfo;
   late Future<String> futureBuildData = initDatas();
   int curentSwaiperIndex = 0;
-  double get ztlHei => MediaQueryData.fromView(View.of(context)).padding.top; // 转态栏高度
+  double get ztlHei =>
+      MediaQueryData.fromView(View.of(context)).padding.top; // 转态栏高度
   final double _topAppbarHei = 0; // 顶部显影工具条的高度
   double _initImagesTopHei = 0; // 图片详情距离顶部的高度 (包含转态栏)
   bool _showToTopButton = false; // 显示返回顶部按钮
@@ -84,9 +86,13 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
   // 顶部选项卡被切换
   void tabOnChange(int index) {
     if (index == 0) {
-      _scrollController.animateTo(0, duration: const Duration(milliseconds: 600), curve: Curves.ease);
+      _scrollController.animateTo(0,
+          duration: const Duration(milliseconds: 600), curve: Curves.ease);
     } else if (index == 1) {
-      _scrollController.animateTo(_initImagesTopHei - ztlHei - _topAppbarHei + 5, duration: const Duration(milliseconds: 600), curve: Curves.ease);
+      _scrollController.animateTo(
+          _initImagesTopHei - ztlHei - _topAppbarHei + 5,
+          duration: const Duration(milliseconds: 600),
+          curve: Curves.ease);
     }
   }
 
@@ -114,7 +120,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.grey, statusBarIconBrightness: Brightness.light));
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Colors.grey,
+        statusBarIconBrightness: Brightness.light));
     return Scaffold(
       body: FutureBuilder(
         future: futureBuildData,
@@ -137,7 +145,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
 
   Widget buildCustomScrollViewShop() {
     return Scaffold(
-      appBar:  buildOpacityAppbar(),
+      appBar: buildOpacityAppbar(),
       body: NotificationListener<LayoutChangedNotification>(
         onNotification: (notification) {
           if (_topAppbarHei == 0) {
@@ -152,9 +160,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
           children: <Widget>[
             NestedScrollView(
                 controller: _scrollController,
-                headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+                headerSliverBuilder:
+                    (BuildContext context, bool innerBoxIsScrolled) {
                   return <Widget>[
-
                     SliverToBoxAdapter(
                       child: buildGoodsSwiper(),
                     ),
@@ -178,14 +186,17 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
               right: 12,
               child: InkWell(
                 onTap: () {
-                  _scrollController.animateTo(0, duration: const Duration(milliseconds: 600), curve: Curves.ease);
+                  _scrollController.animateTo(0,
+                      duration: const Duration(milliseconds: 600),
+                      curve: Curves.ease);
                 },
                 child: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: const BorderRadius.all(Radius.circular(35)),
-                      border: Border.all(width: .5, color: Colors.black26.withOpacity(.2))),
+                      border: Border.all(
+                          width: .5, color: Colors.black26.withOpacity(.2))),
                   child: const Icon(
                     Icons.vertical_align_top,
                     color: Colors.black,
@@ -201,7 +212,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
       ),
     );
   }
-
 
   AddFavoritesParams get _addFavoritesParams {
     return AddFavoritesParams(
@@ -225,7 +235,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         FilledButton(
                 onPressed: () async {
                   if (couponLinkResult != null) {
-                    await utils.openTaobao(couponLinkResult!.couponClickUrl ?? 'https://itbug.shop');
+                    await utils.openTaobao(couponLinkResult!.couponClickUrl ??
+                        'https://itbug.shop');
                   }
                 },
                 child: const Text('立即领券'))
@@ -236,7 +247,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         OutlinedButton(
             onPressed: () async {
               if (couponLinkResult != null) {
-                utils.copy(couponLinkResult!.longTpwd ?? '无优惠券', message: '复制成功,打开淘宝APP领取优惠券');
+                utils.copy(couponLinkResult!.longTpwd ?? '无优惠券',
+                    message: '复制成功,打开淘宝APP领取优惠券');
               }
             },
             child: const Text('复制口令')),
@@ -281,9 +293,12 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
             child: Row(
               children: <Widget>[
                 CircleAvatar(
-                  backgroundImage: (_shopInfo != null && _shopInfo!.pictUrl != null
-                      ? NetworkImage(MImageUtils.magesProcessor(_shopInfo!.pictUrl!))
-                      : const AssetImage('assets/images/ava.png')) as ImageProvider<Object>?,
+                  backgroundImage: (_shopInfo != null &&
+                              _shopInfo!.pictUrl != null
+                          ? NetworkImage(
+                              MImageUtils.magesProcessor(_shopInfo!.pictUrl!))
+                          : const AssetImage('assets/images/ava.png'))
+                      as ImageProvider<Object>?,
                 ),
                 const SizedBox(
                   width: 12,
@@ -361,8 +376,11 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
             lightOrientation: controller.FLightOrientation.LeftBottom,
             textAlign: TextAlign.start,
             spans: [
-              const TextSpan(text: '推荐理由: ', style: TextStyle(fontWeight: FontWeight.bold)),
-              TextSpan(text: info!.desc, style: const TextStyle(color: Colors.grey)),
+              const TextSpan(
+                  text: '推荐理由: ',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              TextSpan(
+                  text: info!.desc, style: const TextStyle(color: Colors.grey)),
               TextSpan(
                   text: '复制文案',
                   style: const TextStyle(color: Colors.pinkAccent),
@@ -388,29 +406,37 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         InkWell(
           onTap: () async {
             if (couponLinkResult != null) {
-              await utils.openTaobao(couponLinkResult!.couponClickUrl ?? 'https://itbug.shop');
+              await utils.openTaobao(
+                  couponLinkResult!.couponClickUrl ?? 'https://itbug.shop');
             }
           },
           child: Container(
             height: 100,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-            decoration: const BoxDecoration(color: Color.fromRGBO(252, 54, 74, 1.0), borderRadius: BorderRadius.all(Radius.circular(5))),
+            decoration: const BoxDecoration(
+                color: Color.fromRGBO(252, 54, 74, 1.0),
+                borderRadius: BorderRadius.all(Radius.circular(5))),
             child: Row(
               children: <Widget>[
                 Expanded(
                   child: Stack(
                     children: <Widget>[
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 12),
                         alignment: Alignment.center,
-                        decoration:
-                            const BoxDecoration(color: Color.fromRGBO(255, 237, 199, 1.0), borderRadius: BorderRadius.all(Radius.circular(5))),
+                        decoration: const BoxDecoration(
+                            color: Color.fromRGBO(255, 237, 199, 1.0),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
                               '${info!.couponPrice}元优惠券'.replaceAll('.0', ''),
-                              style: const TextStyle(color: Color.fromRGBO(145, 77, 9, 1.0), fontSize: 14, fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                  color: Color.fromRGBO(145, 77, 9, 1.0),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(
                               height: 12,
@@ -429,7 +455,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
                         child: Container(
                           height: 12,
                           width: 12,
-                          decoration: const BoxDecoration(shape: BoxShape.circle, color: Color.fromRGBO(252, 54, 74, 1.0)),
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color.fromRGBO(252, 54, 74, 1.0)),
                         ),
                       ),
                       Positioned(
@@ -438,7 +466,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
                         child: Container(
                           height: 12,
                           width: 12,
-                          decoration: const BoxDecoration(shape: BoxShape.circle, color: Color.fromRGBO(252, 54, 74, 1.0)),
+                          decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color.fromRGBO(252, 54, 74, 1.0)),
                         ),
                       )
                     ],
@@ -489,7 +519,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
                 textAlignment: Alignment.center,
                 style: const TextStyle(color: Colors.white),
                 corner: controller.FCorner.all(4),
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
               ),
               // Text(
               //   ' 活动已过期',
@@ -516,9 +547,12 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
           width: context.screenWidth,
           child: DrawableStartText(
             lettersCountOfAfterImage: info!.dtitle.length,
-            assetImage: info!.shopType == 1 ? 'assets/icons/tianmao2.png' : 'assets/icons/taobao2.png',
+            assetImage: info!.shopType == 1
+                ? 'assets/icons/tianmao2.png'
+                : 'assets/icons/taobao2.png',
             text: ' ${info!.title}',
-            textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+            textStyle:
+                const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
           ),
         ),
         height: 20);
@@ -538,7 +572,10 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
         FSuper(
           lightOrientation: controller.FLightOrientation.LeftBottom,
           spans: <TextSpan>[
-            TextSpan(text: '原价 ¥ ${info!.originalPrice}', style: const TextStyle(color: Colors.grey, decoration: TextDecoration.lineThrough))
+            TextSpan(
+                text: '原价 ¥ ${info!.originalPrice}',
+                style: const TextStyle(
+                    color: Colors.grey, decoration: TextDecoration.lineThrough))
           ],
         ),
         FSuper(
@@ -616,7 +653,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
           right: 12,
           bottom: 12,
           child: Container(
-            decoration: BoxDecoration(color: Colors.black26.withOpacity(.3), borderRadius: const BorderRadius.all(Radius.circular(5))),
+            decoration: BoxDecoration(
+                color: Colors.black26.withOpacity(.3),
+                borderRadius: const BorderRadius.all(Radius.circular(5))),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
             child: Text(
               '${curentSwaiperIndex + 1} / ${getImages().length}',
@@ -682,7 +721,25 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem> with Tic
   }
 
   String getCatName(String fqcat) {
-    var cats = <String>['女装', '男装', '内衣', '美妆', '配饰', '鞋品', '箱包', '儿童', '母婴', '居家', '美食', '数码', '家电', '其他', '车品', '文体', '宠物'];
+    var cats = <String>[
+      '女装',
+      '男装',
+      '内衣',
+      '美妆',
+      '配饰',
+      '鞋品',
+      '箱包',
+      '儿童',
+      '母婴',
+      '居家',
+      '美食',
+      '数码',
+      '家电',
+      '其他',
+      '车品',
+      '文体',
+      '宠物'
+    ];
     return cats[int.parse(fqcat) - 1];
   }
 

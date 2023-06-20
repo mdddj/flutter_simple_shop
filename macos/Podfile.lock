@@ -1,4 +1,7 @@
 PODS:
+  - connectivity_plus (0.0.1):
+    - FlutterMacOS
+    - ReachabilitySwift
   - dd_check_plugin (0.0.1):
     - FlutterMacOS
   - dd_models (0.0.1):
@@ -9,6 +12,8 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - lxgw_wen_kai_font (0.0.1):
+    - FlutterMacOS
   - network_info_plus (0.0.1):
     - FlutterMacOS
   - package_info (0.0.1):
@@ -16,6 +21,7 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
+  - ReachabilitySwift (5.0.0)
   - sqflite (0.0.2):
     - FlutterMacOS
     - FMDB (>= 2.7.5)
@@ -23,10 +29,12 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
+  - connectivity_plus (from `Flutter/ephemeral/.symlinks/plugins/connectivity_plus/macos`)
   - dd_check_plugin (from `Flutter/ephemeral/.symlinks/plugins/dd_check_plugin/macos`)
   - dd_models (from `Flutter/ephemeral/.symlinks/plugins/dd_models/macos`)
   - file_selector_macos (from `Flutter/ephemeral/.symlinks/plugins/file_selector_macos/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
+  - lxgw_wen_kai_font (from `Flutter/ephemeral/.symlinks/plugins/lxgw_wen_kai_font/macos`)
   - network_info_plus (from `Flutter/ephemeral/.symlinks/plugins/network_info_plus/macos`)
   - package_info (from `Flutter/ephemeral/.symlinks/plugins/package_info/macos`)
   - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
@@ -36,8 +44,11 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - FMDB
+    - ReachabilitySwift
 
 EXTERNAL SOURCES:
+  connectivity_plus:
+    :path: Flutter/ephemeral/.symlinks/plugins/connectivity_plus/macos
   dd_check_plugin:
     :path: Flutter/ephemeral/.symlinks/plugins/dd_check_plugin/macos
   dd_models:
@@ -46,6 +57,8 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/file_selector_macos/macos
   FlutterMacOS:
     :path: Flutter/ephemeral
+  lxgw_wen_kai_font:
+    :path: Flutter/ephemeral/.symlinks/plugins/lxgw_wen_kai_font/macos
   network_info_plus:
     :path: Flutter/ephemeral/.symlinks/plugins/network_info_plus/macos
   package_info:
@@ -58,14 +71,17 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/macos
 
 SPEC CHECKSUMS:
+  connectivity_plus: 18d3c32514c886e046de60e9c13895109866c747
   dd_check_plugin: 3818bec884da9815e35f7bedbb185f288fc391d8
   dd_models: feb4983a9d00577d535665e2a6f843afc7d68314
   file_selector_macos: 0f85c1108e2fd597b58246bc0b0c1cb483d7593b
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  lxgw_wen_kai_font: df2fd10e5c5b1d8ce11d65a5b8c9b18c2a6b0435
   network_info_plus: f4fbc7877ab7b3294500d9441dfa53cd54972d05
   package_info: 6eba2fd8d3371dda2d85c8db6fe97488f24b74b2
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   sqflite: a5789cceda41d54d23f31d6de539d65bb14100ea
   url_launcher_macos: c04e4fa86382d4f94f6b38f14625708be3ae52e2
 

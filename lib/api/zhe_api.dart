@@ -2,13 +2,15 @@ import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../provider/riverpod/base.dart';
+import '../provider/index.dart';
 
 ///这淘客api
 abstract class ZheApi extends BaseApi {
-  ZheApi(WidgetRef ref, String api, Map<String, dynamic> params) : super(api, httpMethod: HttpMethod.get) {
+  ZheApi(WidgetRef ref, String api, Map<String, dynamic> params)
+      : super(api, httpMethod: HttpMethod.get) {
     super.params.addAll(params);
-    super.params.addAll({'appkey': ref.read(riverpodZhetaokeAppKeyState),'sid':'60211'});
+    super.params.addAll(
+        {'appkey': ref.read(riverpodZhetaokeAppKeyState), 'sid': '60211'});
   }
 
   @override
@@ -22,5 +24,9 @@ abstract class ZheApi extends BaseApi {
 ///美团api
 /// 文档:[http://www.zhetaoke.com/one/api3.aspx]
 class MeituanApi extends ZheApi {
-  MeituanApi(WidgetRef ref, Map<String, dynamic> params) : super(ref, 'https://api.zhetaoke.com:10001/api/open_meituan_generateLink.ashx', params);
+  MeituanApi(WidgetRef ref, Map<String, dynamic> params)
+      : super(
+            ref,
+            'https://api.zhetaoke.com:10001/api/open_meituan_generateLink.ashx',
+            params);
 }

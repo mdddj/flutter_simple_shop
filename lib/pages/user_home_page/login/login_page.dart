@@ -1,14 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
-import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
-import 'package:flutter/material.dart';
-import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../api/model/login_params.dart';
-import '../../../assets.dart';
-import '../../../common/utils.dart';
-import '../../../provider/riverpod/user_riverpod.dart';
-import 'register_page.dart';
+part of pages;
 
 ///登录方式
 enum LoginType {
@@ -35,7 +25,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
   bool loading = false; // 是否登录中
   final usernameEditController = TextEditingController(text: '');
   final passwordEditController = TextEditingController(text: '');
-  LoginType _loginType = LoginType.email;
+  final LoginType _loginType = LoginType.email;
 
   @override
   Widget build(BuildContext context) {
@@ -141,15 +131,6 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
     );
   }
 
-  ///切换登录方式
-  void _changeLoginType(LoginType type) {
-    setState(() {
-      _loginType = type;
-    });
-    usernameEditController.clear();
-    passwordEditController.clear();
-  }
-
   // 协议
   Widget renderXieyi() {
     return Positioned(
@@ -172,7 +153,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
           const Padding(
             padding: EdgeInsets.only(left: 5.0),
             child: FSuper(
-              lightOrientation: controller.FLightOrientation.LeftBottom,
+              lightOrientation: FLightOrientation.LeftBottom,
               text: '我已阅读并同意',
               spans: [
                 TextSpan(

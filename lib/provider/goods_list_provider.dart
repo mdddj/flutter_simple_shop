@@ -1,10 +1,4 @@
-// Dart imports:
-
-import 'package:flutter/cupertino.dart';
-
-import '../common/base_provider.dart';
-import '../modals/goods_list_modal.dart';
-// Project imports:
+part of provider;
 
 class GoodsListProvider extends ChangeNotifier with BaseProvider {
   List<GoodsItem>? goods = [];
@@ -13,27 +7,25 @@ class GoodsListProvider extends ChangeNotifier with BaseProvider {
   List<int> desc = [0, 1, 2, 5, 6];
   int currentIndex = 0; // 默认综合排序
   int page = 1; //默认第几页
-  String brand = '';//品牌id,默认0
+  String brand = ''; //品牌id,默认0
 
   String cids = '';
   String subcid = '';
 
-  Future<void> loadList() async {
+  Future<void> loadList() async {}
+
+  void reFresh() async {
+    page = 1;
+    goods = [];
+    await loadList();
   }
 
-  void reFresh() async{
-   page=1;
-   goods = [];
-   await loadList();
-  }
-
-  void nextPage(){
+  void nextPage() {
     page++;
     loadList();
   }
 
-
-  void pop(){
+  void pop() {
     goods = [];
     page = 1;
     cids = '';
@@ -41,5 +33,4 @@ class GoodsListProvider extends ChangeNotifier with BaseProvider {
     currentIndex = 0; // 默认综合排序
     brand = '';
   }
-
 }

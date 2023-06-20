@@ -1,12 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import 'component/helper_show.dart';
-import 'component/key_worlds.dart';
-import 'component/suggest.dart';
-import 'list.dart';
+part of pages;
 
 /// 搜索页面
 class SearchPage extends ConsumerStatefulWidget {
@@ -19,13 +11,12 @@ class SearchPage extends ConsumerStatefulWidget {
 }
 
 class SearchPageState extends ConsumerState<SearchPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: CupertinoSearchTextField(
-          onSubmitted: (keyword){
+          onSubmitted: (keyword) {
             context.navToWidget(to: SearchListIndex(value: keyword));
           },
           placeholder: '输入关键字',

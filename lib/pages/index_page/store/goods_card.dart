@@ -1,10 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dd_models/models/brand.dart';
-import 'package:flutter/material.dart';
-
-// Project imports:
-import 'goods_item_layout.dart';
+part of pages;
 
 /// 品牌下方的商品列表
 class StoreGoodsCard extends StatelessWidget {
