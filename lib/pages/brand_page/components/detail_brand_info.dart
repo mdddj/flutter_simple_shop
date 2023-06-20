@@ -1,8 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:flutter/material.dart';
-import '../../../common/index.dart';
-import '../../../util/index.dart';
-
+part of pages;
 /// 品牌信息卡片
 class BrandDetailView extends StatelessWidget {
   final BrandDetail brandDetailModel;

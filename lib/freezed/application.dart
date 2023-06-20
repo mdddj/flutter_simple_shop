@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../api/apis.dart';
 import '../common/view.dart';
 import '../index.dart';
+import '../pages/index.dart';
 
 final application = FutureProvider.family<ApplicationModel, ApplocationContext>((ref, ctx) async {
   try {

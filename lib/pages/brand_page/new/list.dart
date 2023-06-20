@@ -1,15 +1,4 @@
-
-
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_models/models/brand.dart';
-import 'package:flutter/material.dart';
-import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
-
-import '../../../common/index.dart';
-import '../../../widgets/loading/custom_loading_more_widget.dart';
-import '../components/item.dart';
-
+part of pages;
 class BrandRepository extends MyLoadingModel<BrandItem> {
   final String cid;
   int _page = 1;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart' hide View;
 import '../api/apis.dart';
 import '../common/view.dart';
 import '../freezed/add_favorites_params.dart';
-import '../index.dart';
+import '../pages/index.dart';
 
 class FavoriteAddBtn extends View {
   final AddFavoritesParams params;

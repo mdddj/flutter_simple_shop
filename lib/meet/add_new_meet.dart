@@ -8,7 +8,7 @@ import 'package:keyboard_actions/keyboard_actions.dart';
 
 import '../api/apis.dart';
 import '../common/view.dart';
-import '../index.dart';
+import '../pages/index.dart';
 import '../widgets/login_tip_widget.dart';
 import 'model/params.dart';
 

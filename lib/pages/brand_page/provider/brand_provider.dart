@@ -1,12 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:dd_models/models/brand.dart';
-import 'package:flutter/material.dart';
-
-// Project imports:
-import '../models/brand_detail_model.dart';
+part of pages;
 
 class BrandProvider extends ChangeNotifier {
   int page = 1;

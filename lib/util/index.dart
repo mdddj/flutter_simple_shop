@@ -12,7 +12,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:palette_generator/palette_generator.dart';
 
 import '../index.dart';
-import '../pages/ddq_page/index_home.dart';
+import '../pages/index.dart';
 import '../pages/other_page/not_found_page.dart';
 part 'cache_util.dart';
 part 'color_util.dart';

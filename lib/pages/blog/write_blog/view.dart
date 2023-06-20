@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../../widgets/index.dart';
+part of pages;
 
 // 发布博客页面
 class WriteBlogPage extends StatefulWidget {

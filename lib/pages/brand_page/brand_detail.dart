@@ -1,15 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:after_layout/after_layout.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
-
-// Project imports:
-import '../../common/index.dart';
-import 'components/detail_brand_info.dart';
-import 'components/detail_product_list.dart';
+part of pages;
 
 // 产品品牌详情页面
 class BrandDetailPage extends StatefulWidget {

@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../../../modals/blog_category_model.dart';
-import '../../../../provider/index.dart';
+part of pages;
 
 class BlogCategorys extends StatelessWidget {
   final ValueChanged<BlogCategory>? onSelect;

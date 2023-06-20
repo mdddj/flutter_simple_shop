@@ -1,15 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-// Project imports:
-import '../../widgets/index.dart';
-import 'component/appbar.dart';
-import 'component/list.dart';
-import 'resp.dart';
+part of pages;
 
 // 每日半价页面
 class BanjiaIndex extends ConsumerStatefulWidget {

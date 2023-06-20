@@ -1,8 +1,4 @@
-// Dart imports:
-import 'dart:math';
-
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of pages;
 
 class SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   SliverAppBarDelegate({

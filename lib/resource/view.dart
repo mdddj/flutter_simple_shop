@@ -14,6 +14,7 @@ import '../common/api_ext.dart';
 import '../freezed/pager.dart';
 import '../freezed/resource_category.dart';
 import '../index.dart';
+import '../pages/index.dart';
 import '../pages/user_home_page/pages/resource_list.dart';
 import '../widgets/loading/custom_loading_more_widget.dart';
 import '../widgets/resource_widegt.dart';

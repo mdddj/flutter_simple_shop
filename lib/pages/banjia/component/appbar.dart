@@ -1,11 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-// Project imports:
-import '../resp.dart';
+part of pages;
 
 class BanjiaSessions extends ConsumerWidget {
   const BanjiaSessions({Key? key}) : super(key: key);

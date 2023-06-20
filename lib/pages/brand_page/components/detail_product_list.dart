@@ -1,12 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:extended_image/extended_image.dart';
-import 'package:flutter/material.dart';
-
-import '../../../common/index.dart';
-import '../../../util/index.dart';
-import '../../../widgets/index.dart';
+part of pages;
 
 /// 品牌的商品列表
 class DetailProductList extends StatelessWidget {

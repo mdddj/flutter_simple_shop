@@ -1,11 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../provider/index.dart';
-import '../../widgets/index.dart';
-import 'goods_item.dart';
-import 'sliver_app_bar_delegate.dart';
+part of pages;
 
 /// 钉钉抢的页面
 class DdqIndexHome extends ConsumerStatefulWidget {

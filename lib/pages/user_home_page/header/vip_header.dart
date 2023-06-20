@@ -6,6 +6,7 @@ import '../../../api/apis.dart';
 import '../../../common/api_ext.dart';
 import '../../../index.dart';
 import '../../../provider/riverpod/model/my_user.dart';
+import '../../index.dart';
 
 //开通会员标识
 class VipHeader extends ConsumerWidget {

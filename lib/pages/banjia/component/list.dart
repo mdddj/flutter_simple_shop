@@ -1,8 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:flutter/material.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../../util/index.dart';
-import '../../../widgets/index.dart';
+part of pages;
 
 class BanjiaList extends StatelessWidget {
   final List<HalfPriceListElement> products;

@@ -1,9 +1,4 @@
-// Dart imports:
-import 'dart:convert' show json;
-
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-
-
+part of pages;
 
 
 class BrandDetailModel {

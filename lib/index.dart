@@ -44,7 +44,6 @@ export 'constant/index.dart';
 export 'controller/index.dart';
 export 'main.dart';
 export 'modals/index.dart';
-export 'pages/index.dart';
 export 'provider/index.dart';
 export 'repository/index.dart';
 export 'service/index.dart';

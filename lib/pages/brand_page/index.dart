@@ -1,13 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/model/category.dart';
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../common/index.dart';
-import '../../provider/index.dart';
-import 'new/list.dart';
+part of pages;
 
 /// 品牌列表页面
 class BrandListPage extends ConsumerStatefulWidget {
