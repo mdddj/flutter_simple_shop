@@ -3,7 +3,7 @@ import 'package:dd_js_util/model/my_image.dart';
 import 'package:dd_models/models/brand.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import '../../../util/image_util.dart';
+import '../../../util/index.dart';
 import '../../../util/number_cover.dart';
 import '../../index.dart';
 import '../brand_detail.dart';

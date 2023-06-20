@@ -8,6 +8,7 @@ import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_check_plugin/model/send_model.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/theme/model.dart';
+import 'package:demo1/util/index.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/foundation.dart';
@@ -36,8 +37,6 @@ import 'pages/user_home_page/setting/index.dart';
 import 'provider/index.dart';
 import 'resource/view.dart';
 import 'service/user_api.dart';
-import 'util/image_util.dart';
-import 'util/navigator_util.dart';
 import 'widgets/logo.dart';
 
 export 'common/index.dart';

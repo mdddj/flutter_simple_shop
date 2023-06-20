@@ -1,22 +1,4 @@
-import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart' hide tryCatch;
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
-import 'package:fcontrol_nullsafety/fdefine.dart' as controller;
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
-import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../common/index.dart';
-import '../../../freezed/add_favorites_params.dart';
-import '../../../modals/shop_info.dart';
-import '../../../util/image_util.dart';
-import '../../../widgets/favorite_add_btn.dart';
-import '../../../widgets/index.dart';
-import '../detail_imgs_widget.dart';
+part of pages;
 
 //是否展示轮播图上面的返回箭头
 final satteShowBackButton = StateProvider((ref) => true);
@@ -38,8 +20,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   ShopInfo? _shopInfo;
   late Future<String> futureBuildData = initDatas();
   int curentSwaiperIndex = 0;
-  double get ztlHei =>
-      MediaQueryData.fromView(View.of(context)).padding.top; // 转态栏高度
   final double _topAppbarHei = 0; // 顶部显影工具条的高度
   double _initImagesTopHei = 0; // 图片详情距离顶部的高度 (包含转态栏)
   bool _showToTopButton = false; // 显示返回顶部按钮
@@ -68,7 +48,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
 
       //计算详情widget到顶部距离
       var topHei = getY(_detailImagesGlogbalKey.currentContext!);
-      if (topHei <= _topAppbarHei + ztlHei) {
+      if (topHei <= _topAppbarHei + context.paddingTop) {
         _tabController.animateTo(1);
       } else {
         if (_tabController.index != 0) {
@@ -85,7 +65,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           duration: const Duration(milliseconds: 600), curve: Curves.ease);
     } else if (index == 1) {
       _scrollController.animateTo(
-          _initImagesTopHei - ztlHei - _topAppbarHei + 5,
+          _initImagesTopHei - context.paddingTop - _topAppbarHei + 5,
           duration: const Duration(milliseconds: 600),
           curve: Curves.ease);
     }
@@ -153,7 +133,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         },
         child: Stack(
           children: <Widget>[
-            NestedScrollView(
+            ExtendedNestedScrollView(
                 controller: _scrollController,
                 headerSliverBuilder:
                     (BuildContext context, bool innerBoxIsScrolled) {
@@ -368,7 +348,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         Container(
           alignment: Alignment.topLeft,
           child: FSuper(
-            lightOrientation: controller.FLightOrientation.LeftBottom,
+            lightOrientation: FLightOrientation.LeftBottom,
             textAlign: TextAlign.start,
             spans: [
               const TextSpan(
@@ -507,13 +487,13 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           child: Row(
             children: <Widget>[
               FSuper(
-                lightOrientation: controller.FLightOrientation.LeftBottom,
+                lightOrientation: FLightOrientation.LeftBottom,
                 text: '满${info!.couponConditions}减${info!.couponPrice}',
                 backgroundColor: Colors.red,
                 textAlign: TextAlign.center,
                 textAlignment: Alignment.center,
                 style: const TextStyle(color: Colors.white),
-                corner: controller.FCorner.all(4),
+                corner: FCorner.all(4),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
               ),
@@ -565,7 +545,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         FSuper(
-          lightOrientation: controller.FLightOrientation.LeftBottom,
+          lightOrientation: FLightOrientation.LeftBottom,
           spans: <TextSpan>[
             TextSpan(
                 text: '原价 ¥ ${info!.originalPrice}',
@@ -574,7 +554,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           ],
         ),
         FSuper(
-          lightOrientation: controller.FLightOrientation.LeftBottom,
+          lightOrientation: FLightOrientation.LeftBottom,
           text: '已售 ${info!.monthSales}',
         )
       ],

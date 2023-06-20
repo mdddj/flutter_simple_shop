@@ -1,5 +1,4 @@
-// Dart imports:
-import 'dart:convert';
+part of util;
 
 /// fluro 参数编码解码工具类
 class FluroConvertUtils {

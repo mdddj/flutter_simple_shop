@@ -5,8 +5,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/index.dart';
-import '../../../util/image_util.dart';
-import '../../../util/navigator_util.dart';
+import '../../../util/index.dart';
 import '../../../widgets/index.dart';
 
 /// 品牌的商品列表

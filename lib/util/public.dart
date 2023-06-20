@@ -1,9 +1,4 @@
-
-
-// Flutter imports:
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-
+part of util;
 Color getColor(String rgb){
   var colorsRgb = rgb.split(',');
   return Color.fromRGBO(int.parse(colorsRgb[0]), int.parse(colorsRgb[1]), int.parse(colorsRgb[2]), 1);

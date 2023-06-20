@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:logger/logger.dart';
-import '../../util/image_util.dart';
+import '../../util/index.dart';
 import '../../widgets/index.dart';
 import 'abs.dart';
 import 'model.dart';

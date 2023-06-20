@@ -1,9 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import '../pages/ddq_page/index_home.dart';
-import '../pages/detail_page/hdk/index_home.dart';
-import '../pages/index.dart';
-import '../pages/other_page/not_found_page.dart';
+part of util;
 
 // 路由工具类
 class NavigatorUtil {

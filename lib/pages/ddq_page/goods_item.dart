@@ -1,7 +1,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 
-import '../../util/navigator_util.dart';
+import '../../util/index.dart';
 import '../../widgets/index.dart';
 
 // 9.9商品卡片布局

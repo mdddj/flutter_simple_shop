@@ -2,7 +2,8 @@
 // Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
-import '../../util/image_util.dart';
+
+import '../../util/index.dart';
 
 class ShopInfoWidget extends StatelessWidget {
   final ProductModel goodsInfo;

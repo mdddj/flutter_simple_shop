@@ -1,12 +1,4 @@
-import 'dart:io';
-
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-
-import '../index.dart';
-
+part of util;
 extension ImageEx on BuildContext {
   Future<MultipartFile?> get getMultiparFile =>
       getIt.get<MImageUtils>().getDioFormData(this);

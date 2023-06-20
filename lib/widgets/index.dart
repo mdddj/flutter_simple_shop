@@ -20,8 +20,7 @@ import 'package:loading_more_list_library_fast/loading_more_list_library_fast.da
 import '../common/index.dart';
 import '../constant/index.dart';
 import '../provider/index.dart';
-import '../util/image_util.dart';
-import '../util/navigator_util.dart';
+import '../util/index.dart';
 
 part 'category/jd_category.dart';
 part 'component/coupon_discount.dart';

@@ -8,7 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../../common/index.dart';
-import '../../../util/navigator_util.dart';
+import '../../../util/index.dart';
 import '../../../widgets/index.dart';
 import '../pyq_riverpod.dart';
 

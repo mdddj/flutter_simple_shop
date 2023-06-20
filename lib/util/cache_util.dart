@@ -1,5 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:hive/hive.dart';
+part of util;
 
 
 
