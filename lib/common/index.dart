@@ -22,19 +22,9 @@ import 'package:show_up_animation/show_up_animation.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../api/apis.dart';
-import '../constant/index.dart';
-import '../init.dart';
-import '../modals/pdd_product.dart';
+import '../index.dart';
 import '../pages/public_detail/view.dart';
-import '../provider/index.dart';
 import '../provider/riverpod/model/my_user.dart';
-import '../service/user_api.dart';
-import '../util/cache_util.dart';
-import '../util/navigator_util.dart';
-import '../widgets/component/coupon_discount.dart';
-import '../widgets/extended_image.dart';
-import '../widgets/simple_price.dart';
-import '../widgets/waterfall_goods_card.dart';
 
 part './components/jd/jd_category_mini_widget.dart';
 part './components/jd/jd_constant.dart';

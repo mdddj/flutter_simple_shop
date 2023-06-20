@@ -1,22 +1,4 @@
-import 'dart:convert';
-import 'dart:io';
-
-import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dd_check_plugin/dd_check_plugin.dart';
-import 'package:dd_check_plugin/model/send_model.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/theme/model.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:path_provider/path_provider.dart';
-import 'api/apis.dart';
-import 'api/base.dart';
-import 'api/tkapi.dart';
-import 'index.dart';
-import 'pages/user_home_page/pages/resource_list.dart';
-import 'router.dart';
+part of index;
 
 Future<void> appInit(Function start) async {
   WidgetsFlutterBinding.ensureInitialized();

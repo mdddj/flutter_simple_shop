@@ -1,9 +1,4 @@
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import '../init.dart';
-import '../service/user_api.dart';
+part of api;
 
 ///添加token到请求头
 class MyTokenInterceptor implements Interceptor {
@@ -15,8 +10,8 @@ class MyTokenInterceptor implements Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     final token = UserApi.userToken;
-    if(token.isNotEmpty){
-      options.headers.addAll({"Authorization": token });
+    if (token.isNotEmpty) {
+      options.headers.addAll({"Authorization": token});
     }
     handler.next(options);
   }
@@ -37,7 +32,8 @@ abstract class MyAppCoreApiWithPager extends MyAppCoreApi {
 
 ///接口封装
 abstract class MyAppCoreApi extends BaseApi {
-  MyAppCoreApi(String url, {HttpMethod? httpMethod, bool showDetailLog = false}) : super(url, httpMethod: httpMethod ?? HttpMethod.get);
+  MyAppCoreApi(String url, {HttpMethod? httpMethod, bool showDetailLog = false})
+      : super(url, httpMethod: httpMethod ?? HttpMethod.get);
 
   final token = getIt.get<MyTokenInterceptor>();
 
@@ -50,17 +46,20 @@ abstract class MyAppCoreApi extends BaseApi {
     if (!interceptions.contains(token)) {
       interceptions.add(token);
     }
-    if(isRemoveUserToken){
+    if (isRemoveUserToken) {
       interceptions.remove(token);
     }
     try {
       final r = await super.request(options);
       final json = WrapJson(r);
       if (json.isSuccess.not) {
-          json.print((){
-            debugPrint("链接:$url");
-          });
-        throw AppException.appError(code: json.getInt('state', defaultValue: 90001), msg: json.message,data: json.getValue('data'));
+        json.print(() {
+          debugPrint("链接:$url");
+        });
+        throw AppException.appError(
+            code: json.getInt('state', defaultValue: 90001),
+            msg: json.message,
+            data: json.getValue('data'));
       }
       return json;
     } on AppException catch (e) {
@@ -68,7 +67,8 @@ abstract class MyAppCoreApi extends BaseApi {
       return ex;
     } catch (e) {
       wtfLog(e);
-      return WrapJson.fromMyServerError(AppException.appError(code: 9000, msg: "系统错误"));
+      return WrapJson.fromMyServerError(
+          AppException.appError(code: 9000, msg: "系统错误"));
     }
   }
 }

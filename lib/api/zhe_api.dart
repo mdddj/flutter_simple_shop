@@ -1,8 +1,4 @@
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../provider/index.dart';
+part of api;
 
 ///这淘客api
 abstract class ZheApi extends BaseApi {

@@ -1,13 +1,4 @@
-import 'package:get_it/get_it.dart';
-import 'package:go_router/go_router.dart';
-
-import 'freezed/pager.dart';
-import 'index.dart';
-import 'meet/add_new_meet.dart';
-import 'pages/mianji/mianji/view.dart';
-import 'pages/user_home_page/setting/index.dart';
-import 'resource/page.dart';
-import 'resource/view.dart';
+part of index;
 
 PagerUtil pagerUtil = GetIt.instance.get<PagerUtil>();
 

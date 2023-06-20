@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../router.dart';
+import '../index.dart';
 import '../widgets/default_avatar_widget.dart';
 import '../widgets/default_user_name.dart';
 import 'meet_model.dart';
@@ -17,7 +17,8 @@ class MeetItemLayout extends StatelessWidget {
   final MeetModel meetModel;
   final int index;
 
-  const MeetItemLayout(this.context, this.meetModel, this.index, {Key? key}) : super(key: key);
+  const MeetItemLayout(this.context, this.meetModel, this.index, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +33,9 @@ class MeetItemLayout extends StatelessWidget {
               size: 40,
             ),
             title: DefaultUsernameWidget(meetModel.user),
-            subtitle: Text(meetModel.createDate,style: context.textTheme.labelSmall?.copyWith(
-              color: Colors.grey
-            )),
+            subtitle: Text(meetModel.createDate,
+                style:
+                    context.textTheme.labelSmall?.copyWith(color: Colors.grey)),
           ),
           SizedBox(
             width: double.infinity,
@@ -67,15 +68,30 @@ class MeetItemLayout extends StatelessWidget {
                   mainAxisSpacing: 8,
                   crossAxisSpacing: 8,
                   crossAxisCount: 5,
-                  children: [...meetModel.images.map((element) =>
-                      ImageView(image: MyImage.network(url: element.url,params: ImageParams(size: double.infinity,borderRadius: 12.borderRadius,fit: BoxFit.cover))).constraintBox((size, child) => SizedBox(
-                        width: size.maxWidth,
-                        height: size.maxWidth,
-                        child: child.clipRadius(12).click(() {
-                          context.navToWidget(to: ImagePreview(images: meetModel.images.map((element2) => PictureSelectionItemModel.network(url: element2.url)).toList(),index:
-                            meetModel.images.indexOf(element)));
-                        }),
-                      )))],
+                  children: [
+                    ...meetModel.images.map((element) => ImageView(
+                            image: MyImage.network(
+                                url: element.url,
+                                params: ImageParams(
+                                    size: double.infinity,
+                                    borderRadius: 12.borderRadius,
+                                    fit: BoxFit.cover)))
+                        .constraintBox((size, child) => SizedBox(
+                              width: size.maxWidth,
+                              height: size.maxWidth,
+                              child: child.clipRadius(12).click(() {
+                                context.navToWidget(
+                                    to: ImagePreview(
+                                        images: meetModel.images
+                                            .map((element2) =>
+                                                PictureSelectionItemModel
+                                                    .network(url: element2.url))
+                                            .toList(),
+                                        index:
+                                            meetModel.images.indexOf(element)));
+                              }),
+                            )))
+                  ],
                 ),
               ],
             ),
@@ -83,11 +99,13 @@ class MeetItemLayout extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              TextButton(onPressed: (){}, child: const Text('接受面基')),
+              TextButton(onPressed: () {}, child: const Text('接受面基')),
               const SizedBox(width: 12),
-              FilledButton(onPressed: (){
-                context.push('${pagerUtil.resourceList.routername}典典的面基记录');
-              }, child: const Text("查看面基记录"))
+              FilledButton(
+                  onPressed: () {
+                    context.push('${pagerUtil.resourceList.routername}典典的面基记录');
+                  },
+                  child: const Text("查看面基记录"))
             ],
           )
         ],

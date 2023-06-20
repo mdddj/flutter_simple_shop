@@ -2,16 +2,20 @@ library api;
 
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../freezed/add_favorites_params.dart';
 import '../freezed/report.dart';
 import '../freezed/resource_category.dart';
 import '../index.dart';
-import 'base.dart';
+
 import 'model/email_register_params.dart';
 import 'model/login_params.dart';
 part 'report.dart';
+part 'base.dart';
+part 'tkapi.dart';
+part 'zhe_api.dart';
 
 mixin ApiPageMixin on MyAppCoreApi {
   set page(int v) => params['page'] = v;

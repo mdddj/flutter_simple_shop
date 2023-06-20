@@ -25,7 +25,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
         title: const Text('发布'),
         centerTitle: true,
         leading: TextButton(
-          onPressed: context.pop,
+          onPressed: () => Navigator.pop(context),
           child: const Text('取消'),
         ),
         actions: [

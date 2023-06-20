@@ -3,23 +3,24 @@ library resource;
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/picture_selection_item.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:go_router/go_router.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../api/apis.dart';
 import '../common/api_ext.dart';
-import '../constant/index.dart';
 import '../freezed/pager.dart';
 import '../freezed/resource_category.dart';
-import '../init.dart';
-import '../pages/index.dart';
+import '../index.dart';
 import '../pages/user_home_page/pages/resource_list.dart';
 import '../widgets/loading/custom_loading_more_widget.dart';
 import '../widgets/resource_widegt.dart';
 import 'repository/my_resource_repository.dart';
 part 'views/detail.dart';
 part 'views/write_page.dart';
+part 'page.dart';
 
 class MyResourceListWidget extends StatefulWidget {
   final String name;

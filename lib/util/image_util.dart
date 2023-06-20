@@ -1,4 +1,3 @@
-
 import 'dart:io';
 
 import 'package:dd_js_util/dd_js_util.dart';
@@ -6,39 +5,35 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../init.dart';
+import '../index.dart';
 
-
-
-extension ImageEx  on BuildContext {
-  Future<MultipartFile?> get getMultiparFile => getIt.get<MImageUtils>().getDioFormData(this);
+extension ImageEx on BuildContext {
+  Future<MultipartFile?> get getMultiparFile =>
+      getIt.get<MImageUtils>().getDioFormData(this);
 }
 
-class MImageUtils{
-
+class MImageUtils {
 //  处理淘宝图片不带https头部问题
-  static String magesProcessor(String url){
-    return url.contains('https:') || url.contains('http:')?url:'https:$url';
+  static String magesProcessor(String url) {
+    return url.contains('https:') || url.contains('http:') ? url : 'https:$url';
   }
-
 
   ///单个
   Future<MultipartFile?> getDioFormData(BuildContext context) async {
-    final image = await showModalBottomSheet<XFile?>(context: context, builder: (_){
-      return const _SelectImage();
-    });
-    if(image!=null){
-      MultipartFile file =  await MultipartFile.fromFile(image.path);
+    final image = await showModalBottomSheet<XFile?>(
+        context: context,
+        builder: (_) {
+          return const _SelectImage();
+        });
+    if (image != null) {
+      MultipartFile file = await MultipartFile.fromFile(image.path);
       return file;
     }
     return null;
   }
-
 }
 
-
 class _SelectImage extends StatelessWidget {
-
   const _SelectImage();
 
   @override
@@ -50,24 +45,27 @@ class _SelectImage extends StatelessWidget {
             title: const Text("相册选择"),
             onTap: () async {
               final nav = context.nav;
-              final result = await ImagePicker().pickImage(source: ImageSource.gallery,);
-              if(result!=null){
+              final result = await ImagePicker().pickImage(
+                source: ImageSource.gallery,
+              );
+              if (result != null) {
                 nav.pop(result);
               }
             },
           ),
           ListTile(
             title: const Text('拍摄'),
-            onTap: ()async{
-              if(Platform.isMacOS){
+            onTap: () async {
+              if (Platform.isMacOS) {
                 toast('macos暂不支持拍摄上传');
                 return;
               }
               final nav = context.nav;
-             final result = await ImagePicker().pickImage(source: ImageSource.camera);
-             if(result!=null){
-               nav.pop(result);
-             }
+              final result =
+                  await ImagePicker().pickImage(source: ImageSource.camera);
+              if (result != null) {
+                nav.pop(result);
+              }
             },
           )
         ],

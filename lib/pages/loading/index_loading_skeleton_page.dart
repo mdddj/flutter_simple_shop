@@ -1,7 +1,6 @@
 // Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-
-import '../../index.dart';
 
 ///首页的加载骨架屏
 ///
@@ -16,20 +15,12 @@ class IndexLoadingSkeletonPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Skeleton(
-          child: Container(
-            height: 50,
-          ),
-        ),
-        actions: <Widget>[
+        title: const Skeleton(),
+        actions: const <Widget>[
           Padding(
             padding:
-                const EdgeInsets.only(left: 5.0, right: 12, top: 8.0, bottom: 8.0),
-            child: Skeleton(
-              child: Container(
-                width:50,
-              ),
-            ),
+                EdgeInsets.only(left: 5.0, right: 12, top: 8.0, bottom: 8.0),
+            child: Skeleton(),
           )
         ],
       ),
@@ -53,12 +44,10 @@ class IndexLoadingSkeletonPage extends StatelessWidget {
                       _buildTabItemSkeleton(context),
                     ],
                   ),
-                  const SizedBox(height: 12,),
-                  Skeleton(
-                    child: Container(
-                      height: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height * 320,
-                    ),
-                  )
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const Skeleton()
                 ],
               ),
             )
@@ -71,12 +60,7 @@ class IndexLoadingSkeletonPage extends StatelessWidget {
   Widget _buildTabItemSkeleton(BuildContext context) {
     var pw = MediaQuery.of(context).size.width;
     pw = pw - 30;
-    var w = pw / 6 -30;
-    return Skeleton(
-      child: SizedBox(
-        width: w,
-        height: 30,
-      ),
-    );
+    var w = pw / 6 - 30;
+    return const Skeleton();
   }
 }

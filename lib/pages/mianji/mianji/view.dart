@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../index.dart';
 import '../../../meet/meet_list_widget.dart';
-import '../../../router.dart';
-import '../../../widgets/simple_appbar.dart';
 
 // 面基动态
 class MianjiPage extends StatefulWidget {
@@ -13,20 +12,20 @@ class MianjiPage extends StatefulWidget {
 }
 
 class MianjiPageState extends State<MianjiPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  SimpleAppBar(title: '典典面基动态',actions: [
-        _buildAction()
-      ],),
+      appBar: SimpleAppBar(
+        title: '典典面基动态',
+        actions: [_buildAction()],
+      ),
       body: const MeetListWidget(),
     );
   }
 
   /// 构建操作区域。
   Widget _buildAction() {
-    return  TextButton(
+    return TextButton(
         onPressed: () {
           context.push(pagerUtil.meetAdd.routername);
         },
