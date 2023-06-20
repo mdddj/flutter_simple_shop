@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 class TagWidget extends StatelessWidget {
   final String? title;
@@ -7,7 +6,9 @@ class TagWidget extends StatelessWidget {
   final Color? textColor;
   final bool? noBorder;
 
-  const TagWidget({this.title, this.bg, this.textColor, this.noBorder,Key? key}): super(key: key);
+  const TagWidget(
+      {this.title, this.bg, this.textColor, this.noBorder, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,10 @@ class TagWidget2 extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(12)),
           color: Colors.grey[100]),
-      child: Text(tag!,style: const TextStyle(fontSize: 12),),
+      child: Text(
+        tag!,
+        style: const TextStyle(fontSize: 12),
+      ),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../widgets/extended_image.dart';
+import '../../../widgets/index.dart';
 import '../../index.dart';
 import '../../public_detail/view.dart';
 // Project imports:

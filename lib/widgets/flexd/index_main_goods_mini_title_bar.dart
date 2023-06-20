@@ -1,15 +1,13 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 class IndexMainGoodsMiniTitleBar extends SliverPersistentHeaderDelegate {
-
   final Widget? child;
   final double? height;
-  IndexMainGoodsMiniTitleBar({this.child,this.height});
+  IndexMainGoodsMiniTitleBar({this.child, this.height});
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       child: child,
     );
@@ -27,5 +25,4 @@ class IndexMainGoodsMiniTitleBar extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
     return true;
   }
-
 }

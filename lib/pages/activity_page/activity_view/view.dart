@@ -5,7 +5,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../../common/index.dart';
-import '../../../widgets/simple_appbar.dart';
+import '../../../widgets/index.dart';
 
 class ActivityViewPage extends StatefulWidget {
   const ActivityViewPage({required this.id, required this.title, Key? key})

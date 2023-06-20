@@ -14,13 +14,8 @@ import '../../../common/index.dart';
 import '../../../freezed/add_favorites_params.dart';
 import '../../../modals/shop_info.dart';
 import '../../../util/image_util.dart';
-import '../../../widgets/extended_image.dart';
 import '../../../widgets/favorite_add_btn.dart';
-import '../../../widgets/loading_widget.dart';
-import '../../../widgets/my_drawable_start_text.dart';
-import '../../../widgets/no_data.dart';
-import '../../../widgets/round_underline_tab_indicator.dart';
-import '../../../widgets/simple_price.dart';
+import '../../../widgets/index.dart';
 import '../detail_imgs_widget.dart';
 
 //是否展示轮播图上面的返回箭头

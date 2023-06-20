@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
   final TabBar child;

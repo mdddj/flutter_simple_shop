@@ -1,12 +1,12 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 class UpDownBtnWidget extends StatelessWidget {
   final bool? isCur;
   final String? upText;
   final String? downText;
 
-  const UpDownBtnWidget({this.isCur, this.downText, this.upText,Key? key}):super(key: key);
+  const UpDownBtnWidget({this.isCur, this.downText, this.upText, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,10 +2,10 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import './sliver_app_bar_delegate.dart';
 import '../../provider/index.dart';
-import '../../widgets/ddq_times_widget.dart';
+import '../../widgets/index.dart';
 import 'goods_item.dart';
+import 'sliver_app_bar_delegate.dart';
 
 /// 钉钉抢的页面
 class DdqIndexHome extends ConsumerStatefulWidget {

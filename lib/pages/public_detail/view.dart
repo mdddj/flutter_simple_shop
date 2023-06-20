@@ -6,8 +6,7 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:logger/logger.dart';
 import '../../util/image_util.dart';
-import '../../widgets/extended_image.dart';
-import '../../widgets/loading_widget.dart';
+import '../../widgets/index.dart';
 import 'abs.dart';
 import 'model.dart';
 
@@ -16,13 +15,15 @@ class PublicDetailView extends StatefulWidget {
   final String goodsId;
   final String type;
 
-  const PublicDetailView({Key? key, required this.goodsId, required this.type}) : super(key: key);
+  const PublicDetailView({Key? key, required this.goodsId, required this.type})
+      : super(key: key);
 
   @override
   PublicDetailViewState createState() => PublicDetailViewState();
 }
 
-class PublicDetailViewState extends State<PublicDetailView> implements PublicDetailViewAbs {
+class PublicDetailViewState extends State<PublicDetailView>
+    implements PublicDetailViewAbs {
   PublicDetailModel? info;
 
   @override
@@ -68,15 +69,15 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
   /// 导航区域
   Widget renderNav() {
     return Container(
-      margin: EdgeInsets.only(top: context.paddingTop + 12, left: 12, right: 12),
+      margin:
+          EdgeInsets.only(top: context.paddingTop + 12, left: 12, right: 12),
       child: Column(
         children: [
           Row(
             children: [
               // 返回按钮
               IconButton(
-                  onPressed: context.pop,
-                  icon: const Icon(Icons.chevron_left))
+                  onPressed: context.pop, icon: const Icon(Icons.chevron_left))
             ],
           ),
           const SizedBox(
@@ -108,7 +109,8 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
     return Container(
       alignment: Alignment.centerLeft,
       margin: const EdgeInsets.all(12),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(12)),
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Column(
@@ -124,7 +126,8 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
                       children: [
                         Text(
                           '销量${info!.sales}件',
-                          style: const TextStyle(color: Colors.grey, fontSize: 15),
+                          style:
+                              const TextStyle(color: Colors.grey, fontSize: 15),
                         )
                       ],
                     )
@@ -160,7 +163,8 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
     return Container(
       alignment: Alignment.centerLeft,
       margin: const EdgeInsets.all(12),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(12)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -170,8 +174,11 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
-                  decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(5)),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                  decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(5)),
                   child: Text(
                     getTypeLabel(),
                     style: const TextStyle(color: Colors.white),
@@ -203,8 +210,16 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
                           ),
                           FSuper(
                               text: '¥ ',
-                              style: const TextStyle(color: Colors.red, fontSize: 16),
-                              spans: [TextSpan(text: '${info!.price}', style: const TextStyle(color: Colors.red, fontSize: 25, fontWeight: FontWeight.bold))],
+                              style: const TextStyle(
+                                  color: Colors.red, fontSize: 16),
+                              spans: [
+                                TextSpan(
+                                    text: '${info!.price}',
+                                    style: const TextStyle(
+                                        color: Colors.red,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold))
+                              ],
                               lightOrientation: FLightOrientation.RightTop)
                         ],
                       ),
@@ -227,7 +242,11 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               height: 50,
-              decoration: const BoxDecoration(color: Colors.red, borderRadius: BorderRadius.only(bottomLeft: Radius.circular(12), bottomRight: Radius.circular(12))),
+              decoration: const BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(12),
+                      bottomRight: Radius.circular(12))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -255,10 +274,9 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
       case 'pdd':
       case 'wph':
       default:
-      return null;
+        return null;
     }
   }
-
 
   @override
   Future<void> onGetCoupon() async {
@@ -272,7 +290,6 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
       }
     }
   }
-
 
   @override
   Future<void> onShare() async {}

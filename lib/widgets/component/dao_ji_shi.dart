@@ -1,10 +1,4 @@
-// Dart imports:
-import 'dart:async';
-
-// Package imports:
-import 'package:common_utils/common_utils.dart';
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 typedef TimerBuilder = Widget Function(int h, int m, int s);
 typedef TimeBuilderTurn = Widget Function(int m, int s);

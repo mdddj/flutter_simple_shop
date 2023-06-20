@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../common/index.dart';
 import '../../../util/image_util.dart';
 import '../../../util/navigator_util.dart';
-import '../../../widgets/component/coupon_discount.dart';
-import '../../../widgets/simple_price.dart';
+import '../../../widgets/index.dart';
 
 /// 品牌的商品列表
 class DetailProductList extends StatelessWidget {

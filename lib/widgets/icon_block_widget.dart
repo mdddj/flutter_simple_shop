@@ -1,15 +1,14 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 class IconBlockWidget extends StatelessWidget {
   final String? desc;
 
-  const IconBlockWidget({this.desc,Key? key}):super(key: key);
+  const IconBlockWidget({this.desc, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, top: 10,bottom: 30),
+      margin: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 30),
       decoration: const BoxDecoration(
           color: Color.fromRGBO(247, 248, 255, 1.0),
           borderRadius: BorderRadius.all(Radius.circular(20))),

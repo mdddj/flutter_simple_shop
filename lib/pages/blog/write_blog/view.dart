@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/simple_appbar.dart';
+import '../../../widgets/index.dart';
 
 // 发布博客页面
 class WriteBlogPage extends StatefulWidget {
@@ -27,8 +27,7 @@ class WriteBlogPageState extends State<WriteBlogPage> {
           children: [
             renderComponent(
               title: '请输入标题',
-              child: const TextField(
-              ),
+              child: const TextField(),
             ),
             renderComponent(
               title: '请选择分类',
@@ -52,8 +51,7 @@ class WriteBlogPageState extends State<WriteBlogPage> {
             renderComponent(
                 title: '操作',
                 child: const Row(
-                  children: [
-                  ],
+                  children: [],
                 ))
           ],
         ),
@@ -73,11 +71,14 @@ class WriteBlogPageState extends State<WriteBlogPage> {
       alignment: Alignment.centerLeft,
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(5)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (title != null) Container(margin: const EdgeInsets.only(bottom: 6), child: Text(title)),
+          if (title != null)
+            Container(
+                margin: const EdgeInsets.only(bottom: 6), child: Text(title)),
           if (child != null) child,
         ],
       ),

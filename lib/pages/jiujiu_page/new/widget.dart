@@ -2,8 +2,8 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../constant/index.dart';
+import '../../../widgets/index.dart';
 import '../../../widgets/loading/custom_loading_more_widget.dart';
-import '../../../widgets/waterfall_goods_card.dart';
 import 'repository.dart';
 import 'types.dart';
 

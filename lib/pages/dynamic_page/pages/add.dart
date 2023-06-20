@@ -2,7 +2,7 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 
-import '../../../widgets/simple_appbar.dart';
+import '../../../widgets/index.dart';
 
 //发布动态页面
 class AddDynamicPage extends StatefulWidget {
@@ -14,7 +14,8 @@ class AddDynamicPage extends StatefulWidget {
 
 class _AddDynamicPageState extends State<AddDynamicPage> {
   final TextEditingController _textEditingController = TextEditingController();
-  final PictureSelectionController _pictureSelectionController = PictureSelectionController();
+  final PictureSelectionController _pictureSelectionController =
+      PictureSelectionController();
   List<ResCategory> _list = [];
   ResCategory? _selectCategory;
 
@@ -32,8 +33,8 @@ class _AddDynamicPageState extends State<AddDynamicPage> {
     final result = await api.request();
     result?.printDataJson();
     if (result.requestIsSuccess) {
-      final list = result!.dataCovertToList<ResCategory>(
-          (originMap) => ResCategory.fromMap(originMap as Map<String,dynamic>));
+      final list = result!.dataCovertToList<ResCategory>((originMap) =>
+          ResCategory.fromMap(originMap as Map<String, dynamic>));
       _list = list;
     }
   }
@@ -65,22 +66,23 @@ class _AddDynamicPageState extends State<AddDynamicPage> {
 
             //选择分类
             ListTile(
-              title:  Text(_selectCategory ==null ? '选择分类' : _selectCategory!.name),
+              title: Text(
+                  _selectCategory == null ? '选择分类' : _selectCategory!.name),
               onTap: () async {
-                final select =
-                    await context.navToWidget<ResCategory?>(to: CategoryListSelect(
-                      list: _list,
-                    ));
+                final select = await context.navToWidget<ResCategory?>(
+                    to: CategoryListSelect(
+                  list: _list,
+                ));
 
                 _selectCategory = select;
                 setState(() {});
               },
             ),
 
-
-          //  选择图片组件
-            PictureSelection(controller: _pictureSelectionController,)
-
+            //  选择图片组件
+            PictureSelection(
+              controller: _pictureSelectionController,
+            )
           ],
         )));
   }
@@ -102,7 +104,7 @@ class CategoryListSelect extends StatelessWidget {
           return ListTile(
             title: Text(item.name),
             onTap: () {
-              Navigator.pop(context,item);
+              Navigator.pop(context, item);
             },
           );
         },

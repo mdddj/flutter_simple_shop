@@ -1,24 +1,21 @@
-// Flutter imports:
-// Package imports:
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 
 import '../../util/navigator_util.dart';
-// Project imports:
-import '../../widgets/extended_image.dart';
-import '../../widgets/tag_widget.dart';
+import '../../widgets/index.dart';
 
 // 9.9商品卡片布局
 class GoodsItem extends StatelessWidget {
   final ProductModel goodsItem;
   final int? state;
 
-  const GoodsItem({required this.goodsItem, this.state,Key? key}): super(key: key);
+  const GoodsItem({required this.goodsItem, this.state, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       color: Colors.white,
       child: Row(
         children: <Widget>[
@@ -127,7 +124,8 @@ class GoodsItem extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 15,
                                       color: state != 2
-                                          ? const Color.fromRGBO(255, 91, 0, 1.0)
+                                          ? const Color.fromRGBO(
+                                              255, 91, 0, 1.0)
                                           : Colors.green),
                                 ),
                                 const TextSpan(

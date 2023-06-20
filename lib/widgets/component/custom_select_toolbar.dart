@@ -1,7 +1,4 @@
-// Flutter imports:
-// Package imports:
-import 'package:after_layout/after_layout.dart';
-import 'package:flutter/material.dart';
+part of widgets;
 
 // 自定义选择项目工具条
 class CustomSelectToolbar extends StatefulWidget {
@@ -9,7 +6,9 @@ class CustomSelectToolbar extends StatefulWidget {
   final int? select;
   final bool? hideSubTitle;
 
-  const CustomSelectToolbar({this.items, this.select, this.hideSubTitle,Key? key}):super(key: key);
+  const CustomSelectToolbar(
+      {this.items, this.select, this.hideSubTitle, Key? key})
+      : super(key: key);
 
   @override
   CustomSelectToolbarState createState() => CustomSelectToolbarState();
@@ -17,7 +16,6 @@ class CustomSelectToolbar extends StatefulWidget {
 
 class CustomSelectToolbarState extends State<CustomSelectToolbar>
     with AfterLayoutMixin<CustomSelectToolbar> {
-
   @override
   Widget build(BuildContext context) {
     var hide = widget.hideSubTitle;
@@ -27,18 +25,18 @@ class CustomSelectToolbarState extends State<CustomSelectToolbar>
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           child: getItemSize() > 4
               ? SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: widget.items!
+                        .map((f) => _buildItemWidget(f, hide!, widget.select))
+                        .toList(),
+                  ),
+                )
+              : Row(
                   children: widget.items!
                       .map((f) => _buildItemWidget(f, hide!, widget.select))
                       .toList(),
                 ),
-              )
-              : Row(
-                children: widget.items!
-                    .map((f) => _buildItemWidget(f, hide!, widget.select))
-                    .toList(),
-              ),
         ),
       ],
     );
@@ -109,16 +107,18 @@ class CustomSelectToolbarState extends State<CustomSelectToolbar>
             opacity: hideSubTitle ? 1 : 0,
             duration: const Duration(seconds: 1),
             child: Container(
-                alignment: Alignment.center,
-                width: getItemWidgetWidth(),
-                child: Container(
-                  width: 60,
-                  height: 6,
-                  decoration: BoxDecoration(
-                    color:   getIndexNumber(selectMenu) == select ? Colors.redAccent : Colors.transparent,
-                    borderRadius: const BorderRadius.all(Radius.circular(15.0))
-                  ),
-                ),
+              alignment: Alignment.center,
+              width: getItemWidgetWidth(),
+              child: Container(
+                width: 60,
+                height: 6,
+                decoration: BoxDecoration(
+                    color: getIndexNumber(selectMenu) == select
+                        ? Colors.redAccent
+                        : Colors.transparent,
+                    borderRadius:
+                        const BorderRadius.all(Radius.circular(15.0))),
+              ),
             ),
           ),
         )

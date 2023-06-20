@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../constant/index.dart';
+part of widgets;
 
 // 首页滑动置顶一
 class IndexFlexdHeaderWidget extends SliverPersistentHeaderDelegate {

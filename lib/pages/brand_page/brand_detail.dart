@@ -8,7 +8,6 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 // Project imports:
 import '../../common/index.dart';
-import '../../widgets/loading_widget.dart';
 import 'components/detail_brand_info.dart';
 import 'components/detail_product_list.dart';
 
@@ -22,7 +21,8 @@ class BrandDetailPage extends StatefulWidget {
   BrandDetailPageState createState() => BrandDetailPageState();
 }
 
-class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<BrandDetailPage>, LoadingMixin {
+class BrandDetailPageState extends State<BrandDetailPage>
+    with AfterLayoutMixin<BrandDetailPage> {
   final EasyRefreshController _easyRefreshController = EasyRefreshController();
   List<ProductModel> products = <ProductModel>[];
   BrandDetail? brandDetailModel;
@@ -52,12 +52,16 @@ class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<
   Future<void> load() async {
     _easyRefreshController.callLoad();
     page++;
-    final result = await kApi.getBrandDetail(param: BrandProductParam(brandId: widget.brandId, pageId: '$page', pageSize: '20'), requestParamsBuilder: (RequestParams requestParams) {
-      return requestParams;
-    });
+    final result = await kApi.getBrandDetail(
+        param: BrandProductParam(
+            brandId: widget.brandId, pageId: '$page', pageSize: '20'),
+        requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+        });
     if (result != null) {
       products.addAll(result.list ?? []);
-      _easyRefreshController.finishLoad(noMore: (result.list ?? []).length > 20);
+      _easyRefreshController.finishLoad(
+          noMore: (result.list ?? []).length > 20);
     }
     _setState();
     _easyRefreshController.finishLoad(success: true, noMore: true);
@@ -72,22 +76,23 @@ class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<
       ),
       body: AnimatedSwitcher(
         duration: const Duration(milliseconds: 500),
-        child: loadingState ? const LoadingWidget() : _buildBody(),
+        child: _buildBody(),
       ),
     );
   }
 
   @override
   void afterFirstLayout(BuildContext context) async {
-    setLoading(true);
-    final result = await DdTaokeSdk.instance.getBrandDetail(param: BrandProductParam(brandId: widget.brandId, pageId: '1', pageSize: '20'), requestParamsBuilder: (RequestParams requestParams) {
-      return requestParams;
-    });
+    final result = await DdTaokeSdk.instance.getBrandDetail(
+        param: BrandProductParam(
+            brandId: widget.brandId, pageId: '1', pageSize: '20'),
+        requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams;
+        });
     if (result != null) {
       products.addAll(result.list ?? []);
     }
     brandDetailModel = result;
-    setLoading(false);
   }
 
   void _setState() {

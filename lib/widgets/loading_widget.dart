@@ -1,6 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
+part of widgets;
 
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({Key? key}) : super(key: key);
@@ -23,21 +21,20 @@ class MyLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingAnimationWidget.flickr(leftDotColor: Colors.red,rightDotColor: Colors.blue,size: 38);
+    return LoadingAnimationWidget.flickr(
+        leftDotColor: Colors.red, rightDotColor: Colors.blue, size: 38);
   }
 }
 
-
 class MyCustomLoadingWidget extends StatelessWidget {
   final String msg;
-  const MyCustomLoadingWidget(this.msg,{Key? key}) : super(key: key);
+  const MyCustomLoadingWidget(this.msg, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 12, bottom: 12),
-      alignment: Alignment.center,
-      child:const MyLoading()
-    );
+        padding: const EdgeInsets.only(top: 12, bottom: 12),
+        alignment: Alignment.center,
+        child: const MyLoading());
   }
 }

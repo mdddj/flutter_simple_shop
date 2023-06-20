@@ -6,9 +6,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
-import '../../widgets/float_widget.dart';
-import '../../widgets/loading_widget.dart';
-import '../../widgets/simple_appbar.dart';
+import '../../widgets/index.dart';
 import 'component/appbar.dart';
 import 'component/list.dart';
 import 'resp.dart';
@@ -49,7 +47,6 @@ class BanjiaIndexState extends ConsumerState<BanjiaIndex> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     final list = ref.watch(banjiaRiveroid.select((value) => value.products));
@@ -64,8 +61,8 @@ class BanjiaIndexState extends ConsumerState<BanjiaIndex> {
           delegate: FloatWidget(child: const BanjiaSessions(), height: 48),
           pinned: true,
         ),
-        Builder(builder: (_){
-          if(loading) return const SliverToBoxAdapter(child: LoadingWidget());
+        Builder(builder: (_) {
+          if (loading) return const SliverToBoxAdapter(child: LoadingWidget());
           return BanjiaList(products: list);
         })
       ]),
@@ -74,7 +71,7 @@ class BanjiaIndexState extends ConsumerState<BanjiaIndex> {
               onPressed: () {
                 scrollController.jumpTo(0);
               },
-        backgroundColor: Colors.pink,
+              backgroundColor: Colors.pink,
               child: const Icon(Icons.vertical_align_top),
             )
           : null,

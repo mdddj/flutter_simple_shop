@@ -1,13 +1,9 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/material.dart';
-
-import '../../index.dart';
-
+part of widgets;
 
 /// 新版本弹窗
 class NewVersionDialog extends StatefulWidget {
-  final Map<String,dynamic> map;
-  const NewVersionDialog({Key? key,required this.map}) : super(key: key);
+  final Map<String, dynamic> map;
+  const NewVersionDialog({Key? key, required this.map}) : super(key: key);
 
   @override
   NewVersionDialogState createState() => NewVersionDialogState();
@@ -23,16 +19,18 @@ class NewVersionDialogState extends State<NewVersionDialog> {
       content: Text(desc),
       actions: [
         TextButton(onPressed: context.pop, child: const Text('忽略')),
-        ElevatedButton(onPressed: () async {
-          final nav = context.nav;
-            if(url.isNotEmpty){
-              await utils.openLink(url);
-              nav.pop();
-            }else{
-              showIosDialog('未配置下载页面url');
-              nav.pop();
-            }
-        }, child: const Text('前往下载'))
+        ElevatedButton(
+            onPressed: () async {
+              final nav = context.nav;
+              if (url.isNotEmpty) {
+                await utils.openLink(url);
+                nav.pop();
+              } else {
+                showIosDialog('未配置下载页面url');
+                nav.pop();
+              }
+            },
+            child: const Text('前往下载'))
       ],
     );
   }

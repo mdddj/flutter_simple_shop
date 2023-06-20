@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 /// 自定义骨架屏
 class LoadAnimation extends StatefulWidget {
@@ -18,7 +17,8 @@ class LoadAnimationState extends State<LoadAnimation>
   @override
   void initState() {
     controller = AnimationController(
-      duration: const Duration(seconds: 3), vsync: this,
+      duration: const Duration(seconds: 3),
+      vsync: this,
     )..repeat();
     super.initState();
   }
@@ -38,15 +38,17 @@ class LoadAnimationState extends State<LoadAnimation>
                 alignment: AlignmentGeometryTween(
                   begin: const Alignment(-1.0 - .2 * 3, .0),
                   end: const Alignment(1.0 + .2 * 3, .0),
-                ).chain(CurveTween(curve: Curves.easeOut)).evaluate(controller)!,
+                )
+                    .chain(CurveTween(curve: Curves.easeOut))
+                    .evaluate(controller)!,
                 child: child,
               );
             },
             child: const DecoratedBox(
               decoration: BoxDecoration(
-                gradient: LinearGradient(colors:[
+                gradient: LinearGradient(colors: [
                   Color.fromARGB(0, 255, 255, 255),
-                  Color.fromRGBO(222, 222, 222,0.2),
+                  Color.fromRGBO(222, 222, 222, 0.2),
                 ]),
               ),
             ),

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../widgets/loading_widget.dart';
-import '../../widgets/simple_appbar.dart';
+import '../../widgets/index.dart';
 import '../index.dart';
 import 'riverpod.dart';
 

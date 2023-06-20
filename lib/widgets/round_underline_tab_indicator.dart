@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 /// ************************** tabbar下划线自定义 ******************************/
 
@@ -49,14 +48,13 @@ class RoundUnderlineTabIndicator extends Decoration {
   }
 
   @override
-  UnderlinePainter createBoxPainter([ VoidCallback? onChanged ]) {
+  UnderlinePainter createBoxPainter([VoidCallback? onChanged]) {
     return UnderlinePainter(this, onChanged);
   }
 }
 
 class UnderlinePainter extends BoxPainter {
-  UnderlinePainter(this.decoration, VoidCallback? onChanged)
-       : super(onChanged);
+  UnderlinePainter(this.decoration, VoidCallback? onChanged) : super(onChanged);
 
   final RoundUnderlineTabIndicator decoration;
 
@@ -84,18 +82,14 @@ class UnderlinePainter extends BoxPainter {
     assert(configuration.size != null);
     final rect = offset & configuration.size!;
     final textDirection = configuration.textDirection!;
-    final indicator = _indicatorRectFor(rect, textDirection).deflate(borderSide.width / 2.0);
+    final indicator =
+        _indicatorRectFor(rect, textDirection).deflate(borderSide.width / 2.0);
 //    final Paint paint = borderSide.toPaint()..strokeCap = StrokeCap.square;
     // 改为圆角
     final paint = borderSide.toPaint()..strokeCap = StrokeCap.round;
     canvas.drawLine(indicator.bottomLeft, indicator.bottomRight, paint);
   }
 }
-
-
-
-
-
 
 class VgTab extends StatelessWidget {
   /// Creates a material design [TabBar] tab.
@@ -107,8 +101,10 @@ class VgTab extends StatelessWidget {
     this.text,
     this.icon,
     this.child,
-  }) : assert(text != null || child != null || icon != null),
-        assert(!(text != null && null != child)), // TODO(goderbauer): https://github.com/dart-lang/sdk/issues/34180
+  })  : assert(text != null || child != null || icon != null),
+        assert(!(text != null &&
+            null !=
+                child)), // TODO(goderbauer): https://github.com/dart-lang/sdk/issues/34180
         super(key: key);
 
   /// The text to display as the tab's label.
@@ -165,6 +161,4 @@ class VgTab extends StatelessWidget {
       ),
     );
   }
-
-
 }

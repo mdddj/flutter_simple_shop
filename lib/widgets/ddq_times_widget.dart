@@ -1,8 +1,4 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:flutter/material.dart';
-
-import './up_down_btn_widget.dart';
-import '../provider/index.dart';
+part of widgets;
 
 class DdqTimesWidget extends StatelessWidget {
   final List<RoundsList>? timesList;

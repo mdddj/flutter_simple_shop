@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 
 // Project imports:
 import '../../modals/goods_detail_image.dart';
-import '../../widgets/detail_simple_bborder_button.dart';
+import '../../widgets/index.dart';
 
 class DetailImagesWidget extends StatelessWidget {
   final String? images;
   final bool hideTitle;
 
-  const DetailImagesWidget({this.images, this.hideTitle = false,Key? key}): super(key: key);
+  const DetailImagesWidget({this.images, this.hideTitle = false, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,10 @@ class DetailImagesWidget extends StatelessWidget {
             child: const Flex(
               direction: Axis.horizontal,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[DetailSimpleBorderButton(text: '详情', isCurrent: true), DetailSimpleBorderButton(text: '推荐', isCurrent: false)],
+              children: <Widget>[
+                DetailSimpleBorderButton(text: '详情', isCurrent: true),
+                DetailSimpleBorderButton(text: '推荐', isCurrent: false)
+              ],
             ),
           ),
         images != null && images!.isNotEmpty
@@ -55,7 +59,6 @@ class DetailImagesWidget extends StatelessWidget {
           child: ExtendedImage.network(
             src,
             fit: BoxFit.cover,
-
           ),
         ));
       }

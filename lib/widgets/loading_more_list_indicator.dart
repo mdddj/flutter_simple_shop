@@ -1,11 +1,4 @@
-// Flutter imports:
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
-
-import '../index.dart';
+part of widgets;
 
 // Package imports
 
@@ -18,10 +11,12 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
   final Widget? emptyWidget;
   const LoadingMoreListCostumIndicator(this.status,
       {this.tryAgain,
-        this.text,
-        this.backgroundColor,
-        this.isSliver = false,
-        this.emptyWidget,Key? key}): super(key: key);
+      this.text,
+      this.backgroundColor,
+      this.isSliver = false,
+      this.emptyWidget,
+      Key? key})
+      : super(key: key);
   @override
   @override
   Widget build(BuildContext context) {
@@ -32,11 +27,11 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
         break;
       case IndicatorStatus.loadingMoreBusying:
         widget = const MyLoading();
-        widget = _setbackground(false, widget, 35.0,context);
+        widget = _setbackground(false, widget, 35.0, context);
         break;
       case IndicatorStatus.fullScreenBusying:
         widget = const MyLoading();
-        widget = _setbackground(true, widget, double.infinity,context);
+        widget = _setbackground(true, widget, double.infinity, context);
         if (isSliver) {
           widget = SliverFillRemaining(
             child: widget,
@@ -55,7 +50,7 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
         widget = Text(
           text ?? '加载失败,请重试.',
         );
-        widget = _setbackground(false, widget, 35.0,context);
+        widget = _setbackground(false, widget, 35.0, context);
         if (tryAgain != null) {
           widget = GestureDetector(
             onTap: () {
@@ -69,7 +64,7 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
         widget = Text(
           text ?? '加载失败,请重试.',
         );
-        widget = _setbackground(true, widget, double.infinity,context);
+        widget = _setbackground(true, widget, double.infinity, context);
         if (tryAgain != null) {
           widget = GestureDetector(
             onTap: () {
@@ -94,14 +89,14 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
         break;
       case IndicatorStatus.noMoreLoad:
         widget = Text(text ?? '没有更多了.');
-        widget = _setbackground(false, widget, 35.0,context);
+        widget = _setbackground(false, widget, 35.0, context);
         break;
       case IndicatorStatus.empty:
         widget = EmptyWidget(
           text ?? '空空如也.',
           emptyWidget: emptyWidget,
         );
-        widget = _setbackground(true, widget, double.infinity,context);
+        widget = _setbackground(true, widget, double.infinity, context);
         if (isSliver) {
           widget = SliverFillRemaining(
             child: widget,
@@ -120,7 +115,8 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
     return widget;
   }
 
-  Widget _setbackground(bool full, Widget widget, double height,BuildContext context) {
+  Widget _setbackground(
+      bool full, Widget widget, double height, BuildContext context) {
     widget = Container(
         width: double.infinity,
         height: height,
@@ -134,12 +130,12 @@ class LoadingMoreListCostumIndicator extends StatelessWidget {
     final theme = Theme.of(context);
     return theme.platform == TargetPlatform.iOS
         ? const CupertinoActivityIndicator(
-      animating: true,
-      radius: 16.0,
-    )
+            animating: true,
+            radius: 16.0,
+          )
         : const CircularProgressIndicator(
-      strokeWidth: 2.0,
-      valueColor: AlwaysStoppedAnimation(Colors.grey),
-    );
+            strokeWidth: 2.0,
+            valueColor: AlwaysStoppedAnimation(Colors.grey),
+          );
   }
 }

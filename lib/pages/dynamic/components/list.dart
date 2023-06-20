@@ -9,8 +9,7 @@ import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../../common/index.dart';
 import '../../../util/navigator_util.dart';
-import '../../../widgets/extended_image.dart';
-import '../../../widgets/simple_price.dart';
+import '../../../widgets/index.dart';
 import '../pyq_riverpod.dart';
 
 class PyqList extends ConsumerWidget {

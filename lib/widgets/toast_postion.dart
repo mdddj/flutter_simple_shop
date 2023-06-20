@@ -1,5 +1,4 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
 //Toast 显示位置控制
 enum ToastPostion {
@@ -32,24 +31,24 @@ class Toast {
   // 上下边距
   static late double _pdVertical;
   static void toast(
-      BuildContext context, {
-        //显示的文本
-        required String msg,
-        //显示的时间 单位毫秒
-        int showTime = 1000,
-        //显示的背景
-        Color bgColor = Colors.black,
-        //显示的文本颜色
-        Color textColor = Colors.white,
-        //显示的文字大小
-        double textSize = 14.0,
-        //显示的位置
-        ToastPostion position = ToastPostion.center,
-        //文字水平方向的内边距
-        double pdHorizontal = 20.0,
-        //文字垂直方向的内边距
-        double pdVertical = 10.0,
-      }) async {
+    BuildContext context, {
+    //显示的文本
+    required String msg,
+    //显示的时间 单位毫秒
+    int showTime = 1000,
+    //显示的背景
+    Color bgColor = Colors.black,
+    //显示的文本颜色
+    Color textColor = Colors.white,
+    //显示的文字大小
+    double textSize = 14.0,
+    //显示的位置
+    ToastPostion position = ToastPostion.center,
+    //文字水平方向的内边距
+    double pdHorizontal = 20.0,
+    //文字垂直方向的内边距
+    double pdVertical = 10.0,
+  }) async {
     _msg = msg;
     _startedTime = DateTime.now();
     _showTime = showTime;
@@ -67,22 +66,22 @@ class Toast {
       //通过OverlayEntry将构建的布局插入到整个布局的最上层
       _overlayEntry = OverlayEntry(
           builder: (BuildContext context) => Positioned(
-            //top值，可以改变这个值来改变toast在屏幕中的位置
-            top: buildToastPosition(context),
-            child: Container(
-                alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                  child: AnimatedOpacity(
-                    opacity: _showing ? 1.0 : 0.0, //目标透明度
-                    duration: _showing
-                        ? const Duration(milliseconds: 100)
-                        : const Duration(milliseconds: 400),
-                    child: _buildToastWidget(),
-                  ),
-                )),
-          ));
+                //top值，可以改变这个值来改变toast在屏幕中的位置
+                top: buildToastPosition(context),
+                child: Container(
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                      child: AnimatedOpacity(
+                        opacity: _showing ? 1.0 : 0.0, //目标透明度
+                        duration: _showing
+                            ? const Duration(milliseconds: 100)
+                            : const Duration(milliseconds: 400),
+                        child: _buildToastWidget(),
+                      ),
+                    )),
+              ));
       //插入到整个布局的最上层
       overlayState.insert(_overlayEntry!);
     } else {
@@ -134,4 +133,3 @@ class Toast {
     return backResult;
   }
 }
-

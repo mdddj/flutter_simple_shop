@@ -1,15 +1,14 @@
-// Flutter imports:
-import 'package:flutter/material.dart';
+part of widgets;
 
-class FloatWidget extends SliverPersistentHeaderDelegate{
-
+class FloatWidget extends SliverPersistentHeaderDelegate {
   final Widget child;
   final double height;
 
-  FloatWidget({required this.child,required this.height});
+  FloatWidget({required this.child, required this.height});
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return child;
   }
 
@@ -20,6 +19,6 @@ class FloatWidget extends SliverPersistentHeaderDelegate{
   double get minExtent => height;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
-
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
+      false;
 }

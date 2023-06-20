@@ -1,10 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:extended_image/extended_image.dart';
-import 'package:flutter/material.dart';
-
-// Project imports:
-import '../util/image_util.dart';
-import 'component/custom_loading.dart';
+part of widgets;
 
 // 图像扩展组件
 class ExtendedImageWidget extends StatelessWidget {
@@ -15,15 +9,15 @@ class ExtendedImageWidget extends StatelessWidget {
   final BoxFit fit;
   final bool knowSize;
 
-  const ExtendedImageWidget({
-    required this.src,
-    required this.height,
-    required this.width,
-    this.radius = BorderRadius.zero,
-    this.fit = BoxFit.fill,
-    this.knowSize = true,
-    Key? key
-  }): super(key: key);
+  const ExtendedImageWidget(
+      {required this.src,
+      required this.height,
+      required this.width,
+      this.radius = BorderRadius.zero,
+      this.fit = BoxFit.fill,
+      this.knowSize = true,
+      Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -52,14 +46,14 @@ class ExtendedImageWidget extends StatelessWidget {
   }
 }
 
-
 /// 简单的图片
 /// 需要直系父亲组件声明宽高
 class SimpleImage extends StatelessWidget {
   final String url;
   final BorderRadius? radius;
 
-  const SimpleImage({Key? key, required this.url, this.radius}) : super(key: key);
+  const SimpleImage({Key? key, required this.url, this.radius})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +63,7 @@ class SimpleImage extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             color: Colors.grey[200],
-            borderRadius:radius ?? BorderRadius.circular(8),
+            borderRadius: radius ?? BorderRadius.circular(8),
           ),
         ),
         Positioned(
@@ -78,9 +72,9 @@ class SimpleImage extends StatelessWidget {
           right: 0,
           bottom: 0,
           child: GestureDetector(
-            onLongPress: (){
+            onLongPress: () {
               //下载图片
-              url.downloadImage(checkPermission: true,isAsset: false);
+              url.downloadImage(checkPermission: true, isAsset: false);
             },
             child: ExtendedImage.network(
               MImageUtils.magesProcessor(url),
@@ -90,7 +84,7 @@ class SimpleImage extends StatelessWidget {
               cache: true,
               fit: BoxFit.cover,
               shape: BoxShape.rectangle,
-              borderRadius:radius ?? BorderRadius.circular(8),
+              borderRadius: radius ?? BorderRadius.circular(8),
             ),
           ),
         ),

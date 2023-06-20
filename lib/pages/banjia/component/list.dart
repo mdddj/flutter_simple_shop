@@ -1,10 +1,8 @@
-
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import '../../../util/navigator_util.dart';
-import '../../../widgets/extended_image.dart';
-import '../../../widgets/simple_price.dart';
+import '../../../widgets/index.dart';
 
 class BanjiaList extends StatelessWidget {
   final List<HalfPriceListElement> products;
@@ -56,7 +54,6 @@ class BanjiaList extends StatelessWidget {
                         '${item.yijuhua}',
                         style: const TextStyle(color: Colors.pink),
                       ),
-
                     )
                   ],
                 ),
@@ -67,23 +64,21 @@ class BanjiaList extends StatelessWidget {
                       price: '${item.price}',
                       hideText: '',
                     ),
-                    Builder(
-                      builder: (context) {
-                        return ElevatedButton(
-                          onPressed: () {
-                            NavigatorUtil.gotoGoodsDetailPage(
-                                context, '${item.id}',
-                                newViewPage: true);
-                          },
-                          style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all(Colors.pink)),
-                          child: Text((item.itemSoldNum ?? 0) == 0
-                              ? '去抢购'
-                              : '已抢${item.itemSoldNum}'),
-                        );
-                      }
-                    )
+                    Builder(builder: (context) {
+                      return ElevatedButton(
+                        onPressed: () {
+                          NavigatorUtil.gotoGoodsDetailPage(
+                              context, '${item.id}',
+                              newViewPage: true);
+                        },
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.pink)),
+                        child: Text((item.itemSoldNum ?? 0) == 0
+                            ? '去抢购'
+                            : '已抢${item.itemSoldNum}'),
+                      );
+                    })
                   ],
                 )
               ],

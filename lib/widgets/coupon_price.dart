@@ -1,9 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:fcontrol_nullsafety/fdefine.dart';
-import 'package:flutter/material.dart';
-import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-
-import '../constant/index.dart';
+part of widgets;
 
 // 券后价小部件
 class CouponPriceWidget extends StatelessWidget {

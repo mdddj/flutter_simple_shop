@@ -1,12 +1,4 @@
-import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:fcontrol_nullsafety/fdefine.dart';
-import 'package:flutter/material.dart';
-import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
-import '../util/navigator_util.dart';
-import '../widgets/coupon_price.dart';
-import 'extended_image.dart';
+part of widgets;
 
 // 瀑布流商品卡片
 class WaterfallGoodsCard extends StatelessWidget {

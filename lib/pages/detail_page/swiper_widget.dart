@@ -1,11 +1,12 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
-import '../../widgets/extended_image.dart';
+
+import '../../widgets/index.dart';
 
 class SwiperWidget extends StatelessWidget {
   final String images;
-  const SwiperWidget({required this.images,Key? key}): super(key: key);
+  const SwiperWidget({required this.images, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
