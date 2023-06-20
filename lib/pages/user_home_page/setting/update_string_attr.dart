@@ -1,6 +1,6 @@
 part of pages;
 
-class UpdateStringAttrWidget<T extends BaseApi> extends ConsumerStatefulWidget {
+class UpdateStringAttrWidget<T extends MyAppCoreApi> extends ConsumerStatefulWidget {
   final String paramsName;
   final String title;
   final String initHintValue;
@@ -11,7 +11,7 @@ class UpdateStringAttrWidget<T extends BaseApi> extends ConsumerStatefulWidget {
   ConsumerState<UpdateStringAttrWidget<T>> createState() => _UpdateStringAttrWidgetState<T>();
 }
 
-class _UpdateStringAttrWidgetState<T extends BaseApi> extends ConsumerState<UpdateStringAttrWidget<T>> {
+class _UpdateStringAttrWidgetState<T extends MyAppCoreApi> extends ConsumerState<UpdateStringAttrWidget<T>> {
   final controller = TextEditingController();
   var hasValue = false;
   ///api接口
