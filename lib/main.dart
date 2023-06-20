@@ -9,11 +9,11 @@ import 'common/view.dart';
 import 'index.dart';
 
 /// 线上场景: apiHost =  'https://itbug.shop'  apiPort = '9445'
-const ip = '192.168.199.77';
+const ip = '192.168.100.55';
 const apiHost = 'http://$ip';
 const apiPort = "80";
 const kAppDebugMode = true;
-
+const fontFamily = 'LXGWWenKaiMono';
 
 ///程序入口
 void main() async {
@@ -29,17 +29,25 @@ class DdShop extends View {
     return ThemeBuildWidget(themeBuild: (AppLocalSettingModel theme) {
       final themeData = MyAppTheme.getTheme(theme.themeIndex);
       final darkTheme = MyAppTheme.darkTheme;
-      const fontFamily = 'LXGWWenKaiMono';
+
       return MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: '典典小卖部',
         theme: themeData.copyWith(
           useMaterial3: true,
+          tabBarTheme: themeData.tabBarTheme.copyWith(
+            labelStyle: const TextStyle(fontFamily: fontFamily),
+            unselectedLabelStyle: const TextStyle(fontFamily: fontFamily),
+          ),
           textTheme: themeData.textTheme.apply(fontFamily: fontFamily)
         ),
         darkTheme: darkTheme.copyWith(
           useMaterial3: true,
-          textTheme: darkTheme.textTheme.apply(fontFamily: fontFamily)
+          textTheme: darkTheme.textTheme.apply(fontFamily: fontFamily),
+          tabBarTheme: themeData.tabBarTheme.copyWith(
+            labelStyle: const TextStyle(fontFamily: fontFamily),
+            unselectedLabelStyle: const TextStyle(fontFamily: fontFamily),
+          ),
         ),
         themeMode: theme.getThemeMode,
         routerConfig: routers,

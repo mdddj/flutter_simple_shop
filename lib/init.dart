@@ -5,6 +5,7 @@ part of index;
 Future<void> appInit(VoidCallback start) async {
   WidgetsFlutterBinding.ensureInitialized();
   final result = await (Connectivity().checkConnectivity());
+  BaseApi.options = BaseOptions(connectTimeout: const Duration(seconds: 30),);
   wtfLog(result);
   if (kAppDebugMode) {
     DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9999,

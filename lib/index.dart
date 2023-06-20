@@ -8,6 +8,7 @@ import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_check_plugin/model/send_model.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/theme/model.dart';
+import 'package:dio/dio.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/foundation.dart';
