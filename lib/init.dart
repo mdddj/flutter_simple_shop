@@ -61,6 +61,9 @@ void initInstanceObject() {
   getIt.registerSingleton(MImageUtils());
   getIt.registerSingleton(MyUpdateUserAvatarApi());
   getIt.registerSingleton(MyDeleteUserResourceApi());
+  getIt.registerSingleton(MyUpdateUserNameApi());
+  getIt.registerSingleton(MyUpdateUserCityApi());
+  getIt.registerSingleton(MyUpdateUserJobApi());
 }
 
 Future<void> initCaches() async {

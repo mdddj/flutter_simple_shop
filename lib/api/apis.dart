@@ -187,9 +187,18 @@ class MyResourceListApi extends MyAppCoreApi with ApiPageMixin {
 ///修改用户昵称
 class MyUpdateUserNameApi extends MyAppCoreApi {
   MyUpdateUserNameApi()
-      : super('/api/update-username', httpMethod: HttpMethod.post);
+      : super('/api/user/update-username', httpMethod: HttpMethod.post);
 }
 
+///修改用户城市
+class MyUpdateUserCityApi extends MyAppCoreApi {
+  MyUpdateUserCityApi():super('/api/user/update-city',httpMethod: HttpMethod.post);
+}
+
+///修改用户城市
+class MyUpdateUserJobApi extends MyAppCoreApi {
+  MyUpdateUserJobApi():super('/api/user/update-job',httpMethod: HttpMethod.post);
+}
 ///查找动态分类
 class MyFindResourceCategoryApi extends MyAppCoreApi {
   MyFindResourceCategoryApi()

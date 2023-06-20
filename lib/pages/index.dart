@@ -186,3 +186,4 @@ part 'ddq_page/sliver_app_bar_delegate.dart';
 part 'user_home_page/setting/index.dart';
 part 'user_home_page/setting/update_avatar.dart';
 part 'user_home_page/setting/update_name.dart';
+part 'user_home_page/setting/update_string_attr.dart';
