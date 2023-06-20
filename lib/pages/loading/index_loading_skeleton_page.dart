@@ -60,7 +60,6 @@ class IndexLoadingSkeletonPage extends StatelessWidget {
   Widget _buildTabItemSkeleton(BuildContext context) {
     var pw = MediaQuery.of(context).size.width;
     pw = pw - 30;
-    var w = pw / 6 - 30;
     return const Skeleton();
   }
 }

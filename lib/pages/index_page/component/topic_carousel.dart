@@ -14,7 +14,7 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
           final item = list[index];
-          return const SizedBox();
+          return ImageView(image: MyImage.network(url: item.topicImage,params: const ImageParams(width: double.infinity,height: double.infinity)));
           // return renderItem(item);
         },
         itemCount: list.length,
