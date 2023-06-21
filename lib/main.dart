@@ -21,7 +21,7 @@ const releaseEnvConfig = EnvConfig(
     debugMode: false,
     fontFamily: 'LXGWWenKaiMono');
 
-///切换线上环境使用releaseEnvConfig
+///切换线上环境使用releaseEnvConfig eg. const useEnv = releaseEnvConfig;
 const useEnv = releaseEnvConfig;
 
 void main() async {
