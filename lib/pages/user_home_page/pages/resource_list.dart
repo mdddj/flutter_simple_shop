@@ -44,14 +44,14 @@ class _UserResourceWidgetState extends State<UserResourceWidget> {
     return MyLoadingMoreSliverList(MySliverListConfig<Resource>(
         itemBuilder: _itemBuilder,
         sourceList: _repository,
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(8),
         lock: false,
         indicatorBuilder: _indicatorBuilder,
         extendedListDelegate:
             SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: context.waterfallFlowCrossAxisCount,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12)));
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8)));
   }
 
   @override

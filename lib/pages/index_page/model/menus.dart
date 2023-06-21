@@ -21,7 +21,7 @@ final indexMenus = IListConst<HomeMenu>([
       extra: DynPageParams(name: '典典的面基记录', emptyText: '快去记录面基过程吧')),
   const HomeMenu(title: '品牌收藏', svgpath: 'assets/svg/pp.svg'),
   HomeMenu(
-      title: '记录生活',
+      title: '发布日常',
       icon: const Icon(Icons.edit),
       routerPath: pagerUtil.resourceWrite.routername,
       extra: DynWriteParams(name: '典の日常')),

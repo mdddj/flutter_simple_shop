@@ -99,6 +99,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   }
 
   Future<void> _submit() async {
+    context.hideKeyBoard();
     final api = getIt.get<MyResourceCreateApi>();
     final files = await _getFiles();
     api.formData = FormData.fromMap({

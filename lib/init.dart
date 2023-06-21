@@ -7,8 +7,8 @@ Future<void> appInit(VoidCallback start) async {
   final result = await (Connectivity().checkConnectivity());
   BaseApi.options = BaseOptions(connectTimeout: const Duration(seconds: 30),);
   wtfLog(result);
-  if (kAppDebugMode) {
-    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: ip, port: 9999,
+  if (useEnv.debugMode) {
+    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: "192.168.199.75", port: 9999,
         customCoverterResponseData: (model) {
       final body = model.response?.data;
       return isValue<Map<String, dynamic>>(body)
@@ -35,7 +35,7 @@ Future<void> appInit(VoidCallback start) async {
 }
 
 void initNetUtil() {
-  BaseApi.host = "$apiHost:$apiPort";
+  BaseApi.host = "${useEnv.host}:${useEnv.port}";
   if (kIsWeb.not && Platform.isAndroid) {
     HttpOverrides.global = MyHttpOverrides();
   }
