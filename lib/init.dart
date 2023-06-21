@@ -4,7 +4,7 @@ part of index;
 /// 初始化
 Future<void> appInit(VoidCallback start) async {
   WidgetsFlutterBinding.ensureInitialized();
-  final result = await (Connectivity().checkConnectivity());
+  await (Connectivity().checkConnectivity());
   BaseApi.options = BaseOptions(connectTimeout: const Duration(seconds: 30),);
   if (useEnv.debugMode) {
     DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: "192.168.199.75", port: 9999,

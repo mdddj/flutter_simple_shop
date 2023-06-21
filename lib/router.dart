@@ -17,7 +17,19 @@ class PagerUtil {
 
   ///面基申请
   Pager get meetAdd => const Pager(routername: '/meet/add');
+
   Pager get setting => const Pager(routername: '/setting');
+
+  Pager get login => const Pager(routername: '/login');
+  Pager get elm => const Pager(routername: '/elm');
+  Pager get brand => const Pager(routername: '/brand');
+}
+
+FutureOr<String?> redirectToLogin(BuildContext context, GoRouterState state) {
+  if (UserApi.userToken.isEmpty) {
+    return pagerUtil.login.routername;
+  }
+  return null;
 }
 
 ///页面路由
@@ -32,6 +44,7 @@ final routers = GoRouter(
       builder: (context, state) {
         return MyResourceWritePage(params: state.extra as DynWriteParams);
       },
+      redirect: redirectToLogin,
     ),
     GoRoute(
       path: pagerUtil.resourceList.routername,
@@ -46,16 +59,28 @@ final routers = GoRouter(
       },
     ),
     GoRoute(
-      path: pagerUtil.meetAdd.routername,
-      builder: (context, state) {
-        return const AddNewMeet();
-      },
-    ),
+        path: pagerUtil.meetAdd.routername,
+        builder: (context, state) {
+          return const AddNewMeet();
+        },
+        redirect: redirectToLogin),
     GoRoute(
       path: pagerUtil.setting.routername,
       builder: (context, state) {
         return const SettingIndex();
       },
-    )
+    ),
+    GoRoute(
+      path: pagerUtil.login.routername,
+      builder: (context, state) {
+        return const UserLoginPage();
+      },
+    ),
+    GoRoute(path: pagerUtil.elm.routername,builder: (context, state) {
+      return const WaimaiIndex();
+    },),
+    GoRoute(path: pagerUtil.brand.routername,builder: (context, state) {
+      return const BrandListPage();
+    },)
   ],
 );

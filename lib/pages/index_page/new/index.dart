@@ -102,7 +102,7 @@ class IndexProductTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 12),
+      padding: const EdgeInsets.only(top: 12,left: 12,right: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -114,7 +114,7 @@ class IndexProductTitle extends StatelessWidget {
                 context.iconColor ?? Colors.red, BlendMode.srcIn),
           ),
           Text(
-            '* 每20分钟更新一次',
+            '典:没啥事就购物把,反正便宜',
             style: context.textTheme.bodyMedium
                 ?.copyWith(color: Colors.grey, fontSize: 12),
           )

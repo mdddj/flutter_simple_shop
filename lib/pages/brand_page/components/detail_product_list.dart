@@ -8,9 +8,14 @@ class DetailProductList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-        delegate:
-            SliverChildBuilderDelegate(_builderList, childCount: list.length));
+    return SliverPadding(
+      padding: const EdgeInsets.all(12),
+      sliver: SliverWaterfallFlow.count(
+          crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+          children: [...list.map((e) => _builderList(context, list.indexOf(e)))]),
+    );
   }
 
   Widget _builderList(BuildContext context, int index) {
@@ -20,19 +25,21 @@ class DetailProductList extends StatelessWidget {
         NavigatorUtil.gotoGoodsDetailPage(
             context, brandDetailGoodsList.id.toString());
       },
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-        decoration: const BoxDecoration(color: Colors.white),
-        child: Row(
-          children: [
-            _buildImage(brandDetailGoodsList),
-            utils.widgetUtils.marginRight(),
-            Expanded(child: _buildData(brandDetailGoodsList))
-          ],
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              _buildImage(brandDetailGoodsList),
+              const SizedBox(width: 12),
+              Expanded(child: _buildData(brandDetailGoodsList))
+            ],
+          ),
         ),
       ),
     );
   }
+
 
   Widget _buildData(ProductModel item) {
     return Container(
@@ -45,6 +52,8 @@ class DetailProductList extends StatelessWidget {
             item.title,
             style: const TextStyle(
                 color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
           CouponDiscountShow(
               value: item.couponPrice.toString().replaceAll('.0', '')),
@@ -59,7 +68,7 @@ class DetailProductList extends StatelessWidget {
 
   // 商品主图
   Widget _buildImage(ProductModel item) {
-    var imageSize = const Size(120, 120);
+    var imageSize = const Size(80, 80);
     return Container(
         decoration: BoxDecoration(
           color: Colors.grey.shade200,

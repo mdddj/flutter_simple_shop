@@ -23,11 +23,11 @@ class SimplePrice extends StatelessWidget {
       lightOrientation: FLightOrientation.LeftBottom,
       text: hideText ?? '券后价 ',
       style: TextStyle(
-          fontSize: fontSize != null ? fontSize! * .7 : 14,
+          fontSize: fontSize != null ? fontSize! * .7 : 12,
           color: color ?? Colors.red),
       spans: [
         TextSpan(
-            text: ' ¥',
+            text: '¥',
             style: TextStyle(
                 color: color ?? Colors.red,
                 fontSize: 14,
@@ -44,7 +44,7 @@ class SimplePrice extends StatelessWidget {
             text: '$zhe折',
             style: const TextStyle(fontSize: 14),
           ),
-        if (orignPrice != null)
+        if (orignPrice != null && orignPrice!='0')
           TextSpan(
               text: '原价$orignPrice',
               style: const TextStyle(

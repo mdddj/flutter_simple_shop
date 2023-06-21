@@ -14,7 +14,14 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
           final item = list[index];
-          return ImageView(image: MyImage.network(url: item.topicImage,params: const ImageParams(width: double.infinity,height: double.infinity)));
+          return ImageView(
+              image: MyImage.network(
+                  url: item.topicImage,
+                  params: ImageParams(
+                      width: double.infinity,
+                      height: double.infinity,
+                      borderRadius: BorderRadius.circular(12),
+                      shape: BoxShape.rectangle)));
           // return renderItem(item);
         },
         itemCount: list.length,
@@ -47,47 +54,47 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
     );
   }
 
-  // Widget render() {
-  //   return my_carousel_comp.Carousel(
-  //     images: list.map(renderItem).toList(),
-  //     defaultImage: utils.widgetUtils.loading(double.infinity, 200),
-  //     overlayShadow: true,
-  //     dotSpacing: 12,
-  //     indicatorBgPadding: 1,
-  //     overlayShadowColors: Colors.grey.shade200,
-  //     animationCurve: Curves.easeOutQuart,
-  //     radius: const Radius.circular(5),
-  //     dotVerticalPadding: 5,
-  //     dotSize: 5,
-  //     onImageChange: (a, b) {},
-  //     onImageTap: (index) {
-  //       final clickItem = list[index];
-  //       utils.openLink(clickItem.link);
-  //     },
-  //     autoplay: true,
-  //   );
-  // }
+// Widget render() {
+//   return my_carousel_comp.Carousel(
+//     images: list.map(renderItem).toList(),
+//     defaultImage: utils.widgetUtils.loading(double.infinity, 200),
+//     overlayShadow: true,
+//     dotSpacing: 12,
+//     indicatorBgPadding: 1,
+//     overlayShadowColors: Colors.grey.shade200,
+//     animationCurve: Curves.easeOutQuart,
+//     radius: const Radius.circular(5),
+//     dotVerticalPadding: 5,
+//     dotSize: 5,
+//     onImageChange: (a, b) {},
+//     onImageTap: (index) {
+//       final clickItem = list[index];
+//       utils.openLink(clickItem.link);
+//     },
+//     autoplay: true,
+//   );
+// }
 
-  // Widget renderItem(Carousel item) {
-  //   return Builder(
-  //     builder: (BuildContext context) {
-  //       return ImageView(
-  //         image: MyImage.network(
-  //             url: item.topicImage,
-  //             params: ImageParams(
-  //                 shape: BoxShape.rectangle,
-  //                 borderRadius: BorderRadius.circular(12))),
-  //       );
-  //     },
-  //   );
-  // }
+// Widget renderItem(Carousel item) {
+//   return Builder(
+//     builder: (BuildContext context) {
+//       return ImageView(
+//         image: MyImage.network(
+//             url: item.topicImage,
+//             params: ImageParams(
+//                 shape: BoxShape.rectangle,
+//                 borderRadius: BorderRadius.circular(12))),
+//       );
+//     },
+//   );
+// }
 
-  // CarouselSlider buildCarouselSlider(
-  //     List<Carousel> carousel, BuildContext context) {
-  //   return CarouselSlider(
-  //     options:
-  //         CarouselOptions(height: 200, autoPlay: true, enlargeCenterPage: true),
-  //     items: carousel.map(renderItem).toList(),
-  //   );
-  // }
+// CarouselSlider buildCarouselSlider(
+//     List<Carousel> carousel, BuildContext context) {
+//   return CarouselSlider(
+//     options:
+//         CarouselOptions(height: 200, autoPlay: true, enlargeCenterPage: true),
+//     items: carousel.map(renderItem).toList(),
+//   );
+// }
 }

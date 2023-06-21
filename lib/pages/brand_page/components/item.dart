@@ -11,7 +11,7 @@ class BrandItemCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         child: Column(
-          children: [_buildHeader(context), _buildGoodsGrid()],
+          children: [_buildHeader(context), _buildGoodsGrid(context)],
         ),
       ),
     );
@@ -27,20 +27,17 @@ class BrandItemCard extends StatelessWidget {
       child: Flex(
         direction: Axis.horizontal,
         children: [
-          _buildHeaderFlexCore(
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey[200]!),
-                  color: Colors.white,
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                ),
-                child: ImageView(
-                    image: MyImage.network(
-                        url: MImageUtils.magesProcessor(storeInfo.brandlogo),
-                        params: ImageParams(
-                            size: 50, borderRadius: BorderRadius.circular(8)))),
-              ),
-              1),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ImageView(
+                image: MyImage.network(
+                    url: MImageUtils.magesProcessor(storeInfo.brandlogo),
+                    params: ImageParams(
+                        size: 38, borderRadius: BorderRadius.circular(8),
+                        shape: BoxShape.rectangle,
+                      fit: BoxFit.cover
+                    ))),
+          ),
           _buildHeaderFlexCore(
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,19 +72,17 @@ class BrandItemCard extends StatelessWidget {
   }
 
   /// 产品列表
-  Widget _buildGoodsGrid() {
+  Widget _buildGoodsGrid(BuildContext context) {
     return WaterfallFlow.count(
       padding: EdgeInsets.zero,
-      crossAxisCount: 3,
+      crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand,
       shrinkWrap: true,
       crossAxisSpacing: 12,
       physics: const NeverScrollableScrollPhysics(),
       children: storeInfo.goodslist.isNotEmpty
-          ? [
-              StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[0]),
-              StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[1]),
-              StoreGoodsItemLayout(storeGoods: storeInfo.goodslist[2]),
-            ]
+          ? storeInfo.goodslist.getRange(0, 3).map((e) {
+            return StoreGoodsItemLayout(storeGoods: e);
+      }).toList()
           : [],
     );
   }

@@ -16,6 +16,74 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
 
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
+    return ScreenTypeLayout.builder(
+      mobile: (_) => MobileAppbar(tabController: tabController),
+      desktop: (p0) {
+        return DeskTopAppbar(tabController: tabController);
+      },
+    );
+  }
+}
+
+///桌面端导航条
+class DeskTopAppbar extends StatelessWidget {
+  final TabController tabController;
+
+  const DeskTopAppbar({super.key, required this.tabController});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: kToolbarHeight + 38,
+      width: context.screenWidth,
+      decoration: BoxDecoration(
+        color: context.cardColor
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("典典的小卖部", style: context.textTheme.titleLarge)
+                  .marginOnly(left: 12),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                      constraints: const BoxConstraints(maxWidth: 180),
+                      padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+                      decoration: BoxDecoration(
+                        color: context.colorScheme.secondaryContainer,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: context.colorScheme.secondary)
+                      ),
+                      child:const Text("搜索内容,比如:辣条"))
+                ],
+              ).marginOnly(right: 12),
+            ],
+          ).expanded,
+          SizedBox(height: 48, child: IndexHomeBottomTabbar(tabController))
+        ],
+      ),
+    );
+  }
+}
+
+///手机版导航条
+class MobileAppbar extends View implements PreferredSizeWidget {
+  final TabController tabController;
+
+  const MobileAppbar({super.key, required this.tabController});
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 38);
+
+  Future<void> navTo(BuildContext context) async {
+    await context.navToWidget(to: const SearchPage());
+  }
+
+  @override
+  Widget renderView(BuildContext context, ApplicationModel appCore) {
     return AppBar(
       leadingWidth: 58,
       title: Container(
@@ -45,64 +113,68 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
             ))
       ],
       bottom: PreferredSize(
-        preferredSize: Size(context.screenWidth,38),
-        child: TabBar(
-          controller: tabController,
-          isScrollable: true,
-          tabs: [
-            const Tab(
-              text: '精选',
-            ),
-            ...appCore.watchCategory.map(CategoryItemLayout.new)
-          ],
-          onTap: (int index) {},
-        ),
+        preferredSize: Size(context.screenWidth, 38),
+        child: IndexHomeBottomTabbar(tabController),
       ),
     );
   }
-
-  //ui
 }
 
+class IndexHomeBottomTabbar extends View {
+  final TabController tabController;
 
-class IndexFirstTabItem extends StatelessWidget {
-  const IndexFirstTabItem({super.key});
+  const IndexHomeBottomTabbar(this.tabController, {super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
+  Widget renderView(BuildContext context, ApplicationModel appCore) {
+    return TabBar(
+      controller: tabController,
+      isScrollable: true,
+      tabs: [
+        const Tab(
+          text: '精选',
+        ),
+        ...appCore.watchCategory.map(CategoryItemLayout.new)
+      ],
+      onTap: (int index) {},
+    );
   }
 }
-
-
 
 ///分类布局
 class CategoryItemLayout extends StatelessWidget {
   final Category item;
-  const CategoryItemLayout(this.item,{super.key});
+
+  const CategoryItemLayout(this.item, {super.key});
 
   @override
   Widget build(BuildContext context) {
-   return ScreenTypeLayout.builder(mobile: (ctx) {
+    return ScreenTypeLayout.builder(mobile: (ctx) {
       return Tab(
         text: item.cname,
       );
-    }, desktop: (ctx){
-     return Container(
-       padding: const EdgeInsets.all(5),
-       decoration: BoxDecoration(
-         color: context.colorScheme.secondaryContainer,
-         borderRadius: BorderRadius.circular(8),
-       ),
-       child: Row(
-         mainAxisSize: MainAxisSize.min,
-         children: [
-           ImageView(image: MyImage.network(url: item.cpic,params:  ImageParams(size: 22,shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(8)))),
-           const SizedBox(width: 4),
-           Text(item.cname)
-         ],
-       ),
-     );
-   });
+    }, desktop: (ctx) {
+      return Container(
+        padding: const EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          color: context.colorScheme.secondaryContainer,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ImageView(
+                image: MyImage.network(
+                    url: item.cpic,
+                    params: ImageParams(
+                        size: 22,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(8)))),
+            const SizedBox(width: 4),
+            Text(item.cname)
+          ],
+        ),
+      );
+    });
   }
 }

@@ -45,7 +45,7 @@ class InitLoadingWidget extends StatelessWidget {
                         child: const Text("重试"))
                     .marginOnly(top: 12 + context.paddingBottom)
                     .visible(errorMessage != null),
-                SizedBox(height: context.paddingBottom)
+                SizedBox(height: context.bottomPadding)
               ],
             ),
           )

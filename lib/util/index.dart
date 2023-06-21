@@ -12,6 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:palette_generator/palette_generator.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import '../index.dart';
 import '../pages/index.dart';

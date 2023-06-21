@@ -20,6 +20,24 @@ extension ContextEx on BuildContext {
     return crossAxisCount;
   }
 
+  int get waterfallFlowCrossAxisCountWithBrand {
+    var crossAxisCount = 2;
+    switch (deviceScreenType) {
+      case DeviceScreenType.desktop:
+        crossAxisCount = 3;
+        break;
+      case DeviceScreenType.tablet:
+        crossAxisCount = 3;
+        break;
+      case DeviceScreenType.mobile:
+        crossAxisCount = 2;
+        break;
+      default:
+        break;
+    }
+    return crossAxisCount;
+  }
+
   /// tab是否为滚动样式
   bool get tabIsScrollable {
     var result = false;

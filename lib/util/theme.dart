@@ -42,3 +42,17 @@ extension TextScaleEx on Widget? {
         child: this ?? const SizedBox());
   }
 }
+
+extension PaddingEx on BuildContext {
+
+
+  ///适配全平台的地步边距
+  double get bottomPadding {
+    if(Platform.isAndroid || Platform.isIOS){
+      return 12 + paddingBottom;
+    }
+    return 24;
+  }
+
+  bool get isDesktop =>  getDeviceType(MediaQuery.of(this).size) == DeviceScreenType.desktop;
+}

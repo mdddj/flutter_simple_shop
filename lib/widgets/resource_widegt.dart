@@ -111,7 +111,7 @@ class IconAction extends StatelessWidget {
 class _Images extends StatelessWidget {
   final Resource resource;
 
-  const _Images({super.key, required this.resource});
+  const _Images({required this.resource});
 
   @override
   Widget build(BuildContext context) {

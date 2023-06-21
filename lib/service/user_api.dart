@@ -1,6 +1,5 @@
 import 'package:get_it/get_it.dart';
 
-
 class UserApi {
 
   static String get userToken => GetIt.instance.get<UserApi>().token;

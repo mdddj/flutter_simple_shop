@@ -21,9 +21,6 @@ class MyApp extends ApplicationWidget {
   @override
   Widget buildErrorWidget(
       Object e, Object s, BuildContext context, WidgetRef ref) {
-    if (e is AppException) {
-      kLog("${e.code} ${e.message}");
-    }
     return InitLoadingWidget(
       errorMessage: (e as AppException).message,
       retry: () =>
@@ -60,8 +57,7 @@ class App extends ConsumerWidget {
             children: [
               NavigationRail(
                 leading: const Logo().padding(12),
-                elevation: 5,
-                extended: false,
+                elevation: 10,
                 labelType: NavigationRailLabelType.selected,
                 destinations: bottomMenus.map((element) {
                   return NavigationRailDestination(
@@ -82,8 +78,11 @@ class App extends ConsumerWidget {
                   child: Column(
                     children: [
                       const Spacer(),
+                      const MiniThemeSetting(),
                       IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.settings)),
+                          onPressed: () {
+                            context.push(pagerUtil.setting.routername);
+                          }, icon: const Icon(Icons.settings)),
                       const SizedBox(height: 22)
                     ],
                   ),
