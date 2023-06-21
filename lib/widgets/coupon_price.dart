@@ -34,16 +34,15 @@ class CouponPriceWidget extends StatelessWidget {
         ),
         Text(
           actualPrice.toString(),
-          style: TextStyle(color: context.primaryColor, fontSize: 15),
+          style: TextStyle(color: context.primaryColor),
         ),
         Container(
-          margin: EdgeInsets.only(left: interval ?? 10.0),
+          margin: EdgeInsets.only(left: interval ?? 2.0),
           child: Text(
             '原价$originalPrice',
-            style: TextStyle(
+            style: context.textTheme.labelSmall?.copyWith(
                 decoration: TextDecoration.lineThrough,
-                decorationColor: context.colorScheme.error,
-                fontSize: 12),
+                decorationColor: context.colorScheme.error),
           ),
         ),
         //多少折

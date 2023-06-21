@@ -20,7 +20,27 @@ extension ContextEx on BuildContext {
     return crossAxisCount;
   }
 
+  //一行显示多少个品牌
   int get waterfallFlowCrossAxisCountWithBrand {
+    var crossAxisCount = 1;
+    switch (deviceScreenType) {
+      case DeviceScreenType.desktop:
+        crossAxisCount = 3;
+        break;
+      case DeviceScreenType.tablet:
+        crossAxisCount = 2;
+        break;
+      case DeviceScreenType.mobile:
+        crossAxisCount = 1;
+        break;
+      default:
+        break;
+    }
+    return crossAxisCount;
+  }
+
+  //品牌产品一行显示多少个
+  int get waterfallFlowCrossAxisCountWithBrandProduct {
     var crossAxisCount = 2;
     switch (deviceScreenType) {
       case DeviceScreenType.desktop:
@@ -30,7 +50,7 @@ extension ContextEx on BuildContext {
         crossAxisCount = 3;
         break;
       case DeviceScreenType.mobile:
-        crossAxisCount = 2;
+        crossAxisCount = 3;
         break;
       default:
         break;

@@ -46,20 +46,17 @@ class DeskTopAppbar extends StatelessWidget {
             children: [
               Text("典典的小卖部", style: context.textTheme.titleLarge)
                   .marginOnly(left: 12),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                      constraints: const BoxConstraints(maxWidth: 180),
-                      padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 8),
-                      decoration: BoxDecoration(
-                        color: context.colorScheme.secondaryContainer,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: context.colorScheme.secondary)
-                      ),
-                      child:const Text("搜索内容,比如:辣条"))
-                ],
-              ).marginOnly(right: 12),
+              Container(
+                  constraints: const BoxConstraints(maxWidth: 180),
+                  padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+                  decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.grey.shade400)
+                  ),
+                  child:const Text("搜索内容,比如:辣条").addIcon(icon:  Icon(Icons.search,size: 17,color: context.primaryColor))).marginOnly(right: 12).click(() {
+                    context.push(pagerUtil.search.routername);
+              }),
             ],
           ).expanded,
           SizedBox(height: 48, child: IndexHomeBottomTabbar(tabController))
@@ -79,7 +76,7 @@ class MobileAppbar extends View implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(kToolbarHeight + 38);
 
   Future<void> navTo(BuildContext context) async {
-    await context.navToWidget(to: const SearchPage());
+    await context.push(pagerUtil.search.routername);
   }
 
   @override

@@ -31,12 +31,12 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
     return LoadingMoreList(ListConfig<ProductModel>(
         itemBuilder: _renderLayout,
         sourceList: repository,
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(5),
         extendedListDelegate:
             SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: context.waterfallFlowCrossAxisCount,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 12),
+                crossAxisSpacing: 5,
+                mainAxisSpacing: 5),
         indicatorBuilder: CustomLoadingMoreWidget.new));
   }
 

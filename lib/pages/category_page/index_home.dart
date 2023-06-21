@@ -17,16 +17,6 @@ class CategoryIndexPageState extends ConsumerState<CategoryIndexPage> {
         title: const Text(
           '分类',
         ),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(42),
-          child: Container(
-              margin: const EdgeInsets.only(bottom: 12, left: 12, right: 12),
-              child: const Center(
-                  child: CupertinoSearchTextField(
-                placeholder: '关键字搜索',
-                placeholderStyle: TextStyle(fontSize: 13, color: Colors.grey),
-              ))),
-        ),
       ),
       body: EditePageHandle(
         child: Builder(builder: (context) {

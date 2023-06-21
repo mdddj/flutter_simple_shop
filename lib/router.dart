@@ -23,6 +23,7 @@ class PagerUtil {
   Pager get login => const Pager(routername: '/login');
   Pager get elm => const Pager(routername: '/elm');
   Pager get brand => const Pager(routername: '/brand');
+  Pager get search => const Pager(routername: '/search');
 }
 
 FutureOr<String?> redirectToLogin(BuildContext context, GoRouterState state) {
@@ -81,6 +82,9 @@ final routers = GoRouter(
     },),
     GoRoute(path: pagerUtil.brand.routername,builder: (context, state) {
       return const BrandListPage();
+    },),
+    GoRoute(path: pagerUtil.search.routername,builder: (context, state) {
+      return const SearchPage();
     },)
   ],
 );

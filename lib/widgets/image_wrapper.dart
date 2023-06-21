@@ -7,10 +7,32 @@ class ImageWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(child: child),
-      ),
+      child: Center(child: child),
+    );
+  }
+}
+
+
+extension AddIconWidgetEx on Widget {
+  Widget addIcon({required Widget icon}) {
+    return AddIconWidget(icon: icon,label: this);
+  }
+}
+
+class AddIconWidget extends StatelessWidget {
+  final Widget icon;
+  final Widget label;
+  const AddIconWidget({super.key, required this.icon, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        icon,
+        const SizedBox(width: 6,),
+        label,
+      ],
     );
   }
 }

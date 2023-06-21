@@ -9,7 +9,7 @@ const _pages = <Widget>[
   JiuJiuIndex(),
   CategoryIndexPage(),
   FavoriteIndexHome(),
-  UserIndexHome()
+  UserCenterPage()
 ];
 
 class MyApp extends ApplicationWidget {

@@ -75,7 +75,7 @@ class BrandItemCard extends StatelessWidget {
   Widget _buildGoodsGrid(BuildContext context) {
     return WaterfallFlow.count(
       padding: EdgeInsets.zero,
-      crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand,
+      crossAxisCount: context.waterfallFlowCrossAxisCountWithBrandProduct,
       shrinkWrap: true,
       crossAxisSpacing: 12,
       physics: const NeverScrollableScrollPhysics(),

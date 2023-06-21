@@ -16,6 +16,7 @@ import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import '../common/index.dart';
 import '../constant/index.dart';
@@ -58,3 +59,4 @@ part 'toast_postion.dart';
 part 'up_down_btn_widget.dart';
 part 'waterfall_goods_card.dart';
 part 'wrap.dart';
+part 'desktop_widget.dart';

@@ -150,7 +150,8 @@ class HeaderIndex extends ConsumerWidget {
 }
 
 class LoginUserAvatar extends ConsumerWidget {
-  const LoginUserAvatar({super.key});
+  final double? size;
+  const LoginUserAvatar({super.key,this.size});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -158,14 +159,6 @@ class LoginUserAvatar extends ConsumerWidget {
     if(user==null){
       return const Text('未登录');
     }
-    return ImageView(
-        image: MyImage.network(
-            url: user.picture,
-            params: ImageParams(
-                size: 30,
-                borderRadius: BorderRadius.circular(15),
-                fit: BoxFit.cover,
-                shape: BoxShape.circle,
-                errorWidget: const Icon(CupertinoIcons.person).center)));
+    return user.getAvatar(size: size ?? 40);
   }
 }
