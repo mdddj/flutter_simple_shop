@@ -45,7 +45,7 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
             ))
       ],
       bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(38),
+        preferredSize: Size(context.screenWidth,38),
         child: TabBar(
           controller: tabController,
           isScrollable: true,
@@ -53,13 +53,56 @@ class IndexHomeAppbar extends View implements PreferredSizeWidget {
             const Tab(
               text: '精选',
             ),
-            ...appCore.watchCategory.map((element) => Tab(
-                  text: element.cname,
-                ))
+            ...appCore.watchCategory.map(CategoryItemLayout.new)
           ],
           onTap: (int index) {},
         ),
       ),
     );
+  }
+
+  //ui
+}
+
+
+class IndexFirstTabItem extends StatelessWidget {
+  const IndexFirstTabItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
+
+
+///分类布局
+class CategoryItemLayout extends StatelessWidget {
+  final Category item;
+  const CategoryItemLayout(this.item,{super.key});
+
+  @override
+  Widget build(BuildContext context) {
+   return ScreenTypeLayout.builder(mobile: (ctx) {
+      return Tab(
+        text: item.cname,
+      );
+    }, desktop: (ctx){
+     return Container(
+       padding: const EdgeInsets.all(5),
+       decoration: BoxDecoration(
+         color: context.colorScheme.secondaryContainer,
+         borderRadius: BorderRadius.circular(8),
+       ),
+       child: Row(
+         mainAxisSize: MainAxisSize.min,
+         children: [
+           ImageView(image: MyImage.network(url: item.cpic,params:  ImageParams(size: 22,shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(8)))),
+           const SizedBox(width: 4),
+           Text(item.cname)
+         ],
+       ),
+     );
+   });
   }
 }

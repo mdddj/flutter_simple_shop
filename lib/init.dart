@@ -6,7 +6,6 @@ Future<void> appInit(VoidCallback start) async {
   WidgetsFlutterBinding.ensureInitialized();
   final result = await (Connectivity().checkConnectivity());
   BaseApi.options = BaseOptions(connectTimeout: const Duration(seconds: 30),);
-  wtfLog(result);
   if (useEnv.debugMode) {
     DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: "192.168.199.75", port: 9999,
         customCoverterResponseData: (model) {
@@ -44,13 +43,13 @@ void initNetUtil() {
 final getIt = GetIt.instance;
 
 void initInstanceObject() {
-  getIt.registerSingleton<Utils>(Utils());
-  getIt.registerSingleton<WidgetUtils>(WidgetUtils());
-  getIt.registerSingleton<NavigatorUtil>(NavigatorUtil());
-  getIt.registerSingleton<Api>(Api());
-  getIt.registerSingleton<UserApi>(UserApi());
-  getIt.registerSingleton<FavoritesRepository>(FavoritesRepository());
-  getIt.registerSingleton<MyTokenInterceptor>(MyTokenInterceptor());
+  getIt.registerSingleton(Utils());
+  getIt.registerSingleton(WidgetUtils());
+  getIt.registerSingleton(NavigatorUtil());
+  getIt.registerSingleton(Api());
+  getIt.registerSingleton(UserApi());
+  getIt.registerSingleton(FavoritesRepository());
+  getIt.registerSingleton(MyTokenInterceptor());
   getIt.registerSingleton(MyTaokeApiWithSimilarProducts());
   getIt.registerSingleton(SelectMyRsourceListData());
   getIt.registerSingleton(MyResourceCreateApi());

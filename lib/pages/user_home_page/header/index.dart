@@ -154,7 +154,10 @@ class LoginUserAvatar extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final user = ref.user!;
+    final user = ref.user;
+    if(user==null){
+      return const Text('未登录');
+    }
     return ImageView(
         image: MyImage.network(
             url: user.picture,
