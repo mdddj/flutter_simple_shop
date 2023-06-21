@@ -1,7 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/my_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 
 import '../freezed/app_action_menu.dart';
 import '../freezed/resource_category.dart';

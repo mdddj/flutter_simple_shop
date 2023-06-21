@@ -20,7 +20,9 @@ const releaseEnvConfig = EnvConfig(
     port: '9445',
     debugMode: false,
     fontFamily: 'LXGWWenKaiMono');
-const useEnv = debugEnvConfig; //切换线上环境使用releaseEnvConfig
+
+///切换线上环境使用releaseEnvConfig
+const useEnv = releaseEnvConfig;
 
 void main() async {
   appInit(() => runApp(const ProviderScope(child: DdShop())));

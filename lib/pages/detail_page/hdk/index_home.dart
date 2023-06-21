@@ -777,7 +777,6 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       }
       return 'success';
     } catch (e, s) {
-      print(e.runtimeType);
       debugPrintStack(stackTrace: s, label: "获取产品失败:$e");
       throw AppException.appError(code: 90002, msg: '商品优惠已过期');
     }
