@@ -22,6 +22,8 @@ import 'package:show_up_animation/show_up_animation.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../api/apis.dart';
+import '../freezed/jpa_page.dart';
+import '../freezed/simple_result.dart';
 import '../index.dart';
 import '../pages/public_detail/view.dart';
 import '../provider/riverpod/model/my_user.dart';
@@ -47,3 +49,4 @@ part 'widgets/loading_mixin.dart';
 part 'widgets/simple_dialog.dart';
 part 'extend/string.dart';
 part 'components/new_products/respose.dart';
+part 'jpa_page_loading_more.dart';

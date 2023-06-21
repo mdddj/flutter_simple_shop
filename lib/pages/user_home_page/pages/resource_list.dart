@@ -49,7 +49,7 @@ class _UserResourceWidgetState extends State<UserResourceWidget> {
         indicatorBuilder: _indicatorBuilder,
         extendedListDelegate:
             SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                crossAxisCount: context.waterfallFlowCrossAxisCount,
+                crossAxisCount: context.waterfallFlowCrossAxisCountResource,
                 mainAxisSpacing: 8,
                 crossAxisSpacing: 8)));
   }

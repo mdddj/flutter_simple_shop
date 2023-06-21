@@ -6,10 +6,29 @@ extension ContextEx on BuildContext {
     var crossAxisCount = 2;
     switch (deviceScreenType) {
       case DeviceScreenType.desktop:
-        crossAxisCount = 6;
+        crossAxisCount = 4;
         break;
       case DeviceScreenType.tablet:
+        crossAxisCount = 3;
+        break;
+      case DeviceScreenType.mobile:
+        crossAxisCount = 2;
+        break;
+      default:
+        break;
+    }
+    return crossAxisCount;
+  }
+
+  ///一行显示多少个动态
+  int get waterfallFlowCrossAxisCountResource {
+    var crossAxisCount = 2;
+    switch (deviceScreenType) {
+      case DeviceScreenType.desktop:
         crossAxisCount = 4;
+        break;
+      case DeviceScreenType.tablet:
+        crossAxisCount = 3;
         break;
       case DeviceScreenType.mobile:
         crossAxisCount = 2;

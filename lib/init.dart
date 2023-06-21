@@ -7,7 +7,7 @@ Future<void> appInit(VoidCallback start) async {
   await (Connectivity().checkConnectivity());
   BaseApi.options = BaseOptions(connectTimeout: const Duration(seconds: 30),);
   if (useEnv.debugMode) {
-    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: "192.168.199.75", port: 9999,
+    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: "192.168.100.55", port: 9999,
         customCoverterResponseData: (model) {
       final body = model.response?.data;
       return isValue<Map<String, dynamic>>(body)

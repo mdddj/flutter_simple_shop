@@ -77,8 +77,11 @@ class _UserCenterPageState extends State<UserCenterPage>
 
   ///导航条中间的小头像
   Widget get _smallAvatar {
-    return const LoginUserAvatar(
-      size: 42,
+    return const Hero(
+      tag: 'user-page-ava',
+      child: LoginUserAvatar(
+        size: 42,
+      ),
     );
   }
 
@@ -113,13 +116,16 @@ class MyTabbarView extends StatelessWidget {
   }
 }
 
-class TabViewContainer extends StatelessWidget {
+class TabViewContainer extends ConsumerWidget {
   final TabItem item;
 
   const TabViewContainer(this.item, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
+    if(ref.isLogin.not){
+      return const LoginTipWidget();
+    }
     if(item == TabItem.one){
       return const MyLoadingMoreCustomScrollView(
         slivers: [
@@ -204,37 +210,45 @@ class _Userinfo extends ConsumerWidget {
                   right: 12,
                   bottom: 12),
               child: SingleChildScrollView(
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const LoginUserAvatar(size: 80),
-                    const SizedBox(
-                      width: 12,
-                    ),
-                    Expanded(
-                        child: ConstrainedBox(
-                          constraints: const BoxConstraints(minHeight: 80),
-                          child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    Row(
                       children: [
-                          Text(
-                            ref.user?.getShowUserName ?? '未登录',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            '你的ID:${ref.user?.id ?? '-'}',
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: context.colorScheme.secondary
-                            ),
-                          ),
-                        const Text('点击编辑你的自我介绍')
+                        const Hero(tag: 'user-page-ava', child: LoginUserAvatar(size: 80)),
+                        const SizedBox(
+                          width: 12,
+                        ),
+                        Expanded(
+                            child: ConstrainedBox(
+                              constraints: const BoxConstraints(minHeight: 80),
+                              child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                              Text(
+                                ref.user?.getShowUserName ?? '未登录',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              if(ref.isLogin)
+                              Text(
+                                '你的ID:${ref.user?.id ?? '-'}',
+                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                  color: context.colorScheme.secondary
+                                ),
+                              ),
+                            const Text('点击编辑你的自我介绍').marginOnly(top: 12),
+                          ],
+                        ),
+                            )),
+                        if(ref.isLogin)
+                        const _HeaderSetting()
                       ],
                     ),
-                        )),
-                    const _HeaderSetting()
+
                   ],
                 ),
               ),
@@ -276,7 +290,7 @@ class _Bg extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: context.cardColor,
+      color: context.primaryColor,
     );
   }
 }

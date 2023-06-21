@@ -20,7 +20,6 @@ extension UserEx on MyUser {
 
   ///显示的头像
   Widget getAvatar({double size = 20}) {
-    wtfLog("用户头像:$picture");
     if (picture.isEmpty) {
       return SizedBox(
         width: size,

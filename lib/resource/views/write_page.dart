@@ -128,11 +128,14 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   ///获取操作小部件
   Widget _builderActionButton() {
     return Container(
-      padding: const EdgeInsets.all(6),
+      padding:  EdgeInsets.only(bottom: context.bottomPadding-6,left: 12,right: 12,top: 12),
       child: Column(
         children: [
           Row(
-            children: [SelectResCategory(initCategoryName: params.name)],
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [SelectResCategory(initCategoryName: params.name).expanded,IconButton(onPressed: (){
+              context.hideKeyBoard();
+            }, icon: const Icon(Icons.keyboard_alt_rounded))],
           )
         ],
       ),

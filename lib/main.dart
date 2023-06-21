@@ -9,7 +9,7 @@ import 'index.dart';
 
 ///测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.199.75",
+    host: "http://192.168.100.55",
     port: '80',
     debugMode: true,
     fontFamily: 'LXGWWenKaiMono');
@@ -22,7 +22,7 @@ const releaseEnvConfig = EnvConfig(
     fontFamily: 'LXGWWenKaiMono');
 
 ///切换线上环境使用releaseEnvConfig eg. const useEnv = releaseEnvConfig;
-const useEnv = releaseEnvConfig;
+const useEnv = debugEnvConfig;
 
 void main() async {
   appInit(() => runApp(const ProviderScope(child: DdShop())));

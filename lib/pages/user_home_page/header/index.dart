@@ -157,7 +157,9 @@ class LoginUserAvatar extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.user;
     if(user==null){
-      return const Text('未登录');
+      return CircleAvatar(
+        child: Image.asset(MyAssets.assetsImagesAvaJpg,width: size,height: size,).clipRadius(22),
+      );
     }
     return user.getAvatar(size: size ?? 40);
   }
