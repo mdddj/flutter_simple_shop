@@ -9,7 +9,7 @@ import 'index.dart';
 
 ///测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.100.55",
+    host: "http://192.168.199.71",
     port: '80',
     debugMode: true,
     fontFamily: 'LXGWWenKaiMono');
@@ -21,7 +21,7 @@ const releaseEnvConfig = EnvConfig(
     debugMode: false,
     fontFamily: 'LXGWWenKaiMono');
 
-///切换线上环境使用releaseEnvConfig eg. const useEnv = releaseEnvConfig;
+///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
 const useEnv = debugEnvConfig;
 
 void main() async {

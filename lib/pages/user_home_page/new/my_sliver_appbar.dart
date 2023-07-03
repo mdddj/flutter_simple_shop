@@ -37,7 +37,6 @@ class MySliverAppBar extends StatefulWidget {
     this.toolbarTextStyle,
     this.titleTextStyle,
     this.systemOverlayStyle,
-    this.appBarStateChangeController,
   })  : assert(floating || !snap,
   'The "snap" argument only makes sense for floating app bars.'),
         assert(stretchTriggerOffset > 0.0),
@@ -50,8 +49,6 @@ class MySliverAppBar extends StatefulWidget {
   /// This property is used to configure an [AppBar].
   final Widget? leading;
 
-  /// 监听app bar 高度变化，custom熟悉
-  final AppBarStateChangeController? appBarStateChangeController;
 
   /// {@macro flutter.material.appbar.automaticallyImplyLeading}
   ///
@@ -61,7 +58,7 @@ class MySliverAppBar extends StatefulWidget {
   /// {@macro flutter.material.appbar.title}
   ///
   /// This property is used to configure an [AppBar].
-  final Widget? title;
+  final Widget? Function(bool offsetZeroIs)? title;
 
   /// {@macro flutter.material.appbar.actions}
   ///
@@ -71,7 +68,7 @@ class MySliverAppBar extends StatefulWidget {
   /// {@macro flutter.material.appbar.flexibleSpace}
   ///
   /// This property is used to configure an [AppBar].
-  final Widget? flexibleSpace;
+  final Widget? Function(bool offsetZeroIs)? flexibleSpace;
 
   /// {@macro flutter.material.appbar.bottom}
   ///
@@ -311,6 +308,24 @@ class MySliverAppBarState extends State<MySliverAppBar>
   FloatingHeaderSnapConfiguration? _snapConfiguration;
   OverScrollHeaderStretchConfiguration? _stretchConfiguration;
   PersistentHeaderShowOnScreenConfiguration? _showOnScreenConfiguration;
+  bool offsetZeroIs = false;
+
+  final AppBarStateChangeController  _appBarStateChangeController = AppBarStateChangeController();
+
+  void _listenAppbarAvatarChange() {
+    _appBarStateChangeController.addListener(() {
+      var verticalOffsetZero = _appBarStateChangeController.verticalOffsetZero;
+      if (offsetZeroIs != verticalOffsetZero) {
+        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+          setState(() {
+            offsetZeroIs = verticalOffsetZero ?? false;
+          });
+        });
+      }
+    });
+  }
+
+
 
   void _updateSnapConfiguration() {
     if (widget.snap && widget.floating) {
@@ -344,6 +359,16 @@ class MySliverAppBarState extends State<MySliverAppBar>
     super.initState();
     _updateSnapConfiguration();
     _updateStretchConfiguration();
+    _listenAppbarAvatarChange();
+  }
+
+
+  @override
+  void setState(VoidCallback fn) {
+    if(mounted){
+      super.setState(fn);
+    }
+
   }
 
   @override
@@ -354,6 +379,9 @@ class MySliverAppBarState extends State<MySliverAppBar>
     }
     if (widget.stretch != oldWidget.stretch) _updateStretchConfiguration();
   }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -376,11 +404,11 @@ class MySliverAppBarState extends State<MySliverAppBar>
         delegate: _SliverAppBarDelegate(
           vsync: this,
           leading: widget.leading,
-          appBarStateChangeController: widget.appBarStateChangeController,
+          appBarStateChangeController: _appBarStateChangeController,
           automaticallyImplyLeading: widget.automaticallyImplyLeading,
-          title: widget.title,
+          title: widget.title?.call(offsetZeroIs),
           actions: widget.actions,
-          flexibleSpace: widget.flexibleSpace,
+          flexibleSpace: widget.flexibleSpace?.call(offsetZeroIs),
           bottom: widget.bottom,
           elevation: widget.elevation,
           shadowColor: widget.shadowColor,

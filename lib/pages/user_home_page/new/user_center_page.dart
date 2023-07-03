@@ -1,6 +1,5 @@
 part of pages;
 
-final _verticalOffsetZero = StateProvider((ref) => false);
 
 class UserCenterPage extends ConsumerStatefulWidget {
   const UserCenterPage({Key? key}) : super(key: key);
@@ -17,28 +16,6 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
   double get paddingTop => MediaQuery.of(context).padding.top;
 
   Size get size => MediaQuery.of(context).size;
-  final AppBarStateChangeController _appBarStateChangeController =
-      AppBarStateChangeController();
-
-  @override
-  void initState() {
-    super.initState();
-    Future.microtask(_listenAppbarAvatarChange);
-  }
-
-  bool get offsetZeroIs => ref.watch(_verticalOffsetZero);
-
-//监听导航头像的展示和隐藏
-  void _listenAppbarAvatarChange() {
-    _appBarStateChangeController.addListener(() {
-      var verticalOffsetZero = _appBarStateChangeController.verticalOffsetZero;
-      if (offsetZeroIs != verticalOffsetZero) {
-        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-          ref.read(_verticalOffsetZero.notifier).state = verticalOffsetZero;
-        });
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,24 +25,30 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
           headerSliverBuilder: (a, b) {
             return [
               MySliverAppBar(
-                appBarStateChangeController: _appBarStateChangeController,
                 pinned: true,
                 backgroundColor: Colors.transparent,
                 expandedHeight: context.isDesktop ? 200 : size.width * 0.5,
-                flexibleSpace: Stack(
-                  children: [
-                    const _Bg(),
-                    _Userinfo(
-                      showInfo: offsetZeroIs,
-                    )
-                  ],
-                ),
-                title: offsetZeroIs ? const Hero(
-                  tag: 'user-page-ava',
-                  child: LoginUserAvatar(
-                    size: 42,
-                  ),
-                ) : null,
+                flexibleSpace: (v){
+                  return Stack(
+                    children: [
+                      const _Bg(),
+                      _Userinfo(
+                        showInfo: v,
+                      )
+                    ],
+                  );
+                },
+                title: (v){
+                  if(v.not){
+                    return null;
+                  }
+                  return  const Hero(
+                    tag: 'user-page-ava',
+                    child: LoginUserAvatar(
+                      size: 42,
+                    ),
+                  );
+                },
                 bottom: PreferredSize(
                     preferredSize: const Size.fromHeight(48),
                     child: _Tabs(_tabController)),
@@ -86,7 +69,6 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
   void dispose() {
     super.dispose();
     _tabController.dispose();
-    _appBarStateChangeController.dispose();
   }
 
   @override
