@@ -1,4 +1,7 @@
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'jpa_page.dart';
 
 part 'simple_result.freezed.dart';
 part 'simple_result.g.dart';
@@ -20,3 +23,20 @@ class SimpleResult with _$SimpleResult {
 
 }
 
+
+class JpaDataWrapper  {
+  final Map<String,dynamic> json;
+  JpaDataWrapper(this.json);
+
+  SimpleResult get result {
+    return SimpleResult.fromJson(json);
+  }
+
+  JpaPage get jpaData {
+    final pageData = JpaPage.fromJson(result.data);
+    return pageData;
+  }
+
+  IList<dynamic> get content => jpaData.content;
+
+}

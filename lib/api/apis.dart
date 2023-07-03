@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../freezed/add_favorites_params.dart';
 import '../freezed/report.dart';
 import '../freezed/resource_category.dart';
+import '../freezed/simple_result.dart';
 import '../index.dart';
 
 import 'model/email_register_params.dart';
@@ -16,7 +17,7 @@ part 'report.dart';
 part 'base.dart';
 part 'tkapi.dart';
 part 'zhe_api.dart';
-
+part 'resource.dart';
 mixin ApiPageMixin on MyAppCoreApi {
   set page(int v) => params['page'] = v;
 

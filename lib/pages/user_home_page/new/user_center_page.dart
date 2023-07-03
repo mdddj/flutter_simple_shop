@@ -1,6 +1,5 @@
 part of pages;
 
-
 class UserCenterPage extends ConsumerStatefulWidget {
   const UserCenterPage({Key? key}) : super(key: key);
 
@@ -9,9 +8,9 @@ class UserCenterPage extends ConsumerStatefulWidget {
 }
 
 class _UserCenterPageState extends ConsumerState<UserCenterPage>
-    with SingleTickerProviderStateMixin , AutomaticKeepAliveClientMixin{
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final TabController _tabController =
-      TabController(length: 3, vsync: this);
+      TabController(length: TabItem.values.length, vsync: this);
 
   double get paddingTop => MediaQuery.of(context).padding.top;
 
@@ -28,7 +27,7 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
                 pinned: true,
                 backgroundColor: Colors.transparent,
                 expandedHeight: context.isDesktop ? 200 : size.width * 0.5,
-                flexibleSpace: (v){
+                flexibleSpace: (v) {
                   return Stack(
                     children: [
                       const _Bg(),
@@ -38,11 +37,11 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
                     ],
                   );
                 },
-                title: (v){
-                  if(v.not){
+                title: (v) {
+                  if (v.not) {
                     return null;
                   }
-                  return  const Hero(
+                  return const Hero(
                     tag: 'user-page-ava',
                     child: LoginUserAvatar(
                       size: 42,
@@ -55,15 +54,11 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
               ),
             ];
           },
-          body: MyTabbarView(
-            controller: _tabController,
-          )),
+          body: TabBarView(
+              controller: _tabController,
+              children: TabItem.values.map(TabViewContainer.new).toList())),
     );
   }
-
-
-
-
 
   @override
   void dispose() {
@@ -76,65 +71,62 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
 }
 
 enum TabItem {
-  one("瞬间"),
-  two("媒体"),
-  three("评论");
+  moment("瞬间"),
+  media("媒体"),
+  comment("评论"),
+  report("举报");
 
   const TabItem(this.text);
 
   final String text;
 }
 
-class MyTabbarView extends StatelessWidget {
-  final TabController controller;
-
-  const MyTabbarView({Key? key, required this.controller}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return TabBarView(
-        controller: controller,
-        children: TabItem.values.map(TabViewContainer.new).toList());
-  }
-}
-
 class TabViewContainer extends ConsumerStatefulWidget {
   final TabItem item;
-  const TabViewContainer(this.item,{super.key});
+
+  const TabViewContainer(this.item, {super.key});
 
   @override
   ConsumerState<TabViewContainer> createState() => _TabViewContainerState();
 }
 
-class _TabViewContainerState extends ConsumerState<TabViewContainer> with AutomaticKeepAliveClientMixin {
+class _TabViewContainerState extends ConsumerState<TabViewContainer>
+    with AutomaticKeepAliveClientMixin {
   TabItem get item => widget.item;
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
     if (ref.isLogin.not) {
       return const LoginTipWidget();
     }
-    if (item == TabItem.one) {
-      return const MyLoadingMoreCustomScrollView(
-        slivers: [UserResourceWidget()],
-      );
+    switch(item){
+      case TabItem.moment:
+        return const MyLoadingMoreCustomScrollView(
+          slivers: [UserResourceWidget()],
+        );
+      case TabItem.media:
+        return MyLoadingMoreCustomScrollView(
+          slivers: [_Files()],
+        );
+      case TabItem.comment:
+        return Container(
+          alignment: Alignment.center,
+          child: Text(item.text),
+        );
+      case TabItem.report:
+        return MyLoadingMoreCustomScrollView(
+          slivers: [
+            _Reports()
+          ],
+        );
     }
-    if (item == TabItem.two) {
-      return MyLoadingMoreCustomScrollView(
-        slivers: [_Files()],
-      );
-    }
-    return Container(
-      alignment: Alignment.center,
-      child: Text(item.text),
-    );
+
   }
 
   @override
   bool get wantKeepAlive => true;
 }
-
-
 
 class _Tabs extends StatelessWidget {
   final TabController controller;
@@ -152,11 +144,7 @@ class _Tabs extends StatelessWidget {
               topRight: Radius.circular(8), topLeft: Radius.circular(8))),
       child: TabBar(
         isScrollable: true,
-        tabs: TabItem.values
-            .map((e) => Tab(
-                  text: e.text,
-                ))
-            .toList(),
+        tabs: TabItem.values.map((e) => Tab(text: e.text)).toList(),
         controller: controller,
         indicatorColor: Colors.blue,
         labelColor: Colors.red,
@@ -335,7 +323,32 @@ class _Files extends JpaListWidget<FileInfo, MyUserFilesApi> {
   JpaPageLoadingMore<FileInfo, MyUserFilesApi> get sourceList => _FilesRepo();
 }
 
+
+
+
+
+
+
 class _FilesRepo extends JpaPageLoadingMore<FileInfo, MyUserFilesApi> {
   @override
   FileInfo covertData(Map<String, dynamic> json) => FileInfo.fromJson(json);
+}
+
+
+class _ReportsRepo extends JpaPageLoadingMore<Report,MyApiWithReportList>{
+  @override
+  Report covertData(Map<String, dynamic> json) => Report.fromJson(json);
+
+}
+
+///举报列表
+class _Reports extends JpaListWidget<Report,MyApiWithReportList> {
+  @override
+  Widget buildLayout(BuildContext context, Report item, int index) {
+    return Container();
+  }
+
+  @override
+  JpaPageLoadingMore<Report, MyApiWithReportList> get sourceList => _ReportsRepo();
+
 }

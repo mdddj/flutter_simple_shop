@@ -10,7 +10,7 @@ class LoadingWidget extends StatelessWidget {
       height: context.kBodyHeight,
       width: context.screenWidth,
       child: const Center(
-        child: CircularProgressIndicator(backgroundColor: Colors.red),
+        child: MyLoading(),
       ),
     );
   }

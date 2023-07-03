@@ -57,6 +57,7 @@ import '../freezed/add_favorites_params.dart';
 import '../freezed/anking_list_param.dart';
 import '../freezed/file_info.dart';
 import '../freezed/home_menu.dart';
+import '../freezed/report.dart';
 import '../index.dart';
 import '../provider/riverpod/model/my_user.dart';
 import '../r_gen_file.dart';

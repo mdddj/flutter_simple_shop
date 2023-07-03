@@ -1,4 +1,4 @@
-include: package:custom_lint/flutter.yaml
+include: package:flutter_lint/flutter.yaml
 
 analyzer:
   errors:

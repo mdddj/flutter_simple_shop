@@ -6,3 +6,9 @@ class MyApiWithAddReport extends AppCoreApiWithT<Report> {
   @override
   Report fromJson(Map<String, dynamic> json) => Report.fromJson(json);
 }
+
+///我举报过的内容
+class MyApiWithReportList extends MyAppCoreApi {
+  MyApiWithReportList() :super('/api/report/find-by-page');
+
+}

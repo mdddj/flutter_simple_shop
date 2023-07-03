@@ -23,7 +23,7 @@ class JpaPage with _$JpaPage {
       @JsonKey(name: 'totalPages') @Default(0)  int totalpages,
     }) = _JpaPage;
   
-  factory JpaPage.fromJson(Map<String, dynamic> json) => _$JpaPageFromJson(json);
+  factory JpaPage.fromJson(dynamic json) => _$JpaPageFromJson(json);
 
 }
 

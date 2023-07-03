@@ -11,11 +11,14 @@ import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../api/apis.dart';
 import '../common/api_ext.dart';
+import '../freezed/comment.dart';
 import '../freezed/pager.dart';
 import '../freezed/resource_category.dart';
 import '../index.dart';
 import '../pages/index.dart';
 import '../pages/user_home_page/pages/resource_list.dart';
+import '../provider/riverpod/model/my_user.dart';
+import '../widgets/default_avatar_widget.dart';
 import '../widgets/loading/custom_loading_more_widget.dart';
 import '../widgets/resource_widegt.dart';
 import 'repository/my_resource_repository.dart';

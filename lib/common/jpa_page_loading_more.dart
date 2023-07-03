@@ -23,9 +23,7 @@ abstract class JpaPageLoadingMore<T, A extends BaseApi>
           showDefaultLoading: false,
           data: <String, dynamic>{"page": page, "pageSize": pageSize}
             ..addAll(params)));
-      wtfLog((result as WrapJson).data);
       final resultModel = SimpleResult.fromJson((result as WrapJson).data);
-      debugPrint("是否成功:${resultModel.success}");
       final jpaModel = JpaPage.fromJson(resultModel.data);
       if (resultModel.success) {
         final list = List<T>.from(jpaModel.content
@@ -33,7 +31,6 @@ abstract class JpaPageLoadingMore<T, A extends BaseApi>
         addAll(list);
         page++;
         _hasMore = jpaModel.last.not;
-        debugPrint("加载完毕.$length");
         return true;
       }
       return false;

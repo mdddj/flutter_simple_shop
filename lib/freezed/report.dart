@@ -24,7 +24,7 @@ class Report with _$Report {
 
     }) = _Report;
   
-  factory Report.fromJson(Map<String, dynamic> json) => _$ReportFromJson(json);
+  factory Report.fromJson(dynamic json) => _$ReportFromJson(json);
 
 }
 

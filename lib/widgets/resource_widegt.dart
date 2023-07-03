@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../freezed/app_action_menu.dart';
 import '../freezed/resource_category.dart';
 import '../provider/riverpod/model/my_user.dart';
+import '../resource/view.dart';
 
 class ResourceWidget extends StatelessWidget {
   final Resource resource;
@@ -16,6 +17,9 @@ class ResourceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return GestureDetector(
+        onTap: (){
+          context.navToWidget(to: ResourceDetailPage(resourceId: resource.id));
+        },
         onLongPress: () {
           if (menu != null) {
             menu?.show(context);

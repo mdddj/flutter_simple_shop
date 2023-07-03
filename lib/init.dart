@@ -74,8 +74,10 @@ void initInstanceObject() {
   getIt.registerSingleton(MyUpdateUserCityApi());
   getIt.registerSingleton(MyUpdateUserJobApi());
   getIt.registerSingleton(MyUserFilesApi());
-
+  getIt.registerSingleton(MyApiWithReportList());
   getIt.registerSingleton(PluginHandle());
+  getIt.registerSingleton(MyFindResourceByIdApi());
+  getIt.registerSingleton(MyResourceFindCommenApi());
 }
 
 Future<void> initCaches() async {
