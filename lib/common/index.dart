@@ -27,6 +27,7 @@ import '../freezed/simple_result.dart';
 import '../index.dart';
 import '../pages/public_detail/view.dart';
 import '../provider/riverpod/model/my_user.dart';
+import '../widgets/loading/custom_loading_more_widget.dart';
 
 part './components/jd/jd_category_mini_widget.dart';
 part './components/jd/jd_constant.dart';
@@ -50,3 +51,4 @@ part 'widgets/simple_dialog.dart';
 part 'extend/string.dart';
 part 'components/new_products/respose.dart';
 part 'jpa_page_loading_more.dart';
+part 'jpa_list_widget.dart';

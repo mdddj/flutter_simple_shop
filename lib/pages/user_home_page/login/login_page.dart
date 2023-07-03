@@ -23,8 +23,9 @@ class UserLoginPage extends ConsumerStatefulWidget {
 class UserLoginPageState extends ConsumerState<UserLoginPage> {
   bool isAgree = false; // 是否同意协议
   bool loading = false; // 是否登录中
-  final usernameEditController = TextEditingController(text: '');
-  final passwordEditController = TextEditingController(text: '');
+  final usernameEditController =
+      TextEditingController(text: '413153189@qq.com');
+  final passwordEditController = TextEditingController(text: '123456');
   final LoginType _loginType = LoginType.email;
 
   @override

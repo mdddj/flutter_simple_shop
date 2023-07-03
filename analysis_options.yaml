@@ -1,4 +1,5 @@
-include: package:flutter_lints/flutter.yaml
+include: package:custom_lint/flutter.yaml
+
 analyzer:
   errors:
     todo: ignore
@@ -8,6 +9,8 @@ analyzer:
     - lib/l10n
     - lib/generated_plugin_registrant.dart
     - "**/*.g.dart"
+  plugins:
+    - custom_lint
 
 linter:
   rules:
@@ -17,23 +20,15 @@ linter:
     - file_names
     - library_prefixes
     - curly_braces_in_flow_control_structures
-#    - non_constant_identifier_names
-    - constant_identifier_names # prefer
+    - constant_identifier_names
     - directives_ordering
-
-
-    # DOCUMENTATION
     - slash_for_doc_comments
-    - package_api_docs # prefer
-#    - public_member_api_docs # prefer
-
-
-    # USAGE
+    - package_api_docs
     - implementation_imports
-    - avoid_relative_lib_imports # prefer
-    - prefer_relative_imports # prefer
+    - avoid_relative_lib_imports
+    - prefer_relative_imports
     - prefer_adjacent_string_concatenation
-    - unnecessary_brace_in_string_interps # avoid
+    - unnecessary_brace_in_string_interps
     - prefer_iterable_whereType
     - unnecessary_lambdas
     - avoid_init_to_null
@@ -46,21 +41,15 @@ linter:
     - unnecessary_const
     - avoid_catching_errors
     - use_rethrow_when_possible
-    - prefer_interpolation_to_compose_strings # prefer
+    - prefer_interpolation_to_compose_strings
     - prefer_collection_literals
     - prefer_function_declarations_over_variables
-
-
-    # DESIGN
-    - use_to_and_as_if_applicable # prefer
-#    - one_member_abstracts # avoid
-    - prefer_final_fields # prefer
+    - use_to_and_as_if_applicable
+    - prefer_final_fields
     - avoid_setters_without_getters
-    - avoid_private_typedef_functions # prefer
+    - avoid_private_typedef_functions
     - hash_and_equals
     - avoid_null_checks_in_equality_operators
     - prefer_mixin
-#    - use_setters_to_change_properties
-#    - type_annotate_public_apis # prefer
     - prefer_generic_function_type_aliases
 

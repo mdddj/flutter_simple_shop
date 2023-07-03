@@ -1,14 +1,16 @@
 part of pages;
 
-class UserCenterPage extends StatefulWidget {
+final _verticalOffsetZero = StateProvider((ref) => false);
+
+class UserCenterPage extends ConsumerStatefulWidget {
   const UserCenterPage({Key? key}) : super(key: key);
 
   @override
-  State<UserCenterPage> createState() => _UserCenterPageState();
+  ConsumerState<UserCenterPage> createState() => _UserCenterPageState();
 }
 
-class _UserCenterPageState extends State<UserCenterPage>
-    with SingleTickerProviderStateMixin {
+class _UserCenterPageState extends ConsumerState<UserCenterPage>
+    with SingleTickerProviderStateMixin , AutomaticKeepAliveClientMixin{
   late final TabController _tabController =
       TabController(length: 3, vsync: this);
 
@@ -17,73 +19,68 @@ class _UserCenterPageState extends State<UserCenterPage>
   Size get size => MediaQuery.of(context).size;
   final AppBarStateChangeController _appBarStateChangeController =
       AppBarStateChangeController();
-  bool _verticalOffsetZero = false;
 
   @override
   void initState() {
     super.initState();
-    _listenAppbarAvatarChange();
+    Future.microtask(_listenAppbarAvatarChange);
   }
 
+  bool get offsetZeroIs => ref.watch(_verticalOffsetZero);
+
+//监听导航头像的展示和隐藏
   void _listenAppbarAvatarChange() {
     _appBarStateChangeController.addListener(() {
       var verticalOffsetZero = _appBarStateChangeController.verticalOffsetZero;
-      if (_verticalOffsetZero != verticalOffsetZero) {
-        WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
+      if (offsetZeroIs != verticalOffsetZero) {
+        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+          ref.read(_verticalOffsetZero.notifier).state = verticalOffsetZero;
+        });
       }
-      _verticalOffsetZero = verticalOffsetZero;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
-      body: _buildExtendedNestedScrollView,
+      body: NestedScrollView(
+          headerSliverBuilder: (a, b) {
+            return [
+              MySliverAppBar(
+                appBarStateChangeController: _appBarStateChangeController,
+                pinned: true,
+                backgroundColor: Colors.transparent,
+                expandedHeight: context.isDesktop ? 200 : size.width * 0.5,
+                flexibleSpace: Stack(
+                  children: [
+                    const _Bg(),
+                    _Userinfo(
+                      showInfo: offsetZeroIs,
+                    )
+                  ],
+                ),
+                title: offsetZeroIs ? const Hero(
+                  tag: 'user-page-ava',
+                  child: LoginUserAvatar(
+                    size: 42,
+                  ),
+                ) : null,
+                bottom: PreferredSize(
+                    preferredSize: const Size.fromHeight(48),
+                    child: _Tabs(_tabController)),
+              ),
+            ];
+          },
+          body: MyTabbarView(
+            controller: _tabController,
+          )),
     );
   }
 
-  NestedScrollView get _buildExtendedNestedScrollView {
-    return NestedScrollView(
-        headerSliverBuilder: (a, b) {
-          return [
-            MySliverAppBar(
-              appBarStateChangeController: _appBarStateChangeController,
-              pinned: true,
-              backgroundColor: Colors.transparent,
-              expandedHeight: context.isDesktop ? 200 : size.width * 0.5,
-              flexibleSpace: _header,
-              title: _verticalOffsetZero ? _smallAvatar : null,
-              bottom: PreferredSize(
-                  preferredSize: const Size.fromHeight(48),
-                  child: _Tabs(_tabController)),
-            ),
-          ];
-        },
-        body: MyTabbarView(
-          controller: _tabController,
-        ));
-  }
 
-  Widget get _header {
-    return Stack(
-      children: [
-        const _Bg(),
-        _Userinfo(
-          showInfo: _verticalOffsetZero,
-        )
-      ],
-    );
-  }
 
-  ///导航条中间的小头像
-  Widget get _smallAvatar {
-    return const Hero(
-      tag: 'user-page-ava',
-      child: LoginUserAvatar(
-        size: 42,
-      ),
-    );
-  }
+
 
   @override
   void dispose() {
@@ -91,6 +88,9 @@ class _UserCenterPageState extends State<UserCenterPage>
     _tabController.dispose();
     _appBarStateChangeController.dispose();
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 enum TabItem {
@@ -116,21 +116,30 @@ class MyTabbarView extends StatelessWidget {
   }
 }
 
-class TabViewContainer extends ConsumerWidget {
+class TabViewContainer extends ConsumerStatefulWidget {
   final TabItem item;
-
-  const TabViewContainer(this.item, {Key? key}) : super(key: key);
+  const TabViewContainer(this.item,{super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
-    if(ref.isLogin.not){
+  ConsumerState<TabViewContainer> createState() => _TabViewContainerState();
+}
+
+class _TabViewContainerState extends ConsumerState<TabViewContainer> with AutomaticKeepAliveClientMixin {
+  TabItem get item => widget.item;
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    if (ref.isLogin.not) {
       return const LoginTipWidget();
     }
-    if(item == TabItem.one){
+    if (item == TabItem.one) {
       return const MyLoadingMoreCustomScrollView(
-        slivers: [
-          UserResourceWidget()
-        ],
+        slivers: [UserResourceWidget()],
+      );
+    }
+    if (item == TabItem.two) {
+      return MyLoadingMoreCustomScrollView(
+        slivers: [_Files()],
       );
     }
     return Container(
@@ -138,7 +147,12 @@ class TabViewContainer extends ConsumerWidget {
       child: Text(item.text),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
+
+
 
 class _Tabs extends StatelessWidget {
   final TabController controller;
@@ -188,7 +202,7 @@ class _Userinfo extends ConsumerWidget {
             child: const Icon(
               Icons.menu,
               color: Colors.white,
-            ).desktopLayout(child: (_)=>const SizedBox()),
+            ).desktopLayout(child: (_) => const SizedBox()),
           ),
           Positioned(
             top: MediaQuery.of(context).padding.top + 12,
@@ -198,7 +212,7 @@ class _Userinfo extends ConsumerWidget {
               color: Colors.white,
             ).click(() {
               context.push(pagerUtil.setting.routername);
-            }).desktopLayout(child: (_)=>const SizedBox()),
+            }).desktopLayout(child: (_) => const SizedBox()),
           ),
           if (!showInfo)
             Container(
@@ -215,40 +229,58 @@ class _Userinfo extends ConsumerWidget {
                   children: [
                     Row(
                       children: [
-                        const Hero(tag: 'user-page-ava', child: LoginUserAvatar(size: 80)),
+                        GestureDetector(
+                            onTap: () async {
+                              await showDialog(
+                                  context: context,
+                                  builder: (_) {
+                                    return const UpdateUserAvatarWidget();
+                                  });
+                            },
+                            child: const Hero(
+                                tag: 'user-page-ava',
+                                child: LoginUserAvatar(size: 80))),
                         const SizedBox(
                           width: 12,
                         ),
                         Expanded(
                             child: ConstrainedBox(
-                              constraints: const BoxConstraints(minHeight: 80),
-                              child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
+                          constraints: const BoxConstraints(minHeight: 80),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
                               Text(
                                 ref.user?.getShowUserName ?? '未登录',
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleLarge
-                                    ?.copyWith(fontWeight: FontWeight.bold),
+                                    ?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            context.colorScheme.inversePrimary),
                               ),
-                              if(ref.isLogin)
-                              Text(
-                                '你的ID:${ref.user?.id ?? '-'}',
-                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                  color: context.colorScheme.secondary
+                              if (ref.isLogin)
+                                Text(
+                                  '你的ID:${ref.user?.id ?? '-'}',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(
+                                          color: context
+                                              .colorScheme.inversePrimary),
                                 ),
-                              ),
-                            const Text('点击编辑你的自我介绍').marginOnly(top: 12),
-                          ],
-                        ),
-                            )),
-                        if(ref.isLogin)
-                        const _HeaderSetting()
+                              Text(
+                                '点击编辑你的自我介绍',
+                                style: TextStyle(
+                                    color: context.colorScheme.inversePrimary),
+                              ).marginOnly(top: 12),
+                            ],
+                          ),
+                        )),
+                        if (ref.isLogin) const _HeaderSetting()
                       ],
                     ),
-
                   ],
                 ),
               ),
@@ -259,7 +291,6 @@ class _Userinfo extends ConsumerWidget {
   }
 }
 
-
 class _HeaderSetting extends StatelessWidget {
   const _HeaderSetting({super.key});
 
@@ -268,19 +299,25 @@ class _HeaderSetting extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        ImageWrapper(child: IconButton(onPressed: (){
-          context.push(pagerUtil.setting.routername);
-        }, icon: const Icon(Icons.edit))).desktopLayout(child: (context) {
-          return  FilledButton.tonal(onPressed: (){
-            context.push(pagerUtil.setting.routername);
-          }, child: const Text("编辑资料"));
-        },)
-
+        ImageWrapper(
+                child: IconButton(
+                    onPressed: () {
+                      context.push(pagerUtil.setting.routername);
+                    },
+                    icon: const Icon(Icons.edit)))
+            .desktopLayout(
+          child: (context) {
+            return FilledButton.tonal(
+                onPressed: () {
+                  context.push(pagerUtil.setting.routername);
+                },
+                child: const Text("编辑资料"));
+          },
+        )
       ],
     );
   }
 }
-
 
 class _Bg extends StatelessWidget {
   const _Bg({Key? key}) : super(key: key);
@@ -290,7 +327,33 @@ class _Bg extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: context.primaryColor,
+      color: Colors.white,
     );
   }
+}
+
+class _Files extends JpaListWidget<FileInfo, MyUserFilesApi> {
+  @override
+  Widget buildLayout(BuildContext context, FileInfo item, int index) {
+    return Stack(
+      children: [
+        ImageView(
+          image: MyImage.network(
+              url: item.url,
+              params: ImageParams(
+                  borderRadius: BorderRadius.circular(12),
+                  shape: BoxShape.rectangle,
+                  fit: BoxFit.cover)),
+        )
+      ],
+    );
+  }
+
+  @override
+  JpaPageLoadingMore<FileInfo, MyUserFilesApi> get sourceList => _FilesRepo();
+}
+
+class _FilesRepo extends JpaPageLoadingMore<FileInfo, MyUserFilesApi> {
+  @override
+  FileInfo covertData(Map<String, dynamic> json) => FileInfo.fromJson(json);
 }

@@ -23,11 +23,14 @@ PODS:
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - permission_handler_apple (9.1.0):
+  - permission_handler_apple (9.1.1):
     - Flutter
   - ReachabilitySwift (5.0.0)
   - saver_gallery (0.0.1):
     - Flutter
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - sqflite (0.0.2):
     - Flutter
     - FMDB (>= 2.7.5)
@@ -47,6 +50,7 @@ DEPENDENCIES:
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - saver_gallery (from `.symlinks/plugins/saver_gallery/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sqflite (from `.symlinks/plugins/sqflite/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
@@ -80,6 +84,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
   saver_gallery:
     :path: ".symlinks/plugins/saver_gallery/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
   sqflite:
     :path: ".symlinks/plugins/sqflite/ios"
   url_launcher_ios:
@@ -97,9 +103,10 @@ SPEC CHECKSUMS:
   network_info_plus: 122280582fe2fa2bbb8681a4269745cd5c3a9b32
   package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
   path_provider_foundation: 37748e03f12783f9de2cb2c4eadfaa25fe6d4852
-  permission_handler_apple: 8f116445eff3c0e7c65ad60f5fef5490aa94b4e4
+  permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   saver_gallery: 2b4e584106fde2407ab51560f3851564963e6b78
+  shared_preferences_foundation: e2dae3258e06f44cc55f49d42024fd8dd03c590c
   sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
   url_launcher_ios: ae1517e5e344f5544fb090b079e11f399dfbe4d2
 

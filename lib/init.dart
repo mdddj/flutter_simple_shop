@@ -1,36 +1,45 @@
 part of index;
 
-
 /// 初始化
 Future<void> appInit(VoidCallback start) async {
   WidgetsFlutterBinding.ensureInitialized();
   await (Connectivity().checkConnectivity());
-  BaseApi.options = BaseOptions(connectTimeout: const Duration(seconds: 30),);
-  if (useEnv.debugMode) {
-    DdCheckPlugin.instance.init(BaseApi.getDio(), initHost: "192.168.100.55", port: 9999,
-        customCoverterResponseData: (model) {
-      final body = model.response?.data;
-      return isValue<Map<String, dynamic>>(body)
-              .isNotNull<SendResponseModel?>((value) {
-            return isValue<String>(body['data'])
-                .isNotNull<SendResponseModel?>((value2) {
-              try {
-                final map = jsonDecode(value2);
-                body['data'] = map;
-                return model.copyWith(body: Map.from(body));
-              } catch (e) {
-                return model;
-              }
-            });
-          }) ??
-          model;
-    }, version: DataFormatVersions.version_1);
-  }
-
   initNetUtil();
   initInstanceObject();
+  BaseApi.options = BaseOptions(
+    connectTimeout: const Duration(seconds: 30),
+  );
+  if (useEnv.debugMode) {
+    DdCheckPlugin.instance.init(BaseApi.getDio(),
+        initHost: "192.168.100.55",
+        port: 9998,
+        customCoverterResponseData: (model) {
+          final body = model.response?.data;
+          return isValue<Map<String, dynamic>>(body)
+                  .isNotNull<SendResponseModel?>((value) {
+                return isValue<String>(body['data'])
+                    .isNotNull<SendResponseModel?>((value2) {
+                  try {
+                    final map = jsonDecode(value2);
+                    body['data'] = map;
+                    return model.copyWith(body: Map.from(body));
+                  } catch (e) {
+                    return model;
+                  }
+                });
+              }) ??
+              model;
+        },
+        version: DataFormatVersions.version_2,
+        conectSuccess: (s) {
+          wtfLog('连接成功');
+        });
+  }
+
   await initCaches();
   start.call();
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("token", "fsdkjfksdjfkjsdfkfjdsj你好啊");
 }
 
 void initNetUtil() {
@@ -64,6 +73,9 @@ void initInstanceObject() {
   getIt.registerSingleton(MyUpdateUserNameApi());
   getIt.registerSingleton(MyUpdateUserCityApi());
   getIt.registerSingleton(MyUpdateUserJobApi());
+  getIt.registerSingleton(MyUserFilesApi());
+
+  getIt.registerSingleton(PluginHandle());
 }
 
 Future<void> initCaches() async {
@@ -83,5 +95,31 @@ class MyHttpOverrides extends HttpOverrides {
     return super.createHttpClient(context)
       ..badCertificateCallback =
           (X509Certificate cert, String host, int port) => true;
+  }
+}
+
+class PluginHandle extends ServerMessageHandle {
+  @override
+  void error(error) {
+    // TODO: implement error
+  }
+
+  @override
+  void mapMessageHandle(Map<String, dynamic> data) {
+    // TODO: implement mapMessageHandle
+  }
+
+  @override
+  void stringMessageHandle(String data) {
+    // TODO: implement stringMessageHandle
+    wtfLog("收到插件的消息:$data");
+    if (data == "get-sp-values") {
+      // Obtain shared preferences.
+      SharedPreferences.getInstance().then((value) {
+        final keys = value.getKeys();
+        wtfLog(keys);
+        for (var element in keys) {}
+      });
+    }
   }
 }

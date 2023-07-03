@@ -222,3 +222,8 @@ class MyDeleteUserResourceApi extends MyAppCoreApi {
   MyDeleteUserResourceApi()
       : super('/api/app/resource/delete', httpMethod: HttpMethod.delete);
 }
+
+///获取用户的资源列表
+class MyUserFilesApi extends MyAppCoreApi {
+  MyUserFilesApi():super('/api/file/user',httpMethod: HttpMethod.get);
+}
