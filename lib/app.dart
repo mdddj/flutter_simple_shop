@@ -79,10 +79,12 @@ class App extends ConsumerWidget {
                     children: [
                       const Spacer(),
                       const MiniThemeSetting(),
+                      const DarkAndLightSetting(),
                       IconButton(
                           onPressed: () {
                             context.push(pagerUtil.setting.routername);
-                          }, icon: const Icon(Icons.settings)),
+                          },
+                          icon: const Icon(Icons.settings)),
                       const SizedBox(height: 22)
                     ],
                   ),

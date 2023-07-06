@@ -20,8 +20,10 @@ class SearchListIndex extends ConsumerWidget {
             return LoadingMoreListCostumIndicator(status);
           },
           extendedListDelegate:
-              const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8))),
+              SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: context.waterfallFlowCrossAxisCount,
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 8))),
     );
   }
 

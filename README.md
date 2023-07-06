@@ -5,7 +5,7 @@
 <p align="center">
     <a href="https://jq.qq.com/?_wv=1027&k=Z0AHodXB"><img src="https://badgen.net/badge/QQ%E7%BE%A4/706438100/pink" /></a>
     <a href="https://itbug.shop"><img src="https://badgen.net/badge/%E5%85%B8%E5%85%B8%E7%9A%84%E5%B0%8F%E5%8D%96%E9%83%A8/v3.0.0/red" /></a>
-    <a href="https://flutter.dev/docs/get-started/install/windows"><img src="https://badgen.net/badge/flutter/3.10.4/red" /></a>
+    <a href="https://flutter.dev/docs/get-started/install/windows"><img src="https://badgen.net/badge/flutter/3.10.5/red" /></a>
     <a href="https://github.com/mdddj/flutter_simple_shop/stargazers"><img src="https://badgen.net/github/stars/mdddj/flutter_simple_shop" /></a>
     <a href="https://github.com/mdddj/flutter_simple_shop/network/members"><img src="https://badgen.net/github/forks/mdddj/flutter_simple_shop" /></a>
 </>
@@ -15,7 +15,7 @@
 
 在线预览: https://itbug.shop:9445/index
 
-接口文档: <a href='https://apifox.com/apidoc/shared-6f74775d-40ca-4a07-ad1e-dd9c8480f927'>Apifox (2023-06-21 更新)</a> 
+接口文档: <a href='https://apifox.com/apidoc/shared-6f74775d-40ca-4a07-ad1e-dd9c8480f927'>Apifox (2023-07-06 更新)</a> 
 
 macos安装包: <a href="https://github.com/mdddj/flutter_simple_shop/releases/download/3.0.0/flutter_simple_shop_macos.app.zip">下载</a>
 
@@ -24,6 +24,20 @@ macos安装包: <a href="https://github.com/mdddj/flutter_simple_shop/releases/d
 //api lib/main.dart
 const apiHost = 'https://itbug.shop';
 const apiPort = '9445';
+```
+
+
+
+如果不能加载依赖,请把以下依赖改成pub.dev上面的版本
+```yaml
+  dd_js_util:
+    path: ../dd_js_util
+  dd_models:
+    path: ../plugins/dataoke_sdk/dd_models
+  dd_check_plugin:
+    path: ../../hlx/github/dd_check_plugin
+  dataoke_sdk:
+    path: ../plugins/dataoke_sdk
 ```
 
 ---
@@ -73,7 +87,7 @@ const apiPort = '9445';
 
 ## 关于本项目
 
-淘宝客APP
+淘宝客APP,在线商城
 
 # 项目截图
 
@@ -94,4 +108,26 @@ const apiPort = '9445';
 ```dart
 flutter build
 web --dart-define=FLUTTER_WEB_CANVASKIT_URL=https: //unpkg.zhimg.com/canvaskit-wasm@0.24.0/bin/
+```
+
+全局加载器
+```html
+
+<link rel="stylesheet" href="css/uikit.min.css" />
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 150px;
+    }
+</style>
+
+
+<body class="container">
+    <div style="text-align: center">
+      <div><span uk-spinner="ratio: 4.5"></span></div>
+      <div style="margin-top: 12px">加载中</div>
+    </div>
+<script src="js/uikit.min.js"></script>
 ```

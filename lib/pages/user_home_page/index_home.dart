@@ -26,14 +26,6 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
     );
   }
 
-// 用户订单和优惠券,余额等数据
-  Widget _renderUserValues() {
-    return const Card(
-        child: Padding(
-      padding: EdgeInsets.all(18.0),
-      child: UserTokens(),
-    ));
-  }
 
 // 用户中心的头部
   Widget _buildHeaderWidget() {

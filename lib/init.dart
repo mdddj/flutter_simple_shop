@@ -11,7 +11,7 @@ Future<void> appInit(VoidCallback start) async {
   );
   if (useEnv.debugMode) {
     DdCheckPlugin.instance.init(BaseApi.getDio(),
-        initHost: "192.168.199.71",
+        initHost: "192.168.199.76",
         port: 9998,
         customCoverterResponseData: (model) {
           final body = model.response?.data;
@@ -120,7 +120,6 @@ class PluginHandle extends ServerMessageHandle {
       SharedPreferences.getInstance().then((value) {
         final keys = value.getKeys();
         wtfLog(keys);
-        for (var element in keys) {}
       });
     }
   }

@@ -318,7 +318,7 @@ class MySliverAppBarState extends State<MySliverAppBar>
       if (offsetZeroIs != verticalOffsetZero) {
         WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
           setState(() {
-            offsetZeroIs = verticalOffsetZero ?? false;
+            offsetZeroIs = verticalOffsetZero;
           });
         });
       }

@@ -45,3 +45,30 @@ class _ThemeItem extends StatelessWidget {
     });
   }
 }
+
+//暗夜模式切换
+class DarkAndLightSetting extends ConsumerWidget {
+  const DarkAndLightSetting({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return ThemeBuildWidget(
+      themeBuild: (theme) {
+        wtfLog(theme.toJson());
+        return CupertinoSlidingSegmentedControl<ThemeMode>(
+            children: const {
+              ThemeMode.system: Text('系统'),
+              ThemeMode.light: Text('明亮'),
+              ThemeMode.dark: Text('深色')
+            },
+            onValueChanged: (ThemeMode? value) async {
+              wtfLog(value);
+              if (value != null) {
+                AppThemeUtil().changeThemeMode(value);
+              }
+            },
+            groupValue: theme.getThemeMode);
+      },
+    ).defaultPadding8;
+  }
+}

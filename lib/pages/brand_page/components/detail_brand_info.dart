@@ -40,13 +40,6 @@ class BrandDetailView extends StatelessWidget {
     );
   }
 
-  Widget _buildName(BuildContext context) {
-    return Text(
-      brandDetailModel!.brandName!,
-      style: const TextStyle(
-          fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold),
-    );
-  }
 
   Widget _biuldLogo(BuildContext context) {
     return ImageView(image: MyImage.network(url: MImageUtils.magesProcessor(brandDetailModel!.brandLogo!),params: ImageParams(

@@ -262,7 +262,7 @@ class _Userinfo extends ConsumerWidget {
 }
 
 class _HeaderSetting extends StatelessWidget {
-  const _HeaderSetting({super.key});
+  const _HeaderSetting();
 
   @override
   Widget build(BuildContext context) {

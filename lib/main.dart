@@ -1,4 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/app_local_setting_model.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,9 +8,9 @@ import 'common/view.dart';
 import 'freezed/env_config.dart';
 import 'index.dart';
 
-///测试环境
+///本地测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.199.71",
+    host: "http://192.168.199.76",
     port: '80',
     debugMode: true,
     fontFamily: 'LXGWWenKaiMono');
@@ -22,7 +23,7 @@ const releaseEnvConfig = EnvConfig(
     fontFamily: 'LXGWWenKaiMono');
 
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
-const useEnv = debugEnvConfig;
+const useEnv = releaseEnvConfig;
 
 void main() async {
   appInit(() => runApp(const ProviderScope(child: DdShop())));

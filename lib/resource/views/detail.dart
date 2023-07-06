@@ -48,7 +48,7 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
       appBar: AppBar(
         title: const Text("瞬间"),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.more_horiz))
+          IconButton(onPressed: (){}, icon: const Icon(Icons.more_horiz))
         ],
       ),
       body: IfWidget(expression: ()=>_resource!=null, trueBuild: (){
@@ -59,50 +59,50 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
             Row(
               children: [
                 DefaultAvatarWidget(_resource!.user.picture,size: 58,),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 ConstrainedBox(
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     minHeight: 58
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text("${_resource!.user.getShowUserName}")
+                      Text(_resource!.user.getShowUserName)
                     ],
                   ),
                 ).expanded,
                 FilledButton(onPressed: (){
 
-                }, child: Text("添加关注"))
+                }, child: const Text("添加关注"))
               ],
             ).defaultPadding12.toSliverWidget,
 
             //内容展示
-            Text('${_resource!.content}',style: context.textTheme.bodyLarge).defaultPadding12.toSliverWidget,
+            Text(_resource!.content,style: context.textTheme.bodyLarge).defaultPadding12.toSliverWidget,
 
-            SizedBox(height: 12,).toSliverWidget,
+            const SizedBox(height: 12,).toSliverWidget,
 
             //发布时间展示
-            Text("${_resource!.createdate}",style: context.textTheme.labelSmall).defaultPadding12.toSliverWidget,
+            Text(_resource!.createdate,style: context.textTheme.labelSmall).defaultPadding12.toSliverWidget,
             _CommentsWidget(_resource!.id.toString())
           ],
         );
       },elseBuild: (){
         if(_loading){
-          return LoadingWidget();
+          return const LoadingWidget();
         }
-        return Center(
+        return const Center(
           child: Text("获取资源失败"),
         );
       }),
 
       floatingActionButton: Row(
         children: [
-          CupertinoTextField().expanded,
+          const CupertinoTextField().expanded,
           ElevatedButton(onPressed: (){
 
-          }, child: Text("添加评论"))
+          }, child: const Text("添加评论"))
         ],
       ),
     );
@@ -114,12 +114,10 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
 class _CommentsWidget extends JpaListWidget<Comment,MyResourceFindCommenApi> {
   final String resourceId;
 
-  _CommentsWidget(this.resourceId);
+  const _CommentsWidget(this.resourceId);
   @override
   Widget buildLayout(BuildContext context, Comment item, int index) {
-    return Container(
-      child: Text('text'),
-    );
+    return const Text('text');
   }
 
   @override

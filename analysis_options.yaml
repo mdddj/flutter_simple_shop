@@ -1,4 +1,4 @@
-include: package:flutter_lint/flutter.yaml
+include: package:flutter_lints/flutter.yaml
 
 analyzer:
   errors:
@@ -9,8 +9,8 @@ analyzer:
     - lib/l10n
     - lib/generated_plugin_registrant.dart
     - "**/*.g.dart"
-  plugins:
-    - custom_lint
+  # plugins:
+  #   - custom_lint
 
 linter:
   rules:
