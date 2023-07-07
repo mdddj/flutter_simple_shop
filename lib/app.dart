@@ -82,6 +82,17 @@ class App extends ConsumerWidget {
                       const DarkAndLightSetting(),
                       IconButton(
                           onPressed: () {
+                            if (ref.isLogin.not) {
+                              toast('请先登录');
+                              if (context.isDesktop) {
+                                showDialog(
+                                    context: context,
+                                    builder: (_) {
+                                      return const LoginDialog();
+                                    });
+                              }
+                              return;
+                            }
                             context.push(pagerUtil.setting.routername);
                           },
                           icon: const Icon(Icons.settings)),

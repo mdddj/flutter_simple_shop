@@ -183,10 +183,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         ),
       ),
       bottomNavigationBar: Container(
-        padding:  EdgeInsets.only(left: 12,right: 12,bottom: context.paddingBottom,top: 12),
-          decoration: BoxDecoration(
-            color: context.cardColor
-          ),
+          padding: EdgeInsets.only(
+              left: 12, right: 12, bottom: context.paddingBottom, top: 12),
+          decoration: BoxDecoration(color: context.cardColor),
           child: buildBottomRow(context)),
     );
   }
@@ -651,21 +650,11 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       title: Row(
         children: <Widget>[
           Expanded(
-            child: TabBar(
-                indicator: RoundUnderlineTabIndicator(
-                    insets: const EdgeInsets.only(bottom: 3),
-                    borderSide: BorderSide(
-                      width: 2,
-                      color: context.primaryColor,
-                    )),
-                tabs: const [
-                  Tab(text: '宝贝'),
-                  Tab(text: '详情'),
-                  Tab(text: '推荐'),
-                ],
-                controller: _tabController,
-                onTap: tabOnChange,
-                labelColor: context.primaryColor),
+            child: TabBar(tabs: const [
+              Tab(text: '宝贝'),
+              Tab(text: '详情'),
+              Tab(text: '推荐'),
+            ], controller: _tabController, onTap: tabOnChange),
           ),
           const SizedBox(
             width: 12,

@@ -10,17 +10,11 @@ import 'index.dart';
 
 ///本地测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.199.76",
-    port: '80',
-    debugMode: true,
-    fontFamily: 'LXGWWenKaiMono');
+    host: "http://192.168.199.69", port: '80', debugMode: true, fontFamily: '');
 
 ///线上环境
 const releaseEnvConfig = EnvConfig(
-    host: "https://itbug.shop",
-    port: '9445',
-    debugMode: false,
-    fontFamily: 'LXGWWenKaiMono');
+    host: "https://itbug.shop", port: '9445', debugMode: false, fontFamily: '');
 
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
 const useEnv = releaseEnvConfig;

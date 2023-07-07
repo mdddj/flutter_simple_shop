@@ -1,10 +1,10 @@
 name: demo1
 description: 典典的小卖部,淘客版本 qq群667186542
-version: 3.0.0
+version: 3.1.0
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.10.4"
+  flutter: ">=3.10.5"
 
 
 dependencies:
@@ -81,7 +81,7 @@ dependencies:
   dataoke_sdk:
     path: ../plugins/dataoke_sdk
   permission_handler: ^10.4.1
-  go_router: ^9.0.0
+  go_router: ^9.0.1
   responsive_builder: ^0.7.0
   image_picker: ^1.0.0
   shared_preferences: ^2.2.0
@@ -106,11 +106,3 @@ flutter:
     - assets/svg/cate/
     - assets/json/
     - assets/images/waimai/hb/
-
-  fonts:
-    - family: LXGWWenKaiMono
-      fonts:
-        - asset: assets/font/LXGWWenKaiMono-Bold.ttf
-          weight: 700
-        - asset: assets/font/LXGWWenKaiMono-Light.ttf
-        - asset: assets/font/LXGWWenKaiMono-Regular.ttf

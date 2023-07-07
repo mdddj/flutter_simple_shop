@@ -25,7 +25,8 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
             return [
               MySliverAppBar(
                 pinned: true,
-                backgroundColor: Colors.transparent,
+                centerTitle: true,
+                backgroundColor: context.primaryColor,
                 expandedHeight: context.isDesktop ? 200 : size.width * 0.5,
                 flexibleSpace: (v) {
                   return Stack(
@@ -100,7 +101,7 @@ class _TabViewContainerState extends ConsumerState<TabViewContainer>
     if (ref.isLogin.not) {
       return const LoginTipWidget();
     }
-    switch(item){
+    switch (item) {
       case TabItem.moment:
         return const MyLoadingMoreCustomScrollView(
           slivers: [UserResourceWidget()],
@@ -116,12 +117,9 @@ class _TabViewContainerState extends ConsumerState<TabViewContainer>
         );
       case TabItem.report:
         return MyLoadingMoreCustomScrollView(
-          slivers: [
-            _Reports()
-          ],
+          slivers: [_Reports()],
         );
     }
-
   }
 
   @override
@@ -138,17 +136,14 @@ class _Tabs extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       alignment: Alignment.center,
-      decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+          color: context.appbarBackgroundColor,
+          borderRadius: const BorderRadius.only(
               topRight: Radius.circular(8), topLeft: Radius.circular(8))),
       child: TabBar(
         isScrollable: true,
         tabs: TabItem.values.map((e) => Tab(text: e.text)).toList(),
         controller: controller,
-        indicatorColor: Colors.blue,
-        labelColor: Colors.red,
-        unselectedLabelColor: Colors.black,
       ),
     );
   }
@@ -297,7 +292,7 @@ class _Bg extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: Colors.white,
+      color: context.colorScheme.surface,
     );
   }
 }
@@ -323,32 +318,24 @@ class _Files extends JpaListWidget<FileInfo, MyUserFilesApi> {
   JpaPageLoadingMore<FileInfo, MyUserFilesApi> get sourceList => _FilesRepo();
 }
 
-
-
-
-
-
-
 class _FilesRepo extends JpaPageLoadingMore<FileInfo, MyUserFilesApi> {
   @override
   FileInfo covertData(Map<String, dynamic> json) => FileInfo.fromJson(json);
 }
 
-
-class _ReportsRepo extends JpaPageLoadingMore<Report,MyApiWithReportList>{
+class _ReportsRepo extends JpaPageLoadingMore<Report, MyApiWithReportList> {
   @override
   Report covertData(Map<String, dynamic> json) => Report.fromJson(json);
-
 }
 
 ///举报列表
-class _Reports extends JpaListWidget<Report,MyApiWithReportList> {
+class _Reports extends JpaListWidget<Report, MyApiWithReportList> {
   @override
   Widget buildLayout(BuildContext context, Report item, int index) {
     return Container();
   }
 
   @override
-  JpaPageLoadingMore<Report, MyApiWithReportList> get sourceList => _ReportsRepo();
-
+  JpaPageLoadingMore<Report, MyApiWithReportList> get sourceList =>
+      _ReportsRepo();
 }

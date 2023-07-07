@@ -3,8 +3,7 @@ part of pages;
 ///登录方式
 enum LoginType {
   account("account", "账号"),
-  email("email", "邮箱"),
-  phone("phone", "手机号");
+  email("email", "邮箱");
 
   const LoginType(this.type, this.title);
 

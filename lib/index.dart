@@ -39,6 +39,7 @@ import 'provider/index.dart';
 import 'resource/view.dart';
 import 'service/user_api.dart';
 import 'util/index.dart';
+import 'widgets/index.dart';
 import 'widgets/logo.dart';
 
 export 'common/index.dart';
