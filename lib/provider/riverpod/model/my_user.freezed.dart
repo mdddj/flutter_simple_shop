@@ -37,6 +37,7 @@ mixin _$MyUser {
   String get city => throw _privateConstructorUsedError;
   String get job => throw _privateConstructorUsedError;
   Vip get vip => throw _privateConstructorUsedError;
+  String get intro => throw _privateConstructorUsedError;
   num get openAiTokens => throw _privateConstructorUsedError;
   bool get openAiFlag => throw _privateConstructorUsedError;
   Enterprise? get enterprise => throw _privateConstructorUsedError;
@@ -69,6 +70,7 @@ abstract class $MyUserCopyWith<$Res> {
       String city,
       String job,
       Vip vip,
+      String intro,
       num openAiTokens,
       bool openAiFlag,
       Enterprise? enterprise});
@@ -106,6 +108,7 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
     Object? city = null,
     Object? job = null,
     Object? vip = null,
+    Object? intro = null,
     Object? openAiTokens = null,
     Object? openAiFlag = null,
     Object? enterprise = freezed,
@@ -179,6 +182,10 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
           ? _value.vip
           : vip // ignore: cast_nullable_to_non_nullable
               as Vip,
+      intro: null == intro
+          ? _value.intro
+          : intro // ignore: cast_nullable_to_non_nullable
+              as String,
       openAiTokens: null == openAiTokens
           ? _value.openAiTokens
           : openAiTokens // ignore: cast_nullable_to_non_nullable
@@ -231,6 +238,7 @@ abstract class _$$_MyUserCopyWith<$Res> implements $MyUserCopyWith<$Res> {
       String city,
       String job,
       Vip vip,
+      String intro,
       num openAiTokens,
       bool openAiFlag,
       Enterprise? enterprise});
@@ -266,6 +274,7 @@ class __$$_MyUserCopyWithImpl<$Res>
     Object? city = null,
     Object? job = null,
     Object? vip = null,
+    Object? intro = null,
     Object? openAiTokens = null,
     Object? openAiFlag = null,
     Object? enterprise = freezed,
@@ -339,6 +348,10 @@ class __$$_MyUserCopyWithImpl<$Res>
           ? _value.vip
           : vip // ignore: cast_nullable_to_non_nullable
               as Vip,
+      intro: null == intro
+          ? _value.intro
+          : intro // ignore: cast_nullable_to_non_nullable
+              as String,
       openAiTokens: null == openAiTokens
           ? _value.openAiTokens
           : openAiTokens // ignore: cast_nullable_to_non_nullable
@@ -376,6 +389,7 @@ class _$_MyUser implements _MyUser {
       this.city = "",
       this.job = "",
       this.vip = Vip.none,
+      this.intro = '',
       this.openAiTokens = 0,
       this.openAiFlag = false,
       this.enterprise});
@@ -435,6 +449,9 @@ class _$_MyUser implements _MyUser {
   final Vip vip;
   @override
   @JsonKey()
+  final String intro;
+  @override
+  @JsonKey()
   final num openAiTokens;
   @override
   @JsonKey()
@@ -444,7 +461,7 @@ class _$_MyUser implements _MyUser {
 
   @override
   String toString() {
-    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, city: $city, job: $job, vip: $vip, openAiTokens: $openAiTokens, openAiFlag: $openAiFlag, enterprise: $enterprise)';
+    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, city: $city, job: $job, vip: $vip, intro: $intro, openAiTokens: $openAiTokens, openAiFlag: $openAiFlag, enterprise: $enterprise)';
   }
 
   @override
@@ -476,6 +493,7 @@ class _$_MyUser implements _MyUser {
             (identical(other.city, city) || other.city == city) &&
             (identical(other.job, job) || other.job == job) &&
             (identical(other.vip, vip) || other.vip == vip) &&
+            (identical(other.intro, intro) || other.intro == intro) &&
             (identical(other.openAiTokens, openAiTokens) ||
                 other.openAiTokens == openAiTokens) &&
             (identical(other.openAiFlag, openAiFlag) ||
@@ -505,6 +523,7 @@ class _$_MyUser implements _MyUser {
         city,
         job,
         vip,
+        intro,
         openAiTokens,
         openAiFlag,
         enterprise
@@ -543,6 +562,7 @@ abstract class _MyUser implements MyUser {
       final String city,
       final String job,
       final Vip vip,
+      final String intro,
       final num openAiTokens,
       final bool openAiFlag,
       final Enterprise? enterprise}) = _$_MyUser;
@@ -583,6 +603,8 @@ abstract class _MyUser implements MyUser {
   String get job;
   @override
   Vip get vip;
+  @override
+  String get intro;
   @override
   num get openAiTokens;
   @override

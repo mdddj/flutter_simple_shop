@@ -24,9 +24,7 @@ class SettingInput extends StatelessWidget {
           hintText: initHintText,
           border: _border,
           enabledBorder: _border,
-          focusedBorder: _border,
-          fillColor: context.colorScheme.secondaryContainer,
-          filled: true),
+          focusedBorder: _border),
     );
   }
 }

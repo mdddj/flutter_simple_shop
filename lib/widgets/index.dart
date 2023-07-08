@@ -1,6 +1,7 @@
 library widgets;
 
 import 'dart:async';
+import 'dart:io';
 
 import 'package:after_layout/after_layout.dart';
 import 'package:common_utils/common_utils.dart';
@@ -11,6 +12,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -18,10 +20,13 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import '../api/model/login_params.dart';
+import '../cache/index.dart';
 import '../common/index.dart';
 import '../constant/index.dart';
+import '../index.dart';
 import '../pages/index.dart';
 import '../provider/index.dart';
 import '../util/index.dart';
@@ -63,3 +68,6 @@ part 'waterfall_goods_card.dart';
 part 'wrap.dart';
 part 'desktop_widget.dart';
 part 'desktop/login_dailog.dart';
+part 'desktop/string_dialog.dart';
+part 'ad.dart';
+part 'privacy_dialog.dart';

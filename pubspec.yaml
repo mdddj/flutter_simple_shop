@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.5
-  url_launcher: ^6.1.11
+  url_launcher: ^6.1.12
   supercharged: ^2.1.1
   flutter_syntax_view: ^4.0.0
   date_format: ^2.0.7
@@ -51,7 +51,7 @@ dependencies:
   bubble_tab_indicator: ^0.1.6
   badges: ^3.1.1
   carousel_pro_nullsafety: ^2.0.0
-  flutter_markdown: ^0.6.16
+  flutter_markdown: ^0.6.17
   zefyrka: ^1.4.0
   package_info: ^2.0.2
   show_up_animation: ^2.0.0
@@ -86,6 +86,7 @@ dependencies:
   image_picker: ^1.0.0
   shared_preferences: ^2.2.0
   flutter_lints: ^2.0.2
+  webview_flutter: ^4.2.2
 
 
 dev_dependencies:

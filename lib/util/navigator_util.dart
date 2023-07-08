@@ -59,4 +59,22 @@ class NavigatorUtil {
       initSearchKeyWord: worlds ?? '',
     ));
   }
+
+  ///显示隐私政策的弹出
+  static Future<void> showPrivacyPolicyDialog(BuildContext context) async {
+    getIt.get<PrivacyCache>().isAgree().then((value) {
+      if (value.not) {
+        //弹出隐私政策的弹出
+        showDialog<bool>(
+            context: context,
+            builder: (_) {
+              return const PrivacyDialog();
+            }).then((result) {
+          if (result?.not == true) {
+            exit(0);
+          }
+        });
+      }
+    });
+  }
 }

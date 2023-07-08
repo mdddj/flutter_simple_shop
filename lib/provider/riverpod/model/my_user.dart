@@ -7,8 +7,8 @@ part 'my_user.freezed.dart';
 
 part 'my_user.g.dart';
 
+const anonymousUser = MyUser(id: 0, nickName: "匿名用户");
 
-const anonymousUser = MyUser(id: 0,nickName: "匿名用户");
 extension UserEx on MyUser {
   ///显示的昵称
   String get getShowUserName {
@@ -57,9 +57,10 @@ class MyUser with _$MyUser {
       @Default(false) bool accountNonExpired,
       @Default(false) bool accountNonLocked,
       @Default(false) bool credentialsNonExpired,
-        @Default("") String city,
-        @Default("") String job,
+      @Default("") String city,
+      @Default("") String job,
       @Default(Vip.none) Vip vip,
+      @Default('') String intro,
       @Default(0) num openAiTokens,
       @Default(false) bool openAiFlag,
       Enterprise? enterprise}) = _MyUser;

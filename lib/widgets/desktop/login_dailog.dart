@@ -56,7 +56,10 @@ class _LoginDialogState extends ConsumerState<LoginDialog> {
           ),
           TextField(
             controller: passwordController,
-            decoration: const InputDecoration(hintText: "密码"),
+            decoration: const InputDecoration(
+              hintText: "密码",
+            ),
+            obscureText: true,
           ),
           const SizedBox(height: 33),
           SizedBox(

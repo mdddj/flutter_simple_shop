@@ -8,6 +8,8 @@ import '../pages/index.dart';
 
 final application = FutureProvider.family<ApplicationModel, ApplocationContext>((ref, ctx) async {
   try {
+
+    await NavigatorUtil.showPrivacyPolicyDialog(ctx.context);
     await ref.read(categoryRiverpod).init();
     await ref.read(indexStateRiverpod.notifier).fetch();
     await KZheTaokeApiWithAppkeyGet.doRequest(ref);

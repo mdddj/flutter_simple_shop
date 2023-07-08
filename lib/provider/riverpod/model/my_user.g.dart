@@ -24,6 +24,7 @@ _$_MyUser _$$_MyUserFromJson(Map<String, dynamic> json) => _$_MyUser(
       city: json['city'] as String? ?? "",
       job: json['job'] as String? ?? "",
       vip: $enumDecodeNullable(_$VipEnumMap, json['vip']) ?? Vip.none,
+      intro: json['intro'] as String? ?? '',
       openAiTokens: json['openAiTokens'] as num? ?? 0,
       openAiFlag: json['openAiFlag'] as bool? ?? false,
       enterprise: json['enterprise'] == null
@@ -49,6 +50,7 @@ Map<String, dynamic> _$$_MyUserToJson(_$_MyUser instance) => <String, dynamic>{
       'city': instance.city,
       'job': instance.job,
       'vip': _$VipEnumMap[instance.vip]!,
+      'intro': instance.intro,
       'openAiTokens': instance.openAiTokens,
       'openAiFlag': instance.openAiFlag,
       'enterprise': instance.enterprise,

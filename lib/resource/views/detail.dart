@@ -48,7 +48,8 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
       appBar: AppBar(
         title: const Text("瞬间"),
         actions: [
-          IconButton(onPressed: (){}, icon: const Icon(Icons.more_horiz))
+          if(_resource!=null)
+          IconButton(onPressed: _showAction, icon: const Icon(Icons.more_horiz))
         ],
       ),
       body: IfWidget(expression: ()=>_resource!=null, trueBuild: (){
@@ -107,6 +108,12 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
       ),
     );
   }
+
+  void _showAction() {
+    showModalBottomSheet(context: context, builder: (_){
+      return  _ActionMenus(resource: _resource!);
+    });
+  }
 }
 
 
@@ -140,3 +147,25 @@ class _CommentRepo extends JpaPageLoadingMore<Comment,MyResourceFindCommenApi>{
   };
 }
 
+
+
+class _ActionMenus extends StatelessWidget {
+  final Resource resource;
+  const _ActionMenus({super.key, required this.resource});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ListTile(
+            title: const Text('举报瞬间'),
+            onTap: (){
+
+            },
+          )
+        ],
+      ),
+    );
+  }
+}

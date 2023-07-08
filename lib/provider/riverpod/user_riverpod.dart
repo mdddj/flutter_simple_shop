@@ -70,4 +70,8 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
       state = state.copyWith(user: update.call(user));
     }
   }
+
+  void updateIntro(String intro) {
+    state = state.copyWith(user: state.user?.copyWith(intro: intro));
+  }
 }

@@ -6,7 +6,7 @@ class MiniThemeSetting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 120,
+      width: context.isDesktop ? 120 : context.screenWidth,
       child: WaterfallFlow.count(
         crossAxisCount: 4,
         physics: const NeverScrollableScrollPhysics(),
@@ -34,12 +34,13 @@ class _ThemeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = FlexThemeData.light(scheme: data.flexScheme);
+    final size = context.isDesktop ? 22.0 : 50.0;
     return Container(
-      width: 22,
-      height: 22,
+      width: size,
+      height: size,
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-          color: theme.primaryColor, borderRadius: BorderRadius.circular(12)),
+          color: theme.primaryColor, borderRadius: BorderRadius.circular(size /2 )),
     ).click(() {
       AppThemeUtil().changeThemeWithEnum(data);
     });
@@ -54,7 +55,6 @@ class DarkAndLightSetting extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return ThemeBuildWidget(
       themeBuild: (theme) {
-        wtfLog(theme.toJson());
         return CupertinoSlidingSegmentedControl<ThemeMode>(
             children: const {
               ThemeMode.system: Text('系统'),
@@ -62,7 +62,6 @@ class DarkAndLightSetting extends ConsumerWidget {
               ThemeMode.dark: Text('深色')
             },
             onValueChanged: (ThemeMode? value) async {
-              wtfLog(value);
               if (value != null) {
                 AppThemeUtil().changeThemeMode(value);
               }

@@ -23,6 +23,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'api/apis.dart';
+import 'cache/index.dart';
 import 'common/index.dart';
 import 'common/view.dart';
 import 'constant/index.dart';

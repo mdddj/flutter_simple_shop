@@ -2,9 +2,9 @@ part of pages;
 
 class LeftWidgetItem extends StatelessWidget {
   final Category item;
-  final bool? isCurrent;
+  final bool isCurrent;
 
-  const LeftWidgetItem({required this.item, this.isCurrent, Key? key})
+  const LeftWidgetItem({required this.item, required this.isCurrent, Key? key})
       : super(key: key);
 
   @override
@@ -13,10 +13,10 @@ class LeftWidgetItem extends StatelessWidget {
       height: 50,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          color: isCurrent! ? null : context.colorScheme.background),
+          color: isCurrent ? context.primaryColor : null),
       child: Text(
         item.cname,
-        style: TextStyle(color: isCurrent! ? context.primaryColor : null),
+        style: TextStyle(color: isCurrent ? context.colorScheme.inversePrimary : null),
       ),
     );
   }

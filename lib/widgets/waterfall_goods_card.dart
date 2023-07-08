@@ -14,9 +14,6 @@ class WaterfallGoodsCard extends StatelessWidget {
               newViewPage: true);
         },
         child: Card(
-          elevation: 0.01,
-          margin: EdgeInsets.zero,
-          color: context.colorScheme.surface,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: Padding(

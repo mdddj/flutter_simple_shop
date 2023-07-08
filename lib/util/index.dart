@@ -14,6 +14,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:palette_generator/palette_generator.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import '../cache/index.dart';
 import '../index.dart';
 import '../pages/index.dart';
 import '../pages/other_page/not_found_page.dart';

@@ -72,3 +72,12 @@ abstract class MyAppCoreApi extends BaseApi {
     }
   }
 }
+
+class SApi extends MyAppCoreApi {
+  final Map<String, dynamic> apiParams;
+  SApi(String url, this.apiParams) : super(url, httpMethod: HttpMethod.post);
+  @override
+  Future<WrapJson> request([RequestParams? options]) {
+    return super.request(R(data: apiParams));
+  }
+}

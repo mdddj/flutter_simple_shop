@@ -1,5 +1,12 @@
 part of pages;
 
+
+
+
+extension UserCenterPageEx on BuildContext {
+  Color get userCenterPageNavBg => cardColor;
+}
+
 class UserCenterPage extends ConsumerStatefulWidget {
   const UserCenterPage({Key? key}) : super(key: key);
 
@@ -137,7 +144,7 @@ class _Tabs extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          color: context.appbarBackgroundColor,
+          color: context.userCenterPageNavBg,
           borderRadius: const BorderRadius.only(
               topRight: Radius.circular(8), topLeft: Radius.circular(8))),
       child: TabBar(
@@ -165,16 +172,16 @@ class _Userinfo extends ConsumerWidget {
             top: MediaQuery.of(context).padding.top + 12,
             left: 12,
             child: const Icon(
-              Icons.menu,
-              color: Colors.white,
-            ).desktopLayout(child: (_) => const SizedBox()),
+              Icons.light_mode,
+            ).desktopLayout(child: (_) => const SizedBox()).click(() {
+              showModalBottomSheet(context: context, builder: (_)=>const _PhoneThemeSetting());
+            }),
           ),
           Positioned(
             top: MediaQuery.of(context).padding.top + 12,
             right: 12,
             child: const Icon(
               Icons.settings,
-              color: Colors.white,
             ).click(() {
               context.push(pagerUtil.setting.routername);
             }).desktopLayout(child: (_) => const SizedBox()),
@@ -222,8 +229,7 @@ class _Userinfo extends ConsumerWidget {
                                     .titleLarge
                                     ?.copyWith(
                                         fontWeight: FontWeight.bold,
-                                        color:
-                                            context.colorScheme.inversePrimary),
+                                ),
                               ),
                               if (ref.isLogin)
                                 Text(
@@ -231,15 +237,13 @@ class _Userinfo extends ConsumerWidget {
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall
-                                      ?.copyWith(
-                                          color: context
-                                              .colorScheme.inversePrimary),
+                                      ?.copyWith(),
                                 ),
                               Text(
-                                '点击编辑你的自我介绍',
-                                style: TextStyle(
-                                    color: context.colorScheme.inversePrimary),
-                              ).marginOnly(top: 12),
+                                ref.user?.intro ?? '点击编辑你的自我介绍',
+                              )
+                                  .marginOnly(top: 12)
+                                  .click(() => _updateDesc(context, ref)),
                             ],
                           ),
                         )),
@@ -254,7 +258,25 @@ class _Userinfo extends ConsumerWidget {
       ),
     );
   }
+
+  ///修改自我介绍
+  Future<void> _updateDesc(BuildContext context, WidgetRef ref) async {
+    final result = await showDialog<String>(
+        context: context,
+        builder: (_) {
+          return  StringInputDialog(title: '编辑介绍',hintText: ref.user?.intro);
+        });
+    if (result != null) {
+      final response =
+          await SApi('/api/user/update-desc', {"intro": result}).request();
+      if (response.isSuccess) {
+        ref.read(userRiverpod.notifier).updateIntro(result);
+      }
+    }
+  }
 }
+
+//
 
 class _HeaderSetting extends StatelessWidget {
   const _HeaderSetting();
@@ -292,7 +314,7 @@ class _Bg extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: context.colorScheme.surface,
+      color: context.userCenterPageNavBg,
     );
   }
 }
@@ -338,4 +360,25 @@ class _Reports extends JpaListWidget<Report, MyApiWithReportList> {
   @override
   JpaPageLoadingMore<Report, MyApiWithReportList> get sourceList =>
       _ReportsRepo();
+}
+
+class _PhoneThemeSetting extends StatelessWidget {
+  const _PhoneThemeSetting();
+
+  @override
+  Widget build(BuildContext context) {
+    return   SizedBox(
+      width: context.screenWidth,
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            const MiniThemeSetting(),
+            const DarkAndLightSetting(),
+            SizedBox(height: context.bottomPadding)
+          ],
+        ),
+      ),
+    );
+  }
 }

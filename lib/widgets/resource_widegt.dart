@@ -26,8 +26,6 @@ class ResourceWidget extends StatelessWidget {
           }
         },
         child: Card(
-          margin: EdgeInsets.zero,
-          elevation: 0.01,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
