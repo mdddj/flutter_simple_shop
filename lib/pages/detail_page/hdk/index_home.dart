@@ -647,14 +647,20 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
   // 顶部显影appbar
   AppBar buildOpacityAppbar() {
     return AppBar(
+      elevation: 0,
       title: Row(
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Expanded(
-            child: TabBar(tabs: const [
-              Tab(text: '宝贝'),
-              Tab(text: '详情'),
-              Tab(text: '推荐'),
-            ], controller: _tabController, onTap: tabOnChange),
+            child: TabBar(
+                tabs: const [
+                  Tab(text: '宝贝'),
+                  Tab(text: '详情'),
+                  Tab(text: '推荐'),
+                ],
+                controller: _tabController,
+                onTap: tabOnChange,
+                dividerColor: Colors.transparent),
           ),
           const SizedBox(
             width: 12,
