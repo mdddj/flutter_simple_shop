@@ -1,0 +1,9 @@
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <type id="android" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="Android API 33, UpsideDownCake preview, extension level 5 Platform" project-jdk-type="Android SDK" />
+  <component name="ProjectType">
+    <option name="id" value="io.flutter" />
+  </component>
+</project>

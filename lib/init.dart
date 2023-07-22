@@ -11,7 +11,7 @@ Future<void> appInit(VoidCallback start) async {
   );
   if (useEnv.debugMode) {
     DdCheckPlugin.instance.init(BaseApi.getDio(),
-        initHost: "192.168.199.71",
+        initHost: "192.168.199.72",
         port: 9998,
         customCoverterResponseData: (model) {
           final body = model.response?.data;
@@ -30,7 +30,7 @@ Future<void> appInit(VoidCallback start) async {
               }) ??
               model;
         },
-        version: DataFormatVersions.version_2,
+        version: DataFormatVersions.ideaPlugin,
         conectSuccess: (s) {
           wtfLog('连接成功');
         });
@@ -78,7 +78,7 @@ void initInstanceObject() {
   getIt.registerSingleton(PluginHandle());
   getIt.registerSingleton(MyFindResourceByIdApi());
   getIt.registerSingleton(MyResourceFindCommenApi());
-
+  getIt.registerSingleton(ZheElmApi());
   getIt.registerSingleton(PrivacyCache());
 }
 

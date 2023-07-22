@@ -68,34 +68,3 @@ Map<String, dynamic> _$$_ResourceToJson(_$_Resource instance) =>
         (value) => value,
       ),
     };
-
-_$_FileInfo _$$_FileInfoFromJson(Map<String, dynamic> json) => _$_FileInfo(
-      absolutePath: json['absolutePath'] as String? ?? '',
-      collect: json['collect'] as bool? ?? false,
-      createDate: json['createDate'] as String? ?? '',
-      fileName: json['fileName'] as String? ?? '',
-      fileSize: json['fileSize'] as int? ?? 0,
-      fileType: json['fileType'] as String? ?? '',
-      height: json['height'] as int? ?? 0,
-      id: json['id'] as int? ?? 0,
-      intro: json['intro'] as String? ?? '',
-      tagColor: json['tagColor'] as String? ?? '',
-      url: json['url'] as String? ?? '',
-      width: json['width'] as int? ?? 0,
-    );
-
-Map<String, dynamic> _$$_FileInfoToJson(_$_FileInfo instance) =>
-    <String, dynamic>{
-      'absolutePath': instance.absolutePath,
-      'collect': instance.collect,
-      'createDate': instance.createDate,
-      'fileName': instance.fileName,
-      'fileSize': instance.fileSize,
-      'fileType': instance.fileType,
-      'height': instance.height,
-      'id': instance.id,
-      'intro': instance.intro,
-      'tagColor': instance.tagColor,
-      'url': instance.url,
-      'width': instance.width,
-    };

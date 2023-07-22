@@ -36,6 +36,8 @@ mixin _$Report {
   MyUser get user => throw _privateConstructorUsedError;
   @JsonKey(name: "images")
   IList<FileInfo> get images => throw _privateConstructorUsedError;
+  @JsonKey(name: 'resourceId')
+  int? get resourceId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +57,8 @@ abstract class $ReportCopyWith<$Res> {
       @JsonKey(name: 'status') int status,
       @JsonKey(name: 'comment') String comment,
       @JsonKey(name: "user") MyUser user,
-      @JsonKey(name: "images") IList<FileInfo> images});
+      @JsonKey(name: "images") IList<FileInfo> images,
+      @JsonKey(name: 'resourceId') int? resourceId});
 
   $MyUserCopyWith<$Res> get user;
 }
@@ -81,6 +84,7 @@ class _$ReportCopyWithImpl<$Res, $Val extends Report>
     Object? comment = null,
     Object? user = null,
     Object? images = null,
+    Object? resourceId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -115,6 +119,10 @@ class _$ReportCopyWithImpl<$Res, $Val extends Report>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as IList<FileInfo>,
+      resourceId: freezed == resourceId
+          ? _value.resourceId
+          : resourceId // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -141,7 +149,8 @@ abstract class _$$_ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
       @JsonKey(name: 'status') int status,
       @JsonKey(name: 'comment') String comment,
       @JsonKey(name: "user") MyUser user,
-      @JsonKey(name: "images") IList<FileInfo> images});
+      @JsonKey(name: "images") IList<FileInfo> images,
+      @JsonKey(name: 'resourceId') int? resourceId});
 
   @override
   $MyUserCopyWith<$Res> get user;
@@ -165,6 +174,7 @@ class __$$_ReportCopyWithImpl<$Res>
     Object? comment = null,
     Object? user = null,
     Object? images = null,
+    Object? resourceId = freezed,
   }) {
     return _then(_$_Report(
       id: null == id
@@ -199,6 +209,10 @@ class __$$_ReportCopyWithImpl<$Res>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as IList<FileInfo>,
+      resourceId: freezed == resourceId
+          ? _value.resourceId
+          : resourceId // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -214,7 +228,8 @@ class _$_Report extends _Report {
       @JsonKey(name: 'status') this.status = 0,
       @JsonKey(name: 'comment') this.comment = '',
       @JsonKey(name: "user") this.user = anonymousUser,
-      @JsonKey(name: "images") this.images = const IListConst([])})
+      @JsonKey(name: "images") this.images = const IListConst([]),
+      @JsonKey(name: 'resourceId') this.resourceId})
       : super._();
 
   factory _$_Report.fromJson(Map<String, dynamic> json) =>
@@ -244,10 +259,13 @@ class _$_Report extends _Report {
   @override
   @JsonKey(name: "images")
   final IList<FileInfo> images;
+  @override
+  @JsonKey(name: 'resourceId')
+  final int? resourceId;
 
   @override
   String toString() {
-    return 'Report(id: $id, content: $content, type: $type, createtime: $createtime, status: $status, comment: $comment, user: $user, images: $images)';
+    return 'Report(id: $id, content: $content, type: $type, createtime: $createtime, status: $status, comment: $comment, user: $user, images: $images, resourceId: $resourceId)';
   }
 
   @override
@@ -263,13 +281,24 @@ class _$_Report extends _Report {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.user, user) || other.user == user) &&
-            const DeepCollectionEquality().equals(other.images, images));
+            const DeepCollectionEquality().equals(other.images, images) &&
+            (identical(other.resourceId, resourceId) ||
+                other.resourceId == resourceId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, content, type, createtime,
-      status, comment, user, const DeepCollectionEquality().hash(images));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      content,
+      type,
+      createtime,
+      status,
+      comment,
+      user,
+      const DeepCollectionEquality().hash(images),
+      resourceId);
 
   @JsonKey(ignore: true)
   @override
@@ -294,7 +323,8 @@ abstract class _Report extends Report {
       @JsonKey(name: 'status') final int status,
       @JsonKey(name: 'comment') final String comment,
       @JsonKey(name: "user") final MyUser user,
-      @JsonKey(name: "images") final IList<FileInfo> images}) = _$_Report;
+      @JsonKey(name: "images") final IList<FileInfo> images,
+      @JsonKey(name: 'resourceId') final int? resourceId}) = _$_Report;
   const _Report._() : super._();
 
   factory _Report.fromJson(Map<String, dynamic> json) = _$_Report.fromJson;
@@ -323,6 +353,9 @@ abstract class _Report extends Report {
   @override
   @JsonKey(name: "images")
   IList<FileInfo> get images;
+  @override
+  @JsonKey(name: 'resourceId')
+  int? get resourceId;
   @override
   @JsonKey(ignore: true)
   _$$_ReportCopyWith<_$_Report> get copyWith =>

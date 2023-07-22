@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCurrentProjectConfig">
+    <option name="domain" value="http://localhost" />
+    <option name="enableEnv" value="本地" />
+    <option name="enableProject" value="典典的小卖部" />
+  </component>
+</project>

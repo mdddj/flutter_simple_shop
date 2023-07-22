@@ -9,19 +9,13 @@
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
-		6710BDD4285D812C009287B6 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6710BDD3285D812C009287B6 /* libresolv.tbd */; };
-		6710BDD6285D8133009287B6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6710BDD5285D8133009287B6 /* JavaScriptCore.framework */; };
-		674F6C5D284C4BAA006FCF63 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C5C284C4BAA006FCF63 /* libz.tbd */; };
-		674F6C5F284C4BB8006FCF63 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C5E284C4BB8006FCF63 /* libsqlite3.tbd */; };
-		674F6C61284C4BC3006FCF63 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C60284C4BC3006FCF63 /* CoreTelephony.framework */; };
-		674F6C63284C4BCA006FCF63 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C62284C4BCA006FCF63 /* CoreMotion.framework */; };
 		674F6C65284C52FC006FCF63 /* yw_1222_baichuan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 674F6C64284C52FC006FCF63 /* yw_1222_baichuan.jpg */; };
 		674F6C67284C533E006FCF63 /* mtopsdk_configuartion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 674F6C66284C533E006FCF63 /* mtopsdk_configuartion.plist */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
+		85429A5C017D2E4733556F84 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A882A2E9E28D8B4E0E3465D /* Pods_Runner.framework */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		AB0CC6CC17809B2296BC2D77 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967F56C9884048187D3EA853 /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +35,7 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
+		4A882A2E9E28D8B4E0E3465D /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F65066A30C7A2D438B5528 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		6710BDD3285D812C009287B6 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		6710BDD5285D8133009287B6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -51,11 +46,36 @@
 		674F6C64284C52FC006FCF63 /* yw_1222_baichuan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222_baichuan.jpg; sourceTree = "<group>"; };
 		674F6C66284C533E006FCF63 /* mtopsdk_configuartion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = mtopsdk_configuartion.plist; sourceTree = "<group>"; };
 		676D79BE2A3C7D400049D73E /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
+		677F137C2A6A7DCD000F37D0 /* AlibabaAuthEntrance.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibabaAuthEntrance.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AliAuthSDK/AlibabaAuthEntrance.framework; sourceTree = "<group>"; };
+		677F137E2A6A7DCD000F37D0 /* AlibabaAuthExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibabaAuthExt.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AliAuthSDK/AlibabaAuthExt.framework; sourceTree = "<group>"; };
+		677F13802A6A7DCD000F37D0 /* AlibabaAuthSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibabaAuthSDK.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AliAuthSDK/AlibabaAuthSDK.framework; sourceTree = "<group>"; };
+		677F13822A6A7DCD000F37D0 /* AlibcTradeBaseContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeBaseContainer.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AlibcTradeUltimateSDK/AlibcTradeBaseContainer.framework; sourceTree = "<group>"; };
+		677F13842A6A7DCD000F37D0 /* AlibcTradeCommonSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeCommonSDK.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AlibcTradeUltimateSDK/AlibcTradeCommonSDK.framework; sourceTree = "<group>"; };
+		677F13862A6A7DCD000F37D0 /* AlibcTradeContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeContainer.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AlibcTradeUltimateSDK/AlibcTradeContainer.framework; sourceTree = "<group>"; };
+		677F13882A6A7DCD000F37D0 /* AlibcTrademiniAppContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTrademiniAppContainer.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AlibcTradeUltimateSDK/AlibcTrademiniAppContainer.framework; sourceTree = "<group>"; };
+		677F138A2A6A7DCD000F37D0 /* AlibcTradeUltimateBizSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeUltimateBizSDK.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AlibcTradeUltimateSDK/AlibcTradeUltimateBizSDK.framework; sourceTree = "<group>"; };
+		677F138C2A6A7DCD000F37D0 /* AlibcTradeUltimateSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeUltimateSDK.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AlibcTradeUltimateSDK/AlibcTradeUltimateSDK.framework; sourceTree = "<group>"; };
+		677F138E2A6A7DCD000F37D0 /* AlibcTradeWebViewContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeWebViewContainer.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AlibcTradeUltimateSDK/AlibcTradeWebViewContainer.framework; sourceTree = "<group>"; };
+		677F13902A6A7DCD000F37D0 /* MunionBcAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MunionBcAdSDK.framework; path = ../../../hlx/github/ali_bc_taoke_sdk/ios/Framework/framework/AlibcTradeUltimateSDK/MunionBcAdSDK.framework; sourceTree = "<group>"; };
+		677F13922A6A7E73000F37D0 /* AlibcTradeUltimateBizSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeUltimateBizSDK.framework; path = ../../Downloads/AlibcTradeUltimateSDK_all_package_50012/Source/framework/AlibcTradeUltimateSDK/AlibcTradeUltimateBizSDK.framework; sourceTree = "<group>"; };
+		677F13932A6A7E74000F37D0 /* AlibcTradeUltimateSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeUltimateSDK.framework; path = ../../Downloads/AlibcTradeUltimateSDK_all_package_50012/Source/framework/AlibcTradeUltimateSDK/AlibcTradeUltimateSDK.framework; sourceTree = "<group>"; };
+		677F13942A6A7E74000F37D0 /* AlibcTradeCommonSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeCommonSDK.framework; path = ../../Downloads/AlibcTradeUltimateSDK_all_package_50012/Source/framework/AlibcTradeUltimateSDK/AlibcTradeCommonSDK.framework; sourceTree = "<group>"; };
+		677F13952A6A7E74000F37D0 /* AlibcTradeContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeContainer.framework; path = ../../Downloads/AlibcTradeUltimateSDK_all_package_50012/Source/framework/AlibcTradeUltimateSDK/AlibcTradeContainer.framework; sourceTree = "<group>"; };
+		677F13962A6A7E74000F37D0 /* AlibcTradeWebViewContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeWebViewContainer.framework; path = ../../Downloads/AlibcTradeUltimateSDK_all_package_50012/Source/framework/AlibcTradeUltimateSDK/AlibcTradeWebViewContainer.framework; sourceTree = "<group>"; };
+		677F13972A6A7E74000F37D0 /* MunionBcAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MunionBcAdSDK.framework; path = ../../Downloads/AlibcTradeUltimateSDK_all_package_50012/Source/framework/AlibcTradeUltimateSDK/MunionBcAdSDK.framework; sourceTree = "<group>"; };
+		677F13982A6A7E74000F37D0 /* AlibcTradeBaseContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTradeBaseContainer.framework; path = ../../Downloads/AlibcTradeUltimateSDK_all_package_50012/Source/framework/AlibcTradeUltimateSDK/AlibcTradeBaseContainer.framework; sourceTree = "<group>"; };
+		677F13992A6A7E74000F37D0 /* AlibcTrademiniAppContainer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlibcTrademiniAppContainer.framework; path = ../../Downloads/AlibcTradeUltimateSDK_all_package_50012/Source/framework/AlibcTradeUltimateSDK/AlibcTrademiniAppContainer.framework; sourceTree = "<group>"; };
+		677F13B22A6A81BC000F37D0 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		677F13B42A6A81D1000F37D0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		677F13B52A6A81D1000F37D0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		679F0BE62A6B66E90051E348 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		679F0BE82A6B66F10051E348 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		679F0BEA2A6B67020051E348 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		67FDA58D2A6A52A700FCDB13 /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
 		86AA5896E21F3083954D328F /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
-		967F56C9884048187D3EA853 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,13 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6710BDD6285D8133009287B6 /* JavaScriptCore.framework in Frameworks */,
-				6710BDD4285D812C009287B6 /* libresolv.tbd in Frameworks */,
-				674F6C63284C4BCA006FCF63 /* CoreMotion.framework in Frameworks */,
-				674F6C61284C4BC3006FCF63 /* CoreTelephony.framework in Frameworks */,
-				674F6C5F284C4BB8006FCF63 /* libsqlite3.tbd in Frameworks */,
-				674F6C5D284C4BAA006FCF63 /* libz.tbd in Frameworks */,
-				AB0CC6CC17809B2296BC2D77 /* Pods_Runner.framework in Frameworks */,
+				85429A5C017D2E4733556F84 /* Pods_Runner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,13 +167,39 @@
 		E09A32FD93B94E9ABEA91ABF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				679F0BEA2A6B67020051E348 /* AudioUnit.framework */,
+				679F0BE82A6B66F10051E348 /* CoreAudio.framework */,
+				679F0BE62A6B66E90051E348 /* CoreMedia.framework */,
+				677F13B42A6A81D1000F37D0 /* AddressBook.framework */,
+				677F13B52A6A81D1000F37D0 /* AddressBookUI.framework */,
+				677F13B22A6A81BC000F37D0 /* ContactsUI.framework */,
+				677F13982A6A7E74000F37D0 /* AlibcTradeBaseContainer.framework */,
+				677F13942A6A7E74000F37D0 /* AlibcTradeCommonSDK.framework */,
+				677F13952A6A7E74000F37D0 /* AlibcTradeContainer.framework */,
+				677F13992A6A7E74000F37D0 /* AlibcTrademiniAppContainer.framework */,
+				677F13922A6A7E73000F37D0 /* AlibcTradeUltimateBizSDK.framework */,
+				677F13932A6A7E74000F37D0 /* AlibcTradeUltimateSDK.framework */,
+				677F13962A6A7E74000F37D0 /* AlibcTradeWebViewContainer.framework */,
+				677F13972A6A7E74000F37D0 /* MunionBcAdSDK.framework */,
+				677F137C2A6A7DCD000F37D0 /* AlibabaAuthEntrance.framework */,
+				677F137E2A6A7DCD000F37D0 /* AlibabaAuthExt.framework */,
+				677F13802A6A7DCD000F37D0 /* AlibabaAuthSDK.framework */,
+				677F13822A6A7DCD000F37D0 /* AlibcTradeBaseContainer.framework */,
+				677F13842A6A7DCD000F37D0 /* AlibcTradeCommonSDK.framework */,
+				677F13862A6A7DCD000F37D0 /* AlibcTradeContainer.framework */,
+				677F13882A6A7DCD000F37D0 /* AlibcTrademiniAppContainer.framework */,
+				677F138A2A6A7DCD000F37D0 /* AlibcTradeUltimateBizSDK.framework */,
+				677F138C2A6A7DCD000F37D0 /* AlibcTradeUltimateSDK.framework */,
+				677F138E2A6A7DCD000F37D0 /* AlibcTradeWebViewContainer.framework */,
+				677F13902A6A7DCD000F37D0 /* MunionBcAdSDK.framework */,
+				67FDA58D2A6A52A700FCDB13 /* CoreAudioTypes.framework */,
 				6710BDD5285D8133009287B6 /* JavaScriptCore.framework */,
 				6710BDD3285D812C009287B6 /* libresolv.tbd */,
 				674F6C62284C4BCA006FCF63 /* CoreMotion.framework */,
 				674F6C60284C4BC3006FCF63 /* CoreTelephony.framework */,
 				674F6C5E284C4BB8006FCF63 /* libsqlite3.tbd */,
 				674F6C5C284C4BAA006FCF63 /* libz.tbd */,
-				967F56C9884048187D3EA853 /* Pods_Runner.framework */,
+				4A882A2E9E28D8B4E0E3465D /* Pods_Runner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,6 +235,7 @@
 		97C146E61CF9000F007C117D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "The Chromium Authors";
 				TargetAttributes = {
@@ -364,6 +405,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -374,6 +416,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -383,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -406,13 +449,16 @@
 				CURRENT_PROJECT_VERSION = 2.1.0;
 				DEVELOPMENT_TEAM = GG3V29QX8K;
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "典典的小卖部";
+				INFOPLIST_KEY_CFBundleDisplayName = "典赏社";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,7 +467,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
+				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 2.1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -441,6 +489,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shop.itbug.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -472,6 +524,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -482,6 +535,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -497,7 +551,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -528,6 +582,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -538,6 +593,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -547,10 +603,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -571,13 +628,17 @@
 				CURRENT_PROJECT_VERSION = 2.1.0;
 				DEVELOPMENT_TEAM = GG3V29QX8K;
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = armv7;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "典典的小卖部";
+				INFOPLIST_KEY_CFBundleDisplayName = "典赏社";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,7 +647,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
+				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 2.1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -606,6 +669,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shop.itbug.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -629,13 +696,15 @@
 				CURRENT_PROJECT_VERSION = 2.1.0;
 				DEVELOPMENT_TEAM = GG3V29QX8K;
 				ENABLE_BITCODE = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "典典的小卖部";
+				INFOPLIST_KEY_CFBundleDisplayName = "典赏社";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -644,7 +713,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
+				MACH_O_TYPE = mh_execute;
 				MARKETING_VERSION = 2.1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -664,6 +735,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shop.itbug.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

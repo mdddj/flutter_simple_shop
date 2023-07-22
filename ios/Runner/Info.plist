@@ -30,7 +30,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>shop.itbug.demo1</string>
+			<string>shop.itbug.store</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>tbopen29483700</string>

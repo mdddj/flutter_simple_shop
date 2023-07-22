@@ -10,7 +10,7 @@ import 'index.dart';
 
 ///本地测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.100.55", port: '80', debugMode: true, fontFamily: '');
+    host: "http://192.168.199.72", port: '80', debugMode: true, fontFamily: '');
 
 ///线上环境
 const releaseEnvConfig = EnvConfig(
@@ -33,29 +33,19 @@ class DdShop extends View {
           debugShowCheckedModeBanner: false,
           title: '典典小卖部',
           theme: model.theme.copyWith(
-            inputDecorationTheme: model.theme.inputDecorationTheme.copyWith(
-              fillColor: Colors.white,
-              filled: true
-            ),
+            inputDecorationTheme: model.theme.inputDecorationTheme
+                .copyWith(fillColor: Colors.white, filled: true),
             scaffoldBackgroundColor: Colors.grey.shade200,
-            appBarTheme: model.theme.appBarTheme.copyWith(
-              backgroundColor: Colors.white
-            ),
-            bottomNavigationBarTheme: model.theme.bottomNavigationBarTheme.copyWith(
-              backgroundColor: Colors.white,
-              elevation: 0
-            ),
+            appBarTheme:
+                model.theme.appBarTheme.copyWith(backgroundColor: Colors.white),
+            bottomNavigationBarTheme: model.theme.bottomNavigationBarTheme
+                .copyWith(backgroundColor: Colors.white, elevation: 0),
             cardTheme: model.theme.cardTheme.copyWith(
-              color: Colors.white,
-              elevation: 0.01,
-              margin: EdgeInsets.zero
-            ),
-            bottomSheetTheme: model.theme.bottomSheetTheme.copyWith(
-              backgroundColor: Colors.white
-            ),
-            dialogTheme: model.theme.dialogTheme.copyWith(
-              backgroundColor: Colors.white
-            ),
+                color: Colors.white, elevation: 0.01, margin: EdgeInsets.zero),
+            bottomSheetTheme: model.theme.bottomSheetTheme
+                .copyWith(backgroundColor: Colors.white),
+            dialogTheme:
+                model.theme.dialogTheme.copyWith(backgroundColor: Colors.white),
           ),
           darkTheme: model.darkTheme,
           themeMode: model.getThemeMode,
@@ -66,6 +56,3 @@ class DdShop extends View {
     });
   }
 }
-
-
-

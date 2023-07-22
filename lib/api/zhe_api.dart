@@ -26,3 +26,15 @@ class MeituanApi extends ZheApi {
             'https://api.zhetaoke.com:10001/api/open_meituan_generateLink.ashx',
             params);
 }
+
+
+///折淘客饿了么api
+class ZheElmApi extends AppCoreApiWithT<ZheElmResultModel> {
+  ZheElmApi():super("/api/zhe/elm",HttpMethod.get);
+
+  @override
+  ZheElmResultModel fromJson(Map<String, dynamic> json) {
+    return ZheElmResultModel.fromJson(json);
+  }
+
+}

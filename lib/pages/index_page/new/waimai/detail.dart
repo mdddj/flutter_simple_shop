@@ -6,7 +6,7 @@ part of pages;
 /// @Description 功能描述 外卖领取页面
 /// @Date 创建时间  2021年7月2日 12:32:16
 ///
-class WaimaiDetail extends StatefulWidget {
+class WaimaiDetail extends ConsumerStatefulWidget {
   final String type; // 类型 1 - 外卖红包  2 - 商超红包
   const WaimaiDetail({Key? key, required this.type}) : super(key: key);
 
@@ -14,7 +14,7 @@ class WaimaiDetail extends StatefulWidget {
   WaimaiDetailState createState() => WaimaiDetailState();
 }
 
-class WaimaiDetailState extends State<WaimaiDetail> {
+class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
   ActivityLinkResult? model;
 
   @override
@@ -22,26 +22,39 @@ class WaimaiDetailState extends State<WaimaiDetail> {
     super.initState();
     delayFunction(() async {
       SmartDialog.showLoading(msg: '加载中');
-      try {
-        final result = await kApi.getActivityLink(
-            ActivityLinkParam(
-                promotionSceneId:
-                    widget.type == '1' ? '20150318019998877' : '1585018034441'),
-            requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-        });
-        SmartDialog.dismiss();
-        if (mounted && result != null) {
-          setState(() {
-            model = result;
-          });
+
+      if(widget.type == '1') {
+        try{
+          final result = await getIt.get<ZheElmApi>().request(R(data: {
+            "activityId":"10144",
+            "customerId":'${ref.user?.id ?? 1}'
+          }));
+          wtfLog(result);
+        } on AppException catch(e){
+          showIosDialog(e.getMessage);
         }
-      } catch (e, s) {
-        kLogErr(e);
-        kLogErr(s);
-        SmartDialog.dismiss();
-        showIosDialog(e.toString());
       }
+
+      // try {
+      //   final result = await kApi.getActivityLink(
+      //       ActivityLinkParam(
+      //           promotionSceneId:
+      //               widget.type == '1' ? '20150318019998877' : '1585018034441'),
+      //       requestParamsBuilder: (RequestParams requestParams) {
+      //     return requestParams;
+      //   });
+      //   SmartDialog.dismiss();
+      //   if (mounted && result != null) {
+      //     setState(() {
+      //       model = result;
+      //     });
+      //   }
+      // } catch (e, s) {
+      //   kLogErr(e);
+      //   kLogErr(s);
+      //   SmartDialog.dismiss();
+      //   showIosDialog(e.toString());
+      // }
     });
   }
 

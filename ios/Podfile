@@ -1,6 +1,5 @@
-platform :ios, '12.00'
+platform :ios, '13.0'
 install! 'cocoapods', :disable_input_output_paths => true
-
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 project 'Runner', {

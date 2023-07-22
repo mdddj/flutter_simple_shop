@@ -45,6 +45,7 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.cardColor,
       appBar: AppBar(
         title: const Text("瞬间"),
         actions: [
@@ -52,51 +53,54 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
           IconButton(onPressed: _showAction, icon: const Icon(Icons.more_horiz))
         ],
       ),
-      body: IfWidget(expression: ()=>_resource!=null, trueBuild: (){
-        return MyLoadingMoreCustomScrollView(
-          slivers: [
+      body: Card(
+        elevation: 0,
+        child: IfWidget(expression: ()=>_resource!=null, trueBuild: (){
+          return MyLoadingMoreCustomScrollView(
+            slivers: [
 
-            //用户信息展示
-            Row(
-              children: [
-                DefaultAvatarWidget(_resource!.user.picture,size: 58,),
-                const SizedBox(width: 12),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    minHeight: 58
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(_resource!.user.getShowUserName)
-                    ],
-                  ),
-                ).expanded,
-                FilledButton(onPressed: (){
+              //用户信息展示
+              Row(
+                children: [
+                  DefaultAvatarWidget(_resource!.user.picture,size: 58,),
+                  const SizedBox(width: 12),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minHeight: 58
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(_resource!.user.getShowUserName)
+                      ],
+                    ),
+                  ).expanded,
+                  FilledButton(onPressed: (){
 
-                }, child: const Text("添加关注"))
-              ],
-            ).defaultPadding12.toSliverWidget,
+                  }, child: const Text("添加关注"))
+                ],
+              ).defaultPadding12.toSliverWidget,
 
-            //内容展示
-            Text(_resource!.content,style: context.textTheme.bodyLarge).defaultPadding12.toSliverWidget,
+              //内容展示
+              Text(_resource!.content,style: context.textTheme.bodyLarge).defaultPadding12.toSliverWidget,
 
-            const SizedBox(height: 12,).toSliverWidget,
+              const SizedBox(height: 12,).toSliverWidget,
 
-            //发布时间展示
-            Text(_resource!.createdate,style: context.textTheme.labelSmall).defaultPadding12.toSliverWidget,
-            _CommentsWidget(_resource!.id.toString())
-          ],
-        );
-      },elseBuild: (){
-        if(_loading){
-          return const LoadingWidget();
-        }
-        return const Center(
-          child: Text("获取资源失败"),
-        );
-      }),
+              //发布时间展示
+              Text(_resource!.createdate,style: context.textTheme.labelSmall).defaultPadding12.toSliverWidget,
+              _CommentsWidget(_resource!.id.toString())
+            ],
+          );
+        },elseBuild: (){
+          if(_loading){
+            return const LoadingWidget();
+          }
+          return const Center(
+            child: Text("获取资源失败"),
+          );
+        }),
+      ),
 
       floatingActionButton: Row(
         children: [
@@ -149,21 +153,48 @@ class _CommentRepo extends JpaPageLoadingMore<Comment,MyResourceFindCommenApi>{
 
 
 
-class _ActionMenus extends StatelessWidget {
+class _ActionMenus extends ConsumerWidget {
   final Resource resource;
-  const _ActionMenus({super.key, required this.resource});
+  const _ActionMenus({required this.resource});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
+    final currentUser= ref.user;
+    final isAuthor = currentUser != null && currentUser.id == resource.user.id;
     return SingleChildScrollView(
+      padding: EdgeInsets.only(bottom: context.bottomPadding),
       child: Column(
         children: [
           ListTile(
+            leading: const Icon(Icons.report),
             title: const Text('举报瞬间'),
             onTap: (){
-
+              Navigator.pop(context);
+              context.navToWidget(to:  ReportPage(resource: resource));
             },
-          )
+          ),
+          if(isAuthor)
+            ListTile(
+              leading: Icon(Icons.delete,color: context.colorScheme.error),
+              title: const Text("删除"),
+              onTap: () async {
+                final nav = Navigator.of(context);
+                nav.pop();//关闭菜单
+                final isOk = await context.askOk(const AskOkDialogParams(title: Text("删除"),content: Text("确定删除吗?"),okText: '删除',cancelText: '取消'));
+                if(isOk){
+                  try{
+                    getIt.get<MyDeleteUserResourceApi>().request(R(data: {"id":resource.id},contentType: ContentType.json.value)).then((value) {
+                      value.simpleToast(ifOk: nav.pop);
+                      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                        GetIt.instance.get<UserResourceListRepository>().refresh(true);
+                      });
+                    });
+                  } on AppException catch(e){
+                    showIosDialog(e.getMessage);
+                  }
+                }
+              },
+            )
         ],
       ),
     );

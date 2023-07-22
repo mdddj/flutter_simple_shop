@@ -20,6 +20,7 @@ _$_Report _$$_ReportFromJson(Map<String, dynamic> json) => _$_Report(
           ? const IListConst([])
           : IList<FileInfo>.fromJson(json['images'],
               (value) => FileInfo.fromJson(value as Map<String, dynamic>)),
+      resourceId: json['resourceId'] as int?,
     );
 
 Map<String, dynamic> _$$_ReportToJson(_$_Report instance) => <String, dynamic>{
@@ -33,6 +34,7 @@ Map<String, dynamic> _$$_ReportToJson(_$_Report instance) => <String, dynamic>{
       'images': instance.images.toJson(
         (value) => value,
       ),
+      'resourceId': instance.resourceId,
     };
 
 _$_AddReportParams _$$_AddReportParamsFromJson(Map<String, dynamic> json) =>

@@ -8,12 +8,13 @@ import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dio/dio.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -24,12 +25,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import '../api/model/login_params.dart';
 import '../cache/index.dart';
-import '../common/index.dart';
-import '../constant/index.dart';
 import '../index.dart';
 import '../pages/index.dart';
-import '../provider/index.dart';
-import '../util/index.dart';
 
 part 'category/jd_category.dart';
 part 'component/coupon_discount.dart';
