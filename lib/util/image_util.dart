@@ -1,7 +1,7 @@
 part of util;
+
 extension ImageEx on BuildContext {
-  Future<MultipartFile?> get getMultiparFile =>
-      getIt.get<MImageUtils>().getDioFormData(this);
+  Future<MultipartFile?> get getMultiparFile => getIt.get<MImageUtils>().getDioFormData(this);
 }
 
 class MImageUtils {
@@ -53,8 +53,7 @@ class _SelectImage extends StatelessWidget {
                 return;
               }
               final nav = context.nav;
-              final result =
-                  await ImagePicker().pickImage(source: ImageSource.camera);
+              final result = await ImagePicker().pickImage(source: ImageSource.camera);
               if (result != null) {
                 nav.pop(result);
               }

@@ -1,4 +1,3 @@
-// Package imports:
 import 'package:dio/dio.dart';
 
 /// 请求错误类

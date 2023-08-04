@@ -44,7 +44,6 @@ class IndexState extends ChangeNotifier {
       products.addAll(result.list ?? []);
     }
     await getAllCarousel();
-    // await getHotDayProducts();
     notifyListeners();
   }
 

@@ -9,7 +9,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>典典的小卖部</string>
+	<string>典赏社</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,7 +17,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>demo1</string>
+	<string>典赏社</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -33,7 +33,7 @@
 			<string>shop.itbug.store</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tbopen29483700</string>
+				<string>tbopen34447448</string>
 			</array>
 		</dict>
 	</array>
@@ -43,12 +43,18 @@
 	<array>
 		<string>tbopen</string>
 		<string>tmall</string>
-		<string>taobaolite</string>
+		<string>alitrip</string>
+		<string>alipays</string>
+		<string>fleamar</string>
+		<string>youku</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
-	<dict/>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>梁典典想访问你的相机</string>
 	<key>NSPhotoLibraryUsageDescription</key>

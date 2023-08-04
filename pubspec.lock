@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "405666cd3cf0ee0a48d21ec67e65406aad2c726d9fa58840d3375e7bdcd32a07"
+      sha256: "0816708f5fbcacca324d811297153fe3c8e047beb5c6752e12292d2974c17045"
       url: "https://pub.dev"
     source: hosted
-    version: "60.0.0"
+    version: "62.0.0"
   after_layout:
     dependency: "direct main"
     description:
@@ -18,13 +18,13 @@ packages:
     source: hosted
     version: "1.2.0"
   analyzer:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: analyzer
-      sha256: "1952250bd005bacb895a01bf1b4dc00e3ba1c526cf47dca54dfe24979c65f5b3"
+      sha256: "21862995c9932cd082f89d72ae5f5e2c110d1a0204ad06e4ebaee8307b76b834"
       url: "https://pub.dev"
     source: hosted
-    version: "5.12.0"
+    version: "6.0.0"
   animated_text_kit:
     dependency: "direct main"
     description:
@@ -237,10 +237,10 @@ packages:
     dependency: "direct main"
     description:
       name: connectivity_plus
-      sha256: "8599ae9edca5ff96163fca3e36f8e481ea917d1e71cdad912c084b5579913f34"
+      sha256: "77a180d6938f78ca7d2382d2240eb626c0f6a735d0bfdce227d8ffb80f95c48b"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.1"
+    version: "4.0.2"
   connectivity_plus_platform_interface:
     dependency: transitive
     description:
@@ -289,6 +289,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  dart_internal:
+    dependency: transitive
+    description:
+      name: dart_internal
+      sha256: "689dccc3d5f62affd339534cca548dce12b3a6b32f0f10861569d3025efc0567"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.9"
   dart_style:
     dependency: transitive
     description:
@@ -300,10 +308,11 @@ packages:
   dataoke_sdk:
     dependency: "direct main"
     description:
-      path: "../plugins/dataoke_sdk"
-      relative: true
-    source: path
-    version: "3.0.0"
+      name: dataoke_sdk
+      sha256: "762a969a5022f6bf2a5fe36a61759b7d84b82f16b4b7cdc882f09f8a691b7374"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   date_format:
     dependency: "direct main"
     description:
@@ -323,24 +332,27 @@ packages:
   dd_check_plugin:
     dependency: "direct main"
     description:
-      path: "../../hlx/github/dd_check_plugin"
-      relative: true
-    source: path
-    version: "2.4.0"
+      name: dd_check_plugin
+      sha256: c5dbab548116693a66355911188032c12022ccddd2e59b0848e3903919513e0b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.1"
   dd_js_util:
     dependency: "direct main"
     description:
-      path: "../dd_js_util"
-      relative: true
-    source: path
-    version: "4.2.2"
+      name: dd_js_util
+      sha256: "96c251093f078545bd1738e80d37756843b7bda910a003a055f8350905168ff5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.5"
   dd_models:
     dependency: "direct main"
     description:
-      path: "../plugins/dataoke_sdk/dd_models"
-      relative: true
-    source: path
-    version: "0.0.4"
+      name: dd_models
+      sha256: "5dd4a3444a987791f5cfab07d52cca449892cba26f6cc84d77e933e71aec76f7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.5"
   decimal:
     dependency: transitive
     description:
@@ -353,10 +365,10 @@ packages:
     dependency: "direct main"
     description:
       name: dio
-      sha256: "3866d67f93523161b643187af65f5ac08bc991a5bcdaf41a2d587fe4ccb49993"
+      sha256: ce75a1b40947fea0a0e16ce73337122a86762e38b982e1ccb909daa3b9bc4197
       url: "https://pub.dev"
     source: hosted
-    version: "5.3.0"
+    version: "5.3.2"
   encrypt:
     dependency: "direct main"
     description:
@@ -505,10 +517,10 @@ packages:
     dependency: transitive
     description:
       name: file_selector
-      sha256: "1d2fde93dddf634a9c3c0faa748169d7ac0d83757135555707e52f02c017ad4f"
+      sha256: "59b35aa4af7988be7ec88f9ddaa6c71c5b54bf0f8b35009389d9343b10e9c3af"
       url: "https://pub.dev"
     source: hosted
-    version: "0.9.5"
+    version: "1.0.0"
   file_selector_android:
     dependency: transitive
     description:
@@ -597,11 +609,9 @@ packages:
   flutter_alibc:
     dependency: "direct main"
     description:
-      path: "."
-      ref: master
-      resolved-ref: a3c2b0ff1be319883cf9751a6f433b7f951f34c2
-      url: "https://github.com/flutterbest/flutter_alibc_kit"
-    source: git
+      path: "../../hlx/github/flutter_alibc_kit"
+      relative: true
+    source: path
     version: "1.0.0-nullsafety"
   flutter_blurhash:
     dependency: "direct main"
@@ -737,10 +747,10 @@ packages:
     dependency: "direct dev"
     description:
       name: freezed
-      sha256: "2df89855fe181baae3b6d714dc3c4317acf4fccd495a6f36e5e00f24144c6c3b"
+      sha256: "83462cfc33dc9680533a7f3a4a6ab60aa94f287db5f4ee6511248c22833c497f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.1"
+    version: "2.4.2"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -841,10 +851,10 @@ packages:
     dependency: "direct main"
     description:
       name: hooks_riverpod
-      sha256: be68cf7653fcab798500f9047ac58c3f109287a1595012412f4a0d654a9bb9c5
+      sha256: "117edbe7e5cfc02e31a94f97e2acd4581f54bc37fcda9dce1f606f8ac851ba24"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.6"
+    version: "2.3.7"
   html:
     dependency: "direct main"
     description:
@@ -1041,10 +1051,10 @@ packages:
     dependency: "direct main"
     description:
       name: logger
-      sha256: "7ad7215c15420a102ec687bb320a7312afd449bac63bfb1c60d9787c27b9767f"
+      sha256: "66cb048220ca51cf9011da69fa581e4ee2bed4be6e82870d9e9baae75739da49"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.0"
+    version: "2.0.1"
   logging:
     dependency: transitive
     description:
@@ -1859,5 +1869,5 @@ packages:
     source: hosted
     version: "1.4.0"
 sdks:
-  dart: ">=3.0.0 <4.0.0"
+  dart: ">=3.0.0 <3.3.0"
   flutter: ">=3.10.5"

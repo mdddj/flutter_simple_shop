@@ -15,13 +15,15 @@
 
 在线预览: https://itbug.shop:9445/index
 
-接口文档: <a href='https://apifox.com/apidoc/shared-6f74775d-40ca-4a07-ad1e-dd9c8480f927'>Apifox (2023-07-06 更新)</a> 
+接口文档: <a href='https://apifox.com/apidoc/shared-6f74775d-40ca-4a07-ad1e-dd9c8480f927'>Apifox</a>
+
+web后台: https://github.com/mdddj/dd_server_admin
 
 macos安装包: <a href="https://github.com/mdddj/flutter_simple_shop/releases/download/3.0.0/flutter_simple_shop_macos.app.zip">下载</a>
 
 
 ```dart
-//api lib/main.dart
+//lib/main.dart
 const apiHost = 'https://itbug.shop';
 const apiPort = '9445';
 ```

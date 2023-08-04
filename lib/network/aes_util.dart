@@ -1,4 +1,3 @@
-// Package imports:
 import 'package:encrypt/encrypt.dart';
 
 /// 加解密工具类
@@ -18,7 +17,6 @@ class AesUtil {
   }
 
   /// aes 解密
-  //AES解密
   static String aesDecrypt(String encrypted) {
     try {
       final key = Key.fromUtf8(myKey);

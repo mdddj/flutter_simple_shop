@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'appbar_menu.freezed.dart';
 part 'appbar_menu.g.dart';
 
+part 'appbar_menu.freezed.dart';
 
 extension AppbarMenuEx on AppbarMenu {
   String getAssetPath(bool isSelect) {
@@ -15,11 +15,10 @@ class AppbarMenu with _$AppbarMenu {
   const AppbarMenu._();
 
   const factory AppbarMenu({
-      @JsonKey(name: 'icon') @Default('')  String icon,
-      @JsonKey(name: 'title') @Default('')  String title,
-    }) = _AppbarMenu;
-  
-  factory AppbarMenu.fromJson(Map<String, dynamic> json) => _$AppbarMenuFromJson(json);
+    @JsonKey(name: 'icon') @Default('') String icon,
+    @JsonKey(name: 'title') @Default('') String title,
+  }) = _AppbarMenu;
 
+  factory AppbarMenu.fromJson(Map<String, dynamic> json) =>
+      _$AppbarMenuFromJson(json);
 }
-

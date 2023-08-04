@@ -3,8 +3,7 @@ part of util;
 // 路由工具类
 class NavigatorUtil {
   // 跳转商品详情页方法
-  static void gotoGoodsDetailPage(BuildContext context, String goodsId,
-      {bool newViewPage = false}) {
+  static void gotoGoodsDetailPage(BuildContext context, String goodsId, {bool newViewPage = false}) {
     context.navToWidget(
         to: HaoDanKuDetailItem(
       goodsId: goodsId,
@@ -44,8 +43,7 @@ class NavigatorUtil {
   }
 
   // 前往好单库商品详情页面
-  static void gotoHaodankuGoodsDetailPage(
-      BuildContext context, String? goodsId) {
+  static void gotoHaodankuGoodsDetailPage(BuildContext context, String? goodsId) {
     context.navToWidget(to: HaoDanKuDetailItem(goodsId: goodsId!));
   }
 

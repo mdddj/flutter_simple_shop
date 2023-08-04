@@ -14,116 +14,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="性能优化">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/JsonToFreezedSettingModelConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ldd.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fastRequestCollection.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fastRequestCurrentProjectConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/flutter_simple_shop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/014b35ace60aaf0a898dc45f548d073064d29333" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a8ddb92b1fb65a3a23670e0d6de8a0a7086e66c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/20d1016ccc141b1c3383d153e7bc4663d1c3c1ac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/24a1ebc1f04b7c3e061e444b4e0de473cdb3c0fb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/36b25dc875007491030de04543986c06be2837f5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/388c9090a51b47f5b0a4b81ea4a18363478b3bab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/e/3e1cedced76ddfda405b94b5fd3b7179f00e27fe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3fb8267bc36eb757072a9c62da15c3a1ed69d4bd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4c7ea80630b300349846fc11f8bb25ecd4c0e4e9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4ceef1762439c59105034f274f9e488ef682ba40" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4fab9b729a84bc2f5c083650a5f69863090e2a52" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/510807778b56990ed3829592aea48d7a35b42809" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5c747d49d43f6900e528455766d31ab6d44526ac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/2/62a49e2512256c0f91e7313e5fff1d6079dbb047" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63488afda2edbe31bc312668acfbbfe1add6de00" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c86e1e81abe79068acc670b38ee0ea1344c380c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/7076b60f5e64ebfddc934ae3c4a7a7b87e461a6f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/76ea7094b989397c0dba94ab487e0f898bc8e066" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/8/782b5dfcec5c7d8067628acf842b8dd1b8602c41" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/80b7bea7cd15b8e67a05c6a27de0ad1ed860c38d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/864f22fa6947853f1eefa520cd17420259efb581" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/90e53b557da3e741d107d7eeb6a14866afef9de0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/93b9065145952fde4557c800ad7e6b683d105cac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9934536772111af696574349d6872ef670730926" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a8ea5273939a12e805641671b79e5eaeaab1e231" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b6c2306795e5205dfe8243d9e5a89bb69e015d93" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/bab1488ceac41bd23a3b698b3e216c753e29f011" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bca0f3e7a54fedbe680fd2abf80c942e445ba79f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c558d8431e56763255c2a7dcd096967c7d7f6a7c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c9162bce2b4f962679f8737cdc2f8022edf40fb1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cccccf3ddbcb49f46678b1ce560c88546285b966" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d7385a4005dce0a23f18c0169dbfd512b5b352e3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8e045469170189f1d6ef12576bd01af132b1018" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0aec0201baa06324f89444c0e1494fbe0f37b13" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9e0a97f04cfd8fb581c34047a7c23a992020fa8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/swift-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FMDB.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/Flutter.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/Pods-Runner.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/ReachabilitySwift.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/ali_bc_taoke_sdk.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/connectivity_plus.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/dataoke_sdk.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/dd_check_plugin.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/dd_models.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/file_selector_ios.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/image_picker_ios.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/network_info_plus.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/package_info.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/path_provider_foundation.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/permission_handler_apple.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/saver_gallery.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/shared_preferences_foundation.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/sqflite.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/url_launcher_ios.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/webview_flutter_wkwebview.build/dgph" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.freezed.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.g.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/report/repost_index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/yw_1222.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/yw_1222_baichuan.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flutter_simple_shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flutter_simple_shop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/yw_1222_baichuan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/yw_1222_baichuan.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/apis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/zhe_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/zhe_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/report.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/report.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/report.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/report.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/report.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/report.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/resource_category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/resource_category.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/resource_category.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/resource_category.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/resource_category.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/resource_category.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/yw_1222_baichuan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ad.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ad.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/add_favorites_params.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/add_favorites_params.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/appbar_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/appbar_menu.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/init.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/init.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modals/blog_category_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modals/blog_category_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network/aes_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network/aes_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/network/dio_errors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network/dio_errors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/index_riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/index_riverpod.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/resource/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/resource/views/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/detail.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/image_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/image_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/navigator_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/navigator_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/theme.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -218,7 +133,7 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ldd/flutter_simple_shop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ldd/flutter_simple_shop/ios/Runner&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -227,7 +142,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.23908046&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;shop.itbug.fluttercheckversionx.setting.AppConfig&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -237,11 +152,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ios/Runner" />
       <recent name="$PROJECT_DIR$/assets/font" />
       <recent name="$PROJECT_DIR$/assets/svg" />
       <recent name="$PROJECT_DIR$/assets/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ios" />
       <recent name="$PROJECT_DIR$/ios/Runner" />
       <recent name="$PROJECT_DIR$/lib/pages/user_home_page/new" />
       <recent name="$PROJECT_DIR$/assets/svg" />
@@ -602,7 +519,17 @@
       <workItem from="1689933377617" duration="3200000" />
       <workItem from="1689991009122" duration="1145000" />
       <workItem from="1689992561838" duration="2941000" />
-      <workItem from="1689997545490" duration="42000" />
+      <workItem from="1689997545490" duration="388000" />
+      <workItem from="1689997981195" duration="8000" />
+      <workItem from="1689998169512" duration="679000" />
+      <workItem from="1689999819378" duration="633000" />
+      <workItem from="1690003927042" duration="7203000" />
+      <workItem from="1690356455266" duration="9470000" />
+      <workItem from="1690378347602" duration="270000" />
+      <workItem from="1690424319635" duration="8186000" />
+      <workItem from="1690438184717" duration="329000" />
+      <workItem from="1690938037738" duration="276000" />
+      <workItem from="1691112793601" duration="342000" />
     </task>
     <task id="LOCAL-00138" summary="升级依赖">
       <created>1676726450762</created>
@@ -947,7 +874,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687341765706</updated>
     </task>
-    <option name="localTasksCounter" value="203" />
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

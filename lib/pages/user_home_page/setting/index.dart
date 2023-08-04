@@ -11,9 +11,7 @@ class SettingIndex extends StatelessWidget {
         title: const Text('设置'),
       ),
       body: Container(
-        decoration: BoxDecoration(
-          color: context.cardColor
-        ),
+        decoration: BoxDecoration(color: context.cardColor),
         child: ListView(
           children: [
             ListTile(
@@ -38,26 +36,29 @@ class SettingIndex extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text("绑定淘宝账号"),
+              title: const Text("绑定淘宝账号"),
               onTap: () async {
-                var result = await FlutterAlibc.initAlibc(version:"1.0.0",appName:"典典的小卖部");
-                print(result);
-                // final result = await AliBcTaokeSdk.init();
-                // if(result){
-                //   final result = await AliBcTaokeSdk.login();
-                //   wtfLog(result);
-                // }else{
-                //   toast('初始化失败');
-                // }
+                var result = await FlutterAlibc.initAlibc(appName: '典典的小卖部',version: '1.0');
+                wtfLog(result.errorMessage);
+
+              },
+            ),
+            ListTile(
+              title: const Text("登录授权"),
+              onTap: () async {
+                // var result = await FlutterAlibc.initAlibc(appName: '典典的小卖部',version: '1.0');
+                // print(result.errorMessage);
+                FlutterAlibc.loginTaoBao(loginCallback: (model) {
+
+                },);
+
               },
             ),
             const SizedBox(height: 12),
             ListTile(
               title: const Text('关于典典的小卖部'),
               trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-
-              },
+              onTap: () {},
             )
           ],
         ),
