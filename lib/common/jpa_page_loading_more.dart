@@ -34,8 +34,8 @@ abstract class JpaPageLoadingMore<T, A extends BaseApi>
         return true;
       }
       return false;
-    } catch (e) {
-      debugPrint("处理数据失败:$e");
+    } catch (e,s) {
+      Logger().e(e, error: e,stackTrace: s);
       return false;
     }
   }

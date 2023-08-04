@@ -27,7 +27,7 @@ mixin _$SimpleResult {
   @JsonKey(name: 'success')
   bool get success => throw _privateConstructorUsedError;
   @JsonKey(name: 'type')
-  int get type => throw _privateConstructorUsedError;
+  ResultType get type => throw _privateConstructorUsedError;
   @JsonKey(name: 'data')
   dynamic get data => throw _privateConstructorUsedError;
 
@@ -47,7 +47,7 @@ abstract class $SimpleResultCopyWith<$Res> {
       {@JsonKey(name: 'message') String message,
       @JsonKey(name: 'state') int state,
       @JsonKey(name: 'success') bool success,
-      @JsonKey(name: 'type') int type,
+      @JsonKey(name: 'type') ResultType type,
       @JsonKey(name: 'data') dynamic data});
 }
 
@@ -86,7 +86,7 @@ class _$SimpleResultCopyWithImpl<$Res, $Val extends SimpleResult>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ResultType,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -107,7 +107,7 @@ abstract class _$$_SimpleResultCopyWith<$Res>
       {@JsonKey(name: 'message') String message,
       @JsonKey(name: 'state') int state,
       @JsonKey(name: 'success') bool success,
-      @JsonKey(name: 'type') int type,
+      @JsonKey(name: 'type') ResultType type,
       @JsonKey(name: 'data') dynamic data});
 }
 
@@ -144,7 +144,7 @@ class __$$_SimpleResultCopyWithImpl<$Res>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int,
+              as ResultType,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -160,7 +160,7 @@ class _$_SimpleResult extends _SimpleResult {
       {@JsonKey(name: 'message') this.message = '',
       @JsonKey(name: 'state') this.state = 0,
       @JsonKey(name: 'success') this.success = false,
-      @JsonKey(name: 'type') this.type = 0,
+      @JsonKey(name: 'type') this.type = ResultType.none,
       @JsonKey(name: 'data') this.data})
       : super._();
 
@@ -178,7 +178,7 @@ class _$_SimpleResult extends _SimpleResult {
   final bool success;
   @override
   @JsonKey(name: 'type')
-  final int type;
+  final ResultType type;
   @override
   @JsonKey(name: 'data')
   final dynamic data;
@@ -224,7 +224,7 @@ abstract class _SimpleResult extends SimpleResult {
       {@JsonKey(name: 'message') final String message,
       @JsonKey(name: 'state') final int state,
       @JsonKey(name: 'success') final bool success,
-      @JsonKey(name: 'type') final int type,
+      @JsonKey(name: 'type') final ResultType type,
       @JsonKey(name: 'data') final dynamic data}) = _$_SimpleResult;
   const _SimpleResult._() : super._();
 
@@ -242,7 +242,7 @@ abstract class _SimpleResult extends SimpleResult {
   bool get success;
   @override
   @JsonKey(name: 'type')
-  int get type;
+  ResultType get type;
   @override
   @JsonKey(name: 'data')
   dynamic get data;

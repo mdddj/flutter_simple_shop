@@ -83,7 +83,7 @@
         <entry key="build">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build-2.3.1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build-2.4.1/lib" />
             </list>
           </value>
         </entry>
@@ -104,7 +104,7 @@
         <entry key="build_resolvers">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_resolvers-2.1.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_resolvers-2.2.1/lib" />
             </list>
           </value>
         </entry>
@@ -272,7 +272,7 @@
         <entry key="dart_style">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_style-2.2.4/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_style-2.3.2/lib" />
             </list>
           </value>
         </entry>
@@ -770,7 +770,7 @@
         <entry key="hive_generator">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive_generator-2.0.0/lib" />
+              <option value="$PROJECT_DIR$/../../hlx/github/hive/hive_generator/lib" />
             </list>
           </value>
         </entry>
@@ -1366,14 +1366,14 @@
         <entry key="source_gen">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_gen-1.3.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_gen-1.4.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="source_helper">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_helper-1.3.3/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_helper-1.3.4/lib" />
             </list>
           </value>
         </entry>
@@ -1682,6 +1682,7 @@
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../hlx/github/flutter_alibc_kit/lib" />
+      <root url="file://$PROJECT_DIR$/../../hlx/github/hive/hive_generator/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/_fe_analyzer_shared-62.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/after_layout-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/analyzer-6.0.0/lib" />
@@ -1694,10 +1695,10 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/badges-3.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/bubble_tab_indicator-0.1.6/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build-2.3.1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build-2.4.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_config-1.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_daemon-4.0.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_resolvers-2.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_resolvers-2.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_runner-2.4.6/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_runner_core-7.2.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/built_collection-5.1.1/lib" />
@@ -1721,7 +1722,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/csslib-0.17.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cupertino_icons-1.0.5/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_internal-0.2.9/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_style-2.2.4/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_style-2.3.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/date_format-2.0.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dbus-0.7.8/lib" />
@@ -1788,7 +1789,6 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/graphs-2.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive-2.2.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive_flutter-1.1.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive_generator-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.3.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/html-0.15.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http-1.1.0/lib" />
@@ -1873,8 +1873,8 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/shimmer-3.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/show_up_animation-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/sliver_tools-0.2.12/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_gen-1.3.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_helper-1.3.3/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_gen-1.4.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_helper-1.3.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/source_span-1.9.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/sqflite-2.2.4+1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/sqflite_common-2.4.2+2/lib" />

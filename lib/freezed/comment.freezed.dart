@@ -321,36 +321,23 @@ class __$$_CommentCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Comment extends _Comment {
   const _$_Comment(
-      {@JsonKey(name: 'id')
-          this.id = 0,
-      @JsonKey(name: 'email')
-          this.email = '',
-      @JsonKey(name: 'website')
-          this.website = '',
-      @JsonKey(name: 'content')
-          this.content = '',
-      @JsonKey(name: 'findKey')
-          this.findkey = '',
-      @JsonKey(name: 'name')
-          this.name = '',
-      @JsonKey(name: 'code')
-          this.code = '',
-      @JsonKey(name: 'avatarUrl')
-          this.avatarUrl = '',
-      @JsonKey(name: 'parentComment')
-          this.parentComment,
-      @JsonKey(name: 'type')
-          this.type = '',
+      {@JsonKey(name: 'id') this.id = 0,
+      @JsonKey(name: 'email') this.email = '',
+      @JsonKey(name: 'website') this.website = '',
+      @JsonKey(name: 'content') this.content = '',
+      @JsonKey(name: 'findKey') this.findkey = '',
+      @JsonKey(name: 'name') this.name = '',
+      @JsonKey(name: 'code') this.code = '',
+      @JsonKey(name: 'avatarUrl') this.avatarUrl = '',
+      @JsonKey(name: 'parentComment') this.parentComment,
+      @JsonKey(name: 'type') this.type = '',
       @JsonKey(name: 'childCommentWithData')
-          final List<Comment> childCommentWithData = const [],
-      @JsonKey(name: 'createDate')
-          this.createDate = '',
-      @JsonKey(name: 'user')
-          this.user = anonymousUser,
-      @JsonKey(name: 'likeUsers')
-          final List<MyUser> likeusers = const [],
+      final List<Comment> childCommentWithData = const [],
+      @JsonKey(name: 'createDate') this.createDate = '',
+      @JsonKey(name: 'user') this.user = anonymousUser,
+      @JsonKey(name: 'likeUsers') final List<MyUser> likeusers = const [],
       @JsonKey(name: 'childComment')
-          final List<Comment> childComment = const []})
+      final List<Comment> childComment = const []})
       : _childCommentWithData = childCommentWithData,
         _likeusers = likeusers,
         _childComment = childComment,
@@ -492,36 +479,23 @@ class _$_Comment extends _Comment {
 
 abstract class _Comment extends Comment {
   const factory _Comment(
-      {@JsonKey(name: 'id')
-          final int id,
-      @JsonKey(name: 'email')
-          final String email,
-      @JsonKey(name: 'website')
-          final String website,
-      @JsonKey(name: 'content')
-          final String content,
-      @JsonKey(name: 'findKey')
-          final String findkey,
-      @JsonKey(name: 'name')
-          final String name,
-      @JsonKey(name: 'code')
-          final String code,
-      @JsonKey(name: 'avatarUrl')
-          final String avatarUrl,
-      @JsonKey(name: 'parentComment')
-          final Comment? parentComment,
-      @JsonKey(name: 'type')
-          final String type,
-      @JsonKey(name: 'childCommentWithData')
+          {@JsonKey(name: 'id') final int id,
+          @JsonKey(name: 'email') final String email,
+          @JsonKey(name: 'website') final String website,
+          @JsonKey(name: 'content') final String content,
+          @JsonKey(name: 'findKey') final String findkey,
+          @JsonKey(name: 'name') final String name,
+          @JsonKey(name: 'code') final String code,
+          @JsonKey(name: 'avatarUrl') final String avatarUrl,
+          @JsonKey(name: 'parentComment') final Comment? parentComment,
+          @JsonKey(name: 'type') final String type,
+          @JsonKey(name: 'childCommentWithData')
           final List<Comment> childCommentWithData,
-      @JsonKey(name: 'createDate')
-          final String createDate,
-      @JsonKey(name: 'user')
-          final MyUser user,
-      @JsonKey(name: 'likeUsers')
-          final List<MyUser> likeusers,
-      @JsonKey(name: 'childComment')
-          final List<Comment> childComment}) = _$_Comment;
+          @JsonKey(name: 'createDate') final String createDate,
+          @JsonKey(name: 'user') final MyUser user,
+          @JsonKey(name: 'likeUsers') final List<MyUser> likeusers,
+          @JsonKey(name: 'childComment') final List<Comment> childComment}) =
+      _$_Comment;
   const _Comment._() : super._();
 
   factory _Comment.fromJson(Map<String, dynamic> json) = _$_Comment.fromJson;

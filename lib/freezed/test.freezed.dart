@@ -58,32 +58,20 @@ abstract class $RootCopyWith<$Res> {
       _$RootCopyWithImpl<$Res, Root>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'Current_currency')
-          String currentCurrency,
-      @JsonKey(name: 'id')
-          String id,
-      @JsonKey(name: 'items_qty')
-          int itemsQty,
-      @JsonKey(name: 'cart_points')
-          String cartPoints,
+      {@JsonKey(name: 'Current_currency') String currentCurrency,
+      @JsonKey(name: 'id') String id,
+      @JsonKey(name: 'items_qty') int itemsQty,
+      @JsonKey(name: 'cart_points') String cartPoints,
       @JsonKey(name: 'BaseSubtotalWithDiscount')
-          double basesubtotalwithdiscount,
-      @JsonKey(name: 'subtotal')
-          double subtotal,
-      @JsonKey(name: 'base_subtotal')
-          double baseSubtotal,
-      @JsonKey(name: 'base_discount_value')
-          int baseDiscountValue,
-      @JsonKey(name: 'cart_notification')
-          List<String> cartNotification,
-      @JsonKey(name: 'quote_currency')
-          String quoteCurrency,
-      @JsonKey(name: 'maxSize')
-          int maxsize,
-      @JsonKey(name: 'items')
-          List<Items> items,
-      @JsonKey(name: 'success')
-          bool success});
+      double basesubtotalwithdiscount,
+      @JsonKey(name: 'subtotal') double subtotal,
+      @JsonKey(name: 'base_subtotal') double baseSubtotal,
+      @JsonKey(name: 'base_discount_value') int baseDiscountValue,
+      @JsonKey(name: 'cart_notification') List<String> cartNotification,
+      @JsonKey(name: 'quote_currency') String quoteCurrency,
+      @JsonKey(name: 'maxSize') int maxsize,
+      @JsonKey(name: 'items') List<Items> items,
+      @JsonKey(name: 'success') bool success});
 }
 
 /// @nodoc
@@ -177,32 +165,20 @@ abstract class _$$_RootCopyWith<$Res> implements $RootCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'Current_currency')
-          String currentCurrency,
-      @JsonKey(name: 'id')
-          String id,
-      @JsonKey(name: 'items_qty')
-          int itemsQty,
-      @JsonKey(name: 'cart_points')
-          String cartPoints,
+      {@JsonKey(name: 'Current_currency') String currentCurrency,
+      @JsonKey(name: 'id') String id,
+      @JsonKey(name: 'items_qty') int itemsQty,
+      @JsonKey(name: 'cart_points') String cartPoints,
       @JsonKey(name: 'BaseSubtotalWithDiscount')
-          double basesubtotalwithdiscount,
-      @JsonKey(name: 'subtotal')
-          double subtotal,
-      @JsonKey(name: 'base_subtotal')
-          double baseSubtotal,
-      @JsonKey(name: 'base_discount_value')
-          int baseDiscountValue,
-      @JsonKey(name: 'cart_notification')
-          List<String> cartNotification,
-      @JsonKey(name: 'quote_currency')
-          String quoteCurrency,
-      @JsonKey(name: 'maxSize')
-          int maxsize,
-      @JsonKey(name: 'items')
-          List<Items> items,
-      @JsonKey(name: 'success')
-          bool success});
+      double basesubtotalwithdiscount,
+      @JsonKey(name: 'subtotal') double subtotal,
+      @JsonKey(name: 'base_subtotal') double baseSubtotal,
+      @JsonKey(name: 'base_discount_value') int baseDiscountValue,
+      @JsonKey(name: 'cart_notification') List<String> cartNotification,
+      @JsonKey(name: 'quote_currency') String quoteCurrency,
+      @JsonKey(name: 'maxSize') int maxsize,
+      @JsonKey(name: 'items') List<Items> items,
+      @JsonKey(name: 'success') bool success});
 }
 
 /// @nodoc
@@ -289,32 +265,21 @@ class __$$_RootCopyWithImpl<$Res> extends _$RootCopyWithImpl<$Res, _$_Root>
 @JsonSerializable()
 class _$_Root implements _Root {
   const _$_Root(
-      {@JsonKey(name: 'Current_currency')
-          this.currentCurrency = '',
-      @JsonKey(name: 'id')
-          this.id = '',
-      @JsonKey(name: 'items_qty')
-          this.itemsQty = 0,
-      @JsonKey(name: 'cart_points')
-          this.cartPoints = '',
+      {@JsonKey(name: 'Current_currency') this.currentCurrency = '',
+      @JsonKey(name: 'id') this.id = '',
+      @JsonKey(name: 'items_qty') this.itemsQty = 0,
+      @JsonKey(name: 'cart_points') this.cartPoints = '',
       @JsonKey(name: 'BaseSubtotalWithDiscount')
-          this.basesubtotalwithdiscount = 0.0,
-      @JsonKey(name: 'subtotal')
-          this.subtotal = 0.0,
-      @JsonKey(name: 'base_subtotal')
-          this.baseSubtotal = 0.0,
-      @JsonKey(name: 'base_discount_value')
-          this.baseDiscountValue = 0,
+      this.basesubtotalwithdiscount = 0.0,
+      @JsonKey(name: 'subtotal') this.subtotal = 0.0,
+      @JsonKey(name: 'base_subtotal') this.baseSubtotal = 0.0,
+      @JsonKey(name: 'base_discount_value') this.baseDiscountValue = 0,
       @JsonKey(name: 'cart_notification')
-          final List<String> cartNotification = const [],
-      @JsonKey(name: 'quote_currency')
-          this.quoteCurrency = '',
-      @JsonKey(name: 'maxSize')
-          this.maxsize = 0,
-      @JsonKey(name: 'items')
-          final List<Items> items = const [],
-      @JsonKey(name: 'success')
-          this.success = false})
+      final List<String> cartNotification = const [],
+      @JsonKey(name: 'quote_currency') this.quoteCurrency = '',
+      @JsonKey(name: 'maxSize') this.maxsize = 0,
+      @JsonKey(name: 'items') final List<Items> items = const [],
+      @JsonKey(name: 'success') this.success = false})
       : _cartNotification = cartNotification,
         _items = items;
 
@@ -442,32 +407,20 @@ class _$_Root implements _Root {
 
 abstract class _Root implements Root {
   const factory _Root(
-      {@JsonKey(name: 'Current_currency')
-          final String currentCurrency,
-      @JsonKey(name: 'id')
-          final String id,
-      @JsonKey(name: 'items_qty')
-          final int itemsQty,
-      @JsonKey(name: 'cart_points')
-          final String cartPoints,
+      {@JsonKey(name: 'Current_currency') final String currentCurrency,
+      @JsonKey(name: 'id') final String id,
+      @JsonKey(name: 'items_qty') final int itemsQty,
+      @JsonKey(name: 'cart_points') final String cartPoints,
       @JsonKey(name: 'BaseSubtotalWithDiscount')
-          final double basesubtotalwithdiscount,
-      @JsonKey(name: 'subtotal')
-          final double subtotal,
-      @JsonKey(name: 'base_subtotal')
-          final double baseSubtotal,
-      @JsonKey(name: 'base_discount_value')
-          final int baseDiscountValue,
-      @JsonKey(name: 'cart_notification')
-          final List<String> cartNotification,
-      @JsonKey(name: 'quote_currency')
-          final String quoteCurrency,
-      @JsonKey(name: 'maxSize')
-          final int maxsize,
-      @JsonKey(name: 'items')
-          final List<Items> items,
-      @JsonKey(name: 'success')
-          final bool success}) = _$_Root;
+      final double basesubtotalwithdiscount,
+      @JsonKey(name: 'subtotal') final double subtotal,
+      @JsonKey(name: 'base_subtotal') final double baseSubtotal,
+      @JsonKey(name: 'base_discount_value') final int baseDiscountValue,
+      @JsonKey(name: 'cart_notification') final List<String> cartNotification,
+      @JsonKey(name: 'quote_currency') final String quoteCurrency,
+      @JsonKey(name: 'maxSize') final int maxsize,
+      @JsonKey(name: 'items') final List<Items> items,
+      @JsonKey(name: 'success') final bool success}) = _$_Root;
 
   factory _Root.fromJson(Map<String, dynamic> json) = _$_Root.fromJson;
 
@@ -893,32 +846,20 @@ class _$_Items implements _Items {
 
 abstract class _Items implements Items {
   const factory _Items(
-      {@JsonKey(name: 'cart_id')
-          final String cartId,
-      @JsonKey(name: 'is_choose')
-          final bool isChoose,
-      @JsonKey(name: 'position')
-          final String position,
-      @JsonKey(name: 'image')
-          final String image,
-      @JsonKey(name: 'name')
-          final String name,
-      @JsonKey(name: 'options')
-          final List<Options> options,
-      @JsonKey(name: 'id')
-          final String id,
-      @JsonKey(name: 'sku')
-          final String sku,
-      @JsonKey(name: 'qty')
-          final int qty,
-      @JsonKey(name: 'finalPrice')
-          final String finalprice,
-      @JsonKey(name: 'productId')
-          final String productid,
+      {@JsonKey(name: 'cart_id') final String cartId,
+      @JsonKey(name: 'is_choose') final bool isChoose,
+      @JsonKey(name: 'position') final String position,
+      @JsonKey(name: 'image') final String image,
+      @JsonKey(name: 'name') final String name,
+      @JsonKey(name: 'options') final List<Options> options,
+      @JsonKey(name: 'id') final String id,
+      @JsonKey(name: 'sku') final String sku,
+      @JsonKey(name: 'qty') final int qty,
+      @JsonKey(name: 'finalPrice') final String finalprice,
+      @JsonKey(name: 'productId') final String productid,
       @JsonKey(name: 'product_original_price')
-          final String productOriginalPrice,
-      @JsonKey(name: 'item_error')
-          final bool itemError}) = _$_Items;
+      final String productOriginalPrice,
+      @JsonKey(name: 'item_error') final bool itemError}) = _$_Items;
 
   factory _Items.fromJson(Map<String, dynamic> json) = _$_Items.fromJson;
 

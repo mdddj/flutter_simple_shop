@@ -15,13 +15,29 @@ class SimpleResult with _$SimpleResult {
       @JsonKey(name: 'message') @Default('')  String message,
       @JsonKey(name: 'state') @Default(0)  int state,
       @JsonKey(name: 'success') @Default(false)  bool success,
-      @JsonKey(name: 'type') @Default(0)  int type,
-    @JsonKey(name: 'data') dynamic data
+      @JsonKey(name: 'type') @Default(ResultType.none)  ResultType type,
+     @JsonKey(name: 'data') dynamic data
     }) = _SimpleResult;
   
   factory SimpleResult.fromJson(Map<String, dynamic> json) => _$SimpleResultFromJson(json);
 
 }
+
+@JsonEnum(valueField: 'type')
+enum ResultType {
+  @JsonValue("Toast")
+  toast, 
+  @JsonValue("Dialog")
+  dialog,
+  @JsonValue("Notice")
+  notice,
+  @JsonValue("None")
+  none,
+  @JsonValue("FinalToast")
+  finalToast,
+  @JsonValue("FinalDialog")
+  finalDialog }
+
 
 
 class JpaDataWrapper  {

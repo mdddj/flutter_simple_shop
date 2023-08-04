@@ -38,9 +38,10 @@ abstract class $ZheElmResultModelCopyWith<$Res> {
       _$ZheElmResultModelCopyWithImpl<$Res, ZheElmResultModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
-          Alibabaalscunionelemepromotionofficialactivitygetresponse
-              alibabaalscunionelemepromotionofficialactivitygetresponse});
+      {@JsonKey(
+          name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
+      Alibabaalscunionelemepromotionofficialactivitygetresponse
+          alibabaalscunionelemepromotionofficialactivitygetresponse});
 
   $AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<$Res>
       get alibabaalscunionelemepromotionofficialactivitygetresponse;
@@ -94,9 +95,10 @@ abstract class _$$_ZheElmResultModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
-          Alibabaalscunionelemepromotionofficialactivitygetresponse
-              alibabaalscunionelemepromotionofficialactivitygetresponse});
+      {@JsonKey(
+          name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
+      Alibabaalscunionelemepromotionofficialactivitygetresponse
+          alibabaalscunionelemepromotionofficialactivitygetresponse});
 
   @override
   $AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<$Res>
@@ -130,8 +132,10 @@ class __$$_ZheElmResultModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ZheElmResultModel extends _ZheElmResultModel {
   const _$_ZheElmResultModel(
-      {@JsonKey(name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
-          this.alibabaalscunionelemepromotionofficialactivitygetresponse = const Alibabaalscunionelemepromotionofficialactivitygetresponse()})
+      {@JsonKey(
+          name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
+      this.alibabaalscunionelemepromotionofficialactivitygetresponse =
+          const Alibabaalscunionelemepromotionofficialactivitygetresponse()})
       : super._();
 
   factory _$_ZheElmResultModel.fromJson(Map<String, dynamic> json) =>
@@ -182,9 +186,10 @@ class _$_ZheElmResultModel extends _ZheElmResultModel {
 
 abstract class _ZheElmResultModel extends ZheElmResultModel {
   const factory _ZheElmResultModel(
-          {@JsonKey(name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
-              final Alibabaalscunionelemepromotionofficialactivitygetresponse
-                  alibabaalscunionelemepromotionofficialactivitygetresponse}) =
+          {@JsonKey(
+              name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
+          final Alibabaalscunionelemepromotionofficialactivitygetresponse
+              alibabaalscunionelemepromotionofficialactivitygetresponse}) =
       _$_ZheElmResultModel;
   const _ZheElmResultModel._() : super._();
 
