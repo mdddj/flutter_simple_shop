@@ -9,7 +9,7 @@ import 'freezed/env_config.dart';
 import 'index.dart';
 
 ///本地测试环境
-const debugEnvConfig = EnvConfig(host: "http://192.168.199.79", port: '8082', debugMode: true, fontFamily: '');
+const debugEnvConfig = EnvConfig(host: "http://192.168.199.75", port: '8082', debugMode: true, fontFamily: '');
 
 ///线上环境
 const releaseEnvConfig = EnvConfig(host: "https://itbug.shop", port: '9445', debugMode: false, fontFamily: '');

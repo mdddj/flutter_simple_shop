@@ -63,6 +63,7 @@ class MyUser with _$MyUser {
       @Default('') String intro,
       @Default(0) num openAiTokens,
       @Default(false) bool openAiFlag,
+        @Default('') String relationId,
       Enterprise? enterprise}) = _MyUser;
 
   factory MyUser.fromJson(Map<String, Object?> json) => _$MyUserFromJson(json);

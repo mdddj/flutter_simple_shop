@@ -40,6 +40,7 @@ mixin _$MyUser {
   String get intro => throw _privateConstructorUsedError;
   num get openAiTokens => throw _privateConstructorUsedError;
   bool get openAiFlag => throw _privateConstructorUsedError;
+  String get relationId => throw _privateConstructorUsedError;
   Enterprise? get enterprise => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -73,6 +74,7 @@ abstract class $MyUserCopyWith<$Res> {
       String intro,
       num openAiTokens,
       bool openAiFlag,
+      String relationId,
       Enterprise? enterprise});
 
   $EnterpriseCopyWith<$Res>? get enterprise;
@@ -111,6 +113,7 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
     Object? intro = null,
     Object? openAiTokens = null,
     Object? openAiFlag = null,
+    Object? relationId = null,
     Object? enterprise = freezed,
   }) {
     return _then(_value.copyWith(
@@ -194,6 +197,10 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
           ? _value.openAiFlag
           : openAiFlag // ignore: cast_nullable_to_non_nullable
               as bool,
+      relationId: null == relationId
+          ? _value.relationId
+          : relationId // ignore: cast_nullable_to_non_nullable
+              as String,
       enterprise: freezed == enterprise
           ? _value.enterprise
           : enterprise // ignore: cast_nullable_to_non_nullable
@@ -241,6 +248,7 @@ abstract class _$$_MyUserCopyWith<$Res> implements $MyUserCopyWith<$Res> {
       String intro,
       num openAiTokens,
       bool openAiFlag,
+      String relationId,
       Enterprise? enterprise});
 
   @override
@@ -277,6 +285,7 @@ class __$$_MyUserCopyWithImpl<$Res>
     Object? intro = null,
     Object? openAiTokens = null,
     Object? openAiFlag = null,
+    Object? relationId = null,
     Object? enterprise = freezed,
   }) {
     return _then(_$_MyUser(
@@ -360,6 +369,10 @@ class __$$_MyUserCopyWithImpl<$Res>
           ? _value.openAiFlag
           : openAiFlag // ignore: cast_nullable_to_non_nullable
               as bool,
+      relationId: null == relationId
+          ? _value.relationId
+          : relationId // ignore: cast_nullable_to_non_nullable
+              as String,
       enterprise: freezed == enterprise
           ? _value.enterprise
           : enterprise // ignore: cast_nullable_to_non_nullable
@@ -392,6 +405,7 @@ class _$_MyUser implements _MyUser {
       this.intro = '',
       this.openAiTokens = 0,
       this.openAiFlag = false,
+      this.relationId = '',
       this.enterprise});
 
   factory _$_MyUser.fromJson(Map<String, dynamic> json) =>
@@ -457,11 +471,14 @@ class _$_MyUser implements _MyUser {
   @JsonKey()
   final bool openAiFlag;
   @override
+  @JsonKey()
+  final String relationId;
+  @override
   final Enterprise? enterprise;
 
   @override
   String toString() {
-    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, city: $city, job: $job, vip: $vip, intro: $intro, openAiTokens: $openAiTokens, openAiFlag: $openAiFlag, enterprise: $enterprise)';
+    return 'MyUser(id: $id, loginNumber: $loginNumber, username: $username, email: $email, nickName: $nickName, picture: $picture, phone: $phone, type: $type, status: $status, loginTime: $loginTime, enabled: $enabled, accountNonExpired: $accountNonExpired, accountNonLocked: $accountNonLocked, credentialsNonExpired: $credentialsNonExpired, city: $city, job: $job, vip: $vip, intro: $intro, openAiTokens: $openAiTokens, openAiFlag: $openAiFlag, relationId: $relationId, enterprise: $enterprise)';
   }
 
   @override
@@ -498,6 +515,8 @@ class _$_MyUser implements _MyUser {
                 other.openAiTokens == openAiTokens) &&
             (identical(other.openAiFlag, openAiFlag) ||
                 other.openAiFlag == openAiFlag) &&
+            (identical(other.relationId, relationId) ||
+                other.relationId == relationId) &&
             (identical(other.enterprise, enterprise) ||
                 other.enterprise == enterprise));
   }
@@ -526,6 +545,7 @@ class _$_MyUser implements _MyUser {
         intro,
         openAiTokens,
         openAiFlag,
+        relationId,
         enterprise
       ]);
 
@@ -565,6 +585,7 @@ abstract class _MyUser implements MyUser {
       final String intro,
       final num openAiTokens,
       final bool openAiFlag,
+      final String relationId,
       final Enterprise? enterprise}) = _$_MyUser;
 
   factory _MyUser.fromJson(Map<String, dynamic> json) = _$_MyUser.fromJson;
@@ -609,6 +630,8 @@ abstract class _MyUser implements MyUser {
   num get openAiTokens;
   @override
   bool get openAiFlag;
+  @override
+  String get relationId;
   @override
   Enterprise? get enterprise;
   @override

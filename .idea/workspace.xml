@@ -13,20 +13,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="性能优化">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="细节优化">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/jpa_page_loading_more.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/jpa_page_loading_more.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/comment.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/comment.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/simple_result.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/simple_result.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/simple_result.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/simple_result.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/simple_result.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/simple_result.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/test.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/test.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/yw_1222.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/yw_1222_baichuan.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/yw_1222_baichuan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/yw_1222_baichuan.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/init.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/init.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.g.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,45 +105,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;DRAWABLE&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;ALL&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ldd/flutter_simple_shop/ios/Runner&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.23908046&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;shop.itbug.fluttercheckversionx.setting.AppConfig&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ResourceManagerPrefKey.ResourceType": "DRAWABLE",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cidr.known.project.marker": "true",
+    "com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable": "ALL",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/ldd/flutter_simple_shop/ios/Runner/Assets.xcassets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.23908046",
+    "settings.editor.selected.configurable": "shop.itbug.fluttercheckversionx.setting.AppConfig",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ios/Runner/Assets.xcassets" />
       <recent name="$PROJECT_DIR$/ios/Runner" />
       <recent name="$PROJECT_DIR$/assets/font" />
       <recent name="$PROJECT_DIR$/assets/svg" />
       <recent name="$PROJECT_DIR$/assets/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ios" />
       <recent name="$PROJECT_DIR$/ios/Runner" />
+      <recent name="$PROJECT_DIR$/ios" />
       <recent name="$PROJECT_DIR$/lib/pages/user_home_page/new" />
       <recent name="$PROJECT_DIR$/assets/svg" />
     </key>
@@ -516,7 +515,8 @@
       <workItem from="1690438184717" duration="329000" />
       <workItem from="1690938037738" duration="276000" />
       <workItem from="1691112793601" duration="366000" />
-      <workItem from="1691131841541" duration="1943000" />
+      <workItem from="1691131841541" duration="5820000" />
+      <workItem from="1691199711464" duration="4420000" />
     </task>
     <task id="LOCAL-00138" summary="升级依赖">
       <created>1676726450762</created>
@@ -861,7 +861,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687341765706</updated>
     </task>
-    <option name="localTasksCounter" value="205" />
+    <option name="localTasksCounter" value="206" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -906,11 +906,11 @@
     <MESSAGE value="support dart 3.0.0" />
     <MESSAGE value="添加新的接口" />
     <MESSAGE value="doc update" />
-    <MESSAGE value="细节优化" />
     <MESSAGE value="bug fixed" />
     <MESSAGE value="多个细节优化" />
     <MESSAGE value="性能优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="性能优化" />
+    <MESSAGE value="细节优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="细节优化" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

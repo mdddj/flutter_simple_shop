@@ -27,6 +27,7 @@ _$_MyUser _$$_MyUserFromJson(Map<String, dynamic> json) => _$_MyUser(
       intro: json['intro'] as String? ?? '',
       openAiTokens: json['openAiTokens'] as num? ?? 0,
       openAiFlag: json['openAiFlag'] as bool? ?? false,
+      relationId: json['relationId'] as String? ?? '',
       enterprise: json['enterprise'] == null
           ? null
           : Enterprise.fromJson(json['enterprise'] as Map<String, dynamic>),
@@ -53,6 +54,7 @@ Map<String, dynamic> _$$_MyUserToJson(_$_MyUser instance) => <String, dynamic>{
       'intro': instance.intro,
       'openAiTokens': instance.openAiTokens,
       'openAiFlag': instance.openAiFlag,
+      'relationId': instance.relationId,
       'enterprise': instance.enterprise,
     };
 

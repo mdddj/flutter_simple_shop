@@ -186,7 +186,15 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           padding: EdgeInsets.only(
               left: 12, right: 12, bottom: context.paddingBottom, top: 12),
           decoration: BoxDecoration(color: context.cardColor),
-          child: buildBottomRow(context)),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                if((ref.user?.relationId ?? '').isEmpty)
+                  Text('加入渠道会员可以获得返现'),
+                buildBottomRow(context),
+              ],
+            ),
+          )),
     );
   }
 
@@ -716,52 +724,17 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     return cats[int.parse(fqcat) - 1];
   }
 
-  //
-  // Row buildImageButton1(BuildContext context) {
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //     children: <Widget>[
-  //       FButton(
-  //         height: 38,
-  //         padding: const EdgeInsets.symmetric(horizontal: 20),
-  //         text: "复制口令",
-  //         style: const TextStyle(color: Colors.white),
-  //         color: const Color(0xff9ccc65),
-  //         alignment: Alignment.center,
-  //         onPressed: () {
-  //         },
-  //         clickEffect: true,
-  //         corner: const FCorner(leftTopCorner: 25, leftBottomCorner: 25),
-  //         imageMargin: 8,
-  //       ),
-  //       const SizedBox(
-  //           height: 38,
-  //           child: VerticalDivider(width: 0.25, color: Colors.black)),
-  //       FButton(
-  //         height: 38,
-  //         padding: const EdgeInsets.symmetric(horizontal: 20),
-  //         text: "立即领券",
-  //         style: const TextStyle(color: Colors.white),
-  //         color: const Color(0xffd4e157),
-  //         alignment: Alignment.center,
-  //         onPressed: () {
-  //         },
-  //         corner: const FCorner(rightTopCorner: 25, rightBottomCorner: 25),
-  //         imageMargin: 8,
-  //         imageAlignment: ImageAlignment.right,
-  //       ),
-  //     ],
-  //   );
-  // }
-
   @Doc(message: '初始化页面数据')
   Future<String> initDatas() async {
     kLog('加载产品信息:${widget.goodsId}');
     try {
+      final relationId = ref.user?.relationId ?? '';
       final result = await kApi.getDetailBaseData(
         productId: widget.goodsId,
         requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams.copyWith(showDefaultLoading: false);
+          return requestParams.copyWith(showDefaultLoading: false,data: {
+            "relationId": relationId.isEmpty ? null : relationId
+          });
         },
       );
       if (mounted) {

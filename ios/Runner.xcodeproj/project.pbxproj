@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		674BB7942A7CE09400E78F31 /* yw_1222_baichuan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 674BB7932A7CE09400E78F31 /* yw_1222_baichuan.jpg */; };
 		674F6C67284C533E006FCF63 /* mtopsdk_configuartion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 674F6C66284C533E006FCF63 /* mtopsdk_configuartion.plist */; };
-		67E16CE52A723ECC0070AC34 /* yw_1222_baichuan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67E16CE32A723ECC0070AC34 /* yw_1222_baichuan.jpg */; };
-		67E16CE62A723ECC0070AC34 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 67E16CE42A723ECC0070AC34 /* yw_1222.jpg */; };
 		67E2C8992A711123004DC4CB /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6710BDD3285D812C009287B6 /* libresolv.tbd */; };
 		67E2C89A2A71112F004DC4CB /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6710BDD5285D8133009287B6 /* JavaScriptCore.framework */; };
 		67E2C89B2A71113B004DC4CB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C5C284C4BAA006FCF63 /* libz.tbd */; };
@@ -47,6 +46,7 @@
 		61F65066A30C7A2D438B5528 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		6710BDD3285D812C009287B6 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		6710BDD5285D8133009287B6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		674BB7932A7CE09400E78F31 /* yw_1222_baichuan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222_baichuan.jpg; sourceTree = "<group>"; };
 		674F6C5C284C4BAA006FCF63 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		674F6C5E284C4BB8006FCF63 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		674F6C60284C4BC3006FCF63 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -78,8 +78,6 @@
 		679F0BE62A6B66E90051E348 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		679F0BE82A6B66F10051E348 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		679F0BEA2A6B67020051E348 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
-		67E16CE32A723ECC0070AC34 /* yw_1222_baichuan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222_baichuan.jpg; sourceTree = "<group>"; };
-		67E16CE42A723ECC0070AC34 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
 		67E2C8A12A711A99004DC4CB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		67FDA58D2A6A52A700FCDB13 /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -129,8 +127,6 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
-				67E16CE32A723ECC0070AC34 /* yw_1222_baichuan.jpg */,
-				67E16CE42A723ECC0070AC34 /* yw_1222.jpg */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -150,6 +146,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				674BB7932A7CE09400E78F31 /* yw_1222_baichuan.jpg */,
 				676D79BE2A3C7D400049D73E /* Runner.entitlements */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
@@ -287,9 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E16CE52A723ECC0070AC34 /* yw_1222_baichuan.jpg in Resources */,
-				67E16CE62A723ECC0070AC34 /* yw_1222.jpg in Resources */,
 				674F6C67284C533E006FCF63 /* mtopsdk_configuartion.plist in Resources */,
+				674BB7942A7CE09400E78F31 /* yw_1222_baichuan.jpg in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
