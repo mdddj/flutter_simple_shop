@@ -8,6 +8,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../freezed/add_favorites_params.dart';
 import '../freezed/report.dart';
 import '../freezed/resource_category.dart';
+import '../freezed/xb_result.dart';
 import '../freezed/zhe_elm_model.dart';
 import '../index.dart';
 

@@ -27,20 +27,20 @@ class DdShop extends View {
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
     return ThemeBuildWidget(themeBuild: (model) {
-      return MaterialApp.router(debugShowCheckedModeBanner: false, title: '典典小卖部', theme: _buildThemeData(model.theme), darkTheme: model.darkTheme, themeMode: model.getThemeMode, routerConfig: routers, builder: FlutterSmartDialog.init(loadingBuilder: MyCustomLoadingWidget.new, builder: (_, child) => child.scale(context)));
+      return MaterialApp.router(debugShowCheckedModeBanner: false, title: '典典小卖部', theme: model.theme, darkTheme: model.darkTheme, themeMode: model.getThemeMode, routerConfig: routers, builder: FlutterSmartDialog.init(loadingBuilder: MyCustomLoadingWidget.new, builder: (_, child) => child.scale(context)));
     });
   }
 }
 
 ///处理表情包
-ThemeData _buildThemeData(ThemeData defaultTheme) {
-  return defaultTheme.copyWith(
-    inputDecorationTheme: defaultTheme.inputDecorationTheme.copyWith(fillColor: Colors.white, filled: true),
-    scaffoldBackgroundColor: Colors.grey.shade200,
-    appBarTheme: defaultTheme.appBarTheme.copyWith(backgroundColor: Colors.white),
-    bottomNavigationBarTheme: defaultTheme.bottomNavigationBarTheme.copyWith(backgroundColor: Colors.white, elevation: 0),
-    cardTheme: defaultTheme.cardTheme.copyWith(color: Colors.white, elevation: 0.01, margin: EdgeInsets.zero),
-    bottomSheetTheme: defaultTheme.bottomSheetTheme.copyWith(backgroundColor: Colors.white),
-    dialogTheme: defaultTheme.dialogTheme.copyWith(backgroundColor: Colors.white),
-  );
-}
+// ThemeData _buildThemeData(ThemeData defaultTheme) {
+//   return defaultTheme.copyWith(
+//     inputDecorationTheme: defaultTheme.inputDecorationTheme.copyWith(fillColor: Colors.white, filled: true),
+//     scaffoldBackgroundColor: Colors.grey.shade200,
+//     appBarTheme: defaultTheme.appBarTheme.copyWith(backgroundColor: Colors.white),
+//     bottomNavigationBarTheme: defaultTheme.bottomNavigationBarTheme.copyWith(backgroundColor: Colors.white, elevation: 0),
+//     cardTheme: defaultTheme.cardTheme.copyWith(color: Colors.white, elevation: 0.01, margin: EdgeInsets.zero),
+//     bottomSheetTheme: defaultTheme.bottomSheetTheme.copyWith(backgroundColor: Colors.white),
+//     dialogTheme: defaultTheme.dialogTheme.copyWith(backgroundColor: Colors.white),
+//   );
+// }

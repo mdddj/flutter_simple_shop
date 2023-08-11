@@ -11,7 +11,7 @@ Future<void> appInit(VoidCallback start) async {
   );
   if (useEnv.debugMode) {
     DdCheckPlugin.instance.init(BaseApi.getDio(),
-        initHost: "192.168.199.75",
+        initHost: "192.168.199.71",
         port: 9998,
         customCoverterResponseData: (model) {
           final body = model.response?.data;
@@ -80,6 +80,7 @@ void initInstanceObject() {
   getIt.registerSingleton(MyResourceFindCommenApi());
   getIt.registerSingleton(ZheElmApi());
   getIt.registerSingleton(PrivacyCache());
+  getIt.registerSingleton(TkXianbaoApi());
 }
 
 Future<void> initCaches() async {

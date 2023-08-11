@@ -104,12 +104,21 @@ class MobileAppbar extends View implements PreferredSizeWidget {
         ),
       ).click(() => navTo(context)),
       leading: const Logo(),
-      actions: [
-        IconButton(
-            onPressed: () {},
-            icon: const Icon(
+      actions:  [
+        Padding(padding: const EdgeInsets.only(right: 12),child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
               Icons.message,
-            ))
+              size: context.theme.iconTheme.size ?? 16,
+              color: context.colorScheme.onTertiaryContainer,
+            ),
+             Text('线报',style: context.textTheme.labelSmall)
+          ],
+        ),).click(() {
+          context.navToWidget(to: const XianbaoIndex());
+        })
       ],
       bottom: PreferredSize(
         preferredSize: Size(context.screenWidth, 38),
