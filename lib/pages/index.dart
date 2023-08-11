@@ -30,7 +30,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_alibc/flutter_alibc.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';

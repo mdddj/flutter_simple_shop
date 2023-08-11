@@ -190,7 +190,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
             child: Column(
               children: [
                 if((ref.user?.relationId ?? '').isEmpty)
-                  Text('加入渠道会员可以获得返现'),
+                  const Text('加入渠道会员可以获得返现'),
                 buildBottomRow(context),
               ],
             ),

@@ -13,18 +13,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="细节优化">
+    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="流程优化">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/yw_1222.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/yw_1222_baichuan.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/yw_1222_baichuan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/yw_1222_baichuan.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/init.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/init.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/brand_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/brand_detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/ddq_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/ddq_page/index_home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -516,7 +520,12 @@
       <workItem from="1690938037738" duration="276000" />
       <workItem from="1691112793601" duration="366000" />
       <workItem from="1691131841541" duration="5820000" />
-      <workItem from="1691199711464" duration="4420000" />
+      <workItem from="1691199711464" duration="5757000" />
+      <workItem from="1691213611652" duration="1268000" />
+      <workItem from="1691217776098" duration="824000" />
+      <workItem from="1691387088158" duration="95000" />
+      <workItem from="1691661769256" duration="100000" />
+      <workItem from="1691721702769" duration="136000" />
     </task>
     <task id="LOCAL-00138" summary="升级依赖">
       <created>1676726450762</created>
@@ -861,7 +870,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687341765706</updated>
     </task>
-    <option name="localTasksCounter" value="206" />
+    <option name="localTasksCounter" value="207" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -885,7 +894,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value=":bug: bug fixed" />
     <MESSAGE value=":bug: 性能优化" />
     <MESSAGE value=":arrow_up: diox to 5.0.0" />
     <MESSAGE value=":arrow_up: 依赖升级" />
@@ -910,7 +918,8 @@
     <MESSAGE value="多个细节优化" />
     <MESSAGE value="性能优化" />
     <MESSAGE value="细节优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="细节优化" />
+    <MESSAGE value="流程优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="流程优化" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

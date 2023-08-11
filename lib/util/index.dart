@@ -7,6 +7,7 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/app_local_setting_model.dart';
 import 'package:dd_js_util/theme/model.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';

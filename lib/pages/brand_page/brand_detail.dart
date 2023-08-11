@@ -12,7 +12,7 @@ class BrandDetailPage extends StatefulWidget {
 
 class BrandDetailPageState extends State<BrandDetailPage>
     with AfterLayoutMixin<BrandDetailPage> {
-  List<ProductModel> products = <ProductModel>[];
+  final products = <ProductModel>[];
   BrandDetail? brandDetailModel;
 
   @override

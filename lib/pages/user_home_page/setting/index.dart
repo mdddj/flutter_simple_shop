@@ -35,25 +35,6 @@ class SettingIndex extends StatelessWidget {
                 context.navToWidget(to: const UpdateUserJobPage());
               },
             ),
-            ListTile(
-              title: const Text("绑定淘宝账号"),
-              onTap: () async {
-                var result = await FlutterAlibc.initAlibc(appName: '典典的小卖部',version: '1.0');
-                wtfLog(result.errorMessage);
-
-              },
-            ),
-            ListTile(
-              title: const Text("登录授权"),
-              onTap: () async {
-                // var result = await FlutterAlibc.initAlibc(appName: '典典的小卖部',version: '1.0');
-                // print(result.errorMessage);
-                FlutterAlibc.loginTaoBao(loginCallback: (model) {
-
-                },);
-
-              },
-            ),
             const SizedBox(height: 12),
             ListTile(
               title: const Text('关于典典的小卖部'),

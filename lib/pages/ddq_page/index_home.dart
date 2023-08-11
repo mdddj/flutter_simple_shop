@@ -9,7 +9,7 @@ class DdqIndexHome extends ConsumerStatefulWidget {
 }
 
 class DdqIndexHomeState extends ConsumerState<DdqIndexHome> {
-  late DdqProvider ddqProvider = ref.watch(ddqRiverpod);
+  late final ddqProvider = ref.watch(ddqRiverpod);
   int? cur;
 
   @override

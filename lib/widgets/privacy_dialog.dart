@@ -15,17 +15,20 @@ class _PrivacyDialogState extends State<PrivacyDialog> {
       contentPadding: EdgeInsets.zero,
       title: const Text('典典小卖部隐私政策'),
       content: Container(
+        width: context.dialogWidth,
         height: context.screenHeight * 0.9,
         margin: const EdgeInsets.only(bottom: 12, top: 12),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-        child: Platform.isAndroid || Platform.isIOS
+        child:kIsWeb ?  HtmlTextWidget(
+          url: url,
+        ) : ( Platform.isAndroid || Platform.isIOS
             ? WebViewWidget(
-                controller: WebViewController()
-                  ..loadRequest(Uri.parse(url))
-                  ..setBackgroundColor(context.theme.dialogBackgroundColor))
+            controller: WebViewController()
+              ..loadRequest(Uri.parse(url))
+              ..setBackgroundColor(context.theme.dialogBackgroundColor))
             : HtmlTextWidget(
-                url: url,
-              ),
+          url: url,
+        )),
       ),
       actions: [
         TextButton(onPressed: () => exit(0), child: const Text('退出程序'))
