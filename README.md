@@ -13,7 +13,7 @@
 
 
 
-在线预览: https://itbug.shop:9445/index
+在线预览: https://q.itbug.shop
 
 接口文档: <a href='https://apifox.com/apidoc/shared-6f74775d-40ca-4a07-ad1e-dd9c8480f927'>Apifox</a>
 
