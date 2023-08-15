@@ -19,6 +19,8 @@
 
 web后台: https://github.com/mdddj/dd_server_admin
 
+web后台预览: https://admin.itbug.shop
+
 macos安装包: <a href="https://github.com/mdddj/flutter_simple_shop/releases/download/3.0.0/flutter_simple_shop_macos.app.zip">下载</a>
 
 

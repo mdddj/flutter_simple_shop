@@ -14,22 +14,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="细节优化">
-      <change afterPath="$PROJECT_DIR$/lib/freezed/xb_result.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/freezed/xb_result.freezed.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/freezed/xb_result.g.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/xb/xianbao_index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/apis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/tkapi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/tkapi.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/init.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/init.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/appbar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Podfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -529,6 +515,9 @@
       <workItem from="1691721702769" duration="2436000" />
       <workItem from="1691724533142" duration="2509000" />
       <workItem from="1691734568368" duration="53000" />
+      <workItem from="1691991661544" duration="101000" />
+      <workItem from="1692067503109" duration="54000" />
+      <workItem from="1692077304624" duration="19000" />
     </task>
     <task id="LOCAL-00138" summary="升级依赖">
       <created>1676726450762</created>
