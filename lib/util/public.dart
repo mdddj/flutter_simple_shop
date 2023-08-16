@@ -11,3 +11,13 @@ void actionLog(String action,String key,dynamic value) {
     key: value
   });
 }
+
+Future<void> appLaunchUrl(String url) async {
+  final uri = Uri.tryParse(url);
+  if(uri!=null){
+    if (!await launchUrl(uri)) {
+      throw Exception('无法访问$url');
+    }
+  }
+
+}

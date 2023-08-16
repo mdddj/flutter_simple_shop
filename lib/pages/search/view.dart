@@ -24,13 +24,13 @@ class SearchPageState extends ConsumerState<SearchPage> {
       ),
       body: const CustomScrollView(slivers: [
         SliverToBoxAdapter(
-          child: HelperComp(),
+          child: Padding(padding: EdgeInsets.all(12),child: HelperComp()),
         ),
         SliverToBoxAdapter(
-          child: SearchKeyWorlds(),
+          child: Padding(padding: EdgeInsets.all(12),child: SearchKeyWorlds()),
         ),
         SliverToBoxAdapter(
-          child: Suggest(),
+          child: Padding(padding: EdgeInsets.all(12),child: Suggest(),),
         )
       ]),
     );

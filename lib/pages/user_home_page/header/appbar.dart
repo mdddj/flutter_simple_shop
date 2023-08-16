@@ -23,7 +23,7 @@ class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             icon: const Icon(
               Icons.settings,
               color: Colors.white,
-            )),
+            )).hideInVisitor(),
         const SizedBox(width: 12)
       ],
     );

@@ -91,7 +91,13 @@ class _ItemLayout extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HtmlWidget(item.content).visible(item.content.isNotEmpty),
+            HtmlWidget(item.getShowText(),textStyle: context.textTheme.bodyLarge,),
+            ImageView(image: MyImage.network(url: item.img,params: const ImageParams(
+              width: 120,height: 120
+            ))).marginOnly(top: 12).visible(item.img.isNotEmpty),
+            SizedBox(width: double.infinity,child: FilledButton.tonal(onPressed: (){
+              appLaunchUrl(item.couponUrl);
+            }, child: const Text('去领取')).marginOnly(top: 12),)
           ],
         ),
       ),
@@ -115,7 +121,7 @@ class XianbaoResposne extends MyLoadingModel<XbItem> {
       final r = await getIt.get<TkXianbaoApi>().request(R(showDefaultLoading: false, data: {'pageId': _page, "pageSize": _pageSize, "topic": topic}));
       addAll(r.list);
       _page++;
-      _hasMore = r.list.length < _pageSize || r.list.isEmpty;
+      _hasMore = r.list.isNotEmpty;
       return true;
     } catch (e) {
       Logger().e(e);

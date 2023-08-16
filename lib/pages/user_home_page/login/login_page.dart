@@ -40,67 +40,62 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
   Scaffold buildScaffold(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        padding: EdgeInsets.all(context.screenWidth * 0.1),
-        height: context.screenHeight,
-        child: Column(
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: Stack(
+        children: [
+          Container(
+            padding: EdgeInsets.all(context.screenWidth * 0.1),
+            height: context.screenHeight,
+            child: Column(
               children: <Widget>[
-                SizedBox(height: context.screenHeight * 0.16),
-                Text('登录',
-                    style: context.textTheme.titleLarge
-                        ?.copyWith(fontWeight: FontWeight.bold, fontSize: 53)),
-                SizedBox(height: context.screenHeight * 0.032),
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Column(
-                    children: [
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: '请输入邮箱',
-                          labelText: _accountLabel,
-                        ),
-                        controller: usernameEditController,
-                      ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(height: context.screenHeight * 0.16),
+                    Text('登录',
+                        style: context.textTheme.titleLarge
+                            ?.copyWith(fontWeight: FontWeight.bold, fontSize: 53)),
+                    SizedBox(height: context.screenHeight * 0.032),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Column(
+                        children: [
+                          TextField(
+                            decoration: InputDecoration(
+                              hintText: '请输入邮箱',
+                              labelText: _accountLabel,
+                            ),
+                            controller: usernameEditController,
+                          ),
 
-                      const SizedBox(
-                        height: 12,
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          // 密码输入框
+                          TextField(
+                            decoration: const InputDecoration(
+                              hintText: '请输入密码',
+                              labelText: '密码',
+                            ),
+                            controller: passwordEditController,
+                            obscureText: true,
+                          ),
+                        ],
                       ),
-                      // 密码输入框
-                      TextField(
-                        decoration: const InputDecoration(
-                          hintText: '请输入密码',
-                          labelText: '密码',
-                        ),
-                        controller: passwordEditController,
-                        obscureText: true,
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    renderLoginButton(),
+                  ],
                 ),
-                const SizedBox(
-                  height: 40,
-                ),
-                renderLoginButton(),
+                const Spacer(),
+                _moreActions
               ],
             ),
-            const Spacer(),
-            _moreActions
-            // // 协议按钮
-            // renderXieyi(),
-
-            // // 页面关闭按钮
-            // Positioned(
-            //   left: 12,
-            //   top: context.paddingTop + 12,
-            //   child: GestureDetector(
-            //       onTap: context.pop, child: const Icon(Icons.close)),
-            // )
-          ],
-        ),
+          ),
+          Positioned(child: BackButton(),left: 12,top: context.paddingTop + 12,)
+        ],
       ),
     );
   }

@@ -21,6 +21,15 @@ class XbData with _$XbData {
 }
 
 
+extension XbItemEx on XbItem {
+  String getShowText() {
+    if(content.isEmpty){
+      return title;
+    }
+    return content;
+  }
+}
+
 @freezed
 class XbItem with _$XbItem {
   const XbItem._();

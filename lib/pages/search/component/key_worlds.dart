@@ -40,6 +40,9 @@ class SearchKeyWorldsState extends ConsumerState<SearchKeyWorlds> {
   Widget _item(String item) {
     return InkWell(
       onTap: () {
+        if(item.trim().isEmpty){
+          return ;
+        }
         context.navToWidget(to: SearchListIndex(value: item));
       },
       child: Chip(

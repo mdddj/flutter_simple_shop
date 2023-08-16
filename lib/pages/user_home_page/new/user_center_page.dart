@@ -184,7 +184,7 @@ class _Userinfo extends ConsumerWidget {
               Icons.settings,
             ).click(() {
               context.push(pagerUtil.setting.routername);
-            }).desktopLayout(child: (_) => const SizedBox()),
+            }).desktopLayout(child: (_) => const SizedBox()).hideInVisitor(),
           ),
           if (!showInfo)
             Container(
