@@ -25,11 +25,6 @@ class NavigatorUtil {
     context.navToWidget(to: const UserLoginPage());
   }
 
-  // 跳转到发布动态页面
-  static void goetoWhitePage(BuildContext context) {
-    context.navToWidget(to: const WhiteIndex());
-  }
-
   // 跳转到绑定订单页面
   static void gotoOrderAddIndexPage(BuildContext context) {
     context.navToWidget(to: const OrderAddIndexPage());

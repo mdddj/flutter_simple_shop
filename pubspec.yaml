@@ -22,10 +22,10 @@ dependencies:
   fbutton_nullsafety: ^5.0.0
   fsuper_nullsafety: ^3.0.3
   common_utils: ^2.1.0
-  extended_image: ^8.0.2
+  extended_image: ^8.1.0
   waterfall_flow: ^3.0.2
   extended_list: ^3.0.0
-  pull_to_refresh_notification: ^3.0.1
+  pull_to_refresh_notification: ^3.1.0
   connectivity_plus: ^4.0.2
   fsearch_nullsafety: ^2.0.0
   carousel_slider: ^4.2.1
@@ -58,11 +58,11 @@ dependencies:
   flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^3.0.1
   path_provider: ^2.1.0
-  hooks_riverpod: ^2.3.7
+  hooks_riverpod: ^2.3.8
   flutter_smart_dialog: ^4.9.4
   hive_flutter: ^1.1.0
   flutter_widget_from_html_core: ^0.10.3
-  flex_color_scheme: ^7.2.0
+  flex_color_scheme: ^7.3.0
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
   loading_animation_widget: ^1.2.0+4
@@ -71,7 +71,6 @@ dependencies:
   flutter_slidable: ^3.0.0
   loading_more_list_fast: ^6.0.1
   loading_more_list_library_fast: ^3.0.1
-  extended_text_field: ^12.0.1
   dd_js_util: ^4.2.8
   dd_models: ^0.0.5
   dd_check_plugin: ^2.4.2
