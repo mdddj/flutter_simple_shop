@@ -12,7 +12,7 @@ import 'index.dart';
 const debugEnvConfig = EnvConfig(host: "http://192.168.199.65", port: '8082', debugMode: true, fontFamily: '');
 
 ///线上环境
-const releaseEnvConfig = EnvConfig(host: "https://itbug.shop", port: '9445', debugMode: true, fontFamily: '');
+const releaseEnvConfig = EnvConfig(host: "https://itbug.shop", port: '9445', debugMode: false, fontFamily: '');
 
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
 const useEnv = releaseEnvConfig;
