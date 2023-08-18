@@ -22,8 +22,7 @@ class UserLoginPage extends ConsumerStatefulWidget {
 class UserLoginPageState extends ConsumerState<UserLoginPage> {
   bool isAgree = false; // 是否同意协议
   bool loading = false; // 是否登录中
-  final usernameEditController =
-      TextEditingController(text: '413153189@qq.com');
+  final usernameEditController = TextEditingController(text: '413153189@qq.com');
   final passwordEditController = TextEditingController(text: '123456');
   final LoginType _loginType = LoginType.email;
 
@@ -52,9 +51,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(height: context.screenHeight * 0.16),
-                    Text('登录',
-                        style: context.textTheme.titleLarge
-                            ?.copyWith(fontWeight: FontWeight.bold, fontSize: 53)),
+                    Text('登录', style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold, fontSize: 53)),
                     SizedBox(height: context.screenHeight * 0.032),
                     Padding(
                       padding: const EdgeInsets.all(12.0),
@@ -94,7 +91,11 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
               ],
             ),
           ),
-          Positioned(left: 12,top: context.paddingTop + 12,child: const BackButton(),)
+          Positioned(
+            left: 32,
+            top: context.paddingTop + 12,
+            child: const BackButton(),
+          )
         ],
       ),
     );
@@ -106,9 +107,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
 
   // 登录按钮
   Widget renderLoginButton() {
-    return SizedBox(
-        width: double.infinity,
-        child: FilledButton(onPressed: _submit, child: const Text('登录')));
+    return SizedBox(width: double.infinity, child: FilledButton(onPressed: _submit, child: const Text('登录')));
   }
 
   Widget get _moreActions {
@@ -142,8 +141,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                 isAgree = !isAgree;
               });
             },
-            child: Icon(
-                isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
+            child: Icon(isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 5.0),
@@ -151,13 +149,9 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
               lightOrientation: FLightOrientation.LeftBottom,
               text: '我已阅读并同意',
               spans: [
-                TextSpan(
-                    text: '用户协议',
-                    style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(text: '用户协议', style: TextStyle(decoration: TextDecoration.underline)),
                 TextSpan(text: '和', style: TextStyle()),
-                TextSpan(
-                    text: '隐私政策',
-                    style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(text: '隐私政策', style: TextStyle(decoration: TextDecoration.underline)),
               ],
             ),
           ),
@@ -186,10 +180,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
     }
     try {
       final nav = context.nav;
-      await ref.read(userRiverpod.notifier).login(LoginParams(
-          loginnumber: username,
-          password: password,
-          logintype: _loginType.type));
+      await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
       nav.pop();
     } on AppException catch (e) {
       toast(e.message);
