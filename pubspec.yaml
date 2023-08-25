@@ -82,6 +82,7 @@ dependencies:
   shared_preferences: ^2.2.0
   flutter_lints: ^2.0.2
   webview_flutter: ^4.2.2
+  async: any
 
 
 
@@ -94,6 +95,8 @@ dev_dependencies:
 
 dependency_overrides:
   watcher: ^1.1.0
+  dd_js_util:
+    path: ../dd_js_util
 
 flutter:
   uses-material-design: true

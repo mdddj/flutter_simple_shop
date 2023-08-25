@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/ask_ok_dialog_params.dart';
+import 'package:dd_js_util/model/my_image.dart';
 import 'package:dd_js_util/model/picture_selection_item.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,6 +24,7 @@ import '../pages/index.dart';
 import '../pages/user_home_page/pages/resource_list.dart';
 import '../provider/riverpod/model/my_user.dart';
 import '../widgets/default_avatar_widget.dart';
+import '../widgets/image_wrapper.dart';
 import '../widgets/loading/custom_loading_more_widget.dart';
 import '../widgets/resource_widegt.dart';
 import 'repository/my_resource_repository.dart';
@@ -46,7 +48,17 @@ class _MyResourceListWidgetState extends State<MyResourceListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return MyLoadingMoreSliverList(MySliverListConfig<Resource>(itemBuilder: _itemBuilder, sourceList: _repository, indicatorBuilder: _indicatorBuilder, padding: const EdgeInsets.all(12), extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 12, crossAxisSpacing: 12), lock: false));
+    return MyLoadingMoreSliverList(MySliverListConfig<Resource>(
+        itemBuilder: _itemBuilder,
+        sourceList: _repository,
+        indicatorBuilder: _indicatorBuilder,
+        padding: const EdgeInsets.all(12),
+        extendedListDelegate:
+            SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                crossAxisCount: context.waterfallFlowCrossAxisCount,
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 12),
+        lock: false));
   }
 
   Widget _itemBuilder(BuildContext context, Resource item, int index) {

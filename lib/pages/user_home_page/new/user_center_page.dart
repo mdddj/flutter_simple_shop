@@ -1,8 +1,5 @@
 part of pages;
 
-
-
-
 extension UserCenterPageEx on BuildContext {
   Color get userCenterPageNavBg => cardColor;
 }
@@ -174,7 +171,8 @@ class _Userinfo extends ConsumerWidget {
             child: const Icon(
               Icons.light_mode,
             ).desktopLayout(child: (_) => const SizedBox()).click(() {
-              showModalBottomSheet(context: context, builder: (_)=>const _PhoneThemeSetting());
+              showModalBottomSheet(
+                  context: context, builder: (_) => const _PhoneThemeSetting());
             }),
           ),
           Positioned(
@@ -182,9 +180,12 @@ class _Userinfo extends ConsumerWidget {
             right: 12,
             child: const Icon(
               Icons.settings,
-            ).click(() {
-              context.push(pagerUtil.setting.routername);
-            }).desktopLayout(child: (_) => const SizedBox()).hideInVisitor(),
+            )
+                .click(() {
+                  context.push(pagerUtil.setting.routername);
+                })
+                .desktopLayout(child: (_) => const SizedBox())
+                .hideInVisitor(),
           ),
           if (!showInfo)
             Container(
@@ -220,8 +221,8 @@ class _Userinfo extends ConsumerWidget {
                                     .textTheme
                                     .titleLarge
                                     ?.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                ),
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                               if (ref.isLogin)
                                 Text(
@@ -233,7 +234,8 @@ class _Userinfo extends ConsumerWidget {
                                 ),
                               Text(
                                 ref.user?.getIntro() ?? '点击编辑你的自我介绍',
-                                style: context.textTheme.bodySmall?.copyWith(color: context.colorScheme.secondary),
+                                style: context.textTheme.bodySmall?.copyWith(
+                                    color: context.colorScheme.secondary),
                               )
                                   .marginOnly(top: 12)
                                   .click(() => _updateDesc(context, ref)),
@@ -254,10 +256,14 @@ class _Userinfo extends ConsumerWidget {
 
   ///修改自我介绍
   Future<void> _updateDesc(BuildContext context, WidgetRef ref) async {
+    if (ref.isLogin.not) {
+      toast('请先登录');
+      return;
+    }
     final result = await showDialog<String>(
         context: context,
         builder: (_) {
-          return  StringInputDialog(title: '编辑介绍',hintText: ref.user?.intro);
+          return StringInputDialog(title: '编辑介绍', hintText: ref.user?.intro);
         });
     if (result != null) {
       final response =
@@ -266,36 +272,6 @@ class _Userinfo extends ConsumerWidget {
         ref.read(userRiverpod.notifier).updateIntro(result);
       }
     }
-  }
-}
-
-//
-
-class _HeaderSetting extends StatelessWidget {
-  const _HeaderSetting();
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        ImageWrapper(
-                child: IconButton(
-                    onPressed: () {
-                      context.push(pagerUtil.setting.routername);
-                    },
-                    icon: const Icon(Icons.edit)))
-            .desktopLayout(
-          child: (context) {
-            return FilledButton.tonal(
-                onPressed: () {
-                  context.push(pagerUtil.setting.routername);
-                },
-                child: const Text("编辑资料"));
-          },
-        )
-      ],
-    );
   }
 }
 
@@ -365,7 +341,7 @@ class _PhoneThemeSetting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   SizedBox(
+    return SizedBox(
       width: context.screenWidth,
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(20),

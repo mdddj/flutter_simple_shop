@@ -17,6 +17,8 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   var content = "";
   var title = "";
 
+  bool _showImageUploadComp = false; //是否显示图片上传组件
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,56 +31,109 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
           child: const Text('取消'),
         ),
         actions: [
-          FilledButton(onPressed: _submit, child: const Text("发布")),
+          IconButton(
+              onPressed: () {
+                context.hideKeyBoard();
+                context.askOk(const AskOkDialogParams(
+                    title: Text("提示"),
+                    content: Text('请文明发言'),
+                    cancelText: '关闭',
+                    okText: '我知道了'));
+              },
+              icon: const Icon(
+                Icons.help,
+                color: Colors.grey,
+              )),
+          FilledButton(
+              onPressed: content.isEmpty ? null : _submit,
+              child: const Text("发布")),
           const SizedBox(width: 12)
         ],
       ),
       body: BodyExpandedWidget(
         bottom: _builderActionButton(),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              TextField(
-                decoration: _decoration("取个标题吧，非必须").copyWith(
-                    prefixIcon: const LoginUserAvatar().padding(6),
-                    prefixIconColor: Colors.transparent),
-                onChanged: (v) => title = v,
-              ),
-              Divider(
-                indent: 12,
-                endIndent: 12,
-                color: Colors.grey.shade200,
-              ),
-              TextField(
+        child: Column(
+          children: [
+            TextField(
+              decoration: _decoration("取个标题吧，非必须").copyWith(
+                  prefixIcon: const LoginUserAvatar().padding(6),
+                  prefixIconColor: Colors.transparent),
+              onChanged: (v) => title = v,
+            ),
+            Divider(
+              indent: 12,
+              endIndent: 12,
+              color: Colors.grey.shade200,
+            ),
+            Expanded(
+              child: TextField(
                 decoration: _decoration("写一下你的面基经历吧,出发前准备，面基过程，结束面基后的感受"),
-                maxLines: 20,
+                maxLines: 30,
                 minLines: 8,
                 onChanged: (v) {
-                  content = v;
+                  setState(() {
+                    content = v;
+                  });
                 },
               ),
-              const SizedBox(height: 22),
+            ),
+            if (_showImageUploadComp)
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '上传一些照片',
+                      '添加图片(最多9张)',
                       style: context.textTheme.titleMedium,
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 6),
                     PictureSelection(
                       multipleChoice: true,
                       controller: _selectionController,
                       padding: EdgeInsets.zero,
                       columnCount: context.waterfallFlowCrossAxisCount,
+                      customRender: (images, controller, showAddButton) {
+                        return Container(
+                          height: 100,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: context.colorScheme.surfaceTint,
+                                  width: .2),
+                              borderRadius: BorderRadius.circular(12)),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            padding: const EdgeInsets.all(12),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                ...images.map((e) => ConstrainedBox(
+                                      constraints:
+                                          const BoxConstraints(maxWidth: 92),
+                                      child: _ImageShow(
+                                          image: e,
+                                          onDelete: controller.remove),
+                                    )),
+                                if (showAddButton)
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: InkWell(
+                                        onTap: controller.showMenu,
+                                        child: const ImageWrapper(
+                                            child: Icon(Icons.add))),
+                                  )
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
               )
-            ],
-          ),
+          ],
         ),
       ),
     );
@@ -141,13 +196,80 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                   params = params.copyWith(name: value.name);
                 }),
               ).expanded,
-              IconButton(
-                  onPressed: () {
-                    context.hideKeyBoard();
-                  },
-                  icon: const Icon(Icons.keyboard_alt_rounded))
+              ImageWrapper(
+                child: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _showImageUploadComp = !_showImageUploadComp;
+                      });
+                    },
+                    icon: const Icon(Icons.image)),
+              ),
+              const SizedBox(width: 6),
+              ImageWrapper(
+                child: IconButton(
+                    onPressed: () {
+                      context.hideKeyBoard();
+                    },
+                    icon: const Icon(Icons.keyboard_hide_outlined)),
+              )
             ],
           )
+        ],
+      ),
+    );
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    if (mounted) {
+      super.setState(fn);
+    }
+  }
+}
+
+//图片展示组件
+class _ImageShow extends StatelessWidget {
+  final PictureSelectionItemModel image;
+  final ValueChanged<PictureSelectionItemModel>? onDelete;
+  const _ImageShow({required this.image, this.onDelete});
+
+  @override
+  Widget build(BuildContext context) {
+    final param = ImageParams(
+        size: double.infinity,
+        borderRadius: BorderRadius.circular(12),
+        shape: BoxShape.rectangle,
+        fit: BoxFit.cover);
+    return Container(
+      margin: const EdgeInsets.only(right: 12),
+      child: Stack(
+        children: [
+          image.when(
+            file: (file) {
+              return ImageView(
+                  image: MyImage.filePath(filePath: file.path, params: param));
+            },
+            network: (url) {
+              return ImageView(
+                image: MyImage.network(url: url, params: param),
+              );
+            },
+          ),
+          Positioned(
+              right: 0,
+              top: 0,
+              child: SizedBox(
+                width: 22,
+                height: 22,
+                child: IconButton(
+                    onPressed: () => onDelete?.call(image),
+                    icon: const Icon(
+                      Icons.delete,
+                      size: 12,
+                      color: Colors.grey,
+                    )),
+              ))
         ],
       ),
     );

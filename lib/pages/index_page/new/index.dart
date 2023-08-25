@@ -57,7 +57,8 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets>
             delegate: SliverChildBuilderDelegate((context, index) {
           switch (index) {
             case 1:
-              return const IndexCarousel();
+              // return const IndexCarousel();//轮播
+              return const SizedBox();
             case 0:
               return const GridMenuComponent();
             case 2:
@@ -102,7 +103,7 @@ class IndexProductTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 12,left: 12,right: 12),
+      padding: const EdgeInsets.only(top: 12, left: 12, right: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

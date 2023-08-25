@@ -1,3 +1,4 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 
 class ImageWrapper extends StatelessWidget {
@@ -7,15 +8,15 @@ class ImageWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
+      backgroundColor: context.colorScheme.surfaceVariant,
       child: Center(child: child),
     );
   }
 }
 
-
 extension AddIconWidgetEx on Widget {
   Widget addIcon({required Widget icon}) {
-    return AddIconWidget(icon: icon,label: this);
+    return AddIconWidget(icon: icon, label: this);
   }
 }
 
@@ -30,7 +31,9 @@ class AddIconWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         icon,
-        const SizedBox(width: 6,),
+        const SizedBox(
+          width: 6,
+        ),
         label,
       ],
     );

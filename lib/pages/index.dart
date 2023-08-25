@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:after_layout/after_layout.dart';
+import 'package:async/async.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
@@ -24,7 +25,7 @@ import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/cupertino.dart' hide View;
-import 'package:flutter/foundation.dart' hide Category,describeIdentity;
+import 'package:flutter/foundation.dart' hide Category, describeIdentity;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter/rendering.dart';
@@ -45,7 +46,6 @@ import 'package:logger/logger.dart';
 import 'package:pull_to_refresh_notification/pull_to_refresh_notification.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../api/apis.dart';
 import '../api/model/email_register_params.dart';

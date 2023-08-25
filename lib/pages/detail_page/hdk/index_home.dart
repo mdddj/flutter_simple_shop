@@ -100,10 +100,10 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         statusBarIconBrightness: Brightness.light));
     return Scaffold(
       body: FutureBuilder(
-        future: futureBuildData,
+        future: AsyncMemoizer<String>().runOnce(() => futureBuildData),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           return AnimatedSwitcher(
-            duration: const Duration(milliseconds: 800),
+            duration: const Duration(milliseconds: 200),
             switchInCurve: Curves.fastOutSlowIn,
             child: snapshot.hasData
                 ? buildCustomScrollViewShop()
@@ -189,8 +189,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           child: SingleChildScrollView(
             child: Column(
               children: [
-                if((ref.user?.relationId ?? '').isEmpty)
-                  const Text('加入渠道会员可以获得返现'),
+                if ((ref.user?.relationId ?? '').isEmpty)
+                  const Text('提示: 加入渠道会员后购买可以获得扶持资金'),
                 buildBottomRow(context),
               ],
             ),
@@ -209,11 +209,21 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         arrivalprice: '${info!.actualPrice}');
   }
 
+  Widget _writeButton() {
+    return ImageWrapper(
+        child: IconButton(
+      icon: const Icon(Icons.edit_document),
+      onPressed: () {},
+    ));
+  }
+
   Widget buildBottomRow(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         FavoriteAddBtn(_addFavoritesParams),
+        const SizedBox(width: 6),
+        _writeButton(),
         const SizedBox(
           width: 12,
         ),
@@ -732,9 +742,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       final result = await kApi.getDetailBaseData(
         productId: widget.goodsId,
         requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams.copyWith(showDefaultLoading: false,data: {
-            "relationId": relationId.isEmpty ? null : relationId
-          });
+          return requestParams.copyWith(
+              showDefaultLoading: false,
+              data: {"relationId": relationId.isEmpty ? null : relationId});
         },
       );
       if (mounted) {

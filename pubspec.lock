@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "1.4.0"
   async:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: async
       sha256: bfe67ef28df125b7dddcea62755991f807aa39a2492a23e1550161692950bbe0
@@ -332,11 +332,10 @@ packages:
   dd_js_util:
     dependency: "direct main"
     description:
-      name: dd_js_util
-      sha256: da7f36cc4bac36942bec95f2795f2286094cb73d38ccfc2428a47ca0efd3bb21
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.2.9"
+      path: "../dd_js_util"
+      relative: true
+    source: path
+    version: "4.3.0"
   dd_models:
     dependency: "direct main"
     description:

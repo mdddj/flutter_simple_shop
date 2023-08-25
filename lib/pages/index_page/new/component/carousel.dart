@@ -14,7 +14,7 @@ class IndexCarousel extends ConsumerWidget {
       padding: const EdgeInsets.all(8),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 2,
+      crossAxisCount: 1,
       children: [
         IndexTopicComponentCarousel(list: data),
         LayoutBuilder(builder: _builder)
