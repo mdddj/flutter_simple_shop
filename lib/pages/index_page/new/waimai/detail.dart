@@ -15,7 +15,7 @@ class WaimaiDetail extends ConsumerStatefulWidget {
 }
 
 class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
-  ActivityLinkResult? model;
+  ZheElmResultModel? zheModel;
 
   @override
   void initState() {
@@ -23,38 +23,20 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
     delayFunction(() async {
       SmartDialog.showLoading(msg: '加载中');
 
-      if(widget.type == '1') {
-        try{
-          final result = await getIt.get<ZheElmApi>().request(R(data: {
-            "activityId":"10144",
-            "customerId":'${ref.user?.id ?? 1}'
-          }));
-          wtfLog(result);
-        } on AppException catch(e){
-          showIosDialog(e.getMessage);
-        }
+      var activityId = '10144';
+      if (widget.type == '2') {
+        activityId = '10247';
       }
-
-      // try {
-      //   final result = await kApi.getActivityLink(
-      //       ActivityLinkParam(
-      //           promotionSceneId:
-      //               widget.type == '1' ? '20150318019998877' : '1585018034441'),
-      //       requestParamsBuilder: (RequestParams requestParams) {
-      //     return requestParams;
-      //   });
-      //   SmartDialog.dismiss();
-      //   if (mounted && result != null) {
-      //     setState(() {
-      //       model = result;
-      //     });
-      //   }
-      // } catch (e, s) {
-      //   kLogErr(e);
-      //   kLogErr(s);
-      //   SmartDialog.dismiss();
-      //   showIosDialog(e.toString());
-      // }
+      try {
+        final result = await getIt.get<ZheElmApi>().request(R(data: {
+              "activityId": activityId,
+              "customerId": '${ref.user?.id ?? 1}'
+            }));
+        zheModel = result;
+        setState(() {});
+      } on AppException catch (e) {
+        showIosDialog(e.getMessage);
+      }
     });
   }
 
@@ -113,29 +95,35 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
           aspectRatio: 2.33,
           child: Image.asset('assets/images/waimai/hb/4.png'),
         ),
-        if (model != null)
+        if (zheModel != null)
           Positioned(
               left: 20,
               right: 20,
-              top: 30,
+              top: 5,
               child: Container(
                   alignment: Alignment.center,
-                  child: Text(
-                    model!.longTpwd,
-                    style: const TextStyle(color: Colors.black, fontSize: 12),
-                    textAlign: TextAlign.center,
+                  child: Column(
+                    children: [
+                      const Text('微信小程序领取').marginOnly(bottom: 6),
+                      ImageView(
+                              image: MyImage.network(
+                                  url: zheModel!.links.miniqrcode,
+                                  params: const ImageParams(size: 80)))
+                          .wrapper(zheModel!.links.miniqrcode),
+                    ],
                   ))),
         Positioned(
           left: 30,
           right: 30,
-          bottom: 40,
+          bottom: 12,
           child: FButton(
             height: 40,
-            text: '复制饿了么口令',
-            style: const TextStyle(color: Colors.pink),
+            text: '或者去支付宝领取',
+            style: const TextStyle(
+                color: Colors.pink, fontWeight: FontWeight.bold),
             onPressed: () {
-              if (model != null) {
-                utils.copy(model!.longTpwd, message: '复制口令成功,打开淘宝即可领取优惠券');
+              if (zheModel != null) {
+                appLaunchUrl(zheModel!.links.alipayminiurl);
               }
             },
             clickEffect: true,
@@ -167,23 +155,36 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
                 child: Image.asset('assets/images/waimai/hb/3.png'),
               )),
           Positioned(
-              bottom: 35,
+              bottom: 15,
               left: 30,
               right: 30,
               child: FButton(
                 height: 40,
                 alignment: Alignment.center,
-                text: '领红包点外卖',
+                text: '领红包点外卖(网页)',
                 style: const TextStyle(color: Colors.white),
                 color: Colors.red,
                 onPressed: () {
-                  if (model != null) {
-                    utils.navToBrowser(model!.clickUrl);
+                  if (zheModel != null) {
+                    utils.navToBrowser(zheModel!.links.h5shortlink);
                   }
                 },
                 highlightColor: Colors.pink,
                 corner: FCorner.all(50),
-              ))
+              )),
+          if (zheModel != null && zheModel!.links.eleschemeurl.isNotEmpty)
+            Positioned(
+              left: 30,
+              right: 30,
+              bottom: 60,
+              child: Text(
+                '去饿了么APP领取',
+                style: context.textTheme.bodyLarge
+                    ?.copyWith(color: context.primaryColor),
+              ).center.click(() {
+                appLaunchUrl(zheModel?.links.eleschemeurl ?? '');
+              }),
+            )
         ],
       ),
     );

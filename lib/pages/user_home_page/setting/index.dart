@@ -1,11 +1,11 @@
 part of pages;
 
 ///设置页面
-class SettingIndex extends StatelessWidget {
+class SettingIndex extends ConsumerWidget {
   const SettingIndex({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('设置'),
@@ -14,6 +14,17 @@ class SettingIndex extends StatelessWidget {
         decoration: BoxDecoration(color: context.cardColor),
         child: ListView(
           children: [
+            ListTile(
+              title: const Text('修改头像'),
+              onTap: (){
+                 showDialog(
+                context: context,
+                builder: (_) {
+                  return const UpdateUserAvatarWidget();
+                });
+              },
+              trailing: ref.isLogin ? ref.user!.getAvatar(size: 48) : null,
+            ),
             ListTile(
               title: const Text('修改昵称'),
               trailing: const Icon(Icons.keyboard_arrow_right),

@@ -14,9 +14,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="细节优化">
+      <change afterPath="$PROJECT_DIR$/lib/freezed/meituran_result.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/freezed/meituran_result.freezed.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/freezed/meituran_result.g.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/resource/views/selec_resource_category_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/widgets/image_download.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/login/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/login/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/apis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/resource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/resource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/zhe_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/zhe_api.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/home_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/home_menu.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/home_menu.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/home_menu.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/resource_category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/resource_category.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/resource_category.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/resource_category.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/resource_category.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/resource_category.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/init.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/init.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/meet/add_new_meet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/meet/add_new_meet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/category_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/category_page/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/model/menus.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/model/menus.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/gridmenu/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/gridmenu/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/new/user_center_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/new/user_center_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/favorites/repository/favorites_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/favorites/repository/favorites_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/views/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/views/write_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/write_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/public.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/public.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/ad.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/ad.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/favorite_add_btn.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/favorite_add_btn.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/index.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -109,7 +145,6 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;ALL&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;flutter.view.tool.window.visible&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/ldd/flutter_simple_shop/ios/Runner/Assets.xcassets&quot;,
@@ -121,7 +156,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.23908046&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;shop.itbug.fluttercheckversionx.setting.AppConfig&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -528,7 +563,15 @@
       <workItem from="1692233791176" duration="16000" />
       <workItem from="1692233980795" duration="2863000" />
       <workItem from="1692274564414" duration="1291000" />
-      <workItem from="1692320503159" duration="645000" />
+      <workItem from="1692320503159" duration="926000" />
+      <workItem from="1692423550556" duration="115000" />
+      <workItem from="1692430545259" duration="3875000" />
+      <workItem from="1692495281907" duration="1833000" />
+      <workItem from="1692581496564" duration="28000" />
+      <workItem from="1692596410058" duration="12229000" />
+      <workItem from="1692667149583" duration="1621000" />
+      <workItem from="1692862831016" duration="12000" />
+      <workItem from="1692862891543" duration="165000" />
     </task>
     <task id="LOCAL-00140" summary="添加注册页面">
       <created>1677067700209</created>
@@ -873,7 +916,7 @@
       <option name="project" value="LOCAL" />
       <updated>1692274517967</updated>
     </task>
-    <option name="localTasksCounter" value="213" />
+    <option name="localTasksCounter" value="214" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

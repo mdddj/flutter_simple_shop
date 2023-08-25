@@ -104,10 +104,21 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
 
       floatingActionButton: Row(
         children: [
-          const CupertinoTextField().expanded,
-          ElevatedButton(onPressed: (){
+          SizedBox(width: 12,),
+           TextField(
 
-          }, child: const Text("添加评论"))
+             decoration: InputDecoration(
+              hintText: "友善评论,文明发言",
+               border: UnderlineInputBorder(borderSide: BorderSide.none,borderRadius: BorderRadius.circular(50)),
+               isDense: true,
+               filled: true,
+               fillColor: Colors.grey.shade200
+
+             ),
+
+
+           ).expanded,
+          SizedBox(width: 12,),
         ],
       ),
     );

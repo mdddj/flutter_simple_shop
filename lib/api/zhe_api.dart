@@ -27,14 +27,22 @@ class MeituanApi extends ZheApi {
             params);
 }
 
-
 ///折淘客饿了么api
 class ZheElmApi extends AppCoreApiWithT<ZheElmResultModel> {
-  ZheElmApi():super("/api/zhe/elm",HttpMethod.get);
+  ZheElmApi() : super("/api/zhe/elm", HttpMethod.get);
 
   @override
   ZheElmResultModel fromJson(Map<String, dynamic> json) {
     return ZheElmResultModel.fromJson(json);
   }
+}
 
+///美团领券api
+class ZheMeituanApi extends AppCoreApiWithT<MeituanResult> {
+  ZheMeituanApi() : super('/api/zhe/mt/tg');
+
+  @override
+  MeituanResult fromJson(Map<String, dynamic> json) {
+    return MeituanResult.fromJson(json);
+  }
 }

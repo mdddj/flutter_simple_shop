@@ -4,6 +4,11 @@ part 'zhe_elm_model.freezed.dart';
 part 'zhe_elm_model.g.dart';
 
 
+
+extension ZheElmResultModelEx  on ZheElmResultModel {
+  Link get links => alibabaalscunionelemepromotionofficialactivitygetresponse.data.link;
+}
+
 @freezed
 class ZheElmResultModel with _$ZheElmResultModel {
   const ZheElmResultModel._();
@@ -57,8 +62,8 @@ class Link with _$Link {
   const Link._();
 
   const factory Link({
-      @JsonKey(name: 'alipayMiniurl') @Default('')  String alipayminiurl,
-      @JsonKey(name: 'eleSchemeurl') @Default('')  String eleschemeurl,
+      @JsonKey(name: 'alipayMiniUrl') @Default('')  String alipayminiurl,
+      @JsonKey(name: 'eleSchemeUrl') @Default('')  String eleschemeurl,
       @JsonKey(name: 'h5ShortLink') @Default('')  String h5shortlink,
       @JsonKey(name: 'h5url') @Default('')  String h5url,
       @JsonKey(name: 'miniQrcode') @Default('')  String miniqrcode,
@@ -67,6 +72,7 @@ class Link with _$Link {
       @JsonKey(name: 'tbQrCode') @Default('')  String tbqrcode,
       @JsonKey(name: 'wxAppid') @Default('')  String wxappid,
       @JsonKey(name: 'wxPath') @Default('')  String wxpath,
+    @JsonKey(name: 'h5MiniQrcode') @Default('') String h5MiniQrcode
     }) = _Link;
   
   factory Link.fromJson(Map<String, dynamic> json) => _$LinkFromJson(json);

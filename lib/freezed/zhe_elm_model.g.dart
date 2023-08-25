@@ -70,8 +70,8 @@ Map<String, dynamic> _$$_DataToJson(_$_Data instance) => <String, dynamic>{
     };
 
 _$_Link _$$_LinkFromJson(Map<String, dynamic> json) => _$_Link(
-      alipayminiurl: json['alipayMiniurl'] as String? ?? '',
-      eleschemeurl: json['eleSchemeurl'] as String? ?? '',
+      alipayminiurl: json['alipayMiniUrl'] as String? ?? '',
+      eleschemeurl: json['eleSchemeUrl'] as String? ?? '',
       h5shortlink: json['h5ShortLink'] as String? ?? '',
       h5url: json['h5url'] as String? ?? '',
       miniqrcode: json['miniQrcode'] as String? ?? '',
@@ -80,11 +80,12 @@ _$_Link _$$_LinkFromJson(Map<String, dynamic> json) => _$_Link(
       tbqrcode: json['tbQrCode'] as String? ?? '',
       wxappid: json['wxAppid'] as String? ?? '',
       wxpath: json['wxPath'] as String? ?? '',
+      h5MiniQrcode: json['h5MiniQrcode'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$_LinkToJson(_$_Link instance) => <String, dynamic>{
-      'alipayMiniurl': instance.alipayminiurl,
-      'eleSchemeurl': instance.eleschemeurl,
+      'alipayMiniUrl': instance.alipayminiurl,
+      'eleSchemeUrl': instance.eleschemeurl,
       'h5ShortLink': instance.h5shortlink,
       'h5url': instance.h5url,
       'miniQrcode': instance.miniqrcode,
@@ -93,4 +94,5 @@ Map<String, dynamic> _$$_LinkToJson(_$_Link instance) => <String, dynamic>{
       'tbQrCode': instance.tbqrcode,
       'wxAppid': instance.wxappid,
       'wxPath': instance.wxpath,
+      'h5MiniQrcode': instance.h5MiniQrcode,
     };

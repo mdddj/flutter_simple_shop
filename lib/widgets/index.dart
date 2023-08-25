@@ -68,3 +68,4 @@ part 'desktop/login_dailog.dart';
 part 'desktop/string_dialog.dart';
 part 'ad.dart';
 part 'privacy_dialog.dart';
+part 'image_download.dart';

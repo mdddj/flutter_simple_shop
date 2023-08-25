@@ -79,10 +79,10 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
 }
 
 enum TabItem {
-  moment("瞬间"),
-  media("媒体"),
-  comment("评论"),
-  report("举报");
+  moment("瞬间");
+  // media("媒体"),
+  // comment("评论"),
+  // report("举报");
 
   const TabItem(this.text);
 
@@ -113,19 +113,19 @@ class _TabViewContainerState extends ConsumerState<TabViewContainer>
         return const MyLoadingMoreCustomScrollView(
           slivers: [UserResourceWidget()],
         );
-      case TabItem.media:
-        return MyLoadingMoreCustomScrollView(
-          slivers: [_Files()],
-        );
-      case TabItem.comment:
-        return Container(
-          alignment: Alignment.center,
-          child: Text(item.text),
-        );
-      case TabItem.report:
-        return MyLoadingMoreCustomScrollView(
-          slivers: [_Reports()],
-        );
+      // case TabItem.media:
+      //   return MyLoadingMoreCustomScrollView(
+      //     slivers: [_Files()],
+      //   );
+      // case TabItem.comment:
+      //   return Container(
+      //     alignment: Alignment.center,
+      //     child: Text(item.text),
+      //   );
+      // case TabItem.report:
+      //   return MyLoadingMoreCustomScrollView(
+      //     slivers: [_Reports()],
+      //   );
     }
   }
 
@@ -201,17 +201,9 @@ class _Userinfo extends ConsumerWidget {
                   children: [
                     Row(
                       children: [
-                        GestureDetector(
-                            onTap: () async {
-                              await showDialog(
-                                  context: context,
-                                  builder: (_) {
-                                    return const UpdateUserAvatarWidget();
-                                  });
-                            },
-                            child: const Hero(
-                                tag: 'user-page-ava',
-                                child: LoginUserAvatar(size: 80))),
+                        const Hero(
+                            tag: 'user-page-ava',
+                            child: LoginUserAvatar(size: 80)),
                         const SizedBox(
                           width: 12,
                         ),
@@ -240,14 +232,15 @@ class _Userinfo extends ConsumerWidget {
                                       ?.copyWith(),
                                 ),
                               Text(
-                                ref.user?.intro ?? '点击编辑你的自我介绍',
+                                ref.user?.getIntro() ?? '点击编辑你的自我介绍',
+                                style: context.textTheme.bodySmall?.copyWith(color: context.colorScheme.secondary),
                               )
                                   .marginOnly(top: 12)
                                   .click(() => _updateDesc(context, ref)),
                             ],
                           ),
                         )),
-                        if (ref.isLogin) const _HeaderSetting()
+                        // if (ref.isLogin) const _HeaderSetting()
                       ],
                     ),
                   ],
@@ -324,13 +317,18 @@ class _Files extends JpaListWidget<FileInfo, MyUserFilesApi> {
   Widget buildLayout(BuildContext context, FileInfo item, int index) {
     return Stack(
       children: [
-        ImageView(
-          image: MyImage.network(
-              url: item.url,
-              params: ImageParams(
-                  borderRadius: BorderRadius.circular(12),
-                  shape: BoxShape.rectangle,
-                  fit: BoxFit.cover)),
+        AspectRatio(
+          aspectRatio: item.width / item.height,
+          child: ImageView(
+            image: MyImage.network(
+                url: item.url,
+                params: ImageParams(
+                    borderRadius: BorderRadius.circular(12),
+                    shape: BoxShape.rectangle,
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover)),
+          ),
         )
       ],
     );

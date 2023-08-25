@@ -25,6 +25,8 @@ mixin _$HomeMenu {
   String get image => throw _privateConstructorUsedError;
   String? get routerPath => throw _privateConstructorUsedError;
   Object? get extra => throw _privateConstructorUsedError;
+  VoidCallback? get onTap => throw _privateConstructorUsedError;
+  VoidCallback? get onLongTap => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeMenuCopyWith<HomeMenu> get copyWith =>
@@ -42,7 +44,9 @@ abstract class $HomeMenuCopyWith<$Res> {
       Widget? icon,
       @JsonKey(name: 'image') String image,
       String? routerPath,
-      Object? extra});
+      Object? extra,
+      VoidCallback? onTap,
+      VoidCallback? onLongTap});
 }
 
 /// @nodoc
@@ -64,6 +68,8 @@ class _$HomeMenuCopyWithImpl<$Res, $Val extends HomeMenu>
     Object? image = null,
     Object? routerPath = freezed,
     Object? extra = freezed,
+    Object? onTap = freezed,
+    Object? onLongTap = freezed,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -87,6 +93,14 @@ class _$HomeMenuCopyWithImpl<$Res, $Val extends HomeMenu>
           : routerPath // ignore: cast_nullable_to_non_nullable
               as String?,
       extra: freezed == extra ? _value.extra : extra,
+      onTap: freezed == onTap
+          ? _value.onTap
+          : onTap // ignore: cast_nullable_to_non_nullable
+              as VoidCallback?,
+      onLongTap: freezed == onLongTap
+          ? _value.onLongTap
+          : onLongTap // ignore: cast_nullable_to_non_nullable
+              as VoidCallback?,
     ) as $Val);
   }
 }
@@ -104,7 +118,9 @@ abstract class _$$_HomeMenuCopyWith<$Res> implements $HomeMenuCopyWith<$Res> {
       Widget? icon,
       @JsonKey(name: 'image') String image,
       String? routerPath,
-      Object? extra});
+      Object? extra,
+      VoidCallback? onTap,
+      VoidCallback? onLongTap});
 }
 
 /// @nodoc
@@ -124,6 +140,8 @@ class __$$_HomeMenuCopyWithImpl<$Res>
     Object? image = null,
     Object? routerPath = freezed,
     Object? extra = freezed,
+    Object? onTap = freezed,
+    Object? onLongTap = freezed,
   }) {
     return _then(_$_HomeMenu(
       title: null == title
@@ -147,6 +165,14 @@ class __$$_HomeMenuCopyWithImpl<$Res>
           : routerPath // ignore: cast_nullable_to_non_nullable
               as String?,
       extra: freezed == extra ? _value.extra : extra,
+      onTap: freezed == onTap
+          ? _value.onTap
+          : onTap // ignore: cast_nullable_to_non_nullable
+              as VoidCallback?,
+      onLongTap: freezed == onLongTap
+          ? _value.onLongTap
+          : onLongTap // ignore: cast_nullable_to_non_nullable
+              as VoidCallback?,
     ));
   }
 }
@@ -160,7 +186,9 @@ class _$_HomeMenu extends _HomeMenu {
       this.icon,
       @JsonKey(name: 'image') this.image = '',
       this.routerPath,
-      this.extra})
+      this.extra,
+      this.onTap,
+      this.onLongTap})
       : super._();
 
   @override
@@ -178,10 +206,14 @@ class _$_HomeMenu extends _HomeMenu {
   final String? routerPath;
   @override
   final Object? extra;
+  @override
+  final VoidCallback? onTap;
+  @override
+  final VoidCallback? onLongTap;
 
   @override
   String toString() {
-    return 'HomeMenu(title: $title, svgpath: $svgpath, icon: $icon, image: $image, routerPath: $routerPath, extra: $extra)';
+    return 'HomeMenu(title: $title, svgpath: $svgpath, icon: $icon, image: $image, routerPath: $routerPath, extra: $extra, onTap: $onTap, onLongTap: $onLongTap)';
   }
 
   @override
@@ -195,12 +227,15 @@ class _$_HomeMenu extends _HomeMenu {
             (identical(other.image, image) || other.image == image) &&
             (identical(other.routerPath, routerPath) ||
                 other.routerPath == routerPath) &&
-            const DeepCollectionEquality().equals(other.extra, extra));
+            const DeepCollectionEquality().equals(other.extra, extra) &&
+            (identical(other.onTap, onTap) || other.onTap == onTap) &&
+            (identical(other.onLongTap, onLongTap) ||
+                other.onLongTap == onLongTap));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, title, svgpath, icon, image,
-      routerPath, const DeepCollectionEquality().hash(extra));
+      routerPath, const DeepCollectionEquality().hash(extra), onTap, onLongTap);
 
   @JsonKey(ignore: true)
   @override
@@ -216,7 +251,9 @@ abstract class _HomeMenu extends HomeMenu {
       final Widget? icon,
       @JsonKey(name: 'image') final String image,
       final String? routerPath,
-      final Object? extra}) = _$_HomeMenu;
+      final Object? extra,
+      final VoidCallback? onTap,
+      final VoidCallback? onLongTap}) = _$_HomeMenu;
   const _HomeMenu._() : super._();
 
   @override
@@ -234,6 +271,10 @@ abstract class _HomeMenu extends HomeMenu {
   String? get routerPath;
   @override
   Object? get extra;
+  @override
+  VoidCallback? get onTap;
+  @override
+  VoidCallback? get onLongTap;
   @override
   @JsonKey(ignore: true)
   _$$_HomeMenuCopyWith<_$_HomeMenu> get copyWith =>

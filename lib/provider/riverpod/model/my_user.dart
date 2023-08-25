@@ -38,6 +38,13 @@ extension UserEx on MyUser {
                 borderRadius: BorderRadius.circular(size / 2),
                 shape: BoxShape.rectangle)));
   }
+
+  String getIntro() {
+    if(intro.isEmpty){
+      return '点击编辑你的自我介绍';
+    }
+    return intro;
+  }
 }
 
 @freezed

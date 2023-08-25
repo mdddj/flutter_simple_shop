@@ -289,6 +289,10 @@ mixin _$Resource {
   MeetModel? get meetModel => throw _privateConstructorUsedError;
   @JsonKey(name: 'images')
   IList<FileInfo> get images => throw _privateConstructorUsedError;
+  @JsonKey(name: 'thumbnail')
+  String get thumbnail => throw _privateConstructorUsedError;
+  @JsonKey(name: 'thumbnailPath')
+  String get thumbnailPath => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -316,7 +320,9 @@ abstract class $ResourceCopyWith<$Res> {
       @JsonKey(name: 'category') ResourceCategory category,
       @JsonKey(name: 'user') MyUser user,
       @JsonKey(name: 'mianji') MeetModel? meetModel,
-      @JsonKey(name: 'images') IList<FileInfo> images});
+      @JsonKey(name: 'images') IList<FileInfo> images,
+      @JsonKey(name: 'thumbnail') String thumbnail,
+      @JsonKey(name: 'thumbnailPath') String thumbnailPath});
 
   $ResourceCategoryCopyWith<$Res> get category;
   $MyUserCopyWith<$Res> get user;
@@ -351,6 +357,8 @@ class _$ResourceCopyWithImpl<$Res, $Val extends Resource>
     Object? user = null,
     Object? meetModel = freezed,
     Object? images = null,
+    Object? thumbnail = null,
+    Object? thumbnailPath = null,
   }) {
     return _then(_value.copyWith(
       authority: null == authority
@@ -413,6 +421,14 @@ class _$ResourceCopyWithImpl<$Res, $Val extends Resource>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as IList<FileInfo>,
+      thumbnail: null == thumbnail
+          ? _value.thumbnail
+          : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
+      thumbnailPath: null == thumbnailPath
+          ? _value.thumbnailPath
+          : thumbnailPath // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -467,7 +483,9 @@ abstract class _$$_ResourceCopyWith<$Res> implements $ResourceCopyWith<$Res> {
       @JsonKey(name: 'category') ResourceCategory category,
       @JsonKey(name: 'user') MyUser user,
       @JsonKey(name: 'mianji') MeetModel? meetModel,
-      @JsonKey(name: 'images') IList<FileInfo> images});
+      @JsonKey(name: 'images') IList<FileInfo> images,
+      @JsonKey(name: 'thumbnail') String thumbnail,
+      @JsonKey(name: 'thumbnailPath') String thumbnailPath});
 
   @override
   $ResourceCategoryCopyWith<$Res> get category;
@@ -503,6 +521,8 @@ class __$$_ResourceCopyWithImpl<$Res>
     Object? user = null,
     Object? meetModel = freezed,
     Object? images = null,
+    Object? thumbnail = null,
+    Object? thumbnailPath = null,
   }) {
     return _then(_$_Resource(
       authority: null == authority
@@ -565,6 +585,14 @@ class __$$_ResourceCopyWithImpl<$Res>
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
               as IList<FileInfo>,
+      thumbnail: null == thumbnail
+          ? _value.thumbnail
+          : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
+      thumbnailPath: null == thumbnailPath
+          ? _value.thumbnailPath
+          : thumbnailPath // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -587,7 +615,9 @@ class _$_Resource extends _Resource {
       @JsonKey(name: 'category') this.category = const ResourceCategory(),
       @JsonKey(name: 'user') required this.user,
       @JsonKey(name: 'mianji') this.meetModel,
-      @JsonKey(name: 'images') this.images = const IListConst([])})
+      @JsonKey(name: 'images') this.images = const IListConst([]),
+      @JsonKey(name: 'thumbnail') this.thumbnail = '',
+      @JsonKey(name: 'thumbnailPath') this.thumbnailPath = ''})
       : super._();
 
   factory _$_Resource.fromJson(Map<String, dynamic> json) =>
@@ -638,10 +668,16 @@ class _$_Resource extends _Resource {
   @override
   @JsonKey(name: 'images')
   final IList<FileInfo> images;
+  @override
+  @JsonKey(name: 'thumbnail')
+  final String thumbnail;
+  @override
+  @JsonKey(name: 'thumbnailPath')
+  final String thumbnailPath;
 
   @override
   String toString() {
-    return 'Resource(authority: $authority, clickcount: $clickcount, content: $content, createdate: $createdate, description: $description, id: $id, label: $label, links: $links, thumbnailimage: $thumbnailimage, title: $title, type: $type, category: $category, user: $user, meetModel: $meetModel, images: $images)';
+    return 'Resource(authority: $authority, clickcount: $clickcount, content: $content, createdate: $createdate, description: $description, id: $id, label: $label, links: $links, thumbnailimage: $thumbnailimage, title: $title, type: $type, category: $category, user: $user, meetModel: $meetModel, images: $images, thumbnail: $thumbnail, thumbnailPath: $thumbnailPath)';
   }
 
   @override
@@ -670,7 +706,11 @@ class _$_Resource extends _Resource {
             (identical(other.user, user) || other.user == user) &&
             (identical(other.meetModel, meetModel) ||
                 other.meetModel == meetModel) &&
-            const DeepCollectionEquality().equals(other.images, images));
+            const DeepCollectionEquality().equals(other.images, images) &&
+            (identical(other.thumbnail, thumbnail) ||
+                other.thumbnail == thumbnail) &&
+            (identical(other.thumbnailPath, thumbnailPath) ||
+                other.thumbnailPath == thumbnailPath));
   }
 
   @JsonKey(ignore: true)
@@ -691,7 +731,9 @@ class _$_Resource extends _Resource {
       category,
       user,
       meetModel,
-      const DeepCollectionEquality().hash(images));
+      const DeepCollectionEquality().hash(images),
+      thumbnail,
+      thumbnailPath);
 
   @JsonKey(ignore: true)
   @override
@@ -709,21 +751,24 @@ class _$_Resource extends _Resource {
 
 abstract class _Resource extends Resource {
   const factory _Resource(
-      {@JsonKey(name: 'authority') final int authority,
-      @JsonKey(name: 'clickCount') final int clickcount,
-      @JsonKey(name: 'content') final String content,
-      @JsonKey(name: 'createDate') final String createdate,
-      @JsonKey(name: 'description') final String description,
-      @JsonKey(name: 'id') final int id,
-      @JsonKey(name: 'label') final String label,
-      @JsonKey(name: 'links') final String links,
-      @JsonKey(name: 'thumbnailImage') final String thumbnailimage,
-      @JsonKey(name: 'title') final String title,
-      @JsonKey(name: 'type') final String type,
-      @JsonKey(name: 'category') final ResourceCategory category,
-      @JsonKey(name: 'user') required final MyUser user,
-      @JsonKey(name: 'mianji') final MeetModel? meetModel,
-      @JsonKey(name: 'images') final IList<FileInfo> images}) = _$_Resource;
+          {@JsonKey(name: 'authority') final int authority,
+          @JsonKey(name: 'clickCount') final int clickcount,
+          @JsonKey(name: 'content') final String content,
+          @JsonKey(name: 'createDate') final String createdate,
+          @JsonKey(name: 'description') final String description,
+          @JsonKey(name: 'id') final int id,
+          @JsonKey(name: 'label') final String label,
+          @JsonKey(name: 'links') final String links,
+          @JsonKey(name: 'thumbnailImage') final String thumbnailimage,
+          @JsonKey(name: 'title') final String title,
+          @JsonKey(name: 'type') final String type,
+          @JsonKey(name: 'category') final ResourceCategory category,
+          @JsonKey(name: 'user') required final MyUser user,
+          @JsonKey(name: 'mianji') final MeetModel? meetModel,
+          @JsonKey(name: 'images') final IList<FileInfo> images,
+          @JsonKey(name: 'thumbnail') final String thumbnail,
+          @JsonKey(name: 'thumbnailPath') final String thumbnailPath}) =
+      _$_Resource;
   const _Resource._() : super._();
 
   factory _Resource.fromJson(Map<String, dynamic> json) = _$_Resource.fromJson;
@@ -773,6 +818,12 @@ abstract class _Resource extends Resource {
   @override
   @JsonKey(name: 'images')
   IList<FileInfo> get images;
+  @override
+  @JsonKey(name: 'thumbnail')
+  String get thumbnail;
+  @override
+  @JsonKey(name: 'thumbnailPath')
+  String get thumbnailPath;
   @override
   @JsonKey(ignore: true)
   _$$_ResourceCopyWith<_$_Resource> get copyWith =>

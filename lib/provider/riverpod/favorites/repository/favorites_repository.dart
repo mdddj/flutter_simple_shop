@@ -25,10 +25,8 @@ class FavoritesRepository
     setState();
   }
 
-  // void addNew(MyFavoritesModel model){
-  //   // array = array.insert(0, model);
-  //   // setState();
-  //   kLog('添加后数量.${array.length}');
-  //   refresh(true);
-  // }
+  void addNew(MyFavoritesModel model){
+    kLog('添加后数量.${array.length}');
+    refresh(true);
+  }
 }

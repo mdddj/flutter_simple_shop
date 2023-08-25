@@ -1,7 +1,10 @@
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 
+import '../../../api/apis.dart';
 import '../../../freezed/home_menu.dart';
+import '../../../freezed/meituran_result.dart';
 import '../../../freezed/pager.dart';
 import '../../../index.dart';
 
@@ -10,8 +13,8 @@ final indexMenus = IListConst<HomeMenu>([
       title: '饿了吧',
       svgpath: 'assets/svg/elm_logo.svg',
       routerPath: pagerUtil.elm.routername),
-  const HomeMenu(title: '美团券', svgpath: 'assets/svg/mt.svg'),
-  const HomeMenu(title: '大家都在买', svgpath: 'assets/svg/phb.svg'),
+  const HomeMenu(title: '美团券', svgpath: 'assets/svg/mt.svg', onTap: _mt,onLongTap: _mtmc),
+  const HomeMenu(title: '排行', svgpath: 'assets/svg/phb.svg'),
   HomeMenu(
       title: '典の日常',
       icon: const Icon(Icons.account_box),
@@ -41,3 +44,20 @@ final indexMenus = IListConst<HomeMenu>([
       icon: const Icon(Icons.ac_unit),
       routerPath: pagerUtil.meetList.routername)
 ]);
+
+
+///美团领券打开
+void _mt() {
+  LB.show<MeituanResult, ZheMeituanApi>(ZheMeituanApi(),
+      successResult: (value) {
+    appLaunchUrl(value.data,failMessage: '无法打开链接,请检查是否安装美团APP');
+  }, params: const R(data: <String, dynamic>{"actId": "33", "linkType": "2"}));
+}
+
+///美团买菜领券打开
+void _mtmc() {
+  LB.show<MeituanResult, ZheMeituanApi>(ZheMeituanApi(),
+      successResult: (value) {
+        appLaunchUrl(value.data,failMessage: '无法打开链接,请检查是否安装美团APP');
+      }, params: const R(data: <String, dynamic>{"actId": "4", "linkType": "2"}));
+}

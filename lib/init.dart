@@ -11,7 +11,7 @@ Future<void> appInit(VoidCallback start) async {
   );
   if (useEnv.debugMode) {
     DdCheckPlugin.instance.init(BaseApi.getDio(),
-        initHost: "192.168.199.76",
+        initHost: "192.168.199.80",
         port: 9998,
         customCoverterResponseData: (model) {
           final body = model.response?.data;
@@ -32,7 +32,6 @@ Future<void> appInit(VoidCallback start) async {
         },
         version: DataFormatVersions.ideaPlugin,
         conectSuccess: (s) {
-          wtfLog('连接成功');
         });
   }
 

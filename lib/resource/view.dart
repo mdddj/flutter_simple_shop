@@ -29,6 +29,7 @@ import 'repository/my_resource_repository.dart';
 part 'views/detail.dart';
 part 'views/write_page.dart';
 part 'page.dart';
+part 'views/selec_resource_category_page.dart';
 
 class MyResourceListWidget extends StatefulWidget {
   final String name;
@@ -45,17 +46,7 @@ class _MyResourceListWidgetState extends State<MyResourceListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return MyLoadingMoreSliverList(MySliverListConfig<Resource>(
-        itemBuilder: _itemBuilder,
-        sourceList: _repository,
-        indicatorBuilder: _indicatorBuilder,
-        padding: const EdgeInsets.all(12),
-        extendedListDelegate:
-            SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                crossAxisCount: context.waterfallFlowCrossAxisCount,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12),
-        lock: false));
+    return MyLoadingMoreSliverList(MySliverListConfig<Resource>(itemBuilder: _itemBuilder, sourceList: _repository, indicatorBuilder: _indicatorBuilder, padding: const EdgeInsets.all(12), extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 12, crossAxisSpacing: 12), lock: false));
   }
 
   Widget _itemBuilder(BuildContext context, Resource item, int index) {

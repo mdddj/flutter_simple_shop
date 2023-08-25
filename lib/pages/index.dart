@@ -45,6 +45,7 @@ import 'package:logger/logger.dart';
 import 'package:pull_to_refresh_notification/pull_to_refresh_notification.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../api/apis.dart';
 import '../api/model/email_register_params.dart';
@@ -60,6 +61,7 @@ import '../freezed/home_menu.dart';
 import '../freezed/report.dart';
 import '../freezed/resource_category.dart';
 import '../freezed/xb_result.dart';
+import '../freezed/zhe_elm_model.dart';
 import '../index.dart';
 import '../provider/riverpod/model/my_user.dart';
 import '../r_gen_file.dart';

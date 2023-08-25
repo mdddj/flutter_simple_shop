@@ -46,6 +46,8 @@ _$_Resource _$$_ResourceFromJson(Map<String, dynamic> json) => _$_Resource(
           ? const IListConst([])
           : IList<FileInfo>.fromJson(json['images'],
               (value) => FileInfo.fromJson(value as Map<String, dynamic>)),
+      thumbnail: json['thumbnail'] as String? ?? '',
+      thumbnailPath: json['thumbnailPath'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$_ResourceToJson(_$_Resource instance) =>
@@ -67,4 +69,6 @@ Map<String, dynamic> _$$_ResourceToJson(_$_Resource instance) =>
       'images': instance.images.toJson(
         (value) => value,
       ),
+      'thumbnail': instance.thumbnail,
+      'thumbnailPath': instance.thumbnailPath,
     };

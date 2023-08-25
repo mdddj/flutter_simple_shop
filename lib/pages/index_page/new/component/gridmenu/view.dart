@@ -115,6 +115,7 @@ class GridMenuComponent extends View {
 
 class HomeMenuLayout extends StatelessWidget {
   final HomeMenu homeMenu;
+
   const HomeMenuLayout(this.homeMenu, {super.key});
 
   @override
@@ -122,10 +123,15 @@ class HomeMenuLayout extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return InkWell(
         onTap: () {
+          if (homeMenu.onTap != null) {
+            homeMenu.onTap?.call();
+            return;
+          }
           if (homeMenu.routerPath != null) {
             context.push(homeMenu.routerPath!, extra: homeMenu.extra);
           }
         },
+        onLongPress: homeMenu.onLongTap,
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(
@@ -133,13 +139,14 @@ class HomeMenuLayout extends StatelessWidget {
               if (homeMenu.svgpath.isNotEmpty)
                 ImageWrapper(
                     child: SvgPicture.asset(homeMenu.svgpath,
-                        width: constraints.maxWidth,
-                        height: constraints.maxWidth)),
+                        width: constraints.maxWidth * 0.5,
+                        height: constraints.maxWidth * 0.5)),
               if (homeMenu.icon != null) ImageWrapper(child: homeMenu.icon!),
               const SizedBox(height: 6),
               Text(homeMenu.title,
+                  maxLines: 1,
                   style: context.textTheme.labelSmall?.copyWith(
-                      fontSize: homeMenu.title.length > 4 ? 10 : null))
+                      fontSize: homeMenu.title.length > 4 ? 9 : null))
             ],
           ),
         ),

@@ -773,9 +773,9 @@ Link _$LinkFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Link {
-  @JsonKey(name: 'alipayMiniurl')
+  @JsonKey(name: 'alipayMiniUrl')
   String get alipayminiurl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'eleSchemeurl')
+  @JsonKey(name: 'eleSchemeUrl')
   String get eleschemeurl => throw _privateConstructorUsedError;
   @JsonKey(name: 'h5ShortLink')
   String get h5shortlink => throw _privateConstructorUsedError;
@@ -793,6 +793,8 @@ mixin _$Link {
   String get wxappid => throw _privateConstructorUsedError;
   @JsonKey(name: 'wxPath')
   String get wxpath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'h5MiniQrcode')
+  String get h5MiniQrcode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -805,8 +807,8 @@ abstract class $LinkCopyWith<$Res> {
       _$LinkCopyWithImpl<$Res, Link>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'alipayMiniurl') String alipayminiurl,
-      @JsonKey(name: 'eleSchemeurl') String eleschemeurl,
+      {@JsonKey(name: 'alipayMiniUrl') String alipayminiurl,
+      @JsonKey(name: 'eleSchemeUrl') String eleschemeurl,
       @JsonKey(name: 'h5ShortLink') String h5shortlink,
       @JsonKey(name: 'h5url') String h5url,
       @JsonKey(name: 'miniQrcode') String miniqrcode,
@@ -814,7 +816,8 @@ abstract class $LinkCopyWith<$Res> {
       @JsonKey(name: 'tbMiniQrcode') String tbminiqrcode,
       @JsonKey(name: 'tbQrCode') String tbqrcode,
       @JsonKey(name: 'wxAppid') String wxappid,
-      @JsonKey(name: 'wxPath') String wxpath});
+      @JsonKey(name: 'wxPath') String wxpath,
+      @JsonKey(name: 'h5MiniQrcode') String h5MiniQrcode});
 }
 
 /// @nodoc
@@ -840,6 +843,7 @@ class _$LinkCopyWithImpl<$Res, $Val extends Link>
     Object? tbqrcode = null,
     Object? wxappid = null,
     Object? wxpath = null,
+    Object? h5MiniQrcode = null,
   }) {
     return _then(_value.copyWith(
       alipayminiurl: null == alipayminiurl
@@ -882,6 +886,10 @@ class _$LinkCopyWithImpl<$Res, $Val extends Link>
           ? _value.wxpath
           : wxpath // ignore: cast_nullable_to_non_nullable
               as String,
+      h5MiniQrcode: null == h5MiniQrcode
+          ? _value.h5MiniQrcode
+          : h5MiniQrcode // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -893,8 +901,8 @@ abstract class _$$_LinkCopyWith<$Res> implements $LinkCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'alipayMiniurl') String alipayminiurl,
-      @JsonKey(name: 'eleSchemeurl') String eleschemeurl,
+      {@JsonKey(name: 'alipayMiniUrl') String alipayminiurl,
+      @JsonKey(name: 'eleSchemeUrl') String eleschemeurl,
       @JsonKey(name: 'h5ShortLink') String h5shortlink,
       @JsonKey(name: 'h5url') String h5url,
       @JsonKey(name: 'miniQrcode') String miniqrcode,
@@ -902,7 +910,8 @@ abstract class _$$_LinkCopyWith<$Res> implements $LinkCopyWith<$Res> {
       @JsonKey(name: 'tbMiniQrcode') String tbminiqrcode,
       @JsonKey(name: 'tbQrCode') String tbqrcode,
       @JsonKey(name: 'wxAppid') String wxappid,
-      @JsonKey(name: 'wxPath') String wxpath});
+      @JsonKey(name: 'wxPath') String wxpath,
+      @JsonKey(name: 'h5MiniQrcode') String h5MiniQrcode});
 }
 
 /// @nodoc
@@ -924,6 +933,7 @@ class __$$_LinkCopyWithImpl<$Res> extends _$LinkCopyWithImpl<$Res, _$_Link>
     Object? tbqrcode = null,
     Object? wxappid = null,
     Object? wxpath = null,
+    Object? h5MiniQrcode = null,
   }) {
     return _then(_$_Link(
       alipayminiurl: null == alipayminiurl
@@ -966,6 +976,10 @@ class __$$_LinkCopyWithImpl<$Res> extends _$LinkCopyWithImpl<$Res, _$_Link>
           ? _value.wxpath
           : wxpath // ignore: cast_nullable_to_non_nullable
               as String,
+      h5MiniQrcode: null == h5MiniQrcode
+          ? _value.h5MiniQrcode
+          : h5MiniQrcode // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -974,8 +988,8 @@ class __$$_LinkCopyWithImpl<$Res> extends _$LinkCopyWithImpl<$Res, _$_Link>
 @JsonSerializable()
 class _$_Link extends _Link {
   const _$_Link(
-      {@JsonKey(name: 'alipayMiniurl') this.alipayminiurl = '',
-      @JsonKey(name: 'eleSchemeurl') this.eleschemeurl = '',
+      {@JsonKey(name: 'alipayMiniUrl') this.alipayminiurl = '',
+      @JsonKey(name: 'eleSchemeUrl') this.eleschemeurl = '',
       @JsonKey(name: 'h5ShortLink') this.h5shortlink = '',
       @JsonKey(name: 'h5url') this.h5url = '',
       @JsonKey(name: 'miniQrcode') this.miniqrcode = '',
@@ -983,16 +997,17 @@ class _$_Link extends _Link {
       @JsonKey(name: 'tbMiniQrcode') this.tbminiqrcode = '',
       @JsonKey(name: 'tbQrCode') this.tbqrcode = '',
       @JsonKey(name: 'wxAppid') this.wxappid = '',
-      @JsonKey(name: 'wxPath') this.wxpath = ''})
+      @JsonKey(name: 'wxPath') this.wxpath = '',
+      @JsonKey(name: 'h5MiniQrcode') this.h5MiniQrcode = ''})
       : super._();
 
   factory _$_Link.fromJson(Map<String, dynamic> json) => _$$_LinkFromJson(json);
 
   @override
-  @JsonKey(name: 'alipayMiniurl')
+  @JsonKey(name: 'alipayMiniUrl')
   final String alipayminiurl;
   @override
-  @JsonKey(name: 'eleSchemeurl')
+  @JsonKey(name: 'eleSchemeUrl')
   final String eleschemeurl;
   @override
   @JsonKey(name: 'h5ShortLink')
@@ -1018,10 +1033,13 @@ class _$_Link extends _Link {
   @override
   @JsonKey(name: 'wxPath')
   final String wxpath;
+  @override
+  @JsonKey(name: 'h5MiniQrcode')
+  final String h5MiniQrcode;
 
   @override
   String toString() {
-    return 'Link(alipayminiurl: $alipayminiurl, eleschemeurl: $eleschemeurl, h5shortlink: $h5shortlink, h5url: $h5url, miniqrcode: $miniqrcode, picture: $picture, tbminiqrcode: $tbminiqrcode, tbqrcode: $tbqrcode, wxappid: $wxappid, wxpath: $wxpath)';
+    return 'Link(alipayminiurl: $alipayminiurl, eleschemeurl: $eleschemeurl, h5shortlink: $h5shortlink, h5url: $h5url, miniqrcode: $miniqrcode, picture: $picture, tbminiqrcode: $tbminiqrcode, tbqrcode: $tbqrcode, wxappid: $wxappid, wxpath: $wxpath, h5MiniQrcode: $h5MiniQrcode)';
   }
 
   @override
@@ -1044,7 +1062,9 @@ class _$_Link extends _Link {
             (identical(other.tbqrcode, tbqrcode) ||
                 other.tbqrcode == tbqrcode) &&
             (identical(other.wxappid, wxappid) || other.wxappid == wxappid) &&
-            (identical(other.wxpath, wxpath) || other.wxpath == wxpath));
+            (identical(other.wxpath, wxpath) || other.wxpath == wxpath) &&
+            (identical(other.h5MiniQrcode, h5MiniQrcode) ||
+                other.h5MiniQrcode == h5MiniQrcode));
   }
 
   @JsonKey(ignore: true)
@@ -1060,7 +1080,8 @@ class _$_Link extends _Link {
       tbminiqrcode,
       tbqrcode,
       wxappid,
-      wxpath);
+      wxpath,
+      h5MiniQrcode);
 
   @JsonKey(ignore: true)
   @override
@@ -1078,8 +1099,8 @@ class _$_Link extends _Link {
 
 abstract class _Link extends Link {
   const factory _Link(
-      {@JsonKey(name: 'alipayMiniurl') final String alipayminiurl,
-      @JsonKey(name: 'eleSchemeurl') final String eleschemeurl,
+      {@JsonKey(name: 'alipayMiniUrl') final String alipayminiurl,
+      @JsonKey(name: 'eleSchemeUrl') final String eleschemeurl,
       @JsonKey(name: 'h5ShortLink') final String h5shortlink,
       @JsonKey(name: 'h5url') final String h5url,
       @JsonKey(name: 'miniQrcode') final String miniqrcode,
@@ -1087,16 +1108,17 @@ abstract class _Link extends Link {
       @JsonKey(name: 'tbMiniQrcode') final String tbminiqrcode,
       @JsonKey(name: 'tbQrCode') final String tbqrcode,
       @JsonKey(name: 'wxAppid') final String wxappid,
-      @JsonKey(name: 'wxPath') final String wxpath}) = _$_Link;
+      @JsonKey(name: 'wxPath') final String wxpath,
+      @JsonKey(name: 'h5MiniQrcode') final String h5MiniQrcode}) = _$_Link;
   const _Link._() : super._();
 
   factory _Link.fromJson(Map<String, dynamic> json) = _$_Link.fromJson;
 
   @override
-  @JsonKey(name: 'alipayMiniurl')
+  @JsonKey(name: 'alipayMiniUrl')
   String get alipayminiurl;
   @override
-  @JsonKey(name: 'eleSchemeurl')
+  @JsonKey(name: 'eleSchemeUrl')
   String get eleschemeurl;
   @override
   @JsonKey(name: 'h5ShortLink')
@@ -1122,6 +1144,9 @@ abstract class _Link extends Link {
   @override
   @JsonKey(name: 'wxPath')
   String get wxpath;
+  @override
+  @JsonKey(name: 'h5MiniQrcode')
+  String get h5MiniQrcode;
   @override
   @JsonKey(ignore: true)
   _$$_LinkCopyWith<_$_Link> get copyWith => throw _privateConstructorUsedError;

@@ -292,7 +292,7 @@
         <entry key="dd_js_util">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-4.2.8/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-4.2.9/lib" />
             </list>
           </value>
         </entry>
@@ -376,14 +376,14 @@
         <entry key="extended_text">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text-11.0.1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text-11.1.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="extended_text_library">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text_library-11.0.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text_library-11.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -1538,7 +1538,7 @@
         <entry key="watcher">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/watcher-1.0.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/watcher-1.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -1670,7 +1670,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/date_format-2.0.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dbus-0.7.8/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-2.4.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-4.2.8/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-4.2.9/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_models-0.0.5/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/decimal-2.3.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.3.2/lib" />
@@ -1682,8 +1682,8 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_nested_scroll_view-6.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_sliver-2.1.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_tabs-4.1.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text-11.0.1/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text_library-11.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text-11.1.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text_library-11.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fast_immutable_collections-9.1.5/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fbutton_nullsafety-5.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fcontrol_nullsafety-2.0.0/lib" />
@@ -1844,7 +1844,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/vector_math-2.1.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/visibility_detector-0.4.0+2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/watcher-1.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/watcher-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/waterfall_flow-3.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/web-0.1.4-beta/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/web_socket_channel-2.3.0/lib" />

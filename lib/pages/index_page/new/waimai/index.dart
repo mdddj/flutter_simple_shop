@@ -19,7 +19,7 @@ class WaimaiIndex extends StatelessWidget {
         child: Column(
           children: [
             renderWaimaihongbao(context),
-            renderWaimaiShangChao(context)
+            // renderWaimaiShangChao(context)
           ],
         ),
       ),

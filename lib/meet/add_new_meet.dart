@@ -91,7 +91,7 @@ var files = <MultipartFile>[];
               },
             ),
             MyTextField(
-              placeholder: '(选填)Soul用户名',
+              placeholder: '(选填)用户名',
               controller: ctrlSoulName,
               focusNode: fSoulNameFocusNode,
               onChange: (value) {

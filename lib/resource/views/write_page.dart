@@ -11,7 +11,7 @@ class MyResourceWritePage extends StatefulWidget {
 }
 
 class _MyResourceWritePageState extends State<MyResourceWritePage> {
-  DynWriteParams get params => widget.params;
+  late DynWriteParams params = widget.params;
   final PictureSelectionController _selectionController =
       PictureSelectionController();
   var content = "";
@@ -128,14 +128,25 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   ///获取操作小部件
   Widget _builderActionButton() {
     return Container(
-      padding:  EdgeInsets.only(bottom: context.bottomPadding-6,left: 12,right: 12,top: 12),
+      padding: EdgeInsets.only(
+          bottom: context.bottomPadding - 6, left: 12, right: 12, top: 12),
       child: Column(
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: [SelectResCategory(initCategoryName: params.name).expanded,IconButton(onPressed: (){
-              context.hideKeyBoard();
-            }, icon: const Icon(Icons.keyboard_alt_rounded))],
+            children: [
+              SelectResCategory(
+                initCategoryName: widget.params.name,
+                onChange: (value) => setState(() {
+                  params = params.copyWith(name: value.name);
+                }),
+              ).expanded,
+              IconButton(
+                  onPressed: () {
+                    context.hideKeyBoard();
+                  },
+                  icon: const Icon(Icons.keyboard_alt_rounded))
+            ],
           )
         ],
       ),
@@ -146,7 +157,10 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
 ///选择分类的小部件
 class SelectResCategory extends StatefulWidget {
   final String initCategoryName;
-  const SelectResCategory({super.key, required this.initCategoryName});
+  final ValueChanged<ResourceCategory>? onChange;
+
+  const SelectResCategory(
+      {super.key, required this.initCategoryName, this.onChange});
 
   @override
   State<SelectResCategory> createState() => _SelectResCategoryState();
@@ -158,26 +172,22 @@ class _SelectResCategoryState extends State<SelectResCategory> {
   @override
   void initState() {
     super.initState();
-    delayFunction(() {
-      _getCategoryInfo(widget.initCategoryName);
-    });
+    Future.microtask(() => _getCategoryInfo(widget.initCategoryName));
   }
 
   ///加载对象
   Future<void> _getCategoryInfo(String name) async {
     try {
       if (name.isEmpty) {
-        setState(() {
-          selectResCategory = null;
-        });
+        selectResCategory = null;
+        setState(() {});
         return;
       }
       final result =
           await getIt.get<MyFindResourceCategoryApi>().doRequest(name);
-      wtfLog(result.toJson());
-      setState(() {
-        selectResCategory = result;
-      });
+      selectResCategory = result;
+      widget.onChange?.call(result);
+      setState(() {});
     } catch (e, s) {
       wtfLog('${e.runtimeType}\n获取失败:$e\n$s');
     }
@@ -192,9 +202,12 @@ class _SelectResCategoryState extends State<SelectResCategory> {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-              Chip(label: Text(widget.initCategoryName)),
+              Chip(
+                  label:
+                      Text(selectResCategory?.name ?? widget.initCategoryName)),
               //后面放一些推荐的
+              TextButton(onPressed: _selectMore, child: const Text('选择其他'))
+                  .marginOnly(left: 12)
             ],
           )),
     );
@@ -205,5 +218,19 @@ class _SelectResCategoryState extends State<SelectResCategory> {
     if (mounted) {
       super.setState(fn);
     }
+  }
+
+  ///选择其他群组
+  void _selectMore() {
+    context
+        .navToWidget<ResourceCategory>(to: const SelectResourceCategoryPage())
+        .then((value) {
+      if (value != null) {
+        setState(() {
+          selectResCategory = value;
+        });
+        widget.onChange?.call(value);
+      }
+    });
   }
 }
