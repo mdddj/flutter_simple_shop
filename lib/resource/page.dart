@@ -18,8 +18,7 @@ class _MyResourcePageState extends State<MyResourcePage> {
       ),
       body: MyLoadingMoreCustomScrollView(
         slivers: [
-          MyResourceListWidget(
-              name: params.name, emptyChild: _builderEmptyWidget())
+          MyResourceListWidget(params: params.emptyChild == null ? params : params.copyWith(emptyChild: _builderEmptyWidget()))
         ],
       ),
       floatingActionButton: FloatingActionButton(

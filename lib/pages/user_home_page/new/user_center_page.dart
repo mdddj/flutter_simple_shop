@@ -139,7 +139,7 @@ class _Tabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      alignment: Alignment.center,
+      alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
           color: context.userCenterPageNavBg,
           borderRadius: const BorderRadius.only(

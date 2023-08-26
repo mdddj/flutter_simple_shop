@@ -3,16 +3,23 @@ import 'package:dd_js_util/model/my_image.dart';
 import 'package:flutter/material.dart';
 
 import '../freezed/app_action_menu.dart';
+import '../freezed/pager.dart';
 import '../freezed/resource_category.dart';
 import '../provider/riverpod/model/my_user.dart';
 import '../resource/view.dart';
 
+
+
+
 class ResourceWidget extends StatelessWidget {
   final Resource resource;
   final AppActionMenu? menu;
+  final DynPageParams? params;
 
-  const ResourceWidget({super.key, required this.resource, this.menu});
+  const ResourceWidget({super.key, required this.resource, this.menu, this.params});
 
+  ResourceWidgetCardStyle get cardStyle => params?.style ?? ResourceWidgetCardStyle.waterfall;//样式
+  bool get isCard => cardStyle == ResourceWidgetCardStyle.card;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
@@ -26,6 +33,8 @@ class ResourceWidget extends StatelessWidget {
           }
         },
         child: Card(
+          shape: isCard ? const RoundedRectangleBorder(borderRadius: BorderRadius.zero) : null,
+          margin: isCard ? EdgeInsets.zero : null,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

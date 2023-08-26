@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../meet/meet_model.dart';
 import '../provider/riverpod/model/my_user.dart';
 import 'file_info.dart';
+import 'product_share.dart';
 
 part 'resource_category.freezed.dart';
 
@@ -36,6 +37,15 @@ extension ResourceEx on Resource {
   String get firstImageUrl => images.first.url;
 }
 
+
+enum ResourceWidgetCardStyle {
+  ///瀑布流
+  waterfall,
+
+  ///卡片
+  card
+}
+
 //资源
 @freezed
 class Resource with _$Resource {
@@ -62,7 +72,9 @@ class Resource with _$Resource {
       @JsonKey(name: 'thumbnail') @Default('') String thumbnail,
       @JsonKey(name: 'thumbnailPath')
       @Default('')
-      String thumbnailPath}) = _Resource;
+      String thumbnailPath,
+      @JsonKey(name: 'share') ProductShare? share
+      }) = _Resource;
 
   factory Resource.fromJson(dynamic json) => _$ResourceFromJson(json);
 }

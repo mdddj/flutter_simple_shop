@@ -191,9 +191,9 @@ PagerParams _$PagerParamsFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
     case 'default':
       return _PagerParams.fromJson(json);
-    case 'dyn':
+    case 'dynListPageParam':
       return DynPageParams.fromJson(json);
-    case 'dynWrite':
+    case 'dynWritePageParam':
       return DynWriteParams.fromJson(json);
 
     default:
@@ -207,44 +207,80 @@ mixin _$PagerParams {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String name, String emptyText) dyn,
-    required TResult Function(String name) dynWrite,
+    required TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)
+        dynListPageParam,
+    required TResult Function(String name, ProductShare? productShare,
+            String? title, bool disableSelectOtherCategory, String? hintText)
+        dynWritePageParam,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String name, String emptyText)? dyn,
-    TResult? Function(String name)? dynWrite,
+    TResult? Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult? Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String name, String emptyText)? dyn,
-    TResult Function(String name)? dynWrite,
+    TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_PagerParams value) $default, {
-    required TResult Function(DynPageParams value) dyn,
-    required TResult Function(DynWriteParams value) dynWrite,
+    required TResult Function(DynPageParams value) dynListPageParam,
+    required TResult Function(DynWriteParams value) dynWritePageParam,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_PagerParams value)? $default, {
-    TResult? Function(DynPageParams value)? dyn,
-    TResult? Function(DynWriteParams value)? dynWrite,
+    TResult? Function(DynPageParams value)? dynListPageParam,
+    TResult? Function(DynWriteParams value)? dynWritePageParam,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_PagerParams value)? $default, {
-    TResult Function(DynPageParams value)? dyn,
-    TResult Function(DynWriteParams value)? dynWrite,
+    TResult Function(DynPageParams value)? dynListPageParam,
+    TResult Function(DynWriteParams value)? dynWritePageParam,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -317,8 +353,20 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String name, String emptyText) dyn,
-    required TResult Function(String name) dynWrite,
+    required TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)
+        dynListPageParam,
+    required TResult Function(String name, ProductShare? productShare,
+            String? title, bool disableSelectOtherCategory, String? hintText)
+        dynWritePageParam,
   }) {
     return $default();
   }
@@ -327,8 +375,20 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String name, String emptyText)? dyn,
-    TResult? Function(String name)? dynWrite,
+    TResult? Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult? Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
   }) {
     return $default?.call();
   }
@@ -337,8 +397,20 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String name, String emptyText)? dyn,
-    TResult Function(String name)? dynWrite,
+    TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -351,8 +423,8 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_PagerParams value) $default, {
-    required TResult Function(DynPageParams value) dyn,
-    required TResult Function(DynWriteParams value) dynWrite,
+    required TResult Function(DynPageParams value) dynListPageParam,
+    required TResult Function(DynWriteParams value) dynWritePageParam,
   }) {
     return $default(this);
   }
@@ -361,8 +433,8 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_PagerParams value)? $default, {
-    TResult? Function(DynPageParams value)? dyn,
-    TResult? Function(DynWriteParams value)? dynWrite,
+    TResult? Function(DynPageParams value)? dynListPageParam,
+    TResult? Function(DynWriteParams value)? dynWritePageParam,
   }) {
     return $default?.call(this);
   }
@@ -371,8 +443,8 @@ class _$_PagerParams extends _PagerParams {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_PagerParams value)? $default, {
-    TResult Function(DynPageParams value)? dyn,
-    TResult Function(DynWriteParams value)? dynWrite,
+    TResult Function(DynPageParams value)? dynListPageParam,
+    TResult Function(DynWriteParams value)? dynWritePageParam,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -403,7 +475,16 @@ abstract class _$$DynPageParamsCopyWith<$Res> {
           _$DynPageParams value, $Res Function(_$DynPageParams) then) =
       __$$DynPageParamsCopyWithImpl<$Res>;
   @useResult
-  $Res call({String name, String emptyText});
+  $Res call(
+      {String name,
+      String emptyText,
+      ResourceWidgetCardStyle style,
+      @JsonKey(
+          fromJson: null,
+          toJson: null,
+          includeToJson: false,
+          includeFromJson: false)
+      Widget? emptyChild});
 }
 
 /// @nodoc
@@ -419,6 +500,8 @@ class __$$DynPageParamsCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? emptyText = null,
+    Object? style = null,
+    Object? emptyChild = freezed,
   }) {
     return _then(_$DynPageParams(
       name: null == name
@@ -429,6 +512,14 @@ class __$$DynPageParamsCopyWithImpl<$Res>
           ? _value.emptyText
           : emptyText // ignore: cast_nullable_to_non_nullable
               as String,
+      style: null == style
+          ? _value.style
+          : style // ignore: cast_nullable_to_non_nullable
+              as ResourceWidgetCardStyle,
+      emptyChild: freezed == emptyChild
+          ? _value.emptyChild
+          : emptyChild // ignore: cast_nullable_to_non_nullable
+              as Widget?,
     ));
   }
 }
@@ -439,8 +530,15 @@ class _$DynPageParams extends DynPageParams {
   _$DynPageParams(
       {required this.name,
       this.emptyText = '暂无动态，快去发布一条吧',
+      this.style = ResourceWidgetCardStyle.waterfall,
+      @JsonKey(
+          fromJson: null,
+          toJson: null,
+          includeToJson: false,
+          includeFromJson: false)
+      this.emptyChild,
       final String? $type})
-      : $type = $type ?? 'dyn',
+      : $type = $type ?? 'dynListPageParam',
         super._();
 
   factory _$DynPageParams.fromJson(Map<String, dynamic> json) =>
@@ -451,13 +549,23 @@ class _$DynPageParams extends DynPageParams {
   @override
   @JsonKey()
   final String emptyText;
+  @override
+  @JsonKey()
+  final ResourceWidgetCardStyle style;
+  @override
+  @JsonKey(
+      fromJson: null,
+      toJson: null,
+      includeToJson: false,
+      includeFromJson: false)
+  final Widget? emptyChild;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'PagerParams.dyn(name: $name, emptyText: $emptyText)';
+    return 'PagerParams.dynListPageParam(name: $name, emptyText: $emptyText, style: $style, emptyChild: $emptyChild)';
   }
 
   @override
@@ -467,12 +575,16 @@ class _$DynPageParams extends DynPageParams {
             other is _$DynPageParams &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.emptyText, emptyText) ||
-                other.emptyText == emptyText));
+                other.emptyText == emptyText) &&
+            (identical(other.style, style) || other.style == style) &&
+            (identical(other.emptyChild, emptyChild) ||
+                other.emptyChild == emptyChild));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, emptyText);
+  int get hashCode =>
+      Object.hash(runtimeType, name, emptyText, style, emptyChild);
 
   @JsonKey(ignore: true)
   @override
@@ -484,32 +596,68 @@ class _$DynPageParams extends DynPageParams {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String name, String emptyText) dyn,
-    required TResult Function(String name) dynWrite,
+    required TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)
+        dynListPageParam,
+    required TResult Function(String name, ProductShare? productShare,
+            String? title, bool disableSelectOtherCategory, String? hintText)
+        dynWritePageParam,
   }) {
-    return dyn(name, emptyText);
+    return dynListPageParam(name, emptyText, style, emptyChild);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String name, String emptyText)? dyn,
-    TResult? Function(String name)? dynWrite,
+    TResult? Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult? Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
   }) {
-    return dyn?.call(name, emptyText);
+    return dynListPageParam?.call(name, emptyText, style, emptyChild);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String name, String emptyText)? dyn,
-    TResult Function(String name)? dynWrite,
+    TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
     required TResult orElse(),
   }) {
-    if (dyn != null) {
-      return dyn(name, emptyText);
+    if (dynListPageParam != null) {
+      return dynListPageParam(name, emptyText, style, emptyChild);
     }
     return orElse();
   }
@@ -518,32 +666,32 @@ class _$DynPageParams extends DynPageParams {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_PagerParams value) $default, {
-    required TResult Function(DynPageParams value) dyn,
-    required TResult Function(DynWriteParams value) dynWrite,
+    required TResult Function(DynPageParams value) dynListPageParam,
+    required TResult Function(DynWriteParams value) dynWritePageParam,
   }) {
-    return dyn(this);
+    return dynListPageParam(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_PagerParams value)? $default, {
-    TResult? Function(DynPageParams value)? dyn,
-    TResult? Function(DynWriteParams value)? dynWrite,
+    TResult? Function(DynPageParams value)? dynListPageParam,
+    TResult? Function(DynWriteParams value)? dynWritePageParam,
   }) {
-    return dyn?.call(this);
+    return dynListPageParam?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_PagerParams value)? $default, {
-    TResult Function(DynPageParams value)? dyn,
-    TResult Function(DynWriteParams value)? dynWrite,
+    TResult Function(DynPageParams value)? dynListPageParam,
+    TResult Function(DynWriteParams value)? dynWritePageParam,
     required TResult orElse(),
   }) {
-    if (dyn != null) {
-      return dyn(this);
+    if (dynListPageParam != null) {
+      return dynListPageParam(this);
     }
     return orElse();
   }
@@ -556,9 +704,19 @@ class _$DynPageParams extends DynPageParams {
   }
 }
 
+
+
 abstract class DynPageParams extends PagerParams {
-  factory DynPageParams({required final String name, final String emptyText}) =
-      _$DynPageParams;
+  factory DynPageParams(
+      {required final String name,
+      final String emptyText,
+      final ResourceWidgetCardStyle style,
+      @JsonKey(
+          fromJson: null,
+          toJson: null,
+          includeToJson: false,
+          includeFromJson: false)
+      final Widget? emptyChild}) = _$DynPageParams;
   DynPageParams._() : super._();
 
   factory DynPageParams.fromJson(Map<String, dynamic> json) =
@@ -566,6 +724,13 @@ abstract class DynPageParams extends PagerParams {
 
   String get name;
   String get emptyText;
+  ResourceWidgetCardStyle get style;
+  @JsonKey(
+      fromJson: null,
+      toJson: null,
+      includeToJson: false,
+      includeFromJson: false)
+  Widget? get emptyChild;
   @JsonKey(ignore: true)
   _$$DynPageParamsCopyWith<_$DynPageParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -577,7 +742,14 @@ abstract class _$$DynWriteParamsCopyWith<$Res> {
           _$DynWriteParams value, $Res Function(_$DynWriteParams) then) =
       __$$DynWriteParamsCopyWithImpl<$Res>;
   @useResult
-  $Res call({String name});
+  $Res call(
+      {String name,
+      ProductShare? productShare,
+      String? title,
+      bool disableSelectOtherCategory,
+      String? hintText});
+
+  $ProductShareCopyWith<$Res>? get productShare;
 }
 
 /// @nodoc
@@ -592,21 +764,59 @@ class __$$DynWriteParamsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
+    Object? productShare = freezed,
+    Object? title = freezed,
+    Object? disableSelectOtherCategory = null,
+    Object? hintText = freezed,
   }) {
     return _then(_$DynWriteParams(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      productShare: freezed == productShare
+          ? _value.productShare
+          : productShare // ignore: cast_nullable_to_non_nullable
+              as ProductShare?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      disableSelectOtherCategory: null == disableSelectOtherCategory
+          ? _value.disableSelectOtherCategory
+          : disableSelectOtherCategory // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hintText: freezed == hintText
+          ? _value.hintText
+          : hintText // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ProductShareCopyWith<$Res>? get productShare {
+    if (_value.productShare == null) {
+      return null;
+    }
+
+    return $ProductShareCopyWith<$Res>(_value.productShare!, (value) {
+      return _then(_value.copyWith(productShare: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$DynWriteParams extends DynWriteParams {
-  _$DynWriteParams({required this.name, final String? $type})
-      : $type = $type ?? 'dynWrite',
+  _$DynWriteParams(
+      {required this.name,
+      this.productShare,
+      this.title,
+      this.disableSelectOtherCategory = false,
+      this.hintText,
+      final String? $type})
+      : $type = $type ?? 'dynWritePageParam',
         super._();
 
   factory _$DynWriteParams.fromJson(Map<String, dynamic> json) =>
@@ -614,13 +824,22 @@ class _$DynWriteParams extends DynWriteParams {
 
   @override
   final String name;
+  @override
+  final ProductShare? productShare;
+  @override
+  final String? title;
+  @override
+  @JsonKey()
+  final bool disableSelectOtherCategory;
+  @override
+  final String? hintText;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'PagerParams.dynWrite(name: $name)';
+    return 'PagerParams.dynWritePageParam(name: $name, productShare: $productShare, title: $title, disableSelectOtherCategory: $disableSelectOtherCategory, hintText: $hintText)';
   }
 
   @override
@@ -628,12 +847,22 @@ class _$DynWriteParams extends DynWriteParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DynWriteParams &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.productShare, productShare) ||
+                other.productShare == productShare) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.disableSelectOtherCategory,
+                    disableSelectOtherCategory) ||
+                other.disableSelectOtherCategory ==
+                    disableSelectOtherCategory) &&
+            (identical(other.hintText, hintText) ||
+                other.hintText == hintText));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode => Object.hash(runtimeType, name, productShare, title,
+      disableSelectOtherCategory, hintText);
 
   @JsonKey(ignore: true)
   @override
@@ -645,32 +874,71 @@ class _$DynWriteParams extends DynWriteParams {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function() $default, {
-    required TResult Function(String name, String emptyText) dyn,
-    required TResult Function(String name) dynWrite,
+    required TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)
+        dynListPageParam,
+    required TResult Function(String name, ProductShare? productShare,
+            String? title, bool disableSelectOtherCategory, String? hintText)
+        dynWritePageParam,
   }) {
-    return dynWrite(name);
+    return dynWritePageParam(
+        name, productShare, title, disableSelectOtherCategory, hintText);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function()? $default, {
-    TResult? Function(String name, String emptyText)? dyn,
-    TResult? Function(String name)? dynWrite,
+    TResult? Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult? Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
   }) {
-    return dynWrite?.call(name);
+    return dynWritePageParam?.call(
+        name, productShare, title, disableSelectOtherCategory, hintText);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function()? $default, {
-    TResult Function(String name, String emptyText)? dyn,
-    TResult Function(String name)? dynWrite,
+    TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
     required TResult orElse(),
   }) {
-    if (dynWrite != null) {
-      return dynWrite(name);
+    if (dynWritePageParam != null) {
+      return dynWritePageParam(
+          name, productShare, title, disableSelectOtherCategory, hintText);
     }
     return orElse();
   }
@@ -679,32 +947,32 @@ class _$DynWriteParams extends DynWriteParams {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(_PagerParams value) $default, {
-    required TResult Function(DynPageParams value) dyn,
-    required TResult Function(DynWriteParams value) dynWrite,
+    required TResult Function(DynPageParams value) dynListPageParam,
+    required TResult Function(DynWriteParams value) dynWritePageParam,
   }) {
-    return dynWrite(this);
+    return dynWritePageParam(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult? Function(_PagerParams value)? $default, {
-    TResult? Function(DynPageParams value)? dyn,
-    TResult? Function(DynWriteParams value)? dynWrite,
+    TResult? Function(DynPageParams value)? dynListPageParam,
+    TResult? Function(DynWriteParams value)? dynWritePageParam,
   }) {
-    return dynWrite?.call(this);
+    return dynWritePageParam?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_PagerParams value)? $default, {
-    TResult Function(DynPageParams value)? dyn,
-    TResult Function(DynWriteParams value)? dynWrite,
+    TResult Function(DynPageParams value)? dynListPageParam,
+    TResult Function(DynWriteParams value)? dynWritePageParam,
     required TResult orElse(),
   }) {
-    if (dynWrite != null) {
-      return dynWrite(this);
+    if (dynWritePageParam != null) {
+      return dynWritePageParam(this);
     }
     return orElse();
   }
@@ -718,13 +986,22 @@ class _$DynWriteParams extends DynWriteParams {
 }
 
 abstract class DynWriteParams extends PagerParams {
-  factory DynWriteParams({required final String name}) = _$DynWriteParams;
+  factory DynWriteParams(
+      {required final String name,
+      final ProductShare? productShare,
+      final String? title,
+      final bool disableSelectOtherCategory,
+      final String? hintText}) = _$DynWriteParams;
   DynWriteParams._() : super._();
 
   factory DynWriteParams.fromJson(Map<String, dynamic> json) =
       _$DynWriteParams.fromJson;
 
   String get name;
+  ProductShare? get productShare;
+  String? get title;
+  bool get disableSelectOtherCategory;
+  String? get hintText;
   @JsonKey(ignore: true)
   _$$DynWriteParamsCopyWith<_$DynWriteParams> get copyWith =>
       throw _privateConstructorUsedError;

@@ -48,6 +48,9 @@ _$_Resource _$$_ResourceFromJson(Map<String, dynamic> json) => _$_Resource(
               (value) => FileInfo.fromJson(value as Map<String, dynamic>)),
       thumbnail: json['thumbnail'] as String? ?? '',
       thumbnailPath: json['thumbnailPath'] as String? ?? '',
+      share: json['share'] == null
+          ? null
+          : ProductShare.fromJson(json['share'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ResourceToJson(_$_Resource instance) =>
@@ -71,4 +74,5 @@ Map<String, dynamic> _$$_ResourceToJson(_$_Resource instance) =>
       ),
       'thumbnail': instance.thumbnail,
       'thumbnailPath': instance.thumbnailPath,
+      'share': instance.share,
     };

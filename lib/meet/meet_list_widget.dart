@@ -18,26 +18,25 @@ class MeetListWidget extends ConsumerStatefulWidget {
 }
 
 class _MeetListWidgetState extends ConsumerState<MeetListWidget> {
-
   final repository = MeetListLoadMore();
 
   @override
   Widget build(BuildContext context) {
-    if(ref.isLogin.not){
+    if (ref.isLogin.not) {
       return const LoginTipWidget();
     }
     return LoadingMoreCustomScrollView(
       slivers: [
         LoadingMoreSliverList(SliverListConfig<MeetModel>(
-          itemBuilder:MeetItemLayout.new,
-          sourceList: repository,
-          indicatorBuilder:(context, status) {
-          return CustomLoadingMoreWidgetWithSliver(context,status,retry: (){
-            repository.refresh(true);
-          });
-          },
-          padding: const EdgeInsets.only(top: 12)
-        ))
+            itemBuilder: MeetItemLayout.new,
+            sourceList: repository,
+            indicatorBuilder: (context, status) {
+              return CustomLoadingMoreWidgetWithSliver(context, status,
+                  retry: () {
+                repository.refresh(true);
+              }, emptyChild: const SizedBox());
+            },
+            padding: const EdgeInsets.only(top: 12)))
       ],
     );
   }

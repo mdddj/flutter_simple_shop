@@ -10,7 +10,7 @@ import 'index.dart';
 
 ///本地测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.199.79",
+    host: "http://192.168.199.86",
     port: '8082',
     debugMode: true,
     fontFamily: '');
@@ -20,7 +20,7 @@ const releaseEnvConfig = EnvConfig(
     host: "https://itbug.shop", port: '9445', debugMode: false, fontFamily: '');
 
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
-const useEnv = releaseEnvConfig;
+const useEnv = debugEnvConfig;
 
 void main() async {
   appInit(() => runApp(const ProviderScope(child: DdShop())));

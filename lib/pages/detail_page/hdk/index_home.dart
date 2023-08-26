@@ -3,6 +3,17 @@ part of pages;
 //是否展示轮播图上面的返回箭头
 final satteShowBackButton = StateProvider((ref) => true);
 
+extension ProductModelEx on ProductModel {
+  ProductShare get shareModel {
+    return ProductShare(
+      productId: goodsId,
+      title: dtitle,
+      price: '$actualPrice',
+      image: mainPic,
+    );
+  }
+}
+
 //详情页面
 class HaoDanKuDetailItem extends ConsumerStatefulWidget {
   final String goodsId;
@@ -213,7 +224,14 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
     return ImageWrapper(
         child: IconButton(
       icon: const Icon(Icons.edit_document),
-      onPressed: () {},
+      onPressed: () {
+        context.push(pagerUtil.resourceWrite.routername,
+            extra: PagerParams.dynWritePageParam(
+                name: "买家秀社区",
+                productShare: info?.shareModel,
+                title: "分享买家秀",
+                disableSelectOtherCategory: true,hintText: "快去分享你的使用体验吧~${info?.dtitle}"));
+      },
     ));
   }
 

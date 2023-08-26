@@ -40,6 +40,7 @@ final routers = GoRouter(
       path: pagerUtil.app.routername,
       builder: (context, state) => const MyApp(),
     ),
+    //发布动态
     GoRoute(
       path: pagerUtil.resourceWrite.routername,
       builder: (context, state) {
@@ -47,6 +48,8 @@ final routers = GoRouter(
       },
       redirect: redirectToLogin,
     ),
+
+    //动态列表
     GoRoute(
       path: pagerUtil.resourceList.routername,
       builder: (context, state) {

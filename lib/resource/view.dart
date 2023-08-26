@@ -1,5 +1,6 @@
 library resource;
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dd_js_util/dd_js_util.dart';
@@ -18,6 +19,7 @@ import '../api/apis.dart';
 import '../common/api_ext.dart';
 import '../freezed/comment.dart';
 import '../freezed/pager.dart';
+import '../freezed/product_share.dart';
 import '../freezed/resource_category.dart';
 import '../index.dart';
 import '../pages/index.dart';
@@ -28,23 +30,29 @@ import '../widgets/image_wrapper.dart';
 import '../widgets/loading/custom_loading_more_widget.dart';
 import '../widgets/resource_widegt.dart';
 import 'repository/my_resource_repository.dart';
+
 part 'views/detail.dart';
+
 part 'views/write_page.dart';
+
 part 'page.dart';
+
 part 'views/selec_resource_category_page.dart';
 
 class MyResourceListWidget extends StatefulWidget {
-  final String name;
-  final Widget? emptyChild;
+  final DynPageParams params;
 
-  const MyResourceListWidget({super.key, required this.name, this.emptyChild});
+  const MyResourceListWidget({super.key, required this.params});
 
   @override
   State<MyResourceListWidget> createState() => _MyResourceListWidgetState();
 }
 
 class _MyResourceListWidgetState extends State<MyResourceListWidget> {
-  late final _repository = MyResourceRepository(widget.name);
+  late final params = widget.params;
+  late final _repository = MyResourceRepository(params.name);
+  late final style = params.style; //样式
+  bool get isCard => style == ResourceWidgetCardStyle.card;
 
   @override
   Widget build(BuildContext context) {
@@ -52,23 +60,28 @@ class _MyResourceListWidgetState extends State<MyResourceListWidget> {
         itemBuilder: _itemBuilder,
         sourceList: _repository,
         indicatorBuilder: _indicatorBuilder,
-        padding: const EdgeInsets.all(12),
+        padding: isCard ? EdgeInsets.zero : const EdgeInsets.all(12),
         extendedListDelegate:
             SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                crossAxisCount: context.waterfallFlowCrossAxisCount,
-                mainAxisSpacing: 12,
+                crossAxisCount: style == ResourceWidgetCardStyle.waterfall
+                    ? context.waterfallFlowCrossAxisCount
+                    : 1,
+                mainAxisSpacing: isCard ? 0 : 12,
                 crossAxisSpacing: 12),
         lock: false));
   }
 
   Widget _itemBuilder(BuildContext context, Resource item, int index) {
-    return ResourceWidget(resource: item);
+    return ResourceWidget(
+      resource: item,
+      params: params,
+    );
   }
 
   Widget? _indicatorBuilder(BuildContext context, status) {
     return CustomLoadingMoreWidgetWithSliver(context, status, retry: () {
       _repository.refresh(true);
-    }, emptyChild: widget.emptyChild);
+    }, emptyChild: params.emptyChild);
   }
 
   @override

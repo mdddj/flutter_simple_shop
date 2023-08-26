@@ -61,10 +61,10 @@ packages:
     dependency: "direct main"
     description:
       name: async
-      sha256: bfe67ef28df125b7dddcea62755991f807aa39a2492a23e1550161692950bbe0
+      sha256: "947bfcf187f74dbc5e146c9eb9c0f10c9f8b30743e341481c1e2ed3ecc18c20c"
       url: "https://pub.dev"
     source: hosted
-    version: "2.10.0"
+    version: "2.11.0"
   badges:
     dependency: "direct main"
     description:
@@ -332,10 +332,11 @@ packages:
   dd_js_util:
     dependency: "direct main"
     description:
-      path: "../dd_js_util"
-      relative: true
-    source: path
-    version: "4.3.0"
+      name: dd_js_util
+      sha256: ed5c09926a76f3a1de5191f2165f38c91b08a91f115b7060c021f3dd08091f7d
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.3.2"
   dd_models:
     dependency: "direct main"
     description:
@@ -686,10 +687,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_swiper_null_safety_flutter3
-      sha256: ebd62ab62a7a424bf25a647d2a7a9cc0ec66ab347d4f9748a28a6c566872fcd1
+      sha256: "19e37d999c128f39502a570989e05376bf7d5fd4f9ab3c0e2118244e7047d5ed"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.1"
+    version: "4.0.0"
   flutter_syntax_view:
     dependency: "direct main"
     description:
@@ -1776,10 +1777,10 @@ packages:
     dependency: "direct main"
     description:
       name: webview_flutter
-      sha256: "789d52bd789373cc1e100fb634af2127e86c99cf9abde09499743270c5de8d00"
+      sha256: "04a0782fb058b7c71f2048935583488f4d32e9147ca403abc4e58f1de9964629"
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.2"
+    version: "4.2.3"
   webview_flutter_android:
     dependency: transitive
     description:
@@ -1846,4 +1847,4 @@ packages:
     version: "1.4.0"
 sdks:
   dart: ">=3.1.0-185.0.dev <4.0.0"
-  flutter: ">=3.13.0"
+  flutter: ">=3.13.1"

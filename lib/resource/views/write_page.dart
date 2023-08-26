@@ -19,12 +19,28 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
 
   bool _showImageUploadComp = false; //是否显示图片上传组件
 
+  ///分享的产品
+  late ProductShare? share = params.mapOrNull((value) => null,
+      dynWritePageParam: (value) => value.productShare);
+
+  late String appbarTitle =
+      params.mapOrNull((value) => "发布", dynWritePageParam: (value) => value.title) ??
+          "发布";
+
+  late bool selectOtherCategoryDisabled = params.mapOrNull(
+        (value) => false,
+        dynWritePageParam: (value) => value.disableSelectOtherCategory,
+      ) ??
+      false;
+
+  late bool showProductShareCard = share != null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('发布'),
+        title: Text(appbarTitle),
         centerTitle: true,
         leading: TextButton(
           onPressed: () => Navigator.pop(context),
@@ -36,7 +52,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                 context.hideKeyBoard();
                 context.askOk(const AskOkDialogParams(
                     title: Text("提示"),
-                    content: Text('请文明发言'),
+                    content: Text('请文明发言,不要发布违规内容'),
                     cancelText: '关闭',
                     okText: '我知道了'));
               },
@@ -67,7 +83,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
             ),
             Expanded(
               child: TextField(
-                decoration: _decoration("写一下你的面基经历吧,出发前准备，面基过程，结束面基后的感受"),
+                decoration: _decoration(params.hintText ?? "说点什么吧"),
                 maxLines: 30,
                 minLines: 8,
                 onChanged: (v) {
@@ -132,7 +148,9 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                     ),
                   ],
                 ),
-              )
+              ),
+            if (!_showImageUploadComp && showProductShareCard)
+              _ShareProductWidget(model: share)
           ],
         ),
       ),
@@ -157,12 +175,17 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
     context.hideKeyBoard();
     final api = getIt.get<MyResourceCreateApi>();
     final files = await _getFiles();
-    api.formData = FormData.fromMap({
+    final data = {
       "files": files,
       "content": content,
       "cateName": params.name,
-      "title": title
-    });
+      "title": title,
+    };
+    if (share != null) {
+      data.addAll({"share": jsonEncode(share)});
+    }
+    kLog(data);
+    api.formData = FormData.fromMap(data);
     final r = await api.request(const R());
     r.simpleToast(ifOk: () {
       GetIt.instance.get<UserResourceListRepository>().refresh(true); //刷新
@@ -195,7 +218,20 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                 onChange: (value) => setState(() {
                   params = params.copyWith(name: value.name);
                 }),
+                selectOther: !selectOtherCategoryDisabled,
               ).expanded,
+              if (share != null)
+                ImageWrapper(
+                        child: Badge.count(
+                            count: 1,
+                            child: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    showProductShareCard = !showProductShareCard;
+                                  });
+                                },
+                                icon: const Icon(Icons.shopping_bag_rounded))))
+                    .marginOnly(right: 6),
               ImageWrapper(
                 child: IconButton(
                     onPressed: () {
@@ -232,6 +268,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
 class _ImageShow extends StatelessWidget {
   final PictureSelectionItemModel image;
   final ValueChanged<PictureSelectionItemModel>? onDelete;
+
   const _ImageShow({required this.image, this.onDelete});
 
   @override
@@ -280,9 +317,13 @@ class _ImageShow extends StatelessWidget {
 class SelectResCategory extends StatefulWidget {
   final String initCategoryName;
   final ValueChanged<ResourceCategory>? onChange;
+  final bool selectOther;
 
   const SelectResCategory(
-      {super.key, required this.initCategoryName, this.onChange});
+      {super.key,
+      required this.initCategoryName,
+      this.onChange,
+      required this.selectOther});
 
   @override
   State<SelectResCategory> createState() => _SelectResCategoryState();
@@ -328,8 +369,9 @@ class _SelectResCategoryState extends State<SelectResCategory> {
                   label:
                       Text(selectResCategory?.name ?? widget.initCategoryName)),
               //后面放一些推荐的
-              TextButton(onPressed: _selectMore, child: const Text('选择其他'))
-                  .marginOnly(left: 12)
+              if (widget.selectOther)
+                TextButton(onPressed: _selectMore, child: const Text('选择其他'))
+                    .marginOnly(left: 12)
             ],
           )),
     );
@@ -356,3 +398,57 @@ class _SelectResCategoryState extends State<SelectResCategory> {
     });
   }
 }
+
+///产品分享
+class _ShareProductWidget extends StatelessWidget {
+  final ProductShare? model;
+
+  const _ShareProductWidget({this.model});
+
+  @override
+  Widget build(BuildContext context) {
+    if (model == null) {
+      return const SizedBox();
+    }
+    const size = 60.0;
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Row(
+          children: [
+            ImageView(
+                image: MyImage.network(
+                    url: model!.image,
+                    params: ImageParams(
+                        size: size,
+                        borderRadius: BorderRadius.circular(12),
+                        shape: BoxShape.rectangle,
+                        fit: BoxFit.cover))),
+            const SizedBox(
+              width: 12,
+            ),
+            Expanded(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minHeight: size),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(model!.title, style: context.textTheme.titleMedium),
+                    Text(
+                      "售价:${model!.price}",
+                      style: context.textTheme.bodyMedium
+                          ?.copyWith(color: context.primaryColor),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//

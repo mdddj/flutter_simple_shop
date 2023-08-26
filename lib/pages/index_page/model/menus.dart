@@ -6,6 +6,7 @@ import '../../../api/apis.dart';
 import '../../../freezed/home_menu.dart';
 import '../../../freezed/meituran_result.dart';
 import '../../../freezed/pager.dart';
+import '../../../freezed/resource_category.dart';
 import '../../../index.dart';
 
 final indexMenus = IListConst<HomeMenu>([
@@ -13,7 +14,8 @@ final indexMenus = IListConst<HomeMenu>([
       title: '饿了吧',
       svgpath: 'assets/svg/elm_logo.svg',
       routerPath: pagerUtil.elm.routername),
-  const HomeMenu(title: '美团券', svgpath: 'assets/svg/mt.svg', onTap: _mt,onLongTap: _mtmc),
+  const HomeMenu(
+      title: '美团券', svgpath: 'assets/svg/mt.svg', onTap: _mt, onLongTap: _mtmc),
   const HomeMenu(title: '排行', svgpath: 'assets/svg/phb.svg'),
   HomeMenu(
       title: '典の日常',
@@ -33,8 +35,15 @@ final indexMenus = IListConst<HomeMenu>([
       title: '发布日常',
       icon: const Icon(Icons.edit),
       routerPath: pagerUtil.resourceWrite.routername,
-      extra: DynWriteParams(name: '典の日常')),
-  const HomeMenu(title: '习惯の养成', icon: Icon(Icons.accessibility)),
+      extra: PagerParams.dynWritePageParam(name: '典の日常')),
+  HomeMenu(
+      title: '买家秀',
+      icon: const Icon(Icons.audiotrack_sharp),
+      routerPath: pagerUtil.resourceList.routername,
+      extra: PagerParams.dynListPageParam(
+          name: "买家秀社区",
+          emptyText: "快去分享产品吧",
+          style: ResourceWidgetCardStyle.card)),
   HomeMenu(
       title: '面基申请',
       icon: const Icon(Icons.add_circle),
@@ -45,12 +54,11 @@ final indexMenus = IListConst<HomeMenu>([
       routerPath: pagerUtil.meetList.routername)
 ]);
 
-
 ///美团领券打开
 void _mt() {
   LB.show<MeituanResult, ZheMeituanApi>(ZheMeituanApi(),
       successResult: (value) {
-    appLaunchUrl(value.data,failMessage: '无法打开链接,请检查是否安装美团APP');
+    appLaunchUrl(value.data, failMessage: '无法打开链接,请检查是否安装美团APP');
   }, params: const R(data: <String, dynamic>{"actId": "33", "linkType": "2"}));
 }
 
@@ -58,6 +66,6 @@ void _mt() {
 void _mtmc() {
   LB.show<MeituanResult, ZheMeituanApi>(ZheMeituanApi(),
       successResult: (value) {
-        appLaunchUrl(value.data,failMessage: '无法打开链接,请检查是否安装美团APP');
-      }, params: const R(data: <String, dynamic>{"actId": "4", "linkType": "2"}));
+    appLaunchUrl(value.data, failMessage: '无法打开链接,请检查是否安装美团APP');
+  }, params: const R(data: <String, dynamic>{"actId": "4", "linkType": "2"}));
 }
