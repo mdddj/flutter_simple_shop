@@ -43,7 +43,7 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
     return Scaffold(
       backgroundColor: context.cardColor,
       appBar: AppBar(
-        title: const Text("瞬间"),
+        title: const Text("动态"),
         actions: [
           if (_resource != null)
             IconButton(

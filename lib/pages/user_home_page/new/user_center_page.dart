@@ -23,6 +23,29 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    final isLogin = ref.isLogin;
+    if (isLogin.not) {
+      return Card(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "请先登录查看更多内容",
+                style: context.textTheme.titleMedium,
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              FilledButton(
+                  onPressed: () => context.push(pagerUtil.login.routername),
+                  child: const Text('登录&注册'))
+            ],
+          ),
+        ),
+      );
+    }
     return Scaffold(
       body: NestedScrollView(
           headerSliverBuilder: (a, b) {
@@ -31,7 +54,8 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
                 pinned: true,
                 centerTitle: true,
                 backgroundColor: context.primaryColor,
-                expandedHeight: context.isDesktop ? 200 : size.width * 0.5,
+                expandedHeight:
+                    context.isDesktop ? 200 : (size.width * 0.5) + 100,
                 flexibleSpace: (v) {
                   return Stack(
                     children: [
@@ -76,8 +100,8 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
 }
 
 enum TabItem {
-  moment("瞬间");
-  // media("媒体"),
+  moment("动态"),
+  media("媒体");
   // comment("评论"),
   // report("举报");
 
@@ -110,10 +134,10 @@ class _TabViewContainerState extends ConsumerState<TabViewContainer>
         return const MyLoadingMoreCustomScrollView(
           slivers: [UserResourceWidget()],
         );
-      // case TabItem.media:
-      //   return MyLoadingMoreCustomScrollView(
-      //     slivers: [_Files()],
-      //   );
+      case TabItem.media:
+        return MyLoadingMoreCustomScrollView(
+          slivers: [_Files()],
+        );
       // case TabItem.comment:
       //   return Container(
       //     alignment: Alignment.center,
@@ -232,23 +256,87 @@ class _Userinfo extends ConsumerWidget {
                                       .bodySmall
                                       ?.copyWith(),
                                 ),
-                              Text(
-                                ref.user?.getIntro() ?? '点击编辑你的自我介绍',
-                                style: context.textTheme.bodySmall?.copyWith(
-                                    color: context.colorScheme.secondary),
-                              )
-                                  .marginOnly(top: 12)
-                                  .click(() => _updateDesc(context, ref)),
+                              if (ref.isLogin)
+                                Text(
+                                  ref.user?.getIntro() ?? '点击编辑你的自我介绍',
+                                  style: context.textTheme.bodySmall?.copyWith(
+                                      color: context.colorScheme.secondary),
+                                )
+                                    .marginOnly(top: 12)
+                                    .click(() => _updateDesc(context, ref)),
                             ],
                           ),
                         )),
                         // if (ref.isLogin) const _HeaderSetting()
                       ],
                     ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Container(
+                      constraints: const BoxConstraints(maxHeight: 80),
+                      child: Row(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              context.push(pagerUtil.order.routername);
+                            },
+                            child: BlurryContainer(
+                                height: double.infinity,
+                                width: context.screenWidth * 0.3,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ImageWrapper(
+                                      child: SvgPicture.asset(
+                                          'assets/svg/user/llls.svg',
+                                          width: 32,
+                                          height: 32,
+                                          colorFilter: ColorFilter.mode(
+                                              context.primaryColor,
+                                              BlendMode.srcIn)),
+                                    ),
+                                    const SizedBox(
+                                      height: 3,
+                                    ),
+                                    Text("我的订单",
+                                        style: context.textTheme.titleSmall)
+                                  ],
+                                )),
+                          ),
+                          BlurryContainer(
+                              height: double.infinity,
+                              width: context.screenWidth * 0.3,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ImageWrapper(
+                                    child: SvgPicture.asset(
+                                        'assets/svg/user/qb.svg',
+                                        width: 32,
+                                        height: 32,
+                                        colorFilter: ColorFilter.mode(
+                                            context.primaryColor,
+                                            BlendMode.srcIn)),
+                                  ),
+                                  const SizedBox(
+                                    height: 3,
+                                  ),
+                                  Text(
+                                    "钱包",
+                                    style: context.textTheme.titleSmall,
+                                  )
+                                ],
+                              )).marginOnly(left: 12)
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
-            )
+            ),
         ],
       ),
     );
@@ -283,7 +371,15 @@ class _Bg extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      color: context.userCenterPageNavBg,
+      decoration: BoxDecoration(
+          color: context.userCenterPageNavBg,
+          image: DecorationImage(
+              image: const AssetImage(
+                'assets/images/u-bg.jpg',
+              ),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                  context.primaryColor.withOpacity(.2), BlendMode.hue))),
     );
   }
 }
@@ -294,7 +390,7 @@ class _Files extends JpaListWidget<FileInfo, MyUserFilesApi> {
     return Stack(
       children: [
         AspectRatio(
-          aspectRatio: item.width / item.height,
+          aspectRatio: item.width == 0 ? 1 : item.width / item.height,
           child: ImageView(
             image: MyImage.network(
                 url: item.url,

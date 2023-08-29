@@ -20,7 +20,7 @@ part 'base.dart';
 part 'tkapi.dart';
 part 'zhe_api.dart';
 part 'resource.dart';
-
+part 'user.dart';
 mixin ApiPageMixin on MyAppCoreApi {
   set page(int v) => params['page'] = v;
 

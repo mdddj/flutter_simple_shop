@@ -9,7 +9,7 @@ class IndexHomeNew extends ConsumerStatefulWidget {
 }
 
 class IndexHomeNewState extends ConsumerState<IndexHomeNew>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin ,AutomaticKeepAliveClientMixin {
   late TabController tabController = TabController(
       length: ref
               .watch(categoryRiverpod.select((value) => value.categorys))
@@ -19,6 +19,7 @@ class IndexHomeNewState extends ConsumerState<IndexHomeNew>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       appBar: IndexHomeAppbar(
         tabController: tabController,
@@ -35,6 +36,9 @@ class IndexHomeNewState extends ConsumerState<IndexHomeNew>
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 class HomeWidgets extends ConsumerStatefulWidget {

@@ -1,6 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import '../../../modals/pdd_search_item_model.dart';
 import '../../../widgets/index.dart';
 import '../../public_detail/view.dart';
@@ -29,7 +28,7 @@ class SearchPageState extends State<SearchPage> {
           // hintText: '搜索拼多多隐藏优惠券',
           // onSearch: (keywold){},
           ),
-      body: EasyRefresh.custom(slivers: [
+      body: MyLoadingMoreCustomScrollView(slivers: [
         SliverFillRemaining(
             child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 800),

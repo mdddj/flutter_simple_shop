@@ -33,63 +33,66 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: AppBar(
         title: const Text("注册典典账号"),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        child: Form(
-            key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextFormField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(label: Text("邮箱")),
-                  validator: (value) => value == null ? "请输入邮箱" : null,
-                  controller: _emailController,
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                TextFormField(
-                  controller: _codeController,
-                  decoration: InputDecoration(
-                      label: const Text("邮箱验证码"), suffixIcon: _getCodeBtn),
-                  validator: (value) => value?.length != 6 ? "请输入验证码" : null,
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                TextFormField(
-                  controller: _passController,
-                  decoration: const InputDecoration(label: Text("密码")),
-                  validator: (value) =>
-                      (value?.length ?? 0) < 6 ? "请输入正确的密码" : null,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  controller: _finalPassController,
-                  decoration: const InputDecoration(label: Text("确认密码")),
-                  validator: (value) {
-                    if (value == null || value.length < 6) {
-                      return "请输入正确的密码";
-                    }
-                    if (value != _pass) {
-                      return "两次密码不一致,请检查";
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                    width: double.infinity,
-                    child: FilledButton(
-                        onPressed: _register, child: const Text("注册")))
-              ],
-            )),
+      body: Card(
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(label: Text("邮箱")),
+                    validator: (value) => value == null ? "请输入邮箱" : null,
+                    controller: _emailController,
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  TextFormField(
+                    controller: _codeController,
+                    decoration: InputDecoration(
+                        label: const Text("邮箱验证码"), suffixIcon: _getCodeBtn),
+                    validator: (value) => value?.length != 6 ? "请输入验证码" : null,
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  TextFormField(
+                    controller: _passController,
+                    decoration: const InputDecoration(label: Text("密码")),
+                    validator: (value) =>
+                        (value?.length ?? 0) < 6 ? "请输入正确的密码" : null,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    controller: _finalPassController,
+                    decoration: const InputDecoration(label: Text("确认密码")),
+                    validator: (value) {
+                      if (value == null || value.length < 6) {
+                        return "请输入正确的密码";
+                      }
+                      if (value != _pass) {
+                        return "两次密码不一致,请检查";
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                      width: double.infinity,
+                      child: FilledButton(
+                          onPressed: _register, child: const Text("注册")))
+                ],
+              )),
+        ),
       ),
     );
   }

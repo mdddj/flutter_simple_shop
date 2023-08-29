@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 import '../../widgets/index.dart';
 
@@ -21,7 +20,7 @@ class DynamicPagePageState extends State<DynamicPagePage> {
             child: const Text('发布动态'),
           )
         ]),
-        body: EasyRefresh.custom(slivers: const []));
+    );
   }
 
   @override

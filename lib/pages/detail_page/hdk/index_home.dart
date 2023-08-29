@@ -456,7 +456,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                             ),
                             Text(
                               '使用日期:${getTimeStr(info!.couponStartTime)} - ${getTimeStr(info!.couponEndTime)}',
-                              style: context.textTheme.labelSmall,
+                              style: context.textTheme.bodyMedium?.copyWith(
+                                color: context.colorScheme.surfaceVariant
+                              ),
                             )
                           ],
                         ),
@@ -643,13 +645,11 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
       duration: 1000,
       loop: true,
       itemBuilder: (BuildContext context, int index) {
-        return ExtendedImageWidget(
-          width: context.screenWidth,
+        return ImageView(image: MyImage.network(url: getImages().get(index),params: ImageParams(
+          width: double.infinity,
           height: context.screenWidth,
-          src: getImages()[index],
-          fit: BoxFit.fill,
-          knowSize: true,
-        );
+          fit: BoxFit.cover
+        )));
       },
       onIndexChanged: (index) {
         setState(() {
@@ -705,9 +705,14 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
             alignment: Alignment.centerRight,
             child: const Icon(
               Icons.more_horiz,
-              color: Colors.black,
             ),
-          ),
+          ).click(() {
+            final url =  couponLinkResult?.kuaiZhanUrl;
+            if(url!=null){
+              Share.share(url);
+            }
+
+          }),
         ],
       ),
     );

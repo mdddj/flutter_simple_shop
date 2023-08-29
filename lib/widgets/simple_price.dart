@@ -34,9 +34,9 @@ class SimplePrice extends StatelessWidget {
                 fontWeight: FontWeight.w800)),
         TextSpan(
           text: '$price ',
-          style: TextStyle(
+          style: context.textTheme.titleLarge?.copyWith(
               color: color ?? Colors.red,
-              fontSize: fontSize ?? 18,
+              fontSize: fontSize,
               fontWeight: FontWeight.w800),
         ),
         if (zhe != null)

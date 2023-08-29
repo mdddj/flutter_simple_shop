@@ -192,6 +192,8 @@ class Res {
 
   static const assetsImagesLogoPng = 'assets/images/logo.png';
 
+  static const assetsImagesUBgJpg = 'assets/images/u-bg.jpg';
+
   static const assetsImagesXsmsPng = 'assets/images/xsms.png';
 
   static const assetsImagesFailedPng = 'assets/images/failed.png';

@@ -96,7 +96,8 @@ class App extends ConsumerWidget {
                             context.push(pagerUtil.setting.routername);
                           },
                           icon: const Icon(Icons.settings)),
-                      const SizedBox(height: 22)
+                      Tooltip(message: "退出登录",child: IconButton(onPressed: (){}, icon: const Icon(Icons.logout)).ifShow(ref.isLogin),),
+                      const SizedBox(height: 12)
                     ],
                   ),
                 ),

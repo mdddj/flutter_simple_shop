@@ -1,12 +1,10 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../widgets/index.dart';
 import '../../index.dart';
 import '../../public_detail/view.dart';
-// Project imports:
 import '../wph_riverpod.dart';
 
 /// 唯品会精编商品列表
@@ -29,14 +27,13 @@ class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
   @override
   Widget build(BuildContext context) {
     final list = ref.watch(wphRiveroid.select((value) => value.products));
-    return EasyRefresh.custom(
+    return MyLoadingMoreCustomScrollView(
       slivers: [
         SliverList(
             delegate: SliverChildBuilderDelegate(
                 (_, index) => renderItem(list[index]),
                 childCount: list.length))
       ],
-      onLoad: ref.read(wphRiveroid).nextPage,
     );
   }
 

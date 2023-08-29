@@ -1,7 +1,4 @@
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
-import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
+part of repository;
 
 class GoodsListRepository extends LoadingMoreBase<ProductModel> {
   int pageindex = 1;

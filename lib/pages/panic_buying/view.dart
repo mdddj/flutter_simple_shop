@@ -15,7 +15,6 @@ class PanicBuyingPage extends ConsumerStatefulWidget {
 
 class PanicBuyingPageState extends ConsumerState<PanicBuyingPage>
     with SingleTickerProviderStateMixin {
-  final EasyRefreshController easyRefreshController = EasyRefreshController();
 
   late final TabController _tabController =
       TabController(length: ref.categorys.length + 2, vsync: this);
@@ -55,11 +54,6 @@ class PanicBuyingPageState extends ConsumerState<PanicBuyingPage>
     );
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    easyRefreshController.dispose();
-  }
 }
 
 ///页面

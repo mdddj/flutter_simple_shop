@@ -35,7 +35,7 @@ class ActivityViewPageState extends State<ActivityViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SimpleAppBar(title: widget.title),
-      body: EasyRefresh.custom(slivers: [
+      body: MyLoadingMoreCustomScrollView(slivers: [
         SliverPadding(
             padding: const EdgeInsets.all(12),
             sliver: SliverWaterfallFlow.count(

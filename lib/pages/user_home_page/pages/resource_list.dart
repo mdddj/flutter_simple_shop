@@ -21,7 +21,7 @@ class UserResourceWidget extends StatefulWidget {
   State<UserResourceWidget> createState() => _UserResourceWidgetState();
 }
 
-class _UserResourceWidgetState extends State<UserResourceWidget> {
+class _UserResourceWidgetState extends State<UserResourceWidget> with AutomaticKeepAliveClientMixin {
   final _repository = GetIt.instance.get<UserResourceListRepository>();
 
   AppActionMenu actionMenu(Resource resource) {
@@ -41,6 +41,7 @@ class _UserResourceWidgetState extends State<UserResourceWidget> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return MyLoadingMoreSliverList(MySliverListConfig<Resource>(
         itemBuilder: _itemBuilder,
         sourceList: _repository,
@@ -73,4 +74,7 @@ class _UserResourceWidgetState extends State<UserResourceWidget> {
   void successResult(WrapJson value) {
     value.print();
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

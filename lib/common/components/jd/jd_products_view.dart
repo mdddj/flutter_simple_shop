@@ -20,14 +20,12 @@ class JdProductsViewState extends State<JdProductsView> {
         final products =
             ref.watch(jdProductsRiverpod.select((value) => value.products));
 
-        return EasyRefresh.custom(slivers: [
-          SliverWaterfallFlow.count(
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
-            crossAxisCount: 2,
-            children: products.map(renderItem).toList(),
-          )
-        ]);
+        return SliverWaterfallFlow.count(
+          mainAxisSpacing: 12,
+          crossAxisSpacing: 12,
+          crossAxisCount: 2,
+          children: products.map(renderItem).toList(),
+        );
       },
     );
   }

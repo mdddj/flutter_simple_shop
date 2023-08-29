@@ -10,7 +10,6 @@ import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory, asT;
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_it/get_it.dart';

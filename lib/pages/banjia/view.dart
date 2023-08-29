@@ -45,7 +45,7 @@ class BanjiaIndexState extends ConsumerState<BanjiaIndex> {
         title: '每日半价',
         titleColor: Colors.white,
       ),
-      body: EasyRefresh.custom(scrollController: scrollController, slivers: [
+      body: MyLoadingMoreCustomScrollView(controller: scrollController, slivers: [
         SliverPersistentHeader(
           delegate: FloatWidget(child: const BanjiaSessions(), height: 48),
           pinned: true,

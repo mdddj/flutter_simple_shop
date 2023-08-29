@@ -49,7 +49,6 @@ class BrandItemCard extends StatelessWidget {
                         storeInfo.brandname,
                         style: const TextStyle(
                             fontSize: 14,
-                            color: Colors.black,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(

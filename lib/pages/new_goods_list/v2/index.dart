@@ -12,7 +12,7 @@ class CategoryGoodsList extends ConsumerStatefulWidget {
   }
 }
 
-class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
+class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> with AutomaticKeepAliveClientMixin{
   ///数据仓库
   ProductListRepository repository = ProductListRepository();
 
@@ -28,6 +28,7 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return LoadingMoreList(ListConfig<ProductModel>(
         itemBuilder: _renderLayout,
         sourceList: repository,
@@ -78,4 +79,7 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> {
       setState(() {});
     }
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

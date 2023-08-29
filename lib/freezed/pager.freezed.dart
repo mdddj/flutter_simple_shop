@@ -704,8 +704,6 @@ class _$DynPageParams extends DynPageParams {
   }
 }
 
-
-
 abstract class DynPageParams extends PagerParams {
   factory DynPageParams(
       {required final String name,

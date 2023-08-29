@@ -19,7 +19,7 @@ class BestSellerListPageState extends ConsumerState<BestSellerListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const SimpleAppBar(title: '畅销榜单'),
-      body: EasyRefresh.custom(slivers: [
+      body: MyLoadingMoreCustomScrollView(slivers: [
         SliverPadding(
             padding: const EdgeInsets.all(12),
             sliver: SliverWaterfallFlow.count(

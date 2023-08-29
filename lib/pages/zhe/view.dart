@@ -1,7 +1,7 @@
 // Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../widgets/index.dart';
 import '../index.dart';
@@ -15,7 +15,6 @@ class ZheIndex extends ConsumerStatefulWidget {
 }
 
 class ZheIndexState extends ConsumerState<ZheIndex> {
-  final EasyRefreshController easyRefreshController = EasyRefreshController();
   final ScrollController scrollController = ScrollController();
 
   @override
@@ -43,9 +42,8 @@ class ZheIndexState extends ConsumerState<ZheIndex> {
         ),
         bottomHeight: 48,
       ),
-      body: EasyRefresh.custom(
-        controller: easyRefreshController,
-        scrollController: scrollController,
+      body: MyLoadingMoreCustomScrollView(
+        controller: scrollController,
         slivers: [
           if (loading)
             const SliverToBoxAdapter(
@@ -53,17 +51,6 @@ class ZheIndexState extends ConsumerState<ZheIndex> {
             ),
           ProductsList(products)
         ],
-        onLoad: () async {
-          final hasNextPage = await ref.read(zheRiverpod).nextPage();
-          if (scrollController.hasClients) {
-            easyRefreshController.finishLoad(noMore: hasNextPage);
-          }
-        },
-        footer: MaterialFooter(),
-        header: MaterialHeader(),
-        onRefresh: () async {
-          await ref.read(zheRiverpod).refresh();
-        },
       ),
     );
   }
@@ -71,7 +58,6 @@ class ZheIndexState extends ConsumerState<ZheIndex> {
   @override
   void dispose() {
     scrollController.dispose();
-    easyRefreshController.dispose();
     super.dispose();
   }
 }

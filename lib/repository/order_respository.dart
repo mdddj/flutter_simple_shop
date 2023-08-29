@@ -1,7 +1,5 @@
+part of repository;
 
-import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-
-import '../modals/order_list_model.dart';
 
 class OrderRespository extends LoadingModel<OrderAuditObject>{
 

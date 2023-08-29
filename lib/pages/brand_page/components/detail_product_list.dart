@@ -50,8 +50,7 @@ class DetailProductList extends StatelessWidget {
         children: [
           Text(
             item.title,
-            style: const TextStyle(
-                color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle( fontSize: 15, fontWeight: FontWeight.bold),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),

@@ -1,10 +1,6 @@
-// Flutter imports:
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-// Package imports:
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-// Project imports:
 import '../components/list.dart';
 import '../loading.dart';
 import '../pyq_riverpod.dart';
@@ -30,15 +26,11 @@ class PyqViewState extends ConsumerState<PyqView> {
 
   @override
   Widget build(BuildContext context) {
-    return EasyRefresh.custom(
-      slivers: const [
+    return const MyLoadingMoreCustomScrollView(
+      slivers: [
         PyQLoading(),
         PyqList()
       ],
-      onLoad: ()async{
-        await ref.read(pyqRiverpod).nextPage();
-      },
-      footer: MaterialFooter(),
     );
   }
 }

@@ -38,7 +38,6 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(appbarTitle),
         centerTitle: true,
@@ -76,10 +75,10 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                   prefixIconColor: Colors.transparent),
               onChanged: (v) => title = v,
             ),
-            Divider(
+            const Divider(
               indent: 12,
               endIndent: 12,
-              color: Colors.grey.shade200,
+              color: Colors.transparent,
             ),
             Expanded(
               child: TextField(
@@ -163,7 +162,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   InputDecoration _decoration(String hint) {
     return InputDecoration(
         hintText: hint,
-        fillColor: Colors.white,
+        fillColor: context.theme.scaffoldBackgroundColor,
         filled: true,
         hintStyle: const TextStyle(color: Colors.grey),
         border: _inputBorder,

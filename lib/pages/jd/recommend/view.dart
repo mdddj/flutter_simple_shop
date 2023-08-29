@@ -1,7 +1,6 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 class RecommendPage extends StatefulWidget {
@@ -27,13 +26,11 @@ class RecommendPageState extends State<RecommendPage> {
 
   Widget renderProducts() {
     final items = [];
-    return EasyRefresh(
-      child: WaterfallFlow.builder(
-        itemBuilder: itemBuilder,
-        itemCount: items.length,
-        padding: const EdgeInsets.all(12),
-        gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 12, crossAxisSpacing: 12),
-      ),
+    return WaterfallFlow.builder(
+      itemBuilder: itemBuilder,
+      itemCount: items.length,
+      padding: const EdgeInsets.all(12),
+      gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 12, crossAxisSpacing: 12),
     );
   }
 
