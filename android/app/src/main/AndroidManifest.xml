@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="shop.itbug.demo1">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="shop.itbug.demo1">
 
     <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
+            android:name="android.hardware.camera"
+            android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,32 +15,35 @@
 
 
     <application
-        android:icon="@mipmap/ic_launcher"
-        android:label="典典的小卖部"
-        tools:replace="android:label">
+            android:icon="@mipmap/ic_launcher"
+            android:label="典典的小卖部"
+            tools:replace="android:label"
+            android:networkSecurityConfig="@xml/network_security_config">
         <activity
-            android:name=".MainActivity"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-            android:exported="true"
-            android:hardwareAccelerated="true"
-            android:launchMode="singleTop"
-            android:theme="@style/LaunchTheme"
-            android:windowSoftInputMode="adjustResize">
+                android:name=".MainActivity"
+                android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+                android:exported="true"
+                android:hardwareAccelerated="true"
+                android:launchMode="singleTop"
+                android:theme="@style/LaunchTheme"
+                android:windowSoftInputMode="adjustResize"
+
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
             <meta-data
-                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
-                android:value="true" />
+                    android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+                    android:value="true" />
             <meta-data
-                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-                android:resource="@drawable/launch_background" />
+                    android:name="io.flutter.embedding.android.SplashScreenDrawable"
+                    android:resource="@drawable/launch_background" />
         </activity>
         <meta-data
-            android:name="flutterEmbedding"
-            android:value="2" />
+                android:name="flutterEmbedding"
+                android:value="2" />
     </application>
 
 

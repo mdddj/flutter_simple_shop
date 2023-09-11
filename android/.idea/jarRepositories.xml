@@ -17,8 +17,8 @@
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="Google8" />
-      <option name="name" value="Google8" />
+      <option name="id" value="Google17" />
+      <option name="name" value="Google17" />
       <option name="url" value="https://dl.google.com/dl/android/maven2/" />
     </remote-repository>
     <remote-repository>

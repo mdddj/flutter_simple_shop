@@ -14,59 +14,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="细节优化">
-      <change afterPath="$PROJECT_DIR$/assets/images/u-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/api/user.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/freezed/user_order_info.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/freezed/user_order_info.freezed.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/freezed/user_order_info.g.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/order/model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/order/user_order_index.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/repository/user_order.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flutter_simple_shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flutter_simple_shop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/apis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/components/jd/jd_products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/jd/jd_products_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/pager.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/pager.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/release/app-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/init.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/init.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/activity_page/activity_view/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/activity_page/activity_view/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/banjia/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/banjia/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/best_seller_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/best_seller_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/components/detail_product_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/components/detail_product_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/components/item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/components/item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic/pages/pyq.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic/pages/pyq.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic/pages/wph.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic/pages/wph.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic_page/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic_page/view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/jd/recommend/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/jd/recommend/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/panic_buying/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/panic_buying/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/pinduoduo/search/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/pinduoduo/search/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/login/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/login/login_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/new/user_center_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/new/user_center_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/pages/resource_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/pages/resource_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/zhe/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/zhe/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repository/goods_list_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repository/goods_list_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repository/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repository/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/repository/order_respository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repository/order_respository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/res.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/res.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/resource/repository/my_resource_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/repository/my_resource_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/resource/views/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/detail.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/resource/views/write_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/write_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/router.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/simple_price.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/simple_price.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Podfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,31 +114,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ResourceManagerPrefKey.ResourceType": "DRAWABLE",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cidr.known.project.marker": "true",
-    "com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable": "ALL",
-    "git-widget-placeholder": "master",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/ldd/flutter_simple_shop/assets/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.23908046",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;DRAWABLE&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;ALL&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ldd/flutter_simple_shop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.23908046&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>

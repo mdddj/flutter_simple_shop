@@ -415,22 +415,23 @@ class _FilesRepo extends JpaPageLoadingMore<FileInfo, MyUserFilesApi> {
   FileInfo covertData(Map<String, dynamic> json) => FileInfo.fromJson(json);
 }
 
-class _ReportsRepo extends JpaPageLoadingMore<Report, MyApiWithReportList> {
-  @override
-  Report covertData(Map<String, dynamic> json) => Report.fromJson(json);
-}
+// class _ReportsRepo extends JpaPageLoadingMore<Report, MyApiWithReportList> {
+//   @override
+//   Report covertData(Map<String, dynamic> json) => Report.fromJson(json);
+// }
 
 ///举报列表
-class _Reports extends JpaListWidget<Report, MyApiWithReportList> {
-  @override
-  Widget buildLayout(BuildContext context, Report item, int index) {
-    return Container();
-  }
+// @Doc(message: "举报列表")
+// class _Reports extends JpaListWidget<Report, MyApiWithReportList> {
+//   @override
+//   Widget buildLayout(BuildContext context, Report item, int index) {
+//     return Container();
+//   }
 
-  @override
-  JpaPageLoadingMore<Report, MyApiWithReportList> get sourceList =>
-      _ReportsRepo();
-}
+//   @override
+//   JpaPageLoadingMore<Report, MyApiWithReportList> get sourceList =>
+//       _ReportsRepo();
+// }
 
 class _PhoneThemeSetting extends StatelessWidget {
   const _PhoneThemeSetting();

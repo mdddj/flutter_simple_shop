@@ -61,7 +61,6 @@ import '../freezed/file_info.dart';
 import '../freezed/home_menu.dart';
 import '../freezed/pager.dart';
 import '../freezed/product_share.dart';
-import '../freezed/report.dart';
 import '../freezed/resource_category.dart';
 import '../freezed/user_order_info.dart';
 import '../freezed/xb_result.dart';

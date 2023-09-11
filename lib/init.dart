@@ -10,8 +10,8 @@ Future<void> appInit(VoidCallback start) async {
     connectTimeout: const Duration(seconds: 30),
   );
   if (useEnv.debugMode) {
-    DdCheckPlugin.instance.init(BaseApi.getDio(),
-        initHost: "192.168.199.79",
+    DdCheckPlugin().init(BaseApi.getDio(),
+        initHost: "192.168.199.78",
         port: 9998,
         customCoverterResponseData: (model) {
           final body = model.response?.data;
