@@ -20,7 +20,7 @@ class FavoritesRepository
   void delete(MyFavoritesModel model) {
     array = array.remove(model);
     if (array.isEmpty) {
-      indicatorStatus = IndicatorStatus.empty;
+      indicatorStatus = IndicatorStatusModel.empty();
     }
     setState();
   }

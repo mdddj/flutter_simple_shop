@@ -58,7 +58,7 @@ class _BrandListWidgetState extends State<BrandListWidget>
     return BrandItemCard(storeInfo: item);
   }
 
-  Widget? _indicatorBuilder(BuildContext context, IndicatorStatus status) {
+  Widget? _indicatorBuilder(BuildContext context, IndicatorStatusModel status) {
     return CustomLoadingMoreWidget(context, status, retry: () {
       response.refresh(true);
     }, emptyChild: const SizedBox());

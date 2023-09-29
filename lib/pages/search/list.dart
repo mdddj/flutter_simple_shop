@@ -17,7 +17,7 @@ class SearchListIndex extends ConsumerWidget {
           sourceList: SearchRepository(value),
           padding: const EdgeInsets.all(8),
           indicatorBuilder: (context, status) {
-            return LoadingMoreListCostumIndicator(status);
+            return CustomLoadingMoreWidget(context,status);
           },
           extendedListDelegate:
               SliverWaterfallFlowDelegateWithFixedCrossAxisCount(

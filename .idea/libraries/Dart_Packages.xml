@@ -33,7 +33,7 @@
         <entry key="archive">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/archive-3.3.6/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/archive-3.4.3/lib" />
             </list>
           </value>
         </entry>
@@ -47,7 +47,7 @@
         <entry key="asn1lib">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/asn1lib-1.4.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/asn1lib-1.5.0/lib" />
             </list>
           </value>
         </entry>
@@ -138,21 +138,21 @@
         <entry key="cached_network_image">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image-3.2.3/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image-3.3.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="cached_network_image_platform_interface">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image_platform_interface-2.0.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image_platform_interface-3.0.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="cached_network_image_web">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image_web-1.0.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image_web-1.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -292,14 +292,14 @@
         <entry key="dd_check_plugin">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-2.5.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-2.5.1/lib" />
             </list>
           </value>
         </entry>
         <entry key="dd_js_util">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-4.4.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-4.5.3/lib" />
             </list>
           </value>
         </entry>
@@ -320,14 +320,14 @@
         <entry key="dio">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.3.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.3.3/lib" />
             </list>
           </value>
         </entry>
         <entry key="encrypt">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/encrypt-5.0.1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/encrypt-5.0.3/lib" />
             </list>
           </value>
         </entry>
@@ -530,7 +530,7 @@
         <entry key="flutter_markdown">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_markdown-0.6.17+2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_markdown-0.6.17+3/lib" />
             </list>
           </value>
         </entry>
@@ -544,7 +544,7 @@
         <entry key="flutter_riverpod">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.1/lib" />
             </list>
           </value>
         </entry>
@@ -607,7 +607,7 @@
         <entry key="freezed">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed-2.4.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed-2.4.3/lib" />
             </list>
           </value>
         </entry>
@@ -656,7 +656,7 @@
         <entry key="go_router">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/go_router-10.1.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/go_router-11.1.2/lib" />
             </list>
           </value>
         </entry>
@@ -691,7 +691,7 @@
         <entry key="hooks_riverpod">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.1/lib" />
             </list>
           </value>
         </entry>
@@ -733,7 +733,7 @@
         <entry key="image">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image-4.0.17/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image-4.1.3/lib" />
             </list>
           </value>
         </entry>
@@ -852,21 +852,21 @@
         <entry key="loading_more_list_fast">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_more_list_fast-6.0.1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_more_list_fast-7.0.1/lib" />
             </list>
           </value>
         </entry>
         <entry key="loading_more_list_library_fast">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_more_list_library_fast-3.0.1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_more_list_library_fast-4.0.1/lib" />
             </list>
           </value>
         </entry>
         <entry key="logger">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/logger-2.0.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/logger-2.0.2+1/lib" />
             </list>
           </value>
         </entry>
@@ -950,7 +950,7 @@
         <entry key="octo_image">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/octo_image-1.0.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/octo_image-2.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -1034,28 +1034,28 @@
         <entry key="permission_handler">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler-10.4.5/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler-11.0.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="permission_handler_android">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_android-10.3.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_android-11.0.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="permission_handler_apple">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.4/lib" />
             </list>
           </value>
         </entry>
         <entry key="permission_handler_platform_interface">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_platform_interface-3.11.0+1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_platform_interface-3.11.5/lib" />
             </list>
           </value>
         </entry>
@@ -1160,7 +1160,7 @@
         <entry key="riverpod">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/riverpod-2.4.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/riverpod-2.4.1/lib" />
             </list>
           </value>
         </entry>
@@ -1612,9 +1612,9 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/after_layout-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/analyzer-6.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/animated_text_kit-4.2.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/archive-3.3.6/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/archive-3.4.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/args-2.3.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/asn1lib-1.4.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/asn1lib-1.5.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/async-2.11.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/badges-3.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/blurrycontainer-1.0.2/lib" />
@@ -1627,9 +1627,9 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/build_runner_core-7.2.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/built_collection-5.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/built_value-8.4.3/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image-3.2.3/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image_platform_interface-2.0.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image_web-1.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image-3.3.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image_platform_interface-3.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cached_network_image_web-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/carousel_pro_nullsafety-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/carousel_slider-4.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/characters-1.3.0/lib" />
@@ -1649,12 +1649,12 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/date_format-2.0.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dbus-0.7.8/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-2.5.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-4.4.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-2.5.1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-4.5.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_models-0.0.5/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/decimal-2.3.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.3.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/encrypt-5.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.3.3/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/encrypt-5.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_image-8.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_image_library-3.6.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_list-3.0.0/lib" />
@@ -1681,9 +1681,9 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_cache_manager-3.3.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_hooks-0.18.6/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_lints-2.0.3/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_markdown-0.6.17+2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_markdown-0.6.17+3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.7/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_slidable-3.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_smart_dialog-4.9.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_spinkit-5.2.0/lib" />
@@ -1691,25 +1691,25 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_swiper_null_safety_flutter3-4.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_syntax_view-4.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_widget_from_html_core-0.10.5/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed-2.4.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed-2.4.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed_annotation-2.4.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fsearch_nullsafety-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fsuper_nullsafety-3.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/get_it-7.6.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/glob-2.1.1/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/go_router-10.1.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/go_router-11.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/graphs-2.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive-2.2.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive_flutter-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive_generator_plus-3.0.1/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/html-0.15.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http_client_helper-3.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http_multi_server-3.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image-4.0.17/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image-4.1.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image_picker-1.0.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image_picker_android-0.8.7+4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image_picker_for_web-2.2.0/lib" />
@@ -1726,9 +1726,9 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/keyboard_actions-4.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/lints-2.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_animation_widget-1.2.0+4/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_more_list_fast-6.0.1/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_more_list_library_fast-3.0.1/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/logger-2.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_more_list_fast-7.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/loading_more_list_library_fast-4.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/logger-2.0.2+1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/logging-1.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/markdown-7.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/matcher-0.12.14/lib" />
@@ -1740,7 +1740,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/network_info_plus_platform_interface-1.1.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/nm-0.5.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/notus_format-1.0.3/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/octo_image-1.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/octo_image-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/package_config-2.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/package_info-2.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/palette_generator-0.3.3+3/lib" />
@@ -1752,10 +1752,10 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider_linux-2.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider_platform_interface-2.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider_windows-2.2.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler-10.4.5/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_android-10.3.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_platform_interface-3.11.0+1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler-11.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_android-11.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.4/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_platform_interface-3.11.5/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_windows-0.1.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/petitparser-5.4.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/platform-3.1.0/lib" />
@@ -1770,7 +1770,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/quill_format-1.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/rational-2.2.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/responsive_builder-0.7.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/riverpod-2.4.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/riverpod-2.4.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/rxdart-0.27.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/saver_gallery-2.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus-7.1.0/lib" />

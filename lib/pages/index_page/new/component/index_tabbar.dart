@@ -54,14 +54,17 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
       builder: (BuildContext context, ref, Widget? child) {
         final value = ref.watch(jdProductsRiverpod);
         final curr = value.selectProductTypeId;
-        return JdCategoryMiniWidget(
-          selectId: curr,
-          onSelect: (model) {
-            final jdRed = ref.read(jdProductsRiverpod);
-            jdRed.products.clear();
-            jdRed.setSelectProductTypeId(model.id);
-          },
-        ).height(36);
+        return SizedBox(
+          height: 36,
+          child: JdCategoryMiniWidget(
+            selectId: curr,
+            onSelect: (model) {
+              final jdRed = ref.read(jdProductsRiverpod);
+              jdRed.products.clear();
+              jdRed.setSelectProductTypeId(model.id);
+            },
+          ),
+        );
       },
     );
   }

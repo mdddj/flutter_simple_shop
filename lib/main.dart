@@ -46,3 +46,16 @@ class DdShop extends View {
     });
   }
 }
+
+
+class Demo extends StatelessWidget {
+
+  const Demo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder:(ctx,cons){
+      return const SizedBox();
+    });
+  }
+}

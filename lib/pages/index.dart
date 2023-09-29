@@ -41,7 +41,7 @@ import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
-import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
+import 'package:loading_more_list_library_fast/model/status.dart';
 import 'package:logger/logger.dart';
 import 'package:pull_to_refresh_notification/pull_to_refresh_notification.dart';
 import 'package:responsive_builder/responsive_builder.dart';

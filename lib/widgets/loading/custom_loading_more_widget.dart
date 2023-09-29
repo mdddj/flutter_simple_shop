@@ -2,14 +2,14 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
+import 'package:loading_more_list_library_fast/model/status.dart';
 import '../../assets.dart';
 import '../../index.dart';
 
 ///自定义加载中状态
 class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
   final BuildContext context;
-  final IndicatorStatus indicatorStatus;
+  final IndicatorStatusModel indicatorStatus;
   final  VoidCallback? retry;
   final Widget? emptyChild;
   const CustomLoadingMoreWidgetWithSliver(this.context, this.indicatorStatus, {Key? key, this.retry, this.emptyChild}) : super(key: key);
@@ -29,7 +29,7 @@ class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
 ///自定义Loadingmore 加载状态展示
 class CustomLoadingMoreWidget extends StatelessWidget {
   final BuildContext context;
-  final IndicatorStatus indicatorStatus;
+  final IndicatorStatusModel indicatorStatus;
   final bool isSliver;
   final VoidCallback? retry;
   final Widget? emptyChild;
@@ -38,44 +38,35 @@ class CustomLoadingMoreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late Widget child;
-    switch (indicatorStatus) {
-      case IndicatorStatus.fullScreenError:
-        child =  _FullScreenError(retry: retry);
-        if(isSliver){
-          child = SliverFillRemaining(child: child);
-        }
-        break;
-      case IndicatorStatus.fullScreenBusying:
-        child = const _FullScreenBusying();
-        if(isSliver){
-          child = SliverFillRemaining(child: child);
-        }
-        break;
-      case IndicatorStatus.loadingMoreBusying:
-        child = const _LoadingMoreBusying();
-        break;
-      case IndicatorStatus.empty:
-        child =  _Empty(child: emptyChild,);
-        if(isSliver){
-          child = SliverFillRemaining(child: child);
-        }
-        break;
-      case IndicatorStatus.error:
-        child = const _Error();
-        break;
-      case IndicatorStatus.noMoreLoad:
-        child = Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Center(child: Text('没有更多了',style: context.textTheme.labelMedium?.copyWith(color: Colors.grey))),
-        );
-        break;
-      case IndicatorStatus.none:
-        child = const _Nothing();
-        break;
-      default:
-        child = const SizedBox();
-        break;
-    }
+
+
+    indicatorStatus.when(none: () {
+      child = const _Nothing();
+    }, empty: () {
+      child =  _Empty(child: emptyChild,);
+      if(isSliver){
+        child = SliverFillRemaining(child: child);
+      }
+    }, loadingMoreBusying: () {
+      child = const _LoadingMoreBusying();
+    }, fullScreenBusying: () {
+      child = const _FullScreenBusying();
+      if(isSliver){
+        child = SliverFillRemaining(child: child);
+      }
+    }, error: (error, stackTrace) {
+      child = const _Error();
+    }, fullScreenError: (error, stackTrace) {
+      child =  _FullScreenError(retry: retry);
+      if(isSliver){
+        child = SliverFillRemaining(child: child);
+      }
+    }, noMoreLoad: () {
+      child = Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(child: Text('没有更多了',style: context.textTheme.labelMedium?.copyWith(color: Colors.grey))),
+      );
+    },);
     return child;
   }
 }

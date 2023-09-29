@@ -82,7 +82,7 @@ class MyOrderHomePageState extends State<MyOrderHomePage> {
                 },
                 sourceList: orderRespository,
                 indicatorBuilder: (context, state) {
-                  return LoadingMoreListCostumIndicator(state, isSliver: true);
+                  return CustomLoadingMoreWidgetWithSliver(context,state);
                 },
               ),
             )

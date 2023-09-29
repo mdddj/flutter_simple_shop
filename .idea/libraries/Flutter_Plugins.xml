@@ -40,8 +40,8 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/shared_preferences-2.2.1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider-2.1.1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image_picker-1.0.4" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler-10.4.5" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-2.5.0" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler-11.0.0" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-2.5.1" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
