@@ -20,6 +20,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../api/model/login_params.dart';

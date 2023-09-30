@@ -55,43 +55,48 @@ class HtmlTextWidget extends StatefulWidget {
 
 class _HtmlTextWidgetState extends State<HtmlTextWidget> {
   String get url => widget.url;
-  String _html = "";
+  final _model = _Model();
 
-  //加载html
-  Future<void> _loadHtml() async {
-    try {
-      final response = await StringRequest(Uri.parse(url).path)
-          .request(const R(showDefaultLoading: false, returnIsString: true));
-      setState(() {
-        _html = response;
-      });
-    } on AppException catch (e) {
-      toast(e.getMessage);
-    }
-  }
+
 
   @override
   void initState() {
     super.initState();
-    Future.microtask(_loadHtml);
-  }
-
-  @override
-  void setState(VoidCallback fn) {
-    if (mounted) {
-      super.setState(fn);
-    }
+    Future.microtask(()=>_model.loadHtml(url));
   }
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(12),
-      child: HtmlWidget(_html),
+    return ScopedModel<_Model>(
+      model: _model,
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(12),
+        child: ScopedModelDescendant<_Model>(builder:(_,__,model)=> HtmlWidget(model.html)),
+      ),
     );
   }
 }
 
 class StringRequest extends BaseApi {
   StringRequest(super.url);
+}
+
+
+class _Model extends Model {
+  String html = '';
+  void change(String value) {
+    html = value;
+    notifyListeners();
+  }
+
+  //加载html
+  Future<void> loadHtml(String url) async {
+    try {
+      final response = await StringRequest(Uri.parse(url).path)
+          .request(const R(showDefaultLoading: false, returnIsString: true));
+      change(response);
+    } on AppException catch (e) {
+      toast(e.getMessage);
+    }
+  }
 }

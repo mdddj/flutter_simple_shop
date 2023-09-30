@@ -14,12 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="细节优化">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/new/my_sliver_appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/new/my_sliver_appbar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -548,13 +545,6 @@
       <workItem from="1694654668821" duration="1999000" />
       <workItem from="1694670825119" duration="23000" />
     </task>
-    <task id="LOCAL-00142" summary=":bug: hint fixed">
-      <created>1677293624503</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1677293624504</updated>
-    </task>
     <task id="LOCAL-00143" summary="重构9块9页面">
       <created>1677405791182</created>
       <option name="number" value="00143" />
@@ -891,7 +881,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695987814584</updated>
     </task>
-    <option name="localTasksCounter" value="217" />
+    <task id="LOCAL-00217" summary="细节优化">
+      <created>1696063824940</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1696063824940</updated>
+    </task>
+    <option name="localTasksCounter" value="218" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

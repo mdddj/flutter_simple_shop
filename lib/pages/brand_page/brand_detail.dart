@@ -73,3 +73,4 @@ class BrandDetailPageState extends State<BrandDetailPage>
     setState(() {});
   }
 }
+
