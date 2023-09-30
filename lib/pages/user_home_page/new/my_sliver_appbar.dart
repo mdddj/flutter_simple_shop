@@ -308,18 +308,16 @@ class MySliverAppBarState extends State<MySliverAppBar>
   FloatingHeaderSnapConfiguration? _snapConfiguration;
   OverScrollHeaderStretchConfiguration? _stretchConfiguration;
   PersistentHeaderShowOnScreenConfiguration? _showOnScreenConfiguration;
-  bool offsetZeroIs = false;
+  final _model = _Model();
 
   final AppBarStateChangeController  _appBarStateChangeController = AppBarStateChangeController();
 
   void _listenAppbarAvatarChange() {
     _appBarStateChangeController.addListener(() {
       var verticalOffsetZero = _appBarStateChangeController.verticalOffsetZero;
-      if (offsetZeroIs != verticalOffsetZero) {
+      if (_model.offsetZeroIs != verticalOffsetZero) {
         WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-          setState(() {
-            offsetZeroIs = verticalOffsetZero;
-          });
+          _model.change(verticalOffsetZero);
         });
       }
     });
@@ -362,15 +360,6 @@ class MySliverAppBarState extends State<MySliverAppBar>
     _listenAppbarAvatarChange();
   }
 
-
-  @override
-  void setState(VoidCallback fn) {
-    if(mounted){
-      super.setState(fn);
-    }
-
-  }
-
   @override
   void didUpdateWidget(MySliverAppBar oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -398,46 +387,51 @@ class MySliverAppBarState extends State<MySliverAppBar>
     return MediaQuery.removePadding(
       context: context,
       removeBottom: true,
-      child: SliverPersistentHeader(
-        floating: widget.floating,
-        pinned: widget.pinned,
-        delegate: _SliverAppBarDelegate(
-          vsync: this,
-          leading: widget.leading,
-          appBarStateChangeController: _appBarStateChangeController,
-          automaticallyImplyLeading: widget.automaticallyImplyLeading,
-          title: widget.title?.call(offsetZeroIs),
-          actions: widget.actions,
-          flexibleSpace: widget.flexibleSpace?.call(offsetZeroIs),
-          bottom: widget.bottom,
-          elevation: widget.elevation,
-          shadowColor: widget.shadowColor,
-          forceElevated: widget.forceElevated,
-          backgroundColor: widget.backgroundColor,
-          foregroundColor: widget.foregroundColor,
-          brightness: widget.brightness,
-          iconTheme: widget.iconTheme,
-          actionsIconTheme: widget.actionsIconTheme,
-          textTheme: widget.textTheme,
-          primary: widget.primary,
-          centerTitle: widget.centerTitle,
-          excludeHeaderSemantics: widget.excludeHeaderSemantics,
-          titleSpacing: widget.titleSpacing,
-          expandedHeight: widget.expandedHeight,
-          collapsedHeight: collapsedHeight,
-          topPadding: topPadding,
-          floating: widget.floating,
-          pinned: widget.pinned,
-          shape: widget.shape,
-          snapConfiguration: _snapConfiguration,
-          stretchConfiguration: _stretchConfiguration,
-          showOnScreenConfiguration: _showOnScreenConfiguration,
-          toolbarHeight: widget.toolbarHeight,
-          leadingWidth: widget.leadingWidth,
-          backwardsCompatibility: widget.backwardsCompatibility,
-          toolbarTextStyle: widget.toolbarTextStyle,
-          titleTextStyle: widget.titleTextStyle,
-          systemOverlayStyle: widget.systemOverlayStyle,
+      child: ScopedModel<_Model>(
+        model: _model,
+        child: ScopedModelDescendant<_Model>(
+          builder:(_,c,m) => SliverPersistentHeader(
+            floating: widget.floating,
+            pinned: widget.pinned,
+            delegate: _SliverAppBarDelegate(
+              vsync: this,
+              leading: widget.leading,
+              appBarStateChangeController: _appBarStateChangeController,
+              automaticallyImplyLeading: widget.automaticallyImplyLeading,
+              title: widget.title?.call(m.offsetZeroIs),
+              actions: widget.actions,
+              flexibleSpace: widget.flexibleSpace?.call(m.offsetZeroIs),
+              bottom: widget.bottom,
+              elevation: widget.elevation,
+              shadowColor: widget.shadowColor,
+              forceElevated: widget.forceElevated,
+              backgroundColor: widget.backgroundColor,
+              foregroundColor: widget.foregroundColor,
+              brightness: widget.brightness,
+              iconTheme: widget.iconTheme,
+              actionsIconTheme: widget.actionsIconTheme,
+              textTheme: widget.textTheme,
+              primary: widget.primary,
+              centerTitle: widget.centerTitle,
+              excludeHeaderSemantics: widget.excludeHeaderSemantics,
+              titleSpacing: widget.titleSpacing,
+              expandedHeight: widget.expandedHeight,
+              collapsedHeight: collapsedHeight,
+              topPadding: topPadding,
+              floating: widget.floating,
+              pinned: widget.pinned,
+              shape: widget.shape,
+              snapConfiguration: _snapConfiguration,
+              stretchConfiguration: _stretchConfiguration,
+              showOnScreenConfiguration: _showOnScreenConfiguration,
+              toolbarHeight: widget.toolbarHeight,
+              leadingWidth: widget.leadingWidth,
+              backwardsCompatibility: widget.backwardsCompatibility,
+              toolbarTextStyle: widget.toolbarTextStyle,
+              titleTextStyle: widget.titleTextStyle,
+              systemOverlayStyle: widget.systemOverlayStyle,
+            ),
+          ),
         ),
       ),
     );
@@ -718,4 +712,13 @@ class AppBarStateChangeController extends ChangeNotifier {
   }
 
   bool get verticalOffsetZero => _verticalOffsetZero;
+}
+
+
+class _Model extends Model{
+  bool offsetZeroIs = false;
+  void change(bool value) {
+    offsetZeroIs = value;
+    notifyListeners();
+  }
 }

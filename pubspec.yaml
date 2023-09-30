@@ -84,6 +84,7 @@ dependencies:
   async: ^2.11.0
   share_plus: ^7.1.0
   blurrycontainer: ^1.0.2
+  scoped_model: ^2.0.0
 
 
 
