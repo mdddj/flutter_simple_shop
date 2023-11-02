@@ -1,4 +1,4 @@
-part of widgets;
+part of '../index.dart';
 
 extension LoginDialogTypeEx on LoginType {
   String get hintText {
@@ -34,10 +34,7 @@ class _LoginDialogState extends ConsumerState<LoginDialog> {
           SizedBox(
             width: double.infinity,
             child: CupertinoSlidingSegmentedControl<LoginType>(
-              children: const {
-                LoginType.account: Text("账号登录"),
-                LoginType.email: Text("邮箱登录")
-              },
+              children: const {LoginType.account: Text("账号登录"), LoginType.email: Text("邮箱登录")},
               onValueChanged: (v) {
                 setState(() {
                   type = v ?? LoginType.account;
@@ -62,10 +59,7 @@ class _LoginDialogState extends ConsumerState<LoginDialog> {
             obscureText: true,
           ),
           const SizedBox(height: 33),
-          SizedBox(
-              width: double.infinity,
-              child: FilledButton(
-                  onPressed: () => _login(ref), child: const Text("登录")))
+          SizedBox(width: double.infinity, child: FilledButton(onPressed: () => _login(ref), child: const Text("登录")))
         ]),
       ),
     );
@@ -75,12 +69,9 @@ class _LoginDialogState extends ConsumerState<LoginDialog> {
   Future<void> _login(WidgetRef ref) async {
     try {
       final nav = context.nav;
-      await ref.read(userRiverpod.notifier).login(LoginParams(
-          loginnumber: loginNameController.text,
-          password: passwordController.text,
-          logintype: type.type));
+      await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: loginNameController.text, password: passwordController.text, logintype: type.type));
       nav.pop();
-    } on AppException catch (e) {
+    } on BaseApiException catch (e) {
       toast(e.message);
     }
   }

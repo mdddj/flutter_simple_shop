@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 class DrawableStartText extends StatefulWidget {
   final TextStyle? textStyle;
@@ -9,14 +9,7 @@ class DrawableStartText extends StatefulWidget {
   ///尽可能写出图片后大概有多少字母，这样能快速计算第一行显示多少个字母（例如有20个字母  可以设置该值为12左右），默认为0
   final int lettersCountOfAfterImage;
 
-  const DrawableStartText(
-      {this.textStyle,
-      required this.text,
-      required this.assetImage,
-      this.maxLines,
-      this.lettersCountOfAfterImage = 0,
-      Key? key})
-      : super(key: key);
+  const DrawableStartText({this.textStyle, required this.text, required this.assetImage, this.maxLines, this.lettersCountOfAfterImage = 0, super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -50,9 +43,7 @@ class DrawableStartTextState extends State<DrawableStartText> {
 
     //在第一帧后计算下第一行能显示多少个字母，然后将字母分成两段显示
     WidgetsBinding.instance.addPostFrameCallback((callback) {
-      _image.image
-          .resolve(const ImageConfiguration())
-          .addListener(ImageStreamListener((imageInfo, synchronousCall) {
+      _image.image.resolve(const ImageConfiguration()).addListener(ImageStreamListener((imageInfo, synchronousCall) {
         //计算图片的宽高
         var imgHeight = imageInfo.image.height.toDouble();
         var imgWidth = imageInfo.image.width.toDouble();
@@ -61,8 +52,7 @@ class DrawableStartTextState extends State<DrawableStartText> {
         var myImageWidth = imgWidth * scale;
 
         //再用父控件的宽度减去图片的宽度就是文字显示的宽度
-        var parentWidth =
-            rowKey.currentContext!.findRenderObject()!.paintBounds.size.width;
+        var parentWidth = rowKey.currentContext!.findRenderObject()!.paintBounds.size.width;
         var textWidth = parentWidth - myImageWidth;
 
         // 判断一行是否能显示全部文字
@@ -71,8 +61,7 @@ class DrawableStartTextState extends State<DrawableStartText> {
         //计算出在哪个字母时超出了显示范围
         for (; index < widget.text.length; index++) {
           if (widget.textStyle != null) {
-            painter.text = TextSpan(
-                style: widget.textStyle, text: widget.text.substring(0, index));
+            painter.text = TextSpan(style: widget.textStyle, text: widget.text.substring(0, index));
           } else {
             painter.text = TextSpan(text: widget.text.substring(0, index));
           }
@@ -133,12 +122,8 @@ class DrawableStartTextState extends State<DrawableStartText> {
                 _bottomText!,
                 style: widget.textStyle,
                 textAlign: TextAlign.left,
-                maxLines: widget.maxLines == null
-                    ? defaultTextStyle.maxLines
-                    : widget.maxLines! - 1,
-                overflow: widget.maxLines == null
-                    ? defaultTextStyle.overflow
-                    : TextOverflow.ellipsis,
+                maxLines: widget.maxLines == null ? defaultTextStyle.maxLines : widget.maxLines! - 1,
+                overflow: widget.maxLines == null ? defaultTextStyle.overflow : TextOverflow.ellipsis,
               )
             : Container(),
       ],

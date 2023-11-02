@@ -1,4 +1,4 @@
-part of index;
+part of 'index.dart';
 
 const kLogoSize = 90.0;
 
@@ -7,12 +7,10 @@ class InitLoadingWidget extends StatelessWidget {
   final String? errorMessage;
   final VoidCallback? retry;
 
-  const InitLoadingWidget({Key? key, this.errorMessage, this.retry})
-      : super(key: key);
+  const InitLoadingWidget({super.key, this.errorMessage, this.retry});
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       height: context.kBodyHeight,
       color: context.backgroundColor,
@@ -36,15 +34,15 @@ class InitLoadingWidget extends StatelessWidget {
                     child: errorMessage != null
                         ? Text(errorMessage!)
                         : const SizedBox(
-                      width: 30,
-                      height: 30,
-                      child: CircularProgressIndicator(),
-                    )),
+                            width: 30,
+                            height: 30,
+                            child: CircularProgressIndicator(),
+                          )),
                 FilledButton(
-                    onPressed: () {
-                      retry?.call();
-                    },
-                    child: const Text("重试"))
+                        onPressed: () {
+                          retry?.call();
+                        },
+                        child: const Text("重试"))
                     .marginOnly(top: 12 + context.paddingBottom)
                     .visible(errorMessage != null),
                 SizedBox(height: context.bottomPadding)

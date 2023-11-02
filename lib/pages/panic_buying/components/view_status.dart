@@ -1,13 +1,12 @@
-part of pages;
+part of '../../index.dart';
 
 /// 页面状态显示
 class ViewStatusWithPanicBuy extends ConsumerWidget {
-  const ViewStatusWithPanicBuy({Key? key}) : super(key: key);
+  const ViewStatusWithPanicBuy({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final changeLoading = ref
-        .watch(panicBuyingModelRiverpod.select((value) => value.changeLoading));
+    final changeLoading = ref.watch(panicBuyingModelRiverpod.select((value) => value.changeLoading));
     if (changeLoading) {
       return const LoadingWidget();
     }

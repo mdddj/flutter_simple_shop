@@ -1,4 +1,4 @@
-part of util;
+part of 'index.dart';
 
 class InputUtils {
   const InputUtils._();
@@ -10,11 +10,10 @@ class InputUtils {
   /// 插入文字后，可手动设置光标相对原本光标的偏移量。默认为文字长度。
   static int insertText({
     required String text,
-     required TextEditingController controller,
-     State<dynamic>? state,
-     int? selectionOffset,
+    required TextEditingController controller,
+    State<dynamic>? state,
+    int? selectionOffset,
   }) {
-
     final value = controller.value;
     final start = value.selection.baseOffset;
     final end = value.selection.extentOffset;
@@ -47,7 +46,7 @@ class InputUtils {
     return controller.text.length;
   }
 
-  static void backspace(TextEditingController controller,BuildContext context) {
+  static void backspace(TextEditingController controller, BuildContext context) {
     final text = controller.text;
     final textSelection = controller.selection;
     final selectionLength = textSelection.end - textSelection.start;
@@ -89,11 +88,9 @@ class InputUtils {
 
   /// Method for showing keyboard.
   /// 显示键盘方法
-  static Future<void> showKeyboard() async =>
-      await SystemChannels.textInput.invokeMethod<void>('TextInput.show');
+  static Future<void> showKeyboard() async => await SystemChannels.textInput.invokeMethod<void>('TextInput.show');
 
   /// Method for hiding keyboard.
   /// 隐藏键盘方法
-  static Future<void> hideKeyboard() async =>
-      await SystemChannels.textInput.invokeMethod<void>('TextInput.hide');
+  static Future<void> hideKeyboard() async => await SystemChannels.textInput.invokeMethod<void>('TextInput.hide');
 }

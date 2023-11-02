@@ -1,4 +1,4 @@
-part of provider;
+part of 'index.dart';
 
 class UserProvider extends ChangeNotifier {
   List<Good>? goods = []; // 商品列表

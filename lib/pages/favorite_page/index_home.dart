@@ -1,15 +1,14 @@
-part of pages;
+part of '../index.dart';
 
 ///收藏页面
 class FavoriteIndexHome extends ConsumerStatefulWidget {
-  const FavoriteIndexHome({Key? key}) : super(key: key);
+  const FavoriteIndexHome({super.key});
 
   @override
   ConsumerState<FavoriteIndexHome> createState() => _FavoriteIndexHomeState();
 }
 
-class _FavoriteIndexHomeState extends ConsumerState<FavoriteIndexHome>
-    with AutomaticKeepAliveClientMixin {
+class _FavoriteIndexHomeState extends ConsumerState<FavoriteIndexHome> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -34,10 +33,7 @@ class _FavoritesListWidget extends View {
   Widget renderView(BuildContext context, ApplicationModel appCore) {
     return LoadingMoreList(ListConfig<MyFavoritesModel>(
       itemBuilder: (context, model, index) {
-        return FavoriteGoodsItem(
-            item: model,
-            isShowEditIcon: false,
-            repository: appCore.favoritesRepository);
+        return FavoriteGoodsItem(item: model, isShowEditIcon: false, repository: appCore.favoritesRepository);
       },
       sourceList: appCore.favoritesRepository,
       indicatorBuilder: (context, status) {

@@ -1,4 +1,4 @@
-part of common;
+part of 'index.dart';
 
 mixin BaseProvider<T extends ChangeNotifier> on ChangeNotifier {
   bool initLoading = false;

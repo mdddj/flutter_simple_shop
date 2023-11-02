@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 // 图像扩展组件
 class ExtendedImageWidget extends StatelessWidget {
@@ -9,15 +9,7 @@ class ExtendedImageWidget extends StatelessWidget {
   final BoxFit fit;
   final bool knowSize;
 
-  const ExtendedImageWidget(
-      {required this.src,
-      required this.height,
-      required this.width,
-      this.radius = BorderRadius.zero,
-      this.fit = BoxFit.fill,
-      this.knowSize = true,
-      Key? key})
-      : super(key: key);
+  const ExtendedImageWidget({required this.src, required this.height, required this.width, this.radius = BorderRadius.zero, this.fit = BoxFit.fill, this.knowSize = true, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +44,7 @@ class SimpleImage extends StatelessWidget {
   final String url;
   final BorderRadius? radius;
 
-  const SimpleImage({Key? key, required this.url, this.radius})
-      : super(key: key);
+  const SimpleImage({super.key, required this.url, this.radius});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -9,16 +9,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? titleColor;
   final List<Widget>? actions;
 
-  const SimpleAppBar(
-      {Key? key,
-      this.actions,
-      required this.title,
-      this.subTitle,
-      this.elevation,
-      this.bottom,
-      this.bottomHeight,
-      this.titleColor})
-      : super(key: key);
+  const SimpleAppBar({super.key, this.actions, required this.title, this.subTitle, this.elevation, this.bottom, this.bottomHeight, this.titleColor});
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +31,5 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(
-      bottom != null ? kToolbarHeight + (bottomHeight ?? 0) : kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(bottom != null ? kToolbarHeight + (bottomHeight ?? 0) : kToolbarHeight);
 }

@@ -1,10 +1,10 @@
-part of common;
+part of '../../index.dart';
 
 class JdCategoryMiniWidget extends StatelessWidget {
   final String? selectId;
   final ValueChanged<JdTypeModel>? onSelect;
-  const JdCategoryMiniWidget({Key? key, this.onSelect, this.selectId})
-      : super(key: key);
+
+  const JdCategoryMiniWidget({super.key, this.onSelect, this.selectId});
 
   @override
   Widget build(BuildContext context) {

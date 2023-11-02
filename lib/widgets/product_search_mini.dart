@@ -1,12 +1,11 @@
-part of widgets;
+part of 'index.dart';
 
 // 搜索产品迷你版本
 class ProductSearchMini extends StatefulWidget {
   // 搜索关键字
   final String keyWorlds;
 
-  const ProductSearchMini({Key? key, required this.keyWorlds})
-      : super(key: key);
+  const ProductSearchMini({super.key, required this.keyWorlds});
 
   @override
   ProductSearchMiniState createState() => ProductSearchMiniState();
@@ -20,11 +19,7 @@ class ProductSearchMiniState extends State<ProductSearchMini> {
     super.initState();
     Future.microtask(() async {
       final result = await DdTaokeSdk.instance.superSearch(
-          param: SuperSearchParam(
-              keyWords: widget.keyWorlds,
-              pageSize: '50',
-              type: '1',
-              pageId: '1'),
+          param: SuperSearchParam(keyWords: widget.keyWorlds, pageSize: '50', type: '1', pageId: '1'),
           requestParamsBuilder: (RequestParams requestParams) {
             return requestParams;
           });

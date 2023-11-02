@@ -1,11 +1,10 @@
-part of common;
+part of 'index.dart';
 
 void showToast(String text) {
   utils.showMessage(text);
 }
 
-void showConfirmDialog(
-    BuildContext context, String content, Function confirmCallback) {
+void showConfirmDialog(BuildContext context, String content, Function confirmCallback) {
   showDialog(
       context: context,
       builder: (context) {

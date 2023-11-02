@@ -1,4 +1,4 @@
-part of provider;
+part of 'index.dart';
 
 class GoodsDetailProvider extends ChangeNotifier {
   GoodsDetail? goodInfo; // 商品信息

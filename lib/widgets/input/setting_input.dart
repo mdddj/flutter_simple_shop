@@ -1,19 +1,20 @@
-part of widgets;
+part of '../index.dart';
 
 class SettingInput extends StatelessWidget {
   final TextEditingController? controller;
   final String? initHintText;
   final ValueChanged<String>? onSubmit;
   final ValueChanged<String>? onChanged;
-  const SettingInput(
-      {super.key,
-      this.controller,
-      this.initHintText,
-      this.onSubmit,
-      this.onChanged});
+
+  const SettingInput({super.key,
+    this.controller,
+    this.initHintText,
+    this.onSubmit,
+    this.onChanged});
 
   InputBorder get _border =>
       const UnderlineInputBorder(borderSide: BorderSide.none);
+
   @override
   Widget build(BuildContext context) {
     return TextField(

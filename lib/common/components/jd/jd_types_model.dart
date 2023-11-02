@@ -1,4 +1,4 @@
-part of common;
+part of '../../index.dart';
 
 class JdTypeModel {
   String name;

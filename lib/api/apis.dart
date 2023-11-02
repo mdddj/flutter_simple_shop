@@ -2,9 +2,13 @@ library api;
 
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/base_api_exception.dart';
+import 'package:dd_js_util/model/dart_type_model.dart';
 import 'package:dio/dio.dart';
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import '../freezed/add_favorites_params.dart';
 import '../freezed/meituran_result.dart';
 import '../freezed/report.dart';
@@ -12,55 +16,96 @@ import '../freezed/resource_category.dart';
 import '../freezed/xb_result.dart';
 import '../freezed/zhe_elm_model.dart';
 import '../index.dart';
-
 import 'model/email_register_params.dart';
 import 'model/login_params.dart';
-part 'report.dart';
+
 part 'base.dart';
-part 'tkapi.dart';
-part 'zhe_api.dart';
+part 'report.dart';
 part 'resource.dart';
+part 'tkapi.dart';
 part 'user.dart';
-mixin ApiPageMixin on MyAppCoreApi {
+part 'zhe_api.dart';
+
+mixin ApiPageMixin<T> on BaseApi<T> {
   set page(int v) => params['page'] = v;
 
   set pageSize(int v) => params['pageSize'] = v;
 }
 
-abstract class AppCoreApiWithT<T> extends BaseApi {
-  AppCoreApiWithT(String url, [HttpMethod httpMethod=HttpMethod.get]) : super(url, httpMethod: httpMethod);
+extension ApiExceptionEx on BaseApiException {
+  String get message {
+    return when(
+      cancel: () => '请求取消',
+      connectionTimeout: () => "服务繁忙,请稍后再试",
+      sendTimeout: () => '服务繁忙,请稍后再试',
+      receiveTimeout: () => '服务繁忙,请稍后再试',
+      badCertificate: () => '证书错误',
+      connectionError: () => '服务繁忙,请稍后再试',
+      badResponse: (response, statusCode) {
+        return "服务器异常";
+      },
+      businessException: (message, error, stackTrace) => message,
+    );
+  }
+}
+
+extension DartTypeModelEx on DartTypeModel {
+  void throwBizError() {
+    whenOrNull(
+      json: (value) {
+        if (value.json.getValue('success') == false) {
+          throw BaseApiException.businessException(message: value['message']);
+        }
+      },
+    );
+  }
+
+  DartTypeModel getData() {
+    throwBizError();
+    return whenOrNull(
+          json: (value) {
+            return value.json.getValue('data').dartModel;
+          },
+        ) ??
+        const DartTypeModel.nil();
+  }
+}
+
+abstract class BaseApiPublic<T> extends BaseApi<T> {
+  BaseApiPublic(super.url, {super.httpMethod});
+
+  static BaseOptions get opt => BaseOptions(connectTimeout: const Duration(seconds: 30), baseUrl: "${useEnv.host}:${useEnv.port}");
+
   @override
-  Future<T> request([RequestParams? options]) async {
-    final result = await super.request(options);
-    if (result is Map<String, dynamic>) {
-      final wrapJson = WrapJson(result);
-      if(wrapJson.getValue('success') == false){
-        throw AppException.appError(code: wrapJson.getInt('state'),msg: wrapJson.getString("message") );
-      }
-      return fromJson(wrapJson.getMap("data"));
-    }
-    throw AppException(code: 509, message: "解析数据失败");
+  ISet<Interceptor> get interceptions => ISet([getIt.get<MyTokenInterceptor>()]);
+
+  @override
+  Future<BaseOptions> get getOptions async => opt;
+}
+
+abstract class AppCoreApiWithT<T> extends BaseApiPublic<T> {
+  AppCoreApiWithT(super.url, [HttpMethod httpMethod = HttpMethod.get]) : super(httpMethod: httpMethod);
+
+  @override
+  T covertToModel(DartTypeModel data, RequestParams param) {
+    return data.getData().whenOrNull(json: fromJson).ifNullThrowBizException();
   }
 
   T fromJson(Map<String, dynamic> json);
 }
 
-abstract class AppCoreApiWithListT<T> extends BaseApi {
-  AppCoreApiWithListT(String url, HttpMethod httpMethod) : super(url, httpMethod: httpMethod);
+abstract class AppCoreApiWithListT<T> extends BaseApiPublic<List<T>> {
+  AppCoreApiWithListT(super.url, HttpMethod httpMethod) : super(httpMethod: httpMethod);
+
   @override
-  Future<List<T>> request([RequestParams? options]) async {
-    final result = await super.request(options);
-    if (result is Map<String, dynamic>) {
-      final wrapJson = WrapJson(result);
-      if(wrapJson.getValue('success') == false){
-        throw AppException.appError(code: wrapJson.getInt('state'),msg: wrapJson.getString("message") );
-      }
-      final list = wrapJson.getValue('data');
-      if (list is List<dynamic>) {
-        return List<T>.from(list.map((e) => fromJson(e as Map<String, dynamic>)));
-      }
-    }
-    throw AppException(code: 509, message: "解析数据失败");
+  List<T> covertToModel(DartTypeModel data, RequestParams param) {
+    return data
+        .getData()
+        .whenOrNull(
+            list: (value) => List<T>.from(value.map(
+                  (e) => fromJson(e as Map<String, dynamic>),
+                )))
+        .ifNullThrowBizException();
   }
 
   T fromJson(Map<String, dynamic> json);
@@ -86,9 +131,18 @@ extension WrapJsonExt on WrapJson {
 ///收藏夹接口的前缀
 const favoritesPrefix = '/api/user/favorites';
 
+abstract class MyAppCoreApiWithWrapJson extends AppCoreApiWithT<WrapJson> {
+  MyAppCoreApiWithWrapJson(super.url, [super.httpMethod]);
+
+  @override
+  WrapJson fromJson(Map<String, dynamic> json) {
+    return WrapJson(json);
+  }
+}
+
 ///添加到收藏夹接口
-class FavoritesAddApi extends MyAppCoreApi {
-  FavoritesAddApi() : super("$favoritesPrefix/save", httpMethod: HttpMethod.post);
+class FavoritesAddApi extends MyAppCoreApiWithWrapJson {
+  FavoritesAddApi() : super("$favoritesPrefix/save", HttpMethod.post);
 
   @Doc(message: "服务器发起请求,添加收藏")
   static Future<WrapJson> doRequeset(AddFavoritesParams params) async {
@@ -98,8 +152,8 @@ class FavoritesAddApi extends MyAppCoreApi {
 }
 
 @Doc(message: '查询收藏列表api')
-class FavoritesFindListApi extends MyAppCoreApi with ApiPageMixin {
-  FavoritesFindListApi() : super('$favoritesPrefix/list', showDetailLog: true);
+class FavoritesFindListApi extends MyAppCoreApiWithWrapJson with ApiPageMixin {
+  FavoritesFindListApi() : super('$favoritesPrefix/list');
 
   static Future<WrapJson> doRequest(int page) async {
     final api = FavoritesFindListApi()
@@ -110,19 +164,19 @@ class FavoritesFindListApi extends MyAppCoreApi with ApiPageMixin {
 }
 
 //删除收藏
-class FavoritesRemoveApi extends MyAppCoreApi {
-  FavoritesRemoveApi(int id) : super("$favoritesPrefix/remove", httpMethod: HttpMethod.post) {
+class FavoritesRemoveApi extends MyAppCoreApiWithWrapJson {
+  FavoritesRemoveApi(int id) : super("$favoritesPrefix/remove", HttpMethod.post) {
     super.params.addAll({"idValue": id});
   }
 }
 
 ///折淘客获取轮播图接口
-class KZheTaokeApiWithCarousel extends MyAppCoreApi {
+class KZheTaokeApiWithCarousel extends MyAppCoreApiWithWrapJson {
   KZheTaokeApiWithCarousel() : super('/api/zhe/carousel-list');
 }
 
 ///获取折淘客的APP key
-class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi {
+class KZheTaokeApiWithAppkeyGet extends MyAppCoreApiWithWrapJson {
   KZheTaokeApiWithAppkeyGet() : super('/api/zhe/app-key');
 
   @Doc(message: '加载折淘客的APP Key')
@@ -141,88 +195,83 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApi {
 }
 
 ///面基申请
-class MeetRequestAdd extends MyAppCoreApi {
-  MeetRequestAdd() : super('/api/mianji/add', httpMethod: HttpMethod.post);
+class MeetRequestAdd extends MyAppCoreApiWithWrapJson {
+  MeetRequestAdd() : super('/api/mianji/add', HttpMethod.post);
 }
 
 ///查询面基申请记录
-class SelectMeetListData extends MyAppCoreApi with ApiPageMixin {
+class SelectMeetListData extends MyAppCoreApiWithWrapJson with ApiPageMixin {
   SelectMeetListData() : super('/api/mianji/list');
 }
 
 ///查询资源动态列表
-class SelectMyRsourceListData extends MyAppCoreApi with ApiPageMixin {
+class SelectMyRsourceListData extends MyAppCoreApiWithWrapJson with ApiPageMixin {
   SelectMyRsourceListData() : super("/api/app/resource/list");
 }
 
 ///发布动态的接口
-class MyResourceCreateApi extends MyAppCoreApi {
-  MyResourceCreateApi() : super('/api/app/resource/new', httpMethod: HttpMethod.post);
+class MyResourceCreateApi extends MyAppCoreApiWithWrapJson {
+  MyResourceCreateApi() : super('/api/app/resource/new', HttpMethod.post);
 }
 
 ///获取邮箱验证码接口
-class MyApiWithSendEmailValidCode extends MyAppCoreApi {
-  MyApiWithSendEmailValidCode() : super("/api/user-public/email-register", httpMethod: HttpMethod.post);
-
-  @override
-  bool get isRemoveUserToken => true;
+class MyApiWithSendEmailValidCode extends MyAppCoreApiWithWrapJson {
+  MyApiWithSendEmailValidCode() : super("/api/user-public/email-register", HttpMethod.post);
 }
 
 ///邮箱注册接口
-class MyApiWithEmailRegister extends MyAppCoreApi {
-  MyApiWithEmailRegister(EmailRegisterParams params) : super("/api/user-public/email-valid", httpMethod: HttpMethod.post) {
+class MyApiWithEmailRegister extends MyAppCoreApiWithWrapJson {
+  MyApiWithEmailRegister(EmailRegisterParams params) : super("/api/user-public/email-valid", HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
-
-  @override
-  bool get isRemoveUserToken => true;
 }
 
 ///登录接口
-class MyApiWithLogin extends MyAppCoreApi {
-  MyApiWithLogin(LoginParams params) : super(params.getApiPath, httpMethod: HttpMethod.post) {
+class MyApiWithLogin extends MyAppCoreApiWithWrapJson {
+  MyApiWithLogin(LoginParams params) : super(params.getApiPath, HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
-
-  @override
-  bool get isRemoveUserToken => true;
 }
 
 ///美团领券
-class MeituanCoupon extends MyAppCoreApi {
+class MeituanCoupon extends MyAppCoreApiWithWrapJson {
   MeituanCoupon() : super('/api/zhe/mt/tg');
 }
 
 ///开通会员接口
-class MyOpenVipApi extends MyAppCoreApi {
-  MyOpenVipApi() : super("/api/open-vip", httpMethod: HttpMethod.post);
+class MyOpenVipApi extends MyAppCoreApiWithWrapJson {
+  MyOpenVipApi() : super("/api/open-vip", HttpMethod.post);
 }
 
 ///用户发布的动态
-class MyResourceListApi extends MyAppCoreApi with ApiPageMixin {
+class MyResourceListApi extends MyAppCoreApiWithWrapJson with ApiPageMixin {
   MyResourceListApi() : super('/api/app/resource/release');
 }
 
 ///修改用户昵称
-class MyUpdateUserNameApi extends MyAppCoreApi {
-  MyUpdateUserNameApi() : super('/api/user/update-username', httpMethod: HttpMethod.post);
+class MyUpdateUserNameApi extends MyAppCoreApiWithWrapJson {
+  MyUpdateUserNameApi() : super('/api/user/update-username', HttpMethod.post);
 }
 
 ///修改用户城市
-class MyUpdateUserCityApi extends MyAppCoreApi {
-  MyUpdateUserCityApi() : super('/api/user/update-city', httpMethod: HttpMethod.post);
+class MyUpdateUserCityApi extends MyAppCoreApiWithWrapJson {
+  MyUpdateUserCityApi() : super('/api/user/update-city', HttpMethod.post);
 }
 
 ///修改用户城市
-class MyUpdateUserJobApi extends MyAppCoreApi {
-  MyUpdateUserJobApi() : super('/api/user/update-job', httpMethod: HttpMethod.post);
+class MyUpdateUserJobApi extends MyAppCoreApiWithWrapJson {
+  MyUpdateUserJobApi() : super('/api/user/update-job', HttpMethod.post);
 }
 
 ///查找动态分类
 class MyFindResourceCategoryApi extends AppCoreApiWithT<ResourceCategory> {
-  MyFindResourceCategoryApi() : super('/api/app/resource/find-resource-category',);
+  MyFindResourceCategoryApi()
+      : super(
+          '/api/app/resource/find-resource-category',
+        );
+
   Future<ResourceCategory> doRequest(String name) async {
-    return await getIt.get<MyFindResourceCategoryApi>().request(R(data: <String,dynamic>{"name": name}, showDefaultLoading: false));
+    return await getIt.get<MyFindResourceCategoryApi>().request(R(data: <String, dynamic>{"name": name}, showDefaultLoading: false));
   }
 
   @override
@@ -232,16 +281,16 @@ class MyFindResourceCategoryApi extends AppCoreApiWithT<ResourceCategory> {
 }
 
 ///修改用户头像接口
-class MyUpdateUserAvatarApi extends MyAppCoreApi {
-  MyUpdateUserAvatarApi() : super('/api/update-avatar', httpMethod: HttpMethod.post);
+class MyUpdateUserAvatarApi extends MyAppCoreApiWithWrapJson {
+  MyUpdateUserAvatarApi() : super('/api/update-avatar', HttpMethod.post);
 }
 
 ///删除用户动态接口
-class MyDeleteUserResourceApi extends MyAppCoreApi {
-  MyDeleteUserResourceApi() : super('/api/app/resource/delete', httpMethod: HttpMethod.delete);
+class MyDeleteUserResourceApi extends MyAppCoreApiWithWrapJson {
+  MyDeleteUserResourceApi() : super('/api/app/resource/delete', HttpMethod.delete);
 }
 
 ///获取用户的资源列表
-class MyUserFilesApi extends MyAppCoreApi {
-  MyUserFilesApi() : super('/api/file/user', httpMethod: HttpMethod.get);
+class MyUserFilesApi extends MyAppCoreApiWithWrapJson {
+  MyUserFilesApi() : super('/api/file/user', HttpMethod.get);
 }

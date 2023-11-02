@@ -1,4 +1,4 @@
-part of widgets;
+part of '../index.dart';
 
 // 自定义选择项目工具条
 class CustomSelectToolbar extends StatefulWidget {
@@ -6,16 +6,13 @@ class CustomSelectToolbar extends StatefulWidget {
   final int? select;
   final bool? hideSubTitle;
 
-  const CustomSelectToolbar(
-      {this.items, this.select, this.hideSubTitle, Key? key})
-      : super(key: key);
+  const CustomSelectToolbar({this.items, this.select, this.hideSubTitle, super.key});
 
   @override
   CustomSelectToolbarState createState() => CustomSelectToolbarState();
 }
 
-class CustomSelectToolbarState extends State<CustomSelectToolbar>
-    with AfterLayoutMixin<CustomSelectToolbar> {
+class CustomSelectToolbarState extends State<CustomSelectToolbar> with AfterLayoutMixin<CustomSelectToolbar> {
   @override
   Widget build(BuildContext context) {
     var hide = widget.hideSubTitle;
@@ -27,15 +24,11 @@ class CustomSelectToolbarState extends State<CustomSelectToolbar>
               ? SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: widget.items!
-                        .map((f) => _buildItemWidget(f, hide!, widget.select))
-                        .toList(),
+                    children: widget.items!.map((f) => _buildItemWidget(f, hide!, widget.select)).toList(),
                   ),
                 )
               : Row(
-                  children: widget.items!
-                      .map((f) => _buildItemWidget(f, hide!, widget.select))
-                      .toList(),
+                  children: widget.items!.map((f) => _buildItemWidget(f, hide!, widget.select)).toList(),
                 ),
         ),
       ],
@@ -50,8 +43,7 @@ class CustomSelectToolbarState extends State<CustomSelectToolbar>
     return Colors.black;
   }
 
-  Widget _buildItemWidget(
-      SelectMenu selectMenu, bool hideSubTitle, int? select) {
+  Widget _buildItemWidget(SelectMenu selectMenu, bool hideSubTitle, int? select) {
     Widget widget = SizedBox(
       width: getItemWidgetWidth(),
       child: Column(
@@ -63,9 +55,7 @@ class CustomSelectToolbarState extends State<CustomSelectToolbar>
             padding: EdgeInsets.only(top: hideSubTitle ? 0 : 0),
             child: Text(
               selectMenu.title!,
-              style: TextStyle(
-                  color: _buildPrimaryColor(getIndexNumber(selectMenu)),
-                  fontSize: 15),
+              style: TextStyle(color: _buildPrimaryColor(getIndexNumber(selectMenu)), fontSize: 15),
             ),
           ),
           AnimatedOpacity(
@@ -74,22 +64,13 @@ class CustomSelectToolbarState extends State<CustomSelectToolbar>
             child: Visibility(
               visible: !hideSubTitle,
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
-                    borderRadius: getIndexNumber(selectMenu) == select
-                        ? const BorderRadius.all(Radius.circular(15.0))
-                        : null,
-                    color: getIndexNumber(selectMenu) == select
-                        ? Colors.redAccent
-                        : Colors.transparent),
+                    borderRadius: getIndexNumber(selectMenu) == select ? const BorderRadius.all(Radius.circular(15.0)) : null,
+                    color: getIndexNumber(selectMenu) == select ? Colors.redAccent : Colors.transparent),
                 child: Text(
                   selectMenu.subTitle!,
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: getIndexNumber(selectMenu) == select
-                          ? Colors.white
-                          : Colors.grey),
+                  style: TextStyle(fontSize: 12, color: getIndexNumber(selectMenu) == select ? Colors.white : Colors.grey),
                 ),
               ),
             ),
@@ -112,12 +93,7 @@ class CustomSelectToolbarState extends State<CustomSelectToolbar>
               child: Container(
                 width: 60,
                 height: 6,
-                decoration: BoxDecoration(
-                    color: getIndexNumber(selectMenu) == select
-                        ? Colors.redAccent
-                        : Colors.transparent,
-                    borderRadius:
-                        const BorderRadius.all(Radius.circular(15.0))),
+                decoration: BoxDecoration(color: getIndexNumber(selectMenu) == select ? Colors.redAccent : Colors.transparent, borderRadius: const BorderRadius.all(Radius.circular(15.0))),
               ),
             ),
           ),
@@ -130,8 +106,7 @@ class CustomSelectToolbarState extends State<CustomSelectToolbar>
     var index = 0;
     for (var i = 0; i <= widget.items!.length; i++) {
       var item = widget.items![i];
-      if (item.subTitle == selectMenu.subTitle &&
-          item.title == selectMenu.title) {
+      if (item.subTitle == selectMenu.subTitle && item.title == selectMenu.title) {
         index = i;
         break;
       }

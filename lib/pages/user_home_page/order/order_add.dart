@@ -1,7 +1,7 @@
-part of pages;
+part of '../../index.dart';
 
 class OrderAddIndexPage extends StatefulWidget {
-  const OrderAddIndexPage({Key? key}) : super(key: key);
+  const OrderAddIndexPage({super.key});
 
   @override
   OrderAddState createState() => OrderAddState();
@@ -26,11 +26,7 @@ class OrderAddState extends State<OrderAddIndexPage> {
         child: Column(
           children: <Widget>[
             buildPlaceHolderSizedBox(),
-            Center(
-                child: SvgPicture.asset(
-                    'assets/svg/undraw_shopping_app_flsj.svg',
-                    height: svgSize,
-                    width: svgSize)),
+            Center(child: SvgPicture.asset('assets/svg/undraw_shopping_app_flsj.svg', height: svgSize, width: svgSize)),
             buildPlaceHolderSizedBox(),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -63,8 +59,7 @@ class OrderAddState extends State<OrderAddIndexPage> {
             FSuper(
               lightOrientation: FLightOrientation.LeftBottom,
               width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(
-                  (16.0 + 25.0 + 12), 8, (0.0 + 8.0), 8),
+              padding: const EdgeInsets.fromLTRB((16.0 + 25.0 + 12), 8, (0.0 + 8.0), 8),
               margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               backgroundColor: const Color(0xfffff0e7),
               strokeColor: const Color(0xfffee0cd),
@@ -72,11 +67,7 @@ class OrderAddState extends State<OrderAddIndexPage> {
               text: '注意事项',
               textAlignment: Alignment.centerLeft,
               textAlign: TextAlign.left,
-              spans: const [
-                TextSpan(
-                    text: '\n只有通过本站链接购买的订单才能审核通过并获得奖励,否则绑定失败.(多次绑定失败将封号处理)',
-                    style: TextStyle(color: Colors.black26))
-              ],
+              spans: const [TextSpan(text: '\n只有通过本站链接购买的订单才能审核通过并获得奖励,否则绑定失败.(多次绑定失败将封号处理)', style: TextStyle(color: Colors.black26))],
               child1: Transform.rotate(
                 angle: pi,
                 child: const Icon(

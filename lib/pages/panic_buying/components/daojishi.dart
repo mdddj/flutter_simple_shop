@@ -1,8 +1,8 @@
-part of pages;
+part of '../../index.dart';
 
 // 倒计时组件
 class DaojishiComp extends StatelessWidget {
-  const DaojishiComp({Key? key}) : super(key: key);
+  const DaojishiComp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,7 @@ class DaojishiComp extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.only(top: 6),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
-            decoration: BoxDecoration(
-                color: Colors.red.shade500,
-                borderRadius: BorderRadius.circular(50)),
+            decoration: BoxDecoration(color: Colors.red.shade500, borderRadius: BorderRadius.circular(50)),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [

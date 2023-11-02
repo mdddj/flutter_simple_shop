@@ -4,7 +4,7 @@ import '../common/index.dart';
 
 // 我的页面
 class Personal extends StatelessWidget {
-  const Personal({Key? key}) : super(key: key);
+  const Personal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +39,11 @@ class Personal extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           '典典',
-                          style: TextStyle(
-                              fontSize: 18.0, color: Color(0xFF353535)),
+                          style: TextStyle(fontSize: 18.0, color: Color(0xFF353535)),
                         ),
                         Text(
                           '账号 liangdiandian',
-                          style: TextStyle(
-                              fontSize: 14.0, color: Color(0xFFa9a9a9)),
+                          style: TextStyle(fontSize: 14.0, color: Color(0xFFa9a9a9)),
                         )
                       ],
                     ),

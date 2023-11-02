@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 class BrandProvider extends ChangeNotifier {
   int page = 1;
@@ -17,9 +17,10 @@ class BrandProvider extends ChangeNotifier {
     lists.clear();
     page = 1;
     final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'), requestParamsBuilder: (RequestParams requestParams) {
+        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'),
+        requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
-    });
+        });
     if (result != null) {
       lists.addAll(result.lists);
     }
@@ -30,9 +31,10 @@ class BrandProvider extends ChangeNotifier {
   Future<void> load() async {
     page = page + 1;
     final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'), requestParamsBuilder: (RequestParams requestParams) {
+        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'),
+        requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
-    });
+        });
     if (result != null) {
       lists.addAll(result.lists);
     }

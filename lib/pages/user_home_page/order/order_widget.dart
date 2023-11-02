@@ -1,7 +1,7 @@
-part of pages;
+part of '../../index.dart';
 
 class OrderIndex extends StatelessWidget {
-  const OrderIndex({Key? key}) : super(key: key);
+  const OrderIndex({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,7 @@ class OrderIndex extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('我的订单',
-                      style: context.textTheme.headlineSmall?.copyWith(
-                          fontSize: 17, fontWeight: FontWeight.bold)),
+                  Text('我的订单', style: context.textTheme.headlineSmall?.copyWith(fontSize: 17, fontWeight: FontWeight.bold)),
                   Text(
                     '查看全部 >',
                     style: context.textTheme.bodySmall,
@@ -38,11 +36,9 @@ class OrderIndex extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    NavigatorUtil.gotoOrderAllIndexPage(
-                        context, '-1'); // -1表示全部显示
+                    NavigatorUtil.gotoOrderAllIndexPage(context, '-1'); // -1表示全部显示
                   },
-                  child: const SvgTitle(
-                      title: '全部订单', svgPath: 'assets/svg/order.svg'),
+                  child: const SvgTitle(title: '全部订单', svgPath: 'assets/svg/order.svg'),
                 ),
                 const SvgTitle(
                   title: '已通过',

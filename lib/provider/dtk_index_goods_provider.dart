@@ -1,4 +1,4 @@
-part of provider;
+part of 'index.dart';
 
 class DtkIndexGoodsModal extends ChangeNotifier {
   List<Datum>? goods = [];

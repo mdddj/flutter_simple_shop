@@ -1,12 +1,11 @@
-part of pages;
+part of '../../../index.dart';
 
 class IndexCarousel extends ConsumerWidget {
-  const IndexCarousel({Key? key}) : super(key: key);
+  const IndexCarousel({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final data =
-        ref.watch(indexStateRiverpod.select((value) => value.carousel));
+    final data = ref.watch(indexStateRiverpod.select((value) => value.carousel));
     if (data.isEmpty) {
       return const ZhetaokeCarouselWidget();
     }
@@ -15,10 +14,7 @@ class IndexCarousel extends ConsumerWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 1,
-      children: [
-        IndexTopicComponentCarousel(list: data),
-        LayoutBuilder(builder: _builder)
-      ],
+      children: [IndexTopicComponentCarousel(list: data), LayoutBuilder(builder: _builder)],
     );
   }
 
@@ -29,16 +25,15 @@ class IndexCarousel extends ConsumerWidget {
 
 final kRivCarouseApiFuture = FutureProvider<WrapJson>((ref) async {
   try {
-    return await (KZheTaokeApiWithCarousel())
-        .request(const RequestParams(showDefaultLoading: false));
-  } on AppException catch (_) {
+    return await (KZheTaokeApiWithCarousel()).request(const RequestParams(showDefaultLoading: false));
+  } on BaseApiException catch (_) {
     rethrow;
   }
 });
 
 ///折淘客的轮播图
 class ZhetaokeCarouselWidget extends ConsumerWidget {
-  const ZhetaokeCarouselWidget({Key? key}) : super(key: key);
+  const ZhetaokeCarouselWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -60,8 +55,7 @@ class ZhetaokeCarouselWidget extends ConsumerWidget {
           ).aspectRatio(2.53);
         },
         error: (e, s) => const Text('error'),
-        loading: () =>
-            const CupertinoActivityIndicator().center.aspectRatio(2.53));
+        loading: () => const CupertinoActivityIndicator().center.aspectRatio(2.53));
   }
 
   List<dynamic> _getCarouselList(final Map<String, dynamic> map) {

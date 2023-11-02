@@ -1,4 +1,4 @@
-part of cache;
+part of 'index.dart';
 
 class PrivacyCache extends CacheBase<bool> {
   @override
@@ -7,7 +7,7 @@ class PrivacyCache extends CacheBase<bool> {
 
   ///是否已经同意了隐私政策
   Future<bool> isAgree() async {
-    final result = await getValue(keyName,defaultValue: false);
+    final result = await getValue(keyName, defaultValue: false);
     return result ?? false;
   }
 

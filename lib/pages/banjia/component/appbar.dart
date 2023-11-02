@@ -1,10 +1,10 @@
-part of pages;
+part of '../../index.dart';
 
 class BanjiaSessions extends ConsumerWidget {
-  const BanjiaSessions({Key? key}) : super(key: key);
+  const BanjiaSessions({super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final sessions = ref.watch(banjiaRiveroid.select((value) => value.sessions));
     final curr = ref.watch(banjiaRiveroid.select((value) => value.currTime));
     if (sessions.isEmpty) return const SizedBox();
@@ -12,13 +12,13 @@ class BanjiaSessions extends ConsumerWidget {
         color: Colors.pink,
         height: 48,
         child: ListView.builder(
-          itemBuilder: (_, index) => renderItem(sessions[index], curr,context,ref),
+          itemBuilder: (_, index) => renderItem(sessions[index], curr, context, ref),
           itemCount: sessions.length,
           scrollDirection: Axis.horizontal,
         ));
   }
 
-  Widget renderItem(SessionsList item, String curr,BuildContext context,WidgetRef ref) {
+  Widget renderItem(SessionsList item, String curr, BuildContext context, WidgetRef ref) {
     final isCurr = item.hpdTime == curr;
     var showText = '';
     if (item.status == '0') {
@@ -30,8 +30,8 @@ class BanjiaSessions extends ConsumerWidget {
     }
 
     return GestureDetector(
-      onTap: (){
-       ref.read(banjiaRiveroid).onChange(item.hpdTime!);
+      onTap: () {
+        ref.read(banjiaRiveroid).onChange(item.hpdTime!);
       },
       child: Container(
         height: double.infinity,
@@ -41,17 +41,15 @@ class BanjiaSessions extends ConsumerWidget {
           children: [
             Text(
               '${item.hpdTime}:00',
-              style: const TextStyle(color: Colors.white,fontSize: 14),
+              style: const TextStyle(color: Colors.white, fontSize: 14),
             ),
             const SizedBox(height: 2),
             Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                decoration: BoxDecoration(
-                    color: isCurr ? Colors.white : Colors.pink,
-                    borderRadius: BorderRadius.circular(15)),
+                decoration: BoxDecoration(color: isCurr ? Colors.white : Colors.pink, borderRadius: BorderRadius.circular(15)),
                 child: Text(
                   showText,
-                  style: TextStyle(color: isCurr ? Colors.black : Colors.white,fontSize: 12),
+                  style: TextStyle(color: isCurr ? Colors.black : Colors.white, fontSize: 12),
                 ))
           ],
         ),

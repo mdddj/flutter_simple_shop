@@ -1,19 +1,17 @@
-part of pages;
+part of 'index.dart';
 
 /// 畅销榜单页面
 class BestSellerListPage extends ConsumerStatefulWidget {
-  const BestSellerListPage({Key? key}) : super(key: key);
+  const BestSellerListPage({super.key});
 
-  static void nav(BuildContext context) =>
-      context.navToWidget(to: const BestSellerListPage());
+  static void nav(BuildContext context) => context.navToWidget(to: const BestSellerListPage());
 
   @override
   BestSellerListPageState createState() => BestSellerListPageState();
 }
 
 class BestSellerListPageState extends ConsumerState<BestSellerListPage> {
-  late final List<ProductModel> _products =
-      ref.read(indexStateRiverpod).hotDayProducts;
+  late final List<ProductModel> _products = ref.read(indexStateRiverpod).hotDayProducts;
 
   @override
   Widget build(BuildContext context) {

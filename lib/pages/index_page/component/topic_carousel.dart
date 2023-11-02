@@ -1,11 +1,10 @@
-part of pages;
+part of '../../index.dart';
 
 /// 首頁輪播圖
 class IndexTopicComponentCarousel extends ConsumerWidget {
   final List<Carousel> list;
 
-  const IndexTopicComponentCarousel({Key? key, required this.list})
-      : super(key: key);
+  const IndexTopicComponentCarousel({super.key, required this.list});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -15,13 +14,7 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
         itemBuilder: (BuildContext context, int index) {
           final item = list[index];
           return ImageView(
-              image: MyImage.network(
-                  url: item.topicImage,
-                  params: ImageParams(
-                      width: double.infinity,
-                      height: double.infinity,
-                      borderRadius: BorderRadius.circular(12),
-                      shape: BoxShape.rectangle)));
+              image: MyImage.network(url: item.topicImage, params: ImageParams(width: double.infinity, height: double.infinity, borderRadius: BorderRadius.circular(12), shape: BoxShape.rectangle)));
           // return renderItem(item);
         },
         itemCount: list.length,
@@ -30,15 +23,11 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
           final stateProivder = ref.read(indexStateRiverpod);
           final item = list[index];
           if (item.sourceType == 1) {
-            context.navToWidget(
-                to: ActivityViewPage(
-                    id: '${item.topicId}', title: item.topicName));
+            context.navToWidget(to: ActivityViewPage(id: '${item.topicId}', title: item.topicName));
           }
           if (item.sourceType == 2) {
             stateProivder.changeLoadingState(true);
-            final result = await DdTaokeSdk.instance.getActivityLink(
-                ActivityLinkParam(promotionSceneId: item.activityId),
-                requestParamsBuilder: (RequestParams requestParams) {
+            final result = await DdTaokeSdk.instance.getActivityLink(ActivityLinkParam(promotionSceneId: item.activityId), requestParamsBuilder: (RequestParams requestParams) {
               return requestParams;
             });
             if (result != null) {

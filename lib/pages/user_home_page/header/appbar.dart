@@ -1,7 +1,7 @@
-part of pages;
+part of '../../index.dart';
 
 class UserHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const UserHomeAppBar({Key? key}) : super(key: key);
+  const UserHomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

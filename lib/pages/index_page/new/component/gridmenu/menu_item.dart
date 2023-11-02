@@ -1,4 +1,4 @@
-part of pages;
+part of '../../../../index.dart';
 
 ///
 /// @Author 梁典典
@@ -10,7 +10,7 @@ class GridMenuItem extends StatelessWidget {
   /// 网格模型
   final GridMenuModel item;
 
-  const GridMenuItem({Key? key, required this.item}) : super(key: key);
+  const GridMenuItem({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,7 @@ class GridMenuItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                renderImage(constraints),
-                utils.widgetUtils.marginTop(),
-                renderTitle()
-              ],
+              children: [renderImage(constraints), utils.widgetUtils.marginTop(), renderTitle()],
             ),
           ),
         );
@@ -39,8 +35,7 @@ class GridMenuItem extends StatelessWidget {
 
   // 标题
   Widget renderTitle() {
-    return DefaultTextStyle.merge(
-        child: Text(item.title), maxLines: 1, overflow: TextOverflow.ellipsis);
+    return DefaultTextStyle.merge(child: Text(item.title), maxLines: 1, overflow: TextOverflow.ellipsis);
   }
 
   // 图片

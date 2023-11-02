@@ -1,4 +1,4 @@
-part of widgets;
+part of '../index.dart';
 
 /// 图片加载loading
 Widget loadingState(ExtendedImageState state) {

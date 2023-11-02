@@ -1,7 +1,8 @@
-part of resource;
+part of 'view.dart';
 
 class MyResourcePage extends StatefulWidget {
   final DynPageParams params;
+
   const MyResourcePage({super.key, required this.params});
 
   @override
@@ -10,6 +11,7 @@ class MyResourcePage extends StatefulWidget {
 
 class _MyResourcePageState extends State<MyResourcePage> {
   DynPageParams get params => widget.params;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,24 +19,18 @@ class _MyResourcePageState extends State<MyResourcePage> {
         title: Text(params.name),
       ),
       body: MyLoadingMoreCustomScrollView(
-        slivers: [
-          MyResourceListWidget(params: params.emptyChild == null ? params : params.copyWith(emptyChild: _builderEmptyWidget()))
-        ],
+        slivers: [MyResourceListWidget(params: params.emptyChild == null ? params : params.copyWith(emptyChild: _builderEmptyWidget()))],
       ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: _gotoWrite, child: const Icon(CupertinoIcons.add)),
+      floatingActionButton: FloatingActionButton(onPressed: _gotoWrite, child: const Icon(CupertinoIcons.add)),
     );
   }
 
   Widget _builderEmptyWidget() {
-    return FilledButton.tonal(
-            onPressed: _gotoWrite, child: Text(params.emptyText))
-        .marginOnly(top: 22);
+    return FilledButton.tonal(onPressed: _gotoWrite, child: Text(params.emptyText)).marginOnly(top: 22);
   }
 
   ///去发布页面
   void _gotoWrite() {
-    context.push(pagerUtil.resourceWrite.routername,
-        extra: DynWriteParams(name: params.name));
+    context.push(pagerUtil.resourceWrite.routername, extra: DynWriteParams(name: params.name));
   }
 }

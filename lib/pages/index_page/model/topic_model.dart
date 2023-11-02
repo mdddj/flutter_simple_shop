@@ -1,10 +1,8 @@
-part of pages;
+part of '../../index.dart';
 
-List<MainTopic> mainTopicFromJson(String str) =>
-    List<MainTopic>.from(json.decode(str).map(MainTopic.fromJson));
+List<MainTopic> mainTopicFromJson(String str) => List<MainTopic>.from(json.decode(str).map(MainTopic.fromJson));
 
-String mainTopicToJson(List<MainTopic> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String mainTopicToJson(List<MainTopic> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class MainTopic {
   MainTopic({

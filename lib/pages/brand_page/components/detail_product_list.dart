@@ -1,20 +1,17 @@
-part of pages;
+part of '../../index.dart';
 
 /// 品牌的商品列表
 class DetailProductList extends StatelessWidget {
   final List<ProductModel> list;
 
-  const DetailProductList({Key? key, required this.list}) : super(key: key);
+  const DetailProductList({super.key, required this.list});
 
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
       padding: const EdgeInsets.all(12),
       sliver: SliverWaterfallFlow.count(
-          crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12,
-          children: [...list.map((e) => _builderList(context, list.indexOf(e)))]),
+          crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand, crossAxisSpacing: 12, mainAxisSpacing: 12, children: [...list.map((e) => _builderList(context, list.indexOf(e)))]),
     );
   }
 
@@ -22,24 +19,18 @@ class DetailProductList extends StatelessWidget {
     var brandDetailGoodsList = list[index];
     return GestureDetector(
       onTap: () {
-        NavigatorUtil.gotoGoodsDetailPage(
-            context, brandDetailGoodsList.id.toString());
+        NavigatorUtil.gotoGoodsDetailPage(context, brandDetailGoodsList.id.toString());
       },
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            children: [
-              _buildImage(brandDetailGoodsList),
-              const SizedBox(width: 12),
-              Expanded(child: _buildData(brandDetailGoodsList))
-            ],
+            children: [_buildImage(brandDetailGoodsList), const SizedBox(width: 12), Expanded(child: _buildData(brandDetailGoodsList))],
           ),
         ),
       ),
     );
   }
-
 
   Widget _buildData(ProductModel item) {
     return Container(
@@ -50,12 +41,11 @@ class DetailProductList extends StatelessWidget {
         children: [
           Text(
             item.title,
-            style: const TextStyle( fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
-          CouponDiscountShow(
-              value: item.couponPrice.toString().replaceAll('.0', '')),
+          CouponDiscountShow(value: item.couponPrice.toString().replaceAll('.0', '')),
           SimplePrice(
             price: item.actualPrice.toString(),
             orignPrice: item.originalPrice.toString(),

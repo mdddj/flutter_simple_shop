@@ -1,4 +1,4 @@
-part of pages;
+part of '../../../index.dart';
 
 ///
 /// @Author 梁典典
@@ -7,7 +7,7 @@ part of pages;
 /// @Date 创建时间 2021年7月2日 11:46:22
 ///
 class WaimaiIndex extends StatelessWidget {
-  const WaimaiIndex({Key? key}) : super(key: key);
+  const WaimaiIndex({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +28,12 @@ class WaimaiIndex extends StatelessWidget {
 
   /// 商超红包
   Widget renderWaimaiShangChao(BuildContext context) {
-    return GestureDetector(
-        onTap: () => navTo('2', context),
-        child: renderImage('assets/images/waimai2.png'));
+    return GestureDetector(onTap: () => navTo('2', context), child: renderImage('assets/images/waimai2.png'));
   }
 
   /// 普通外卖红包
   Widget renderWaimaihongbao(BuildContext context) {
-    return GestureDetector(
-        onTap: () => navTo('1', context),
-        child: renderImage('assets/images/waimai1.png'));
+    return GestureDetector(onTap: () => navTo('1', context), child: renderImage('assets/images/waimai1.png'));
   }
 
   void navTo(String type, BuildContext context) {

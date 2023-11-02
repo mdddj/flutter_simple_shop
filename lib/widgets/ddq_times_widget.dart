@@ -1,12 +1,10 @@
-part of widgets;
+part of 'index.dart';
 
 class DdqTimesWidget extends StatelessWidget {
   final List<RoundsList>? timesList;
   final DdqProvider? ddqProvider;
 
-  const DdqTimesWidget(
-      {required this.timesList, required this.ddqProvider, Key? key})
-      : super(key: key);
+  const DdqTimesWidget({required this.timesList, required this.ddqProvider, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +21,7 @@ class DdqTimesWidget extends StatelessWidget {
     var times = timesList!;
     for (var timeItem in times) {
       //上层文字
-      var upText =
-          '${timeItem.ddqTime!.hour.toString().padLeft(2, '0')}:${timeItem.ddqTime!.minute.toString().padLeft(2, '0')}';
+      var upText = '${timeItem.ddqTime!.hour.toString().padLeft(2, '0')}:${timeItem.ddqTime!.minute.toString().padLeft(2, '0')}';
 
       //下层文字
       var state = timeItem.status;
@@ -43,8 +40,7 @@ class DdqTimesWidget extends StatelessWidget {
         onTap: () {
           ddqProvider!.timeChange(timeItem.ddqTime, timeItem.status);
         },
-        child:
-            UpDownBtnWidget(upText: upText, downText: downText, isCur: isCur),
+        child: UpDownBtnWidget(upText: upText, downText: downText, isCur: isCur),
       ));
     }
     return list;

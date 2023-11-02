@@ -1,7 +1,7 @@
-part of pages;
+part of '../index.dart';
 
 class CategoryIndexPage extends ConsumerStatefulWidget {
-  const CategoryIndexPage({Key? key}) : super(key: key);
+  const CategoryIndexPage({super.key});
 
   @override
   CategoryIndexPageState createState() => CategoryIndexPageState();
@@ -20,10 +20,8 @@ class CategoryIndexPageState extends ConsumerState<CategoryIndexPage> {
       ),
       body: EditePageHandle(
         child: Builder(builder: (context) {
-          final categorys =
-              ref.watch(categoryRiverpod.select((value) => value.categorys));
-          final current =
-              ref.watch(categoryRiverpod.select((value) => value.current));
+          final categorys = ref.watch(categoryRiverpod.select((value) => value.categorys));
+          final current = ref.watch(categoryRiverpod.select((value) => value.current));
           if (categorys.isEmpty) {
             return const Text('没有数据');
           }
@@ -42,12 +40,8 @@ class CategoryIndexPageState extends ConsumerState<CategoryIndexPage> {
                         itemCount: categorys.length,
                         itemBuilder: (context, index) {
                           return GestureDetector(
-                            onTap: () => ref
-                                .read(categoryRiverpod)
-                                .setCurrent(categorys[index]),
-                            child: LeftWidgetItem(
-                                item: categorys[index],
-                                isCurrent: current.cid == categorys[index].cid),
+                            onTap: () => ref.read(categoryRiverpod).setCurrent(categorys[index]),
+                            child: LeftWidgetItem(item: categorys[index], isCurrent: current.cid == categorys[index].cid),
                           );
                         }),
                   ),
@@ -79,15 +73,9 @@ class CategoryIndexPageState extends ConsumerState<CategoryIndexPage> {
                             // ),
                             WaterfallFlow.builder(
                               padding: const EdgeInsets.all(kDefaultPadding),
-                              gridDelegate:
-                                  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: context.isDesktop ? 5 : 3,
-                                      mainAxisSpacing: 12,
-                                      crossAxisSpacing: 20),
+                              gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.isDesktop ? 5 : 3, mainAxisSpacing: 12, crossAxisSpacing: 20),
                               itemBuilder: (context, sIndex) {
-                                return RightWidgetItme(
-                                    category: current,
-                                    item: current.subcategories[sIndex]);
+                                return RightWidgetItme(category: current, item: current.subcategories[sIndex]);
                               },
                               itemCount: (current.subcategories).length,
                               shrinkWrap: true,

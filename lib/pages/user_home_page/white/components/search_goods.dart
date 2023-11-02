@@ -1,7 +1,7 @@
-part of pages;
+part of '../../../index.dart';
 
 class SearchProduct extends StatelessWidget {
-  const SearchProduct({Key? key}) : super(key: key);
+  const SearchProduct({super.key});
 
   @override
   Widget build(BuildContext context) {

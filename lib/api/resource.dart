@@ -1,4 +1,4 @@
-part of api;
+part of 'apis.dart';
 
 ///根据ID查找动态详情
 class MyFindResourceByIdApi extends AppCoreApiWithT<Resource> {
@@ -11,7 +11,7 @@ class MyFindResourceByIdApi extends AppCoreApiWithT<Resource> {
 }
 
 ///获取动态评论接口
-class MyResourceFindCommenApi extends AppCoreApi {
+class MyResourceFindCommenApi extends MyAppCoreApi {
   MyResourceFindCommenApi() : super('/api/public/find-resource-comment');
 }
 

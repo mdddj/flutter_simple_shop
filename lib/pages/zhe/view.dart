@@ -8,7 +8,7 @@ import '../index.dart';
 import 'riverpod.dart';
 
 class ZheIndex extends ConsumerStatefulWidget {
-  const ZheIndex({Key? key}) : super(key: key);
+  const ZheIndex({super.key});
 
   @override
   ZheIndexState createState() => ZheIndexState();

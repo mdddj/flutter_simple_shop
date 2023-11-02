@@ -1,8 +1,7 @@
-part of provider;
+part of '../index.dart';
 
 extension CategoryRiverpodEx on WidgetRef {
-  IList<Category> get categorys =>
-      watch(categoryRiverpod.select((value) => value.categorys));
+  IList<Category> get categorys => watch(categoryRiverpod.select((value) => value.categorys));
 }
 
 final categoryRiverpod = ChangeNotifierProvider((ref) => CategoryState());

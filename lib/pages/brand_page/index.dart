@@ -1,19 +1,16 @@
-part of pages;
+part of '../index.dart';
 
 /// 品牌列表页面
 class BrandListPage extends ConsumerStatefulWidget {
-  const BrandListPage({Key? key}) : super(key: key);
+  const BrandListPage({super.key});
 
   @override
   BrandListPageState createState() => BrandListPageState();
 }
 
-class BrandListPageState extends ConsumerState<BrandListPage>
-    with LoadingMixin, SingleTickerProviderStateMixin {
-  IList<Category> get watchCategory =>
-      ref.watch(categoryRiverpod.select((value) => value.categorys));
-  late final _tabController =
-      TabController(length: watchCategory.length, vsync: this);
+class BrandListPageState extends ConsumerState<BrandListPage> with LoadingMixin, SingleTickerProviderStateMixin {
+  IList<Category> get watchCategory => ref.watch(categoryRiverpod.select((value) => value.categorys));
+  late final _tabController = TabController(length: watchCategory.length, vsync: this);
 
   @override
   Widget build(BuildContext context) {

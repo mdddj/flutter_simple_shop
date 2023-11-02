@@ -1,11 +1,11 @@
-part of pages;
+part of '../index.dart';
 
 //小部件
 ///产品详情首页
 class DetailIndex extends StatefulWidget {
   final String weipinhuiId;
 
-  const DetailIndex({required this.weipinhuiId, Key? key}) : super(key: key);
+  const DetailIndex({required this.weipinhuiId, super.key});
 
   @override
   DetailIndexState createState() => DetailIndexState();
@@ -58,8 +58,7 @@ class DetailIndexState extends State<DetailIndex> {
                           const SizedBox(height: 5),
                           // 价钱行
                           Container(
-                            padding: const EdgeInsets.only(
-                                left: 20, top: 5, bottom: 5),
+                            padding: const EdgeInsets.only(left: 20, top: 5, bottom: 5),
                             child: CouponPriceWidget(
                               actualPrice: detail.vipPrice,
                               originalPrice: double.parse(detail.marketPrice),
@@ -76,12 +75,9 @@ class DetailIndexState extends State<DetailIndex> {
                             child: const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Text('月销:',
-                                    style: TextStyle(color: Colors.grey)),
-                                Text('两小时销量:',
-                                    style: TextStyle(color: Colors.grey)),
-                                Text('当天销量:',
-                                    style: TextStyle(color: Colors.grey)),
+                                Text('月销:', style: TextStyle(color: Colors.grey)),
+                                Text('两小时销量:', style: TextStyle(color: Colors.grey)),
+                                Text('当天销量:', style: TextStyle(color: Colors.grey)),
                               ],
                             ),
                           ),
@@ -98,12 +94,10 @@ class DetailIndexState extends State<DetailIndex> {
                                 Expanded(
                                   child: Row(
                                     children: <Widget>[
-                                      Image.asset('assets/icons/youhuiquan.png',
-                                          width: 30, height: 30),
+                                      Image.asset('assets/icons/youhuiquan.png', width: 30, height: 30),
                                       const Text('该商品可领取满'
                                           '减红包'),
-                                      const Icon(Icons.help_outline,
-                                          color: Colors.black26, size: 12)
+                                      const Icon(Icons.help_outline, color: Colors.black26, size: 12)
                                     ],
                                   ),
                                 ),
@@ -124,10 +118,7 @@ class DetailIndexState extends State<DetailIndex> {
                           Container(
                             padding: const EdgeInsets.only(left: 20),
                             height: 75,
-                            decoration: const BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                                        width: 0.5, color: Colors.black12))),
+                            decoration: const BoxDecoration(border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
                             child: Row(
                               children: <Widget>[
                                 Container(
@@ -154,10 +145,7 @@ class DetailIndexState extends State<DetailIndex> {
                           Container(
                             padding: const EdgeInsets.only(left: 20),
                             height: 75,
-                            decoration: const BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                                        width: 0.5, color: Colors.black12))),
+                            decoration: const BoxDecoration(border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
                             child: Row(
                               children: <Widget>[
                                 Container(
@@ -174,9 +162,7 @@ class DetailIndexState extends State<DetailIndex> {
                                     alignment: Alignment.centerLeft,
                                     child: const Text(
                                       '立即领取',
-                                      style: TextStyle(
-                                          color: primaryColor,
-                                          fontWeight: FontWeight.w600),
+                                      style: TextStyle(color: primaryColor, fontWeight: FontWeight.w600),
                                     ),
                                   ),
                                 ),
@@ -196,10 +182,7 @@ class DetailIndexState extends State<DetailIndex> {
                           Container(
                             padding: const EdgeInsets.only(left: 20),
                             height: 75,
-                            decoration: const BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                                        width: 0.5, color: Colors.black12))),
+                            decoration: const BoxDecoration(border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
                             child: Row(
                               children: <Widget>[
                                 Container(
@@ -228,10 +211,7 @@ class DetailIndexState extends State<DetailIndex> {
                           Container(
                             padding: const EdgeInsets.only(left: 20),
                             height: 75,
-                            decoration: const BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                                        width: 0.5, color: Colors.black12))),
+                            decoration: const BoxDecoration(border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
                             child: Row(
                               children: <Widget>[
                                 Container(
@@ -324,10 +304,8 @@ class DetailIndexState extends State<DetailIndex> {
   String _calcHowLong() {
     var now = DateTime.now();
     final endTime = detail.schemeEndTime;
-    var difference =
-        DateUtil.getDateTime(DateUtil.formatDateMs(endTime))!.difference(now);
-    var str =
-        '${difference.inDays}天${difference.inHours % 24}小时${difference.inMinutes % 60}分';
+    var difference = DateUtil.getDateTime(DateUtil.formatDateMs(endTime))!.difference(now);
+    var str = '${difference.inDays}天${difference.inHours % 24}小时${difference.inMinutes % 60}分';
     return str;
   }
 

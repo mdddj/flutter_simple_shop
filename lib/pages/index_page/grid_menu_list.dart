@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 /// 2020年11月17日 22:48:26
 /// 首页的网格菜单列表
@@ -7,7 +7,7 @@ part of pages;
 /// 不超过两排
 /// 控制好数量
 class GridMenuList extends StatefulWidget {
-  const GridMenuList({Key? key}) : super(key: key);
+  const GridMenuList({super.key});
 
   @override
   GridMenuListState createState() => GridMenuListState();

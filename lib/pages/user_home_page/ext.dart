@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 ///riverpod 扩展函数
 extension RefExt on WidgetRef {

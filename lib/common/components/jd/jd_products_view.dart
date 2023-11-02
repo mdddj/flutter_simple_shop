@@ -1,8 +1,8 @@
-part of common;
+part of '../../index.dart';
 
 /// 首页的京东列表
 class JdProductsView extends StatefulWidget {
-  const JdProductsView({Key? key}) : super(key: key);
+  const JdProductsView({super.key});
 
   @override
   JdProductsViewState createState() => JdProductsViewState();
@@ -17,8 +17,7 @@ class JdProductsViewState extends State<JdProductsView> {
   Widget renderListWidget() {
     return Consumer(
       builder: (BuildContext context, ref, Widget? child) {
-        final products =
-            ref.watch(jdProductsRiverpod.select((value) => value.products));
+        final products = ref.watch(jdProductsRiverpod.select((value) => value.products));
 
         return SliverWaterfallFlow.count(
           mainAxisSpacing: 12,
@@ -32,8 +31,7 @@ class JdProductsViewState extends State<JdProductsView> {
 
   Widget renderItem(JdNativeProduct item) {
     return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15), color: Colors.white),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15), color: Colors.white),
       child: Column(
         children: [
           ExtendedImage.network(item.imageInfo.whiteImage),
@@ -46,11 +44,8 @@ class JdProductsViewState extends State<JdProductsView> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 2),
-                      decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(8)),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(8)),
                       child: const Text(
                         '京东',
                         style: TextStyle(color: Colors.white),

@@ -1,8 +1,8 @@
-part of pages;
+part of '../../index.dart';
 
 // 发布博客页面
 class WriteBlogPage extends StatefulWidget {
-  const WriteBlogPage({Key? key}) : super(key: key);
+  const WriteBlogPage({super.key});
 
   @override
   WriteBlogPageState createState() => WriteBlogPageState();
@@ -70,14 +70,11 @@ class WriteBlogPageState extends State<WriteBlogPage> {
       alignment: Alignment.centerLeft,
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(5)),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (title != null)
-            Container(
-                margin: const EdgeInsets.only(bottom: 6), child: Text(title)),
+          if (title != null) Container(margin: const EdgeInsets.only(bottom: 6), child: Text(title)),
           if (child != null) child,
         ],
       ),

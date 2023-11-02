@@ -1,8 +1,6 @@
-part of provider;
+part of '../../index.dart';
 
-final riverpodIndexProducts =
-    StateNotifierProvider<IndexProductsState, IndexProductsModel>(
-        (ref) => IndexProductsState());
+final riverpodIndexProducts = StateNotifierProvider<IndexProductsState, IndexProductsModel>((ref) => IndexProductsState());
 
 class IndexProductsState extends StateNotifier<IndexProductsModel> {
   IndexProductsState() : super(IndexProductsModel(products: [], page: 1));
@@ -20,8 +18,7 @@ class IndexProductsState extends StateNotifier<IndexProductsModel> {
     if (r != null) {
       final products = state.products;
       products.addAll(r.list ?? []);
-      state =
-          state.copyWith(products: List.from(products), page: state.page.add);
+      state = state.copyWith(products: List.from(products), page: state.page.add);
     }
   }
 }

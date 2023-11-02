@@ -5,7 +5,8 @@ import '../../index.dart';
 
 class CategoryListPage extends StatelessWidget {
   final Category category;
-  const CategoryListPage({Key? key, required this.category}) : super(key: key);
+
+  const CategoryListPage({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {

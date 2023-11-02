@@ -14,13 +14,13 @@ import 'package:flutter/material.dart';
 /// https://github.com/AlexV525/dartpad_workshops/tree/main/implement_lazy_indexed_stack
 class LazyIndexedStack extends StatefulWidget {
   const LazyIndexedStack({
-    Key? key,
+    super.key,
     this.alignment = AlignmentDirectional.topStart,
     this.textDirection,
     this.sizing = StackFit.loose,
     this.index = 0,
     this.children = const <Widget>[],
-  }) : super(key: key);
+  });
 
   final AlignmentGeometry alignment;
   final TextDirection? textDirection;
@@ -35,7 +35,7 @@ class LazyIndexedStack extends StatefulWidget {
 class _LazyIndexedStackState extends State<LazyIndexedStack> {
   late final List<bool> _activatedList = List<bool>.generate(
     widget.children.length,
-        (int i) => i == widget.index,
+    (int i) => i == widget.index,
   );
 
   @override
@@ -61,7 +61,7 @@ class _LazyIndexedStackState extends State<LazyIndexedStack> {
   List<Widget> _buildChildren(BuildContext context) {
     return List<Widget>.generate(
       widget.children.length,
-          (int i) {
+      (int i) {
         if (_activatedList[i]) {
           return widget.children[i];
         }

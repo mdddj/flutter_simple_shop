@@ -1,4 +1,4 @@
-part of index;
+part of 'index.dart';
 
 PagerUtil pagerUtil = GetIt.instance.get<PagerUtil>();
 
@@ -21,9 +21,13 @@ class PagerUtil {
   Pager get setting => const Pager(routername: '/setting');
 
   Pager get login => const Pager(routername: '/login');
+
   Pager get elm => const Pager(routername: '/elm');
+
   Pager get brand => const Pager(routername: '/brand');
+
   Pager get search => const Pager(routername: '/search');
+
   Pager get order => const Pager(routername: '/order');
 }
 
@@ -81,15 +85,27 @@ final routers = GoRouter(
         return const UserLoginPage();
       },
     ),
-    GoRoute(path: pagerUtil.elm.routername,builder: (context, state) {
-      return const WaimaiIndex();
-    },),
-    GoRoute(path: pagerUtil.brand.routername,builder: (context, state) {
-      return const BrandListPage();
-    },),
-    GoRoute(path: pagerUtil.search.routername,builder: (context, state) {
-      return const SearchPage();
-    },),
-    GoRoute(path: pagerUtil.order.routername,builder: (context, state) => const UserOrderIndex(),)
+    GoRoute(
+      path: pagerUtil.elm.routername,
+      builder: (context, state) {
+        return const WaimaiIndex();
+      },
+    ),
+    GoRoute(
+      path: pagerUtil.brand.routername,
+      builder: (context, state) {
+        return const BrandListPage();
+      },
+    ),
+    GoRoute(
+      path: pagerUtil.search.routername,
+      builder: (context, state) {
+        return const SearchPage();
+      },
+    ),
+    GoRoute(
+      path: pagerUtil.order.routername,
+      builder: (context, state) => const UserOrderIndex(),
+    )
   ],
 );

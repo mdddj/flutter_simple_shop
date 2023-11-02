@@ -1,21 +1,19 @@
-part of widgets;
+part of 'index.dart';
 
 // 瀑布流商品卡片
 class WaterfallGoodsCard extends StatelessWidget {
   final ProductModel product;
 
-  const WaterfallGoodsCard(this.product, {Key? key}) : super(key: key);
+  const WaterfallGoodsCard(this.product, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          NavigatorUtil.gotoGoodsDetailPage(context, product.id.toString(),
-              newViewPage: true);
+          NavigatorUtil.gotoGoodsDetailPage(context, product.id.toString(), newViewPage: true);
         },
         child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: Padding(
               padding: const EdgeInsets.only(bottom: 12),
               child: Column(
@@ -54,14 +52,11 @@ class WaterfallGoodsCard extends StatelessWidget {
                   /// 领券标签
                   Container(
                     alignment: Alignment.centerLeft,
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
                     child: FSuper(
                       lightOrientation: FLightOrientation.LeftBottom,
-                      text:
-                          '领 ${NumUtil.getNumByValueDouble(product.couponPrice.toDouble(), 0)} 元券',
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 3),
+                      text: '领 ${NumUtil.getNumByValueDouble(product.couponPrice.toDouble(), 0)} 元券',
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 3),
                       strokeColor: context.primaryColor,
                       corner: FCorner.all(50),
                       style: TextStyle(color: context.primaryColor),
@@ -72,9 +67,7 @@ class WaterfallGoodsCard extends StatelessWidget {
 
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: CouponPriceWidget(
-                        actualPrice: product.actualPrice.toString(),
-                        originalPrice: product.originalPrice.toDouble()),
+                    child: CouponPriceWidget(actualPrice: product.actualPrice.toString(), originalPrice: product.originalPrice.toDouble()),
                   ),
                   // Hot(
                   //     text:
@@ -97,8 +90,7 @@ class WaterfallGoodsCard extends StatelessWidget {
     final text = product.shopType == 0 ? '淘宝' : '天猫';
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 4),
-      decoration: BoxDecoration(
-          color: context.primaryColor, borderRadius: BorderRadius.circular(3)),
+      decoration: BoxDecoration(color: context.primaryColor, borderRadius: BorderRadius.circular(3)),
       child: Text(
         text,
         style: TextStyle(color: context.colorScheme.inversePrimary),
@@ -135,8 +127,7 @@ class WaterfallGoodsCard extends StatelessWidget {
             height: constraints.maxWidth,
             child: SimpleImage(
               url: img,
-              radius: const BorderRadius.only(
-                  topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+              radius: const BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
             ));
       },
     );

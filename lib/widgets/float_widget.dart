@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 class FloatWidget extends SliverPersistentHeaderDelegate {
   final Widget child;
@@ -7,8 +7,7 @@ class FloatWidget extends SliverPersistentHeaderDelegate {
   FloatWidget({required this.child, required this.height});
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return child;
   }
 
@@ -19,6 +18,5 @@ class FloatWidget extends SliverPersistentHeaderDelegate {
   double get minExtent => height;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
-      false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
 }

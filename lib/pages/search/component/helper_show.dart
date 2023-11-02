@@ -1,8 +1,8 @@
-part of pages;
+part of '../../index.dart';
 
 /// 帮助组件
 class HelperComp extends StatelessWidget {
-  const HelperComp({Key? key}) : super(key: key);
+  const HelperComp({super.key});
 
   @override
   Widget build(BuildContext context) {

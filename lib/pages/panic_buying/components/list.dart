@@ -1,9 +1,9 @@
-part of pages;
+part of '../../index.dart';
 
 class ProductsList extends StatelessWidget {
   final List<ProductModel> products;
 
-  const ProductsList(this.products, {Key? key}) : super(key: key);
+  const ProductsList(this.products, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +12,7 @@ class ProductsList extends StatelessWidget {
         child: Container(),
       );
     }
-    return SliverPadding(
-        padding: const EdgeInsets.all(8),
-        sliver: SliverWaterfallFlow.count(
-            crossAxisCount: 2,
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 8,
-            children: products.map(itemBuilder).toList()));
+    return SliverPadding(padding: const EdgeInsets.all(8), sliver: SliverWaterfallFlow.count(crossAxisCount: 2, crossAxisSpacing: 8, mainAxisSpacing: 8, children: products.map(itemBuilder).toList()));
   }
 
   Widget itemBuilder(ProductModel item) {

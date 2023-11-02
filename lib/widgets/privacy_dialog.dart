@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 class PrivacyDialog extends StatefulWidget {
   const PrivacyDialog({super.key});
@@ -9,6 +9,7 @@ class PrivacyDialog extends StatefulWidget {
 
 class _PrivacyDialogState extends State<PrivacyDialog> {
   final url = "${useEnv.host}:${useEnv.port}/privacy";
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -19,20 +20,21 @@ class _PrivacyDialogState extends State<PrivacyDialog> {
         height: context.screenHeight * 0.9,
         margin: const EdgeInsets.only(bottom: 12, top: 12),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-        child:kIsWeb ?  HtmlTextWidget(
-          url: url,
-        ) : ( Platform.isAndroid || Platform.isIOS
-            ? WebViewWidget(
-            controller: WebViewController()
-              ..loadRequest(Uri.parse(url))
-              ..setBackgroundColor(context.theme.dialogBackgroundColor))
-            : HtmlTextWidget(
-          url: url,
-        )),
+        child: kIsWeb
+            ? HtmlTextWidget(
+                url: url,
+              )
+            : (Platform.isAndroid || Platform.isIOS
+                ? WebViewWidget(
+                    controller: WebViewController()
+                      ..loadRequest(Uri.parse(url))
+                      ..setBackgroundColor(context.theme.dialogBackgroundColor))
+                : HtmlTextWidget(
+                    url: url,
+                  )),
       ),
       actions: [
-        TextButton(onPressed: () => exit(0), child: const Text('退出程序'))
-            .marginOnly(right: 12),
+        TextButton(onPressed: () => exit(0), child: const Text('退出程序')).marginOnly(right: 12),
         FilledButton(
             onPressed: () async {
               final nav = context.nav;
@@ -47,6 +49,7 @@ class _PrivacyDialogState extends State<PrivacyDialog> {
 
 class HtmlTextWidget extends StatefulWidget {
   final String url;
+
   const HtmlTextWidget({super.key, required this.url});
 
   @override
@@ -57,12 +60,10 @@ class _HtmlTextWidgetState extends State<HtmlTextWidget> {
   String get url => widget.url;
   final _model = _Model();
 
-
-
   @override
   void initState() {
     super.initState();
-    Future.microtask(()=>_model.loadHtml(url));
+    Future.microtask(() => _model.loadHtml(url));
   }
 
   @override
@@ -71,19 +72,24 @@ class _HtmlTextWidgetState extends State<HtmlTextWidget> {
       model: _model,
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(12),
-        child: ScopedModelDescendant<_Model>(builder:(_,__,model)=> HtmlWidget(model.html)),
+        child: ScopedModelDescendant<_Model>(builder: (_, __, model) => HtmlWidget(model.html)),
       ),
     );
   }
 }
 
-class StringRequest extends BaseApi {
+class StringRequest extends BaseApiPublic<String> {
   StringRequest(super.url);
-}
 
+  @override
+  String covertToModel(DartTypeModel data, RequestParams param) {
+    return data.whenOrNull(string: (value) => value).ifNullThrowBizException("获取数据失败");
+  }
+}
 
 class _Model extends Model {
   String html = '';
+
   void change(String value) {
     html = value;
     notifyListeners();
@@ -92,11 +98,10 @@ class _Model extends Model {
   //加载html
   Future<void> loadHtml(String url) async {
     try {
-      final response = await StringRequest(Uri.parse(url).path)
-          .request(const R(showDefaultLoading: false, returnIsString: true));
+      final response = await StringRequest(Uri.parse(url).path).request(const R(showDefaultLoading: false, returnIsString: true));
       change(response);
-    } on AppException catch (e) {
-      toast(e.getMessage);
+    } on BaseApiException catch (e) {
+      toast(e.message);
     }
   }
 }

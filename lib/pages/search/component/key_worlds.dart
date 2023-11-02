@@ -1,8 +1,8 @@
-part of pages;
+part of '../../index.dart';
 
 /// 搜索关键字组件
 class SearchKeyWorlds extends ConsumerStatefulWidget {
-  const SearchKeyWorlds({Key? key}) : super(key: key);
+  const SearchKeyWorlds({super.key});
 
   @override
   SearchKeyWorldsState createState() => SearchKeyWorldsState();
@@ -40,8 +40,8 @@ class SearchKeyWorldsState extends ConsumerState<SearchKeyWorlds> {
   Widget _item(String item) {
     return InkWell(
       onTap: () {
-        if(item.trim().isEmpty){
-          return ;
+        if (item.trim().isEmpty) {
+          return;
         }
         context.navToWidget(to: SearchListIndex(value: item));
       },
@@ -54,8 +54,7 @@ class SearchKeyWorldsState extends ConsumerState<SearchKeyWorlds> {
   @override
   void initState() {
     Future.microtask(() async {
-      final result = await DdTaokeSdk.instance.getSuggest(
-          requestParamsBuilder: (RequestParams requestParams) {
+      final result = await DdTaokeSdk.instance.getSuggest(requestParamsBuilder: (RequestParams requestParams) {
         return requestParams.copyWith(showDefaultLoading: false);
       });
       if (mounted) {

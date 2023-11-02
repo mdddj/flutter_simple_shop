@@ -1,4 +1,4 @@
-part of provider;
+part of 'index.dart';
 
 final ddqRiverpod = ChangeNotifierProvider((ref) => DdqProvider());
 
@@ -15,8 +15,7 @@ class DdqProvider extends ChangeNotifier with BaseProvider {
   /// 加载数据
   Future<void> loadData() async {
     setLoading(true);
-    final result = await DdTaokeSdk.instance.getDdq(
-        requestParamsBuilder: (RequestParams requestParams) {
+    final result = await DdTaokeSdk.instance.getDdq(requestParamsBuilder: (RequestParams requestParams) {
       return requestParams;
     });
     setLoading(false);

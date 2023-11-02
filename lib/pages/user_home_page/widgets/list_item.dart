@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 class ListItem extends StatelessWidget {
   final String title;
@@ -7,14 +7,7 @@ class ListItem extends StatelessWidget {
   final Widget? leftAction;
   final bool isCard;
 
-  const ListItem(
-      {required this.title,
-      this.actions,
-      required this.onTap,
-      this.leftAction,
-      this.isCard = false,
-      Key? key})
-      : super(key: key);
+  const ListItem({required this.title, this.actions, required this.onTap, this.leftAction, this.isCard = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +17,8 @@ class ListItem extends StatelessWidget {
         height: 111,
         width: context.screenWidth,
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        margin: isCard
-            ? const EdgeInsets.symmetric(horizontal: 12)
-            : EdgeInsets.zero,
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            border:
-                Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
+        margin: isCard ? const EdgeInsets.symmetric(horizontal: 12) : EdgeInsets.zero,
+        decoration: const BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
         child: Row(
           children: <Widget>[
             // 头部
@@ -45,8 +33,7 @@ class ListItem extends StatelessWidget {
 
             // 右侧显示
             Container(
-              child: actions ??
-                  const Icon(Icons.chevron_right, color: Colors.black12),
+              child: actions ?? const Icon(Icons.chevron_right, color: Colors.black12),
             )
           ],
         ),

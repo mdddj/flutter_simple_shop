@@ -1,4 +1,4 @@
-part of common;
+part of 'index.dart';
 
 /// 组件工具类
 abstract class WidgetUtilService {

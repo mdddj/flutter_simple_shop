@@ -1,8 +1,6 @@
-part of provider;
+part of '../../index.dart';
 
-final riverpodWithFavorites =
-    StateNotifierProvider<RiverpodFavoritesState, FavoritesStateModel>(
-        (ref) => RiverpodFavoritesState());
+final riverpodWithFavorites = StateNotifierProvider<RiverpodFavoritesState, FavoritesStateModel>((ref) => RiverpodFavoritesState());
 
 ///暂时弃用
 class RiverpodFavoritesState extends StateNotifier<FavoritesStateModel> {

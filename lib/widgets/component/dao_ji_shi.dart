@@ -1,4 +1,4 @@
-part of widgets;
+part of '../index.dart';
 
 typedef TimerBuilder = Widget Function(int h, int m, int s);
 typedef TimeBuilderTurn = Widget Function(int m, int s);
@@ -14,9 +14,7 @@ class Daojishi extends StatefulWidget {
   final TimerBuilder? builder;
   final TimeBuilderTurn? builderTurn;
 
-  const Daojishi(
-      {Key? key, required this.times, this.builder, this.builderTurn})
-      : super(key: key);
+  const Daojishi({super.key, required this.times, this.builder, this.builderTurn});
 
   @override
   DaojishiState createState() => DaojishiState();

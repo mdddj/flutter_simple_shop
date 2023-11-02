@@ -1,4 +1,4 @@
-part of common;
+part of '../index.dart';
 
 mixin LoadingMixin<T extends StatefulWidget> on State<T> {
   bool loadingState = false;

@@ -1,10 +1,11 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 /// 申请面基页面
 ///
 class ApplyPage extends StatefulWidget {
-  const ApplyPage({Key? key}) : super(key: key);
+  const ApplyPage({super.key});
 
   @override
   ApplyPageState createState() => ApplyPageState();
@@ -96,16 +97,11 @@ class ApplyPageState extends State<ApplyPage> {
                     GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 5,
-                              mainAxisSpacing: 12,
-                              crossAxisSpacing: 12),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5, mainAxisSpacing: 12, crossAxisSpacing: 12),
                       itemBuilder: (context, index) {
                         return Container(
                           alignment: Alignment.center,
-                          decoration:
-                              BoxDecoration(color: Colors.grey.shade100),
+                          decoration: BoxDecoration(color: Colors.grey.shade100),
                           child: const Icon(
                             Icons.add,
                             color: Colors.blue,

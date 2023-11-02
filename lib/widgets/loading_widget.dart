@@ -1,7 +1,7 @@
-part of widgets;
+part of 'index.dart';
 
 class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({Key? key}) : super(key: key);
+  const LoadingWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +21,17 @@ class MyLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingAnimationWidget.flickr(
-        leftDotColor: Colors.red, rightDotColor: Colors.blue, size: 38);
+    return LoadingAnimationWidget.flickr(leftDotColor: Colors.red, rightDotColor: Colors.blue, size: 38);
   }
 }
 
 class MyCustomLoadingWidget extends StatelessWidget {
   final String msg;
-  const MyCustomLoadingWidget(this.msg, {Key? key}) : super(key: key);
+
+  const MyCustomLoadingWidget(this.msg, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.only(top: 12, bottom: 12),
-        alignment: Alignment.center,
-        child: const MyLoading());
+    return Container(padding: const EdgeInsets.only(top: 12, bottom: 12), alignment: Alignment.center, child: const MyLoading());
   }
 }

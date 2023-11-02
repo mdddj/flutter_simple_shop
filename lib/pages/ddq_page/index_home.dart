@@ -1,8 +1,8 @@
-part of pages;
+part of '../index.dart';
 
 /// 钉钉抢的页面
 class DdqIndexHome extends ConsumerStatefulWidget {
-  const DdqIndexHome({Key? key}) : super(key: key);
+  const DdqIndexHome({super.key});
 
   @override
   DdqIndexHomeState createState() => DdqIndexHomeState();
@@ -116,10 +116,7 @@ class DdqIndexHomeState extends ConsumerState<DdqIndexHome> {
             maxHeight: 60,
             child: Container(
               alignment: Alignment.center,
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  border: Border(
-                      bottom: BorderSide(width: 0.5, color: Colors.white70))),
+              decoration: const BoxDecoration(color: Colors.white, border: Border(bottom: BorderSide(width: 0.5, color: Colors.white70))),
               child: DdqTimesWidget(
                 timesList: ddqProvider.roundsList,
                 ddqProvider: ddqProvider,

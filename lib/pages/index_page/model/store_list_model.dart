@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 class StoreData {
   StoreData({

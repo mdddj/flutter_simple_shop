@@ -1,4 +1,4 @@
-part of repository;
+part of 'index.dart';
 
 class GoodsListRepository extends LoadingMoreBase<ProductModel> {
   int pageindex = 1;
@@ -31,14 +31,10 @@ class GoodsListRepository extends LoadingMoreBase<ProductModel> {
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
     var isSuccess = false;
     final result = await DdTaokeSdk.instance.getProducts(
-        param: ProductListParam(
-            pageId: '$pageindex',
-            sort: '$sortStr',
-            brand: '$brand',
-            cids: '$cids',
-            subcid: '$subcid'), requestParamsBuilder: (RequestParams requestParams) {
+        param: ProductListParam(pageId: '$pageindex', sort: '$sortStr', brand: '$brand', cids: '$cids', subcid: '$subcid'),
+        requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
-    });
+        });
 
     if (result != null) {
       addAll(result.list ?? []);

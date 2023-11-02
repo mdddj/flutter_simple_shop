@@ -1,7 +1,6 @@
-part of provider;
+part of '../../../index.dart';
 
-class FavoritesRepository
-    extends SimpleLoadingMoreBaes<MyFavoritesModel, FavoritesFindListApi> {
+class FavoritesRepository extends SimpleLoadingMoreBaes<MyFavoritesModel, FavoritesFindListApi> {
   @override
   FavoritesFindListApi get api => FavoritesFindListApi();
 
@@ -12,9 +11,7 @@ class FavoritesRepository
 
   @override
   List<MyFavoritesModel> transformResponseData(final WrapJson data) {
-    return List<MyFavoritesModel>.from(
-            (data.getListValue('content')).map(MyFavoritesModel.fromJson))
-        .toList();
+    return List<MyFavoritesModel>.from((data.getListValue('content')).map(MyFavoritesModel.fromJson)).toList();
   }
 
   void delete(MyFavoritesModel model) {
@@ -25,7 +22,7 @@ class FavoritesRepository
     setState();
   }
 
-  void addNew(MyFavoritesModel model){
+  void addNew(MyFavoritesModel model) {
     kLog('添加后数量.${array.length}');
     refresh(true);
   }

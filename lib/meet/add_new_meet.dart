@@ -14,7 +14,7 @@ import 'model/params.dart';
 
 ///线下面基申请页面
 class AddNewMeet extends ConsumerStatefulWidget {
-  const AddNewMeet({Key? key}) : super(key: key);
+  const AddNewMeet({super.key});
 
   @override
   ConsumerState<AddNewMeet> createState() => _AddNewMeetState();
@@ -38,7 +38,6 @@ class _AddNewMeetState extends ConsumerState<AddNewMeet> {
   final fAddressToFocusNode = FocusNode(); // 你想去面基的地点
   final fTimeWithDDFocusNode = FocusNode(); //你和典典认识多久了
 
-
   var params = const AddMeetParams();
   final fileContrller = PictureSelectionController();
 
@@ -46,16 +45,13 @@ class _AddNewMeetState extends ConsumerState<AddNewMeet> {
   Future<void> submitData() async {
     final api = MeetRequestAdd();
 
-var files = <MultipartFile>[];
-    await Future.forEach(fileContrller.getFiles, (element) async{
-      final mf = await MultipartFile.fromFile(element.localFilePath?.path??'');
+    var files = <MultipartFile>[];
+    await Future.forEach(fileContrller.getFiles, (element) async {
+      final mf = await MultipartFile.fromFile(element.localFilePath?.path ?? '');
       files.add(mf);
     });
-    api.formData = FormData.fromMap({
-      "files": files
-    }..addAll(params.toJson()));
-    wtfLog(api.formData.fields);
-    final response = await api.request( const R(contentType: 'multipart/form-data'));
+    api.formData = FormData.fromMap({"files": files}..addAll(params.toJson()));
+    final response = await api.request(const R(contentType: 'multipart/form-data'));
     response.handle();
   }
 
@@ -63,79 +59,79 @@ var files = <MultipartFile>[];
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: '申请面基'.appbar,
-      body: ref.isLogin.not ? const LoginTipWidget() : KeyboardActions(
-        config: _buildConfig,
-        child: CupertinoListSection(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),color: context.cardColor,border: Border.all(width: 1,color: context.primaryColor)
-          ),
-          margin: const EdgeInsets.all(12),
-          header: const Text('填写基本信息'),
-          footer: CupertinoButton.filled(onPressed: submitData, child: const Text('提交申请')).center,
-          children: [
-            MyTextField(
-              placeholder: '怎么称呼您',
-              controller: ctrlName,
-              focusNode: fNameFocusNode,
-              icon: const Icon(CupertinoIcons.profile_circled),
-              onChange: (value) {
-                params = params.copyWith(name: value);
-              },
+      body: ref.isLogin.not
+          ? const LoginTipWidget()
+          : KeyboardActions(
+              config: _buildConfig,
+              child: CupertinoListSection(
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: context.cardColor, border: Border.all(width: 1, color: context.primaryColor)),
+                margin: const EdgeInsets.all(12),
+                header: const Text('填写基本信息'),
+                footer: CupertinoButton.filled(onPressed: submitData, child: const Text('提交申请')).center,
+                children: [
+                  MyTextField(
+                    placeholder: '怎么称呼您',
+                    controller: ctrlName,
+                    focusNode: fNameFocusNode,
+                    icon: const Icon(CupertinoIcons.profile_circled),
+                    onChange: (value) {
+                      params = params.copyWith(name: value);
+                    },
+                  ),
+                  MyTextField(
+                    placeholder: '(选填)年龄',
+                    controller: ctrlAge,
+                    focusNode: fAgeFocusNode,
+                    onChange: (value) {
+                      params = params.copyWith(age: int.tryParse(value) ?? -1);
+                    },
+                  ),
+                  MyTextField(
+                    placeholder: '(选填)用户名',
+                    controller: ctrlSoulName,
+                    focusNode: fSoulNameFocusNode,
+                    onChange: (value) {
+                      params = params.copyWith(soulname: value);
+                    },
+                  ),
+                  MyTextField(
+                    placeholder: '面基详情描述,比如:吃饭看电影爬山',
+                    controller: ctrlInfo,
+                    focusNode: fInfoFocusNode,
+                    onChange: (value) {
+                      params = params.copyWith(mianjiinfo: value);
+                    },
+                  ),
+                  MyTextField(
+                    placeholder: '你所在的区域',
+                    controller: ctrlAddressYour,
+                    focusNode: fAddressYourFocusNode,
+                    icon: const Icon(CupertinoIcons.location),
+                    onChange: (value) {
+                      params = params.copyWith(location: value);
+                    },
+                  ),
+                  MyTextField(
+                    placeholder: '你想去的面基地点',
+                    controller: ctrlAddressTo,
+                    focusNode: fAddressToFocusNode,
+                    icon: const Icon(CupertinoIcons.map),
+                    onChange: (value) {
+                      params = params.copyWith(tolocation: value);
+                    },
+                  ),
+                  MyTextField(
+                    placeholder: '(选填)你和典典认识多久了',
+                    controller: ctrlTimeWithDD,
+                    focusNode: fTimeWithDDFocusNode,
+                    onChange: (value) {
+                      params = params.copyWith(aboutdiandian: value);
+                    },
+                  ),
+                  PhotoUploadWidget(fileContrller),
+                ],
+              ),
             ),
-            MyTextField(
-              placeholder: '(选填)年龄',
-              controller: ctrlAge,
-              focusNode: fAgeFocusNode,
-              onChange: (value) {
-                params = params.copyWith(age: int.tryParse(value)??-1);
-              },
-            ),
-            MyTextField(
-              placeholder: '(选填)用户名',
-              controller: ctrlSoulName,
-              focusNode: fSoulNameFocusNode,
-              onChange: (value) {
-                params = params.copyWith(soulname: value);
-              },
-            ),
-            MyTextField(
-              placeholder: '面基详情描述,比如:吃饭看电影爬山',
-              controller: ctrlInfo,
-              focusNode: fInfoFocusNode,
-              onChange: (value) {
-                params = params.copyWith(mianjiinfo: value);
-              },
-            ),
-            MyTextField(
-              placeholder: '你所在的区域',
-              controller: ctrlAddressYour,
-              focusNode: fAddressYourFocusNode,
-              icon: const Icon(CupertinoIcons.location),
-              onChange: (value) {
-                params = params.copyWith(location: value);
-              },
-            ),
-            MyTextField(
-              placeholder: '你想去的面基地点',
-              controller: ctrlAddressTo,
-              focusNode: fAddressToFocusNode,
-              icon: const Icon(CupertinoIcons.map),
-              onChange: (value) {
-                params = params.copyWith(tolocation: value);
-              },
-            ),
-            MyTextField(
-              placeholder: '(选填)你和典典认识多久了',
-              controller: ctrlTimeWithDD,
-              focusNode: fTimeWithDDFocusNode,
-              onChange: (value) {
-                params = params.copyWith(aboutdiandian: value);
-              },
-            ),
-             PhotoUploadWidget(fileContrller),
-          ],
-        ),
-      ),
     );
   }
 
@@ -155,6 +151,7 @@ var files = <MultipartFile>[];
 ///上传自拍表单
 class PhotoUploadWidget extends View {
   final PictureSelectionController fileController;
+
   const PhotoUploadWidget(this.fileController, {super.key});
 
   @override
@@ -163,7 +160,7 @@ class PhotoUploadWidget extends View {
       backgroundColor: context.colorScheme.surfaceVariant,
       leading: const Icon(CupertinoIcons.photo),
       title: Text('添加自拍或者生活照', style: context.textTheme.titleMedium?.copyWith(color: context.primaryColor)),
-      subtitle:  PictureSelection(multipleChoice: true,controller: fileController),
+      subtitle: PictureSelection(multipleChoice: true, controller: fileController),
     ).defaultPadding12;
   }
 }
@@ -176,7 +173,7 @@ class MyTextField extends StatelessWidget {
   final Widget? icon;
   final ValueChanged<String>? onChange;
 
-  const MyTextField({Key? key, this.placeholder, this.controller, this.focusNode, this.icon, this.onChange}) : super(key: key);
+  const MyTextField({super.key, this.placeholder, this.controller, this.focusNode, this.icon, this.onChange});
 
   @override
   Widget build(BuildContext context) {

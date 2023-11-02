@@ -1,21 +1,15 @@
-part of pages;
+part of '../../index.dart';
 
 /// 新版首页
 class IndexHomeNew extends ConsumerStatefulWidget {
-  const IndexHomeNew({Key? key}) : super(key: key);
+  const IndexHomeNew({super.key});
 
   @override
   IndexHomeNewState createState() => IndexHomeNewState();
 }
 
-class IndexHomeNewState extends ConsumerState<IndexHomeNew>
-    with SingleTickerProviderStateMixin ,AutomaticKeepAliveClientMixin {
-  late TabController tabController = TabController(
-      length: ref
-              .watch(categoryRiverpod.select((value) => value.categorys))
-              .length +
-          1,
-      vsync: this);
+class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+  late TabController tabController = TabController(length: ref.watch(categoryRiverpod.select((value) => value.categorys)).length + 1, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +20,7 @@ class IndexHomeNewState extends ConsumerState<IndexHomeNew>
       ),
       body: TabBarView(
         controller: tabController,
-        children: [
-          const HomeWidgets(),
-          ...ref
-              .watch(categoryRiverpod.select((value) => value.categorys))
-              .map(CategoryGoodsList.new)
-              .toList()
-        ],
+        children: [const HomeWidgets(), ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map(CategoryGoodsList.new)],
       ),
     );
   }
@@ -42,14 +30,13 @@ class IndexHomeNewState extends ConsumerState<IndexHomeNew>
 }
 
 class HomeWidgets extends ConsumerStatefulWidget {
-  const HomeWidgets({Key? key}) : super(key: key);
+  const HomeWidgets({super.key});
 
   @override
   ConsumerState<HomeWidgets> createState() => _HomeWidgetsState();
 }
 
-class _HomeWidgetsState extends ConsumerState<HomeWidgets>
-    with AutomaticKeepAliveClientMixin {
+class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAliveClientMixin {
   final repository = NewProductsLoadMore();
 
   @override
@@ -78,8 +65,7 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets>
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: repository,
               indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
-              extendedListDelegate:
-                  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+              extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: context.waterfallFlowCrossAxisCount,
                 crossAxisSpacing: kDefaultPadding,
                 mainAxisSpacing: kDefaultPadding,
@@ -102,7 +88,7 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets>
 
 ///无限下拉瀑布流标题
 class IndexProductTitle extends StatelessWidget {
-  const IndexProductTitle({Key? key}) : super(key: key);
+  const IndexProductTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -115,13 +101,11 @@ class IndexProductTitle extends StatelessWidget {
             'assets/svg/rmtj.svg',
             width: 120,
             height: 30,
-            colorFilter: ColorFilter.mode(
-                context.iconColor ?? Colors.red, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(context.iconColor ?? Colors.red, BlendMode.srcIn),
           ),
           Text(
             '典:没啥事就购物把,反正便宜',
-            style: context.textTheme.bodyMedium
-                ?.copyWith(color: Colors.grey, fontSize: 12),
+            style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey, fontSize: 12),
           )
         ],
       ),
@@ -131,12 +115,11 @@ class IndexProductTitle extends StatelessWidget {
 
 ///首页的产品瀑布流列表
 class IndexProducts extends ConsumerWidget {
-  const IndexProducts({Key? key}) : super(key: key);
+  const IndexProducts({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final products =
-        ref.watch(riverpodIndexProducts.select((value) => value.products));
+    final products = ref.watch(riverpodIndexProducts.select((value) => value.products));
     return SliverPadding(
         padding: const EdgeInsets.all(8),
         sliver: SliverWaterfallFlow.count(

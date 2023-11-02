@@ -1,17 +1,16 @@
-part of pages;
+part of '../../../index.dart';
 
 class BlogCategorys extends StatelessWidget {
   final ValueChanged<BlogCategory>? onSelect;
   final BlogCategory? select; // 选中的
 
-  const BlogCategorys({Key? key, this.onSelect, this.select}) : super(key: key);
+  const BlogCategorys({super.key, this.onSelect, this.select});
 
   @override
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, ref, child) {
-        final blogCates =
-            ref.watch(categoryRiverpod.select((value) => value.blogCategorys));
+        final blogCates = ref.watch(categoryRiverpod.select((value) => value.blogCategorys));
         if (blogCates.isEmpty) return Container();
         return WaterfallFlow.count(
           crossAxisCount: 4,
@@ -32,19 +31,10 @@ class BlogCategorys extends StatelessWidget {
       },
       child: Container(
         padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(5),
-            border: Border.all(
-                color: select != null && select!.id == blogCategory.id
-                    ? Colors.blue
-                    : Colors.black)),
+        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5), border: Border.all(color: select != null && select!.id == blogCategory.id ? Colors.blue : Colors.black)),
         child: Text(
           blogCategory.name,
-          style: TextStyle(
-              color: select != null && select!.id == blogCategory.id
-                  ? Colors.blue
-                  : Colors.black),
+          style: TextStyle(color: select != null && select!.id == blogCategory.id ? Colors.blue : Colors.black),
         ),
       ),
     );

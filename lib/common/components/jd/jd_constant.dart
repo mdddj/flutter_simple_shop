@@ -1,4 +1,4 @@
-part of common;
+part of '../../index.dart';
 
 final jdTypes = <JdTypeModel>[
   JdTypeModel(id: '1', name: '好券商品'),

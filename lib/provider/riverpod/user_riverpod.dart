@@ -1,7 +1,6 @@
-part of provider;
+part of '../index.dart';
 
-final userRiverpod =
-    StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
+final userRiverpod = StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
 
 typedef UpdateModelCall<T> = T Function(T oldModel);
 
@@ -13,23 +12,20 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
 
   @Doc(message: '登录的方法,登录成功会返回一个jwt token')
   Future<LoginResultModel> login(LoginParams params) async {
-    final response = await MyApiWithLogin(params).request();
-    if (response.isSuccess) {
+    try {
+      final response = await MyApiWithLogin(params).request();
       final model = LoginResultModel.fromJson(response.getMap("data"));
       setUserInfoToProvider(model.user);
       setTokenToCatch(model.token);
       return model;
-    } else {
-      response.print();
-      throw AppException(
-          code: response.getInt('state'),
-          message: response.getString('message'));
+    } catch (_) {
+      rethrow;
     }
   }
 
   @override
   void setTokenToCatch(String token) {
-    CacheFactory.create<TokenCache>().setToken(token);
+    TokenCache().setToken(token);
     GetIt.instance.get<UserApi>().token = token;
   }
 
@@ -51,7 +47,7 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
 
   ///app 启动后尝试更新用户信息
   void startAppTryLogin() {
-    CacheFactory.create<TokenCache>().userToken.then((value) {
+    TokenCache().userToken.then((value) {
       if (value.isNotEmpty) {
         actionLog("尝试自动登录", "token", value);
         getIt.get<UserApi>().token = value;

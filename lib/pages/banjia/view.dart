@@ -1,8 +1,8 @@
-part of pages;
+part of '../index.dart';
 
 // 每日半价页面
 class BanjiaIndex extends ConsumerStatefulWidget {
-  const BanjiaIndex({Key? key}) : super(key: key);
+  const BanjiaIndex({super.key});
 
   @override
   BanjiaIndexState createState() => BanjiaIndexState();

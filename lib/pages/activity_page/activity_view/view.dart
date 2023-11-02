@@ -1,7 +1,7 @@
-part of pages;
+part of '../../index.dart';
+
 class ActivityViewPage extends StatefulWidget {
-  const ActivityViewPage({required this.id, required this.title, Key? key})
-      : super(key: key);
+  const ActivityViewPage({required this.id, required this.title, super.key});
 
   final String title;
   final String id;
@@ -20,8 +20,7 @@ class ActivityViewPageState extends State<ActivityViewPage> {
   }
 
   Future<void> getData() async {
-    final products = await DdTaokeSdk.instance.getTopicProducts(
-        widget.id, 50, 1, requestParamsBuilder: (RequestParams requestParams) {
+    final products = await DdTaokeSdk.instance.getTopicProducts(widget.id, 50, 1, requestParamsBuilder: (RequestParams requestParams) {
       return requestParams;
     });
     if (mounted) {
@@ -42,9 +41,7 @@ class ActivityViewPageState extends State<ActivityViewPage> {
               crossAxisCount: 2,
               mainAxisSpacing: 12,
               crossAxisSpacing: 12,
-              children: _products
-                  .map((e) => utils.widgetUtils.renderProductCard(e))
-                  .toList(),
+              children: _products.map((e) => utils.widgetUtils.renderProductCard(e)).toList(),
             ))
       ]),
     );

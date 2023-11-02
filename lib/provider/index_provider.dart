@@ -1,4 +1,4 @@
-part of provider;
+part of 'index.dart';
 
 final indexProviderRiverpod = ChangeNotifierProvider((ref) => IndexProvider());
 
@@ -46,8 +46,7 @@ class IndexProvider extends ChangeNotifier {
   /// 获取品牌栏目列表
   Future<void> fetchStores() async {
     final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(
-            cid: categorys[0].cid.toString(), pageId: '1', pageSize: '1'),
+        param: BrandListParam(cid: categorys[0].cid.toString(), pageId: '1', pageSize: '1'),
         requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
         });

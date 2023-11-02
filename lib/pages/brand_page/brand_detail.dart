@@ -1,17 +1,16 @@
-part of pages;
+part of '../index.dart';
 
 // 产品品牌详情页面
 class BrandDetailPage extends StatefulWidget {
   final String brandId;
 
-  const BrandDetailPage({Key? key, required this.brandId}) : super(key: key);
+  const BrandDetailPage({super.key, required this.brandId});
 
   @override
   BrandDetailPageState createState() => BrandDetailPageState();
 }
 
-class BrandDetailPageState extends State<BrandDetailPage>
-    with AfterLayoutMixin<BrandDetailPage> {
+class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<BrandDetailPage> {
   final products = <ProductModel>[];
   BrandDetail? brandDetailModel;
 
@@ -25,10 +24,7 @@ class BrandDetailPageState extends State<BrandDetailPage>
       body: ScreenTypeLayout.builder(
         mobile: (p0) {
           return CustomScrollView(
-            slivers: [
-              _detailWidget.toSliverWidget,
-              _productList
-            ],
+            slivers: [_detailWidget.toSliverWidget, _productList],
           );
         },
         desktop: (p0) {
@@ -39,9 +35,10 @@ class BrandDetailPageState extends State<BrandDetailPage>
                 height: context.kBodyHeight,
                 child: _detailWidget,
               ),
-              Expanded(child: CustomScrollView(slivers: [
-                _productList
-              ],))
+              Expanded(
+                  child: CustomScrollView(
+                slivers: [_productList],
+              ))
             ],
           );
         },
@@ -49,10 +46,8 @@ class BrandDetailPageState extends State<BrandDetailPage>
     );
   }
 
+  Widget get _detailWidget => BrandDetailView(brandDetailModel: brandDetailModel);
 
-
-  Widget get _detailWidget =>
-      BrandDetailView(brandDetailModel: brandDetailModel);
   Widget get _productList => DetailProductList(
         list: products,
       );
@@ -60,8 +55,7 @@ class BrandDetailPageState extends State<BrandDetailPage>
   @override
   void afterFirstLayout(BuildContext context) async {
     final result = await DdTaokeSdk.instance.getBrandDetail(
-        param: BrandProductParam(
-            brandId: widget.brandId, pageId: '1', pageSize: '100'),
+        param: BrandProductParam(brandId: widget.brandId, pageId: '1', pageSize: '100'),
         requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
         });
@@ -73,4 +67,3 @@ class BrandDetailPageState extends State<BrandDetailPage>
     setState(() {});
   }
 }
-

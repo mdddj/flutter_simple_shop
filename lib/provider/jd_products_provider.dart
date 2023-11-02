@@ -1,7 +1,6 @@
-part of provider;
+part of 'index.dart';
 
-final jdProductsRiverpod =
-    ChangeNotifierProvider((ref) => JdProductsProviderState());
+final jdProductsRiverpod = ChangeNotifierProvider((ref) => JdProductsProviderState());
 
 /// 京东产品的状态
 class JdProductsProviderState extends ChangeNotifier {

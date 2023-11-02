@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 /// 2020年11月18日09:45:15
 /// 轮播图模型设计
@@ -11,11 +11,5 @@ class IndexCarouselItemModel {
   String? params;
   VoidCallback? onTap;
 
-  IndexCarouselItemModel(
-      {this.imageUrl,
-      this.title,
-      this.intro,
-      this.clickType,
-      this.params,
-      this.onTap}); // 参数
+  IndexCarouselItemModel({this.imageUrl, this.title, this.intro, this.clickType, this.params, this.onTap}); // 参数
 }

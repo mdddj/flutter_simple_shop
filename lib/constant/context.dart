@@ -1,4 +1,4 @@
-part of constant;
+part of 'index.dart';
 
 extension ContextEx on BuildContext {
   ///每行显示多少个产品
@@ -96,6 +96,5 @@ extension ContextEx on BuildContext {
     return result;
   }
 
-  DeviceScreenType get deviceScreenType =>
-      getDeviceType(MediaQuery.of(this).size);
+  DeviceScreenType get deviceScreenType => getDeviceType(MediaQuery.of(this).size);
 }

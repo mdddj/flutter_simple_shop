@@ -9,7 +9,7 @@ import '../wph_riverpod.dart';
 
 /// 唯品会精编商品列表
 class WeipinhuiJinBianGoods extends ConsumerStatefulWidget {
-  const WeipinhuiJinBianGoods({Key? key}) : super(key: key);
+  const WeipinhuiJinBianGoods({super.key});
 
   @override
   WeipinhuiJinBianGoodsState createState() => WeipinhuiJinBianGoodsState();
@@ -28,12 +28,7 @@ class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
   Widget build(BuildContext context) {
     final list = ref.watch(wphRiveroid.select((value) => value.products));
     return MyLoadingMoreCustomScrollView(
-      slivers: [
-        SliverList(
-            delegate: SliverChildBuilderDelegate(
-                (_, index) => renderItem(list[index]),
-                childCount: list.length))
-      ],
+      slivers: [SliverList(delegate: SliverChildBuilderDelegate((_, index) => renderItem(list[index]), childCount: list.length))],
     );
   }
 
@@ -41,8 +36,7 @@ class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
   Widget renderItem(dynamic item) {
     return GestureDetector(
       onTap: () {
-        context.navToWidget(
-            to: PublicDetailView(goodsId: item['id'].toString(), type: 'wph'));
+        context.navToWidget(to: PublicDetailView(goodsId: item['id'].toString(), type: 'wph'));
       },
       child: Card(
         elevation: 0,
@@ -76,21 +70,14 @@ class WeipinhuiJinBianGoodsState extends ConsumerState<WeipinhuiJinBianGoods> {
                         Row(
                           children: [
                             Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 6, vertical: 2),
-                              decoration: BoxDecoration(
-                                  color: Colors.pink,
-                                  borderRadius: BorderRadius.circular(5)),
+                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(color: Colors.pink, borderRadius: BorderRadius.circular(5)),
                               child: const Text(
                                 '特卖价',
-                                style: TextStyle(
-                                    fontSize: 10, color: Colors.white),
+                                style: TextStyle(fontSize: 10, color: Colors.white),
                               ),
                             ),
-                            PriceLayout(
-                                original: '${item['quanhou_price']}'
-                                    .replaceAll('.00', ''),
-                                discounts: ''),
+                            PriceLayout(original: '${item['quanhou_price']}'.replaceAll('.00', ''), discounts: ''),
                           ],
                         )
                       ],

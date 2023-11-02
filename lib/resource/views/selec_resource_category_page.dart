@@ -1,4 +1,4 @@
-part of resource;
+part of '../view.dart';
 
 ///选择群组分类页面
 class SelectResourceCategoryPage extends StatefulWidget {
@@ -15,7 +15,9 @@ class _SelectResourceCategoryPageState extends State<SelectResourceCategoryPage>
   //加载列表
   Future<void> _fetchList() async {
     try {
-      setState(() {_loading = true;});
+      setState(() {
+        _loading = true;
+      });
       final result = await MyResourceCategoryAllApi().request(const R(showDefaultLoading: false));
       _list = result;
       _loading = false;
@@ -23,7 +25,7 @@ class _SelectResourceCategoryPageState extends State<SelectResourceCategoryPage>
     } catch (e) {
       _loading = false;
       toast(e.toString());
-      setState(() { });
+      setState(() {});
     }
   }
 
@@ -38,9 +40,7 @@ class _SelectResourceCategoryPageState extends State<SelectResourceCategoryPage>
     return Scaffold(
       appBar: AppBar(
         title: const Text('群组分类'),
-        actions: [
-          const CupertinoActivityIndicator().marginOnly(right: 12).visible(_loading)
-        ],
+        actions: [const CupertinoActivityIndicator().marginOnly(right: 12).visible(_loading)],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(bottom: context.paddingBottom, top: 12),

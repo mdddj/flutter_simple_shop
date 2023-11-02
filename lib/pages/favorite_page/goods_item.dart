@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 // 收藏商品列表卡片布局
 class FavoriteGoodsItem extends StatelessWidget {
@@ -8,32 +8,22 @@ class FavoriteGoodsItem extends StatelessWidget {
   final UserProvider? userProvider;
   final FavoritesRepository repository;
 
-  const FavoriteGoodsItem(
-      {required this.item,
-      required this.isShowEditIcon,
-      this.selectListIds,
-      this.userProvider,
-      Key? key,
-      required this.repository})
-      : super(key: key);
+  const FavoriteGoodsItem({required this.item, required this.isShowEditIcon, this.selectListIds, this.userProvider, super.key, required this.repository});
 
   @override
   Widget build(BuildContext context) {
     return Stack(children: <Widget>[
       Slidable(
         key: ValueKey(item.id),
-        endActionPane: ActionPane(
-            extentRatio: 0.2,
-            motion: const ScrollMotion(),
-            children: [
-              SlidableAction(
-                onPressed: _removeItem,
-                backgroundColor: const Color(0xFFFE4A49),
-                foregroundColor: Colors.white,
-                icon: Icons.delete,
-                label: '删除',
-              )
-            ]),
+        endActionPane: ActionPane(extentRatio: 0.2, motion: const ScrollMotion(), children: [
+          SlidableAction(
+            onPressed: _removeItem,
+            backgroundColor: const Color(0xFFFE4A49),
+            foregroundColor: Colors.white,
+            icon: Icons.delete,
+            label: '删除',
+          )
+        ]),
         child: Card(
           child: Padding(
             padding: const EdgeInsets.all(12),
@@ -52,8 +42,7 @@ class FavoriteGoodsItem extends StatelessWidget {
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(minHeight: 90),
                     child: GestureDetector(
-                      onTap: () => NavigatorUtil.gotoGoodsDetailPage(
-                          context, item.productId),
+                      onTap: () => NavigatorUtil.gotoGoodsDetailPage(context, item.productId),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,8 +80,7 @@ class FavoriteGoodsItem extends StatelessWidget {
               child: Container(
                 width: 100,
                 height: 250,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
+                decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15))),
                 child: Checkbox(
                   value: isSelectValue(),
                   onChanged: (value) {
@@ -132,8 +120,7 @@ class FavoriteGoodsItem extends StatelessWidget {
     var endTime = DateTime.tryParse(item.endTime);
     if (endTime != null) {
       var difference = endTime.difference(now);
-      Widget returnWidget =
-          Text('剩余有效期${difference.inDays}天${difference.inHours % 24}小时');
+      Widget returnWidget = Text('剩余有效期${difference.inDays}天${difference.inHours % 24}小时');
       if (difference.inDays < 0) {
         returnWidget = const Text('已失效');
       }

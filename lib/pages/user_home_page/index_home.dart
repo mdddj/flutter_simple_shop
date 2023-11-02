@@ -1,8 +1,8 @@
-part of pages;
+part of '../index.dart';
 
 /// 用户主页布局
 class UserIndexHome extends ConsumerStatefulWidget {
-  const UserIndexHome({Key? key}) : super(key: key);
+  const UserIndexHome({super.key});
 
   @override
   UserIndexHomeState createState() => UserIndexHomeState();
@@ -25,7 +25,6 @@ class UserIndexHomeState extends ConsumerState<UserIndexHome> {
       ]),
     );
   }
-
 
 // 用户中心的头部
   Widget _buildHeaderWidget() {

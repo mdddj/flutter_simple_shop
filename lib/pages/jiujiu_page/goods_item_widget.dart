@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 // 9.9商品卡片布局
 class GoodsItemWidget extends StatelessWidget {
@@ -7,13 +7,7 @@ class GoodsItemWidget extends StatelessWidget {
   final Widget? imageWidget;
   final EdgeInsets? margin;
 
-  const GoodsItemWidget(
-      {required this.goodsItem,
-      this.shopWidget,
-      this.imageWidget,
-      this.margin,
-      Key? key})
-      : super(key: key);
+  const GoodsItemWidget({required this.goodsItem, this.shopWidget, this.imageWidget, this.margin, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,58 +34,30 @@ class GoodsItemWidget extends StatelessWidget {
           utils.widgetUtils.marginRight(),
           Expanded(
               child: InkWell(
-            onTap: () {
-              NavigatorUtil.gotoGoodsDetailPage(
-                  context, goodsItem.id.toString(),
-                  newViewPage: true);
-            },
-            child: Container(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
+                onTap: () {
+                  NavigatorUtil.gotoGoodsDetailPage(context, goodsItem.id.toString(), newViewPage: true);
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <Widget>[
                     //上面部分
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         //标题
-                        Text(goodsItem.dtitle,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1),
+                        Text(goodsItem.dtitle, style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black), overflow: TextOverflow.ellipsis, maxLines: 1),
                         //店铺
-                        shopWidget ??
-                            TagWidget(
-                                title: goodsItem.shopName, noBorder: true),
+                        shopWidget ?? TagWidget(title: goodsItem.shopName, noBorder: true),
 
                         //券后价
                         Container(
                           margin: const EdgeInsets.only(top: 8.0),
                           child: RichText(
                             text: TextSpan(children: <TextSpan>[
-                              const TextSpan(
-                                  text: '￥',
-                                  style: TextStyle(
-                                      color: Colors.pinkAccent, fontSize: 12)),
-                              TextSpan(
-                                  text: '${goodsItem.actualPrice}',
-                                  style: const TextStyle(
-                                      color: Colors.pinkAccent,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600)),
-                              const TextSpan(
-                                  text: '  券后价    ',
-                                  style: TextStyle(
-                                      color: Colors.pinkAccent, fontSize: 12)),
-                              TextSpan(
-                                  text: '原价${goodsItem.originalPrice}',
-                                  style: const TextStyle(
-                                      color: Colors.black38,
-                                      decoration: TextDecoration.lineThrough,
-                                      fontSize: 12)),
+                              const TextSpan(text: '￥', style: TextStyle(color: Colors.pinkAccent, fontSize: 12)),
+                              TextSpan(text: '${goodsItem.actualPrice}', style: const TextStyle(color: Colors.pinkAccent, fontSize: 12, fontWeight: FontWeight.w600)),
+                              const TextSpan(text: '  券后价    ', style: TextStyle(color: Colors.pinkAccent, fontSize: 12)),
+                              TextSpan(text: '原价${goodsItem.originalPrice}', style: const TextStyle(color: Colors.black38, decoration: TextDecoration.lineThrough, fontSize: 12)),
                             ]),
                           ),
                         )
@@ -105,31 +71,22 @@ class GoodsItemWidget extends StatelessWidget {
                         children: <Widget>[
                           Container(
                             padding: const EdgeInsets.only(left: 10),
-                            decoration: const BoxDecoration(
-                                color: Color.fromRGBO(255, 238, 230, 1.0),
-                                borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(100.0),
-                                    bottomRight: Radius.circular(100.0))),
+                            decoration:
+                            const BoxDecoration(color: Color.fromRGBO(255, 238, 230, 1.0), borderRadius: BorderRadius.only(topRight: Radius.circular(100.0), bottomRight: Radius.circular(100.0))),
                             alignment: Alignment.centerLeft,
                             child: RichText(
                               text: TextSpan(children: [
                                 const TextSpan(
                                   text: '已售',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      color: Color.fromRGBO(137, 60, 17, 1.0)),
+                                  style: TextStyle(fontSize: 12, color: Color.fromRGBO(137, 60, 17, 1.0)),
                                 ),
                                 TextSpan(
                                   text: ' ${goodsItem.monthSales} ',
-                                  style: const TextStyle(
-                                      fontSize: 12,
-                                      color: Color.fromRGBO(255, 91, 0, 1.0)),
+                                  style: const TextStyle(fontSize: 12, color: Color.fromRGBO(255, 91, 0, 1.0)),
                                 ),
                                 const TextSpan(
                                   text: '件',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      color: Color.fromRGBO(137, 60, 17, 1.0)),
+                                  style: TextStyle(fontSize: 12, color: Color.fromRGBO(137, 60, 17, 1.0)),
                                 )
                               ]),
                             ),
@@ -153,16 +110,15 @@ class GoodsItemWidget extends StatelessWidget {
                                 height: 60,
                                 child: const Text(
                                   '立即购买',
-                                  style: TextStyle(
-                                      fontSize: 12, color: Colors.white),
+                                  style: TextStyle(fontSize: 12, color: Colors.white),
                                 ),
                               ))
                         ],
                       ),
                     )
                   ]),
-            ),
-          ))
+                ),
+              ))
         ],
       ),
     );

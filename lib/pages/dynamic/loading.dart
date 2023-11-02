@@ -7,7 +7,7 @@ import '../../widgets/index.dart';
 import 'pyq_riverpod.dart';
 
 class PyQLoading extends ConsumerWidget {
-  const PyQLoading({Key? key}) : super(key: key);
+  const PyQLoading({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

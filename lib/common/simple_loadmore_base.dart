@@ -1,10 +1,10 @@
-part of common;
+part of 'index.dart';
 
-abstract class SimpleLoadingMoreBaes<T, A extends ApiPageMixin>
-    extends LoadingMoreBase<T> {
+abstract class SimpleLoadingMoreBaes<T, A extends ApiPageMixin> extends LoadingMoreBase<T> {
   int vPageSize = 20;
   int vPage = 0;
   bool nomore = false;
+
   @override
   Future<bool> refresh([bool notifyStateChanged = false]) {
     vPage = 0;
@@ -21,8 +21,7 @@ abstract class SimpleLoadingMoreBaes<T, A extends ApiPageMixin>
     pageParams.addAll(otherParams);
     var isSuccess = true;
     final token = await getIt.get<Api>().getAuthorizationHeader();
-    final r = await api.request(RequestParams(
-        showDefaultLoading: false, data: pageParams, headers: token));
+    final r = await api.request(RequestParams(showDefaultLoading: false, data: pageParams, headers: token));
     isSuccess = r.isSuccess;
     if (r.isSuccess) {
       final data = r.getValue('data');

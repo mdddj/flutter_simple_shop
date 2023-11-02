@@ -7,7 +7,7 @@ import 'pages/wph.dart';
 
 /// 动态
 class DynamicIndex extends StatefulWidget {
-  const DynamicIndex({Key? key}) : super(key: key);
+  const DynamicIndex({super.key});
 
   @override
   DynamicIndexState createState() => DynamicIndexState();

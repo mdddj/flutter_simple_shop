@@ -1,4 +1,4 @@
-part of util;
+part of 'index.dart';
 
 extension ImageEx on BuildContext {
   Future<MultipartFile?> get getMultiparFile => getIt.get<MImageUtils>().getDioFormData(this);

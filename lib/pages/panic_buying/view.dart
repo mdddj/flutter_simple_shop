@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 ///
 /// @Author 梁典典
@@ -7,17 +7,14 @@ part of pages;
 /// @Date 创建时间 2021年6月19日 14:38:39
 ///
 class PanicBuyingPage extends ConsumerStatefulWidget {
-  const PanicBuyingPage({Key? key}) : super(key: key);
+  const PanicBuyingPage({super.key});
 
   @override
   PanicBuyingPageState createState() => PanicBuyingPageState();
 }
 
-class PanicBuyingPageState extends ConsumerState<PanicBuyingPage>
-    with SingleTickerProviderStateMixin {
-
-  late final TabController _tabController =
-      TabController(length: ref.categorys.length + 2, vsync: this);
+class PanicBuyingPageState extends ConsumerState<PanicBuyingPage> with SingleTickerProviderStateMixin {
+  late final TabController _tabController = TabController(length: ref.categorys.length + 2, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +32,8 @@ class PanicBuyingPageState extends ConsumerState<PanicBuyingPage>
                 const Tab(
                   text: '全天榜',
                 ),
-                ...ref.categorys.map((element) => Tab(
+                ...ref.categorys.map((element) =>
+                    Tab(
                       text: element.cname,
                     ))
               ],
@@ -47,29 +45,25 @@ class PanicBuyingPageState extends ConsumerState<PanicBuyingPage>
         children: [
           const _ViewItem(AnkingListParam(rank: '1', cid: '')),
           const _ViewItem(AnkingListParam(rank: '2', cid: '')),
-          ...ref.categorys.map((element) =>
-              _ViewItem(AnkingListParam(rank: '1', cid: '${element.cid}')))
+          ...ref.categorys.map((element) => _ViewItem(AnkingListParam(rank: '1', cid: '${element.cid}')))
         ],
       ),
     );
   }
-
 }
 
 ///页面
 class _ViewItem extends StatefulWidget {
   final AnkingListParam param;
 
-  const _ViewItem(this.param, {Key? key}) : super(key: key);
+  const _ViewItem(this.param);
 
   @override
   State<_ViewItem> createState() => _ViewItemState();
 }
 
-class _ViewItemState extends State<_ViewItem>
-    with AutomaticKeepAliveClientMixin {
-  late final RankingListRepository _repository =
-      RankingListRepository(widget.param);
+class _ViewItemState extends State<_ViewItem> with AutomaticKeepAliveClientMixin {
+  late final RankingListRepository _repository = RankingListRepository(widget.param);
 
   @override
   Widget build(BuildContext context) {
@@ -78,9 +72,7 @@ class _ViewItemState extends State<_ViewItem>
         itemBuilder: _itemBuilder,
         sourceList: _repository,
         padding: const EdgeInsets.all(8),
-        extendedListDelegate:
-            const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8)));
+        extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8)));
   }
 
   Widget _itemBuilder(BuildContext context, ProductModel item, int index) {
@@ -97,5 +89,4 @@ class _ViewItemState extends State<_ViewItem>
   bool get wantKeepAlive => true;
 }
 
-void toPanicBuyPage(BuildContext context) =>
-    context.navToWidget(to: const PanicBuyingPage());
+void toPanicBuyPage(BuildContext context) => context.navToWidget(to: const PanicBuyingPage());

@@ -1,15 +1,12 @@
-part of pages;
+part of '../../index.dart';
 
 /// 提现相关
 class MoneyCounterWidget extends StatelessWidget {
-  const MoneyCounterWidget({Key? key}) : super(key: key);
+  const MoneyCounterWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-        itemBuilder: _itemBuilder);
+    return GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), itemBuilder: _itemBuilder);
   }
 
   Widget _itemBuilder(innerContext, int index) {

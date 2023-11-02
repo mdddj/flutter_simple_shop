@@ -1,8 +1,8 @@
-part of pages;
+part of '../index.dart';
 
 ///操作小部件
 class FavoritesActionWidget extends ConsumerWidget {
-  const FavoritesActionWidget({Key? key}) : super(key: key);
+  const FavoritesActionWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

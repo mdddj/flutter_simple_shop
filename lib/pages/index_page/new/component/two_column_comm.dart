@@ -1,15 +1,13 @@
-part of pages;
+part of '../../../index.dart';
 
-typedef IndexTwoColumnImageWidgetBuild = ExtendedImage Function(
-    double w, double h);
+typedef IndexTwoColumnImageWidgetBuild = ExtendedImage Function(double w, double h);
 
 class IndexColumnWidget extends ConsumerWidget {
-  const IndexColumnWidget({Key? key}) : super(key: key);
+  const IndexColumnWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final products =
-        ref.watch(indexStateRiverpod.select((value) => value.hotDayProducts));
+    final products = ref.watch(indexStateRiverpod.select((value) => value.hotDayProducts));
     if (products.isEmpty) {
       return const SizedBox();
     }
@@ -39,11 +37,7 @@ class IndexColumnWidget extends ConsumerWidget {
         if (products.length > 1)
           TwoColumnCommWidget(
             imageBuilder: (double w, double h) {
-              return ExtendedImage.network(products[1].mainPic,
-                  width: w,
-                  height: h,
-                  borderRadius: BorderRadius.circular(12),
-                  shape: BoxShape.rectangle);
+              return ExtendedImage.network(products[1].mainPic, width: w, height: h, borderRadius: BorderRadius.circular(12), shape: BoxShape.rectangle);
             },
             subTitle: '新鲜更有趣',
             title: '每日上新',
@@ -60,13 +54,7 @@ class TwoColumnCommWidget extends StatelessWidget {
   final String subTitle;
   final VoidCallback? onTap;
 
-  const TwoColumnCommWidget(
-      {Key? key,
-      required this.imageBuilder,
-      required this.title,
-      required this.subTitle,
-      this.onTap})
-      : super(key: key);
+  const TwoColumnCommWidget({super.key, required this.imageBuilder, required this.title, required this.subTitle, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +65,7 @@ class TwoColumnCommWidget extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(12),
             width: constraints.maxWidth,
-            decoration: BoxDecoration(
-                color: context.cardColor,
-                borderRadius: BorderRadius.circular(12)),
+            decoration: BoxDecoration(color: context.cardColor, borderRadius: BorderRadius.circular(12)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -92,13 +78,10 @@ class TwoColumnCommWidget extends StatelessWidget {
                       title,
                       style: const TextStyle(fontSize: 18),
                     ),
-                    Text(subTitle,
-                        style: TextStyle(
-                            fontSize: 13, color: Colors.grey.shade400))
+                    Text(subTitle, style: TextStyle(fontSize: 13, color: Colors.grey.shade400))
                   ],
                 )),
-                imageBuilder.call(
-                    constraints.maxWidth * .3, constraints.maxWidth * .3)
+                imageBuilder.call(constraints.maxWidth * .3, constraints.maxWidth * .3)
               ],
             ),
           ),

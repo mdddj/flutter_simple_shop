@@ -1,6 +1,7 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+
 import '../../../constant/index.dart';
 import '../../../widgets/index.dart';
 import '../../../widgets/loading/custom_loading_more_widget.dart';
@@ -8,16 +9,14 @@ import 'repository.dart';
 import 'types.dart';
 
 class JiuJiuIndex extends StatefulWidget {
-  const JiuJiuIndex({Key? key}) : super(key: key);
+  const JiuJiuIndex({super.key});
 
   @override
   State<JiuJiuIndex> createState() => _JiuJiuIndexState();
 }
 
-class _JiuJiuIndexState extends State<JiuJiuIndex>
-    with SingleTickerProviderStateMixin {
-  late final _tabController =
-      TabController(length: ninenineTypes.length, vsync: this);
+class _JiuJiuIndexState extends State<JiuJiuIndex> with SingleTickerProviderStateMixin {
+  late final _tabController = TabController(length: ninenineTypes.length, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +36,7 @@ class _JiuJiuIndexState extends State<JiuJiuIndex>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: ninenineTypes
-            .map((element) => _Item(repository: JiujiuRepository(element)))
-            .toList(),
+        children: ninenineTypes.map((element) => _Item(repository: JiujiuRepository(element))).toList(),
       ),
     );
   }
@@ -48,7 +45,7 @@ class _JiuJiuIndexState extends State<JiuJiuIndex>
 class _Item extends StatelessWidget {
   final JiujiuRepository repository;
 
-  const _Item({Key? key, required this.repository}) : super(key: key);
+  const _Item({required this.repository});
 
   @override
   Widget build(BuildContext context) {
@@ -69,11 +66,7 @@ class _Item extends StatelessWidget {
                 },
               );
             },
-            extendedListDelegate:
-                SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: context.waterfallFlowCrossAxisCount,
-                    mainAxisSpacing: 8,
-                    crossAxisSpacing: 8)))
+            extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 8, crossAxisSpacing: 8)))
       ],
     );
   }

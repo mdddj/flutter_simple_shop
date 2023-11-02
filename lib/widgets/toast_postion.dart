@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 //Toast 显示位置控制
 enum ToastPostion {
@@ -10,26 +10,37 @@ enum ToastPostion {
 class Toast {
   // toast靠它加到屏幕上
   static OverlayEntry? _overlayEntry;
+
   // toast是否正在showing
   static bool _showing = false;
+
   // 开启一个新toast的当前时间，用于对比是否已经展示了足够时间
   static late DateTime _startedTime;
+
   // 提示内容
   static late String _msg;
+
   // toast显示时间
   static late int _showTime;
+
   // 背景颜色
   static Color? _bgColor;
+
   // 文本颜色
   static Color? _textColor;
+
   // 文字大小
   static double? _textSize;
+
   // 显示位置
   static ToastPostion? _toastPosition;
+
   // 左右边距
   static late double _pdHorizontal;
+
   // 上下边距
   static late double _pdVertical;
+
   static void toast(
     BuildContext context, {
     //显示的文本
@@ -75,9 +86,7 @@ class Toast {
                       padding: const EdgeInsets.symmetric(horizontal: 40.0),
                       child: AnimatedOpacity(
                         opacity: _showing ? 1.0 : 0.0, //目标透明度
-                        duration: _showing
-                            ? const Duration(milliseconds: 100)
-                            : const Duration(milliseconds: 400),
+                        duration: _showing ? const Duration(milliseconds: 100) : const Duration(milliseconds: 400),
                         child: _buildToastWidget(),
                       ),
                     )),
@@ -106,8 +115,7 @@ class Toast {
       child: Card(
         color: _bgColor,
         child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: _pdHorizontal, vertical: _pdVertical),
+          padding: EdgeInsets.symmetric(horizontal: _pdHorizontal, vertical: _pdVertical),
           child: Text(
             _msg,
             style: TextStyle(

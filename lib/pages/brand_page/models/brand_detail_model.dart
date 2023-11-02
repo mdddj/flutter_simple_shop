@@ -1,5 +1,4 @@
-part of pages;
-
+part of '../../index.dart';
 
 class BrandDetailModel {
   BrandDetailModel({
@@ -16,8 +15,7 @@ class BrandDetailModel {
   });
 
   factory BrandDetailModel.fromJson(Map<String, dynamic> jsonRes) {
-    final list =
-        jsonRes['list'] is List ? <BrandDetailGoodsList>[] : null;
+    final list = jsonRes['list'] is List ? <BrandDetailGoodsList>[] : null;
     if (list != null) {
       for (final dynamic item in jsonRes['list']) {
         if (item != null) {

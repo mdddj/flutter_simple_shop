@@ -1,10 +1,10 @@
-part of pages;
+part of '../../index.dart';
 
 /// 品牌信息卡片
 class BrandDetailView extends StatelessWidget {
   final BrandDetail? brandDetailModel;
 
-  const BrandDetailView({Key? key, this.brandDetailModel}) : super(key: key);
+  const BrandDetailView({super.key, this.brandDetailModel});
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +26,14 @@ class BrandDetailView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 12,),
+                  const SizedBox(
+                    height: 12,
+                  ),
                   CircleAvatar(child: _biuldLogo(context)),
-                  const SizedBox(height: 12,),
-                  Text(brandDetailModel!.brandName!,style: context.textTheme.titleLarge),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  Text(brandDetailModel!.brandName!, style: context.textTheme.titleLarge),
                   Text(brandDetailModel!.brandDesc!).defaultPadding12
                 ],
               ),
@@ -40,13 +44,9 @@ class BrandDetailView extends StatelessWidget {
     );
   }
 
-
   Widget _biuldLogo(BuildContext context) {
-    return ImageView(image: MyImage.network(url: MImageUtils.magesProcessor(brandDetailModel!.brandLogo!),params: ImageParams(
-        size: 50,
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(25)
-    )));
+    return ImageView(
+        image: MyImage.network(url: MImageUtils.magesProcessor(brandDetailModel!.brandLogo!), params: ImageParams(size: 50, shape: BoxShape.rectangle, borderRadius: BorderRadius.circular(25))));
   }
 
   void showInfo(BuildContext context) {

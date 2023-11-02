@@ -1,4 +1,4 @@
-part of index;
+part of 'index.dart';
 
 /// 初始化
 Future<void> appInit(VoidCallback start) async {
@@ -6,43 +6,14 @@ Future<void> appInit(VoidCallback start) async {
   await (Connectivity().checkConnectivity());
   initNetUtil();
   initInstanceObject();
-  BaseApi.options = BaseOptions(
-    connectTimeout: const Duration(seconds: 30),
-  );
-  if (useEnv.debugMode) {
-    DdCheckPlugin().init(BaseApi.getDio(),
-        initHost: "192.168.199.78",
-        port: 9998,
-        customCoverterResponseData: (model) {
-          final body = model.response?.data;
-          return isValue<Map<String, dynamic>>(body)
-                  .isNotNull<SendResponseModel?>((value) {
-                return isValue<String>(body['data'])
-                    .isNotNull<SendResponseModel?>((value2) {
-                  try {
-                    final map = jsonDecode(value2);
-                    body['data'] = map;
-                    return model.copyWith(body: Map.from(body));
-                  } catch (e) {
-                    return model;
-                  }
-                });
-              }) ??
-              model;
-        },
-        version: DataFormatVersions.ideaPlugin,
-        conectSuccess: (s) {
-        });
-  }
-
   await initCaches();
   start.call();
+  TKBaseApi.opt = BaseApiPublic.opt;
   final SharedPreferences prefs = await SharedPreferences.getInstance();
   prefs.setString("token", "fsdkjfksdjfkjsdfkfjdsj你好啊");
 }
 
 void initNetUtil() {
-  BaseApi.host = "${useEnv.host}:${useEnv.port}";
   if (kIsWeb.not && Platform.isAndroid) {
     HttpOverrides.global = MyHttpOverrides();
   }
@@ -74,7 +45,6 @@ void initInstanceObject() {
   getIt.registerSingleton(MyUpdateUserJobApi());
   getIt.registerSingleton(MyUserFilesApi());
   getIt.registerSingleton(MyApiWithReportList());
-  getIt.registerSingleton(PluginHandle());
   getIt.registerSingleton(MyFindResourceByIdApi());
   getIt.registerSingleton(MyResourceFindCommenApi());
   getIt.registerSingleton(ZheElmApi());
@@ -96,33 +66,13 @@ Future<void> initCaches() async {
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
-    return super.createHttpClient(context)
-      ..badCertificateCallback =
-          (X509Certificate cert, String host, int port) => true;
+    return super.createHttpClient(context)..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
   }
 }
 
-class PluginHandle extends ServerMessageHandle {
-  @override
-  void error(error) {
-    // TODO: implement error
-  }
+class MyCategoryCache extends DdPluginHiveBox<CategoryWrapper> {
+  MyCategoryCache() : super("dd_category_box");
 
   @override
-  void mapMessageHandle(Map<String, dynamic> data) {
-    // TODO: implement mapMessageHandle
-  }
-
-  @override
-  void stringMessageHandle(String data) {
-    // TODO: implement stringMessageHandle
-    wtfLog("收到插件的消息:$data");
-    if (data == "get-sp-values") {
-      // Obtain shared preferences.
-      SharedPreferences.getInstance().then((value) {
-        final keys = value.getKeys();
-        wtfLog(keys);
-      });
-    }
-  }
+  Future<Box<CategoryWrapper>> get getBox => Hive.isBoxOpen(boxName) ? Future.value(Hive.box(boxName)) : Hive.openBox(boxName);
 }

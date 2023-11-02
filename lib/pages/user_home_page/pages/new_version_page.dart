@@ -1,8 +1,8 @@
-part of pages;
+part of '../../index.dart';
 
 /// 上传新版本页面
 class NewVersionPage extends StatefulWidget {
-  const NewVersionPage({Key? key}) : super(key: key);
+  const NewVersionPage({super.key});
 
   @override
   NewVersionPageState createState() => NewVersionPageState();
@@ -27,12 +27,8 @@ class NewVersionPageState extends State<NewVersionPage> with LoadingMixin {
                   controller: textEditingController,
                   decoration: const InputDecoration(hintText: '输入版本号'),
                 ),
-                TextField(
-                    controller: descController,
-                    decoration: const InputDecoration(hintText: '输入版本更新内容')),
-                TextField(
-                    controller: downUrlController,
-                    decoration: const InputDecoration(hintText: '版本下载网址')),
+                TextField(controller: descController, decoration: const InputDecoration(hintText: '输入版本更新内容')),
+                TextField(controller: downUrlController, decoration: const InputDecoration(hintText: '版本下载网址')),
                 ElevatedButton(
                   onPressed: () async {
                     // final text = textEditingController.text;

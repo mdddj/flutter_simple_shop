@@ -1,10 +1,10 @@
-part of pages;
+part of '../index.dart';
 
 class GoodsListWidget extends StatelessWidget {
   final List<ProductModel>? list;
   final bool? isInitLoading;
-  const GoodsListWidget({required this.list, this.isInitLoading, Key? key})
-      : super(key: key);
+
+  const GoodsListWidget({required this.list, this.isInitLoading, super.key});
 
   @override
   Widget build(BuildContext context) {

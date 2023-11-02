@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 /// 通用分类插件
 class CategoryComponent extends ConsumerStatefulWidget {
@@ -8,14 +8,7 @@ class CategoryComponent extends ConsumerStatefulWidget {
   final TextStyle? currentStyle;
   final CategoryController? controller;
 
-  const CategoryComponent(
-      {Key? key,
-      this.extendItems,
-      this.onSelect,
-      this.textStyle,
-      this.controller,
-      this.currentStyle})
-      : super(key: key);
+  const CategoryComponent({super.key, this.extendItems, this.onSelect, this.textStyle, this.controller, this.currentStyle});
 
   @override
   CategoryComponentState createState() => CategoryComponentState();
@@ -24,9 +17,7 @@ class CategoryComponent extends ConsumerStatefulWidget {
 class CategoryComponentState extends ConsumerState<CategoryComponent> {
   int _current = 0;
   CategoryChildPosition? _categoryChildPosition;
-  final ValueNotifier<CategoryChildPosition?> _valueNotifier =
-      ValueNotifier<CategoryChildPosition?>(CategoryChildPosition(
-          count: 0, position: <int, Offset>{}, size: <int, Size>{}));
+  final ValueNotifier<CategoryChildPosition?> _valueNotifier = ValueNotifier<CategoryChildPosition?>(CategoryChildPosition(count: 0, position: <int, Offset>{}, size: <int, Size>{}));
 
   @override
   void initState() {
@@ -34,8 +25,7 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
     _bindController();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       setState(() {
-        _categoryChildPosition = CategoryChildPosition(
-            count: 0, position: <int, Offset>{}, size: <int, Size>{});
+        _categoryChildPosition = CategoryChildPosition(count: 0, position: <int, Offset>{}, size: <int, Size>{});
       });
     });
   }
@@ -59,10 +49,8 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
 
   @override
   Widget build(BuildContext context) {
-    final categorys =
-        ref.watch(categoryRiverpod.select((value) => value.categorys));
-    var extendItemsLength =
-        widget.extendItems == null ? 0 : widget.extendItems!.length;
+    final categorys = ref.watch(categoryRiverpod.select((value) => value.categorys));
+    var extendItemsLength = widget.extendItems == null ? 0 : widget.extendItems!.length;
     return Stack(
       children: [
         Container(
@@ -81,12 +69,9 @@ class CategoryComponentState extends ConsumerState<CategoryComponent> {
                 itemBuilder: (context, index) {
                   var insetCustomItem = _indexIsExtendWidget(index);
                   if (insetCustomItem != null) {
-                    return GestureDetector(
-                        onTap: insetCustomItem.onTap,
-                        child: insetCustomItem.child);
+                    return GestureDetector(onTap: insetCustomItem.onTap, child: insetCustomItem.child);
                   } else {
-                    final mainCategory =
-                        categorys[index - _getCountWhereInCategoryIndex(index)];
+                    final mainCategory = categorys[index - _getCountWhereInCategoryIndex(index)];
                     return GestureDetector(
                       onTap: () {
                         _onTap(mainCategory.cname, categorys);

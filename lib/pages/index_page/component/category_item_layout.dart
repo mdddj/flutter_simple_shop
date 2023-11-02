@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 class CategoryItemDefaultLayout extends StatefulWidget {
   final int? index;
@@ -8,19 +8,10 @@ class CategoryItemDefaultLayout extends StatefulWidget {
   final int? current;
   final OnRenderEnd onRendeEnd;
 
-  const CategoryItemDefaultLayout(
-      {this.index,
-      this.name,
-      this.textStyle,
-      Key? key,
-      this.current,
-      this.currentStyle,
-      required this.onRendeEnd})
-      : super(key: key);
+  const CategoryItemDefaultLayout({this.index, this.name, this.textStyle, super.key, this.current, this.currentStyle, required this.onRendeEnd});
 
   @override
-  CategoryItemDefaultLayoutState createState() =>
-      CategoryItemDefaultLayoutState();
+  CategoryItemDefaultLayoutState createState() => CategoryItemDefaultLayoutState();
 }
 
 class CategoryItemDefaultLayoutState extends State<CategoryItemDefaultLayout> {
@@ -39,8 +30,7 @@ class CategoryItemDefaultLayoutState extends State<CategoryItemDefaultLayout> {
 
   void _notificationWidgetInfoTo() {
     final box = context.findRenderObject() as RenderBox;
-    widget.onRendeEnd(
-        widget.index, box.localToGlobal(Offset.zero), context.size);
+    widget.onRendeEnd(widget.index, box.localToGlobal(Offset.zero), context.size);
   }
 
   @override
@@ -52,14 +42,11 @@ class CategoryItemDefaultLayoutState extends State<CategoryItemDefaultLayout> {
       child: widget.index == widget.current
           ? Text(
               widget.name!,
-              style: widget.currentStyle ??
-                  const TextStyle(fontSize: 12, color: Colors.pinkAccent),
+              style: widget.currentStyle ?? const TextStyle(fontSize: 12, color: Colors.pinkAccent),
             )
           : Text(
               widget.name!,
-              style: widget.textStyle ??
-                  const TextStyle(
-                      fontSize: 12, color: Color.fromRGBO(255, 255, 255, .65)),
+              style: widget.textStyle ?? const TextStyle(fontSize: 12, color: Color.fromRGBO(255, 255, 255, .65)),
             ),
     );
   }

@@ -11,7 +11,7 @@ import 'meet_item_layout.dart';
 import 'meet_model.dart';
 
 class MeetListWidget extends ConsumerStatefulWidget {
-  const MeetListWidget({Key? key}) : super(key: key);
+  const MeetListWidget({super.key});
 
   @override
   ConsumerState<MeetListWidget> createState() => _MeetListWidgetState();
@@ -31,8 +31,7 @@ class _MeetListWidgetState extends ConsumerState<MeetListWidget> {
             itemBuilder: MeetItemLayout.new,
             sourceList: repository,
             indicatorBuilder: (context, status) {
-              return CustomLoadingMoreWidgetWithSliver(context, status,
-                  retry: () {
+              return CustomLoadingMoreWidgetWithSliver(context, status, retry: () {
                 repository.refresh(true);
               }, emptyChild: const SizedBox());
             },

@@ -13,8 +13,277 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="细节优化">
+    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ad.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ad.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/apis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/base.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/base.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/report.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/report.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/resource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/resource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/tkapi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/tkapi.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/zhe_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/zhe_api.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/cache/privacy.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/cache/privacy.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/base_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/base_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/components/jd/jd_category_mini_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/jd/jd_category_mini_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/components/jd/jd_constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/jd/jd_constant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/components/jd/jd_products_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/jd/jd_products_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/components/jd/jd_types_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/jd/jd_types_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/components/jd/product_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/jd/product_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/components/new_products/respose.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/new_products/respose.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/components/pdd/resp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/pdd/resp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/components/pdd/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/pdd/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/extend/string.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/extend/string.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/im_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/im_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/jpa_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/jpa_list_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/jpa_page_loading_more.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/jpa_page_loading_more.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/no_shadow_croll_ehavior.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/no_shadow_croll_ehavior.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/simple_loadmore_base.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/simple_loadmore_base.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/toast.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/toast.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/touch_callback.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/touch_callback.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/widget_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/widget_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/widgets/hot.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/widgets/hot.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/widgets/loading_mixin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/widgets/loading_mixin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/widgets/simple_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/widgets/simple_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constant/color.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constant/color.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constant/context.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constant/context.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constant/ext.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constant/ext.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constant/string.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constant/string.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constant/style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constant/style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/freezed/application.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/application.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/init.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/init.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/meet/add_new_meet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/meet/add_new_meet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/meet/meet_item_layout.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/meet/meet_item_layout.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/meet/meet_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/meet/meet_list_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/activity_page/activity_view/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/activity_page/activity_view/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/banjia/component/appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/banjia/component/appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/banjia/component/list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/banjia/component/list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/banjia/resp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/banjia/resp.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/banjia/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/banjia/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/best_seller_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/best_seller_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/blog/write_blog/components/blog_categorys.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/blog/write_blog/components/blog_categorys.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/blog/write_blog/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/blog/write_blog/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/brand_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/brand_detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/category_delegate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/category_delegate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/components/detail_brand_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/components/detail_brand_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/components/detail_product_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/components/detail_product_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/components/item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/components/item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/models/brand_detail_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/models/brand_detail_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/new/list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/new/list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/provider/brand_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/provider/brand_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/category_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/category_page/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/category_page/left_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/category_page/left_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/category_page/right_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/category_page/right_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/ddq_page/goods_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/ddq_page/goods_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/ddq_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/ddq_page/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/ddq_page/sliver_app_bar_delegate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/ddq_page/sliver_app_bar_delegate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/action_buttons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/action_buttons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/detail_imgs_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/detail_imgs_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/shop_info_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/shop_info_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/swiper_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/swiper_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic/components/list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic/components/list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic/loading.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic/loading.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic/pages/pyq.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic/pages/pyq.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic/pages/wph.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic/pages/wph.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic_page/pages/add.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic_page/pages/add.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/dynamic_page/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/dynamic_page/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/favorite_page/actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/favorite_page/actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/favorite_page/goods_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/favorite_page/goods_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/favorite_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/favorite_page/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/category_component.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/category_component.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/category_item_layout.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/category_item_layout.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/category_notification_stream.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/category_notification_stream.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/component_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/component_title.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/home_banner.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/home_banner.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/topic_carousel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/topic_carousel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/desktop/components/appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/desktop/components/appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/desktop/components/title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/desktop/components/title.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/desktop/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/desktop/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/grid_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/grid_menu.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/grid_menu_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/grid_menu_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/model/index_carousel_item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/model/index_carousel_item_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/model/index_grid_menu_item_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/model/index_grid_menu_item_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/model/store_list_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/model/store_list_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/model/topic_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/model/topic_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/carousel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/carousel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/gridmenu/menu_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/gridmenu/menu_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/gridmenu/model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/gridmenu/model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/gridmenu/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/gridmenu/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/index_tabbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/index_tabbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/products.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/products.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/two_column_comm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/two_column_comm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/github/github.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/github/github.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/index_card_wrapper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/index_card_wrapper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/index_riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/index_riverpod.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/public_widget_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/public_widget_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/store/component_index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/store/component_index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/store/goods_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/store/goods_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/store/goods_item_layout.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/store/goods_item_layout.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/store/price_layout.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/store/price_layout.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/store/store_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/store/store_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/jd/recommend/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/jd/recommend/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/jiujiu_page/goods_item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/jiujiu_page/goods_item_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/jiujiu_page/goods_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/jiujiu_page/goods_list_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/jiujiu_page/image_nav.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/jiujiu_page/image_nav.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/jiujiu_page/new/widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/jiujiu_page/new/widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/loading/index_loading_skeleton_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/loading/index_loading_skeleton_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/mianji/mianji/apply.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/mianji/mianji/apply.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/mianji/mianji/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/mianji/mianji/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/components/sort_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/components/sort_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/components/subcategory_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/components/subcategory_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/riverpod.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/order/model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/order/model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/order/user_order_index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/order/user_order_index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/other_page/not_found_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/other_page/not_found_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/panic_buying/components/appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/panic_buying/components/appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/panic_buying/components/categorys.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/panic_buying/components/categorys.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/panic_buying/components/daojishi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/panic_buying/components/daojishi.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/panic_buying/components/list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/panic_buying/components/list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/panic_buying/components/view_status.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/panic_buying/components/view_status.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/panic_buying/repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/panic_buying/repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/panic_buying/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/panic_buying/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/pinduoduo/search/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/pinduoduo/search/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/public_detail/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/public_detail/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/report/repost_index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/report/repost_index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/search/component/helper_show.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/component/helper_show.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/search/component/key_worlds.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/component/key_worlds.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/search/list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/search/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/ext.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/ext.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/header/appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/header/appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/header/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/header/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/header/money_count.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/header/money_count.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/login/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/login/login_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/login/register_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/login/register_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/new/my_sliver_appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/new/my_sliver_appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/new/user_center_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/new/user_center_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/order/my_order.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/order/my_order.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/order/order_add.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/order/order_add.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/order/order_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/order/order_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/pages/new_version_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/pages/new_version_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/mini_theme_setting.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/mini_theme_setting.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_avatar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_avatar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_city.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_city.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_job.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_job.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_name.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_name.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_string_attr.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/update_string_attr.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/white/components/code_input.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/white/components/code_input.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/white/components/more_action_bottomsheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/white/components/more_action_bottomsheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/white/components/search_goods.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/white/components/search_goods.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/white/views/markdown_preview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/white/views/markdown_preview.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/widgets/list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/widgets/list_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/widgets/svg_title.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/widgets/svg_title.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/xb/xianbao_index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/xb/xianbao_index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/zhe/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/zhe/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/personal/personal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/personal/personal.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/ddq_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/ddq_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/dtk_index_goods_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/dtk_index_goods_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/goods_detail_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/goods_detail_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/goods_list_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/goods_list_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/index_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/index_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/jd_products_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/jd_products_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/base.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/base.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/category_riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/category_riverpod.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/favorites/repository/favorites_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/favorites/repository/favorites_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/favorites/riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/favorites/riverpod.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/index/riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/index/riverpod.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/search_riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/search_riverpod.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/user_riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/user_riverpod.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/user_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/user_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repository/goods_list_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repository/goods_list_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repository/order_respository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repository/order_respository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/repository/user_order.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/repository/user_order.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/views/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/views/selec_resource_category_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/selec_resource_category_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/views/write_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/write_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/cache_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/cache_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/color_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/color_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/fluro_convert_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/fluro_convert_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/image_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/image_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/input_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/input_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/navigator_util.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/navigator_util.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/public.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/public.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/ad.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/ad.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/category/jd_category.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/category/jd_category.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/component/coupon_discount.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/component/coupon_discount.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/component/custom_loading.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/component/custom_loading.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/component/custom_select_toolbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/component/custom_select_toolbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/component/custom_skeleton_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/component/custom_skeleton_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/component/dao_ji_shi.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/component/dao_ji_shi.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/component/new_version_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/component/new_version_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/component/tool_tip.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/component/tool_tip.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/coupon_price.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/coupon_price.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/ddq_times_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/ddq_times_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/default_avatar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/default_avatar_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/default_user_name.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/default_user_name.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/desktop/login_dailog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/desktop/login_dailog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/desktop/string_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/desktop/string_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/desktop_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/desktop_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/detail_simple_bborder_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/detail_simple_bborder_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/edit_page_handle.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/edit_page_handle.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/extended_image.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/extended_image.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/flexd/index_header_flexd_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/flexd/index_header_flexd_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/flexd/index_main_goods_mini_title_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/flexd/index_main_goods_mini_title_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/float_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/float_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/icon_block_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/icon_block_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/image_download.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/image_download.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/index_sticky_tabbar_delegate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/index_sticky_tabbar_delegate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/input/setting_input.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/input/setting_input.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/lazy_indexed_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/lazy_indexed_stack.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/loading/custom_loading_more_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/loading/custom_loading_more_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/loading_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/loading_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/login_tip_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/login_tip_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/my_clipper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/my_clipper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/my_drawable_start_text.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/my_drawable_start_text.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/no_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/no_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/p.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/p.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/product_search_mini.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/product_search_mini.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/simple_appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/simple_appbar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/simple_price.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/simple_price.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/sticky_tab_bar_delegate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/sticky_tab_bar_delegate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/tag_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/tag_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/title_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/title_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/toast_postion.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/toast_postion.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/up_down_btn_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/up_down_btn_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/waterfall_goods_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/waterfall_goods_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/webview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/webview.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/wrap.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/wrap.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +303,9 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -47,6 +319,9 @@
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="2b604bf8-3170-475f-86f0-77c67b735eeb" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../flutter/packages/flutter/lib/src/material/tabs.dart" root0="SKIP_INSPECTION" />
@@ -87,6 +362,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="sortByName" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -98,33 +380,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;DRAWABLE&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;ALL&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ldd/flutter_simple_shop&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.23908046&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ResourceManagerPrefKey.ResourceType": "DRAWABLE",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable": "ALL",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/ldd/flutter_simple_shop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.23908046",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
@@ -543,13 +825,6 @@
       <workItem from="1694654668821" duration="1999000" />
       <workItem from="1694670825119" duration="23000" />
     </task>
-    <task id="LOCAL-00144" summary="remove provider deps">
-      <created>1677896329793</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1677896329794</updated>
-    </task>
     <task id="LOCAL-00145" summary="remove provider deps">
       <created>1677898317092</created>
       <option name="number" value="00145" />
@@ -886,7 +1161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696064508143</updated>
     </task>
-    <option name="localTasksCounter" value="219" />
+    <task id="LOCAL-00219" summary="细节优化">
+      <created>1696333931427</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1696333931427</updated>
+    </task>
+    <option name="localTasksCounter" value="220" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -902,6 +1184,11 @@
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="c23e62f2-af68-40b9-a9a6-60ba9bc5b82d">
           <value>
             <State />
           </value>

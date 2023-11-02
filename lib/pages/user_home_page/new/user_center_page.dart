@@ -1,20 +1,18 @@
-part of pages;
+part of '../../index.dart';
 
 extension UserCenterPageEx on BuildContext {
   Color get userCenterPageNavBg => cardColor;
 }
 
 class UserCenterPage extends ConsumerStatefulWidget {
-  const UserCenterPage({Key? key}) : super(key: key);
+  const UserCenterPage({super.key});
 
   @override
   ConsumerState<UserCenterPage> createState() => _UserCenterPageState();
 }
 
-class _UserCenterPageState extends ConsumerState<UserCenterPage>
-    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-  late final TabController _tabController =
-      TabController(length: TabItem.values.length, vsync: this);
+class _UserCenterPageState extends ConsumerState<UserCenterPage> with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+  late final TabController _tabController = TabController(length: TabItem.values.length, vsync: this);
 
   double get paddingTop => MediaQuery.of(context).padding.top;
 
@@ -38,9 +36,7 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
               const SizedBox(
                 height: 12,
               ),
-              FilledButton(
-                  onPressed: () => context.push(pagerUtil.login.routername),
-                  child: const Text('登录&注册'))
+              FilledButton(onPressed: () => context.push(pagerUtil.login.routername), child: const Text('登录&注册'))
             ],
           ),
         ),
@@ -54,8 +50,7 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
                 pinned: true,
                 centerTitle: true,
                 backgroundColor: context.primaryColor,
-                expandedHeight:
-                    context.isDesktop ? 200 : (size.width * 0.5) + 100,
+                expandedHeight: context.isDesktop ? 200 : (size.width * 0.5) + 100,
                 flexibleSpace: (v) {
                   return Stack(
                     children: [
@@ -77,15 +72,11 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
                     ),
                   );
                 },
-                bottom: PreferredSize(
-                    preferredSize: const Size.fromHeight(48),
-                    child: _Tabs(_tabController)),
+                bottom: PreferredSize(preferredSize: const Size.fromHeight(48), child: _Tabs(_tabController)),
               ),
             ];
           },
-          body: TabBarView(
-              controller: _tabController,
-              children: TabItem.values.map(TabViewContainer.new).toList())),
+          body: TabBarView(controller: _tabController, children: TabItem.values.map(TabViewContainer.new).toList())),
     );
   }
 
@@ -119,8 +110,7 @@ class TabViewContainer extends ConsumerStatefulWidget {
   ConsumerState<TabViewContainer> createState() => _TabViewContainerState();
 }
 
-class _TabViewContainerState extends ConsumerState<TabViewContainer>
-    with AutomaticKeepAliveClientMixin {
+class _TabViewContainerState extends ConsumerState<TabViewContainer> with AutomaticKeepAliveClientMixin {
   TabItem get item => widget.item;
 
   @override
@@ -157,17 +147,14 @@ class _TabViewContainerState extends ConsumerState<TabViewContainer>
 class _Tabs extends StatelessWidget {
   final TabController controller;
 
-  const _Tabs(this.controller, {Key? key}) : super(key: key);
+  const _Tabs(this.controller);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
       alignment: Alignment.centerLeft,
-      decoration: BoxDecoration(
-          color: context.userCenterPageNavBg,
-          borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(8), topLeft: Radius.circular(8))),
+      decoration: BoxDecoration(color: context.userCenterPageNavBg, borderRadius: const BorderRadius.only(topRight: Radius.circular(8), topLeft: Radius.circular(8))),
       child: TabBar(
         isScrollable: true,
         tabs: TabItem.values.map((e) => Tab(text: e.text)).toList(),
@@ -181,7 +168,7 @@ class _Tabs extends StatelessWidget {
 class _Userinfo extends ConsumerWidget {
   final bool showInfo;
 
-  const _Userinfo({Key? key, required this.showInfo}) : super(key: key);
+  const _Userinfo({required this.showInfo});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -195,8 +182,7 @@ class _Userinfo extends ConsumerWidget {
             child: const Icon(
               Icons.light_mode,
             ).desktopLayout(child: (_) => const SizedBox()).click(() {
-              showModalBottomSheet(
-                  context: context, builder: (_) => const _PhoneThemeSetting());
+              showModalBottomSheet(context: context, builder: (_) => const _PhoneThemeSetting());
             }),
           ),
           Positioned(
@@ -215,20 +201,14 @@ class _Userinfo extends ConsumerWidget {
             Container(
               height: double.infinity,
               width: double.infinity,
-              padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).padding.top + 50,
-                  left: 12,
-                  right: 12,
-                  bottom: 12),
+              padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 50, left: 12, right: 12, bottom: 12),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        const Hero(
-                            tag: 'user-page-ava',
-                            child: LoginUserAvatar(size: 80)),
+                        const Hero(tag: 'user-page-ava', child: LoginUserAvatar(size: 80)),
                         const SizedBox(
                           width: 12,
                         ),
@@ -241,29 +221,20 @@ class _Userinfo extends ConsumerWidget {
                             children: [
                               Text(
                                 ref.user?.getShowUserName ?? '未登录',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge
-                                    ?.copyWith(
+                                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
                               if (ref.isLogin)
                                 Text(
                                   '你的ID:${ref.user?.id ?? '-'}',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(),
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(),
                                 ),
                               if (ref.isLogin)
                                 Text(
                                   ref.user?.getIntro() ?? '点击编辑你的自我介绍',
-                                  style: context.textTheme.bodySmall?.copyWith(
-                                      color: context.colorScheme.secondary),
-                                )
-                                    .marginOnly(top: 12)
-                                    .click(() => _updateDesc(context, ref)),
+                                  style: context.textTheme.bodySmall?.copyWith(color: context.colorScheme.secondary),
+                                ).marginOnly(top: 12).click(() => _updateDesc(context, ref)),
                             ],
                           ),
                         )),
@@ -289,19 +260,12 @@ class _Userinfo extends ConsumerWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     ImageWrapper(
-                                      child: SvgPicture.asset(
-                                          'assets/svg/user/llls.svg',
-                                          width: 32,
-                                          height: 32,
-                                          colorFilter: ColorFilter.mode(
-                                              context.primaryColor,
-                                              BlendMode.srcIn)),
+                                      child: SvgPicture.asset('assets/svg/user/llls.svg', width: 32, height: 32, colorFilter: ColorFilter.mode(context.primaryColor, BlendMode.srcIn)),
                                     ),
                                     const SizedBox(
                                       height: 3,
                                     ),
-                                    Text("我的订单",
-                                        style: context.textTheme.titleSmall)
+                                    Text("我的订单", style: context.textTheme.titleSmall)
                                   ],
                                 )),
                           ),
@@ -313,13 +277,7 @@ class _Userinfo extends ConsumerWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   ImageWrapper(
-                                    child: SvgPicture.asset(
-                                        'assets/svg/user/qb.svg',
-                                        width: 32,
-                                        height: 32,
-                                        colorFilter: ColorFilter.mode(
-                                            context.primaryColor,
-                                            BlendMode.srcIn)),
+                                    child: SvgPicture.asset('assets/svg/user/qb.svg', width: 32, height: 32, colorFilter: ColorFilter.mode(context.primaryColor, BlendMode.srcIn)),
                                   ),
                                   const SizedBox(
                                     height: 3,
@@ -354,8 +312,7 @@ class _Userinfo extends ConsumerWidget {
           return StringInputDialog(title: '编辑介绍', hintText: ref.user?.intro);
         });
     if (result != null) {
-      final response =
-          await SApi('/api/user/update-desc', {"intro": result}).request();
+      final response = await SApi('/api/user/update-desc', {"intro": result}).request();
       if (response.isSuccess) {
         ref.read(userRiverpod.notifier).updateIntro(result);
       }
@@ -364,7 +321,7 @@ class _Userinfo extends ConsumerWidget {
 }
 
 class _Bg extends StatelessWidget {
-  const _Bg({Key? key}) : super(key: key);
+  const _Bg();
 
   @override
   Widget build(BuildContext context) {
@@ -378,8 +335,7 @@ class _Bg extends StatelessWidget {
                 'assets/images/u-bg.jpg',
               ),
               fit: BoxFit.cover,
-              colorFilter: ColorFilter.mode(
-                  context.primaryColor.withOpacity(.2), BlendMode.hue))),
+              colorFilter: ColorFilter.mode(context.primaryColor.withOpacity(.2), BlendMode.hue))),
     );
   }
 }
@@ -393,13 +349,7 @@ class _Files extends JpaListWidget<FileInfo, MyUserFilesApi> {
           aspectRatio: item.width == 0 ? 1 : item.width / item.height,
           child: ImageView(
             image: MyImage.network(
-                url: item.url,
-                params: ImageParams(
-                    borderRadius: BorderRadius.circular(12),
-                    shape: BoxShape.rectangle,
-                    width: double.infinity,
-                    height: double.infinity,
-                    fit: BoxFit.cover)),
+                url: item.url, params: ImageParams(borderRadius: BorderRadius.circular(12), shape: BoxShape.rectangle, width: double.infinity, height: double.infinity, fit: BoxFit.cover)),
           ),
         )
       ],
@@ -443,11 +393,7 @@ class _PhoneThemeSetting extends StatelessWidget {
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
-          children: [
-            const MiniThemeSetting(),
-            const DarkAndLightSetting(),
-            SizedBox(height: context.bottomPadding)
-          ],
+          children: [const MiniThemeSetting(), const DarkAndLightSetting(), SizedBox(height: context.bottomPadding)],
         ),
       ),
     );

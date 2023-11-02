@@ -1,27 +1,23 @@
-part of repository;
+part of 'index.dart';
 
-
-class OrderRespository extends LoadingModel<OrderAuditObject>{
-
+class OrderRespository extends LoadingModel<OrderAuditObject> {
   int pageIndex = 1; // 默认第一页
   bool _hasMore = true; // 是否还存在下一页
   bool forceRefresh = false;
 
   String stype; // 类别ID
-  OrderRespository({this.stype ='-1'});
-  
+  OrderRespository({this.stype = '-1'});
+
   @override
   // TODO: implement hasMore
   bool get hasMore => _hasMore;
-  
+
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
-    
     var isSuccess = false;
-    
+
     return isSuccess;
   }
-
 
   @override
   Future<bool> refresh([bool notifyStateChanged = false]) async {
@@ -32,5 +28,4 @@ class OrderRespository extends LoadingModel<OrderAuditObject>{
     forceRefresh = false;
     return result;
   }
-
 }

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:logger/logger.dart';
+
 import '../../util/index.dart';
 import '../../widgets/index.dart';
 import 'abs.dart';
@@ -15,15 +16,13 @@ class PublicDetailView extends StatefulWidget {
   final String goodsId;
   final String type;
 
-  const PublicDetailView({Key? key, required this.goodsId, required this.type})
-      : super(key: key);
+  const PublicDetailView({super.key, required this.goodsId, required this.type});
 
   @override
   PublicDetailViewState createState() => PublicDetailViewState();
 }
 
-class PublicDetailViewState extends State<PublicDetailView>
-    implements PublicDetailViewAbs {
+class PublicDetailViewState extends State<PublicDetailView> implements PublicDetailViewAbs {
   PublicDetailModel? info;
 
   @override
@@ -69,15 +68,13 @@ class PublicDetailViewState extends State<PublicDetailView>
   /// 导航区域
   Widget renderNav() {
     return Container(
-      margin:
-          EdgeInsets.only(top: context.paddingTop + 12, left: 12, right: 12),
+      margin: EdgeInsets.only(top: context.paddingTop + 12, left: 12, right: 12),
       child: Column(
         children: [
           Row(
             children: [
               // 返回按钮
-              IconButton(
-                  onPressed: context.pop, icon: const Icon(Icons.chevron_left))
+              IconButton(onPressed: context.pop, icon: const Icon(Icons.chevron_left))
             ],
           ),
           const SizedBox(
@@ -109,8 +106,7 @@ class PublicDetailViewState extends State<PublicDetailView>
     return Container(
       alignment: Alignment.centerLeft,
       margin: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(12)),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Column(
@@ -126,8 +122,7 @@ class PublicDetailViewState extends State<PublicDetailView>
                       children: [
                         Text(
                           '销量${info!.sales}件',
-                          style:
-                              const TextStyle(color: Colors.grey, fontSize: 15),
+                          style: const TextStyle(color: Colors.grey, fontSize: 15),
                         )
                       ],
                     )
@@ -163,8 +158,7 @@ class PublicDetailViewState extends State<PublicDetailView>
     return Container(
       alignment: Alignment.centerLeft,
       margin: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(12)),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -174,11 +168,8 @@ class PublicDetailViewState extends State<PublicDetailView>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
-                  decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(5)),
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                  decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(5)),
                   child: Text(
                     getTypeLabel(),
                     style: const TextStyle(color: Colors.white),
@@ -210,16 +201,8 @@ class PublicDetailViewState extends State<PublicDetailView>
                           ),
                           FSuper(
                               text: '¥ ',
-                              style: const TextStyle(
-                                  color: Colors.red, fontSize: 16),
-                              spans: [
-                                TextSpan(
-                                    text: '${info!.price}',
-                                    style: const TextStyle(
-                                        color: Colors.red,
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold))
-                              ],
+                              style: const TextStyle(color: Colors.red, fontSize: 16),
+                              spans: [TextSpan(text: '${info!.price}', style: const TextStyle(color: Colors.red, fontSize: 25, fontWeight: FontWeight.bold))],
                               lightOrientation: FLightOrientation.RightTop)
                         ],
                       ),
@@ -242,11 +225,7 @@ class PublicDetailViewState extends State<PublicDetailView>
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               height: 50,
-              decoration: const BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(12),
-                      bottomRight: Radius.circular(12))),
+              decoration: const BoxDecoration(color: Colors.red, borderRadius: BorderRadius.only(bottomLeft: Radius.circular(12), bottomRight: Radius.circular(12))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

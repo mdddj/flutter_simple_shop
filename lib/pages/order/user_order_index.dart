@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 ///用户订单页面
 class UserOrderIndex extends StatefulWidget {
@@ -8,10 +8,8 @@ class UserOrderIndex extends StatefulWidget {
   State<UserOrderIndex> createState() => _UserOrderIndexState();
 }
 
-class _UserOrderIndexState extends State<UserOrderIndex>
-    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-  late final _tabController =
-      TabController(length: UserOrderStatus.values.length, vsync: this);
+class _UserOrderIndexState extends State<UserOrderIndex> with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+  late final _tabController = TabController(length: UserOrderStatus.values.length, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +60,7 @@ class _OrderListViewState extends State<_OrderListView> with AutomaticKeepAliveC
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return MyLoadingMoreList(MyListConfig<UserOrderInfo>(sourceList: _repository,itemBuilder: _itemBuilder,padding: const EdgeInsets.all(12),indicatorBuilder: _indicatorBuilder));
+    return MyLoadingMoreList(MyListConfig<UserOrderInfo>(sourceList: _repository, itemBuilder: _itemBuilder, padding: const EdgeInsets.all(12), indicatorBuilder: _indicatorBuilder));
   }
 
   Widget _itemBuilder(BuildContext context, UserOrderInfo item, int index) {
@@ -79,11 +77,10 @@ class _OrderListViewState extends State<_OrderListView> with AutomaticKeepAliveC
   }
 }
 
-
-
 ///item项目布局
 class _UserOrderItemLayout extends StatelessWidget {
   final UserOrderInfo info;
+
   const _UserOrderItemLayout({required this.info});
 
   @override
@@ -92,24 +89,19 @@ class _UserOrderItemLayout extends StatelessWidget {
     return Card(
       child: Row(
         children: [
-          ImageView(image: MyImage.network(url: 'https:${info.itemImg}',params: ImageParams(
-            size: size,borderRadius: BorderRadius.circular(12),shape: BoxShape.rectangle
-          ))),
-          const SizedBox(width: 12,),
+          ImageView(image: MyImage.network(url: 'https:${info.itemImg}', params: ImageParams(size: size, borderRadius: BorderRadius.circular(12), shape: BoxShape.rectangle))),
+          const SizedBox(
+            width: 12,
+          ),
           Expanded(
             child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                minHeight: size
-              ),
+              constraints: const BoxConstraints(minHeight: size),
               child: Padding(
                 padding: const EdgeInsets.all(6.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(info.itemTitle,maxLines: 2,overflow: TextOverflow.ellipsis),
-                    Text('¥${info.itemPrice}',style: context.textTheme.titleMedium)
-                  ],
+                  children: [Text(info.itemTitle, maxLines: 2, overflow: TextOverflow.ellipsis), Text('¥${info.itemPrice}', style: context.textTheme.titleMedium)],
                 ),
               ),
             ),

@@ -1,7 +1,6 @@
-part of common;
+part of 'index.dart';
 
-abstract class JpaPageLoadingMore<T, A extends BaseApi>
-    extends MyLoadingModel<T> {
+abstract class JpaPageLoadingMore<T, A extends BaseApi> extends MyLoadingModel<T> {
   int page = 0;
   int pageSize = 20;
   bool _hasMore = true;
@@ -19,23 +18,19 @@ abstract class JpaPageLoadingMore<T, A extends BaseApi>
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
     try {
-      final result = await api.request(R(
-          showDefaultLoading: false,
-          data: <String, dynamic>{"page": page, "pageSize": pageSize}
-            ..addAll(params)));
+      final result = await api.request(R(showDefaultLoading: false, data: <String, dynamic>{"page": page, "pageSize": pageSize}..addAll(params)));
       final resultModel = SimpleResult.fromJson((result as WrapJson).data);
       final jpaModel = JpaPage.fromJson(resultModel.data);
       if (resultModel.success) {
-        final list = List<T>.from(jpaModel.content
-            .map((e) => covertData(e as Map<String, dynamic>))).toList();
+        final list = List<T>.from(jpaModel.content.map((e) => covertData(e as Map<String, dynamic>))).toList();
         addAll(list);
         page++;
         _hasMore = jpaModel.last.not;
         return true;
       }
       return false;
-    } catch (e,s) {
-      Logger().e(e, error: e,stackTrace: s);
+    } catch (e, s) {
+      Logger().e(e, error: e, stackTrace: s);
       return false;
     }
   }

@@ -1,8 +1,10 @@
-part of widgets;
+part of 'index.dart';
 
 class NoDataWidget extends StatelessWidget {
   final String? title;
-  const NoDataWidget({this.title, Key? key}) : super(key: key);
+
+  const NoDataWidget({this.title, super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(

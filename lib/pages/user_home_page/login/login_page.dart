@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 ///登录方式
 enum LoginType {
@@ -13,7 +13,7 @@ enum LoginType {
 
 // 用户登入页面
 class UserLoginPage extends ConsumerStatefulWidget {
-  const UserLoginPage({Key? key}) : super(key: key);
+  const UserLoginPage({super.key});
 
   @override
   UserLoginPageState createState() => UserLoginPageState();
@@ -52,9 +52,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(height: context.screenHeight * 0.16),
-                    Text('登录',
-                        style: context.textTheme.titleLarge?.copyWith(
-                            fontWeight: FontWeight.bold, fontSize: 53)),
+                    Text('登录', style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold, fontSize: 53)),
                     SizedBox(height: context.screenHeight * 0.032),
                     Card(
                       child: Padding(
@@ -69,10 +67,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                                   labelText: _accountLabel,
                                 ),
                                 controller: usernameEditController,
-                                validator: (value) =>
-                                    value == null || value.isEmpty
-                                        ? "请输入邮箱"
-                                        : null,
+                                validator: (value) => value == null || value.isEmpty ? "请输入邮箱" : null,
                               ),
 
                               const SizedBox(
@@ -86,10 +81,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                                 ),
                                 controller: passwordEditController,
                                 obscureText: true,
-                                validator: (value) =>
-                                    value == null || value.isEmpty
-                                        ? "请输入密码"
-                                        : null,
+                                validator: (value) => value == null || value.isEmpty ? "请输入密码" : null,
                               ),
                               const SizedBox(
                                 height: 40,
@@ -123,9 +115,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
 
   // 登录按钮
   Widget renderLoginButton() {
-    return SizedBox(
-        width: double.infinity,
-        child: FilledButton(onPressed: _submit, child: const Text('登录')));
+    return SizedBox(width: double.infinity, child: FilledButton(onPressed: _submit, child: const Text('登录')));
   }
 
   Widget get _moreActions {
@@ -159,8 +149,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                 isAgree = !isAgree;
               });
             },
-            child: Icon(
-                isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
+            child: Icon(isAgree ? Icons.check_circle_outline : Icons.circle_outlined),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 5.0),
@@ -168,13 +157,9 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
               lightOrientation: FLightOrientation.LeftBottom,
               text: '我已阅读并同意',
               spans: [
-                TextSpan(
-                    text: '用户协议',
-                    style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(text: '用户协议', style: TextStyle(decoration: TextDecoration.underline)),
                 TextSpan(text: '和', style: TextStyle()),
-                TextSpan(
-                    text: '隐私政策',
-                    style: TextStyle(decoration: TextDecoration.underline)),
+                TextSpan(text: '隐私政策', style: TextStyle(decoration: TextDecoration.underline)),
               ],
             ),
           ),
@@ -204,12 +189,9 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
     }
     try {
       final nav = context.nav;
-      await ref.read(userRiverpod.notifier).login(LoginParams(
-          loginnumber: username,
-          password: password,
-          logintype: _loginType.type));
+      await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
       nav.pop();
-    } on AppException catch (e) {
+    } on BaseApiException catch (e) {
       toast(e.message);
     }
   }

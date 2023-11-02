@@ -1,4 +1,4 @@
-part of common;
+part of 'index.dart';
 
 //触摸回调组件
 class TouchCallBack extends StatefulWidget {
@@ -8,22 +8,26 @@ class TouchCallBack extends StatefulWidget {
   //回调函数
   final VoidCallback onParessed;
   final bool isfeed;
+
   //背景色
   final Color background;
+
   //传入参数列表
   const TouchCallBack({
-    Key? key,
+    super.key,
     required this.child,
     required this.onParessed,
     this.isfeed = true,
     this.background = const Color(0xffd8d8d8),
-  }) : super(key: key);
+  });
+
   @override
   TouchCallBackState createState() => TouchCallBackState();
 }
 
 class TouchCallBackState extends State<TouchCallBack> {
   Color color = Colors.transparent;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

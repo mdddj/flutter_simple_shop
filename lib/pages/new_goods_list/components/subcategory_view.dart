@@ -1,13 +1,11 @@
-part of pages;
+part of '../../index.dart';
 
 class SubCategoryView extends StatelessWidget {
   final ValueChanged<Subcategory>? changeSubcategory;
   final Category category;
   final Subcategory? subcategory;
 
-  const SubCategoryView(this.category,
-      {this.changeSubcategory, this.subcategory, Key? key})
-      : super(key: key);
+  const SubCategoryView(this.category, {this.changeSubcategory, this.subcategory, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,17 +45,10 @@ class SubCategoryView extends StatelessWidget {
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
         margin: const EdgeInsets.only(left: 12),
-        decoration: BoxDecoration(
-            color: subcategory != null && subcategory!.subcid == item.subcid
-                ? Colors.pink.shade50
-                : Colors.grey.shade200,
-            borderRadius: BorderRadius.circular(50)),
+        decoration: BoxDecoration(color: subcategory != null && subcategory!.subcid == item.subcid ? Colors.pink.shade50 : Colors.grey.shade200, borderRadius: BorderRadius.circular(50)),
         child: Text(
           item.subcname,
-          style: TextStyle(
-              color: subcategory != null && subcategory!.subcid == item.subcid
-                  ? Colors.pink
-                  : null),
+          style: TextStyle(color: subcategory != null && subcategory!.subcid == item.subcid ? Colors.pink : null),
         ),
       ),
     );
@@ -108,11 +99,7 @@ class SubCategoryView extends StatelessWidget {
                 ),
                 Text(
                   item.subcname,
-                  style: TextStyle(
-                      color: subcategory != null &&
-                              subcategory!.subcid == item.subcid
-                          ? Colors.pinkAccent
-                          : Colors.black),
+                  style: TextStyle(color: subcategory != null && subcategory!.subcid == item.subcid ? Colors.pinkAccent : Colors.black),
                 )
               ],
             ),

@@ -1,13 +1,13 @@
-part of pages;
+part of '../index.dart';
 
 class CategoryDelegate extends SliverPersistentHeaderDelegate {
   final SelectWithItem onSelect;
   final CategoryController controller;
+
   CategoryDelegate(this.onSelect, this.controller);
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
         height: kToolbarHeight,
         alignment: Alignment.center,
@@ -25,6 +25,5 @@ class CategoryDelegate extends SliverPersistentHeaderDelegate {
   double get minExtent => kToolbarHeight;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
-      false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
 }

@@ -1,7 +1,8 @@
-part of resource;
+part of '../view.dart';
 
 class ResourceDetailPage extends StatefulWidget {
   final int resourceId;
+
   const ResourceDetailPage({super.key, required this.resourceId});
 
   @override
@@ -14,12 +15,10 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
 
   Future<void> _getInfo() async {
     try {
-      final result = await getIt
-          .get<MyFindResourceByIdApi>()
-          .request(R(data: {"id": widget.resourceId}));
+      final result = await getIt.get<MyFindResourceByIdApi>().request(R(data: {"id": widget.resourceId}));
       _resource = result;
-    } on AppException catch (e) {
-      showIosDialog(e.getMessage);
+    } on BaseApiException catch (e) {
+      showIosDialog(e.message);
     }
     _loading = false;
     setState(() {});
@@ -44,11 +43,7 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
       backgroundColor: context.cardColor,
       appBar: AppBar(
         title: const Text("动态"),
-        actions: [
-          if (_resource != null)
-            IconButton(
-                onPressed: _showAction, icon: const Icon(Icons.more_horiz))
-        ],
+        actions: [if (_resource != null) IconButton(onPressed: _showAction, icon: const Icon(Icons.more_horiz))],
       ),
       body: Card(
         elevation: 0,
@@ -78,19 +73,14 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
                   ).defaultPadding12.toSliverWidget,
 
                   //内容展示
-                  Text(_resource!.content, style: context.textTheme.bodyLarge)
-                      .defaultPadding12
-                      .toSliverWidget,
+                  Text(_resource!.content, style: context.textTheme.bodyLarge).defaultPadding12.toSliverWidget,
 
                   const SizedBox(
                     height: 12,
                   ).toSliverWidget,
 
                   //发布时间展示
-                  Text(_resource!.createdate,
-                          style: context.textTheme.labelSmall)
-                      .defaultPadding12
-                      .toSliverWidget,
+                  Text(_resource!.createdate, style: context.textTheme.labelSmall).defaultPadding12.toSliverWidget,
                   _CommentsWidget(_resource!.id.toString())
                 ],
               );
@@ -112,9 +102,7 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
           TextField(
             decoration: InputDecoration(
                 hintText: "友善评论,文明发言",
-                border: UnderlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(50)),
+                border: UnderlineInputBorder(borderSide: BorderSide.none, borderRadius: BorderRadius.circular(50)),
                 isDense: true,
                 filled: true,
                 fillColor: Colors.grey.shade200),
@@ -141,21 +129,21 @@ class _CommentsWidget extends JpaListWidget<Comment, MyResourceFindCommenApi> {
   final String resourceId;
 
   const _CommentsWidget(this.resourceId);
+
   @override
   Widget buildLayout(BuildContext context, Comment item, int index) {
     return const Text('text');
   }
 
   @override
-  JpaPageLoadingMore<Comment, MyResourceFindCommenApi> get sourceList =>
-      _CommentRepo(resourceId);
+  JpaPageLoadingMore<Comment, MyResourceFindCommenApi> get sourceList => _CommentRepo(resourceId);
 }
 
-class _CommentRepo
-    extends JpaPageLoadingMore<Comment, MyResourceFindCommenApi> {
+class _CommentRepo extends JpaPageLoadingMore<Comment, MyResourceFindCommenApi> {
   final String resourceId;
 
   _CommentRepo(this.resourceId);
+
   @override
   Comment covertData(Map<String, dynamic> json) {
     return Comment.fromJson(json);
@@ -167,6 +155,7 @@ class _CommentRepo
 
 class _ActionMenus extends ConsumerWidget {
   final Resource resource;
+
   const _ActionMenus({required this.resource});
 
   @override
@@ -192,28 +181,17 @@ class _ActionMenus extends ConsumerWidget {
               onTap: () async {
                 final nav = Navigator.of(context);
                 nav.pop(); //关闭菜单
-                final isOk = await context.askOk(const AskOkDialogParams(
-                    title: Text("删除"),
-                    content: Text("确定删除吗?"),
-                    okText: '删除',
-                    cancelText: '取消'));
+                final isOk = await context.askOk(const AskOkDialogParams(title: Text("删除"), content: Text("确定删除吗?"), okText: '删除', cancelText: '取消'));
                 if (isOk) {
                   try {
-                    getIt
-                        .get<MyDeleteUserResourceApi>()
-                        .request(R(
-                            data: {"id": resource.id},
-                            contentType: ContentType.json.value))
-                        .then((value) {
+                    getIt.get<MyDeleteUserResourceApi>().request(R(data: {"id": resource.id}, contentType: ContentType.json.value)).then((value) {
                       value.simpleToast(ifOk: nav.pop);
                       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-                        GetIt.instance
-                            .get<UserResourceListRepository>()
-                            .refresh(true);
+                        GetIt.instance.get<UserResourceListRepository>().refresh(true);
                       });
                     });
-                  } on AppException catch (e) {
-                    showIosDialog(e.getMessage);
+                  } on BaseApiException catch (e) {
+                    showIosDialog(e.message);
                   }
                 }
               },

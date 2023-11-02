@@ -1,4 +1,4 @@
-part of common;
+part of '../../index.dart';
 
 class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
   int page = 1;
@@ -13,28 +13,23 @@ class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
 
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
-    try {
-      final r = await kApi.getProducts(
-          param: ProductListParam(pageId: '$page', pageSize: '10'),
-          requestParamsBuilder: (RequestParams requestParams) {
-            return requestParams.copyWith(showDefaultLoading: false);
-          });
-      if (page == 1) clear();
-      if (r != null) {
-        final list = r.list ?? [];
-        if (list.isNotEmpty) {
-          more = true;
-          addAll(list);
-          page++;
-        } else {
-          more = false;
-        }
-        return true;
+    final r = await kApi.getProducts(
+        param: ProductListParam(pageId: '$page', pageSize: '10'),
+        requestParamsBuilder: (RequestParams requestParams) {
+          return requestParams.copyWith(showDefaultLoading: false);
+        });
+    if (page == 1) clear();
+    if (r != null) {
+      final list = r.list ?? [];
+      if (list.isNotEmpty) {
+        more = true;
+        addAll(list);
+        page++;
+      } else {
+        more = false;
       }
-      return false;
-    } on AppException {
-      return false;
     }
+    return true;
   }
 
   @override
@@ -43,7 +38,7 @@ class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
 
 ///新品小部件
 class NewProductWidget extends StatefulWidget {
-  const NewProductWidget({Key? key}) : super(key: key);
+  const NewProductWidget({super.key});
 
   @override
   State<NewProductWidget> createState() => _NewProductWidgetState();
@@ -59,8 +54,7 @@ class _NewProductWidgetState extends State<NewProductWidget> {
           return WaterfallGoodsCard(ite);
         },
         sourceList: sourceList,
-        extendedListDelegate:
-            const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+        extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,

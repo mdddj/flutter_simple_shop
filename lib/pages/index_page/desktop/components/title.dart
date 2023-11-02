@@ -1,8 +1,9 @@
-part of pages;
+part of '../../../index.dart';
 
 class AppTitle extends StatelessWidget {
   final String text;
-  const AppTitle({Key? key, required this.text}) : super(key: key);
+
+  const AppTitle({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -10,8 +11,7 @@ class AppTitle extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: kDefaultPadding),
       child: Text(
         text,
-        style: context.textTheme.titleLarge?.copyWith(
-            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
+        style: context.textTheme.titleLarge?.copyWith(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 15),
       ),
     );
   }

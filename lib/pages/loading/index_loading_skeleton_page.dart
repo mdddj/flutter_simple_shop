@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 ///
 
 class IndexLoadingSkeletonPage extends StatelessWidget {
-  const IndexLoadingSkeletonPage({Key? key}) : super(key: key);
+  const IndexLoadingSkeletonPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +18,7 @@ class IndexLoadingSkeletonPage extends StatelessWidget {
         title: const Skeleton(),
         actions: const <Widget>[
           Padding(
-            padding:
-                EdgeInsets.only(left: 5.0, right: 12, top: 8.0, bottom: 8.0),
+            padding: EdgeInsets.only(left: 5.0, right: 12, top: 8.0, bottom: 8.0),
             child: Skeleton(),
           )
         ],

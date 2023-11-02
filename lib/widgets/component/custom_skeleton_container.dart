@@ -1,17 +1,16 @@
-part of widgets;
+part of '../index.dart';
 
 /// 自定义骨架屏
 class LoadAnimation extends StatefulWidget {
   final Widget child;
 
-  const LoadAnimation({required this.child, Key? key}) : super(key: key);
+  const LoadAnimation({required this.child, super.key});
 
   @override
   LoadAnimationState createState() => LoadAnimationState();
 }
 
-class LoadAnimationState extends State<LoadAnimation>
-    with TickerProviderStateMixin {
+class LoadAnimationState extends State<LoadAnimation> with TickerProviderStateMixin {
   late AnimationController controller;
 
   @override
@@ -38,9 +37,7 @@ class LoadAnimationState extends State<LoadAnimation>
                 alignment: AlignmentGeometryTween(
                   begin: const Alignment(-1.0 - .2 * 3, .0),
                   end: const Alignment(1.0 + .2 * 3, .0),
-                )
-                    .chain(CurveTween(curve: Curves.easeOut))
-                    .evaluate(controller)!,
+                ).chain(CurveTween(curve: Curves.easeOut)).evaluate(controller)!,
                 child: child,
               );
             },

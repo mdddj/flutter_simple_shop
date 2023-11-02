@@ -1,11 +1,10 @@
-part of pages;
+part of '../index.dart';
 
 class RightWidgetItme extends ConsumerWidget {
   final Subcategory item;
   final Category category;
 
-  const RightWidgetItme({required this.item, required this.category, Key? key})
-      : super(key: key);
+  const RightWidgetItme({required this.item, required this.category, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

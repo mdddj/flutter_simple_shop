@@ -6,7 +6,7 @@ import '../../../widgets/index.dart';
 
 //发布动态页面
 class AddDynamicPage extends StatefulWidget {
-  const AddDynamicPage({Key? key}) : super(key: key);
+  const AddDynamicPage({super.key});
 
   @override
   State<AddDynamicPage> createState() => _AddDynamicPageState();
@@ -14,9 +14,8 @@ class AddDynamicPage extends StatefulWidget {
 
 class _AddDynamicPageState extends State<AddDynamicPage> {
   final TextEditingController _textEditingController = TextEditingController();
-  final PictureSelectionController _pictureSelectionController =
-      PictureSelectionController();
-  List<ResCategory> _list = [];
+  final PictureSelectionController _pictureSelectionController = PictureSelectionController();
+  final List<ResCategory> _list = [];
   ResCategory? _selectCategory;
 
   @override
@@ -29,14 +28,13 @@ class _AddDynamicPageState extends State<AddDynamicPage> {
 
   /// 加载所有的频道
   Future<void> getCategorys() async {
-    final api = ResourceCategoryListAllApi();
-    final result = await api.request();
-    result?.printDataJson();
-    if (result.requestIsSuccess) {
-      final list = result!.dataCovertToList<ResCategory>((originMap) =>
-          ResCategory.fromMap(originMap as Map<String, dynamic>));
-      _list = list;
-    }
+    // final api = ResourceCategoryListAllApi();
+    // final result = await api.request();
+    // result?.printDataJson();
+    // if (result.requestIsSuccess) {
+    //   final list = result!.dataCovertToList<ResCategory>((originMap) => ResCategory.fromMap(originMap as Map<String, dynamic>));
+    //   _list = list;
+    // }
   }
 
   @override
@@ -60,14 +58,12 @@ class _AddDynamicPageState extends State<AddDynamicPage> {
               decoration: BoxDecoration(
                 color: Colors.grey.shade200,
               ),
-              child: TextField(
-                  controller: _textEditingController, minLines: 3, maxLines: 6),
+              child: TextField(controller: _textEditingController, minLines: 3, maxLines: 6),
             ),
 
             //选择分类
             ListTile(
-              title: Text(
-                  _selectCategory == null ? '选择分类' : _selectCategory!.name),
+              title: Text(_selectCategory == null ? '选择分类' : _selectCategory!.name),
               onTap: () async {
                 final select = await context.navToWidget<ResCategory?>(
                     to: CategoryListSelect(
@@ -92,7 +88,7 @@ class _AddDynamicPageState extends State<AddDynamicPage> {
 class CategoryListSelect extends StatelessWidget {
   final List<ResCategory> list;
 
-  const CategoryListSelect({Key? key, required this.list}) : super(key: key);
+  const CategoryListSelect({super.key, required this.list});
 
   @override
   Widget build(BuildContext context) {

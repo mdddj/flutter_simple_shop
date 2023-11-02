@@ -1,9 +1,9 @@
-part of pages;
+part of '../../index.dart';
 
 class BanjiaList extends StatelessWidget {
   final List<HalfPriceListElement> products;
 
-  const BanjiaList({Key? key, required this.products}) : super(key: key);
+  const BanjiaList({super.key, required this.products});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,7 @@ class BanjiaList extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
       child: Row(
         children: [
           SizedBox(
@@ -63,16 +62,10 @@ class BanjiaList extends StatelessWidget {
                     Builder(builder: (context) {
                       return ElevatedButton(
                         onPressed: () {
-                          NavigatorUtil.gotoGoodsDetailPage(
-                              context, '${item.id}',
-                              newViewPage: true);
+                          NavigatorUtil.gotoGoodsDetailPage(context, '${item.id}', newViewPage: true);
                         },
-                        style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.pink)),
-                        child: Text((item.itemSoldNum ?? 0) == 0
-                            ? '去抢购'
-                            : '已抢${item.itemSoldNum}'),
+                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.pink)),
+                        child: Text((item.itemSoldNum ?? 0) == 0 ? '去抢购' : '已抢${item.itemSoldNum}'),
                       );
                     })
                   ],

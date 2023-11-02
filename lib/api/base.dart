@@ -1,4 +1,4 @@
-part of api;
+part of 'apis.dart';
 
 ///添加token到请求头
 class MyTokenInterceptor implements Interceptor {
@@ -31,51 +31,15 @@ abstract class MyAppCoreApiWithPager extends MyAppCoreApi {
 }
 
 ///接口封装
-abstract class MyAppCoreApi extends BaseApi {
-  MyAppCoreApi(String url, {HttpMethod? httpMethod, bool showDetailLog = false})
-      : super(url, httpMethod: httpMethod ?? HttpMethod.get);
-
-  final token = getIt.get<MyTokenInterceptor>();
-
-  bool get isRemoveUserToken => false;
-
-  @override
-  Future<WrapJson> request([RequestParams? options]) async {
-    options ??= const RequestParams();
-    interceptions.clear();
-    if (!interceptions.contains(token)) {
-      interceptions.add(token);
-    }
-    if (isRemoveUserToken) {
-      interceptions.remove(token);
-    }
-    try {
-      final r = await super.request(options);
-      final json = WrapJson(r);
-      if (json.isSuccess.not) {
-        json.print(() {
-          debugPrint("链接:$url");
-        });
-        throw AppException.appError(
-            code: json.getInt('state', defaultValue: 90001),
-            msg: json.message,
-            data: json.getValue('data'));
-      }
-      return json;
-    } on AppException catch (e) {
-      final ex = WrapJson.fromMyServerError(e);
-      return ex;
-    } catch (e) {
-      wtfLog(e);
-      return WrapJson.fromMyServerError(
-          AppException.appError(code: 9000, msg: "系统错误"));
-    }
-  }
+abstract class MyAppCoreApi extends MyAppCoreApiWithWrapJson {
+  MyAppCoreApi(String url, {HttpMethod httpMethod = HttpMethod.get}) : super(url, httpMethod);
 }
 
 class SApi extends MyAppCoreApi {
   final Map<String, dynamic> apiParams;
-  SApi(String url, this.apiParams) : super(url, httpMethod: HttpMethod.post);
+
+  SApi(super.url, this.apiParams) : super(httpMethod: HttpMethod.post);
+
   @override
   Future<WrapJson> request([RequestParams? options]) {
     return super.request(R(data: apiParams));

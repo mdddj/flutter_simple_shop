@@ -1,4 +1,4 @@
-part of common;
+part of '../../index.dart';
 
 class PddRecommendListResp extends LoadingMoreBase<PddGoods> {
   int pageindex = 0;

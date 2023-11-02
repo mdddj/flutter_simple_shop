@@ -1,4 +1,4 @@
-part of common;
+part of 'index.dart';
 
 abstract class JpaListWidget<T, A extends BaseApi> extends StatelessWidget {
   const JpaListWidget({super.key});
@@ -6,11 +6,7 @@ abstract class JpaListWidget<T, A extends BaseApi> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyLoadingMoreSliverList(MySliverListConfig(
-        itemBuilder: buildLayout,
-        sourceList: sourceList,
-        padding: const EdgeInsets.all(8),
-        lock: false,
-        extendedListDelegate: extendedListDelegate(context),indicatorBuilder: _indicatorBuilder));
+        itemBuilder: buildLayout, sourceList: sourceList, padding: const EdgeInsets.all(8), lock: false, extendedListDelegate: extendedListDelegate(context), indicatorBuilder: _indicatorBuilder));
   }
 
   Widget buildLayout(BuildContext context, T item, int index);
@@ -18,10 +14,7 @@ abstract class JpaListWidget<T, A extends BaseApi> extends StatelessWidget {
   JpaPageLoadingMore<T, A> get sourceList;
 
   ExtendedListDelegate? extendedListDelegate(BuildContext context) {
-    return SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-        crossAxisCount: context.waterfallFlowCrossAxisCountResource,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8);
+    return SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCountResource, mainAxisSpacing: 8, crossAxisSpacing: 8);
   }
 
   Widget? _indicatorBuilder(BuildContext context, status) {

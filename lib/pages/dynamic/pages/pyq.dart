@@ -7,15 +7,13 @@ import '../pyq_riverpod.dart';
 
 /// 朋友圈
 class PyqView extends ConsumerStatefulWidget {
-  const PyqView({Key? key}) : super(key: key);
+  const PyqView({super.key});
 
   @override
   PyqViewState createState() => PyqViewState();
 }
 
 class PyqViewState extends ConsumerState<PyqView> {
-
-
   @override
   void initState() {
     super.initState();
@@ -27,10 +25,7 @@ class PyqViewState extends ConsumerState<PyqView> {
   @override
   Widget build(BuildContext context) {
     return const MyLoadingMoreCustomScrollView(
-      slivers: [
-        PyQLoading(),
-        PyqList()
-      ],
+      slivers: [PyQLoading(), PyqList()],
     );
   }
 }

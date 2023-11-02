@@ -1,19 +1,16 @@
-part of pages;
+part of '../../index.dart';
 
 class BottomCategoryTabs extends ConsumerWidget implements PreferredSizeWidget {
   final List<Tab>? insets;
   final ValueChanged<int>? onTap;
   final int? initIndex;
 
-  const BottomCategoryTabs({this.insets, this.onTap, this.initIndex, Key? key})
-      : super(key: key);
+  const BottomCategoryTabs({this.insets, this.onTap, this.initIndex, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var myInsets = insets ?? [];
-    final categoryWidgets = ref
-        .watch(categoryRiverpod.select((value) => value.categorys))
-        .map((element) => Tab(text: element.cname));
+    final categoryWidgets = ref.watch(categoryRiverpod.select((value) => value.categorys)).map((element) => Tab(text: element.cname));
     return Container(
       alignment: Alignment.centerLeft,
       child: DefaultTabController(

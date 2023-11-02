@@ -1,4 +1,4 @@
-part of constant;
+part of 'index.dart';
 
 extension StringExt on String {
   ///跳转到浏览器

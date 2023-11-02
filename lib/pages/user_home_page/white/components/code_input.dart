@@ -1,8 +1,8 @@
-part of pages;
+part of '../../../index.dart';
 
 /// 代码输入组件
 class CodeInputPage extends StatefulWidget {
-  const CodeInputPage({Key? key}) : super(key: key);
+  const CodeInputPage({super.key});
 
   @override
   CodeInputPageState createState() => CodeInputPageState();
@@ -32,8 +32,7 @@ class CodeInputPageState extends State<CodeInputPage> {
                 const PopupMenuItem(value: 'Java', child: Text('Java')),
                 const PopupMenuItem(value: 'Kotlin', child: Text('Kotlin')),
                 const PopupMenuItem(value: 'Swift', child: Text('Swift')),
-                const PopupMenuItem(
-                    value: 'JavaScript', child: Text('JavaScript')),
+                const PopupMenuItem(value: 'JavaScript', child: Text('JavaScript')),
                 const PopupMenuItem(value: 'YAML', child: Text('YAML')),
               ];
             },

@@ -5,7 +5,7 @@
 <p align="center">
     <a href="https://jq.qq.com/?_wv=1027&k=Z0AHodXB"><img src="https://badgen.net/badge/QQ%E7%BE%A4/706438100/pink" /></a>
     <a href="https://itbug.shop"><img src="https://badgen.net/badge/%E5%85%B8%E5%85%B8%E7%9A%84%E5%B0%8F%E5%8D%96%E9%83%A8/v3.0.0/red" /></a>
-    <a href="https://flutter.dev/docs/get-started/install/windows"><img src="https://badgen.net/badge/flutter/3.13.0/red" /></a>
+    <a href="https://flutter.dev/docs/get-started/install/windows"><img src="https://badgen.net/badge/flutter/3.13.9/red" /></a>
     <a href="https://github.com/mdddj/flutter_simple_shop/stargazers"><img src="https://badgen.net/github/stars/mdddj/flutter_simple_shop" /></a>
     <a href="https://github.com/mdddj/flutter_simple_shop/network/members"><img src="https://badgen.net/github/forks/mdddj/flutter_simple_shop" /></a>
 </>
@@ -21,8 +21,8 @@ web后台: https://github.com/mdddj/dd_server_admin
 
 web后台预览: https://admin.itbug.shop
 
-macos安装包: <a href="https://github.com/mdddj/flutter_simple_shop/releases/download/3.0.0/flutter_simple_shop_macos.app.zip">下载</a>
-
+macos安装包: <a href="https://github.com/mdddj/flutter_simple_shop/releases/download/3.0.0/flutter_simple_shop_macos.app.zip">
+下载</a>
 
 ```dart
 //lib/main.dart
@@ -30,9 +30,8 @@ const apiHost = 'https://itbug.shop';
 const apiPort = '9445';
 ```
 
-
-
 如果不能加载依赖,请把以下依赖改成pub.dev上面的版本
+
 ```yaml
   dd_js_util:
     path: ../dd_js_util
@@ -93,7 +92,6 @@ const apiPort = '9445';
 
 淘宝客APP,在线商城
 
-
 ## 系统设计
 
 1.系统定时任务,没5秒查询一下渠道订单,如果查询到数据,会插入到本地数据库中,并关联用户
@@ -121,9 +119,10 @@ web --dart-define=FLUTTER_WEB_CANVASKIT_URL=https: //unpkg.zhimg.com/canvaskit-w
 ```
 
 全局加载器
+
 ```html
 
-<link rel="stylesheet" href="css/uikit.min.css" />
+<link rel="stylesheet" href="css/uikit.min.css"/>
 <style>
     .container {
         display: flex;
@@ -131,13 +130,14 @@ web --dart-define=FLUTTER_WEB_CANVASKIT_URL=https: //unpkg.zhimg.com/canvaskit-w
         align-items: center;
         padding-top: 150px;
     }
+
 </style>
 
 
 <body class="container">
-    <div style="text-align: center">
-      <div><span uk-spinner="ratio: 4.5"></span></div>
-      <div style="margin-top: 12px">加载中</div>
-    </div>
+<div style="text-align: center">
+    <div><span uk-spinner="ratio: 4.5"></span></div>
+    <div style="margin-top: 12px">加载中</div>
+</div>
 <script src="js/uikit.min.js"></script>
 ```

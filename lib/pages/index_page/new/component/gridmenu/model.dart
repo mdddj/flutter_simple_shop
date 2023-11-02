@@ -1,4 +1,4 @@
-part of pages;
+part of '../../../../index.dart';
 
 ///
 /// @Author 梁典典
@@ -18,11 +18,5 @@ class GridMenuModel {
 
   VoidCallback? onLongTap;
 
-  GridMenuModel(
-      {required this.title,
-      required this.image,
-      required this.onTap,
-      required this.isAssets,
-      this.icon,
-      this.onLongTap});
+  GridMenuModel({required this.title, required this.image, required this.onTap, required this.isAssets, this.icon, this.onLongTap});
 }

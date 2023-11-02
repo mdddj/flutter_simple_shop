@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 enum XianbaoType {
   defaultType("超值", "1"),
@@ -63,7 +63,10 @@ class _ViewState extends State<_View> {
   @override
   Widget build(BuildContext context) {
     return MyLoadingMoreCustomScrollView(
-      slivers: [MyLoadingMoreSliverList(MySliverListConfig<XbItem>(padding: const EdgeInsets.all(12), itemBuilder: _itemBuilder, sourceList: _response, indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new))],
+      slivers: [
+        MyLoadingMoreSliverList(
+            MySliverListConfig<XbItem>(padding: const EdgeInsets.all(12), itemBuilder: _itemBuilder, sourceList: _response, indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new))
+      ],
     );
   }
 
@@ -91,13 +94,20 @@ class _ItemLayout extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            HtmlWidget(item.getShowText(),textStyle: context.textTheme.bodyLarge,),
-            ImageView(image: MyImage.network(url: item.img,params: const ImageParams(
-              width: 120,height: 120
-            ))).marginOnly(top: 12).visible(item.img.isNotEmpty),
-            SizedBox(width: double.infinity,child: FilledButton.tonal(onPressed: (){
-              appLaunchUrl(item.couponUrl);
-            }, child: const Text('去领取')).marginOnly(top: 12),)
+            HtmlWidget(
+              item.getShowText(),
+              textStyle: context.textTheme.bodyLarge,
+            ),
+            ImageView(image: MyImage.network(url: item.img, params: const ImageParams(width: 120, height: 120))).marginOnly(top: 12).visible(item.img.isNotEmpty),
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton.tonal(
+                      onPressed: () {
+                        appLaunchUrl(item.couponUrl);
+                      },
+                      child: const Text('去领取'))
+                  .marginOnly(top: 12),
+            )
           ],
         ),
       ),

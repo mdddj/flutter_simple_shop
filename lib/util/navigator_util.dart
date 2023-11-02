@@ -1,4 +1,4 @@
-part of util;
+part of 'index.dart';
 
 // 路由工具类
 class NavigatorUtil {

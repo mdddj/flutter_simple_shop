@@ -1,10 +1,10 @@
-part of pages;
+part of '../index.dart';
 
 /// 搜索页面
 class SearchPage extends ConsumerStatefulWidget {
   final String initSearchKeyWord; // 初始化搜索关键字
 
-  const SearchPage({Key? key, this.initSearchKeyWord = ''}) : super(key: key);
+  const SearchPage({super.key, this.initSearchKeyWord = ''});
 
   @override
   SearchPageState createState() => SearchPageState();
@@ -24,13 +24,16 @@ class SearchPageState extends ConsumerState<SearchPage> {
       ),
       body: const CustomScrollView(slivers: [
         SliverToBoxAdapter(
-          child: Padding(padding: EdgeInsets.all(12),child: HelperComp()),
+          child: Padding(padding: EdgeInsets.all(12), child: HelperComp()),
         ),
         SliverToBoxAdapter(
-          child: Padding(padding: EdgeInsets.all(12),child: SearchKeyWorlds()),
+          child: Padding(padding: EdgeInsets.all(12), child: SearchKeyWorlds()),
         ),
         SliverToBoxAdapter(
-          child: Padding(padding: EdgeInsets.all(12),child: Suggest(),),
+          child: Padding(
+            padding: EdgeInsets.all(12),
+            child: Suggest(),
+          ),
         )
       ]),
     );

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../index.dart';
 import '../../../meet/meet_list_widget.dart';
 
 // 面基动态
 class MianjiPage extends StatefulWidget {
-  const MianjiPage({Key? key}) : super(key: key);
+  const MianjiPage({super.key});
 
   @override
   MianjiPageState createState() => MianjiPageState();

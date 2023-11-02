@@ -1,4 +1,4 @@
-part of util;
+part of 'index.dart';
 
 /// fluro 参数编码解码工具类
 class FluroConvertUtils {

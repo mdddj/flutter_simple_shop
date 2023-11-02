@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 class MiniThemeSetting extends StatelessWidget {
   const MiniThemeSetting({super.key});
@@ -39,8 +39,7 @@ class _ThemeItem extends StatelessWidget {
       width: size,
       height: size,
       margin: const EdgeInsets.all(4),
-      decoration: BoxDecoration(
-          color: theme.primaryColor, borderRadius: BorderRadius.circular(size /2 )),
+      decoration: BoxDecoration(color: theme.primaryColor, borderRadius: BorderRadius.circular(size / 2)),
     ).click(() {
       AppThemeUtil().changeThemeWithEnum(data);
     });
@@ -56,11 +55,7 @@ class DarkAndLightSetting extends ConsumerWidget {
     return ThemeBuildWidget(
       themeBuild: (theme) {
         return CupertinoSlidingSegmentedControl<ThemeMode>(
-            children: const {
-              ThemeMode.system: Text('系统'),
-              ThemeMode.light: Text('明亮'),
-              ThemeMode.dark: Text('深色')
-            },
+            children: const {ThemeMode.system: Text('系统'), ThemeMode.light: Text('明亮'), ThemeMode.dark: Text('深色')},
             onValueChanged: (ThemeMode? value) async {
               if (value != null) {
                 AppThemeUtil().changeThemeMode(value);

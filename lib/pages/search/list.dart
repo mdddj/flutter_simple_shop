@@ -1,10 +1,10 @@
-part of pages;
+part of '../index.dart';
 
 /// 搜索结果页面
 class SearchListIndex extends ConsumerWidget {
   final String value;
 
-  const SearchListIndex({Key? key, required this.value}) : super(key: key);
+  const SearchListIndex({super.key, required this.value});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,13 +17,9 @@ class SearchListIndex extends ConsumerWidget {
           sourceList: SearchRepository(value),
           padding: const EdgeInsets.all(8),
           indicatorBuilder: (context, status) {
-            return CustomLoadingMoreWidget(context,status);
+            return CustomLoadingMoreWidget(context, status);
           },
-          extendedListDelegate:
-              SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: context.waterfallFlowCrossAxisCount,
-                  mainAxisSpacing: 8,
-                  crossAxisSpacing: 8))),
+          extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 8, crossAxisSpacing: 8))),
     );
   }
 

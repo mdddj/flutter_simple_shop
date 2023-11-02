@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
   final TabBar child;
@@ -6,8 +6,7 @@ class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
   StickyTabBarDelegate({required this.child});
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       decoration: const BoxDecoration(
         color: Colors.white,

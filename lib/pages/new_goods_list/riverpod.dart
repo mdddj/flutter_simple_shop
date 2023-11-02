@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 final goodsListRiverpod = ChangeNotifierProvider((ref) => GoodsListState());
 
@@ -47,11 +47,7 @@ class GoodsListState extends ChangeNotifier {
   Future<void> fetchData() async {
     cancelToken = dio.CancelToken();
     final result = await DdTaokeSdk.instance.getProducts(
-        param: ProductListParam(
-            pageId: '$page',
-            sort: sort,
-            cids: '${subcategory == null ? category.cid : ''}',
-            subcid: '${subcategory == null ? '' : subcategory!.subcid}'),
+        param: ProductListParam(pageId: '$page', sort: sort, cids: '${subcategory == null ? category.cid : ''}', subcid: '${subcategory == null ? '' : subcategory!.subcid}'),
         requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
         });

@@ -1,4 +1,4 @@
-part of constant;
+part of 'index.dart';
 
 BoxShadow boxShaow = const BoxShadow(
     color: Color.fromRGBO(0, 0, 0, 0.3),

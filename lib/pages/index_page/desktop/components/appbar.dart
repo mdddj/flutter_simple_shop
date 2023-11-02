@@ -1,9 +1,8 @@
-part of pages;
+part of '../../../index.dart';
 
 /// 桌面端的导航条
-class IndexAppbarWithDesktop extends StatelessWidget
-    implements PreferredSizeWidget {
-  const IndexAppbarWithDesktop({Key? key}) : super(key: key);
+class IndexAppbarWithDesktop extends StatelessWidget implements PreferredSizeWidget {
+  const IndexAppbarWithDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {

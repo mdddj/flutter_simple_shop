@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 class AdTag extends StatelessWidget {
   const AdTag({super.key});
@@ -13,6 +13,7 @@ class AdTag extends StatelessWidget {
 
 class MiniTag extends StatelessWidget {
   final String title;
+
   const MiniTag({super.key, required this.title});
 
   @override

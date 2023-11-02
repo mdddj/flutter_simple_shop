@@ -6,7 +6,8 @@ import '../../widgets/index.dart';
 
 class SwiperWidget extends StatelessWidget {
   final String images;
-  const SwiperWidget({required this.images, Key? key}) : super(key: key);
+
+  const SwiperWidget({required this.images, super.key});
 
   @override
   Widget build(BuildContext context) {

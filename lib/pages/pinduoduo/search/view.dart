@@ -1,5 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
+
 import '../../../modals/pdd_search_item_model.dart';
 import '../../../widgets/index.dart';
 import '../../public_detail/view.dart';
@@ -8,7 +9,7 @@ var i = const Icon(Icons.abc);
 
 ///搜索页面
 class SearchPage extends StatefulWidget {
-  const SearchPage({Key? key}) : super(key: key);
+  const SearchPage({super.key});
 
   @override
   SearchPageState createState() => SearchPageState();
@@ -43,14 +44,12 @@ class SearchPageState extends State<SearchPage> {
   Widget renderItem(PddSearchItemModel item) {
     return GestureDetector(
       onTap: () {
-        context.navToWidget(
-            to: PublicDetailView(goodsId: item.goodsSign, type: 'pdd'));
+        context.navToWidget(to: PublicDetailView(goodsId: item.goodsSign, type: 'pdd'));
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(8)),
+        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
             Row(
@@ -75,10 +74,7 @@ class SearchPageState extends State<SearchPage> {
                         children: [
                           Text(
                             item.goodsName,
-                            style: const TextStyle(
-                                color: Colors.black45,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
+                            style: const TextStyle(color: Colors.black45, fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(
                             height: 12,
@@ -93,15 +89,11 @@ class SearchPageState extends State<SearchPage> {
                           Container(
                             alignment: Alignment.centerRight,
                             child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 6, vertical: 2),
-                              decoration: BoxDecoration(
-                                  color: Colors.red.shade50,
-                                  borderRadius: BorderRadius.circular(2)),
+                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(color: Colors.red.shade50, borderRadius: BorderRadius.circular(2)),
                               child: Text(
                                 '全网销量${item.salesTip}',
-                                style: const TextStyle(
-                                    color: Colors.red, fontSize: 12),
+                                style: const TextStyle(color: Colors.red, fontSize: 12),
                               ),
                             ),
                           ),
@@ -120,8 +112,7 @@ class SearchPageState extends State<SearchPage> {
                                 alignment: Alignment.centerRight,
                                 child: Text(
                                   item.mallName,
-                                  style: const TextStyle(
-                                      fontSize: 12, color: Colors.grey),
+                                  style: const TextStyle(fontSize: 12, color: Colors.grey),
                                 ),
                               ))
                             ],

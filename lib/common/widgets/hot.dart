@@ -1,8 +1,9 @@
-part of common;
+part of '../index.dart';
 
 class Hot extends StatelessWidget {
   final String text;
-  const Hot({Key? key, required this.text}) : super(key: key);
+
+  const Hot({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

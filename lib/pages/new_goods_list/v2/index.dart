@@ -1,10 +1,10 @@
-part of pages;
+part of '../../index.dart';
 
 ///新的产品列表页面
 class CategoryGoodsList extends ConsumerStatefulWidget {
   final Category category;
 
-  const CategoryGoodsList(this.category, {Key? key}) : super(key: key);
+  const CategoryGoodsList(this.category, {super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() {
@@ -12,13 +12,12 @@ class CategoryGoodsList extends ConsumerStatefulWidget {
   }
 }
 
-class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> with AutomaticKeepAliveClientMixin{
+class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> with AutomaticKeepAliveClientMixin {
   ///数据仓库
   ProductListRepository repository = ProductListRepository();
 
   //页面所需要的参数
-  late GoodsListParamsModel state = GoodsListParamsModel(
-      category: widget.category, initLoading: true, page: 1, products: []);
+  late GoodsListParamsModel state = GoodsListParamsModel(category: widget.category, initLoading: true, page: 1, products: []);
 
   @override
   void initState() {
@@ -33,11 +32,7 @@ class _CategoryGoodsListState extends ConsumerState<CategoryGoodsList> with Auto
         itemBuilder: _renderLayout,
         sourceList: repository,
         padding: const EdgeInsets.all(5),
-        extendedListDelegate:
-            SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                crossAxisCount: context.waterfallFlowCrossAxisCount,
-                crossAxisSpacing: 5,
-                mainAxisSpacing: 5),
+        extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, crossAxisSpacing: 5, mainAxisSpacing: 5),
         indicatorBuilder: CustomLoadingMoreWidget.new));
   }
 

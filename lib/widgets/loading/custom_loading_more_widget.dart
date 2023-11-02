@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_library_fast/model/status.dart';
+
 import '../../assets.dart';
 import '../../index.dart';
 
@@ -10,9 +11,10 @@ import '../../index.dart';
 class CustomLoadingMoreWidgetWithSliver extends StatelessWidget {
   final BuildContext context;
   final IndicatorStatusModel indicatorStatus;
-  final  VoidCallback? retry;
+  final VoidCallback? retry;
   final Widget? emptyChild;
-  const CustomLoadingMoreWidgetWithSliver(this.context, this.indicatorStatus, {Key? key, this.retry, this.emptyChild}) : super(key: key);
+
+  const CustomLoadingMoreWidgetWithSliver(this.context, this.indicatorStatus, {super.key, this.retry, this.emptyChild});
 
   @override
   Widget build(BuildContext context) {
@@ -33,40 +35,50 @@ class CustomLoadingMoreWidget extends StatelessWidget {
   final bool isSliver;
   final VoidCallback? retry;
   final Widget? emptyChild;
-  const CustomLoadingMoreWidget(this.context, this.indicatorStatus, {Key? key, this.isSliver = false, this.retry, this.emptyChild}) : super(key: key);
+
+  const CustomLoadingMoreWidget(this.context, this.indicatorStatus, {super.key, this.isSliver = false, this.retry, this.emptyChild});
 
   @override
   Widget build(BuildContext context) {
     late Widget child;
 
-
-    indicatorStatus.when(none: () {
-      child = const _Nothing();
-    }, empty: () {
-      child =  _Empty(child: emptyChild,);
-      if(isSliver){
-        child = SliverFillRemaining(child: child);
-      }
-    }, loadingMoreBusying: () {
-      child = const _LoadingMoreBusying();
-    }, fullScreenBusying: () {
-      child = const _FullScreenBusying();
-      if(isSliver){
-        child = SliverFillRemaining(child: child);
-      }
-    }, error: (error, stackTrace) {
-      child = const _Error();
-    }, fullScreenError: (error, stackTrace) {
-      child =  _FullScreenError(retry: retry);
-      if(isSliver){
-        child = SliverFillRemaining(child: child);
-      }
-    }, noMoreLoad: () {
-      child = Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(child: Text('没有更多了',style: context.textTheme.labelMedium?.copyWith(color: Colors.grey))),
-      );
-    },);
+    indicatorStatus.when(
+      none: () {
+        child = const _Nothing();
+      },
+      empty: () {
+        child = _Empty(
+          child: emptyChild,
+        );
+        if (isSliver) {
+          child = SliverFillRemaining(child: child);
+        }
+      },
+      loadingMoreBusying: () {
+        child = const _LoadingMoreBusying();
+      },
+      fullScreenBusying: () {
+        child = const _FullScreenBusying();
+        if (isSliver) {
+          child = SliverFillRemaining(child: child);
+        }
+      },
+      error: (error, stackTrace, action) {
+        child = const _Error();
+      },
+      fullScreenError: (error, stackTrace, action) {
+        child = _FullScreenError(retry: retry);
+        if (isSliver) {
+          child = SliverFillRemaining(child: child);
+        }
+      },
+      noMoreLoad: () {
+        child = Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(child: Text('没有更多了', style: context.textTheme.labelMedium?.copyWith(color: Colors.grey))),
+        );
+      },
+    );
     return child;
   }
 }
@@ -74,7 +86,8 @@ class CustomLoadingMoreWidget extends StatelessWidget {
 ///全面模式下出现异常
 class _FullScreenError extends StatelessWidget {
   final VoidCallback? retry;
-  const _FullScreenError({Key? key, this.retry}) : super(key: key);
+
+  const _FullScreenError({this.retry});
 
   @override
   Widget build(BuildContext context) {
@@ -86,10 +99,16 @@ class _FullScreenError extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset('assets/svg/err.svg',width: context.screenWidth * 0.2,colorFilter: ColorFilter.mode(context.colorScheme.secondary, BlendMode.srcIn),).padding(12),
-             Text("服务繁忙,请稍后重试 (-1)",style: TextStyle(color: context.colorScheme.secondary),),
-            if(retry!=null)
-            FilledButton(onPressed: retry, child: const Text("刷新重试")).margin(32)
+            SvgPicture.asset(
+              'assets/svg/err.svg',
+              width: context.screenWidth * 0.2,
+              colorFilter: ColorFilter.mode(context.colorScheme.secondary, BlendMode.srcIn),
+            ).padding(12),
+            Text(
+              "服务繁忙,请稍后重试 (-1)",
+              style: TextStyle(color: context.colorScheme.secondary),
+            ),
+            if (retry != null) FilledButton(onPressed: retry, child: const Text("刷新重试")).margin(32)
           ],
         ),
       ),
@@ -99,7 +118,7 @@ class _FullScreenError extends StatelessWidget {
 
 ///全屏加载中
 class _FullScreenBusying extends StatelessWidget {
-  const _FullScreenBusying({Key? key}) : super(key: key);
+  const _FullScreenBusying();
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +128,7 @@ class _FullScreenBusying extends StatelessWidget {
 
 ///加载中状态
 class _LoadingMoreBusying extends StatelessWidget {
-  const _LoadingMoreBusying({Key? key}) : super(key: key);
+  const _LoadingMoreBusying();
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +139,8 @@ class _LoadingMoreBusying extends StatelessWidget {
 ///无数据
 class _Empty extends ConsumerWidget {
   final Widget? child;
-  const _Empty({Key? key,this.child}) : super(key: key);
+
+  const _Empty({this.child});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -144,11 +164,12 @@ class _Empty extends ConsumerWidget {
           const SizedBox(
             height: 12,
           ),
-          child ?? FilledButton(
-              onPressed: () {
-                ref.read(homeModuleShowIndex.notifier).state = 0;
-              },
-              child: const Text('浏览购物'))
+          child ??
+              FilledButton(
+                  onPressed: () {
+                    ref.read(homeModuleShowIndex.notifier).state = 0;
+                  },
+                  child: const Text('浏览购物'))
         ],
       ),
     );
@@ -157,7 +178,7 @@ class _Empty extends ConsumerWidget {
 
 ///出现错误
 class _Error extends StatelessWidget {
-  const _Error({Key? key}) : super(key: key);
+  const _Error();
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +192,7 @@ class _Error extends StatelessWidget {
 
 ///什么都没有
 class _Nothing extends StatelessWidget {
-  const _Nothing({Key? key}) : super(key: key);
+  const _Nothing();
 
   @override
   Widget build(BuildContext context) {

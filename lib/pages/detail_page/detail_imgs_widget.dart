@@ -11,8 +11,7 @@ class DetailImagesWidget extends StatelessWidget {
   final String? images;
   final bool hideTitle;
 
-  const DetailImagesWidget({this.images, this.hideTitle = false, Key? key})
-      : super(key: key);
+  const DetailImagesWidget({this.images, this.hideTitle = false, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +27,7 @@ class DetailImagesWidget extends StatelessWidget {
             child: const Flex(
               direction: Axis.horizontal,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                DetailSimpleBorderButton(text: '详情', isCurrent: true),
-                DetailSimpleBorderButton(text: '推荐', isCurrent: false)
-              ],
+              children: <Widget>[DetailSimpleBorderButton(text: '详情', isCurrent: true), DetailSimpleBorderButton(text: '推荐', isCurrent: false)],
             ),
           ),
         images != null && images!.isNotEmpty

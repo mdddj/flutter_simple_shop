@@ -1,13 +1,12 @@
-part of pages;
+part of '../../index.dart';
 
 final _riverpodSuggest = FutureProvider.autoDispose((ref) async {
-  return await DdTaokeSdk.instance.getHotSearchWorlds(
-      requestParamsBuilder: (r) => r.copyWith(showDefaultLoading: false));
+  return await DdTaokeSdk.instance.getHotSearchWorlds(requestParamsBuilder: (r) => r.copyWith(showDefaultLoading: false));
 });
 
 ///热搜榜
 class Suggest extends ConsumerWidget {
-  const Suggest({Key? key}) : super(key: key);
+  const Suggest({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -38,8 +37,7 @@ class Suggest extends ConsumerWidget {
             ref.watch(_riverpodSuggest).when(
                 data: (list) {
                   return Wrap(
-                    children:
-                        list.map((e) => _renderItem(e, context, ref)).toList(),
+                    children: list.map((e) => _renderItem(e, context, ref)).toList(),
                   );
                 },
                 error: (e, s) => RiverpodErrorWidget(
@@ -56,8 +54,7 @@ class Suggest extends ConsumerWidget {
     );
   }
 
-  Widget _renderItem(
-      HotSearchWorlds item, BuildContext context, WidgetRef ref) {
+  Widget _renderItem(HotSearchWorlds item, BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () {
         context.navToWidget(to: SearchListIndex(value: item.words ?? ''));

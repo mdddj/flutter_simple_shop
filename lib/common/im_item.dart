@@ -1,4 +1,4 @@
-part of common;
+part of 'index.dart';
 
 //通用列表项
 class ImItem extends StatelessWidget {
@@ -11,8 +11,7 @@ class ImItem extends StatelessWidget {
   //图标
   final Icon? icon;
 
-  const ImItem({Key? key, required this.title, this.imagePath, this.icon})
-      : super(key: key);
+  const ImItem({super.key, required this.title, this.imagePath, this.icon});
 
   @override
   Widget build(BuildContext context) {

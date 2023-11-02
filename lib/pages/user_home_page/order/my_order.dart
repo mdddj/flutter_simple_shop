@@ -1,9 +1,9 @@
-part of pages;
+part of '../../index.dart';
 
 class MyOrderHomePage extends StatefulWidget {
   final String? stype; // 审核类型
 
-  const MyOrderHomePage({this.stype, Key? key}) : super(key: key);
+  const MyOrderHomePage({this.stype, super.key});
 
   @override
   MyOrderHomePageState createState() => MyOrderHomePageState();
@@ -33,9 +33,7 @@ class MyOrderHomePageState extends State<MyOrderHomePage> {
             LoadingMoreSliverList(
               SliverListConfig<OrderAuditObject>(
                 itemBuilder: (c, item, index) {
-                  var createTimeStr = DateUtil.formatDateMs(
-                      int.parse(item.createTime!),
-                      format: 'yyyy-MM-dd HH:mm:ss');
+                  var createTimeStr = DateUtil.formatDateMs(int.parse(item.createTime!), format: 'yyyy-MM-dd HH:mm:ss');
                   var stateTip = '等待审核';
                   var stateTipColor = Colors.black;
                   var stateIcon = Icon(
@@ -50,8 +48,7 @@ class MyOrderHomePageState extends State<MyOrderHomePage> {
                     stateTipColor = Colors.deepOrange;
                   }
                   return Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                     margin: const EdgeInsets.only(bottom: 12),
                     decoration: const BoxDecoration(color: Colors.white),
                     child: Column(
@@ -82,7 +79,7 @@ class MyOrderHomePageState extends State<MyOrderHomePage> {
                 },
                 sourceList: orderRespository,
                 indicatorBuilder: (context, state) {
-                  return CustomLoadingMoreWidgetWithSliver(context,state);
+                  return CustomLoadingMoreWidgetWithSliver(context, state);
                 },
               ),
             )

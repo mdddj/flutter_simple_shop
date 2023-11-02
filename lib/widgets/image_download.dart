@@ -1,4 +1,4 @@
-part of widgets;
+part of 'index.dart';
 
 extension ImageDownloadWrapperEx on ImageView {
   Widget wrapper(String url) {
@@ -11,8 +11,7 @@ class ImageDownloadWrapper extends StatelessWidget {
   final Widget child;
   final String imageUrl;
 
-  const ImageDownloadWrapper(
-      {super.key, required this.child, required this.imageUrl});
+  const ImageDownloadWrapper({super.key, required this.child, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +21,7 @@ class ImageDownloadWrapper extends StatelessWidget {
         onPressed: () async {
           final nav = context.nav;
           try {
-            await imageUrl.downloadImage(
-                isAsset: false, checkPermission: true, quality: 100);
+            await imageUrl.downloadImage(isAsset: false, checkPermission: true, quality: 100);
             toast('已保存到相册');
           } catch (e) {
             toast('保存失败:$e');

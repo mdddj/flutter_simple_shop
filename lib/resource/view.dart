@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/ask_ok_dialog_params.dart';
+import 'package:dd_js_util/model/base_api_exception.dart';
 import 'package:dd_js_util/model/my_image.dart';
 import 'package:dd_js_util/model/picture_selection_item.dart';
 import 'package:dio/dio.dart';
@@ -31,13 +32,10 @@ import '../widgets/loading/custom_loading_more_widget.dart';
 import '../widgets/resource_widegt.dart';
 import 'repository/my_resource_repository.dart';
 
-part 'views/detail.dart';
-
-part 'views/write_page.dart';
-
 part 'page.dart';
-
+part 'views/detail.dart';
 part 'views/selec_resource_category_page.dart';
+part 'views/write_page.dart';
 
 class MyResourceListWidget extends StatefulWidget {
   final DynPageParams params;
@@ -61,13 +59,8 @@ class _MyResourceListWidgetState extends State<MyResourceListWidget> {
         sourceList: _repository,
         indicatorBuilder: _indicatorBuilder,
         padding: isCard ? EdgeInsets.zero : const EdgeInsets.all(12),
-        extendedListDelegate:
-            SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                crossAxisCount: style == ResourceWidgetCardStyle.waterfall
-                    ? context.waterfallFlowCrossAxisCount
-                    : 1,
-                mainAxisSpacing: isCard ? 0 : 12,
-                crossAxisSpacing: 12),
+        extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+            crossAxisCount: style == ResourceWidgetCardStyle.waterfall ? context.waterfallFlowCrossAxisCount : 1, mainAxisSpacing: isCard ? 0 : 12, crossAxisSpacing: 12),
         lock: false));
   }
 

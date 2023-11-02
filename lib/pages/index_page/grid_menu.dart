@@ -1,4 +1,4 @@
-part of pages;
+part of '../index.dart';
 
 /// 2020年11月17日 22:36:07
 /// 首页的网格菜单
@@ -6,7 +6,7 @@ part of pages;
 class IndexGridViewMenu extends StatelessWidget {
   final IndexGridMenuItemModel model;
 
-  const IndexGridViewMenu({Key? key, required this.model}) : super(key: key);
+  const IndexGridViewMenu({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {

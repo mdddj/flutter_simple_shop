@@ -1,4 +1,4 @@
-part of util;
+part of 'index.dart';
 
 extension ThemeEx on AppLocalSettingModel {
   ///亮色主题
@@ -37,7 +37,7 @@ extension TextScaleEx on Widget? {
 extension PaddingEx on BuildContext {
   ///适配全平台的地步边距
   double get bottomPadding {
-    if(kIsWeb){
+    if (kIsWeb) {
       return 24;
     }
     if (Platform.isAndroid || Platform.isIOS) {
@@ -47,7 +47,6 @@ extension PaddingEx on BuildContext {
   }
 
   bool get isDesktop => getDeviceType(MediaQuery.of(this).size) == DeviceScreenType.desktop;
-
 
   double? get dialogWidth => isDesktop ? screenWidth * 0.3 : null;
 }

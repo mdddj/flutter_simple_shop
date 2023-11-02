@@ -5,10 +5,16 @@ import 'package:flutter/material.dart';
 class DefaultAvatarWidget extends StatelessWidget {
   final String url; //头像URL
   final double size;
-  const DefaultAvatarWidget(this.url,{Key? key,this.size = 40}) : super(key: key);
+
+  const DefaultAvatarWidget(this.url, {super.key, this.size = 40});
 
   @override
   Widget build(BuildContext context) {
-    return ExtendedImage.network(url,shape: BoxShape.circle,width:size ,height: size,);
+    return ExtendedImage.network(
+      url,
+      shape: BoxShape.circle,
+      width: size,
+      height: size,
+    );
   }
 }

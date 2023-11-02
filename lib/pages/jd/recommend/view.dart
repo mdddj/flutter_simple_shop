@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 class RecommendPage extends StatefulWidget {
-  const RecommendPage({Key? key}) : super(key: key);
+  const RecommendPage({super.key});
 
   @override
   RecommendPageState createState() => RecommendPageState();
 }
 
 class RecommendPageState extends State<RecommendPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +18,7 @@ class RecommendPageState extends State<RecommendPage> {
         duration: const Duration(
           seconds: 1,
         ),
-        child: renderProducts() ,
+        child: renderProducts(),
       ),
     );
   }
@@ -35,7 +34,7 @@ class RecommendPageState extends State<RecommendPage> {
   }
 
   Widget itemBuilder(BuildContext context, int index) {
-     late JdProduct item = JdProduct.fromJson({});
+    late JdProduct item = JdProduct.fromJson({});
     return Container(
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Colors.white),
       child: Padding(

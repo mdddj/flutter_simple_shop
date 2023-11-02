@@ -1,9 +1,9 @@
-part of pages;
+part of '../../index.dart';
 
 /// 首页
 /// 桌面版本
 class IndexHomeV2 extends StatelessWidget {
-  const IndexHomeV2({Key? key}) : super(key: key);
+  const IndexHomeV2({super.key});
 
   @override
   Widget build(BuildContext context) {

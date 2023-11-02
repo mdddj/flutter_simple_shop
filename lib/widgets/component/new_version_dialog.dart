@@ -1,9 +1,10 @@
-part of widgets;
+part of '../index.dart';
 
 /// 新版本弹窗
 class NewVersionDialog extends StatefulWidget {
   final Map<String, dynamic> map;
-  const NewVersionDialog({Key? key, required this.map}) : super(key: key);
+
+  const NewVersionDialog({super.key, required this.map});
 
   @override
   NewVersionDialogState createState() => NewVersionDialogState();

@@ -1,13 +1,12 @@
-part of pages;
+part of '../../index.dart';
 
 const kAvatarHeight = 58.0;
 
 // 头部容器
 class HeaderIndex extends ConsumerWidget {
-  const HeaderIndex({Key? key}) : super(key: key);
+  const HeaderIndex({super.key});
 
-  final TextStyle subTitleStyle =
-      const TextStyle(color: Colors.black26, fontSize: 12);
+  final TextStyle subTitleStyle = const TextStyle(color: Colors.black26, fontSize: 12);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,9 +21,7 @@ class HeaderIndex extends ConsumerWidget {
             utils.widgetUtils.marginTop(),
             AnimatedSwitcher(
               duration: const Duration(milliseconds: 300),
-              child: user == null
-                  ? _loginWidgetLayout(context)
-                  : _loginSuccessLayout(context, user),
+              child: user == null ? _loginWidgetLayout(context) : _loginSuccessLayout(context, user),
             ),
             // _renderCounts(),
             const SizedBox(
@@ -58,19 +55,14 @@ class HeaderIndex extends ConsumerWidget {
               children: [
                 Text(
                   user.nickName.isNotEmpty ? user.nickName : '未设置昵称',
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25),
+                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
                 ),
                 if (user.loginNumber.isNotEmpty)
                   Text(
                     'ID: ${user.loginNumber}',
                     style: const TextStyle(color: Colors.white54),
                   ),
-                if (user.email.isNotEmpty)
-                  Text(user.email,
-                      style: const TextStyle(color: Colors.white54))
+                if (user.email.isNotEmpty) Text(user.email, style: const TextStyle(color: Colors.white54))
               ],
             )
             // 昵称
@@ -108,10 +100,7 @@ class HeaderIndex extends ConsumerWidget {
               children: [
                 const Text(
                   '登录/注册',
-                  style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),
                 ),
 
                 const SizedBox(
@@ -125,8 +114,7 @@ class HeaderIndex extends ConsumerWidget {
                       'assets/svg/qq.svg',
                       width: 32,
                       height: 32,
-                      colorFilter: ColorFilter.mode(
-                          context.iconColor ?? Colors.red, BlendMode.srcIn),
+                      colorFilter: ColorFilter.mode(context.iconColor ?? Colors.red, BlendMode.srcIn),
                     ),
                     const SizedBox(
                       width: 12,
@@ -135,8 +123,7 @@ class HeaderIndex extends ConsumerWidget {
                       'assets/svg/wechat.svg',
                       width: 28,
                       height: 28,
-                      colorFilter:
-                          const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                      colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                     )
                   ],
                 )
@@ -151,14 +138,19 @@ class HeaderIndex extends ConsumerWidget {
 
 class LoginUserAvatar extends ConsumerWidget {
   final double? size;
-  const LoginUserAvatar({super.key,this.size});
+
+  const LoginUserAvatar({super.key, this.size});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.user;
-    if(user==null){
+    if (user == null) {
       return CircleAvatar(
-        child: Image.asset(MyAssets.assetsImagesAvaJpg,width: size,height: size,).clipRadius(22),
+        child: Image.asset(
+          MyAssets.assetsImagesAvaJpg,
+          width: size,
+          height: size,
+        ).clipRadius(22),
       );
     }
     return user.getAvatar(size: size ?? 40);

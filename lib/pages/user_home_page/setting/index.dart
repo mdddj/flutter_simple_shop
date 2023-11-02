@@ -1,11 +1,11 @@
-part of pages;
+part of '../../index.dart';
 
 ///设置页面
 class SettingIndex extends ConsumerWidget {
   const SettingIndex({super.key});
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('设置'),
@@ -16,12 +16,12 @@ class SettingIndex extends ConsumerWidget {
           children: [
             ListTile(
               title: const Text('修改头像'),
-              onTap: (){
-                 showDialog(
-                context: context,
-                builder: (_) {
-                  return const UpdateUserAvatarWidget();
-                });
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (_) {
+                      return const UpdateUserAvatarWidget();
+                    });
               },
               trailing: ref.isLogin ? ref.user!.getAvatar(size: 48) : null,
             ),

@@ -1,4 +1,4 @@
-part of provider;
+part of '../index.dart';
 
 class SearchRepository extends MyLoadingModel<ProductModel> {
   var _page = 1;

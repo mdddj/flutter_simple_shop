@@ -1,4 +1,4 @@
-part of pages;
+part of '../../index.dart';
 
 class CategoryNotificationStreamUtil {
   CategoryNotificationStreamUtil._internal() {
@@ -7,14 +7,15 @@ class CategoryNotificationStreamUtil {
 
   factory CategoryNotificationStreamUtil() => _instance;
 
-  static final CategoryNotificationStreamUtil _instance =
-      CategoryNotificationStreamUtil._internal();
+  static final CategoryNotificationStreamUtil _instance = CategoryNotificationStreamUtil._internal();
 
   StreamController? _controller;
   Stream? _stream;
 
   static CategoryNotificationStreamUtil get instance => _instance;
+
   Stream? get changeStream => _stream;
+
   StreamController? get ctrl => _controller;
 
   void disposeStream() => _controller?.close();

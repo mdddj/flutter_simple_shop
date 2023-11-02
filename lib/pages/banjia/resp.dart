@@ -1,4 +1,5 @@
-part of pages;
+part of '../index.dart';
+
 final banjiaRiveroid = ChangeNotifierProvider((ref) => BanjiaResp());
 
 ///半价
@@ -21,8 +22,9 @@ class BanjiaResp extends ChangeNotifier {
 
     notifyListeners();
 
-    final result =
-        await DdTaokeSdk.instance.getHalfdayProducts(sessions: currTime, requestParamsBuilder: (RequestParams requestParams) {
+    final result = await DdTaokeSdk.instance.getHalfdayProducts(
+        sessions: currTime,
+        requestParamsBuilder: (RequestParams requestParams) {
           return requestParams;
         });
 
@@ -36,9 +38,7 @@ class BanjiaResp extends ChangeNotifier {
         banner = result.halfPriceInfo!.banner;
       }
       if (!change) {
-        currTime =
-            sessions.firstWhere((element) => element.status == '1').hpdTime ??
-                '';
+        currTime = sessions.firstWhere((element) => element.status == '1').hpdTime ?? '';
       }
 
       loading = false;

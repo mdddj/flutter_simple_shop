@@ -1,30 +1,23 @@
-part of index;
+part of 'index.dart';
 
 const kNavIconSize = 23.0;
 final homeModuleShowIndex = StateProvider((ref) => 0);
 
 ///APP主要页面
-const _pages = <Widget>[
-  IndexHomeNew(),
-  JiuJiuIndex(),
-  CategoryIndexPage(),
-  FavoriteIndexHome(),
-  UserCenterPage()
-];
+const _pages = <Widget>[IndexHomeNew(), JiuJiuIndex(), CategoryIndexPage(), FavoriteIndexHome(), UserCenterPage()];
 
 class MyApp extends ApplicationWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget buildApplication(ApplicationModel applicationModel) => const App();
 
   @override
-  Widget buildErrorWidget(
-      Object e, Object s, BuildContext context, WidgetRef ref) {
+  Widget buildErrorWidget(Object e, StackTrace s, BuildContext context, WidgetRef ref) {
+    Logger().e('启动失败', error: e, stackTrace: s);
     return InitLoadingWidget(
-      errorMessage: (e as AppException).message,
-      retry: () =>
-          ref.invalidate(application(ApplocationContext(context, ref))),
+      errorMessage: '$e',
+      retry: () => ref.invalidate(application(ApplocationContext(context, ref))),
     );
   }
 
@@ -36,7 +29,7 @@ class MyApp extends ApplicationWidget {
 
 ///APP主体框架
 class App extends ConsumerWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -62,8 +55,7 @@ class App extends ConsumerWidget {
                 destinations: bottomMenus.map((element) {
                   return NavigationRailDestination(
                       icon: Image.asset(
-                        element.getAssetPath(
-                            currentIndex == bottomMenus.indexOf(element)),
+                        element.getAssetPath(currentIndex == bottomMenus.indexOf(element)),
                         width: kNavIconSize,
                         height: kNavIconSize,
                         color: context.isDarkModel ? Colors.white : null,
@@ -96,7 +88,10 @@ class App extends ConsumerWidget {
                             context.push(pagerUtil.setting.routername);
                           },
                           icon: const Icon(Icons.settings)),
-                      Tooltip(message: "退出登录",child: IconButton(onPressed: (){}, icon: const Icon(Icons.logout)).ifShow(ref.isLogin),),
+                      Tooltip(
+                        message: "退出登录",
+                        child: IconButton(onPressed: () {}, icon: const Icon(Icons.logout)).ifShow(ref.isLogin),
+                      ),
                       const SizedBox(height: 12)
                     ],
                   ),
@@ -131,10 +126,9 @@ class App extends ConsumerWidget {
 
 ///app底部导航
 class AppBottomNav extends View {
-  const AppBottomNav({Key? key}) : super(key: key);
+  const AppBottomNav({super.key});
 
-  Widget _buildIcon(
-      int currentIndex, int index, String filename, BuildContext context) {
+  Widget _buildIcon(int currentIndex, int index, String filename, BuildContext context) {
     return IfWidget(
         expression: () => currentIndex == index,
         trueBuild: () => ExtendedImage.asset(
@@ -163,19 +157,11 @@ class AppBottomNav extends View {
           appCore.ref.read(homeModuleShowIndex.notifier).state = index;
         }),
         items: [
-          BottomNavigationBarItem(
-              label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
-          BottomNavigationBarItem(
-              label: '9.9包邮',
-              icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
-          BottomNavigationBarItem(
-              label: '分类',
-              icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
-          BottomNavigationBarItem(
-              label: '收藏',
-              icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
-          BottomNavigationBarItem(
-              label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
+          BottomNavigationBarItem(label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
+          BottomNavigationBarItem(label: '9.9包邮', icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
+          BottomNavigationBarItem(label: '分类', icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
+          BottomNavigationBarItem(label: '收藏', icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
+          BottomNavigationBarItem(label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
         ]);
   }
 }

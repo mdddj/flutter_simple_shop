@@ -1,12 +1,11 @@
-part of pages;
+part of '../../index.dart';
 
 class SvgTitle extends StatelessWidget {
   final String? svgPath;
   final String? title;
   final VoidCallback? onTap;
 
-  const SvgTitle({this.title, this.svgPath, this.onTap, Key? key})
-      : super(key: key);
+  const SvgTitle({this.title, this.svgPath, this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-part of provider;
+part of 'index.dart';
 
 class GoodsListProvider extends ChangeNotifier with BaseProvider {
   List<GoodsItem>? goods = [];
