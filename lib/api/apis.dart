@@ -1,5 +1,6 @@
 library api;
 
+import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/base_api_exception.dart';
@@ -81,6 +82,14 @@ abstract class BaseApiPublic<T> extends BaseApi<T> {
 
   @override
   Future<BaseOptions> get getOptions async => opt;
+
+  @override
+  Future<Dio> getDio(BaseOptions baseOptions) async {
+    final dio = await super.getDio(baseOptions);
+    print('进来了.');
+    await DdCheckPlugin().init(dio, initHost: '192.168.100.64', port: 9998, projectName: 'shop');
+    return dio;
+  }
 }
 
 abstract class AppCoreApiWithT<T> extends BaseApiPublic<T> {
