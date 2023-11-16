@@ -5,7 +5,6 @@ extension ThemeEx on AppLocalSettingModel {
   ThemeData get theme {
     final themeData = MyAppTheme.getTheme(themeIndex);
     return themeData.copyWith(
-        useMaterial3: true,
         tabBarTheme: themeData.tabBarTheme.copyWith(
           labelStyle: TextStyle(fontFamily: useEnv.fontFamily),
           unselectedLabelStyle: TextStyle(fontFamily: useEnv.fontFamily),
@@ -18,7 +17,6 @@ extension ThemeEx on AppLocalSettingModel {
   ThemeData get darkTheme {
     final darkTheme = MyAppTheme.darkTheme;
     return darkTheme.copyWith(
-      useMaterial3: true,
       textTheme: darkTheme.textTheme.apply(fontFamily: useEnv.fontFamily),
       tabBarTheme: darkTheme.tabBarTheme.copyWith(
         labelStyle: TextStyle(fontFamily: useEnv.fontFamily),
@@ -30,7 +28,7 @@ extension ThemeEx on AppLocalSettingModel {
 
 extension TextScaleEx on Widget? {
   Widget scale(BuildContext context) {
-    return MediaQuery(data: MediaQuery.of(context).copyWith(textScaleFactor: 0.9, boldText: false), child: this ?? const SizedBox());
+    return MediaQuery(data: MediaQuery.of(context).copyWith(boldText: false, textScaler: const TextScaler.linear(0.9)), child: this ?? const SizedBox());
   }
 }
 

@@ -2,7 +2,6 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:logger/logger.dart';
 
@@ -45,7 +44,6 @@ class PublicDetailViewState extends State<PublicDetailView> implements PublicDet
         const SizedBox(
           width: double.infinity,
           height: double.infinity,
-          child: BlurHash(hash: 'LgJQ[]~o%0V?tixvNHM}R-xaaeWU'),
         ),
         Scaffold(
           backgroundColor: Colors.transparent,

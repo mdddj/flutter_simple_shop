@@ -54,7 +54,6 @@ dependencies:
   package_info: ^2.0.2
   show_up_animation: ^2.0.0
   hive: ^2.2.3
-  flutter_blurhash: ^0.7.0
   flutter_swiper_null_safety_flutter3: ^4.0.2
   path_provider: ^2.1.1
   hooks_riverpod: ^2.4.6
@@ -70,7 +69,7 @@ dependencies:
   flutter_slidable: ^3.0.1
   loading_more_list_fast: ^7.0.5
   loading_more_list_library_fast: ^4.0.4
-  dd_js_util: ^5.0.2
+  dd_js_util: ^5.0.3
   dd_models: ^0.0.6
   dd_check_plugin: ^3.0.7
   dataoke_sdk: ^4.0.6

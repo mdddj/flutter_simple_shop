@@ -349,10 +349,10 @@ packages:
     dependency: "direct main"
     description:
       name: dd_js_util
-      sha256: "307157b3ef61dcf59c8623f428988e83ec952fc43e2240ba14bbb08892b30e39"
+      sha256: "3a23c2409582d3a547ff46f61dc10d99ba601bf13b699e39f1fdccfb5136b29e"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.2"
+    version: "5.0.3"
   dd_models:
     dependency: "direct main"
     description:
@@ -606,14 +606,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_blurhash:
-    dependency: "direct main"
-    description:
-      name: flutter_blurhash
-      sha256: "05001537bd3fac7644fa6558b09ec8c0a3f2eba78c0765f88912882b1331a5c6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.7.0"
   flutter_cache_manager:
     dependency: transitive
     description:

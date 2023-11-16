@@ -306,7 +306,7 @@
         <entry key="dd_js_util">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-5.0.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-5.0.3/lib" />
             </list>
           </value>
         </entry>
@@ -531,13 +531,6 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../flutter/packages/flutter/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="flutter_blurhash">
-          <value>
-            <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_blurhash-0.7.0/lib" />
             </list>
           </value>
         </entry>
@@ -1826,7 +1819,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/date_format-2.0.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dbus-0.7.8/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-3.0.7/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-5.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-5.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_models-0.0.6/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/decimal-2.3.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/device_info-2.0.3/lib" />
@@ -1858,7 +1851,6 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fixnum-1.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flex_color_scheme-7.3.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flex_seed_scheme-1.4.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_blurhash-0.7.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_cache_manager-3.3.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_hooks-0.18.6/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_lints-3.0.0/lib" />

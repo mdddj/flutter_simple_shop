@@ -1,7 +1,7 @@
 part of '../../index.dart';
 
 class IndexHomeBanner extends StatelessWidget {
-  final info = 'A banner displays an important, succinct message, and provides actions for users to address. '
+  static const info = 'A banner displays an important, succinct message, and provides actions for users to address. '
       'A user action is required for itto be dismissed.';
 
   const IndexHomeBanner({super.key});
@@ -11,9 +11,9 @@ class IndexHomeBanner extends StatelessWidget {
     return Column(
       children: <Widget>[
         MaterialBanner(
-          content: Text(
+          content: const Text(
             info,
-            style: const TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Colors.purple,
           leading: const Icon(Icons.warning, color: Colors.yellow),
