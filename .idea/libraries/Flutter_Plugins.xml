@@ -2,7 +2,6 @@
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider_linux-2.2.0" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/saver_gallery-2.0.1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image_picker_linux-0.2.1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider_android-2.1.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/shared_preferences_linux-2.2.0" />
@@ -39,11 +38,14 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/url_launcher_linux-3.1.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter_android-3.8.2" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_models-0.0.5" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.4" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus-7.1.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter-4.2.4" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-3.6.2" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/saver_gallery-3.0.1" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/device_info_plus-9.1.0" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/package_info_plus-4.2.0" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_models-0.0.6" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.6" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

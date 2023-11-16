@@ -81,13 +81,14 @@ abstract class BaseApiPublic<T> extends BaseApi<T> {
   ISet<Interceptor> get interceptions => ISet([getIt.get<MyTokenInterceptor>()]);
 
   @override
-  Future<BaseOptions> get getOptions async => opt;
+  Future<BaseOptions> getOptions(param) async => opt;
 
   @override
   Future<Dio> getDio(BaseOptions baseOptions) async {
     final dio = await super.getDio(baseOptions);
-    print('进来了.');
-    await DdCheckPlugin().init(dio, initHost: '192.168.100.64', port: 9998, projectName: 'shop');
+    await DdCheckPlugin().init(dio, initHost: '192.168.100.64', port: 9998, projectName: 'shop', extend: [
+      HiveToolManager(boxList: [MyCategoryCache()])
+    ]);
     return dio;
   }
 }
