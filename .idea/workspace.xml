@@ -14,15 +14,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="适配 flutter3.16.0">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main_dart.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/index_home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/home_banner.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/home_banner.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/public_detail/view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/public_detail/view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/util/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/theme.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -565,13 +556,6 @@
       <workItem from="1694654668821" duration="1999000" />
       <workItem from="1694670825119" duration="23000" />
     </task>
-    <task id="LOCAL-00148" summary=":rocket: 升级登录模块到2.0">
-      <created>1678154856738</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1678154856739</updated>
-    </task>
     <task id="LOCAL-00149" summary=":rocket: 升级登录模块到2.0">
       <created>1678157772377</created>
       <option name="number" value="00149" />
@@ -908,7 +892,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700098613575</updated>
     </task>
-    <option name="localTasksCounter" value="223" />
+    <task id="LOCAL-00223" summary="适配 flutter3.16.0">
+      <created>1700100502726</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1700100502726</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
