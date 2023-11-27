@@ -13,9 +13,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="适配 flutter3.16.0">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="升级依赖到最新版">
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -557,13 +556,6 @@
       <workItem from="1694654668821" duration="1999000" />
       <workItem from="1694670825119" duration="23000" />
     </task>
-    <task id="LOCAL-00150" summary=":rocket: 升级登录模块到2.0">
-      <created>1678525164565</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1678525164566</updated>
-    </task>
     <task id="LOCAL-00151" summary=":rocket: 升级登录模块到2.0">
       <created>1678842657154</created>
       <option name="number" value="00151" />
@@ -900,7 +892,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700100523831</updated>
     </task>
-    <option name="localTasksCounter" value="225" />
+    <task id="LOCAL-00225" summary="升级依赖到最新版">
+      <created>1701056498066</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1701056498067</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -932,7 +931,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="添加注册页面" />
     <MESSAGE value="完善邮箱注册功能" />
     <MESSAGE value=":bug: hint fixed" />
     <MESSAGE value="重构9块9页面" />
@@ -957,7 +955,8 @@
     <MESSAGE value="升级 flutter 3.13.9" />
     <MESSAGE value="依赖升级" />
     <MESSAGE value="适配 flutter3.16.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="适配 flutter3.16.0" />
+    <MESSAGE value="升级依赖到最新版" />
+    <option name="LAST_COMMIT_MESSAGE" value="升级依赖到最新版" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

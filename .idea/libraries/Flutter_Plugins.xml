@@ -12,7 +12,6 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/file_selector_macos-0.9.3" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/sqflite-2.2.4+1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider_windows-2.2.0" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/connectivity_plus-5.0.1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share-2.0.4" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/shared_preferences_foundation-2.2.2" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/shared_preferences_web-2.1.0" />
@@ -21,7 +20,6 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image_picker_macos-0.2.1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/network_info_plus-4.1.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/package_info-2.0.2" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler-11.0.1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/file_selector_linux-0.9.2" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider-2.1.1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image_picker-1.0.4" />
@@ -34,7 +32,6 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/url_launcher_macos-3.1.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/url_launcher_ios-6.2.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/url_launcher_web-2.2.0" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-3.0.7" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/url_launcher_linux-3.1.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/url_launcher_windows-3.1.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter_android-3.8.2" />
@@ -42,10 +39,14 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter-4.2.4" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-3.6.2" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/saver_gallery-3.0.1" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/device_info_plus-9.1.0" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/package_info_plus-4.2.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_models-0.0.6" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.6" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_html-0.1.0+1" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/device_info_plus-9.1.1" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/connectivity_plus-5.0.2" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/package_info_plus-5.0.1" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-3.1.1" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler-11.1.0" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
