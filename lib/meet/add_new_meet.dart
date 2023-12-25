@@ -156,12 +156,15 @@ class PhotoUploadWidget extends View {
 
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
-    return CupertinoListTile(
-      backgroundColor: context.colorScheme.surfaceVariant,
-      leading: const Icon(CupertinoIcons.photo),
-      title: Text('添加自拍或者生活照', style: context.textTheme.titleMedium?.copyWith(color: context.primaryColor)),
-      subtitle: PictureSelection(multipleChoice: true, controller: fileController),
-    ).defaultPadding12;
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: CupertinoListTile(
+        backgroundColor: context.colorScheme.surfaceVariant,
+        leading: const Icon(CupertinoIcons.photo),
+        title: Text('添加自拍或者生活照', style: context.textTheme.titleMedium?.copyWith(color: context.primaryColor)),
+        subtitle: PictureSelection(multipleChoice: true, controller: fileController),
+      ),
+    );
   }
 }
 

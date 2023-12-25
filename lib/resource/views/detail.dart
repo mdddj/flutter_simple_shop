@@ -53,34 +53,43 @@ class _ResourceDetailPageState extends State<ResourceDetailPage> {
               return MyLoadingMoreCustomScrollView(
                 slivers: [
                   //用户信息展示
-                  Row(
-                    children: [
-                      DefaultAvatarWidget(
-                        _resource!.user.picture,
-                        size: 58,
-                      ),
-                      const SizedBox(width: 12),
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(minHeight: 58),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [Text(_resource!.user.getShowUserName)],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        DefaultAvatarWidget(
+                          _resource!.user.picture,
+                          size: 58,
                         ),
-                      ).expanded,
-                      FilledButton(onPressed: () {}, child: const Text("添加关注"))
-                    ],
-                  ).defaultPadding12.toSliverWidget,
+                        const SizedBox(width: 12),
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(minHeight: 58),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [Text(_resource!.user.getShowUserName)],
+                          ),
+                        ).expanded,
+                        FilledButton(onPressed: () {}, child: const Text("添加关注"))
+                      ],
+                    ),
+                  ).toSliverWidget,
 
                   //内容展示
-                  Text(_resource!.content, style: context.textTheme.bodyLarge).defaultPadding12.toSliverWidget,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(_resource!.content, style: context.textTheme.bodyLarge),
+                  ).toSliverWidget,
 
                   const SizedBox(
                     height: 12,
                   ).toSliverWidget,
 
                   //发布时间展示
-                  Text(_resource!.createdate, style: context.textTheme.labelSmall).defaultPadding12.toSliverWidget,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(_resource!.createdate, style: context.textTheme.labelSmall),
+                  ).toSliverWidget,
                   _CommentsWidget(_resource!.id.toString())
                 ],
               );

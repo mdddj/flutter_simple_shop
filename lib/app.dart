@@ -49,7 +49,10 @@ class App extends ConsumerWidget {
           body: Row(
             children: [
               NavigationRail(
-                leading: const Logo().padding(12),
+                leading: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Logo(),
+                ),
                 elevation: 10,
                 labelType: NavigationRailLabelType.selected,
                 destinations: bottomMenus.map((element) {
@@ -58,7 +61,6 @@ class App extends ConsumerWidget {
                         element.getAssetPath(currentIndex == bottomMenus.indexOf(element)),
                         width: kNavIconSize,
                         height: kNavIconSize,
-                        color: context.isDarkModel ? Colors.white : null,
                       ),
                       label: Text(element.title));
                 }).toList(),
@@ -74,7 +76,7 @@ class App extends ConsumerWidget {
                       const DarkAndLightSetting(),
                       IconButton(
                           onPressed: () {
-                            if (ref.isLogin.not) {
+                            if (!ref.isLogin) {
                               toast('请先登录');
                               if (context.isDesktop) {
                                 showDialog(

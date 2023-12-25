@@ -52,17 +52,20 @@ class DarkAndLightSetting extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ThemeBuildWidget(
-      themeBuild: (theme) {
-        return CupertinoSlidingSegmentedControl<ThemeMode>(
-            children: const {ThemeMode.system: Text('系统'), ThemeMode.light: Text('明亮'), ThemeMode.dark: Text('深色')},
-            onValueChanged: (ThemeMode? value) async {
-              if (value != null) {
-                AppThemeUtil().changeThemeMode(value);
-              }
-            },
-            groupValue: theme.getThemeMode);
-      },
-    ).defaultPadding8;
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ThemeBuildWidget(
+        themeBuild: (theme) {
+          return CupertinoSlidingSegmentedControl<ThemeMode>(
+              children: const {ThemeMode.system: Text('系统'), ThemeMode.light: Text('明亮'), ThemeMode.dark: Text('深色')},
+              onValueChanged: (ThemeMode? value) async {
+                if (value != null) {
+                  AppThemeUtil().changeThemeMode(value);
+                }
+              },
+              groupValue: theme.getThemeMode);
+        },
+      ),
+    );
   }
 }

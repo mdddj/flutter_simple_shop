@@ -34,7 +34,10 @@ class BrandDetailView extends StatelessWidget {
                     height: 12,
                   ),
                   Text(brandDetailModel!.brandName!, style: context.textTheme.titleLarge),
-                  Text(brandDetailModel!.brandDesc!).defaultPadding12
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(brandDetailModel!.brandDesc!),
+                  )
                 ],
               ),
             ),

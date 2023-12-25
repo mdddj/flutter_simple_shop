@@ -3,18 +3,23 @@ part of '../index.dart';
 /// 2020年11月17日 22:36:07
 /// 首页的网格菜单
 /// v2.0
-class IndexGridViewMenu extends StatelessWidget {
+class IndexGridViewMenu extends StatefulWidget {
   final IndexGridMenuItemModel model;
 
   const IndexGridViewMenu({super.key, required this.model});
 
   @override
+  State<IndexGridViewMenu> createState() => _IndexGridViewMenuState();
+}
+
+class _IndexGridViewMenuState extends State<IndexGridViewMenu> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        switch (model.clickType) {
+        switch (widget.model.clickType) {
           case IndexGridMenuItemModelClickModel.innerView:
-            model.onTap?.call();
+            widget.model.onTap?.call();
             break;
           default:
             break;
@@ -26,11 +31,11 @@ class IndexGridViewMenu extends StatelessWidget {
             children: [
               Expanded(
                   child: ExtendedImage.network(
-                model.iconUrl,
+                widget.model.iconUrl,
                 width: constraints.maxWidth,
                 height: constraints.maxWidth,
               )),
-              Text(model.title, style: const TextStyle(fontSize: 12))
+              Text(widget.model.title, style: const TextStyle(fontSize: 12))
             ],
           );
         },

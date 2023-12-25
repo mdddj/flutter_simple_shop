@@ -60,7 +60,12 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
         child: Column(
           children: [
             TextField(
-              decoration: _decoration("取个标题吧，非必须").copyWith(prefixIcon: const LoginUserAvatar().padding(6), prefixIconColor: Colors.transparent),
+              decoration: _decoration("取个标题吧，非必须").copyWith(
+                  prefixIcon: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: LoginUserAvatar(),
+                  ),
+                  prefixIconColor: Colors.transparent),
               onChanged: (v) => title = v,
             ),
             const Divider(

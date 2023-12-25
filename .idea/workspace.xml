@@ -14,7 +14,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="升级依赖到最新版">
+      <change beforePath="$PROJECT_DIR$/.idea/flutter_simple_shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flutter_simple_shop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/meet/add_new_meet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/meet/add_new_meet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/brand_page/components/detail_brand_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/brand_page/components/detail_brand_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/grid_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/grid_menu.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/setting/mini_theme_setting.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/setting/mini_theme_setting.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/views/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/detail.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/views/write_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/views/write_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/loading/custom_loading_more_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/loading/custom_loading_more_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/riverpod_error.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/riverpod_error.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +108,9 @@
     <setting file="file://$PROJECT_DIR$/lib/widgets/simple_appbar.dart" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/pubspec.yaml" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="f1sh0we1" />
   </component>
@@ -114,6 +138,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;DRAWABLE&quot;,
+    &quot;RunOnceActivity.Enable generate summary features in internal mode&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
@@ -121,9 +146,9 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;ALL&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/ldd/flutter_simple_shop&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -133,7 +158,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.23908046&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;setting.flutterx&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -555,13 +580,22 @@
       <workItem from="1693279830223" duration="381000" />
       <workItem from="1694654668821" duration="1999000" />
       <workItem from="1694670825119" duration="23000" />
-    </task>
-    <task id="LOCAL-00151" summary=":rocket: 升级登录模块到2.0">
-      <created>1678842657154</created>
-      <option name="number" value="00151" />
-      <option name="presentableId" value="LOCAL-00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1678842657154</updated>
+      <workItem from="1702104677876" duration="42000" />
+      <workItem from="1702105270675" duration="55000" />
+      <workItem from="1702105335948" duration="18000" />
+      <workItem from="1702105449935" duration="66000" />
+      <workItem from="1702105623101" duration="58000" />
+      <workItem from="1702105904198" duration="9000" />
+      <workItem from="1702736843090" duration="3655000" />
+      <workItem from="1702789901781" duration="133000" />
+      <workItem from="1702865922832" duration="309000" />
+      <workItem from="1702889032239" duration="702000" />
+      <workItem from="1702906648919" duration="314000" />
+      <workItem from="1702964763719" duration="23000" />
+      <workItem from="1702965823162" duration="915000" />
+      <workItem from="1702967518585" duration="108000" />
+      <workItem from="1703299350701" duration="996000" />
+      <workItem from="1703480995557" duration="420000" />
     </task>
     <task id="LOCAL-00152" summary=":rocket: 细节优化">
       <created>1679021546640</created>
@@ -899,7 +933,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701056498067</updated>
     </task>
-    <option name="localTasksCounter" value="226" />
+    <task id="LOCAL-00226" summary="升级依赖到最新版">
+      <created>1701057122108</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1701057122108</updated>
+    </task>
+    <option name="localTasksCounter" value="227" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

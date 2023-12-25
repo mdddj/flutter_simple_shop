@@ -99,16 +99,23 @@ class _FullScreenError extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              'assets/svg/err.svg',
-              width: context.screenWidth * 0.2,
-              colorFilter: ColorFilter.mode(context.colorScheme.secondary, BlendMode.srcIn),
-            ).padding(12),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SvgPicture.asset(
+                'assets/svg/err.svg',
+                width: context.screenWidth * 0.2,
+                colorFilter: ColorFilter.mode(context.colorScheme.secondary, BlendMode.srcIn),
+              ),
+            ),
             Text(
               "服务繁忙,请稍后重试 (-1)",
               style: TextStyle(color: context.colorScheme.secondary),
             ),
-            if (retry != null) FilledButton(onPressed: retry, child: const Text("刷新重试")).margin(32)
+            if (retry != null)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FilledButton(onPressed: retry, child: const Text("刷新重试")),
+              )
           ],
         ),
       ),
@@ -132,7 +139,12 @@ class _LoadingMoreBusying extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MyLoading().defaultPadding12.center;
+    return const Center(
+      child: Padding(
+        padding: EdgeInsets.all(8.0),
+        child: MyLoading(),
+      ),
+    );
   }
 }
 

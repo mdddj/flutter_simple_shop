@@ -46,7 +46,10 @@ class Suggest extends ConsumerWidget {
                         ref.invalidate(_riverpodSuggest);
                       },
                     ),
-                loading: () => const MyLoading().padding(12).center,
+                loading: () => const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: MyLoading(),
+                    ).center,
                 skipLoadingOnRefresh: false)
           ],
         ),

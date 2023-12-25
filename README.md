@@ -13,7 +13,7 @@
 
 
 
-在线预览: https://q.itbug.shop
+~~在线预览: https://q.itbug.shop~~重构中
 
 接口文档: <a href='https://apifox.com/apidoc/shared-6f74775d-40ca-4a07-ad1e-dd9c8480f927'>Apifox</a>
 
@@ -26,8 +26,8 @@ macos安装包: <a href="https://github.com/mdddj/flutter_simple_shop/releases/d
 
 ```dart
 //lib/main.dart
-const apiHost = 'https://itbug.shop';
-const apiPort = '9445';
+const apiHost = 'https://api.itbug.shop';
+const apiPort = '443';
 ```
 
 如果不能加载依赖,请把以下依赖改成pub.dev上面的版本
