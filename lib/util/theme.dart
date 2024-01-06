@@ -15,7 +15,7 @@ extension ThemeEx on AppLocalSettingModel {
 
   ///暗色主题
   ThemeData get darkTheme {
-    final darkTheme = MyAppTheme.darkTheme;
+    final darkTheme = MyAppTheme.getDarkTheme();
     return darkTheme.copyWith(
       textTheme: darkTheme.textTheme.apply(fontFamily: useEnv.fontFamily),
       tabBarTheme: darkTheme.tabBarTheme.copyWith(
