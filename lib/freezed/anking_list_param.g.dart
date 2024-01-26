@@ -6,13 +6,15 @@ part of 'anking_list_param.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AnkingListParam _$$_AnkingListParamFromJson(Map<String, dynamic> json) =>
-    _$_AnkingListParam(
+_$AnkingListParamImpl _$$AnkingListParamImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AnkingListParamImpl(
       rank: json['rank'] as String? ?? '',
       cid: json['cid'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_AnkingListParamToJson(_$_AnkingListParam instance) =>
+Map<String, dynamic> _$$AnkingListParamImplToJson(
+        _$AnkingListParamImpl instance) =>
     <String, dynamic>{
       'rank': instance.rank,
       'cid': instance.cid,

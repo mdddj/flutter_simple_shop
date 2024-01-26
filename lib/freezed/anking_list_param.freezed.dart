@@ -71,11 +71,11 @@ class _$AnkingListParamCopyWithImpl<$Res, $Val extends AnkingListParam>
 }
 
 /// @nodoc
-abstract class _$$_AnkingListParamCopyWith<$Res>
+abstract class _$$AnkingListParamImplCopyWith<$Res>
     implements $AnkingListParamCopyWith<$Res> {
-  factory _$$_AnkingListParamCopyWith(
-          _$_AnkingListParam value, $Res Function(_$_AnkingListParam) then) =
-      __$$_AnkingListParamCopyWithImpl<$Res>;
+  factory _$$AnkingListParamImplCopyWith(_$AnkingListParamImpl value,
+          $Res Function(_$AnkingListParamImpl) then) =
+      __$$AnkingListParamImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -83,11 +83,11 @@ abstract class _$$_AnkingListParamCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AnkingListParamCopyWithImpl<$Res>
-    extends _$AnkingListParamCopyWithImpl<$Res, _$_AnkingListParam>
-    implements _$$_AnkingListParamCopyWith<$Res> {
-  __$$_AnkingListParamCopyWithImpl(
-      _$_AnkingListParam _value, $Res Function(_$_AnkingListParam) _then)
+class __$$AnkingListParamImplCopyWithImpl<$Res>
+    extends _$AnkingListParamCopyWithImpl<$Res, _$AnkingListParamImpl>
+    implements _$$AnkingListParamImplCopyWith<$Res> {
+  __$$AnkingListParamImplCopyWithImpl(
+      _$AnkingListParamImpl _value, $Res Function(_$AnkingListParamImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,7 +96,7 @@ class __$$_AnkingListParamCopyWithImpl<$Res>
     Object? rank = null,
     Object? cid = null,
   }) {
-    return _then(_$_AnkingListParam(
+    return _then(_$AnkingListParamImpl(
       rank: null == rank
           ? _value.rank
           : rank // ignore: cast_nullable_to_non_nullable
@@ -111,14 +111,14 @@ class __$$_AnkingListParamCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AnkingListParam extends _AnkingListParam {
-  const _$_AnkingListParam(
+class _$AnkingListParamImpl extends _AnkingListParam {
+  const _$AnkingListParamImpl(
       {@JsonKey(name: 'rank') this.rank = '',
       @JsonKey(name: 'cid') this.cid = ''})
       : super._();
 
-  factory _$_AnkingListParam.fromJson(Map<String, dynamic> json) =>
-      _$$_AnkingListParamFromJson(json);
+  factory _$AnkingListParamImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnkingListParamImplFromJson(json);
 
   @override
   @JsonKey(name: 'rank')
@@ -133,10 +133,10 @@ class _$_AnkingListParam extends _AnkingListParam {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AnkingListParam &&
+            other is _$AnkingListParamImpl &&
             (identical(other.rank, rank) || other.rank == rank) &&
             (identical(other.cid, cid) || other.cid == cid));
   }
@@ -148,12 +148,13 @@ class _$_AnkingListParam extends _AnkingListParam {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AnkingListParamCopyWith<_$_AnkingListParam> get copyWith =>
-      __$$_AnkingListParamCopyWithImpl<_$_AnkingListParam>(this, _$identity);
+  _$$AnkingListParamImplCopyWith<_$AnkingListParamImpl> get copyWith =>
+      __$$AnkingListParamImplCopyWithImpl<_$AnkingListParamImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AnkingListParamToJson(
+    return _$$AnkingListParamImplToJson(
       this,
     );
   }
@@ -162,11 +163,11 @@ class _$_AnkingListParam extends _AnkingListParam {
 abstract class _AnkingListParam extends AnkingListParam {
   const factory _AnkingListParam(
       {@JsonKey(name: 'rank') final String rank,
-      @JsonKey(name: 'cid') final String cid}) = _$_AnkingListParam;
+      @JsonKey(name: 'cid') final String cid}) = _$AnkingListParamImpl;
   const _AnkingListParam._() : super._();
 
   factory _AnkingListParam.fromJson(Map<String, dynamic> json) =
-      _$_AnkingListParam.fromJson;
+      _$AnkingListParamImpl.fromJson;
 
   @override
   @JsonKey(name: 'rank')
@@ -176,6 +177,6 @@ abstract class _AnkingListParam extends AnkingListParam {
   String get cid;
   @override
   @JsonKey(ignore: true)
-  _$$_AnkingListParamCopyWith<_$_AnkingListParam> get copyWith =>
+  _$$AnkingListParamImplCopyWith<_$AnkingListParamImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

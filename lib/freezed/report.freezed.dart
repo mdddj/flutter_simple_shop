@@ -136,9 +136,10 @@ class _$ReportCopyWithImpl<$Res, $Val extends Report>
 }
 
 /// @nodoc
-abstract class _$$_ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
-  factory _$$_ReportCopyWith(_$_Report value, $Res Function(_$_Report) then) =
-      __$$_ReportCopyWithImpl<$Res>;
+abstract class _$$ReportImplCopyWith<$Res> implements $ReportCopyWith<$Res> {
+  factory _$$ReportImplCopyWith(
+          _$ReportImpl value, $Res Function(_$ReportImpl) then) =
+      __$$ReportImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -157,10 +158,11 @@ abstract class _$$_ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ReportCopyWithImpl<$Res>
-    extends _$ReportCopyWithImpl<$Res, _$_Report>
-    implements _$$_ReportCopyWith<$Res> {
-  __$$_ReportCopyWithImpl(_$_Report _value, $Res Function(_$_Report) _then)
+class __$$ReportImplCopyWithImpl<$Res>
+    extends _$ReportCopyWithImpl<$Res, _$ReportImpl>
+    implements _$$ReportImplCopyWith<$Res> {
+  __$$ReportImplCopyWithImpl(
+      _$ReportImpl _value, $Res Function(_$ReportImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -176,7 +178,7 @@ class __$$_ReportCopyWithImpl<$Res>
     Object? images = null,
     Object? resourceId = freezed,
   }) {
-    return _then(_$_Report(
+    return _then(_$ReportImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -219,8 +221,8 @@ class __$$_ReportCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Report extends _Report {
-  const _$_Report(
+class _$ReportImpl extends _Report {
+  const _$ReportImpl(
       {@JsonKey(name: 'id') this.id = 0,
       @JsonKey(name: 'content') this.content = '',
       @JsonKey(name: 'type') this.type = '',
@@ -232,8 +234,8 @@ class _$_Report extends _Report {
       @JsonKey(name: 'resourceId') this.resourceId})
       : super._();
 
-  factory _$_Report.fromJson(Map<String, dynamic> json) =>
-      _$$_ReportFromJson(json);
+  factory _$ReportImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReportImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -269,10 +271,10 @@ class _$_Report extends _Report {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Report &&
+            other is _$ReportImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.type, type) || other.type == type) &&
@@ -303,12 +305,12 @@ class _$_Report extends _Report {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ReportCopyWith<_$_Report> get copyWith =>
-      __$$_ReportCopyWithImpl<_$_Report>(this, _$identity);
+  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
+      __$$ReportImplCopyWithImpl<_$ReportImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ReportToJson(
+    return _$$ReportImplToJson(
       this,
     );
   }
@@ -324,10 +326,10 @@ abstract class _Report extends Report {
       @JsonKey(name: 'comment') final String comment,
       @JsonKey(name: "user") final MyUser user,
       @JsonKey(name: "images") final IList<FileInfo> images,
-      @JsonKey(name: 'resourceId') final int? resourceId}) = _$_Report;
+      @JsonKey(name: 'resourceId') final int? resourceId}) = _$ReportImpl;
   const _Report._() : super._();
 
-  factory _Report.fromJson(Map<String, dynamic> json) = _$_Report.fromJson;
+  factory _Report.fromJson(Map<String, dynamic> json) = _$ReportImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -358,7 +360,7 @@ abstract class _Report extends Report {
   int? get resourceId;
   @override
   @JsonKey(ignore: true)
-  _$$_ReportCopyWith<_$_Report> get copyWith =>
+  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -420,11 +422,11 @@ class _$AddReportParamsCopyWithImpl<$Res, $Val extends AddReportParams>
 }
 
 /// @nodoc
-abstract class _$$_AddReportParamsCopyWith<$Res>
+abstract class _$$AddReportParamsImplCopyWith<$Res>
     implements $AddReportParamsCopyWith<$Res> {
-  factory _$$_AddReportParamsCopyWith(
-          _$_AddReportParams value, $Res Function(_$_AddReportParams) then) =
-      __$$_AddReportParamsCopyWithImpl<$Res>;
+  factory _$$AddReportParamsImplCopyWith(_$AddReportParamsImpl value,
+          $Res Function(_$AddReportParamsImpl) then) =
+      __$$AddReportParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -433,11 +435,11 @@ abstract class _$$_AddReportParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AddReportParamsCopyWithImpl<$Res>
-    extends _$AddReportParamsCopyWithImpl<$Res, _$_AddReportParams>
-    implements _$$_AddReportParamsCopyWith<$Res> {
-  __$$_AddReportParamsCopyWithImpl(
-      _$_AddReportParams _value, $Res Function(_$_AddReportParams) _then)
+class __$$AddReportParamsImplCopyWithImpl<$Res>
+    extends _$AddReportParamsCopyWithImpl<$Res, _$AddReportParamsImpl>
+    implements _$$AddReportParamsImplCopyWith<$Res> {
+  __$$AddReportParamsImplCopyWithImpl(
+      _$AddReportParamsImpl _value, $Res Function(_$AddReportParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -446,7 +448,7 @@ class __$$_AddReportParamsCopyWithImpl<$Res>
     Object? content = null,
     Object? type = null,
   }) {
-    return _then(_$_AddReportParams(
+    return _then(_$AddReportParamsImpl(
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -461,14 +463,14 @@ class __$$_AddReportParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AddReportParams extends _AddReportParams {
-  const _$_AddReportParams(
+class _$AddReportParamsImpl extends _AddReportParams {
+  const _$AddReportParamsImpl(
       {@JsonKey(name: 'content') this.content = '',
       @JsonKey(name: 'type') this.type = ''})
       : super._();
 
-  factory _$_AddReportParams.fromJson(Map<String, dynamic> json) =>
-      _$$_AddReportParamsFromJson(json);
+  factory _$AddReportParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AddReportParamsImplFromJson(json);
 
   @override
   @JsonKey(name: 'content')
@@ -483,10 +485,10 @@ class _$_AddReportParams extends _AddReportParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddReportParams &&
+            other is _$AddReportParamsImpl &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.type, type) || other.type == type));
   }
@@ -498,12 +500,13 @@ class _$_AddReportParams extends _AddReportParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddReportParamsCopyWith<_$_AddReportParams> get copyWith =>
-      __$$_AddReportParamsCopyWithImpl<_$_AddReportParams>(this, _$identity);
+  _$$AddReportParamsImplCopyWith<_$AddReportParamsImpl> get copyWith =>
+      __$$AddReportParamsImplCopyWithImpl<_$AddReportParamsImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AddReportParamsToJson(
+    return _$$AddReportParamsImplToJson(
       this,
     );
   }
@@ -512,11 +515,11 @@ class _$_AddReportParams extends _AddReportParams {
 abstract class _AddReportParams extends AddReportParams {
   const factory _AddReportParams(
       {@JsonKey(name: 'content') final String content,
-      @JsonKey(name: 'type') final String type}) = _$_AddReportParams;
+      @JsonKey(name: 'type') final String type}) = _$AddReportParamsImpl;
   const _AddReportParams._() : super._();
 
   factory _AddReportParams.fromJson(Map<String, dynamic> json) =
-      _$_AddReportParams.fromJson;
+      _$AddReportParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'content')
@@ -526,6 +529,6 @@ abstract class _AddReportParams extends AddReportParams {
   String get type;
   @override
   @JsonKey(ignore: true)
-  _$$_AddReportParamsCopyWith<_$_AddReportParams> get copyWith =>
+  _$$AddReportParamsImplCopyWith<_$AddReportParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

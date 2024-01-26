@@ -11,11 +11,7 @@ import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
-import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart' hide asT;
-import 'package:dd_js_util/model/app_local_setting_model.dart';
-import 'package:dd_js_util/model/base_api_exception.dart';
-import 'package:dd_js_util/model/my_image.dart';
 import 'package:dd_js_util/theme/model.dart';
 import 'package:dd_models/models/brand.dart';
 import 'package:dd_models/models/carousel.dart';
@@ -95,223 +91,113 @@ import 'user_home_page/pages/resource_list.dart';
 import 'zhe/view.dart';
 
 part 'activity_page/activity_view/view.dart';
-
 part 'banjia/component/appbar.dart';
-
 part 'banjia/component/list.dart';
-
 part 'banjia/resp.dart';
-
 part 'banjia/view.dart';
-
 part 'best_seller_list.dart';
-
 part 'blog/write_blog/components/blog_categorys.dart';
-
 part 'blog/write_blog/view.dart';
-
 part 'brand_page/brand_detail.dart';
-
 part 'brand_page/category_delegate.dart';
-
 part 'brand_page/components/detail_brand_info.dart';
-
 part 'brand_page/components/detail_product_list.dart';
-
 part 'brand_page/components/item.dart';
-
 part 'brand_page/index.dart';
-
 part 'brand_page/models/brand_detail_model.dart';
-
 part 'brand_page/new/list.dart';
-
 part 'brand_page/provider/brand_provider.dart';
-
 part 'category_page/index_home.dart';
-
 part 'category_page/left_widget.dart';
-
 part 'category_page/right_widget.dart';
-
 part 'ddq_page/goods_item.dart';
-
 part 'ddq_page/index_home.dart';
-
 part 'ddq_page/sliver_app_bar_delegate.dart';
-
 part 'detail_page/hdk/index_home.dart';
-
 part 'detail_page/index_home.dart';
-
 part 'favorite_page/actions.dart';
-
 part 'favorite_page/goods_item.dart';
-
 part 'favorite_page/index_home.dart';
-
 part 'index_page/component/category_component.dart';
-
 part 'index_page/component/category_item_layout.dart';
-
 part 'index_page/component/category_notification_stream.dart';
-
 part 'index_page/component/component_title.dart';
-
 part 'index_page/component/home_banner.dart';
-
 part 'index_page/component/topic_carousel.dart';
-
 part 'index_page/desktop/components/appbar.dart';
-
 part 'index_page/desktop/components/title.dart';
-
 part 'index_page/desktop/index.dart';
-
 part 'index_page/grid_menu.dart';
-
 part 'index_page/grid_menu_list.dart';
-
 part 'index_page/model/index_carousel_item_model.dart';
-
 part 'index_page/model/index_grid_menu_item_model.dart';
-
 part 'index_page/model/store_list_model.dart';
-
 part 'index_page/model/topic_model.dart';
-
 part 'index_page/new/component/appbar.dart';
-
 part 'index_page/new/component/carousel.dart';
-
 part 'index_page/new/component/gridmenu/menu_item.dart';
-
 part 'index_page/new/component/gridmenu/model.dart';
-
 part 'index_page/new/component/gridmenu/view.dart';
-
 part 'index_page/new/component/index_tabbar.dart';
-
 part 'index_page/new/component/products.dart';
-
 part 'index_page/new/component/two_column_comm.dart';
-
 part 'index_page/new/github/github.dart';
-
 part 'index_page/new/index.dart';
-
 part 'index_page/new/index_riverpod.dart';
-
 part 'index_page/new/waimai/detail.dart';
-
 part 'index_page/new/waimai/index.dart';
-
 part 'index_page/public_widget_style.dart';
-
 part 'index_page/store/component_index.dart';
-
 part 'index_page/store/goods_card.dart';
-
 part 'index_page/store/goods_item_layout.dart';
-
 part 'index_page/store/price_layout.dart';
-
 part 'index_page/store/store_card.dart';
-
 part 'jiujiu_page/goods_item_widget.dart';
-
 part 'jiujiu_page/goods_list_widget.dart';
-
 part 'jiujiu_page/image_nav.dart';
-
 part 'new_goods_list/components/sort_widget.dart';
-
 part 'new_goods_list/components/subcategory_view.dart';
-
 part 'new_goods_list/riverpod.dart';
-
 part 'new_goods_list/v2/index.dart';
-
 part 'order/model.dart';
-
 part 'order/user_order_index.dart';
-
 part 'panic_buying/components/appbar.dart';
-
 part 'panic_buying/components/categorys.dart';
-
 part 'panic_buying/components/daojishi.dart';
-
 part 'panic_buying/components/list.dart';
-
 part 'panic_buying/components/view_status.dart';
-
 part 'panic_buying/repository.dart';
-
 part 'panic_buying/view.dart';
-
 part 'report/repost_index.dart';
-
 part 'search/component/helper_show.dart';
-
 part 'search/component/key_worlds.dart';
-
 part 'search/component/suggest.dart';
-
 part 'search/list.dart';
-
 part 'search/view.dart';
-
 part 'user_home_page/ext.dart';
-
 part 'user_home_page/header/appbar.dart';
-
 part 'user_home_page/header/index.dart';
-
 part 'user_home_page/header/money_count.dart';
-
 part 'user_home_page/index_home.dart';
-
 part 'user_home_page/login/login_page.dart';
-
 part 'user_home_page/login/register_page.dart';
-
 part 'user_home_page/new/my_sliver_appbar.dart';
-
 part 'user_home_page/new/user_center_page.dart';
-
 part 'user_home_page/order/my_order.dart';
-
 part 'user_home_page/order/order_add.dart';
-
 part 'user_home_page/order/order_widget.dart';
-
 part 'user_home_page/pages/new_version_page.dart';
-
 part 'user_home_page/setting/index.dart';
-
 part 'user_home_page/setting/mini_theme_setting.dart';
-
 part 'user_home_page/setting/update_avatar.dart';
-
 part 'user_home_page/setting/update_city.dart';
-
 part 'user_home_page/setting/update_job.dart';
-
 part 'user_home_page/setting/update_name.dart';
-
 part 'user_home_page/setting/update_string_attr.dart';
-
 part 'user_home_page/white/components/code_input.dart';
-
 part 'user_home_page/white/components/more_action_bottomsheet.dart';
-
 part 'user_home_page/white/components/search_goods.dart';
-
 part 'user_home_page/white/views/markdown_preview.dart';
-
 part 'user_home_page/widgets/list_item.dart';
-
 part 'user_home_page/widgets/svg_title.dart';
-
 part 'xb/xianbao_index.dart';

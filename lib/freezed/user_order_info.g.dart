@@ -6,8 +6,8 @@ part of 'user_order_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserOrderInfo _$$_UserOrderInfoFromJson(Map<String, dynamic> json) =>
-    _$_UserOrderInfo(
+_$UserOrderInfoImpl _$$UserOrderInfoImplFromJson(Map<String, dynamic> json) =>
+    _$UserOrderInfoImpl(
       adzoneName: json['adzoneName'] as String? ?? '',
       adzoneid: json['adzoneid'] as String? ?? '',
       alimamaRate: json['alimamaRate'] as String? ?? '',
@@ -84,7 +84,7 @@ _$_UserOrderInfo _$$_UserOrderInfoFromJson(Map<String, dynamic> json) =>
       zheUpdateTime: json['zheUpdateTime'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_UserOrderInfoToJson(_$_UserOrderInfo instance) =>
+Map<String, dynamic> _$$UserOrderInfoImplToJson(_$UserOrderInfoImpl instance) =>
     <String, dynamic>{
       'adzoneName': instance.adzoneName,
       'adzoneid': instance.adzoneid,

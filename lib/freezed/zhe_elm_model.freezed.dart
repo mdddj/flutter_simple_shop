@@ -87,11 +87,11 @@ class _$ZheElmResultModelCopyWithImpl<$Res, $Val extends ZheElmResultModel>
 }
 
 /// @nodoc
-abstract class _$$_ZheElmResultModelCopyWith<$Res>
+abstract class _$$ZheElmResultModelImplCopyWith<$Res>
     implements $ZheElmResultModelCopyWith<$Res> {
-  factory _$$_ZheElmResultModelCopyWith(_$_ZheElmResultModel value,
-          $Res Function(_$_ZheElmResultModel) then) =
-      __$$_ZheElmResultModelCopyWithImpl<$Res>;
+  factory _$$ZheElmResultModelImplCopyWith(_$ZheElmResultModelImpl value,
+          $Res Function(_$ZheElmResultModelImpl) then) =
+      __$$ZheElmResultModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -106,11 +106,11 @@ abstract class _$$_ZheElmResultModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ZheElmResultModelCopyWithImpl<$Res>
-    extends _$ZheElmResultModelCopyWithImpl<$Res, _$_ZheElmResultModel>
-    implements _$$_ZheElmResultModelCopyWith<$Res> {
-  __$$_ZheElmResultModelCopyWithImpl(
-      _$_ZheElmResultModel _value, $Res Function(_$_ZheElmResultModel) _then)
+class __$$ZheElmResultModelImplCopyWithImpl<$Res>
+    extends _$ZheElmResultModelCopyWithImpl<$Res, _$ZheElmResultModelImpl>
+    implements _$$ZheElmResultModelImplCopyWith<$Res> {
+  __$$ZheElmResultModelImplCopyWithImpl(_$ZheElmResultModelImpl _value,
+      $Res Function(_$ZheElmResultModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +118,7 @@ class __$$_ZheElmResultModelCopyWithImpl<$Res>
   $Res call({
     Object? alibabaalscunionelemepromotionofficialactivitygetresponse = null,
   }) {
-    return _then(_$_ZheElmResultModel(
+    return _then(_$ZheElmResultModelImpl(
       alibabaalscunionelemepromotionofficialactivitygetresponse: null ==
               alibabaalscunionelemepromotionofficialactivitygetresponse
           ? _value.alibabaalscunionelemepromotionofficialactivitygetresponse
@@ -130,16 +130,16 @@ class __$$_ZheElmResultModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ZheElmResultModel extends _ZheElmResultModel {
-  const _$_ZheElmResultModel(
+class _$ZheElmResultModelImpl extends _ZheElmResultModel {
+  const _$ZheElmResultModelImpl(
       {@JsonKey(
           name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
       this.alibabaalscunionelemepromotionofficialactivitygetresponse =
           const Alibabaalscunionelemepromotionofficialactivitygetresponse()})
       : super._();
 
-  factory _$_ZheElmResultModel.fromJson(Map<String, dynamic> json) =>
-      _$$_ZheElmResultModelFromJson(json);
+  factory _$ZheElmResultModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ZheElmResultModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
@@ -152,10 +152,10 @@ class _$_ZheElmResultModel extends _ZheElmResultModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ZheElmResultModel &&
+            other is _$ZheElmResultModelImpl &&
             (identical(
                     other
                         .alibabaalscunionelemepromotionofficialactivitygetresponse,
@@ -172,13 +172,13 @@ class _$_ZheElmResultModel extends _ZheElmResultModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ZheElmResultModelCopyWith<_$_ZheElmResultModel> get copyWith =>
-      __$$_ZheElmResultModelCopyWithImpl<_$_ZheElmResultModel>(
+  _$$ZheElmResultModelImplCopyWith<_$ZheElmResultModelImpl> get copyWith =>
+      __$$ZheElmResultModelImplCopyWithImpl<_$ZheElmResultModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ZheElmResultModelToJson(
+    return _$$ZheElmResultModelImplToJson(
       this,
     );
   }
@@ -190,11 +190,11 @@ abstract class _ZheElmResultModel extends ZheElmResultModel {
               name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
           final Alibabaalscunionelemepromotionofficialactivitygetresponse
               alibabaalscunionelemepromotionofficialactivitygetresponse}) =
-      _$_ZheElmResultModel;
+      _$ZheElmResultModelImpl;
   const _ZheElmResultModel._() : super._();
 
   factory _ZheElmResultModel.fromJson(Map<String, dynamic> json) =
-      _$_ZheElmResultModel.fromJson;
+      _$ZheElmResultModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
@@ -202,7 +202,7 @@ abstract class _ZheElmResultModel extends ZheElmResultModel {
       get alibabaalscunionelemepromotionofficialactivitygetresponse;
   @override
   @JsonKey(ignore: true)
-  _$$_ZheElmResultModelCopyWith<_$_ZheElmResultModel> get copyWith =>
+  _$$ZheElmResultModelImplCopyWith<_$ZheElmResultModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -304,17 +304,17 @@ class _$AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl<
 }
 
 /// @nodoc
-abstract class _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<
+abstract class _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWith<
         $Res>
     implements
         $AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<
             $Res> {
-  factory _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith(
-          _$_Alibabaalscunionelemepromotionofficialactivitygetresponse value,
+  factory _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWith(
+          _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl value,
           $Res Function(
-                  _$_Alibabaalscunionelemepromotionofficialactivitygetresponse)
+                  _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl)
               then) =
-      __$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl<
+      __$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWithImpl<
           $Res>;
   @override
   @useResult
@@ -329,17 +329,17 @@ abstract class _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopy
 }
 
 /// @nodoc
-class __$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl<
+class __$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWithImpl<
         $Res>
     extends _$AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl<
-        $Res, _$_Alibabaalscunionelemepromotionofficialactivitygetresponse>
+        $Res, _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl>
     implements
-        _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<
+        _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWith<
             $Res> {
-  __$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl(
-      _$_Alibabaalscunionelemepromotionofficialactivitygetresponse _value,
+  __$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWithImpl(
+      _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl _value,
       $Res Function(
-              _$_Alibabaalscunionelemepromotionofficialactivitygetresponse)
+              _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl)
           _then)
       : super(_value, _then);
 
@@ -351,7 +351,8 @@ class __$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl
     Object? resultcode = null,
     Object? requestid = null,
   }) {
-    return _then(_$_Alibabaalscunionelemepromotionofficialactivitygetresponse(
+    return _then(
+        _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -374,18 +375,18 @@ class __$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl
 
 /// @nodoc
 @JsonSerializable()
-class _$_Alibabaalscunionelemepromotionofficialactivitygetresponse
+class _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl
     extends _Alibabaalscunionelemepromotionofficialactivitygetresponse {
-  const _$_Alibabaalscunionelemepromotionofficialactivitygetresponse(
+  const _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl(
       {@JsonKey(name: 'data') this.data = const Data(),
       @JsonKey(name: 'message') this.message = '',
       @JsonKey(name: 'resultCode') this.resultcode = 0,
       @JsonKey(name: 'requestid') this.requestid = ''})
       : super._();
 
-  factory _$_Alibabaalscunionelemepromotionofficialactivitygetresponse.fromJson(
+  factory _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseFromJson(
+      _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplFromJson(
           json);
 
   @override
@@ -407,11 +408,11 @@ class _$_Alibabaalscunionelemepromotionofficialactivitygetresponse
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other
-                is _$_Alibabaalscunionelemepromotionofficialactivitygetresponse &&
+                is _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.resultcode, resultcode) ||
@@ -428,16 +429,16 @@ class _$_Alibabaalscunionelemepromotionofficialactivitygetresponse
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<
-          _$_Alibabaalscunionelemepromotionofficialactivitygetresponse>
+  _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWith<
+          _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl>
       get copyWith =>
-          __$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl<
-                  _$_Alibabaalscunionelemepromotionofficialactivitygetresponse>(
+          __$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWithImpl<
+                  _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl>(
               this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseToJson(
+    return _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplToJson(
       this,
     );
   }
@@ -450,13 +451,13 @@ abstract class _Alibabaalscunionelemepromotionofficialactivitygetresponse
           @JsonKey(name: 'message') final String message,
           @JsonKey(name: 'resultCode') final int resultcode,
           @JsonKey(name: 'requestid') final String requestid}) =
-      _$_Alibabaalscunionelemepromotionofficialactivitygetresponse;
+      _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl;
   const _Alibabaalscunionelemepromotionofficialactivitygetresponse._()
       : super._();
 
   factory _Alibabaalscunionelemepromotionofficialactivitygetresponse.fromJson(
           Map<String, dynamic> json) =
-      _$_Alibabaalscunionelemepromotionofficialactivitygetresponse.fromJson;
+      _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl.fromJson;
 
   @override
   @JsonKey(name: 'data')
@@ -472,8 +473,8 @@ abstract class _Alibabaalscunionelemepromotionofficialactivitygetresponse
   String get requestid;
   @override
   @JsonKey(ignore: true)
-  _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<
-          _$_Alibabaalscunionelemepromotionofficialactivitygetresponse>
+  _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWith<
+          _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -583,9 +584,10 @@ class _$DataCopyWithImpl<$Res, $Val extends Data>
 }
 
 /// @nodoc
-abstract class _$$_DataCopyWith<$Res> implements $DataCopyWith<$Res> {
-  factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) =
-      __$$_DataCopyWithImpl<$Res>;
+abstract class _$$DataImplCopyWith<$Res> implements $DataCopyWith<$Res> {
+  factory _$$DataImplCopyWith(
+          _$DataImpl value, $Res Function(_$DataImpl) then) =
+      __$$DataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -602,9 +604,10 @@ abstract class _$$_DataCopyWith<$Res> implements $DataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data>
-    implements _$$_DataCopyWith<$Res> {
-  __$$_DataCopyWithImpl(_$_Data _value, $Res Function(_$_Data) _then)
+class __$$DataImplCopyWithImpl<$Res>
+    extends _$DataCopyWithImpl<$Res, _$DataImpl>
+    implements _$$DataImplCopyWith<$Res> {
+  __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -618,7 +621,7 @@ class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data>
     Object? starttime = null,
     Object? title = null,
   }) {
-    return _then(_$_Data(
+    return _then(_$DataImpl(
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -653,8 +656,8 @@ class __$$_DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res, _$_Data>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Data extends _Data {
-  const _$_Data(
+class _$DataImpl extends _Data {
+  const _$DataImpl(
       {@JsonKey(name: 'description') this.description = '',
       @JsonKey(name: 'endTime') this.endtime = 0,
       @JsonKey(name: 'id') this.id = '',
@@ -664,7 +667,8 @@ class _$_Data extends _Data {
       @JsonKey(name: 'title') this.title = ''})
       : super._();
 
-  factory _$_Data.fromJson(Map<String, dynamic> json) => _$$_DataFromJson(json);
+  factory _$DataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DataImplFromJson(json);
 
   @override
   @JsonKey(name: 'description')
@@ -694,10 +698,10 @@ class _$_Data extends _Data {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Data &&
+            other is _$DataImpl &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.endtime, endtime) || other.endtime == endtime) &&
@@ -717,12 +721,12 @@ class _$_Data extends _Data {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DataCopyWith<_$_Data> get copyWith =>
-      __$$_DataCopyWithImpl<_$_Data>(this, _$identity);
+  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
+      __$$DataImplCopyWithImpl<_$DataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DataToJson(
+    return _$$DataImplToJson(
       this,
     );
   }
@@ -736,10 +740,10 @@ abstract class _Data extends Data {
       @JsonKey(name: 'link') final Link link,
       @JsonKey(name: 'picture') final String picture,
       @JsonKey(name: 'startTime') final int starttime,
-      @JsonKey(name: 'title') final String title}) = _$_Data;
+      @JsonKey(name: 'title') final String title}) = _$DataImpl;
   const _Data._() : super._();
 
-  factory _Data.fromJson(Map<String, dynamic> json) = _$_Data.fromJson;
+  factory _Data.fromJson(Map<String, dynamic> json) = _$DataImpl.fromJson;
 
   @override
   @JsonKey(name: 'description')
@@ -764,7 +768,8 @@ abstract class _Data extends Data {
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
+  _$$DataImplCopyWith<_$DataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 Link _$LinkFromJson(Map<String, dynamic> json) {
@@ -895,9 +900,10 @@ class _$LinkCopyWithImpl<$Res, $Val extends Link>
 }
 
 /// @nodoc
-abstract class _$$_LinkCopyWith<$Res> implements $LinkCopyWith<$Res> {
-  factory _$$_LinkCopyWith(_$_Link value, $Res Function(_$_Link) then) =
-      __$$_LinkCopyWithImpl<$Res>;
+abstract class _$$LinkImplCopyWith<$Res> implements $LinkCopyWith<$Res> {
+  factory _$$LinkImplCopyWith(
+          _$LinkImpl value, $Res Function(_$LinkImpl) then) =
+      __$$LinkImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -915,9 +921,10 @@ abstract class _$$_LinkCopyWith<$Res> implements $LinkCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LinkCopyWithImpl<$Res> extends _$LinkCopyWithImpl<$Res, _$_Link>
-    implements _$$_LinkCopyWith<$Res> {
-  __$$_LinkCopyWithImpl(_$_Link _value, $Res Function(_$_Link) _then)
+class __$$LinkImplCopyWithImpl<$Res>
+    extends _$LinkCopyWithImpl<$Res, _$LinkImpl>
+    implements _$$LinkImplCopyWith<$Res> {
+  __$$LinkImplCopyWithImpl(_$LinkImpl _value, $Res Function(_$LinkImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -935,7 +942,7 @@ class __$$_LinkCopyWithImpl<$Res> extends _$LinkCopyWithImpl<$Res, _$_Link>
     Object? wxpath = null,
     Object? h5MiniQrcode = null,
   }) {
-    return _then(_$_Link(
+    return _then(_$LinkImpl(
       alipayminiurl: null == alipayminiurl
           ? _value.alipayminiurl
           : alipayminiurl // ignore: cast_nullable_to_non_nullable
@@ -986,8 +993,8 @@ class __$$_LinkCopyWithImpl<$Res> extends _$LinkCopyWithImpl<$Res, _$_Link>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Link extends _Link {
-  const _$_Link(
+class _$LinkImpl extends _Link {
+  const _$LinkImpl(
       {@JsonKey(name: 'alipayMiniUrl') this.alipayminiurl = '',
       @JsonKey(name: 'eleSchemeUrl') this.eleschemeurl = '',
       @JsonKey(name: 'h5ShortLink') this.h5shortlink = '',
@@ -1001,7 +1008,8 @@ class _$_Link extends _Link {
       @JsonKey(name: 'h5MiniQrcode') this.h5MiniQrcode = ''})
       : super._();
 
-  factory _$_Link.fromJson(Map<String, dynamic> json) => _$$_LinkFromJson(json);
+  factory _$LinkImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LinkImplFromJson(json);
 
   @override
   @JsonKey(name: 'alipayMiniUrl')
@@ -1043,10 +1051,10 @@ class _$_Link extends _Link {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Link &&
+            other is _$LinkImpl &&
             (identical(other.alipayminiurl, alipayminiurl) ||
                 other.alipayminiurl == alipayminiurl) &&
             (identical(other.eleschemeurl, eleschemeurl) ||
@@ -1086,12 +1094,12 @@ class _$_Link extends _Link {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LinkCopyWith<_$_Link> get copyWith =>
-      __$$_LinkCopyWithImpl<_$_Link>(this, _$identity);
+  _$$LinkImplCopyWith<_$LinkImpl> get copyWith =>
+      __$$LinkImplCopyWithImpl<_$LinkImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LinkToJson(
+    return _$$LinkImplToJson(
       this,
     );
   }
@@ -1109,10 +1117,10 @@ abstract class _Link extends Link {
       @JsonKey(name: 'tbQrCode') final String tbqrcode,
       @JsonKey(name: 'wxAppid') final String wxappid,
       @JsonKey(name: 'wxPath') final String wxpath,
-      @JsonKey(name: 'h5MiniQrcode') final String h5MiniQrcode}) = _$_Link;
+      @JsonKey(name: 'h5MiniQrcode') final String h5MiniQrcode}) = _$LinkImpl;
   const _Link._() : super._();
 
-  factory _Link.fromJson(Map<String, dynamic> json) = _$_Link.fromJson;
+  factory _Link.fromJson(Map<String, dynamic> json) = _$LinkImpl.fromJson;
 
   @override
   @JsonKey(name: 'alipayMiniUrl')
@@ -1149,5 +1157,6 @@ abstract class _Link extends Link {
   String get h5MiniQrcode;
   @override
   @JsonKey(ignore: true)
-  _$$_LinkCopyWith<_$_Link> get copyWith => throw _privateConstructorUsedError;
+  _$$LinkImplCopyWith<_$LinkImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

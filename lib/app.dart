@@ -4,7 +4,13 @@ const kNavIconSize = 23.0;
 final homeModuleShowIndex = StateProvider((ref) => 0);
 
 ///APP主要页面
-const _pages = <Widget>[IndexHomeNew(), JiuJiuIndex(), CategoryIndexPage(), FavoriteIndexHome(), UserCenterPage()];
+const _pages = <Widget>[
+  IndexHomeNew(),
+  JiuJiuIndex(),
+  CategoryIndexPage(),
+  FavoriteIndexHome(),
+  UserCenterPage()
+];
 
 class MyApp extends ApplicationWidget {
   const MyApp({super.key});
@@ -13,11 +19,13 @@ class MyApp extends ApplicationWidget {
   Widget buildApplication(ApplicationModel applicationModel) => const App();
 
   @override
-  Widget buildErrorWidget(Object e, StackTrace s, BuildContext context, WidgetRef ref) {
+  Widget buildErrorWidget(
+      Object e, StackTrace s, BuildContext context, WidgetRef ref) {
     Logger().e('启动失败', error: e, stackTrace: s);
     return InitLoadingWidget(
-      errorMessage: '$e',
-      retry: () => ref.invalidate(application(ApplocationContext(context, ref))),
+      errorMessage: switch (e) { BaseApiException() => e.message, _ => "$e" },
+      retry: () =>
+          ref.invalidate(application(ApplocationContext(context, ref))),
     );
   }
 
@@ -58,7 +66,8 @@ class App extends ConsumerWidget {
                 destinations: bottomMenus.map((element) {
                   return NavigationRailDestination(
                       icon: Image.asset(
-                        element.getAssetPath(currentIndex == bottomMenus.indexOf(element)),
+                        element.getAssetPath(
+                            currentIndex == bottomMenus.indexOf(element)),
                         width: kNavIconSize,
                         height: kNavIconSize,
                       ),
@@ -92,7 +101,10 @@ class App extends ConsumerWidget {
                           icon: const Icon(Icons.settings)),
                       Tooltip(
                         message: "退出登录",
-                        child: IconButton(onPressed: () {}, icon: const Icon(Icons.logout)).ifShow(ref.isLogin),
+                        child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.logout))
+                            .ifShow(ref.isLogin),
                       ),
                       const SizedBox(height: 12)
                     ],
@@ -130,7 +142,8 @@ class App extends ConsumerWidget {
 class AppBottomNav extends View {
   const AppBottomNav({super.key});
 
-  Widget _buildIcon(int currentIndex, int index, String filename, BuildContext context) {
+  Widget _buildIcon(
+      int currentIndex, int index, String filename, BuildContext context) {
     return IfWidget(
         expression: () => currentIndex == index,
         trueBuild: () => ExtendedImage.asset(
@@ -159,11 +172,19 @@ class AppBottomNav extends View {
           appCore.ref.read(homeModuleShowIndex.notifier).state = index;
         }),
         items: [
-          BottomNavigationBarItem(label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
-          BottomNavigationBarItem(label: '9.9包邮', icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
-          BottomNavigationBarItem(label: '分类', icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
-          BottomNavigationBarItem(label: '收藏', icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
-          BottomNavigationBarItem(label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
+          BottomNavigationBarItem(
+              label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
+          BottomNavigationBarItem(
+              label: '9.9包邮',
+              icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
+          BottomNavigationBarItem(
+              label: '分类',
+              icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
+          BottomNavigationBarItem(
+              label: '收藏',
+              icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
+          BottomNavigationBarItem(
+              label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
         ]);
   }
 }

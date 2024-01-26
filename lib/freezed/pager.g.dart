@@ -6,30 +6,31 @@ part of 'pager.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Pager _$$_PagerFromJson(Map<String, dynamic> json) => _$_Pager(
+_$PagerImpl _$$PagerImplFromJson(Map<String, dynamic> json) => _$PagerImpl(
       routername: json['routerName'] as String? ?? '',
       params: json['params'] == null
           ? null
           : PagerParams.fromJson(json['params'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_PagerToJson(_$_Pager instance) => <String, dynamic>{
+Map<String, dynamic> _$$PagerImplToJson(_$PagerImpl instance) =>
+    <String, dynamic>{
       'routerName': instance.routername,
       'params': instance.params,
     };
 
-_$_PagerParams _$$_PagerParamsFromJson(Map<String, dynamic> json) =>
-    _$_PagerParams(
+_$PagerParamsImpl _$$PagerParamsImplFromJson(Map<String, dynamic> json) =>
+    _$PagerParamsImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_PagerParamsToJson(_$_PagerParams instance) =>
+Map<String, dynamic> _$$PagerParamsImplToJson(_$PagerParamsImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$DynPageParams _$$DynPageParamsFromJson(Map<String, dynamic> json) =>
-    _$DynPageParams(
+_$DynPageParamsImpl _$$DynPageParamsImplFromJson(Map<String, dynamic> json) =>
+    _$DynPageParamsImpl(
       name: json['name'] as String,
       emptyText: json['emptyText'] as String? ?? '暂无动态，快去发布一条吧',
       style: $enumDecodeNullable(
@@ -38,7 +39,7 @@ _$DynPageParams _$$DynPageParamsFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$DynPageParamsToJson(_$DynPageParams instance) =>
+Map<String, dynamic> _$$DynPageParamsImplToJson(_$DynPageParamsImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'emptyText': instance.emptyText,
@@ -51,8 +52,8 @@ const _$ResourceWidgetCardStyleEnumMap = {
   ResourceWidgetCardStyle.card: 'card',
 };
 
-_$DynWriteParams _$$DynWriteParamsFromJson(Map<String, dynamic> json) =>
-    _$DynWriteParams(
+_$DynWriteParamsImpl _$$DynWriteParamsImplFromJson(Map<String, dynamic> json) =>
+    _$DynWriteParamsImpl(
       name: json['name'] as String,
       productShare: json['productShare'] == null
           ? null
@@ -64,7 +65,8 @@ _$DynWriteParams _$$DynWriteParamsFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$DynWriteParamsToJson(_$DynWriteParams instance) =>
+Map<String, dynamic> _$$DynWriteParamsImplToJson(
+        _$DynWriteParamsImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'productShare': instance.productShare,

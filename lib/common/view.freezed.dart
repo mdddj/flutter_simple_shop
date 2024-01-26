@@ -63,22 +63,22 @@ class _$ApplocationContextCopyWithImpl<$Res, $Val extends ApplocationContext>
 }
 
 /// @nodoc
-abstract class _$$_ApplocationContextCopyWith<$Res>
+abstract class _$$ApplocationContextImplCopyWith<$Res>
     implements $ApplocationContextCopyWith<$Res> {
-  factory _$$_ApplocationContextCopyWith(_$_ApplocationContext value,
-          $Res Function(_$_ApplocationContext) then) =
-      __$$_ApplocationContextCopyWithImpl<$Res>;
+  factory _$$ApplocationContextImplCopyWith(_$ApplocationContextImpl value,
+          $Res Function(_$ApplocationContextImpl) then) =
+      __$$ApplocationContextImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BuildContext context, WidgetRef ref});
 }
 
 /// @nodoc
-class __$$_ApplocationContextCopyWithImpl<$Res>
-    extends _$ApplocationContextCopyWithImpl<$Res, _$_ApplocationContext>
-    implements _$$_ApplocationContextCopyWith<$Res> {
-  __$$_ApplocationContextCopyWithImpl(
-      _$_ApplocationContext _value, $Res Function(_$_ApplocationContext) _then)
+class __$$ApplocationContextImplCopyWithImpl<$Res>
+    extends _$ApplocationContextCopyWithImpl<$Res, _$ApplocationContextImpl>
+    implements _$$ApplocationContextImplCopyWith<$Res> {
+  __$$ApplocationContextImplCopyWithImpl(_$ApplocationContextImpl _value,
+      $Res Function(_$ApplocationContextImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_ApplocationContextCopyWithImpl<$Res>
     Object? context = null,
     Object? ref = null,
   }) {
-    return _then(_$_ApplocationContext(
+    return _then(_$ApplocationContextImpl(
       null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_ApplocationContextCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ApplocationContext implements _ApplocationContext {
-  const _$_ApplocationContext(this.context, this.ref);
+class _$ApplocationContextImpl implements _ApplocationContext {
+  const _$ApplocationContextImpl(this.context, this.ref);
 
   @override
   final BuildContext context;
@@ -116,10 +116,10 @@ class _$_ApplocationContext implements _ApplocationContext {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApplocationContext &&
+            other is _$ApplocationContextImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.ref, ref) || other.ref == ref));
   }
@@ -130,14 +130,15 @@ class _$_ApplocationContext implements _ApplocationContext {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApplocationContextCopyWith<_$_ApplocationContext> get copyWith =>
-      __$$_ApplocationContextCopyWithImpl<_$_ApplocationContext>(
+  _$$ApplocationContextImplCopyWith<_$ApplocationContextImpl> get copyWith =>
+      __$$ApplocationContextImplCopyWithImpl<_$ApplocationContextImpl>(
           this, _$identity);
 }
 
 abstract class _ApplocationContext implements ApplocationContext {
   const factory _ApplocationContext(
-      final BuildContext context, final WidgetRef ref) = _$_ApplocationContext;
+          final BuildContext context, final WidgetRef ref) =
+      _$ApplocationContextImpl;
 
   @override
   BuildContext get context;
@@ -145,7 +146,7 @@ abstract class _ApplocationContext implements ApplocationContext {
   WidgetRef get ref;
   @override
   @JsonKey(ignore: true)
-  _$$_ApplocationContextCopyWith<_$_ApplocationContext> get copyWith =>
+  _$$ApplocationContextImplCopyWith<_$ApplocationContextImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -227,11 +228,11 @@ class _$ApplicationModelCopyWithImpl<$Res, $Val extends ApplicationModel>
 }
 
 /// @nodoc
-abstract class _$$_ApplicationModelCopyWith<$Res>
+abstract class _$$ApplicationModelImplCopyWith<$Res>
     implements $ApplicationModelCopyWith<$Res> {
-  factory _$$_ApplicationModelCopyWith(
-          _$_ApplicationModel value, $Res Function(_$_ApplicationModel) then) =
-      __$$_ApplicationModelCopyWithImpl<$Res>;
+  factory _$$ApplicationModelImplCopyWith(_$ApplicationModelImpl value,
+          $Res Function(_$ApplicationModelImpl) then) =
+      __$$ApplicationModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -245,11 +246,11 @@ abstract class _$$_ApplicationModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ApplicationModelCopyWithImpl<$Res>
-    extends _$ApplicationModelCopyWithImpl<$Res, _$_ApplicationModel>
-    implements _$$_ApplicationModelCopyWith<$Res> {
-  __$$_ApplicationModelCopyWithImpl(
-      _$_ApplicationModel _value, $Res Function(_$_ApplicationModel) _then)
+class __$$ApplicationModelImplCopyWithImpl<$Res>
+    extends _$ApplicationModelCopyWithImpl<$Res, _$ApplicationModelImpl>
+    implements _$$ApplicationModelImplCopyWith<$Res> {
+  __$$ApplicationModelImplCopyWithImpl(_$ApplicationModelImpl _value,
+      $Res Function(_$ApplicationModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -260,7 +261,7 @@ class __$$_ApplicationModelCopyWithImpl<$Res>
     Object? favoritesRepository = null,
     Object? applocationContext = null,
   }) {
-    return _then(_$_ApplicationModel(
+    return _then(_$ApplicationModelImpl(
       context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
@@ -283,8 +284,8 @@ class __$$_ApplicationModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ApplicationModel implements _ApplicationModel {
-  const _$_ApplicationModel(
+class _$ApplicationModelImpl implements _ApplicationModel {
+  const _$ApplicationModelImpl(
       {required this.context,
       required this.ref,
       required this.favoritesRepository,
@@ -305,10 +306,10 @@ class _$_ApplicationModel implements _ApplicationModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApplicationModel &&
+            other is _$ApplicationModelImpl &&
             (identical(other.context, context) || other.context == context) &&
             (identical(other.ref, ref) || other.ref == ref) &&
             const DeepCollectionEquality()
@@ -328,8 +329,9 @@ class _$_ApplicationModel implements _ApplicationModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApplicationModelCopyWith<_$_ApplicationModel> get copyWith =>
-      __$$_ApplicationModelCopyWithImpl<_$_ApplicationModel>(this, _$identity);
+  _$$ApplicationModelImplCopyWith<_$ApplicationModelImpl> get copyWith =>
+      __$$ApplicationModelImplCopyWithImpl<_$ApplicationModelImpl>(
+          this, _$identity);
 }
 
 abstract class _ApplicationModel implements ApplicationModel {
@@ -338,7 +340,7 @@ abstract class _ApplicationModel implements ApplicationModel {
           required final WidgetRef ref,
           required final FavoritesRepository favoritesRepository,
           required final ApplocationContext applocationContext}) =
-      _$_ApplicationModel;
+      _$ApplicationModelImpl;
 
   @override
   BuildContext get context;
@@ -350,6 +352,6 @@ abstract class _ApplicationModel implements ApplicationModel {
   ApplocationContext get applocationContext;
   @override
   @JsonKey(ignore: true)
-  _$$_ApplicationModelCopyWith<_$_ApplicationModel> get copyWith =>
+  _$$ApplicationModelImplCopyWith<_$ApplicationModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

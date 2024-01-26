@@ -104,11 +104,11 @@ class _$ProductShareCopyWithImpl<$Res, $Val extends ProductShare>
 }
 
 /// @nodoc
-abstract class _$$_ProductShareCopyWith<$Res>
+abstract class _$$ProductShareImplCopyWith<$Res>
     implements $ProductShareCopyWith<$Res> {
-  factory _$$_ProductShareCopyWith(
-          _$_ProductShare value, $Res Function(_$_ProductShare) then) =
-      __$$_ProductShareCopyWithImpl<$Res>;
+  factory _$$ProductShareImplCopyWith(
+          _$ProductShareImpl value, $Res Function(_$ProductShareImpl) then) =
+      __$$ProductShareImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -121,11 +121,11 @@ abstract class _$$_ProductShareCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ProductShareCopyWithImpl<$Res>
-    extends _$ProductShareCopyWithImpl<$Res, _$_ProductShare>
-    implements _$$_ProductShareCopyWith<$Res> {
-  __$$_ProductShareCopyWithImpl(
-      _$_ProductShare _value, $Res Function(_$_ProductShare) _then)
+class __$$ProductShareImplCopyWithImpl<$Res>
+    extends _$ProductShareCopyWithImpl<$Res, _$ProductShareImpl>
+    implements _$$ProductShareImplCopyWith<$Res> {
+  __$$ProductShareImplCopyWithImpl(
+      _$ProductShareImpl _value, $Res Function(_$ProductShareImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -138,7 +138,7 @@ class __$$_ProductShareCopyWithImpl<$Res>
     Object? productId = null,
     Object? type = null,
   }) {
-    return _then(_$_ProductShare(
+    return _then(_$ProductShareImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -169,8 +169,8 @@ class __$$_ProductShareCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ProductShare extends _ProductShare {
-  const _$_ProductShare(
+class _$ProductShareImpl extends _ProductShare {
+  const _$ProductShareImpl(
       {@JsonKey(name: 'id') this.id,
       @JsonKey(name: 'title') this.title = '',
       @JsonKey(name: 'price') this.price = '',
@@ -179,8 +179,8 @@ class _$_ProductShare extends _ProductShare {
       @JsonKey(name: 'type') this.type = ProductShareType.tb})
       : super._();
 
-  factory _$_ProductShare.fromJson(Map<String, dynamic> json) =>
-      _$$_ProductShareFromJson(json);
+  factory _$ProductShareImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductShareImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -207,10 +207,10 @@ class _$_ProductShare extends _ProductShare {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductShare &&
+            other is _$ProductShareImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.price, price) || other.price == price) &&
@@ -228,12 +228,12 @@ class _$_ProductShare extends _ProductShare {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductShareCopyWith<_$_ProductShare> get copyWith =>
-      __$$_ProductShareCopyWithImpl<_$_ProductShare>(this, _$identity);
+  _$$ProductShareImplCopyWith<_$ProductShareImpl> get copyWith =>
+      __$$ProductShareImplCopyWithImpl<_$ProductShareImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProductShareToJson(
+    return _$$ProductShareImplToJson(
       this,
     );
   }
@@ -246,11 +246,11 @@ abstract class _ProductShare extends ProductShare {
       @JsonKey(name: 'price') final String price,
       @JsonKey(name: 'image') final String image,
       @JsonKey(name: 'productId') final String productId,
-      @JsonKey(name: 'type') final ProductShareType type}) = _$_ProductShare;
+      @JsonKey(name: 'type') final ProductShareType type}) = _$ProductShareImpl;
   const _ProductShare._() : super._();
 
   factory _ProductShare.fromJson(Map<String, dynamic> json) =
-      _$_ProductShare.fromJson;
+      _$ProductShareImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -272,6 +272,6 @@ abstract class _ProductShare extends ProductShare {
   ProductShareType get type;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductShareCopyWith<_$_ProductShare> get copyWith =>
+  _$$ProductShareImplCopyWith<_$ProductShareImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

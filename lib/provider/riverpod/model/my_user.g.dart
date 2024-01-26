@@ -6,7 +6,7 @@ part of 'my_user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MyUser _$$_MyUserFromJson(Map<String, dynamic> json) => _$_MyUser(
+_$MyUserImpl _$$MyUserImplFromJson(Map<String, dynamic> json) => _$MyUserImpl(
       id: json['id'] as int,
       loginNumber: json['loginNumber'] as String? ?? '',
       username: json['username'] as String? ?? '',
@@ -33,7 +33,8 @@ _$_MyUser _$$_MyUserFromJson(Map<String, dynamic> json) => _$_MyUser(
           : Enterprise.fromJson(json['enterprise'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MyUserToJson(_$_MyUser instance) => <String, dynamic>{
+Map<String, dynamic> _$$MyUserImplToJson(_$MyUserImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'loginNumber': instance.loginNumber,
       'username': instance.username,
@@ -65,8 +66,8 @@ const _$VipEnumMap = {
   Vip.specialVip: 3,
 };
 
-_$_Enterprise _$$_EnterpriseFromJson(Map<String, dynamic> json) =>
-    _$_Enterprise(
+_$EnterpriseImpl _$$EnterpriseImplFromJson(Map<String, dynamic> json) =>
+    _$EnterpriseImpl(
       enable: json['enable'] as bool? ?? false,
       id: json['id'] as int? ?? 0,
       name: json['name'] as String? ?? '',
@@ -76,7 +77,7 @@ _$_Enterprise _$$_EnterpriseFromJson(Map<String, dynamic> json) =>
       wechat: json['wechat'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_EnterpriseToJson(_$_Enterprise instance) =>
+Map<String, dynamic> _$$EnterpriseImplToJson(_$EnterpriseImpl instance) =>
     <String, dynamic>{
       'enable': instance.enable,
       'id': instance.id,

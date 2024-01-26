@@ -76,11 +76,11 @@ class _$UserDetailModalCopyWithImpl<$Res, $Val extends UserDetailModal>
 }
 
 /// @nodoc
-abstract class _$$_UserDetailModalCopyWith<$Res>
+abstract class _$$UserDetailModalImplCopyWith<$Res>
     implements $UserDetailModalCopyWith<$Res> {
-  factory _$$_UserDetailModalCopyWith(
-          _$_UserDetailModal value, $Res Function(_$_UserDetailModal) then) =
-      __$$_UserDetailModalCopyWithImpl<$Res>;
+  factory _$$UserDetailModalImplCopyWith(_$UserDetailModalImpl value,
+          $Res Function(_$UserDetailModalImpl) then) =
+      __$$UserDetailModalImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({MyUser? user});
@@ -90,11 +90,11 @@ abstract class _$$_UserDetailModalCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserDetailModalCopyWithImpl<$Res>
-    extends _$UserDetailModalCopyWithImpl<$Res, _$_UserDetailModal>
-    implements _$$_UserDetailModalCopyWith<$Res> {
-  __$$_UserDetailModalCopyWithImpl(
-      _$_UserDetailModal _value, $Res Function(_$_UserDetailModal) _then)
+class __$$UserDetailModalImplCopyWithImpl<$Res>
+    extends _$UserDetailModalCopyWithImpl<$Res, _$UserDetailModalImpl>
+    implements _$$UserDetailModalImplCopyWith<$Res> {
+  __$$UserDetailModalImplCopyWithImpl(
+      _$UserDetailModalImpl _value, $Res Function(_$UserDetailModalImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +102,7 @@ class __$$_UserDetailModalCopyWithImpl<$Res>
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(_$_UserDetailModal(
+    return _then(_$UserDetailModalImpl(
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -113,11 +113,11 @@ class __$$_UserDetailModalCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserDetailModal implements _UserDetailModal {
-  const _$_UserDetailModal({this.user});
+class _$UserDetailModalImpl implements _UserDetailModal {
+  const _$UserDetailModalImpl({this.user});
 
-  factory _$_UserDetailModal.fromJson(Map<String, dynamic> json) =>
-      _$$_UserDetailModalFromJson(json);
+  factory _$UserDetailModalImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserDetailModalImplFromJson(json);
 
   @override
   final MyUser? user;
@@ -128,10 +128,10 @@ class _$_UserDetailModal implements _UserDetailModal {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserDetailModal &&
+            other is _$UserDetailModalImpl &&
             (identical(other.user, user) || other.user == user));
   }
 
@@ -142,27 +142,28 @@ class _$_UserDetailModal implements _UserDetailModal {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserDetailModalCopyWith<_$_UserDetailModal> get copyWith =>
-      __$$_UserDetailModalCopyWithImpl<_$_UserDetailModal>(this, _$identity);
+  _$$UserDetailModalImplCopyWith<_$UserDetailModalImpl> get copyWith =>
+      __$$UserDetailModalImplCopyWithImpl<_$UserDetailModalImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserDetailModalToJson(
+    return _$$UserDetailModalImplToJson(
       this,
     );
   }
 }
 
 abstract class _UserDetailModal implements UserDetailModal {
-  const factory _UserDetailModal({final MyUser? user}) = _$_UserDetailModal;
+  const factory _UserDetailModal({final MyUser? user}) = _$UserDetailModalImpl;
 
   factory _UserDetailModal.fromJson(Map<String, dynamic> json) =
-      _$_UserDetailModal.fromJson;
+      _$UserDetailModalImpl.fromJson;
 
   @override
   MyUser? get user;
   @override
   @JsonKey(ignore: true)
-  _$$_UserDetailModalCopyWith<_$_UserDetailModal> get copyWith =>
+  _$$UserDetailModalImplCopyWith<_$UserDetailModalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

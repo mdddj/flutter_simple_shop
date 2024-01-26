@@ -64,22 +64,22 @@ class _$AppActionMenuCopyWithImpl<$Res, $Val extends AppActionMenu>
 }
 
 /// @nodoc
-abstract class _$$_AppActionMenuCopyWith<$Res>
+abstract class _$$AppActionMenuImplCopyWith<$Res>
     implements $AppActionMenuCopyWith<$Res> {
-  factory _$$_AppActionMenuCopyWith(
-          _$_AppActionMenu value, $Res Function(_$_AppActionMenu) then) =
-      __$$_AppActionMenuCopyWithImpl<$Res>;
+  factory _$$AppActionMenuImplCopyWith(
+          _$AppActionMenuImpl value, $Res Function(_$AppActionMenuImpl) then) =
+      __$$AppActionMenuImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'title') String title, List<ListTile> actions});
 }
 
 /// @nodoc
-class __$$_AppActionMenuCopyWithImpl<$Res>
-    extends _$AppActionMenuCopyWithImpl<$Res, _$_AppActionMenu>
-    implements _$$_AppActionMenuCopyWith<$Res> {
-  __$$_AppActionMenuCopyWithImpl(
-      _$_AppActionMenu _value, $Res Function(_$_AppActionMenu) _then)
+class __$$AppActionMenuImplCopyWithImpl<$Res>
+    extends _$AppActionMenuCopyWithImpl<$Res, _$AppActionMenuImpl>
+    implements _$$AppActionMenuImplCopyWith<$Res> {
+  __$$AppActionMenuImplCopyWithImpl(
+      _$AppActionMenuImpl _value, $Res Function(_$AppActionMenuImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +88,7 @@ class __$$_AppActionMenuCopyWithImpl<$Res>
     Object? title = null,
     Object? actions = null,
   }) {
-    return _then(_$_AppActionMenu(
+    return _then(_$AppActionMenuImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -103,8 +103,8 @@ class __$$_AppActionMenuCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppActionMenu extends _AppActionMenu {
-  const _$_AppActionMenu(
+class _$AppActionMenuImpl extends _AppActionMenu {
+  const _$AppActionMenuImpl(
       {@JsonKey(name: 'title') this.title = '',
       required final List<ListTile> actions})
       : _actions = actions,
@@ -127,10 +127,10 @@ class _$_AppActionMenu extends _AppActionMenu {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppActionMenu &&
+            other is _$AppActionMenuImpl &&
             (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality().equals(other._actions, _actions));
   }
@@ -142,14 +142,14 @@ class _$_AppActionMenu extends _AppActionMenu {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppActionMenuCopyWith<_$_AppActionMenu> get copyWith =>
-      __$$_AppActionMenuCopyWithImpl<_$_AppActionMenu>(this, _$identity);
+  _$$AppActionMenuImplCopyWith<_$AppActionMenuImpl> get copyWith =>
+      __$$AppActionMenuImplCopyWithImpl<_$AppActionMenuImpl>(this, _$identity);
 }
 
 abstract class _AppActionMenu extends AppActionMenu {
   const factory _AppActionMenu(
       {@JsonKey(name: 'title') final String title,
-      required final List<ListTile> actions}) = _$_AppActionMenu;
+      required final List<ListTile> actions}) = _$AppActionMenuImpl;
   const _AppActionMenu._() : super._();
 
   @override
@@ -159,6 +159,6 @@ abstract class _AppActionMenu extends AppActionMenu {
   List<ListTile> get actions;
   @override
   @JsonKey(ignore: true)
-  _$$_AppActionMenuCopyWith<_$_AppActionMenu> get copyWith =>
+  _$$AppActionMenuImplCopyWith<_$AppActionMenuImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

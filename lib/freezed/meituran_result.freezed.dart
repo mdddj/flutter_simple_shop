@@ -88,11 +88,11 @@ class _$MeituanResultCopyWithImpl<$Res, $Val extends MeituanResult>
 }
 
 /// @nodoc
-abstract class _$$_MeituanResultCopyWith<$Res>
+abstract class _$$MeituanResultImplCopyWith<$Res>
     implements $MeituanResultCopyWith<$Res> {
-  factory _$$_MeituanResultCopyWith(
-          _$_MeituanResult value, $Res Function(_$_MeituanResult) then) =
-      __$$_MeituanResultCopyWithImpl<$Res>;
+  factory _$$MeituanResultImplCopyWith(
+          _$MeituanResultImpl value, $Res Function(_$MeituanResultImpl) then) =
+      __$$MeituanResultImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,11 +103,11 @@ abstract class _$$_MeituanResultCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MeituanResultCopyWithImpl<$Res>
-    extends _$MeituanResultCopyWithImpl<$Res, _$_MeituanResult>
-    implements _$$_MeituanResultCopyWith<$Res> {
-  __$$_MeituanResultCopyWithImpl(
-      _$_MeituanResult _value, $Res Function(_$_MeituanResult) _then)
+class __$$MeituanResultImplCopyWithImpl<$Res>
+    extends _$MeituanResultCopyWithImpl<$Res, _$MeituanResultImpl>
+    implements _$$MeituanResultImplCopyWith<$Res> {
+  __$$MeituanResultImplCopyWithImpl(
+      _$MeituanResultImpl _value, $Res Function(_$MeituanResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +118,7 @@ class __$$_MeituanResultCopyWithImpl<$Res>
     Object? status = null,
     Object? successful = null,
   }) {
-    return _then(_$_MeituanResult(
+    return _then(_$MeituanResultImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -141,16 +141,16 @@ class __$$_MeituanResultCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MeituanResult extends _MeituanResult {
-  const _$_MeituanResult(
+class _$MeituanResultImpl extends _MeituanResult {
+  const _$MeituanResultImpl(
       {@JsonKey(name: 'data') this.data = '',
       @JsonKey(name: 'des') this.des = '',
       @JsonKey(name: 'status') this.status = 0,
       @JsonKey(name: 'successful') this.successful = false})
       : super._();
 
-  factory _$_MeituanResult.fromJson(Map<String, dynamic> json) =>
-      _$$_MeituanResultFromJson(json);
+  factory _$MeituanResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MeituanResultImplFromJson(json);
 
   @override
   @JsonKey(name: 'data')
@@ -171,10 +171,10 @@ class _$_MeituanResult extends _MeituanResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MeituanResult &&
+            other is _$MeituanResultImpl &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.des, des) || other.des == des) &&
             (identical(other.status, status) || other.status == status) &&
@@ -189,12 +189,12 @@ class _$_MeituanResult extends _MeituanResult {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MeituanResultCopyWith<_$_MeituanResult> get copyWith =>
-      __$$_MeituanResultCopyWithImpl<_$_MeituanResult>(this, _$identity);
+  _$$MeituanResultImplCopyWith<_$MeituanResultImpl> get copyWith =>
+      __$$MeituanResultImplCopyWithImpl<_$MeituanResultImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MeituanResultToJson(
+    return _$$MeituanResultImplToJson(
       this,
     );
   }
@@ -202,14 +202,15 @@ class _$_MeituanResult extends _MeituanResult {
 
 abstract class _MeituanResult extends MeituanResult {
   const factory _MeituanResult(
-      {@JsonKey(name: 'data') final String data,
-      @JsonKey(name: 'des') final String des,
-      @JsonKey(name: 'status') final int status,
-      @JsonKey(name: 'successful') final bool successful}) = _$_MeituanResult;
+          {@JsonKey(name: 'data') final String data,
+          @JsonKey(name: 'des') final String des,
+          @JsonKey(name: 'status') final int status,
+          @JsonKey(name: 'successful') final bool successful}) =
+      _$MeituanResultImpl;
   const _MeituanResult._() : super._();
 
   factory _MeituanResult.fromJson(Map<String, dynamic> json) =
-      _$_MeituanResult.fromJson;
+      _$MeituanResultImpl.fromJson;
 
   @override
   @JsonKey(name: 'data')
@@ -225,6 +226,6 @@ abstract class _MeituanResult extends MeituanResult {
   bool get successful;
   @override
   @JsonKey(ignore: true)
-  _$$_MeituanResultCopyWith<_$_MeituanResult> get copyWith =>
+  _$$MeituanResultImplCopyWith<_$MeituanResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

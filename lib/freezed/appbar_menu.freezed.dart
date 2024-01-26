@@ -72,11 +72,11 @@ class _$AppbarMenuCopyWithImpl<$Res, $Val extends AppbarMenu>
 }
 
 /// @nodoc
-abstract class _$$_AppbarMenuCopyWith<$Res>
+abstract class _$$AppbarMenuImplCopyWith<$Res>
     implements $AppbarMenuCopyWith<$Res> {
-  factory _$$_AppbarMenuCopyWith(
-          _$_AppbarMenu value, $Res Function(_$_AppbarMenu) then) =
-      __$$_AppbarMenuCopyWithImpl<$Res>;
+  factory _$$AppbarMenuImplCopyWith(
+          _$AppbarMenuImpl value, $Res Function(_$AppbarMenuImpl) then) =
+      __$$AppbarMenuImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -85,11 +85,11 @@ abstract class _$$_AppbarMenuCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AppbarMenuCopyWithImpl<$Res>
-    extends _$AppbarMenuCopyWithImpl<$Res, _$_AppbarMenu>
-    implements _$$_AppbarMenuCopyWith<$Res> {
-  __$$_AppbarMenuCopyWithImpl(
-      _$_AppbarMenu _value, $Res Function(_$_AppbarMenu) _then)
+class __$$AppbarMenuImplCopyWithImpl<$Res>
+    extends _$AppbarMenuCopyWithImpl<$Res, _$AppbarMenuImpl>
+    implements _$$AppbarMenuImplCopyWith<$Res> {
+  __$$AppbarMenuImplCopyWithImpl(
+      _$AppbarMenuImpl _value, $Res Function(_$AppbarMenuImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +98,7 @@ class __$$_AppbarMenuCopyWithImpl<$Res>
     Object? icon = null,
     Object? title = null,
   }) {
-    return _then(_$_AppbarMenu(
+    return _then(_$AppbarMenuImpl(
       icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -113,14 +113,14 @@ class __$$_AppbarMenuCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AppbarMenu extends _AppbarMenu {
-  const _$_AppbarMenu(
+class _$AppbarMenuImpl extends _AppbarMenu {
+  const _$AppbarMenuImpl(
       {@JsonKey(name: 'icon') this.icon = '',
       @JsonKey(name: 'title') this.title = ''})
       : super._();
 
-  factory _$_AppbarMenu.fromJson(Map<String, dynamic> json) =>
-      _$$_AppbarMenuFromJson(json);
+  factory _$AppbarMenuImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppbarMenuImplFromJson(json);
 
   @override
   @JsonKey(name: 'icon')
@@ -135,10 +135,10 @@ class _$_AppbarMenu extends _AppbarMenu {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppbarMenu &&
+            other is _$AppbarMenuImpl &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.title, title) || other.title == title));
   }
@@ -150,12 +150,12 @@ class _$_AppbarMenu extends _AppbarMenu {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppbarMenuCopyWith<_$_AppbarMenu> get copyWith =>
-      __$$_AppbarMenuCopyWithImpl<_$_AppbarMenu>(this, _$identity);
+  _$$AppbarMenuImplCopyWith<_$AppbarMenuImpl> get copyWith =>
+      __$$AppbarMenuImplCopyWithImpl<_$AppbarMenuImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AppbarMenuToJson(
+    return _$$AppbarMenuImplToJson(
       this,
     );
   }
@@ -164,11 +164,11 @@ class _$_AppbarMenu extends _AppbarMenu {
 abstract class _AppbarMenu extends AppbarMenu {
   const factory _AppbarMenu(
       {@JsonKey(name: 'icon') final String icon,
-      @JsonKey(name: 'title') final String title}) = _$_AppbarMenu;
+      @JsonKey(name: 'title') final String title}) = _$AppbarMenuImpl;
   const _AppbarMenu._() : super._();
 
   factory _AppbarMenu.fromJson(Map<String, dynamic> json) =
-      _$_AppbarMenu.fromJson;
+      _$AppbarMenuImpl.fromJson;
 
   @override
   @JsonKey(name: 'icon')
@@ -178,6 +178,6 @@ abstract class _AppbarMenu extends AppbarMenu {
   String get title;
   @override
   @JsonKey(ignore: true)
-  _$$_AppbarMenuCopyWith<_$_AppbarMenu> get copyWith =>
+  _$$AppbarMenuImplCopyWith<_$AppbarMenuImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

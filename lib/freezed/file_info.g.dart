@@ -6,7 +6,8 @@ part of 'file_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FileInfo _$$_FileInfoFromJson(Map<String, dynamic> json) => _$_FileInfo(
+_$FileInfoImpl _$$FileInfoImplFromJson(Map<String, dynamic> json) =>
+    _$FileInfoImpl(
       absolutePath: json['absolutePath'] as String? ?? '',
       collect: json['collect'] as bool? ?? false,
       createDate: json['createDate'] as String? ?? '',
@@ -22,7 +23,7 @@ _$_FileInfo _$$_FileInfoFromJson(Map<String, dynamic> json) => _$_FileInfo(
       width: json['width'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_FileInfoToJson(_$_FileInfo instance) =>
+Map<String, dynamic> _$$FileInfoImplToJson(_$FileInfoImpl instance) =>
     <String, dynamic>{
       'absolutePath': instance.absolutePath,
       'collect': instance.collect,

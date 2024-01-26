@@ -96,11 +96,11 @@ class _$SimpleResultCopyWithImpl<$Res, $Val extends SimpleResult>
 }
 
 /// @nodoc
-abstract class _$$_SimpleResultCopyWith<$Res>
+abstract class _$$SimpleResultImplCopyWith<$Res>
     implements $SimpleResultCopyWith<$Res> {
-  factory _$$_SimpleResultCopyWith(
-          _$_SimpleResult value, $Res Function(_$_SimpleResult) then) =
-      __$$_SimpleResultCopyWithImpl<$Res>;
+  factory _$$SimpleResultImplCopyWith(
+          _$SimpleResultImpl value, $Res Function(_$SimpleResultImpl) then) =
+      __$$SimpleResultImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +112,11 @@ abstract class _$$_SimpleResultCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SimpleResultCopyWithImpl<$Res>
-    extends _$SimpleResultCopyWithImpl<$Res, _$_SimpleResult>
-    implements _$$_SimpleResultCopyWith<$Res> {
-  __$$_SimpleResultCopyWithImpl(
-      _$_SimpleResult _value, $Res Function(_$_SimpleResult) _then)
+class __$$SimpleResultImplCopyWithImpl<$Res>
+    extends _$SimpleResultCopyWithImpl<$Res, _$SimpleResultImpl>
+    implements _$$SimpleResultImplCopyWith<$Res> {
+  __$$SimpleResultImplCopyWithImpl(
+      _$SimpleResultImpl _value, $Res Function(_$SimpleResultImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$_SimpleResultCopyWithImpl<$Res>
     Object? type = null,
     Object? data = freezed,
   }) {
-    return _then(_$_SimpleResult(
+    return _then(_$SimpleResultImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -155,8 +155,8 @@ class __$$_SimpleResultCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SimpleResult extends _SimpleResult {
-  const _$_SimpleResult(
+class _$SimpleResultImpl extends _SimpleResult {
+  const _$SimpleResultImpl(
       {@JsonKey(name: 'message') this.message = '',
       @JsonKey(name: 'state') this.state = 0,
       @JsonKey(name: 'success') this.success = false,
@@ -164,8 +164,8 @@ class _$_SimpleResult extends _SimpleResult {
       @JsonKey(name: 'data') this.data})
       : super._();
 
-  factory _$_SimpleResult.fromJson(Map<String, dynamic> json) =>
-      _$$_SimpleResultFromJson(json);
+  factory _$SimpleResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SimpleResultImplFromJson(json);
 
   @override
   @JsonKey(name: 'message')
@@ -189,10 +189,10 @@ class _$_SimpleResult extends _SimpleResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SimpleResult &&
+            other is _$SimpleResultImpl &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.state, state) || other.state == state) &&
             (identical(other.success, success) || other.success == success) &&
@@ -208,12 +208,12 @@ class _$_SimpleResult extends _SimpleResult {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SimpleResultCopyWith<_$_SimpleResult> get copyWith =>
-      __$$_SimpleResultCopyWithImpl<_$_SimpleResult>(this, _$identity);
+  _$$SimpleResultImplCopyWith<_$SimpleResultImpl> get copyWith =>
+      __$$SimpleResultImplCopyWithImpl<_$SimpleResultImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SimpleResultToJson(
+    return _$$SimpleResultImplToJson(
       this,
     );
   }
@@ -225,11 +225,11 @@ abstract class _SimpleResult extends SimpleResult {
       @JsonKey(name: 'state') final int state,
       @JsonKey(name: 'success') final bool success,
       @JsonKey(name: 'type') final ResultType type,
-      @JsonKey(name: 'data') final dynamic data}) = _$_SimpleResult;
+      @JsonKey(name: 'data') final dynamic data}) = _$SimpleResultImpl;
   const _SimpleResult._() : super._();
 
   factory _SimpleResult.fromJson(Map<String, dynamic> json) =
-      _$_SimpleResult.fromJson;
+      _$SimpleResultImpl.fromJson;
 
   @override
   @JsonKey(name: 'message')
@@ -248,6 +248,6 @@ abstract class _SimpleResult extends SimpleResult {
   dynamic get data;
   @override
   @JsonKey(ignore: true)
-  _$$_SimpleResultCopyWith<_$_SimpleResult> get copyWith =>
+  _$$SimpleResultImplCopyWith<_$SimpleResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../common/index.dart';
@@ -20,7 +20,12 @@ class RankingListRepository extends LoadingModel<ProductModel> {
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
     try {
       final r = await kApi.getTopProducts(
-          param: TopParam(rankType: params.rank, cid: params.cid, pageId: '$_page', pageSize: '20'), requestParamsBuilder: requestParamsBuilder);
+          param: TopParam(
+              rankType: params.rank,
+              cid: params.cid,
+              pageId: '$_page',
+              pageSize: '20'),
+          requestParamsBuilder: requestParamsBuilder);
       _hasmore = r.isNotEmpty;
       _page++;
       addAll(r);

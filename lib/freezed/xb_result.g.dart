@@ -6,7 +6,7 @@ part of 'xb_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_XbData _$$_XbDataFromJson(Map<String, dynamic> json) => _$_XbData(
+_$XbDataImpl _$$XbDataImplFromJson(Map<String, dynamic> json) => _$XbDataImpl(
       list: (json['list'] as List<dynamic>?)
               ?.map((e) => XbItem.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -15,13 +15,14 @@ _$_XbData _$$_XbDataFromJson(Map<String, dynamic> json) => _$_XbData(
       totalNum: json['totalNum'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_XbDataToJson(_$_XbData instance) => <String, dynamic>{
+Map<String, dynamic> _$$XbDataImplToJson(_$XbDataImpl instance) =>
+    <String, dynamic>{
       'list': instance.list,
       'pageId': instance.pageId,
       'totalNum': instance.totalNum,
     };
 
-_$_XbItem _$$_XbItemFromJson(Map<String, dynamic> json) => _$_XbItem(
+_$XbItemImpl _$$XbItemImplFromJson(Map<String, dynamic> json) => _$XbItemImpl(
       content: json['content'] as String? ?? '',
       contentApp: json['contentApp'] as String? ?? '',
       couponUrl: json['couponUrl'] as String? ?? '',
@@ -38,7 +39,8 @@ _$_XbItem _$$_XbItemFromJson(Map<String, dynamic> json) => _$_XbItem(
       updateTime: json['updateTime'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_XbItemToJson(_$_XbItem instance) => <String, dynamic>{
+Map<String, dynamic> _$$XbItemImplToJson(_$XbItemImpl instance) =>
+    <String, dynamic>{
       'content': instance.content,
       'contentApp': instance.contentApp,
       'couponUrl': instance.couponUrl,

@@ -120,11 +120,11 @@ class _$AddFavoritesParamsCopyWithImpl<$Res, $Val extends AddFavoritesParams>
 }
 
 /// @nodoc
-abstract class _$$_AddFavoritesParamsCopyWith<$Res>
+abstract class _$$AddFavoritesParamsImplCopyWith<$Res>
     implements $AddFavoritesParamsCopyWith<$Res> {
-  factory _$$_AddFavoritesParamsCopyWith(_$_AddFavoritesParams value,
-          $Res Function(_$_AddFavoritesParams) then) =
-      __$$_AddFavoritesParamsCopyWithImpl<$Res>;
+  factory _$$AddFavoritesParamsImplCopyWith(_$AddFavoritesParamsImpl value,
+          $Res Function(_$AddFavoritesParamsImpl) then) =
+      __$$AddFavoritesParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -139,11 +139,11 @@ abstract class _$$_AddFavoritesParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AddFavoritesParamsCopyWithImpl<$Res>
-    extends _$AddFavoritesParamsCopyWithImpl<$Res, _$_AddFavoritesParams>
-    implements _$$_AddFavoritesParamsCopyWith<$Res> {
-  __$$_AddFavoritesParamsCopyWithImpl(
-      _$_AddFavoritesParams _value, $Res Function(_$_AddFavoritesParams) _then)
+class __$$AddFavoritesParamsImplCopyWithImpl<$Res>
+    extends _$AddFavoritesParamsCopyWithImpl<$Res, _$AddFavoritesParamsImpl>
+    implements _$$AddFavoritesParamsImplCopyWith<$Res> {
+  __$$AddFavoritesParamsImplCopyWithImpl(_$AddFavoritesParamsImpl _value,
+      $Res Function(_$AddFavoritesParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -158,7 +158,7 @@ class __$$_AddFavoritesParamsCopyWithImpl<$Res>
     Object? arrivalprice = null,
     Object? createtime = null,
   }) {
-    return _then(_$_AddFavoritesParams(
+    return _then(_$AddFavoritesParamsImpl(
       productid: null == productid
           ? _value.productid
           : productid // ignore: cast_nullable_to_non_nullable
@@ -197,8 +197,8 @@ class __$$_AddFavoritesParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AddFavoritesParams implements _AddFavoritesParams {
-  const _$_AddFavoritesParams(
+class _$AddFavoritesParamsImpl implements _AddFavoritesParams {
+  const _$AddFavoritesParamsImpl(
       {@JsonKey(name: 'productId') this.productid = '',
       @JsonKey(name: 'type') this.type = '',
       @JsonKey(name: 'endTime') this.endtime = '',
@@ -208,8 +208,8 @@ class _$_AddFavoritesParams implements _AddFavoritesParams {
       @JsonKey(name: 'arrivalPrice') this.arrivalprice = '',
       @JsonKey(name: 'createTime') this.createtime = ''});
 
-  factory _$_AddFavoritesParams.fromJson(Map<String, dynamic> json) =>
-      _$$_AddFavoritesParamsFromJson(json);
+  factory _$AddFavoritesParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AddFavoritesParamsImplFromJson(json);
 
   @override
   @JsonKey(name: 'productId')
@@ -242,10 +242,10 @@ class _$_AddFavoritesParams implements _AddFavoritesParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddFavoritesParams &&
+            other is _$AddFavoritesParamsImpl &&
             (identical(other.productid, productid) ||
                 other.productid == productid) &&
             (identical(other.type, type) || other.type == type) &&
@@ -268,13 +268,13 @@ class _$_AddFavoritesParams implements _AddFavoritesParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddFavoritesParamsCopyWith<_$_AddFavoritesParams> get copyWith =>
-      __$$_AddFavoritesParamsCopyWithImpl<_$_AddFavoritesParams>(
+  _$$AddFavoritesParamsImplCopyWith<_$AddFavoritesParamsImpl> get copyWith =>
+      __$$AddFavoritesParamsImplCopyWithImpl<_$AddFavoritesParamsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AddFavoritesParamsToJson(
+    return _$$AddFavoritesParamsImplToJson(
       this,
     );
   }
@@ -290,10 +290,10 @@ abstract class _AddFavoritesParams implements AddFavoritesParams {
           @JsonKey(name: 'amount') final String amount,
           @JsonKey(name: 'arrivalPrice') final String arrivalprice,
           @JsonKey(name: 'createTime') final String createtime}) =
-      _$_AddFavoritesParams;
+      _$AddFavoritesParamsImpl;
 
   factory _AddFavoritesParams.fromJson(Map<String, dynamic> json) =
-      _$_AddFavoritesParams.fromJson;
+      _$AddFavoritesParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'productId')
@@ -321,6 +321,6 @@ abstract class _AddFavoritesParams implements AddFavoritesParams {
   String get createtime;
   @override
   @JsonKey(ignore: true)
-  _$$_AddFavoritesParamsCopyWith<_$_AddFavoritesParams> get copyWith =>
+  _$$AddFavoritesParamsImplCopyWith<_$AddFavoritesParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

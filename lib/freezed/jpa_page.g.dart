@@ -6,7 +6,8 @@ part of 'jpa_page.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_JpaPage _$$_JpaPageFromJson(Map<String, dynamic> json) => _$_JpaPage(
+_$JpaPageImpl _$$JpaPageImplFromJson(Map<String, dynamic> json) =>
+    _$JpaPageImpl(
       content: json['content'] == null
           ? const IListConst([])
           : IList<dynamic>.fromJson(json['content'], (value) => value),
@@ -26,7 +27,7 @@ _$_JpaPage _$$_JpaPageFromJson(Map<String, dynamic> json) => _$_JpaPage(
       totalpages: json['totalPages'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_JpaPageToJson(_$_JpaPage instance) =>
+Map<String, dynamic> _$$JpaPageImplToJson(_$JpaPageImpl instance) =>
     <String, dynamic>{
       'content': instance.content.toJson(
         (value) => value,
@@ -43,7 +44,8 @@ Map<String, dynamic> _$$_JpaPageToJson(_$_JpaPage instance) =>
       'totalPages': instance.totalpages,
     };
 
-_$_Pageable _$$_PageableFromJson(Map<String, dynamic> json) => _$_Pageable(
+_$PageableImpl _$$PageableImplFromJson(Map<String, dynamic> json) =>
+    _$PageableImpl(
       offset: json['offset'] as int? ?? 0,
       pageNumber: json['pageNumber'] as int? ?? 0,
       pageSize: json['pageSize'] as int? ?? 0,
@@ -54,7 +56,7 @@ _$_Pageable _$$_PageableFromJson(Map<String, dynamic> json) => _$_Pageable(
       unpaged: json['unpaged'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_PageableToJson(_$_Pageable instance) =>
+Map<String, dynamic> _$$PageableImplToJson(_$PageableImpl instance) =>
     <String, dynamic>{
       'offset': instance.offset,
       'pageNumber': instance.pageNumber,
@@ -64,13 +66,14 @@ Map<String, dynamic> _$$_PageableToJson(_$_Pageable instance) =>
       'unpaged': instance.unpaged,
     };
 
-_$_Sort _$$_SortFromJson(Map<String, dynamic> json) => _$_Sort(
+_$SortImpl _$$SortImplFromJson(Map<String, dynamic> json) => _$SortImpl(
       empty: json['empty'] as bool? ?? false,
       sorted: json['sorted'] as bool? ?? false,
       unsorted: json['unsorted'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_SortToJson(_$_Sort instance) => <String, dynamic>{
+Map<String, dynamic> _$$SortImplToJson(_$SortImpl instance) =>
+    <String, dynamic>{
       'empty': instance.empty,
       'sorted': instance.sorted,
       'unsorted': instance.unsorted,

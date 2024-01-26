@@ -6,8 +6,9 @@ part of 'model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MyFavoritesModel _$$_MyFavoritesModelFromJson(Map<String, dynamic> json) =>
-    _$_MyFavoritesModel(
+_$MyFavoritesModelImpl _$$MyFavoritesModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MyFavoritesModelImpl(
       amount: json['amount'] as String,
       arrivalPrice: json['arrivalPrice'] as String,
       createTime: json['createTime'] as String,
@@ -19,7 +20,8 @@ _$_MyFavoritesModel _$$_MyFavoritesModelFromJson(Map<String, dynamic> json) =>
       type: json['type'] as String,
     );
 
-Map<String, dynamic> _$$_MyFavoritesModelToJson(_$_MyFavoritesModel instance) =>
+Map<String, dynamic> _$$MyFavoritesModelImplToJson(
+        _$MyFavoritesModelImpl instance) =>
     <String, dynamic>{
       'amount': instance.amount,
       'arrivalPrice': instance.arrivalPrice,

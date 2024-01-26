@@ -6,14 +6,14 @@ part of 'get_email_valid_code.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GetEmailValidCodeParams _$$_GetEmailValidCodeParamsFromJson(
+_$GetEmailValidCodeParamsImpl _$$GetEmailValidCodeParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GetEmailValidCodeParams(
+    _$GetEmailValidCodeParamsImpl(
       email: json['email'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_GetEmailValidCodeParamsToJson(
-        _$_GetEmailValidCodeParams instance) =>
+Map<String, dynamic> _$$GetEmailValidCodeParamsImplToJson(
+        _$GetEmailValidCodeParamsImpl instance) =>
     <String, dynamic>{
       'email': instance.email,
     };

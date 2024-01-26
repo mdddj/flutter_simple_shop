@@ -82,11 +82,11 @@ class _$LoginResultModelCopyWithImpl<$Res, $Val extends LoginResultModel>
 }
 
 /// @nodoc
-abstract class _$$_LoginResultModelCopyWith<$Res>
+abstract class _$$LoginResultModelImplCopyWith<$Res>
     implements $LoginResultModelCopyWith<$Res> {
-  factory _$$_LoginResultModelCopyWith(
-          _$_LoginResultModel value, $Res Function(_$_LoginResultModel) then) =
-      __$$_LoginResultModelCopyWithImpl<$Res>;
+  factory _$$LoginResultModelImplCopyWith(_$LoginResultModelImpl value,
+          $Res Function(_$LoginResultModelImpl) then) =
+      __$$LoginResultModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -98,11 +98,11 @@ abstract class _$$_LoginResultModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_LoginResultModelCopyWithImpl<$Res>
-    extends _$LoginResultModelCopyWithImpl<$Res, _$_LoginResultModel>
-    implements _$$_LoginResultModelCopyWith<$Res> {
-  __$$_LoginResultModelCopyWithImpl(
-      _$_LoginResultModel _value, $Res Function(_$_LoginResultModel) _then)
+class __$$LoginResultModelImplCopyWithImpl<$Res>
+    extends _$LoginResultModelCopyWithImpl<$Res, _$LoginResultModelImpl>
+    implements _$$LoginResultModelImplCopyWith<$Res> {
+  __$$LoginResultModelImplCopyWithImpl(_$LoginResultModelImpl _value,
+      $Res Function(_$LoginResultModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -111,7 +111,7 @@ class __$$_LoginResultModelCopyWithImpl<$Res>
     Object? token = null,
     Object? user = null,
   }) {
-    return _then(_$_LoginResultModel(
+    return _then(_$LoginResultModelImpl(
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -126,13 +126,13 @@ class __$$_LoginResultModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_LoginResultModel implements _LoginResultModel {
-  const _$_LoginResultModel(
+class _$LoginResultModelImpl implements _LoginResultModel {
+  const _$LoginResultModelImpl(
       {@JsonKey(name: 'token') required this.token,
       @JsonKey(name: 'user') required this.user});
 
-  factory _$_LoginResultModel.fromJson(Map<String, dynamic> json) =>
-      _$$_LoginResultModelFromJson(json);
+  factory _$LoginResultModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoginResultModelImplFromJson(json);
 
   @override
   @JsonKey(name: 'token')
@@ -147,10 +147,10 @@ class _$_LoginResultModel implements _LoginResultModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoginResultModel &&
+            other is _$LoginResultModelImpl &&
             (identical(other.token, token) || other.token == token) &&
             (identical(other.user, user) || other.user == user));
   }
@@ -162,12 +162,13 @@ class _$_LoginResultModel implements _LoginResultModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoginResultModelCopyWith<_$_LoginResultModel> get copyWith =>
-      __$$_LoginResultModelCopyWithImpl<_$_LoginResultModel>(this, _$identity);
+  _$$LoginResultModelImplCopyWith<_$LoginResultModelImpl> get copyWith =>
+      __$$LoginResultModelImplCopyWithImpl<_$LoginResultModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LoginResultModelToJson(
+    return _$$LoginResultModelImplToJson(
       this,
     );
   }
@@ -175,11 +176,12 @@ class _$_LoginResultModel implements _LoginResultModel {
 
 abstract class _LoginResultModel implements LoginResultModel {
   const factory _LoginResultModel(
-      {@JsonKey(name: 'token') required final String token,
-      @JsonKey(name: 'user') required final MyUser user}) = _$_LoginResultModel;
+          {@JsonKey(name: 'token') required final String token,
+          @JsonKey(name: 'user') required final MyUser user}) =
+      _$LoginResultModelImpl;
 
   factory _LoginResultModel.fromJson(Map<String, dynamic> json) =
-      _$_LoginResultModel.fromJson;
+      _$LoginResultModelImpl.fromJson;
 
   @override
   @JsonKey(name: 'token')
@@ -189,6 +191,6 @@ abstract class _LoginResultModel implements LoginResultModel {
   MyUser get user;
   @override
   @JsonKey(ignore: true)
-  _$$_LoginResultModelCopyWith<_$_LoginResultModel> get copyWith =>
+  _$$LoginResultModelImplCopyWith<_$LoginResultModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

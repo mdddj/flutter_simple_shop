@@ -6,8 +6,8 @@ part of 'product_share.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProductShare _$$_ProductShareFromJson(Map<String, dynamic> json) =>
-    _$_ProductShare(
+_$ProductShareImpl _$$ProductShareImplFromJson(Map<String, dynamic> json) =>
+    _$ProductShareImpl(
       id: json['id'] as int?,
       title: json['title'] as String? ?? '',
       price: json['price'] as String? ?? '',
@@ -17,7 +17,7 @@ _$_ProductShare _$$_ProductShareFromJson(Map<String, dynamic> json) =>
           ProductShareType.tb,
     );
 
-Map<String, dynamic> _$$_ProductShareToJson(_$_ProductShare instance) =>
+Map<String, dynamic> _$$ProductShareImplToJson(_$ProductShareImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

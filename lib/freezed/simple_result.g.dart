@@ -6,8 +6,8 @@ part of 'simple_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SimpleResult _$$_SimpleResultFromJson(Map<String, dynamic> json) =>
-    _$_SimpleResult(
+_$SimpleResultImpl _$$SimpleResultImplFromJson(Map<String, dynamic> json) =>
+    _$SimpleResultImpl(
       message: json['message'] as String? ?? '',
       state: json['state'] as int? ?? 0,
       success: json['success'] as bool? ?? false,
@@ -16,7 +16,7 @@ _$_SimpleResult _$$_SimpleResultFromJson(Map<String, dynamic> json) =>
       data: json['data'],
     );
 
-Map<String, dynamic> _$$_SimpleResultToJson(_$_SimpleResult instance) =>
+Map<String, dynamic> _$$SimpleResultImplToJson(_$SimpleResultImpl instance) =>
     <String, dynamic>{
       'message': instance.message,
       'state': instance.state,

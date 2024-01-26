@@ -6,8 +6,8 @@ part of 'params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AddMeetParams _$$_AddMeetParamsFromJson(Map<String, dynamic> json) =>
-    _$_AddMeetParams(
+_$AddMeetParamsImpl _$$AddMeetParamsImplFromJson(Map<String, dynamic> json) =>
+    _$AddMeetParamsImpl(
       id: json['id'] as int? ?? 0,
       name: json['name'] as String? ?? '',
       age: json['age'] as int? ?? 0,
@@ -20,7 +20,7 @@ _$_AddMeetParams _$$_AddMeetParamsFromJson(Map<String, dynamic> json) =>
       state: json['state'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_AddMeetParamsToJson(_$_AddMeetParams instance) =>
+Map<String, dynamic> _$$AddMeetParamsImplToJson(_$AddMeetParamsImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

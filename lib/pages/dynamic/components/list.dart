@@ -1,6 +1,6 @@
 import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/api/request_params.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
@@ -30,13 +30,17 @@ class PyqList extends ConsumerWidget {
       width: double.infinity,
       alignment: Alignment.center,
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(8)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(color: Colors.grey.shade100, borderRadius: const BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8))),
+            decoration: BoxDecoration(
+                color: Colors.grey.shade100,
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(8), topRight: Radius.circular(8))),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +60,8 @@ class PyqList extends ConsumerWidget {
                 Container(
                   margin: const EdgeInsets.only(left: 5),
                   padding: const EdgeInsets.symmetric(horizontal: 5),
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(4)),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(4)),
                   child: Text(
                     '创建了${NumUtil.getNumByValueDouble(product.couponPrice as double?, 0)}元券',
                     style: const TextStyle(color: Colors.pink),
@@ -74,7 +79,8 @@ class PyqList extends ConsumerWidget {
               return Container(
                 margin: const EdgeInsets.only(bottom: 12, top: 12),
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(8)),
                 child: Row(
                   children: [
                     SizedBox(
@@ -82,7 +88,9 @@ class PyqList extends ConsumerWidget {
                       height: 80,
                       child: GestureDetector(
                         onTap: () {
-                          NavigatorUtil.gotoGoodsDetailPage(context, '${product.id}', newViewPage: true);
+                          NavigatorUtil.gotoGoodsDetailPage(
+                              context, '${product.id}',
+                              newViewPage: true);
                         },
                         child: SimpleImage(
                           url: product.mainPic,
@@ -100,11 +108,14 @@ class PyqList extends ConsumerWidget {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              NavigatorUtil.gotoGoodsDetailPage(context, '${product.id}', newViewPage: true);
+                              NavigatorUtil.gotoGoodsDetailPage(
+                                  context, '${product.id}',
+                                  newViewPage: true);
                             },
                             child: Text(
                               product.dtitle,
-                              style: const TextStyle(color: Colors.grey, fontSize: 14),
+                              style: const TextStyle(
+                                  color: Colors.grey, fontSize: 14),
                             ),
                           ),
                           Row(
@@ -121,13 +132,16 @@ class PyqList extends ConsumerWidget {
                                 text: '复制口令',
                                 color: Colors.white,
                                 onPressed: () async {
-                                  final result = await DdTaokeSdk.instance.getCouponsDetail(
-                                      taobaoGoodsId: product.goodsId,
-                                      requestParamsBuilder: (RequestParams requestParams) {
-                                        return requestParams;
-                                      });
+                                  final result = await DdTaokeSdk.instance
+                                      .getCouponsDetail(
+                                          taobaoGoodsId: product.goodsId,
+                                          requestParamsBuilder:
+                                              (RequestParams requestParams) {
+                                            return requestParams;
+                                          });
                                   if (result != null) {
-                                    utils.copy(result.longTpwd, message: '复制成功,打开淘宝即可领取优惠券');
+                                    utils.copy(result.longTpwd,
+                                        message: '复制成功,打开淘宝即可领取优惠券');
                                   }
                                 },
                                 strokeWidth: 1,
@@ -137,8 +151,10 @@ class PyqList extends ConsumerWidget {
                                 shadowColor: Colors.grey.shade100,
                                 shadowBlur: 10,
                                 highlightColor: Colors.green.shade50,
-                                padding: const EdgeInsets.symmetric(horizontal: 5),
-                                style: const TextStyle(color: Colors.pinkAccent, fontSize: 12),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                style: const TextStyle(
+                                    color: Colors.pinkAccent, fontSize: 12),
                               ),
                             ],
                           )

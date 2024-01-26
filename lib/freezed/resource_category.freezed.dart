@@ -96,11 +96,11 @@ class _$ResourceCategoryCopyWithImpl<$Res, $Val extends ResourceCategory>
 }
 
 /// @nodoc
-abstract class _$$_ResourceCategoryCopyWith<$Res>
+abstract class _$$ResourceCategoryImplCopyWith<$Res>
     implements $ResourceCategoryCopyWith<$Res> {
-  factory _$$_ResourceCategoryCopyWith(
-          _$_ResourceCategory value, $Res Function(_$_ResourceCategory) then) =
-      __$$_ResourceCategoryCopyWithImpl<$Res>;
+  factory _$$ResourceCategoryImplCopyWith(_$ResourceCategoryImpl value,
+          $Res Function(_$ResourceCategoryImpl) then) =
+      __$$ResourceCategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -112,11 +112,11 @@ abstract class _$$_ResourceCategoryCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ResourceCategoryCopyWithImpl<$Res>
-    extends _$ResourceCategoryCopyWithImpl<$Res, _$_ResourceCategory>
-    implements _$$_ResourceCategoryCopyWith<$Res> {
-  __$$_ResourceCategoryCopyWithImpl(
-      _$_ResourceCategory _value, $Res Function(_$_ResourceCategory) _then)
+class __$$ResourceCategoryImplCopyWithImpl<$Res>
+    extends _$ResourceCategoryCopyWithImpl<$Res, _$ResourceCategoryImpl>
+    implements _$$ResourceCategoryImplCopyWith<$Res> {
+  __$$ResourceCategoryImplCopyWithImpl(_$ResourceCategoryImpl _value,
+      $Res Function(_$ResourceCategoryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$_ResourceCategoryCopyWithImpl<$Res>
     Object? name = null,
     Object? type = freezed,
   }) {
-    return _then(_$_ResourceCategory(
+    return _then(_$ResourceCategoryImpl(
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -155,8 +155,8 @@ class __$$_ResourceCategoryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ResourceCategory extends _ResourceCategory {
-  const _$_ResourceCategory(
+class _$ResourceCategoryImpl extends _ResourceCategory {
+  const _$ResourceCategoryImpl(
       {@JsonKey(name: 'description') this.description = '',
       @JsonKey(name: 'id') this.id = 0,
       @JsonKey(name: 'logo') this.logo = '',
@@ -164,8 +164,8 @@ class _$_ResourceCategory extends _ResourceCategory {
       @JsonKey(name: 'type') this.type})
       : super._();
 
-  factory _$_ResourceCategory.fromJson(Map<String, dynamic> json) =>
-      _$$_ResourceCategoryFromJson(json);
+  factory _$ResourceCategoryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResourceCategoryImplFromJson(json);
 
   @override
   @JsonKey(name: 'description')
@@ -189,10 +189,10 @@ class _$_ResourceCategory extends _ResourceCategory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ResourceCategory &&
+            other is _$ResourceCategoryImpl &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.id, id) || other.id == id) &&
@@ -209,12 +209,13 @@ class _$_ResourceCategory extends _ResourceCategory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ResourceCategoryCopyWith<_$_ResourceCategory> get copyWith =>
-      __$$_ResourceCategoryCopyWithImpl<_$_ResourceCategory>(this, _$identity);
+  _$$ResourceCategoryImplCopyWith<_$ResourceCategoryImpl> get copyWith =>
+      __$$ResourceCategoryImplCopyWithImpl<_$ResourceCategoryImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ResourceCategoryToJson(
+    return _$$ResourceCategoryImplToJson(
       this,
     );
   }
@@ -226,11 +227,11 @@ abstract class _ResourceCategory extends ResourceCategory {
       @JsonKey(name: 'id') final int id,
       @JsonKey(name: 'logo') final String logo,
       @JsonKey(name: 'name') final String name,
-      @JsonKey(name: 'type') final dynamic type}) = _$_ResourceCategory;
+      @JsonKey(name: 'type') final dynamic type}) = _$ResourceCategoryImpl;
   const _ResourceCategory._() : super._();
 
   factory _ResourceCategory.fromJson(Map<String, dynamic> json) =
-      _$_ResourceCategory.fromJson;
+      _$ResourceCategoryImpl.fromJson;
 
   @override
   @JsonKey(name: 'description')
@@ -249,7 +250,7 @@ abstract class _ResourceCategory extends ResourceCategory {
   dynamic get type;
   @override
   @JsonKey(ignore: true)
-  _$$_ResourceCategoryCopyWith<_$_ResourceCategory> get copyWith =>
+  _$$ResourceCategoryImplCopyWith<_$ResourceCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -483,10 +484,11 @@ class _$ResourceCopyWithImpl<$Res, $Val extends Resource>
 }
 
 /// @nodoc
-abstract class _$$_ResourceCopyWith<$Res> implements $ResourceCopyWith<$Res> {
-  factory _$$_ResourceCopyWith(
-          _$_Resource value, $Res Function(_$_Resource) then) =
-      __$$_ResourceCopyWithImpl<$Res>;
+abstract class _$$ResourceImplCopyWith<$Res>
+    implements $ResourceCopyWith<$Res> {
+  factory _$$ResourceImplCopyWith(
+          _$ResourceImpl value, $Res Function(_$ResourceImpl) then) =
+      __$$ResourceImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -520,11 +522,11 @@ abstract class _$$_ResourceCopyWith<$Res> implements $ResourceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ResourceCopyWithImpl<$Res>
-    extends _$ResourceCopyWithImpl<$Res, _$_Resource>
-    implements _$$_ResourceCopyWith<$Res> {
-  __$$_ResourceCopyWithImpl(
-      _$_Resource _value, $Res Function(_$_Resource) _then)
+class __$$ResourceImplCopyWithImpl<$Res>
+    extends _$ResourceCopyWithImpl<$Res, _$ResourceImpl>
+    implements _$$ResourceImplCopyWith<$Res> {
+  __$$ResourceImplCopyWithImpl(
+      _$ResourceImpl _value, $Res Function(_$ResourceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -549,7 +551,7 @@ class __$$_ResourceCopyWithImpl<$Res>
     Object? thumbnailPath = null,
     Object? share = freezed,
   }) {
-    return _then(_$_Resource(
+    return _then(_$ResourceImpl(
       authority: null == authority
           ? _value.authority
           : authority // ignore: cast_nullable_to_non_nullable
@@ -628,8 +630,8 @@ class __$$_ResourceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Resource extends _Resource {
-  const _$_Resource(
+class _$ResourceImpl extends _Resource {
+  const _$ResourceImpl(
       {@JsonKey(name: 'authority') this.authority = 0,
       @JsonKey(name: 'clickCount') this.clickcount = 0,
       @JsonKey(name: 'content') this.content = '',
@@ -650,8 +652,8 @@ class _$_Resource extends _Resource {
       @JsonKey(name: 'share') this.share})
       : super._();
 
-  factory _$_Resource.fromJson(Map<String, dynamic> json) =>
-      _$$_ResourceFromJson(json);
+  factory _$ResourceImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ResourceImplFromJson(json);
 
   @override
   @JsonKey(name: 'authority')
@@ -714,10 +716,10 @@ class _$_Resource extends _Resource {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Resource &&
+            other is _$ResourceImpl &&
             (identical(other.authority, authority) ||
                 other.authority == authority) &&
             (identical(other.clickcount, clickcount) ||
@@ -773,12 +775,12 @@ class _$_Resource extends _Resource {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ResourceCopyWith<_$_Resource> get copyWith =>
-      __$$_ResourceCopyWithImpl<_$_Resource>(this, _$identity);
+  _$$ResourceImplCopyWith<_$ResourceImpl> get copyWith =>
+      __$$ResourceImplCopyWithImpl<_$ResourceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ResourceToJson(
+    return _$$ResourceImplToJson(
       this,
     );
   }
@@ -803,10 +805,11 @@ abstract class _Resource extends Resource {
       @JsonKey(name: 'images') final IList<FileInfo> images,
       @JsonKey(name: 'thumbnail') final String thumbnail,
       @JsonKey(name: 'thumbnailPath') final String thumbnailPath,
-      @JsonKey(name: 'share') final ProductShare? share}) = _$_Resource;
+      @JsonKey(name: 'share') final ProductShare? share}) = _$ResourceImpl;
   const _Resource._() : super._();
 
-  factory _Resource.fromJson(Map<String, dynamic> json) = _$_Resource.fromJson;
+  factory _Resource.fromJson(Map<String, dynamic> json) =
+      _$ResourceImpl.fromJson;
 
   @override
   @JsonKey(name: 'authority')
@@ -864,6 +867,6 @@ abstract class _Resource extends Resource {
   ProductShare? get share;
   @override
   @JsonKey(ignore: true)
-  _$$_ResourceCopyWith<_$_Resource> get copyWith =>
+  _$$ResourceImplCopyWith<_$ResourceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

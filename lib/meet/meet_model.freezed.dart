@@ -156,10 +156,11 @@ class _$MeetModelCopyWithImpl<$Res, $Val extends MeetModel>
 }
 
 /// @nodoc
-abstract class _$$_MeetModelCopyWith<$Res> implements $MeetModelCopyWith<$Res> {
-  factory _$$_MeetModelCopyWith(
-          _$_MeetModel value, $Res Function(_$_MeetModel) then) =
-      __$$_MeetModelCopyWithImpl<$Res>;
+abstract class _$$MeetModelImplCopyWith<$Res>
+    implements $MeetModelCopyWith<$Res> {
+  factory _$$MeetModelImplCopyWith(
+          _$MeetModelImpl value, $Res Function(_$MeetModelImpl) then) =
+      __$$MeetModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -182,11 +183,11 @@ abstract class _$$_MeetModelCopyWith<$Res> implements $MeetModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MeetModelCopyWithImpl<$Res>
-    extends _$MeetModelCopyWithImpl<$Res, _$_MeetModel>
-    implements _$$_MeetModelCopyWith<$Res> {
-  __$$_MeetModelCopyWithImpl(
-      _$_MeetModel _value, $Res Function(_$_MeetModel) _then)
+class __$$MeetModelImplCopyWithImpl<$Res>
+    extends _$MeetModelCopyWithImpl<$Res, _$MeetModelImpl>
+    implements _$$MeetModelImplCopyWith<$Res> {
+  __$$MeetModelImplCopyWithImpl(
+      _$MeetModelImpl _value, $Res Function(_$MeetModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -206,7 +207,7 @@ class __$$_MeetModelCopyWithImpl<$Res>
     Object? user = null,
     Object? images = null,
   }) {
-    return _then(_$_MeetModel(
+    return _then(_$MeetModelImpl(
       aboutDiandian: null == aboutDiandian
           ? _value.aboutDiandian
           : aboutDiandian // ignore: cast_nullable_to_non_nullable
@@ -265,8 +266,8 @@ class __$$_MeetModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MeetModel implements _MeetModel {
-  const _$_MeetModel(
+class _$MeetModelImpl implements _MeetModel {
+  const _$MeetModelImpl(
       {this.aboutDiandian = '',
       this.age = 0,
       required this.id,
@@ -281,8 +282,8 @@ class _$_MeetModel implements _MeetModel {
       required this.user,
       this.images = const IListConst([])});
 
-  factory _$_MeetModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MeetModelFromJson(json);
+  factory _$MeetModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MeetModelImplFromJson(json);
 
   @override
   @JsonKey()
@@ -328,10 +329,10 @@ class _$_MeetModel implements _MeetModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MeetModel &&
+            other is _$MeetModelImpl &&
             (identical(other.aboutDiandian, aboutDiandian) ||
                 other.aboutDiandian == aboutDiandian) &&
             (identical(other.age, age) || other.age == age) &&
@@ -375,12 +376,12 @@ class _$_MeetModel implements _MeetModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MeetModelCopyWith<_$_MeetModel> get copyWith =>
-      __$$_MeetModelCopyWithImpl<_$_MeetModel>(this, _$identity);
+  _$$MeetModelImplCopyWith<_$MeetModelImpl> get copyWith =>
+      __$$MeetModelImplCopyWithImpl<_$MeetModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MeetModelToJson(
+    return _$$MeetModelImplToJson(
       this,
     );
   }
@@ -400,10 +401,10 @@ abstract class _MeetModel implements MeetModel {
       final String createDate,
       final int state,
       required final MyUser user,
-      final IList<FileInfo> images}) = _$_MeetModel;
+      final IList<FileInfo> images}) = _$MeetModelImpl;
 
   factory _MeetModel.fromJson(Map<String, dynamic> json) =
-      _$_MeetModel.fromJson;
+      _$MeetModelImpl.fromJson;
 
   @override
   String get aboutDiandian;
@@ -433,6 +434,6 @@ abstract class _MeetModel implements MeetModel {
   IList<FileInfo> get images;
   @override
   @JsonKey(ignore: true)
-  _$$_MeetModelCopyWith<_$_MeetModel> get copyWith =>
+  _$$MeetModelImplCopyWith<_$MeetModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

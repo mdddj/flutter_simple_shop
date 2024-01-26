@@ -6,9 +6,9 @@ part of 'add_favorites_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AddFavoritesParams _$$_AddFavoritesParamsFromJson(
+_$AddFavoritesParamsImpl _$$AddFavoritesParamsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AddFavoritesParams(
+    _$AddFavoritesParamsImpl(
       productid: json['productId'] as String? ?? '',
       type: json['type'] as String? ?? '',
       endtime: json['endTime'] as String? ?? '',
@@ -19,8 +19,8 @@ _$_AddFavoritesParams _$$_AddFavoritesParamsFromJson(
       createtime: json['createTime'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_AddFavoritesParamsToJson(
-        _$_AddFavoritesParams instance) =>
+Map<String, dynamic> _$$AddFavoritesParamsImplToJson(
+        _$AddFavoritesParamsImpl instance) =>
     <String, dynamic>{
       'productId': instance.productid,
       'type': instance.type,

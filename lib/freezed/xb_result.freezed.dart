@@ -78,9 +78,10 @@ class _$XbDataCopyWithImpl<$Res, $Val extends XbData>
 }
 
 /// @nodoc
-abstract class _$$_XbDataCopyWith<$Res> implements $XbDataCopyWith<$Res> {
-  factory _$$_XbDataCopyWith(_$_XbData value, $Res Function(_$_XbData) then) =
-      __$$_XbDataCopyWithImpl<$Res>;
+abstract class _$$XbDataImplCopyWith<$Res> implements $XbDataCopyWith<$Res> {
+  factory _$$XbDataImplCopyWith(
+          _$XbDataImpl value, $Res Function(_$XbDataImpl) then) =
+      __$$XbDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -90,10 +91,11 @@ abstract class _$$_XbDataCopyWith<$Res> implements $XbDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_XbDataCopyWithImpl<$Res>
-    extends _$XbDataCopyWithImpl<$Res, _$_XbData>
-    implements _$$_XbDataCopyWith<$Res> {
-  __$$_XbDataCopyWithImpl(_$_XbData _value, $Res Function(_$_XbData) _then)
+class __$$XbDataImplCopyWithImpl<$Res>
+    extends _$XbDataCopyWithImpl<$Res, _$XbDataImpl>
+    implements _$$XbDataImplCopyWith<$Res> {
+  __$$XbDataImplCopyWithImpl(
+      _$XbDataImpl _value, $Res Function(_$XbDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -103,7 +105,7 @@ class __$$_XbDataCopyWithImpl<$Res>
     Object? pageId = null,
     Object? totalNum = null,
   }) {
-    return _then(_$_XbData(
+    return _then(_$XbDataImpl(
       list: null == list
           ? _value._list
           : list // ignore: cast_nullable_to_non_nullable
@@ -122,16 +124,16 @@ class __$$_XbDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_XbData extends _XbData {
-  const _$_XbData(
+class _$XbDataImpl extends _XbData {
+  const _$XbDataImpl(
       {@JsonKey(name: 'list') final List<XbItem> list = const [],
       @JsonKey(name: 'pageId') this.pageId = 0,
       @JsonKey(name: 'totalNum') this.totalNum = 0})
       : _list = list,
         super._();
 
-  factory _$_XbData.fromJson(Map<String, dynamic> json) =>
-      _$$_XbDataFromJson(json);
+  factory _$XbDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$XbDataImplFromJson(json);
 
   final List<XbItem> _list;
   @override
@@ -155,10 +157,10 @@ class _$_XbData extends _XbData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_XbData &&
+            other is _$XbDataImpl &&
             const DeepCollectionEquality().equals(other._list, _list) &&
             (identical(other.pageId, pageId) || other.pageId == pageId) &&
             (identical(other.totalNum, totalNum) ||
@@ -173,12 +175,12 @@ class _$_XbData extends _XbData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_XbDataCopyWith<_$_XbData> get copyWith =>
-      __$$_XbDataCopyWithImpl<_$_XbData>(this, _$identity);
+  _$$XbDataImplCopyWith<_$XbDataImpl> get copyWith =>
+      __$$XbDataImplCopyWithImpl<_$XbDataImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_XbDataToJson(
+    return _$$XbDataImplToJson(
       this,
     );
   }
@@ -188,10 +190,10 @@ abstract class _XbData extends XbData {
   const factory _XbData(
       {@JsonKey(name: 'list') final List<XbItem> list,
       @JsonKey(name: 'pageId') final int pageId,
-      @JsonKey(name: 'totalNum') final int totalNum}) = _$_XbData;
+      @JsonKey(name: 'totalNum') final int totalNum}) = _$XbDataImpl;
   const _XbData._() : super._();
 
-  factory _XbData.fromJson(Map<String, dynamic> json) = _$_XbData.fromJson;
+  factory _XbData.fromJson(Map<String, dynamic> json) = _$XbDataImpl.fromJson;
 
   @override
   @JsonKey(name: 'list')
@@ -204,7 +206,7 @@ abstract class _XbData extends XbData {
   int get totalNum;
   @override
   @JsonKey(ignore: true)
-  _$$_XbDataCopyWith<_$_XbData> get copyWith =>
+  _$$XbDataImplCopyWith<_$XbDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -360,9 +362,10 @@ class _$XbItemCopyWithImpl<$Res, $Val extends XbItem>
 }
 
 /// @nodoc
-abstract class _$$_XbItemCopyWith<$Res> implements $XbItemCopyWith<$Res> {
-  factory _$$_XbItemCopyWith(_$_XbItem value, $Res Function(_$_XbItem) then) =
-      __$$_XbItemCopyWithImpl<$Res>;
+abstract class _$$XbItemImplCopyWith<$Res> implements $XbItemCopyWith<$Res> {
+  factory _$$XbItemImplCopyWith(
+          _$XbItemImpl value, $Res Function(_$XbItemImpl) then) =
+      __$$XbItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -383,10 +386,11 @@ abstract class _$$_XbItemCopyWith<$Res> implements $XbItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_XbItemCopyWithImpl<$Res>
-    extends _$XbItemCopyWithImpl<$Res, _$_XbItem>
-    implements _$$_XbItemCopyWith<$Res> {
-  __$$_XbItemCopyWithImpl(_$_XbItem _value, $Res Function(_$_XbItem) _then)
+class __$$XbItemImplCopyWithImpl<$Res>
+    extends _$XbItemCopyWithImpl<$Res, _$XbItemImpl>
+    implements _$$XbItemImplCopyWith<$Res> {
+  __$$XbItemImplCopyWithImpl(
+      _$XbItemImpl _value, $Res Function(_$XbItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -407,7 +411,7 @@ class __$$_XbItemCopyWithImpl<$Res>
     Object? title = null,
     Object? updateTime = null,
   }) {
-    return _then(_$_XbItem(
+    return _then(_$XbItemImpl(
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -470,8 +474,8 @@ class __$$_XbItemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_XbItem extends _XbItem {
-  const _$_XbItem(
+class _$XbItemImpl extends _XbItem {
+  const _$XbItemImpl(
       {@JsonKey(name: 'content') this.content = '',
       @JsonKey(name: 'contentApp') this.contentApp = '',
       @JsonKey(name: 'couponUrl') this.couponUrl = '',
@@ -488,8 +492,8 @@ class _$_XbItem extends _XbItem {
       @JsonKey(name: 'updateTime') this.updateTime = ''})
       : super._();
 
-  factory _$_XbItem.fromJson(Map<String, dynamic> json) =>
-      _$$_XbItemFromJson(json);
+  factory _$XbItemImpl.fromJson(Map<String, dynamic> json) =>
+      _$$XbItemImplFromJson(json);
 
   @override
   @JsonKey(name: 'content')
@@ -540,10 +544,10 @@ class _$_XbItem extends _XbItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_XbItem &&
+            other is _$XbItemImpl &&
             (identical(other.content, content) || other.content == content) &&
             (identical(other.contentApp, contentApp) ||
                 other.contentApp == contentApp) &&
@@ -587,12 +591,12 @@ class _$_XbItem extends _XbItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_XbItemCopyWith<_$_XbItem> get copyWith =>
-      __$$_XbItemCopyWithImpl<_$_XbItem>(this, _$identity);
+  _$$XbItemImplCopyWith<_$XbItemImpl> get copyWith =>
+      __$$XbItemImplCopyWithImpl<_$XbItemImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_XbItemToJson(
+    return _$$XbItemImplToJson(
       this,
     );
   }
@@ -613,10 +617,10 @@ abstract class _XbItem extends XbItem {
       @JsonKey(name: 'sourceType') final String sourceType,
       @JsonKey(name: 'tag') final String tag,
       @JsonKey(name: 'title') final String title,
-      @JsonKey(name: 'updateTime') final String updateTime}) = _$_XbItem;
+      @JsonKey(name: 'updateTime') final String updateTime}) = _$XbItemImpl;
   const _XbItem._() : super._();
 
-  factory _XbItem.fromJson(Map<String, dynamic> json) = _$_XbItem.fromJson;
+  factory _XbItem.fromJson(Map<String, dynamic> json) = _$XbItemImpl.fromJson;
 
   @override
   @JsonKey(name: 'content')
@@ -662,6 +666,6 @@ abstract class _XbItem extends XbItem {
   String get updateTime;
   @override
   @JsonKey(ignore: true)
-  _$$_XbItemCopyWith<_$_XbItem> get copyWith =>
+  _$$XbItemImplCopyWith<_$XbItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

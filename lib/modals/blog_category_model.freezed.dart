@@ -86,22 +86,22 @@ class _$BlogCategoryCopyWithImpl<$Res, $Val extends BlogCategory>
 }
 
 /// @nodoc
-abstract class _$$_BlogCategoryCopyWith<$Res>
+abstract class _$$BlogCategoryImplCopyWith<$Res>
     implements $BlogCategoryCopyWith<$Res> {
-  factory _$$_BlogCategoryCopyWith(
-          _$_BlogCategory value, $Res Function(_$_BlogCategory) then) =
-      __$$_BlogCategoryCopyWithImpl<$Res>;
+  factory _$$BlogCategoryImplCopyWith(
+          _$BlogCategoryImpl value, $Res Function(_$BlogCategoryImpl) then) =
+      __$$BlogCategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String name, String logo, String intro, int createTime});
 }
 
 /// @nodoc
-class __$$_BlogCategoryCopyWithImpl<$Res>
-    extends _$BlogCategoryCopyWithImpl<$Res, _$_BlogCategory>
-    implements _$$_BlogCategoryCopyWith<$Res> {
-  __$$_BlogCategoryCopyWithImpl(
-      _$_BlogCategory _value, $Res Function(_$_BlogCategory) _then)
+class __$$BlogCategoryImplCopyWithImpl<$Res>
+    extends _$BlogCategoryCopyWithImpl<$Res, _$BlogCategoryImpl>
+    implements _$$BlogCategoryImplCopyWith<$Res> {
+  __$$BlogCategoryImplCopyWithImpl(
+      _$BlogCategoryImpl _value, $Res Function(_$BlogCategoryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -113,7 +113,7 @@ class __$$_BlogCategoryCopyWithImpl<$Res>
     Object? intro = null,
     Object? createTime = null,
   }) {
-    return _then(_$_BlogCategory(
+    return _then(_$BlogCategoryImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -140,8 +140,8 @@ class __$$_BlogCategoryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BlogCategory extends _BlogCategory {
-  const _$_BlogCategory(
+class _$BlogCategoryImpl extends _BlogCategory {
+  const _$BlogCategoryImpl(
       {required this.id,
       required this.name,
       required this.logo,
@@ -149,8 +149,8 @@ class _$_BlogCategory extends _BlogCategory {
       required this.createTime})
       : super._();
 
-  factory _$_BlogCategory.fromJson(Map<String, dynamic> json) =>
-      _$$_BlogCategoryFromJson(json);
+  factory _$BlogCategoryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BlogCategoryImplFromJson(json);
 
   @override
   final int id;
@@ -169,10 +169,10 @@ class _$_BlogCategory extends _BlogCategory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_BlogCategory &&
+            other is _$BlogCategoryImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.logo, logo) || other.logo == logo) &&
@@ -189,12 +189,12 @@ class _$_BlogCategory extends _BlogCategory {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BlogCategoryCopyWith<_$_BlogCategory> get copyWith =>
-      __$$_BlogCategoryCopyWithImpl<_$_BlogCategory>(this, _$identity);
+  _$$BlogCategoryImplCopyWith<_$BlogCategoryImpl> get copyWith =>
+      __$$BlogCategoryImplCopyWithImpl<_$BlogCategoryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BlogCategoryToJson(
+    return _$$BlogCategoryImplToJson(
       this,
     );
   }
@@ -206,11 +206,11 @@ abstract class _BlogCategory extends BlogCategory {
       required final String name,
       required final String logo,
       required final String intro,
-      required final int createTime}) = _$_BlogCategory;
+      required final int createTime}) = _$BlogCategoryImpl;
   const _BlogCategory._() : super._();
 
   factory _BlogCategory.fromJson(Map<String, dynamic> json) =
-      _$_BlogCategory.fromJson;
+      _$BlogCategoryImpl.fromJson;
 
   @override
   int get id;
@@ -224,6 +224,6 @@ abstract class _BlogCategory extends BlogCategory {
   int get createTime;
   @override
   @JsonKey(ignore: true)
-  _$$_BlogCategoryCopyWith<_$_BlogCategory> get copyWith =>
+  _$$BlogCategoryImplCopyWith<_$BlogCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -87,10 +87,11 @@ class _$EnvConfigCopyWithImpl<$Res, $Val extends EnvConfig>
 }
 
 /// @nodoc
-abstract class _$$_EnvConfigCopyWith<$Res> implements $EnvConfigCopyWith<$Res> {
-  factory _$$_EnvConfigCopyWith(
-          _$_EnvConfig value, $Res Function(_$_EnvConfig) then) =
-      __$$_EnvConfigCopyWithImpl<$Res>;
+abstract class _$$EnvConfigImplCopyWith<$Res>
+    implements $EnvConfigCopyWith<$Res> {
+  factory _$$EnvConfigImplCopyWith(
+          _$EnvConfigImpl value, $Res Function(_$EnvConfigImpl) then) =
+      __$$EnvConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -101,11 +102,11 @@ abstract class _$$_EnvConfigCopyWith<$Res> implements $EnvConfigCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_EnvConfigCopyWithImpl<$Res>
-    extends _$EnvConfigCopyWithImpl<$Res, _$_EnvConfig>
-    implements _$$_EnvConfigCopyWith<$Res> {
-  __$$_EnvConfigCopyWithImpl(
-      _$_EnvConfig _value, $Res Function(_$_EnvConfig) _then)
+class __$$EnvConfigImplCopyWithImpl<$Res>
+    extends _$EnvConfigCopyWithImpl<$Res, _$EnvConfigImpl>
+    implements _$$EnvConfigImplCopyWith<$Res> {
+  __$$EnvConfigImplCopyWithImpl(
+      _$EnvConfigImpl _value, $Res Function(_$EnvConfigImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +117,7 @@ class __$$_EnvConfigCopyWithImpl<$Res>
     Object? debugMode = null,
     Object? fontFamily = null,
   }) {
-    return _then(_$_EnvConfig(
+    return _then(_$EnvConfigImpl(
       port: null == port
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
@@ -139,16 +140,16 @@ class __$$_EnvConfigCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EnvConfig extends _EnvConfig {
-  const _$_EnvConfig(
+class _$EnvConfigImpl extends _EnvConfig {
+  const _$EnvConfigImpl(
       {@JsonKey(name: 'port') this.port = '',
       @JsonKey(name: 'host') this.host = '',
       @JsonKey(name: 'debugMode') this.debugMode = false,
       @JsonKey(name: 'fontFamily') this.fontFamily = ''})
       : super._();
 
-  factory _$_EnvConfig.fromJson(Map<String, dynamic> json) =>
-      _$$_EnvConfigFromJson(json);
+  factory _$EnvConfigImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EnvConfigImplFromJson(json);
 
   @override
   @JsonKey(name: 'port')
@@ -169,10 +170,10 @@ class _$_EnvConfig extends _EnvConfig {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EnvConfig &&
+            other is _$EnvConfigImpl &&
             (identical(other.port, port) || other.port == port) &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.debugMode, debugMode) ||
@@ -189,12 +190,12 @@ class _$_EnvConfig extends _EnvConfig {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EnvConfigCopyWith<_$_EnvConfig> get copyWith =>
-      __$$_EnvConfigCopyWithImpl<_$_EnvConfig>(this, _$identity);
+  _$$EnvConfigImplCopyWith<_$EnvConfigImpl> get copyWith =>
+      __$$EnvConfigImplCopyWithImpl<_$EnvConfigImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EnvConfigToJson(
+    return _$$EnvConfigImplToJson(
       this,
     );
   }
@@ -205,11 +206,11 @@ abstract class _EnvConfig extends EnvConfig {
       {@JsonKey(name: 'port') final String port,
       @JsonKey(name: 'host') final String host,
       @JsonKey(name: 'debugMode') final bool debugMode,
-      @JsonKey(name: 'fontFamily') final String fontFamily}) = _$_EnvConfig;
+      @JsonKey(name: 'fontFamily') final String fontFamily}) = _$EnvConfigImpl;
   const _EnvConfig._() : super._();
 
   factory _EnvConfig.fromJson(Map<String, dynamic> json) =
-      _$_EnvConfig.fromJson;
+      _$EnvConfigImpl.fromJson;
 
   @override
   @JsonKey(name: 'port')
@@ -225,6 +226,6 @@ abstract class _EnvConfig extends EnvConfig {
   String get fontFamily;
   @override
   @JsonKey(ignore: true)
-  _$$_EnvConfigCopyWith<_$_EnvConfig> get copyWith =>
+  _$$EnvConfigImplCopyWith<_$EnvConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

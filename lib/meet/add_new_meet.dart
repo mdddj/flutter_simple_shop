@@ -1,5 +1,4 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/picture_selection_item.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart' hide View;
 import 'package:flutter/material.dart' hide View;
@@ -47,11 +46,13 @@ class _AddNewMeetState extends ConsumerState<AddNewMeet> {
 
     var files = <MultipartFile>[];
     await Future.forEach(fileContrller.getFiles, (element) async {
-      final mf = await MultipartFile.fromFile(element.localFilePath?.path ?? '');
+      final mf =
+          await MultipartFile.fromFile(element.localFilePath?.path ?? '');
       files.add(mf);
     });
     api.formData = FormData.fromMap({"files": files}..addAll(params.toJson()));
-    final response = await api.request(const R(contentType: 'multipart/form-data'));
+    final response =
+        await api.request(const R(contentType: 'multipart/form-data'));
     response.handle();
   }
 
@@ -64,10 +65,15 @@ class _AddNewMeetState extends ConsumerState<AddNewMeet> {
           : KeyboardActions(
               config: _buildConfig,
               child: CupertinoListSection(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: context.cardColor, border: Border.all(width: 1, color: context.primaryColor)),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: context.cardColor,
+                    border: Border.all(width: 1, color: context.primaryColor)),
                 margin: const EdgeInsets.all(12),
                 header: const Text('填写基本信息'),
-                footer: CupertinoButton.filled(onPressed: submitData, child: const Text('提交申请')).center,
+                footer: CupertinoButton.filled(
+                        onPressed: submitData, child: const Text('提交申请'))
+                    .center,
                 children: [
                   MyTextField(
                     placeholder: '怎么称呼您',
@@ -161,8 +167,11 @@ class PhotoUploadWidget extends View {
       child: CupertinoListTile(
         backgroundColor: context.colorScheme.surfaceVariant,
         leading: const Icon(CupertinoIcons.photo),
-        title: Text('添加自拍或者生活照', style: context.textTheme.titleMedium?.copyWith(color: context.primaryColor)),
-        subtitle: PictureSelection(multipleChoice: true, controller: fileController),
+        title: Text('添加自拍或者生活照',
+            style: context.textTheme.titleMedium
+                ?.copyWith(color: context.primaryColor)),
+        subtitle:
+            PictureSelection(multipleChoice: true, controller: fileController),
       ),
     );
   }
@@ -176,7 +185,13 @@ class MyTextField extends StatelessWidget {
   final Widget? icon;
   final ValueChanged<String>? onChange;
 
-  const MyTextField({super.key, this.placeholder, this.controller, this.focusNode, this.icon, this.onChange});
+  const MyTextField(
+      {super.key,
+      this.placeholder,
+      this.controller,
+      this.focusNode,
+      this.icon,
+      this.onChange});
 
   @override
   Widget build(BuildContext context) {
@@ -188,7 +203,8 @@ class MyTextField extends StatelessWidget {
         maxLines: 5,
         minLines: 1,
         placeholder: placeholder,
-        decoration: const BoxDecoration(border: Border.fromBorderSide(BorderSide.none)),
+        decoration:
+            const BoxDecoration(border: Border.fromBorderSide(BorderSide.none)),
         onChanged: onChange,
       ),
     );

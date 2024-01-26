@@ -1,10 +1,8 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/my_image.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'my_user.freezed.dart';
-
 part 'my_user.g.dart';
 
 const anonymousUser = MyUser(id: 0, nickName: "匿名用户");
@@ -40,7 +38,7 @@ extension UserEx on MyUser {
   }
 
   String getIntro() {
-    if(intro.isEmpty){
+    if (intro.isEmpty) {
       return '点击编辑你的自我介绍';
     }
     return intro;
@@ -70,7 +68,7 @@ class MyUser with _$MyUser {
       @Default('') String intro,
       @Default(0) num openAiTokens,
       @Default(false) bool openAiFlag,
-        @Default('') String relationId,
+      @Default('') String relationId,
       Enterprise? enterprise}) = _MyUser;
 
   factory MyUser.fromJson(Map<String, Object?> json) => _$MyUserFromJson(json);

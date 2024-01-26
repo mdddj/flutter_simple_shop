@@ -2,7 +2,6 @@ library provider;
 
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
-import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory;
 import 'package:dd_models/models/brand.dart';
 import 'package:dd_models/models/carousel.dart';

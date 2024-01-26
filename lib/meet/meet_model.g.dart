@@ -6,7 +6,8 @@ part of 'meet_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_MeetModel _$$_MeetModelFromJson(Map<String, dynamic> json) => _$_MeetModel(
+_$MeetModelImpl _$$MeetModelImplFromJson(Map<String, dynamic> json) =>
+    _$MeetModelImpl(
       aboutDiandian: json['aboutDiandian'] as String? ?? '',
       age: json['age'] as int? ?? 0,
       id: json['id'] as int,
@@ -25,7 +26,7 @@ _$_MeetModel _$$_MeetModelFromJson(Map<String, dynamic> json) => _$_MeetModel(
               (value) => FileInfo.fromJson(value as Map<String, dynamic>)),
     );
 
-Map<String, dynamic> _$$_MeetModelToJson(_$_MeetModel instance) =>
+Map<String, dynamic> _$$MeetModelImplToJson(_$MeetModelImpl instance) =>
     <String, dynamic>{
       'aboutDiandian': instance.aboutDiandian,
       'age': instance.age,

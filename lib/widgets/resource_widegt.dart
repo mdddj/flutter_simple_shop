@@ -1,5 +1,4 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/my_image.dart';
 import 'package:flutter/material.dart';
 
 import '../freezed/app_action_menu.dart';
@@ -8,23 +7,23 @@ import '../freezed/resource_category.dart';
 import '../provider/riverpod/model/my_user.dart';
 import '../resource/view.dart';
 
-
-
-
 class ResourceWidget extends StatelessWidget {
   final Resource resource;
   final AppActionMenu? menu;
   final DynPageParams? params;
 
-  const ResourceWidget({super.key, required this.resource, this.menu, this.params});
+  const ResourceWidget(
+      {super.key, required this.resource, this.menu, this.params});
 
-  ResourceWidgetCardStyle get cardStyle => params?.style ?? ResourceWidgetCardStyle.waterfall;//样式
+  ResourceWidgetCardStyle get cardStyle =>
+      params?.style ?? ResourceWidgetCardStyle.waterfall; //样式
   bool get isCard => cardStyle == ResourceWidgetCardStyle.card;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return GestureDetector(
-        onTap: (){
+        onTap: () {
           context.navToWidget(to: ResourceDetailPage(resourceId: resource.id));
         },
         onLongPress: () {
@@ -33,7 +32,9 @@ class ResourceWidget extends StatelessWidget {
           }
         },
         child: Card(
-          shape: isCard ? const RoundedRectangleBorder(borderRadius: BorderRadius.zero) : null,
+          shape: isCard
+              ? const RoundedRectangleBorder(borderRadius: BorderRadius.zero)
+              : null,
           margin: isCard ? EdgeInsets.zero : null,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,14 +140,18 @@ class _Images extends StatelessWidget {
                         fit: BoxFit.cover,
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(8))))),
-        Positioned(bottom: 2,right: 1,child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 4,vertical: 1),
-          decoration: BoxDecoration(
-            color: context.cardColor.withOpacity(.27),
-            borderRadius: BorderRadius.circular(12)
+        Positioned(
+          bottom: 2,
+          right: 1,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+            decoration: BoxDecoration(
+                color: context.cardColor.withOpacity(.27),
+                borderRadius: BorderRadius.circular(12)),
+            child: Text('${resource.imageSize}张',
+                style: context.textTheme.labelSmall),
           ),
-          child: Text('${resource.imageSize}张',style: context.textTheme.labelSmall),
-        ),)
+        )
       ],
     );
   }

@@ -159,10 +159,11 @@ class _$FileInfoCopyWithImpl<$Res, $Val extends FileInfo>
 }
 
 /// @nodoc
-abstract class _$$_FileInfoCopyWith<$Res> implements $FileInfoCopyWith<$Res> {
-  factory _$$_FileInfoCopyWith(
-          _$_FileInfo value, $Res Function(_$_FileInfo) then) =
-      __$$_FileInfoCopyWithImpl<$Res>;
+abstract class _$$FileInfoImplCopyWith<$Res>
+    implements $FileInfoCopyWith<$Res> {
+  factory _$$FileInfoImplCopyWith(
+          _$FileInfoImpl value, $Res Function(_$FileInfoImpl) then) =
+      __$$FileInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -182,11 +183,11 @@ abstract class _$$_FileInfoCopyWith<$Res> implements $FileInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_FileInfoCopyWithImpl<$Res>
-    extends _$FileInfoCopyWithImpl<$Res, _$_FileInfo>
-    implements _$$_FileInfoCopyWith<$Res> {
-  __$$_FileInfoCopyWithImpl(
-      _$_FileInfo _value, $Res Function(_$_FileInfo) _then)
+class __$$FileInfoImplCopyWithImpl<$Res>
+    extends _$FileInfoCopyWithImpl<$Res, _$FileInfoImpl>
+    implements _$$FileInfoImplCopyWith<$Res> {
+  __$$FileInfoImplCopyWithImpl(
+      _$FileInfoImpl _value, $Res Function(_$FileInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -206,7 +207,7 @@ class __$$_FileInfoCopyWithImpl<$Res>
     Object? url = null,
     Object? width = null,
   }) {
-    return _then(_$_FileInfo(
+    return _then(_$FileInfoImpl(
       absolutePath: null == absolutePath
           ? _value.absolutePath
           : absolutePath // ignore: cast_nullable_to_non_nullable
@@ -265,8 +266,8 @@ class __$$_FileInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FileInfo extends _FileInfo {
-  const _$_FileInfo(
+class _$FileInfoImpl extends _FileInfo {
+  const _$FileInfoImpl(
       {@JsonKey(name: 'absolutePath') this.absolutePath = '',
       @JsonKey(name: 'collect') this.collect = false,
       @JsonKey(name: 'createDate') this.createDate = '',
@@ -282,8 +283,8 @@ class _$_FileInfo extends _FileInfo {
       @JsonKey(name: 'width') this.width = 0})
       : super._();
 
-  factory _$_FileInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_FileInfoFromJson(json);
+  factory _$FileInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FileInfoImplFromJson(json);
 
   @override
   @JsonKey(name: 'absolutePath')
@@ -331,10 +332,10 @@ class _$_FileInfo extends _FileInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FileInfo &&
+            other is _$FileInfoImpl &&
             (identical(other.absolutePath, absolutePath) ||
                 other.absolutePath == absolutePath) &&
             (identical(other.collect, collect) || other.collect == collect) &&
@@ -378,12 +379,12 @@ class _$_FileInfo extends _FileInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FileInfoCopyWith<_$_FileInfo> get copyWith =>
-      __$$_FileInfoCopyWithImpl<_$_FileInfo>(this, _$identity);
+  _$$FileInfoImplCopyWith<_$FileInfoImpl> get copyWith =>
+      __$$FileInfoImplCopyWithImpl<_$FileInfoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FileInfoToJson(
+    return _$$FileInfoImplToJson(
       this,
     );
   }
@@ -403,10 +404,11 @@ abstract class _FileInfo extends FileInfo {
       @JsonKey(name: 'tagColor') final String tagColor,
       @JsonKey(name: 'updateDate') final String updateDate,
       @JsonKey(name: 'url') final String url,
-      @JsonKey(name: 'width') final int width}) = _$_FileInfo;
+      @JsonKey(name: 'width') final int width}) = _$FileInfoImpl;
   const _FileInfo._() : super._();
 
-  factory _FileInfo.fromJson(Map<String, dynamic> json) = _$_FileInfo.fromJson;
+  factory _FileInfo.fromJson(Map<String, dynamic> json) =
+      _$FileInfoImpl.fromJson;
 
   @override
   @JsonKey(name: 'absolutePath')
@@ -449,6 +451,6 @@ abstract class _FileInfo extends FileInfo {
   int get width;
   @override
   @JsonKey(ignore: true)
-  _$$_FileInfoCopyWith<_$_FileInfo> get copyWith =>
+  _$$FileInfoImplCopyWith<_$FileInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

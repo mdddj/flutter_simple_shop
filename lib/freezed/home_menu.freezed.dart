@@ -106,10 +106,11 @@ class _$HomeMenuCopyWithImpl<$Res, $Val extends HomeMenu>
 }
 
 /// @nodoc
-abstract class _$$_HomeMenuCopyWith<$Res> implements $HomeMenuCopyWith<$Res> {
-  factory _$$_HomeMenuCopyWith(
-          _$_HomeMenu value, $Res Function(_$_HomeMenu) then) =
-      __$$_HomeMenuCopyWithImpl<$Res>;
+abstract class _$$HomeMenuImplCopyWith<$Res>
+    implements $HomeMenuCopyWith<$Res> {
+  factory _$$HomeMenuImplCopyWith(
+          _$HomeMenuImpl value, $Res Function(_$HomeMenuImpl) then) =
+      __$$HomeMenuImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -124,11 +125,11 @@ abstract class _$$_HomeMenuCopyWith<$Res> implements $HomeMenuCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_HomeMenuCopyWithImpl<$Res>
-    extends _$HomeMenuCopyWithImpl<$Res, _$_HomeMenu>
-    implements _$$_HomeMenuCopyWith<$Res> {
-  __$$_HomeMenuCopyWithImpl(
-      _$_HomeMenu _value, $Res Function(_$_HomeMenu) _then)
+class __$$HomeMenuImplCopyWithImpl<$Res>
+    extends _$HomeMenuCopyWithImpl<$Res, _$HomeMenuImpl>
+    implements _$$HomeMenuImplCopyWith<$Res> {
+  __$$HomeMenuImplCopyWithImpl(
+      _$HomeMenuImpl _value, $Res Function(_$HomeMenuImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -143,7 +144,7 @@ class __$$_HomeMenuCopyWithImpl<$Res>
     Object? onTap = freezed,
     Object? onLongTap = freezed,
   }) {
-    return _then(_$_HomeMenu(
+    return _then(_$HomeMenuImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -179,8 +180,8 @@ class __$$_HomeMenuCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_HomeMenu extends _HomeMenu {
-  const _$_HomeMenu(
+class _$HomeMenuImpl extends _HomeMenu {
+  const _$HomeMenuImpl(
       {@JsonKey(name: 'title') this.title = '',
       @JsonKey(name: 'svgPath') this.svgpath = '',
       this.icon,
@@ -217,10 +218,10 @@ class _$_HomeMenu extends _HomeMenu {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomeMenu &&
+            other is _$HomeMenuImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.svgpath, svgpath) || other.svgpath == svgpath) &&
             (identical(other.icon, icon) || other.icon == icon) &&
@@ -240,8 +241,8 @@ class _$_HomeMenu extends _HomeMenu {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomeMenuCopyWith<_$_HomeMenu> get copyWith =>
-      __$$_HomeMenuCopyWithImpl<_$_HomeMenu>(this, _$identity);
+  _$$HomeMenuImplCopyWith<_$HomeMenuImpl> get copyWith =>
+      __$$HomeMenuImplCopyWithImpl<_$HomeMenuImpl>(this, _$identity);
 }
 
 abstract class _HomeMenu extends HomeMenu {
@@ -253,7 +254,7 @@ abstract class _HomeMenu extends HomeMenu {
       final String? routerPath,
       final Object? extra,
       final VoidCallback? onTap,
-      final VoidCallback? onLongTap}) = _$_HomeMenu;
+      final VoidCallback? onLongTap}) = _$HomeMenuImpl;
   const _HomeMenu._() : super._();
 
   @override
@@ -277,6 +278,6 @@ abstract class _HomeMenu extends HomeMenu {
   VoidCallback? get onLongTap;
   @override
   @JsonKey(ignore: true)
-  _$$_HomeMenuCopyWith<_$_HomeMenu> get copyWith =>
+  _$$HomeMenuImplCopyWith<_$HomeMenuImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -128,11 +128,11 @@ class _$MyFavoritesModelCopyWithImpl<$Res, $Val extends MyFavoritesModel>
 }
 
 /// @nodoc
-abstract class _$$_MyFavoritesModelCopyWith<$Res>
+abstract class _$$MyFavoritesModelImplCopyWith<$Res>
     implements $MyFavoritesModelCopyWith<$Res> {
-  factory _$$_MyFavoritesModelCopyWith(
-          _$_MyFavoritesModel value, $Res Function(_$_MyFavoritesModel) then) =
-      __$$_MyFavoritesModelCopyWithImpl<$Res>;
+  factory _$$MyFavoritesModelImplCopyWith(_$MyFavoritesModelImpl value,
+          $Res Function(_$MyFavoritesModelImpl) then) =
+      __$$MyFavoritesModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -148,11 +148,11 @@ abstract class _$$_MyFavoritesModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MyFavoritesModelCopyWithImpl<$Res>
-    extends _$MyFavoritesModelCopyWithImpl<$Res, _$_MyFavoritesModel>
-    implements _$$_MyFavoritesModelCopyWith<$Res> {
-  __$$_MyFavoritesModelCopyWithImpl(
-      _$_MyFavoritesModel _value, $Res Function(_$_MyFavoritesModel) _then)
+class __$$MyFavoritesModelImplCopyWithImpl<$Res>
+    extends _$MyFavoritesModelCopyWithImpl<$Res, _$MyFavoritesModelImpl>
+    implements _$$MyFavoritesModelImplCopyWith<$Res> {
+  __$$MyFavoritesModelImplCopyWithImpl(_$MyFavoritesModelImpl _value,
+      $Res Function(_$MyFavoritesModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -168,7 +168,7 @@ class __$$_MyFavoritesModelCopyWithImpl<$Res>
     Object? title = null,
     Object? type = null,
   }) {
-    return _then(_$_MyFavoritesModel(
+    return _then(_$MyFavoritesModelImpl(
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -211,8 +211,8 @@ class __$$_MyFavoritesModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_MyFavoritesModel implements _MyFavoritesModel {
-  _$_MyFavoritesModel(
+class _$MyFavoritesModelImpl implements _MyFavoritesModel {
+  _$MyFavoritesModelImpl(
       {required this.amount,
       required this.arrivalPrice,
       required this.createTime,
@@ -223,8 +223,8 @@ class _$_MyFavoritesModel implements _MyFavoritesModel {
       required this.title,
       required this.type});
 
-  factory _$_MyFavoritesModel.fromJson(Map<String, dynamic> json) =>
-      _$$_MyFavoritesModelFromJson(json);
+  factory _$MyFavoritesModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MyFavoritesModelImplFromJson(json);
 
   @override
   String amount;
@@ -253,12 +253,13 @@ class _$_MyFavoritesModel implements _MyFavoritesModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MyFavoritesModelCopyWith<_$_MyFavoritesModel> get copyWith =>
-      __$$_MyFavoritesModelCopyWithImpl<_$_MyFavoritesModel>(this, _$identity);
+  _$$MyFavoritesModelImplCopyWith<_$MyFavoritesModelImpl> get copyWith =>
+      __$$MyFavoritesModelImplCopyWithImpl<_$MyFavoritesModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MyFavoritesModelToJson(
+    return _$$MyFavoritesModelImplToJson(
       this,
     );
   }
@@ -274,10 +275,10 @@ abstract class _MyFavoritesModel implements MyFavoritesModel {
       required String imageUrl,
       required String productId,
       required String title,
-      required String type}) = _$_MyFavoritesModel;
+      required String type}) = _$MyFavoritesModelImpl;
 
   factory _MyFavoritesModel.fromJson(Map<String, dynamic> json) =
-      _$_MyFavoritesModel.fromJson;
+      _$MyFavoritesModelImpl.fromJson;
 
   @override
   String get amount;
@@ -308,6 +309,6 @@ abstract class _MyFavoritesModel implements MyFavoritesModel {
   set type(String value);
   @override
   @JsonKey(ignore: true)
-  _$$_MyFavoritesModelCopyWith<_$_MyFavoritesModel> get copyWith =>
+  _$$MyFavoritesModelImplCopyWith<_$MyFavoritesModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

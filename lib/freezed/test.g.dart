@@ -6,7 +6,7 @@ part of 'test.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Root _$$_RootFromJson(Map<String, dynamic> json) => _$_Root(
+_$RootImpl _$$RootImplFromJson(Map<String, dynamic> json) => _$RootImpl(
       currentCurrency: json['Current_currency'] as String? ?? '',
       id: json['id'] as String? ?? '',
       itemsQty: json['items_qty'] as int? ?? 0,
@@ -29,7 +29,8 @@ _$_Root _$$_RootFromJson(Map<String, dynamic> json) => _$_Root(
       success: json['success'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_RootToJson(_$_Root instance) => <String, dynamic>{
+Map<String, dynamic> _$$RootImplToJson(_$RootImpl instance) =>
+    <String, dynamic>{
       'Current_currency': instance.currentCurrency,
       'id': instance.id,
       'items_qty': instance.itemsQty,
@@ -45,7 +46,7 @@ Map<String, dynamic> _$$_RootToJson(_$_Root instance) => <String, dynamic>{
       'success': instance.success,
     };
 
-_$_Items _$$_ItemsFromJson(Map<String, dynamic> json) => _$_Items(
+_$ItemsImpl _$$ItemsImplFromJson(Map<String, dynamic> json) => _$ItemsImpl(
       cartId: json['cart_id'] as String? ?? '',
       isChoose: json['is_choose'] as bool? ?? false,
       position: json['position'] as String? ?? '',
@@ -64,7 +65,8 @@ _$_Items _$$_ItemsFromJson(Map<String, dynamic> json) => _$_Items(
       itemError: json['item_error'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_ItemsToJson(_$_Items instance) => <String, dynamic>{
+Map<String, dynamic> _$$ItemsImplToJson(_$ItemsImpl instance) =>
+    <String, dynamic>{
       'cart_id': instance.cartId,
       'is_choose': instance.isChoose,
       'position': instance.position,
@@ -80,12 +82,13 @@ Map<String, dynamic> _$$_ItemsToJson(_$_Items instance) => <String, dynamic>{
       'item_error': instance.itemError,
     };
 
-_$_Options _$$_OptionsFromJson(Map<String, dynamic> json) => _$_Options(
+_$OptionsImpl _$$OptionsImplFromJson(Map<String, dynamic> json) =>
+    _$OptionsImpl(
       label: json['label'] as String,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$_OptionsToJson(_$_Options instance) =>
+Map<String, dynamic> _$$OptionsImplToJson(_$OptionsImpl instance) =>
     <String, dynamic>{
       'label': instance.label,
       'value': instance.value,

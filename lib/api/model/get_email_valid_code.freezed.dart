@@ -65,23 +65,25 @@ class _$GetEmailValidCodeParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GetEmailValidCodeParamsCopyWith<$Res>
+abstract class _$$GetEmailValidCodeParamsImplCopyWith<$Res>
     implements $GetEmailValidCodeParamsCopyWith<$Res> {
-  factory _$$_GetEmailValidCodeParamsCopyWith(_$_GetEmailValidCodeParams value,
-          $Res Function(_$_GetEmailValidCodeParams) then) =
-      __$$_GetEmailValidCodeParamsCopyWithImpl<$Res>;
+  factory _$$GetEmailValidCodeParamsImplCopyWith(
+          _$GetEmailValidCodeParamsImpl value,
+          $Res Function(_$GetEmailValidCodeParamsImpl) then) =
+      __$$GetEmailValidCodeParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@JsonKey(name: 'email') String email});
 }
 
 /// @nodoc
-class __$$_GetEmailValidCodeParamsCopyWithImpl<$Res>
+class __$$GetEmailValidCodeParamsImplCopyWithImpl<$Res>
     extends _$GetEmailValidCodeParamsCopyWithImpl<$Res,
-        _$_GetEmailValidCodeParams>
-    implements _$$_GetEmailValidCodeParamsCopyWith<$Res> {
-  __$$_GetEmailValidCodeParamsCopyWithImpl(_$_GetEmailValidCodeParams _value,
-      $Res Function(_$_GetEmailValidCodeParams) _then)
+        _$GetEmailValidCodeParamsImpl>
+    implements _$$GetEmailValidCodeParamsImplCopyWith<$Res> {
+  __$$GetEmailValidCodeParamsImplCopyWithImpl(
+      _$GetEmailValidCodeParamsImpl _value,
+      $Res Function(_$GetEmailValidCodeParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -89,7 +91,7 @@ class __$$_GetEmailValidCodeParamsCopyWithImpl<$Res>
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$_GetEmailValidCodeParams(
+    return _then(_$GetEmailValidCodeParamsImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -100,11 +102,12 @@ class __$$_GetEmailValidCodeParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GetEmailValidCodeParams implements _GetEmailValidCodeParams {
-  const _$_GetEmailValidCodeParams({@JsonKey(name: 'email') this.email = ''});
+class _$GetEmailValidCodeParamsImpl implements _GetEmailValidCodeParams {
+  const _$GetEmailValidCodeParamsImpl(
+      {@JsonKey(name: 'email') this.email = ''});
 
-  factory _$_GetEmailValidCodeParams.fromJson(Map<String, dynamic> json) =>
-      _$$_GetEmailValidCodeParamsFromJson(json);
+  factory _$GetEmailValidCodeParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetEmailValidCodeParamsImplFromJson(json);
 
   @override
   @JsonKey(name: 'email')
@@ -116,10 +119,10 @@ class _$_GetEmailValidCodeParams implements _GetEmailValidCodeParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetEmailValidCodeParams &&
+            other is _$GetEmailValidCodeParamsImpl &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -130,14 +133,13 @@ class _$_GetEmailValidCodeParams implements _GetEmailValidCodeParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GetEmailValidCodeParamsCopyWith<_$_GetEmailValidCodeParams>
-      get copyWith =>
-          __$$_GetEmailValidCodeParamsCopyWithImpl<_$_GetEmailValidCodeParams>(
-              this, _$identity);
+  _$$GetEmailValidCodeParamsImplCopyWith<_$GetEmailValidCodeParamsImpl>
+      get copyWith => __$$GetEmailValidCodeParamsImplCopyWithImpl<
+          _$GetEmailValidCodeParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GetEmailValidCodeParamsToJson(
+    return _$$GetEmailValidCodeParamsImplToJson(
       this,
     );
   }
@@ -146,16 +148,16 @@ class _$_GetEmailValidCodeParams implements _GetEmailValidCodeParams {
 abstract class _GetEmailValidCodeParams implements GetEmailValidCodeParams {
   const factory _GetEmailValidCodeParams(
           {@JsonKey(name: 'email') final String email}) =
-      _$_GetEmailValidCodeParams;
+      _$GetEmailValidCodeParamsImpl;
 
   factory _GetEmailValidCodeParams.fromJson(Map<String, dynamic> json) =
-      _$_GetEmailValidCodeParams.fromJson;
+      _$GetEmailValidCodeParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'email')
   String get email;
   @override
   @JsonKey(ignore: true)
-  _$$_GetEmailValidCodeParamsCopyWith<_$_GetEmailValidCodeParams>
+  _$$GetEmailValidCodeParamsImplCopyWith<_$GetEmailValidCodeParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

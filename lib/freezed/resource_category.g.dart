@@ -6,8 +6,9 @@ part of 'resource_category.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ResourceCategory _$$_ResourceCategoryFromJson(Map<String, dynamic> json) =>
-    _$_ResourceCategory(
+_$ResourceCategoryImpl _$$ResourceCategoryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ResourceCategoryImpl(
       description: json['description'] as String? ?? '',
       id: json['id'] as int? ?? 0,
       logo: json['logo'] as String? ?? '',
@@ -15,7 +16,8 @@ _$_ResourceCategory _$$_ResourceCategoryFromJson(Map<String, dynamic> json) =>
       type: json['type'],
     );
 
-Map<String, dynamic> _$$_ResourceCategoryToJson(_$_ResourceCategory instance) =>
+Map<String, dynamic> _$$ResourceCategoryImplToJson(
+        _$ResourceCategoryImpl instance) =>
     <String, dynamic>{
       'description': instance.description,
       'id': instance.id,
@@ -24,7 +26,8 @@ Map<String, dynamic> _$$_ResourceCategoryToJson(_$_ResourceCategory instance) =>
       'type': instance.type,
     };
 
-_$_Resource _$$_ResourceFromJson(Map<String, dynamic> json) => _$_Resource(
+_$ResourceImpl _$$ResourceImplFromJson(Map<String, dynamic> json) =>
+    _$ResourceImpl(
       authority: json['authority'] as int? ?? 0,
       clickcount: json['clickCount'] as int? ?? 0,
       content: json['content'] as String? ?? '',
@@ -53,7 +56,7 @@ _$_Resource _$$_ResourceFromJson(Map<String, dynamic> json) => _$_Resource(
           : ProductShare.fromJson(json['share'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ResourceToJson(_$_Resource instance) =>
+Map<String, dynamic> _$$ResourceImplToJson(_$ResourceImpl instance) =>
     <String, dynamic>{
       'authority': instance.authority,
       'clickCount': instance.clickcount,

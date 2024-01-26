@@ -161,10 +161,10 @@ class _$JpaPageCopyWithImpl<$Res, $Val extends JpaPage>
 }
 
 /// @nodoc
-abstract class _$$_JpaPageCopyWith<$Res> implements $JpaPageCopyWith<$Res> {
-  factory _$$_JpaPageCopyWith(
-          _$_JpaPage value, $Res Function(_$_JpaPage) then) =
-      __$$_JpaPageCopyWithImpl<$Res>;
+abstract class _$$JpaPageImplCopyWith<$Res> implements $JpaPageCopyWith<$Res> {
+  factory _$$JpaPageImplCopyWith(
+          _$JpaPageImpl value, $Res Function(_$JpaPageImpl) then) =
+      __$$JpaPageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -187,10 +187,11 @@ abstract class _$$_JpaPageCopyWith<$Res> implements $JpaPageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_JpaPageCopyWithImpl<$Res>
-    extends _$JpaPageCopyWithImpl<$Res, _$_JpaPage>
-    implements _$$_JpaPageCopyWith<$Res> {
-  __$$_JpaPageCopyWithImpl(_$_JpaPage _value, $Res Function(_$_JpaPage) _then)
+class __$$JpaPageImplCopyWithImpl<$Res>
+    extends _$JpaPageCopyWithImpl<$Res, _$JpaPageImpl>
+    implements _$$JpaPageImplCopyWith<$Res> {
+  __$$JpaPageImplCopyWithImpl(
+      _$JpaPageImpl _value, $Res Function(_$JpaPageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -208,7 +209,7 @@ class __$$_JpaPageCopyWithImpl<$Res>
     Object? totalElements = null,
     Object? totalpages = null,
   }) {
-    return _then(_$_JpaPage(
+    return _then(_$JpaPageImpl(
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -259,8 +260,8 @@ class __$$_JpaPageCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_JpaPage extends _JpaPage {
-  const _$_JpaPage(
+class _$JpaPageImpl extends _JpaPage {
+  const _$JpaPageImpl(
       {@JsonKey(name: 'content') this.content = const IListConst([]),
       @JsonKey(name: 'empty') this.empty = false,
       @JsonKey(name: 'first') this.first = false,
@@ -274,8 +275,8 @@ class _$_JpaPage extends _JpaPage {
       @JsonKey(name: 'totalPages') this.totalpages = 0})
       : super._();
 
-  factory _$_JpaPage.fromJson(Map<String, dynamic> json) =>
-      _$$_JpaPageFromJson(json);
+  factory _$JpaPageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$JpaPageImplFromJson(json);
 
   @override
   @JsonKey(name: 'content')
@@ -317,10 +318,10 @@ class _$_JpaPage extends _JpaPage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_JpaPage &&
+            other is _$JpaPageImpl &&
             const DeepCollectionEquality().equals(other.content, content) &&
             (identical(other.empty, empty) || other.empty == empty) &&
             (identical(other.first, first) || other.first == first) &&
@@ -357,12 +358,12 @@ class _$_JpaPage extends _JpaPage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_JpaPageCopyWith<_$_JpaPage> get copyWith =>
-      __$$_JpaPageCopyWithImpl<_$_JpaPage>(this, _$identity);
+  _$$JpaPageImplCopyWith<_$JpaPageImpl> get copyWith =>
+      __$$JpaPageImplCopyWithImpl<_$JpaPageImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_JpaPageToJson(
+    return _$$JpaPageImplToJson(
       this,
     );
   }
@@ -380,10 +381,10 @@ abstract class _JpaPage extends JpaPage {
       @JsonKey(name: 'size') final int size,
       @JsonKey(name: 'sort') final Sort sort,
       @JsonKey(name: 'totalElements') final int totalElements,
-      @JsonKey(name: 'totalPages') final int totalpages}) = _$_JpaPage;
+      @JsonKey(name: 'totalPages') final int totalpages}) = _$JpaPageImpl;
   const _JpaPage._() : super._();
 
-  factory _JpaPage.fromJson(Map<String, dynamic> json) = _$_JpaPage.fromJson;
+  factory _JpaPage.fromJson(Map<String, dynamic> json) = _$JpaPageImpl.fromJson;
 
   @override
   @JsonKey(name: 'content')
@@ -420,7 +421,7 @@ abstract class _JpaPage extends JpaPage {
   int get totalpages;
   @override
   @JsonKey(ignore: true)
-  _$$_JpaPageCopyWith<_$_JpaPage> get copyWith =>
+  _$$JpaPageImplCopyWith<_$JpaPageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -523,10 +524,11 @@ class _$PageableCopyWithImpl<$Res, $Val extends Pageable>
 }
 
 /// @nodoc
-abstract class _$$_PageableCopyWith<$Res> implements $PageableCopyWith<$Res> {
-  factory _$$_PageableCopyWith(
-          _$_Pageable value, $Res Function(_$_Pageable) then) =
-      __$$_PageableCopyWithImpl<$Res>;
+abstract class _$$PageableImplCopyWith<$Res>
+    implements $PageableCopyWith<$Res> {
+  factory _$$PageableImplCopyWith(
+          _$PageableImpl value, $Res Function(_$PageableImpl) then) =
+      __$$PageableImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -542,11 +544,11 @@ abstract class _$$_PageableCopyWith<$Res> implements $PageableCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PageableCopyWithImpl<$Res>
-    extends _$PageableCopyWithImpl<$Res, _$_Pageable>
-    implements _$$_PageableCopyWith<$Res> {
-  __$$_PageableCopyWithImpl(
-      _$_Pageable _value, $Res Function(_$_Pageable) _then)
+class __$$PageableImplCopyWithImpl<$Res>
+    extends _$PageableCopyWithImpl<$Res, _$PageableImpl>
+    implements _$$PageableImplCopyWith<$Res> {
+  __$$PageableImplCopyWithImpl(
+      _$PageableImpl _value, $Res Function(_$PageableImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -559,7 +561,7 @@ class __$$_PageableCopyWithImpl<$Res>
     Object? sort = null,
     Object? unpaged = null,
   }) {
-    return _then(_$_Pageable(
+    return _then(_$PageableImpl(
       offset: null == offset
           ? _value.offset
           : offset // ignore: cast_nullable_to_non_nullable
@@ -590,8 +592,8 @@ class __$$_PageableCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Pageable extends _Pageable {
-  const _$_Pageable(
+class _$PageableImpl extends _Pageable {
+  const _$PageableImpl(
       {@JsonKey(name: 'offset') this.offset = 0,
       @JsonKey(name: 'pageNumber') this.pageNumber = 0,
       @JsonKey(name: 'pageSize') this.pageSize = 0,
@@ -600,8 +602,8 @@ class _$_Pageable extends _Pageable {
       @JsonKey(name: 'unpaged') this.unpaged = false})
       : super._();
 
-  factory _$_Pageable.fromJson(Map<String, dynamic> json) =>
-      _$$_PageableFromJson(json);
+  factory _$PageableImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PageableImplFromJson(json);
 
   @override
   @JsonKey(name: 'offset')
@@ -628,10 +630,10 @@ class _$_Pageable extends _Pageable {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Pageable &&
+            other is _$PageableImpl &&
             (identical(other.offset, offset) || other.offset == offset) &&
             (identical(other.pageNumber, pageNumber) ||
                 other.pageNumber == pageNumber) &&
@@ -650,12 +652,12 @@ class _$_Pageable extends _Pageable {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PageableCopyWith<_$_Pageable> get copyWith =>
-      __$$_PageableCopyWithImpl<_$_Pageable>(this, _$identity);
+  _$$PageableImplCopyWith<_$PageableImpl> get copyWith =>
+      __$$PageableImplCopyWithImpl<_$PageableImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PageableToJson(
+    return _$$PageableImplToJson(
       this,
     );
   }
@@ -668,10 +670,11 @@ abstract class _Pageable extends Pageable {
       @JsonKey(name: 'pageSize') final int pageSize,
       @JsonKey(name: 'paged') final bool paged,
       @JsonKey(name: 'sort') final Sort sort,
-      @JsonKey(name: 'unpaged') final bool unpaged}) = _$_Pageable;
+      @JsonKey(name: 'unpaged') final bool unpaged}) = _$PageableImpl;
   const _Pageable._() : super._();
 
-  factory _Pageable.fromJson(Map<String, dynamic> json) = _$_Pageable.fromJson;
+  factory _Pageable.fromJson(Map<String, dynamic> json) =
+      _$PageableImpl.fromJson;
 
   @override
   @JsonKey(name: 'offset')
@@ -693,7 +696,7 @@ abstract class _Pageable extends Pageable {
   bool get unpaged;
   @override
   @JsonKey(ignore: true)
-  _$$_PageableCopyWith<_$_Pageable> get copyWith =>
+  _$$PageableImplCopyWith<_$PageableImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -761,9 +764,10 @@ class _$SortCopyWithImpl<$Res, $Val extends Sort>
 }
 
 /// @nodoc
-abstract class _$$_SortCopyWith<$Res> implements $SortCopyWith<$Res> {
-  factory _$$_SortCopyWith(_$_Sort value, $Res Function(_$_Sort) then) =
-      __$$_SortCopyWithImpl<$Res>;
+abstract class _$$SortImplCopyWith<$Res> implements $SortCopyWith<$Res> {
+  factory _$$SortImplCopyWith(
+          _$SortImpl value, $Res Function(_$SortImpl) then) =
+      __$$SortImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -773,9 +777,10 @@ abstract class _$$_SortCopyWith<$Res> implements $SortCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SortCopyWithImpl<$Res> extends _$SortCopyWithImpl<$Res, _$_Sort>
-    implements _$$_SortCopyWith<$Res> {
-  __$$_SortCopyWithImpl(_$_Sort _value, $Res Function(_$_Sort) _then)
+class __$$SortImplCopyWithImpl<$Res>
+    extends _$SortCopyWithImpl<$Res, _$SortImpl>
+    implements _$$SortImplCopyWith<$Res> {
+  __$$SortImplCopyWithImpl(_$SortImpl _value, $Res Function(_$SortImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -785,7 +790,7 @@ class __$$_SortCopyWithImpl<$Res> extends _$SortCopyWithImpl<$Res, _$_Sort>
     Object? sorted = null,
     Object? unsorted = null,
   }) {
-    return _then(_$_Sort(
+    return _then(_$SortImpl(
       empty: null == empty
           ? _value.empty
           : empty // ignore: cast_nullable_to_non_nullable
@@ -804,14 +809,15 @@ class __$$_SortCopyWithImpl<$Res> extends _$SortCopyWithImpl<$Res, _$_Sort>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Sort extends _Sort {
-  const _$_Sort(
+class _$SortImpl extends _Sort {
+  const _$SortImpl(
       {@JsonKey(name: 'empty') this.empty = false,
       @JsonKey(name: 'sorted') this.sorted = false,
       @JsonKey(name: 'unsorted') this.unsorted = false})
       : super._();
 
-  factory _$_Sort.fromJson(Map<String, dynamic> json) => _$$_SortFromJson(json);
+  factory _$SortImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SortImplFromJson(json);
 
   @override
   @JsonKey(name: 'empty')
@@ -829,10 +835,10 @@ class _$_Sort extends _Sort {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Sort &&
+            other is _$SortImpl &&
             (identical(other.empty, empty) || other.empty == empty) &&
             (identical(other.sorted, sorted) || other.sorted == sorted) &&
             (identical(other.unsorted, unsorted) ||
@@ -846,12 +852,12 @@ class _$_Sort extends _Sort {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SortCopyWith<_$_Sort> get copyWith =>
-      __$$_SortCopyWithImpl<_$_Sort>(this, _$identity);
+  _$$SortImplCopyWith<_$SortImpl> get copyWith =>
+      __$$SortImplCopyWithImpl<_$SortImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SortToJson(
+    return _$$SortImplToJson(
       this,
     );
   }
@@ -861,10 +867,10 @@ abstract class _Sort extends Sort {
   const factory _Sort(
       {@JsonKey(name: 'empty') final bool empty,
       @JsonKey(name: 'sorted') final bool sorted,
-      @JsonKey(name: 'unsorted') final bool unsorted}) = _$_Sort;
+      @JsonKey(name: 'unsorted') final bool unsorted}) = _$SortImpl;
   const _Sort._() : super._();
 
-  factory _Sort.fromJson(Map<String, dynamic> json) = _$_Sort.fromJson;
+  factory _Sort.fromJson(Map<String, dynamic> json) = _$SortImpl.fromJson;
 
   @override
   @JsonKey(name: 'empty')
@@ -877,5 +883,6 @@ abstract class _Sort extends Sort {
   bool get unsorted;
   @override
   @JsonKey(ignore: true)
-  _$$_SortCopyWith<_$_Sort> get copyWith => throw _privateConstructorUsedError;
+  _$$SortImplCopyWith<_$SortImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

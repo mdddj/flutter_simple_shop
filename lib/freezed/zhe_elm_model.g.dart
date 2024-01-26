@@ -6,8 +6,9 @@ part of 'zhe_elm_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ZheElmResultModel _$$_ZheElmResultModelFromJson(Map<String, dynamic> json) =>
-    _$_ZheElmResultModel(
+_$ZheElmResultModelImpl _$$ZheElmResultModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ZheElmResultModelImpl(
       alibabaalscunionelemepromotionofficialactivitygetresponse: json[
                   'alibabaAlscUnionElemePromotionOfficialactivityGetResponse'] ==
               null
@@ -17,17 +18,17 @@ _$_ZheElmResultModel _$$_ZheElmResultModelFromJson(Map<String, dynamic> json) =>
                   as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ZheElmResultModelToJson(
-        _$_ZheElmResultModel instance) =>
+Map<String, dynamic> _$$ZheElmResultModelImplToJson(
+        _$ZheElmResultModelImpl instance) =>
     <String, dynamic>{
       'alibabaAlscUnionElemePromotionOfficialactivityGetResponse':
           instance.alibabaalscunionelemepromotionofficialactivitygetresponse,
     };
 
-_$_Alibabaalscunionelemepromotionofficialactivitygetresponse
-    _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseFromJson(
+_$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl
+    _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplFromJson(
             Map<String, dynamic> json) =>
-        _$_Alibabaalscunionelemepromotionofficialactivitygetresponse(
+        _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl(
           data: json['data'] == null
               ? const Data()
               : Data.fromJson(json['data'] as Map<String, dynamic>),
@@ -37,8 +38,8 @@ _$_Alibabaalscunionelemepromotionofficialactivitygetresponse
         );
 
 Map<String, dynamic>
-    _$$_AlibabaalscunionelemepromotionofficialactivitygetresponseToJson(
-            _$_Alibabaalscunionelemepromotionofficialactivitygetresponse
+    _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplToJson(
+            _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl
                 instance) =>
         <String, dynamic>{
           'data': instance.data,
@@ -47,7 +48,7 @@ Map<String, dynamic>
           'requestid': instance.requestid,
         };
 
-_$_Data _$$_DataFromJson(Map<String, dynamic> json) => _$_Data(
+_$DataImpl _$$DataImplFromJson(Map<String, dynamic> json) => _$DataImpl(
       description: json['description'] as String? ?? '',
       endtime: json['endTime'] as int? ?? 0,
       id: json['id'] as String? ?? '',
@@ -59,7 +60,8 @@ _$_Data _$$_DataFromJson(Map<String, dynamic> json) => _$_Data(
       title: json['title'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_DataToJson(_$_Data instance) => <String, dynamic>{
+Map<String, dynamic> _$$DataImplToJson(_$DataImpl instance) =>
+    <String, dynamic>{
       'description': instance.description,
       'endTime': instance.endtime,
       'id': instance.id,
@@ -69,7 +71,7 @@ Map<String, dynamic> _$$_DataToJson(_$_Data instance) => <String, dynamic>{
       'title': instance.title,
     };
 
-_$_Link _$$_LinkFromJson(Map<String, dynamic> json) => _$_Link(
+_$LinkImpl _$$LinkImplFromJson(Map<String, dynamic> json) => _$LinkImpl(
       alipayminiurl: json['alipayMiniUrl'] as String? ?? '',
       eleschemeurl: json['eleSchemeUrl'] as String? ?? '',
       h5shortlink: json['h5ShortLink'] as String? ?? '',
@@ -83,7 +85,8 @@ _$_Link _$$_LinkFromJson(Map<String, dynamic> json) => _$_Link(
       h5MiniQrcode: json['h5MiniQrcode'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_LinkToJson(_$_Link instance) => <String, dynamic>{
+Map<String, dynamic> _$$LinkImplToJson(_$LinkImpl instance) =>
+    <String, dynamic>{
       'alipayMiniUrl': instance.alipayminiurl,
       'eleSchemeUrl': instance.eleschemeurl,
       'h5ShortLink': instance.h5shortlink,

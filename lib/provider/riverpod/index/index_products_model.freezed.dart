@@ -63,22 +63,22 @@ class _$IndexProductsModelCopyWithImpl<$Res, $Val extends IndexProductsModel>
 }
 
 /// @nodoc
-abstract class _$$_IndexProductsModelCopyWith<$Res>
+abstract class _$$IndexProductsModelImplCopyWith<$Res>
     implements $IndexProductsModelCopyWith<$Res> {
-  factory _$$_IndexProductsModelCopyWith(_$_IndexProductsModel value,
-          $Res Function(_$_IndexProductsModel) then) =
-      __$$_IndexProductsModelCopyWithImpl<$Res>;
+  factory _$$IndexProductsModelImplCopyWith(_$IndexProductsModelImpl value,
+          $Res Function(_$IndexProductsModelImpl) then) =
+      __$$IndexProductsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Product> products, int page});
 }
 
 /// @nodoc
-class __$$_IndexProductsModelCopyWithImpl<$Res>
-    extends _$IndexProductsModelCopyWithImpl<$Res, _$_IndexProductsModel>
-    implements _$$_IndexProductsModelCopyWith<$Res> {
-  __$$_IndexProductsModelCopyWithImpl(
-      _$_IndexProductsModel _value, $Res Function(_$_IndexProductsModel) _then)
+class __$$IndexProductsModelImplCopyWithImpl<$Res>
+    extends _$IndexProductsModelCopyWithImpl<$Res, _$IndexProductsModelImpl>
+    implements _$$IndexProductsModelImplCopyWith<$Res> {
+  __$$IndexProductsModelImplCopyWithImpl(_$IndexProductsModelImpl _value,
+      $Res Function(_$IndexProductsModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_IndexProductsModelCopyWithImpl<$Res>
     Object? products = null,
     Object? page = null,
   }) {
-    return _then(_$_IndexProductsModel(
+    return _then(_$IndexProductsModelImpl(
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_IndexProductsModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_IndexProductsModel implements _IndexProductsModel {
-  _$_IndexProductsModel(
+class _$IndexProductsModelImpl implements _IndexProductsModel {
+  _$IndexProductsModelImpl(
       {required final List<Product> products, required this.page})
       : _products = products;
 
@@ -124,10 +124,10 @@ class _$_IndexProductsModel implements _IndexProductsModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_IndexProductsModel &&
+            other is _$IndexProductsModelImpl &&
             const DeepCollectionEquality().equals(other._products, _products) &&
             (identical(other.page, page) || other.page == page));
   }
@@ -139,15 +139,15 @@ class _$_IndexProductsModel implements _IndexProductsModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_IndexProductsModelCopyWith<_$_IndexProductsModel> get copyWith =>
-      __$$_IndexProductsModelCopyWithImpl<_$_IndexProductsModel>(
+  _$$IndexProductsModelImplCopyWith<_$IndexProductsModelImpl> get copyWith =>
+      __$$IndexProductsModelImplCopyWithImpl<_$IndexProductsModelImpl>(
           this, _$identity);
 }
 
 abstract class _IndexProductsModel implements IndexProductsModel {
   factory _IndexProductsModel(
       {required final List<Product> products,
-      required final int page}) = _$_IndexProductsModel;
+      required final int page}) = _$IndexProductsModelImpl;
 
   @override
   List<Product> get products;
@@ -155,6 +155,6 @@ abstract class _IndexProductsModel implements IndexProductsModel {
   int get page;
   @override
   @JsonKey(ignore: true)
-  _$$_IndexProductsModelCopyWith<_$_IndexProductsModel> get copyWith =>
+  _$$IndexProductsModelImplCopyWith<_$IndexProductsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

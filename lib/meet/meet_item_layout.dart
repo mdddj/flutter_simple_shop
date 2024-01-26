@@ -1,6 +1,4 @@
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/my_image.dart';
-import 'package:dd_js_util/model/picture_selection_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
@@ -32,7 +30,9 @@ class MeetItemLayout extends StatelessWidget {
               size: 40,
             ),
             title: DefaultUsernameWidget(meetModel.user),
-            subtitle: Text(meetModel.createDate, style: context.textTheme.labelSmall?.copyWith(color: Colors.grey)),
+            subtitle: Text(meetModel.createDate,
+                style:
+                    context.textTheme.labelSmall?.copyWith(color: Colors.grey)),
           ),
           SizedBox(
             width: double.infinity,
@@ -66,17 +66,28 @@ class MeetItemLayout extends StatelessWidget {
                   crossAxisSpacing: 8,
                   crossAxisCount: 5,
                   children: [
-                    ...meetModel.images.map((element) =>
-                        ImageView(image: MyImage.network(url: element.url, params: ImageParams(size: double.infinity, borderRadius: 12.borderRadius, fit: BoxFit.cover)))
-                            .constraintBox((size, child) => SizedBox(
-                                  width: size.maxWidth,
-                                  height: size.maxWidth,
-                                  child: child.clipRadius(12).click(() {
-                                    context.navToWidget(
-                                        to: ImagePreview(
-                                            images: meetModel.images.map((element2) => PictureSelectionItemModel.network(url: element2.url)).toList(), index: meetModel.images.indexOf(element)));
-                                  }),
-                                )))
+                    ...meetModel.images.map((element) => ImageView(
+                            image: MyImage.network(
+                                url: element.url,
+                                params: ImageParams(
+                                    size: double.infinity,
+                                    borderRadius: 12.borderRadius,
+                                    fit: BoxFit.cover)))
+                        .constraintBox((size, child) => SizedBox(
+                              width: size.maxWidth,
+                              height: size.maxWidth,
+                              child: child.clipRadius(12).click(() {
+                                context.navToWidget(
+                                    to: ImagePreview(
+                                        images: meetModel.images
+                                            .map((element2) =>
+                                                PictureSelectionItemModel
+                                                    .network(url: element2.url))
+                                            .toList(),
+                                        index:
+                                            meetModel.images.indexOf(element)));
+                              }),
+                            )))
                   ],
                 ),
               ],

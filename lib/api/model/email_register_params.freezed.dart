@@ -80,11 +80,11 @@ class _$EmailRegisterParamsCopyWithImpl<$Res, $Val extends EmailRegisterParams>
 }
 
 /// @nodoc
-abstract class _$$_EmailRegisterParamsCopyWith<$Res>
+abstract class _$$EmailRegisterParamsImplCopyWith<$Res>
     implements $EmailRegisterParamsCopyWith<$Res> {
-  factory _$$_EmailRegisterParamsCopyWith(_$_EmailRegisterParams value,
-          $Res Function(_$_EmailRegisterParams) then) =
-      __$$_EmailRegisterParamsCopyWithImpl<$Res>;
+  factory _$$EmailRegisterParamsImplCopyWith(_$EmailRegisterParamsImpl value,
+          $Res Function(_$EmailRegisterParamsImpl) then) =
+      __$$EmailRegisterParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_EmailRegisterParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EmailRegisterParamsCopyWithImpl<$Res>
-    extends _$EmailRegisterParamsCopyWithImpl<$Res, _$_EmailRegisterParams>
-    implements _$$_EmailRegisterParamsCopyWith<$Res> {
-  __$$_EmailRegisterParamsCopyWithImpl(_$_EmailRegisterParams _value,
-      $Res Function(_$_EmailRegisterParams) _then)
+class __$$EmailRegisterParamsImplCopyWithImpl<$Res>
+    extends _$EmailRegisterParamsCopyWithImpl<$Res, _$EmailRegisterParamsImpl>
+    implements _$$EmailRegisterParamsImplCopyWith<$Res> {
+  __$$EmailRegisterParamsImplCopyWithImpl(_$EmailRegisterParamsImpl _value,
+      $Res Function(_$EmailRegisterParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_EmailRegisterParamsCopyWithImpl<$Res>
     Object? code = null,
     Object? password = null,
   }) {
-    return _then(_$_EmailRegisterParams(
+    return _then(_$EmailRegisterParamsImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -127,14 +127,14 @@ class __$$_EmailRegisterParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EmailRegisterParams implements _EmailRegisterParams {
-  const _$_EmailRegisterParams(
+class _$EmailRegisterParamsImpl implements _EmailRegisterParams {
+  const _$EmailRegisterParamsImpl(
       {@JsonKey(name: 'email') this.email = '',
       @JsonKey(name: 'code') this.code = '',
       @JsonKey(name: 'password') this.password = ''});
 
-  factory _$_EmailRegisterParams.fromJson(Map<String, dynamic> json) =>
-      _$$_EmailRegisterParamsFromJson(json);
+  factory _$EmailRegisterParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EmailRegisterParamsImplFromJson(json);
 
   @override
   @JsonKey(name: 'email')
@@ -152,10 +152,10 @@ class _$_EmailRegisterParams implements _EmailRegisterParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmailRegisterParams &&
+            other is _$EmailRegisterParamsImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.password, password) ||
@@ -169,13 +169,13 @@ class _$_EmailRegisterParams implements _EmailRegisterParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmailRegisterParamsCopyWith<_$_EmailRegisterParams> get copyWith =>
-      __$$_EmailRegisterParamsCopyWithImpl<_$_EmailRegisterParams>(
+  _$$EmailRegisterParamsImplCopyWith<_$EmailRegisterParamsImpl> get copyWith =>
+      __$$EmailRegisterParamsImplCopyWithImpl<_$EmailRegisterParamsImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EmailRegisterParamsToJson(
+    return _$$EmailRegisterParamsImplToJson(
       this,
     );
   }
@@ -186,10 +186,10 @@ abstract class _EmailRegisterParams implements EmailRegisterParams {
           {@JsonKey(name: 'email') final String email,
           @JsonKey(name: 'code') final String code,
           @JsonKey(name: 'password') final String password}) =
-      _$_EmailRegisterParams;
+      _$EmailRegisterParamsImpl;
 
   factory _EmailRegisterParams.fromJson(Map<String, dynamic> json) =
-      _$_EmailRegisterParams.fromJson;
+      _$EmailRegisterParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'email')
@@ -202,6 +202,6 @@ abstract class _EmailRegisterParams implements EmailRegisterParams {
   String get password;
   @override
   @JsonKey(ignore: true)
-  _$$_EmailRegisterParamsCopyWith<_$_EmailRegisterParams> get copyWith =>
+  _$$EmailRegisterParamsImplCopyWith<_$EmailRegisterParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

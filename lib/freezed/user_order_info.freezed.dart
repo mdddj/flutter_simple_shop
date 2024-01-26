@@ -623,11 +623,11 @@ class _$UserOrderInfoCopyWithImpl<$Res, $Val extends UserOrderInfo>
 }
 
 /// @nodoc
-abstract class _$$_UserOrderInfoCopyWith<$Res>
+abstract class _$$UserOrderInfoImplCopyWith<$Res>
     implements $UserOrderInfoCopyWith<$Res> {
-  factory _$$_UserOrderInfoCopyWith(
-          _$_UserOrderInfo value, $Res Function(_$_UserOrderInfo) then) =
-      __$$_UserOrderInfoCopyWithImpl<$Res>;
+  factory _$$UserOrderInfoImplCopyWith(
+          _$UserOrderInfoImpl value, $Res Function(_$UserOrderInfoImpl) then) =
+      __$$UserOrderInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -707,11 +707,11 @@ abstract class _$$_UserOrderInfoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserOrderInfoCopyWithImpl<$Res>
-    extends _$UserOrderInfoCopyWithImpl<$Res, _$_UserOrderInfo>
-    implements _$$_UserOrderInfoCopyWith<$Res> {
-  __$$_UserOrderInfoCopyWithImpl(
-      _$_UserOrderInfo _value, $Res Function(_$_UserOrderInfo) _then)
+class __$$UserOrderInfoImplCopyWithImpl<$Res>
+    extends _$UserOrderInfoCopyWithImpl<$Res, _$UserOrderInfoImpl>
+    implements _$$UserOrderInfoImplCopyWith<$Res> {
+  __$$UserOrderInfoImplCopyWithImpl(
+      _$UserOrderInfoImpl _value, $Res Function(_$UserOrderInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -788,7 +788,7 @@ class __$$_UserOrderInfoCopyWithImpl<$Res>
     Object? zheType = null,
     Object? zheUpdateTime = null,
   }) {
-    return _then(_$_UserOrderInfo(
+    return _then(_$UserOrderInfoImpl(
       adzoneName: null == adzoneName
           ? _value.adzoneName
           : adzoneName // ignore: cast_nullable_to_non_nullable
@@ -1076,8 +1076,8 @@ class __$$_UserOrderInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserOrderInfo extends _UserOrderInfo {
-  const _$_UserOrderInfo(
+class _$UserOrderInfoImpl extends _UserOrderInfo {
+  const _$UserOrderInfoImpl(
       {@JsonKey(name: 'adzoneName') this.adzoneName = '',
       @JsonKey(name: 'adzoneid') this.adzoneid = '',
       @JsonKey(name: 'alimamaRate') this.alimamaRate = '',
@@ -1153,8 +1153,8 @@ class _$_UserOrderInfo extends _UserOrderInfo {
       @JsonKey(name: 'zheUpdateTime') this.zheUpdateTime = ''})
       : super._();
 
-  factory _$_UserOrderInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_UserOrderInfoFromJson(json);
+  factory _$UserOrderInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserOrderInfoImplFromJson(json);
 
   @override
   @JsonKey(name: 'adzoneName')
@@ -1373,10 +1373,10 @@ class _$_UserOrderInfo extends _UserOrderInfo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserOrderInfo &&
+            other is _$UserOrderInfoImpl &&
             (identical(other.adzoneName, adzoneName) ||
                 other.adzoneName == adzoneName) &&
             (identical(other.adzoneid, adzoneid) ||
@@ -1570,12 +1570,12 @@ class _$_UserOrderInfo extends _UserOrderInfo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserOrderInfoCopyWith<_$_UserOrderInfo> get copyWith =>
-      __$$_UserOrderInfoCopyWithImpl<_$_UserOrderInfo>(this, _$identity);
+  _$$UserOrderInfoImplCopyWith<_$UserOrderInfoImpl> get copyWith =>
+      __$$UserOrderInfoImplCopyWithImpl<_$UserOrderInfoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserOrderInfoToJson(
+    return _$$UserOrderInfoImplToJson(
       this,
     );
   }
@@ -1656,11 +1656,11 @@ abstract class _UserOrderInfo extends UserOrderInfo {
       @JsonKey(name: 'zheStatus') final String zheStatus,
       @JsonKey(name: 'zheType') final String zheType,
       @JsonKey(name: 'zheUpdateTime')
-      final String zheUpdateTime}) = _$_UserOrderInfo;
+      final String zheUpdateTime}) = _$UserOrderInfoImpl;
   const _UserOrderInfo._() : super._();
 
   factory _UserOrderInfo.fromJson(Map<String, dynamic> json) =
-      _$_UserOrderInfo.fromJson;
+      _$UserOrderInfoImpl.fromJson;
 
   @override
   @JsonKey(name: 'adzoneName')
@@ -1874,6 +1874,6 @@ abstract class _UserOrderInfo extends UserOrderInfo {
   String get zheUpdateTime;
   @override
   @JsonKey(ignore: true)
-  _$$_UserOrderInfoCopyWith<_$_UserOrderInfo> get copyWith =>
+  _$$UserOrderInfoImplCopyWith<_$UserOrderInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

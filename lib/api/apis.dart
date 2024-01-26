@@ -1,10 +1,7 @@
 library api;
 
 import 'package:dd_check_plugin/dd_check_plugin.dart';
-import 'package:dd_js_util/api/request_params.dart';
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/base_api_exception.dart';
-import 'package:dd_js_util/model/dart_type_model.dart';
 import 'package:dio/dio.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +18,15 @@ import 'model/email_register_params.dart';
 import 'model/login_params.dart';
 
 part 'base.dart';
+
 part 'report.dart';
+
 part 'resource.dart';
+
 part 'tkapi.dart';
+
 part 'user.dart';
+
 part 'zhe_api.dart';
 
 mixin ApiPageMixin<T> on BaseApi<T> {
@@ -75,10 +77,13 @@ extension DartTypeModelEx on DartTypeModel {
 abstract class BaseApiPublic<T> extends BaseApi<T> {
   BaseApiPublic(super.url, {super.httpMethod});
 
-  static BaseOptions get opt => BaseOptions(connectTimeout: const Duration(seconds: 30), baseUrl: "${useEnv.host}:${useEnv.port}");
+  static BaseOptions get opt => BaseOptions(
+      connectTimeout: const Duration(seconds: 30),
+      baseUrl: "${useEnv.host}:${useEnv.port}");
 
   @override
-  ISet<Interceptor> get interceptions => ISet([getIt.get<MyTokenInterceptor>()]);
+  ISet<Interceptor> get interceptions =>
+      ISet([getIt.get<MyTokenInterceptor>()]);
 
   @override
   Future<BaseOptions> getOptions(param) async => opt;
@@ -86,15 +91,20 @@ abstract class BaseApiPublic<T> extends BaseApi<T> {
   @override
   Future<Dio> getDio(BaseOptions baseOptions) async {
     final dio = await super.getDio(baseOptions);
-    await DdCheckPlugin().init(dio, initHost: '192.168.100.64', port: 9998, projectName: 'shop', extend: [
-      HiveToolManager(boxList: [MyCategoryCache()])
-    ]);
+    await DdCheckPlugin().init(dio,
+        initHost: '192.168.100.64',
+        port: 9998,
+        projectName: 'shop',
+        extend: [
+          HiveToolManager(boxList: [MyCategoryCache()])
+        ]);
     return dio;
   }
 }
 
 abstract class AppCoreApiWithT<T> extends BaseApiPublic<T> {
-  AppCoreApiWithT(super.url, [HttpMethod httpMethod = HttpMethod.get]) : super(httpMethod: httpMethod);
+  AppCoreApiWithT(super.url, [HttpMethod httpMethod = HttpMethod.get])
+      : super(httpMethod: httpMethod);
 
   @override
   T covertToModel(DartTypeModel data, RequestParams param) {
@@ -105,7 +115,8 @@ abstract class AppCoreApiWithT<T> extends BaseApiPublic<T> {
 }
 
 abstract class AppCoreApiWithListT<T> extends BaseApiPublic<List<T>> {
-  AppCoreApiWithListT(super.url, HttpMethod httpMethod) : super(httpMethod: httpMethod);
+  AppCoreApiWithListT(super.url, HttpMethod httpMethod)
+      : super(httpMethod: httpMethod);
 
   @override
   List<T> covertToModel(DartTypeModel data, RequestParams param) {
@@ -156,7 +167,8 @@ class FavoritesAddApi extends MyAppCoreApiWithWrapJson {
 
   @Doc(message: "服务器发起请求,添加收藏")
   static Future<WrapJson> doRequeset(AddFavoritesParams params) async {
-    final r = await (FavoritesAddApi()).request(RequestParams(data: params.toJson()));
+    final r =
+        await (FavoritesAddApi()).request(RequestParams(data: params.toJson()));
     return r;
   }
 }
@@ -175,7 +187,8 @@ class FavoritesFindListApi extends MyAppCoreApiWithWrapJson with ApiPageMixin {
 
 //删除收藏
 class FavoritesRemoveApi extends MyAppCoreApiWithWrapJson {
-  FavoritesRemoveApi(int id) : super("$favoritesPrefix/remove", HttpMethod.post) {
+  FavoritesRemoveApi(int id)
+      : super("$favoritesPrefix/remove", HttpMethod.post) {
     super.params.addAll({"idValue": id});
   }
 }
@@ -191,7 +204,8 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApiWithWrapJson {
 
   @Doc(message: '加载折淘客的APP Key')
   static Future<String> doRequest(Ref ref) async {
-    final cacehData = await TokenCache.instance.getValue('zhe-app-key', defaultValue: '');
+    final cacehData =
+        await TokenCache.instance.getValue('zhe-app-key', defaultValue: '');
     if (cacehData.isNotEmpty) {
       ref.read(riverpodZhetaokeAppKeyState.notifier).state = cacehData;
       return cacehData;
@@ -215,7 +229,8 @@ class SelectMeetListData extends MyAppCoreApiWithWrapJson with ApiPageMixin {
 }
 
 ///查询资源动态列表
-class SelectMyRsourceListData extends MyAppCoreApiWithWrapJson with ApiPageMixin {
+class SelectMyRsourceListData extends MyAppCoreApiWithWrapJson
+    with ApiPageMixin {
   SelectMyRsourceListData() : super("/api/app/resource/list");
 }
 
@@ -226,19 +241,22 @@ class MyResourceCreateApi extends MyAppCoreApiWithWrapJson {
 
 ///获取邮箱验证码接口
 class MyApiWithSendEmailValidCode extends MyAppCoreApiWithWrapJson {
-  MyApiWithSendEmailValidCode() : super("/api/user-public/email-register", HttpMethod.post);
+  MyApiWithSendEmailValidCode()
+      : super("/api/user-public/email-register", HttpMethod.post);
 }
 
 ///邮箱注册接口
 class MyApiWithEmailRegister extends MyAppCoreApiWithWrapJson {
-  MyApiWithEmailRegister(EmailRegisterParams params) : super("/api/user-public/email-valid", HttpMethod.post) {
+  MyApiWithEmailRegister(EmailRegisterParams params)
+      : super("/api/user-public/email-valid", HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
 }
 
 ///登录接口
 class MyApiWithLogin extends MyAppCoreApiWithWrapJson {
-  MyApiWithLogin(LoginParams params) : super(params.getApiPath, HttpMethod.post) {
+  MyApiWithLogin(LoginParams params)
+      : super(params.getApiPath, HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
 }
@@ -281,7 +299,8 @@ class MyFindResourceCategoryApi extends AppCoreApiWithT<ResourceCategory> {
         );
 
   Future<ResourceCategory> doRequest(String name) async {
-    return await getIt.get<MyFindResourceCategoryApi>().request(R(data: <String, dynamic>{"name": name}, showDefaultLoading: false));
+    return await getIt.get<MyFindResourceCategoryApi>().request(
+        R(data: <String, dynamic>{"name": name}, showDefaultLoading: false));
   }
 
   @override
@@ -297,7 +316,8 @@ class MyUpdateUserAvatarApi extends MyAppCoreApiWithWrapJson {
 
 ///删除用户动态接口
 class MyDeleteUserResourceApi extends MyAppCoreApiWithWrapJson {
-  MyDeleteUserResourceApi() : super('/api/app/resource/delete', HttpMethod.delete);
+  MyDeleteUserResourceApi()
+      : super('/api/app/resource/delete', HttpMethod.delete);
 }
 
 ///获取用户的资源列表

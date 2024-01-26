@@ -6,14 +6,15 @@ part of 'env_config.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EnvConfig _$$_EnvConfigFromJson(Map<String, dynamic> json) => _$_EnvConfig(
+_$EnvConfigImpl _$$EnvConfigImplFromJson(Map<String, dynamic> json) =>
+    _$EnvConfigImpl(
       port: json['port'] as String? ?? '',
       host: json['host'] as String? ?? '',
       debugMode: json['debugMode'] as bool? ?? false,
       fontFamily: json['fontFamily'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_EnvConfigToJson(_$_EnvConfig instance) =>
+Map<String, dynamic> _$$EnvConfigImplToJson(_$EnvConfigImpl instance) =>
     <String, dynamic>{
       'port': instance.port,
       'host': instance.host,

@@ -81,25 +81,25 @@ class _$BaseLayoutCopyWithImpl<$Res, $Val extends BaseLayout>
 }
 
 /// @nodoc
-abstract class _$$MobileLayoutCopyWith<$Res> {
-  factory _$$MobileLayoutCopyWith(
-          _$MobileLayout value, $Res Function(_$MobileLayout) then) =
-      __$$MobileLayoutCopyWithImpl<$Res>;
+abstract class _$$MobileLayoutImplCopyWith<$Res> {
+  factory _$$MobileLayoutImplCopyWith(
+          _$MobileLayoutImpl value, $Res Function(_$MobileLayoutImpl) then) =
+      __$$MobileLayoutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$MobileLayoutCopyWithImpl<$Res>
-    extends _$BaseLayoutCopyWithImpl<$Res, _$MobileLayout>
-    implements _$$MobileLayoutCopyWith<$Res> {
-  __$$MobileLayoutCopyWithImpl(
-      _$MobileLayout _value, $Res Function(_$MobileLayout) _then)
+class __$$MobileLayoutImplCopyWithImpl<$Res>
+    extends _$BaseLayoutCopyWithImpl<$Res, _$MobileLayoutImpl>
+    implements _$$MobileLayoutImplCopyWith<$Res> {
+  __$$MobileLayoutImplCopyWithImpl(
+      _$MobileLayoutImpl _value, $Res Function(_$MobileLayoutImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$MobileLayout extends MobileLayout {
-  _$MobileLayout() : super._();
+class _$MobileLayoutImpl extends MobileLayout {
+  _$MobileLayoutImpl() : super._();
 
   @override
   String toString() {
@@ -107,9 +107,9 @@ class _$MobileLayout extends MobileLayout {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$MobileLayout);
+        (other.runtimeType == runtimeType && other is _$MobileLayoutImpl);
   }
 
   @override
@@ -185,30 +185,30 @@ class _$MobileLayout extends MobileLayout {
 }
 
 abstract class MobileLayout extends BaseLayout {
-  factory MobileLayout() = _$MobileLayout;
+  factory MobileLayout() = _$MobileLayoutImpl;
   MobileLayout._() : super._();
 }
 
 /// @nodoc
-abstract class _$$TableLayoutCopyWith<$Res> {
-  factory _$$TableLayoutCopyWith(
-          _$TableLayout value, $Res Function(_$TableLayout) then) =
-      __$$TableLayoutCopyWithImpl<$Res>;
+abstract class _$$TableLayoutImplCopyWith<$Res> {
+  factory _$$TableLayoutImplCopyWith(
+          _$TableLayoutImpl value, $Res Function(_$TableLayoutImpl) then) =
+      __$$TableLayoutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TableLayoutCopyWithImpl<$Res>
-    extends _$BaseLayoutCopyWithImpl<$Res, _$TableLayout>
-    implements _$$TableLayoutCopyWith<$Res> {
-  __$$TableLayoutCopyWithImpl(
-      _$TableLayout _value, $Res Function(_$TableLayout) _then)
+class __$$TableLayoutImplCopyWithImpl<$Res>
+    extends _$BaseLayoutCopyWithImpl<$Res, _$TableLayoutImpl>
+    implements _$$TableLayoutImplCopyWith<$Res> {
+  __$$TableLayoutImplCopyWithImpl(
+      _$TableLayoutImpl _value, $Res Function(_$TableLayoutImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$TableLayout extends TableLayout {
-  _$TableLayout() : super._();
+class _$TableLayoutImpl extends TableLayout {
+  _$TableLayoutImpl() : super._();
 
   @override
   String toString() {
@@ -216,9 +216,9 @@ class _$TableLayout extends TableLayout {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TableLayout);
+        (other.runtimeType == runtimeType && other is _$TableLayoutImpl);
   }
 
   @override
@@ -294,30 +294,30 @@ class _$TableLayout extends TableLayout {
 }
 
 abstract class TableLayout extends BaseLayout {
-  factory TableLayout() = _$TableLayout;
+  factory TableLayout() = _$TableLayoutImpl;
   TableLayout._() : super._();
 }
 
 /// @nodoc
-abstract class _$$DesktopLayoutCopyWith<$Res> {
-  factory _$$DesktopLayoutCopyWith(
-          _$DesktopLayout value, $Res Function(_$DesktopLayout) then) =
-      __$$DesktopLayoutCopyWithImpl<$Res>;
+abstract class _$$DesktopLayoutImplCopyWith<$Res> {
+  factory _$$DesktopLayoutImplCopyWith(
+          _$DesktopLayoutImpl value, $Res Function(_$DesktopLayoutImpl) then) =
+      __$$DesktopLayoutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DesktopLayoutCopyWithImpl<$Res>
-    extends _$BaseLayoutCopyWithImpl<$Res, _$DesktopLayout>
-    implements _$$DesktopLayoutCopyWith<$Res> {
-  __$$DesktopLayoutCopyWithImpl(
-      _$DesktopLayout _value, $Res Function(_$DesktopLayout) _then)
+class __$$DesktopLayoutImplCopyWithImpl<$Res>
+    extends _$BaseLayoutCopyWithImpl<$Res, _$DesktopLayoutImpl>
+    implements _$$DesktopLayoutImplCopyWith<$Res> {
+  __$$DesktopLayoutImplCopyWithImpl(
+      _$DesktopLayoutImpl _value, $Res Function(_$DesktopLayoutImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$DesktopLayout extends DesktopLayout {
-  _$DesktopLayout() : super._();
+class _$DesktopLayoutImpl extends DesktopLayout {
+  _$DesktopLayoutImpl() : super._();
 
   @override
   String toString() {
@@ -325,9 +325,9 @@ class _$DesktopLayout extends DesktopLayout {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$DesktopLayout);
+        (other.runtimeType == runtimeType && other is _$DesktopLayoutImpl);
   }
 
   @override
@@ -403,6 +403,6 @@ class _$DesktopLayout extends DesktopLayout {
 }
 
 abstract class DesktopLayout extends BaseLayout {
-  factory DesktopLayout() = _$DesktopLayout;
+  factory DesktopLayout() = _$DesktopLayoutImpl;
   DesktopLayout._() : super._();
 }

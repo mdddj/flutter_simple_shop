@@ -71,22 +71,22 @@ class _$FavoritesStateModelCopyWithImpl<$Res, $Val extends FavoritesStateModel>
 }
 
 /// @nodoc
-abstract class _$$_FavoritesStateModelCopyWith<$Res>
+abstract class _$$FavoritesStateModelImplCopyWith<$Res>
     implements $FavoritesStateModelCopyWith<$Res> {
-  factory _$$_FavoritesStateModelCopyWith(_$_FavoritesStateModel value,
-          $Res Function(_$_FavoritesStateModel) then) =
-      __$$_FavoritesStateModelCopyWithImpl<$Res>;
+  factory _$$FavoritesStateModelImplCopyWith(_$FavoritesStateModelImpl value,
+          $Res Function(_$FavoritesStateModelImpl) then) =
+      __$$FavoritesStateModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<MyFavoritesModel> favorites, int page});
 }
 
 /// @nodoc
-class __$$_FavoritesStateModelCopyWithImpl<$Res>
-    extends _$FavoritesStateModelCopyWithImpl<$Res, _$_FavoritesStateModel>
-    implements _$$_FavoritesStateModelCopyWith<$Res> {
-  __$$_FavoritesStateModelCopyWithImpl(_$_FavoritesStateModel _value,
-      $Res Function(_$_FavoritesStateModel) _then)
+class __$$FavoritesStateModelImplCopyWithImpl<$Res>
+    extends _$FavoritesStateModelCopyWithImpl<$Res, _$FavoritesStateModelImpl>
+    implements _$$FavoritesStateModelImplCopyWith<$Res> {
+  __$$FavoritesStateModelImplCopyWithImpl(_$FavoritesStateModelImpl _value,
+      $Res Function(_$FavoritesStateModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +95,7 @@ class __$$_FavoritesStateModelCopyWithImpl<$Res>
     Object? favorites = null,
     Object? page = null,
   }) {
-    return _then(_$_FavoritesStateModel(
+    return _then(_$FavoritesStateModelImpl(
       favorites: null == favorites
           ? _value.favorites
           : favorites // ignore: cast_nullable_to_non_nullable
@@ -110,11 +110,11 @@ class __$$_FavoritesStateModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FavoritesStateModel implements _FavoritesStateModel {
-  _$_FavoritesStateModel({required this.favorites, required this.page});
+class _$FavoritesStateModelImpl implements _FavoritesStateModel {
+  _$FavoritesStateModelImpl({required this.favorites, required this.page});
 
-  factory _$_FavoritesStateModel.fromJson(Map<String, dynamic> json) =>
-      _$$_FavoritesStateModelFromJson(json);
+  factory _$FavoritesStateModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FavoritesStateModelImplFromJson(json);
 
   @override
   List<MyFavoritesModel> favorites;
@@ -129,13 +129,13 @@ class _$_FavoritesStateModel implements _FavoritesStateModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FavoritesStateModelCopyWith<_$_FavoritesStateModel> get copyWith =>
-      __$$_FavoritesStateModelCopyWithImpl<_$_FavoritesStateModel>(
+  _$$FavoritesStateModelImplCopyWith<_$FavoritesStateModelImpl> get copyWith =>
+      __$$FavoritesStateModelImplCopyWithImpl<_$FavoritesStateModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FavoritesStateModelToJson(
+    return _$$FavoritesStateModelImplToJson(
       this,
     );
   }
@@ -144,10 +144,10 @@ class _$_FavoritesStateModel implements _FavoritesStateModel {
 abstract class _FavoritesStateModel implements FavoritesStateModel {
   factory _FavoritesStateModel(
       {required List<MyFavoritesModel> favorites,
-      required int page}) = _$_FavoritesStateModel;
+      required int page}) = _$FavoritesStateModelImpl;
 
   factory _FavoritesStateModel.fromJson(Map<String, dynamic> json) =
-      _$_FavoritesStateModel.fromJson;
+      _$FavoritesStateModelImpl.fromJson;
 
   @override
   List<MyFavoritesModel> get favorites;
@@ -157,6 +157,6 @@ abstract class _FavoritesStateModel implements FavoritesStateModel {
   set page(int value);
   @override
   @JsonKey(ignore: true)
-  _$$_FavoritesStateModelCopyWith<_$_FavoritesStateModel> get copyWith =>
+  _$$FavoritesStateModelImplCopyWith<_$FavoritesStateModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

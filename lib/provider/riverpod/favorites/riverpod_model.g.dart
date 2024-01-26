@@ -6,17 +6,17 @@ part of 'riverpod_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FavoritesStateModel _$$_FavoritesStateModelFromJson(
+_$FavoritesStateModelImpl _$$FavoritesStateModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_FavoritesStateModel(
+    _$FavoritesStateModelImpl(
       favorites: (json['favorites'] as List<dynamic>)
           .map(MyFavoritesModel.fromJson)
           .toList(),
       page: json['page'] as int,
     );
 
-Map<String, dynamic> _$$_FavoritesStateModelToJson(
-        _$_FavoritesStateModel instance) =>
+Map<String, dynamic> _$$FavoritesStateModelImplToJson(
+        _$FavoritesStateModelImpl instance) =>
     <String, dynamic>{
       'favorites': instance.favorites,
       'page': instance.page,

@@ -82,9 +82,10 @@ class _$PagerCopyWithImpl<$Res, $Val extends Pager>
 }
 
 /// @nodoc
-abstract class _$$_PagerCopyWith<$Res> implements $PagerCopyWith<$Res> {
-  factory _$$_PagerCopyWith(_$_Pager value, $Res Function(_$_Pager) then) =
-      __$$_PagerCopyWithImpl<$Res>;
+abstract class _$$PagerImplCopyWith<$Res> implements $PagerCopyWith<$Res> {
+  factory _$$PagerImplCopyWith(
+          _$PagerImpl value, $Res Function(_$PagerImpl) then) =
+      __$$PagerImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -95,9 +96,11 @@ abstract class _$$_PagerCopyWith<$Res> implements $PagerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PagerCopyWithImpl<$Res> extends _$PagerCopyWithImpl<$Res, _$_Pager>
-    implements _$$_PagerCopyWith<$Res> {
-  __$$_PagerCopyWithImpl(_$_Pager _value, $Res Function(_$_Pager) _then)
+class __$$PagerImplCopyWithImpl<$Res>
+    extends _$PagerCopyWithImpl<$Res, _$PagerImpl>
+    implements _$$PagerImplCopyWith<$Res> {
+  __$$PagerImplCopyWithImpl(
+      _$PagerImpl _value, $Res Function(_$PagerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +109,7 @@ class __$$_PagerCopyWithImpl<$Res> extends _$PagerCopyWithImpl<$Res, _$_Pager>
     Object? routername = null,
     Object? params = freezed,
   }) {
-    return _then(_$_Pager(
+    return _then(_$PagerImpl(
       routername: null == routername
           ? _value.routername
           : routername // ignore: cast_nullable_to_non_nullable
@@ -121,13 +124,13 @@ class __$$_PagerCopyWithImpl<$Res> extends _$PagerCopyWithImpl<$Res, _$_Pager>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Pager extends _Pager {
-  const _$_Pager(
+class _$PagerImpl extends _Pager {
+  const _$PagerImpl(
       {@JsonKey(name: 'routerName') this.routername = '', this.params})
       : super._();
 
-  factory _$_Pager.fromJson(Map<String, dynamic> json) =>
-      _$$_PagerFromJson(json);
+  factory _$PagerImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PagerImplFromJson(json);
 
   @override
   @JsonKey(name: 'routerName')
@@ -141,10 +144,10 @@ class _$_Pager extends _Pager {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Pager &&
+            other is _$PagerImpl &&
             (identical(other.routername, routername) ||
                 other.routername == routername) &&
             (identical(other.params, params) || other.params == params));
@@ -157,12 +160,12 @@ class _$_Pager extends _Pager {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PagerCopyWith<_$_Pager> get copyWith =>
-      __$$_PagerCopyWithImpl<_$_Pager>(this, _$identity);
+  _$$PagerImplCopyWith<_$PagerImpl> get copyWith =>
+      __$$PagerImplCopyWithImpl<_$PagerImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PagerToJson(
+    return _$$PagerImplToJson(
       this,
     );
   }
@@ -171,10 +174,10 @@ class _$_Pager extends _Pager {
 abstract class _Pager extends Pager {
   const factory _Pager(
       {@JsonKey(name: 'routerName') final String routername,
-      final PagerParams? params}) = _$_Pager;
+      final PagerParams? params}) = _$PagerImpl;
   const _Pager._() : super._();
 
-  factory _Pager.fromJson(Map<String, dynamic> json) = _$_Pager.fromJson;
+  factory _Pager.fromJson(Map<String, dynamic> json) = _$PagerImpl.fromJson;
 
   @override
   @JsonKey(name: 'routerName')
@@ -183,7 +186,7 @@ abstract class _Pager extends Pager {
   PagerParams? get params;
   @override
   @JsonKey(ignore: true)
-  _$$_PagerCopyWith<_$_Pager> get copyWith =>
+  _$$PagerImplCopyWith<_$PagerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -306,30 +309,30 @@ class _$PagerParamsCopyWithImpl<$Res, $Val extends PagerParams>
 }
 
 /// @nodoc
-abstract class _$$_PagerParamsCopyWith<$Res> {
-  factory _$$_PagerParamsCopyWith(
-          _$_PagerParams value, $Res Function(_$_PagerParams) then) =
-      __$$_PagerParamsCopyWithImpl<$Res>;
+abstract class _$$PagerParamsImplCopyWith<$Res> {
+  factory _$$PagerParamsImplCopyWith(
+          _$PagerParamsImpl value, $Res Function(_$PagerParamsImpl) then) =
+      __$$PagerParamsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_PagerParamsCopyWithImpl<$Res>
-    extends _$PagerParamsCopyWithImpl<$Res, _$_PagerParams>
-    implements _$$_PagerParamsCopyWith<$Res> {
-  __$$_PagerParamsCopyWithImpl(
-      _$_PagerParams _value, $Res Function(_$_PagerParams) _then)
+class __$$PagerParamsImplCopyWithImpl<$Res>
+    extends _$PagerParamsCopyWithImpl<$Res, _$PagerParamsImpl>
+    implements _$$PagerParamsImplCopyWith<$Res> {
+  __$$PagerParamsImplCopyWithImpl(
+      _$PagerParamsImpl _value, $Res Function(_$PagerParamsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_PagerParams extends _PagerParams {
-  const _$_PagerParams({final String? $type})
+class _$PagerParamsImpl extends _PagerParams {
+  const _$PagerParamsImpl({final String? $type})
       : $type = $type ?? 'default',
         super._();
 
-  factory _$_PagerParams.fromJson(Map<String, dynamic> json) =>
-      _$$_PagerParamsFromJson(json);
+  factory _$PagerParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PagerParamsImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -340,9 +343,9 @@ class _$_PagerParams extends _PagerParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_PagerParams);
+        (other.runtimeType == runtimeType && other is _$PagerParamsImpl);
   }
 
   @JsonKey(ignore: true)
@@ -455,25 +458,25 @@ class _$_PagerParams extends _PagerParams {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PagerParamsToJson(
+    return _$$PagerParamsImplToJson(
       this,
     );
   }
 }
 
 abstract class _PagerParams extends PagerParams {
-  const factory _PagerParams() = _$_PagerParams;
+  const factory _PagerParams() = _$PagerParamsImpl;
   const _PagerParams._() : super._();
 
   factory _PagerParams.fromJson(Map<String, dynamic> json) =
-      _$_PagerParams.fromJson;
+      _$PagerParamsImpl.fromJson;
 }
 
 /// @nodoc
-abstract class _$$DynPageParamsCopyWith<$Res> {
-  factory _$$DynPageParamsCopyWith(
-          _$DynPageParams value, $Res Function(_$DynPageParams) then) =
-      __$$DynPageParamsCopyWithImpl<$Res>;
+abstract class _$$DynPageParamsImplCopyWith<$Res> {
+  factory _$$DynPageParamsImplCopyWith(
+          _$DynPageParamsImpl value, $Res Function(_$DynPageParamsImpl) then) =
+      __$$DynPageParamsImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {String name,
@@ -488,11 +491,11 @@ abstract class _$$DynPageParamsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$DynPageParamsCopyWithImpl<$Res>
-    extends _$PagerParamsCopyWithImpl<$Res, _$DynPageParams>
-    implements _$$DynPageParamsCopyWith<$Res> {
-  __$$DynPageParamsCopyWithImpl(
-      _$DynPageParams _value, $Res Function(_$DynPageParams) _then)
+class __$$DynPageParamsImplCopyWithImpl<$Res>
+    extends _$PagerParamsCopyWithImpl<$Res, _$DynPageParamsImpl>
+    implements _$$DynPageParamsImplCopyWith<$Res> {
+  __$$DynPageParamsImplCopyWithImpl(
+      _$DynPageParamsImpl _value, $Res Function(_$DynPageParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -503,7 +506,7 @@ class __$$DynPageParamsCopyWithImpl<$Res>
     Object? style = null,
     Object? emptyChild = freezed,
   }) {
-    return _then(_$DynPageParams(
+    return _then(_$DynPageParamsImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -526,8 +529,8 @@ class __$$DynPageParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DynPageParams extends DynPageParams {
-  _$DynPageParams(
+class _$DynPageParamsImpl extends DynPageParams {
+  _$DynPageParamsImpl(
       {required this.name,
       this.emptyText = '暂无动态，快去发布一条吧',
       this.style = ResourceWidgetCardStyle.waterfall,
@@ -541,8 +544,8 @@ class _$DynPageParams extends DynPageParams {
       : $type = $type ?? 'dynListPageParam',
         super._();
 
-  factory _$DynPageParams.fromJson(Map<String, dynamic> json) =>
-      _$$DynPageParamsFromJson(json);
+  factory _$DynPageParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DynPageParamsImplFromJson(json);
 
   @override
   final String name;
@@ -569,10 +572,10 @@ class _$DynPageParams extends DynPageParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DynPageParams &&
+            other is _$DynPageParamsImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.emptyText, emptyText) ||
                 other.emptyText == emptyText) &&
@@ -589,8 +592,8 @@ class _$DynPageParams extends DynPageParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DynPageParamsCopyWith<_$DynPageParams> get copyWith =>
-      __$$DynPageParamsCopyWithImpl<_$DynPageParams>(this, _$identity);
+  _$$DynPageParamsImplCopyWith<_$DynPageParamsImpl> get copyWith =>
+      __$$DynPageParamsImplCopyWithImpl<_$DynPageParamsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -698,7 +701,7 @@ class _$DynPageParams extends DynPageParams {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DynPageParamsToJson(
+    return _$$DynPageParamsImplToJson(
       this,
     );
   }
@@ -714,11 +717,11 @@ abstract class DynPageParams extends PagerParams {
           toJson: null,
           includeToJson: false,
           includeFromJson: false)
-      final Widget? emptyChild}) = _$DynPageParams;
+      final Widget? emptyChild}) = _$DynPageParamsImpl;
   DynPageParams._() : super._();
 
   factory DynPageParams.fromJson(Map<String, dynamic> json) =
-      _$DynPageParams.fromJson;
+      _$DynPageParamsImpl.fromJson;
 
   String get name;
   String get emptyText;
@@ -730,15 +733,15 @@ abstract class DynPageParams extends PagerParams {
       includeFromJson: false)
   Widget? get emptyChild;
   @JsonKey(ignore: true)
-  _$$DynPageParamsCopyWith<_$DynPageParams> get copyWith =>
+  _$$DynPageParamsImplCopyWith<_$DynPageParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DynWriteParamsCopyWith<$Res> {
-  factory _$$DynWriteParamsCopyWith(
-          _$DynWriteParams value, $Res Function(_$DynWriteParams) then) =
-      __$$DynWriteParamsCopyWithImpl<$Res>;
+abstract class _$$DynWriteParamsImplCopyWith<$Res> {
+  factory _$$DynWriteParamsImplCopyWith(_$DynWriteParamsImpl value,
+          $Res Function(_$DynWriteParamsImpl) then) =
+      __$$DynWriteParamsImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {String name,
@@ -751,11 +754,11 @@ abstract class _$$DynWriteParamsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$DynWriteParamsCopyWithImpl<$Res>
-    extends _$PagerParamsCopyWithImpl<$Res, _$DynWriteParams>
-    implements _$$DynWriteParamsCopyWith<$Res> {
-  __$$DynWriteParamsCopyWithImpl(
-      _$DynWriteParams _value, $Res Function(_$DynWriteParams) _then)
+class __$$DynWriteParamsImplCopyWithImpl<$Res>
+    extends _$PagerParamsCopyWithImpl<$Res, _$DynWriteParamsImpl>
+    implements _$$DynWriteParamsImplCopyWith<$Res> {
+  __$$DynWriteParamsImplCopyWithImpl(
+      _$DynWriteParamsImpl _value, $Res Function(_$DynWriteParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -767,7 +770,7 @@ class __$$DynWriteParamsCopyWithImpl<$Res>
     Object? disableSelectOtherCategory = null,
     Object? hintText = freezed,
   }) {
-    return _then(_$DynWriteParams(
+    return _then(_$DynWriteParamsImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -806,8 +809,8 @@ class __$$DynWriteParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DynWriteParams extends DynWriteParams {
-  _$DynWriteParams(
+class _$DynWriteParamsImpl extends DynWriteParams {
+  _$DynWriteParamsImpl(
       {required this.name,
       this.productShare,
       this.title,
@@ -817,8 +820,8 @@ class _$DynWriteParams extends DynWriteParams {
       : $type = $type ?? 'dynWritePageParam',
         super._();
 
-  factory _$DynWriteParams.fromJson(Map<String, dynamic> json) =>
-      _$$DynWriteParamsFromJson(json);
+  factory _$DynWriteParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DynWriteParamsImplFromJson(json);
 
   @override
   final String name;
@@ -841,10 +844,10 @@ class _$DynWriteParams extends DynWriteParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DynWriteParams &&
+            other is _$DynWriteParamsImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.productShare, productShare) ||
                 other.productShare == productShare) &&
@@ -865,8 +868,9 @@ class _$DynWriteParams extends DynWriteParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DynWriteParamsCopyWith<_$DynWriteParams> get copyWith =>
-      __$$DynWriteParamsCopyWithImpl<_$DynWriteParams>(this, _$identity);
+  _$$DynWriteParamsImplCopyWith<_$DynWriteParamsImpl> get copyWith =>
+      __$$DynWriteParamsImplCopyWithImpl<_$DynWriteParamsImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -977,7 +981,7 @@ class _$DynWriteParams extends DynWriteParams {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DynWriteParamsToJson(
+    return _$$DynWriteParamsImplToJson(
       this,
     );
   }
@@ -989,11 +993,11 @@ abstract class DynWriteParams extends PagerParams {
       final ProductShare? productShare,
       final String? title,
       final bool disableSelectOtherCategory,
-      final String? hintText}) = _$DynWriteParams;
+      final String? hintText}) = _$DynWriteParamsImpl;
   DynWriteParams._() : super._();
 
   factory DynWriteParams.fromJson(Map<String, dynamic> json) =
-      _$DynWriteParams.fromJson;
+      _$DynWriteParamsImpl.fromJson;
 
   String get name;
   ProductShare? get productShare;
@@ -1001,6 +1005,6 @@ abstract class DynWriteParams extends PagerParams {
   bool get disableSelectOtherCategory;
   String? get hintText;
   @JsonKey(ignore: true)
-  _$$DynWriteParamsCopyWith<_$DynWriteParams> get copyWith =>
+  _$$DynWriteParamsImplCopyWith<_$DynWriteParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

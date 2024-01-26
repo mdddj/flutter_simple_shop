@@ -50,6 +50,9 @@ abstract class $GoodsListParamsModelCopyWith<$Res> {
       int page,
       bool initLoading,
       CancelToken? cancelToken});
+
+  $CategoryCopyWith<$Res> get category;
+  $SubcategoryCopyWith<$Res>? get subcategor;
 }
 
 /// @nodoc
@@ -105,14 +108,34 @@ class _$GoodsListParamsModelCopyWithImpl<$Res,
               as CancelToken?,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CategoryCopyWith<$Res> get category {
+    return $CategoryCopyWith<$Res>(_value.category, (value) {
+      return _then(_value.copyWith(category: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SubcategoryCopyWith<$Res>? get subcategor {
+    if (_value.subcategor == null) {
+      return null;
+    }
+
+    return $SubcategoryCopyWith<$Res>(_value.subcategor!, (value) {
+      return _then(_value.copyWith(subcategor: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$_GoodsListParamsModelCopyWith<$Res>
+abstract class _$$GoodsListParamsModelImplCopyWith<$Res>
     implements $GoodsListParamsModelCopyWith<$Res> {
-  factory _$$_GoodsListParamsModelCopyWith(_$_GoodsListParamsModel value,
-          $Res Function(_$_GoodsListParamsModel) then) =
-      __$$_GoodsListParamsModelCopyWithImpl<$Res>;
+  factory _$$GoodsListParamsModelImplCopyWith(_$GoodsListParamsModelImpl value,
+          $Res Function(_$GoodsListParamsModelImpl) then) =
+      __$$GoodsListParamsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -123,14 +146,19 @@ abstract class _$$_GoodsListParamsModelCopyWith<$Res>
       int page,
       bool initLoading,
       CancelToken? cancelToken});
+
+  @override
+  $CategoryCopyWith<$Res> get category;
+  @override
+  $SubcategoryCopyWith<$Res>? get subcategor;
 }
 
 /// @nodoc
-class __$$_GoodsListParamsModelCopyWithImpl<$Res>
-    extends _$GoodsListParamsModelCopyWithImpl<$Res, _$_GoodsListParamsModel>
-    implements _$$_GoodsListParamsModelCopyWith<$Res> {
-  __$$_GoodsListParamsModelCopyWithImpl(_$_GoodsListParamsModel _value,
-      $Res Function(_$_GoodsListParamsModel) _then)
+class __$$GoodsListParamsModelImplCopyWithImpl<$Res>
+    extends _$GoodsListParamsModelCopyWithImpl<$Res, _$GoodsListParamsModelImpl>
+    implements _$$GoodsListParamsModelImplCopyWith<$Res> {
+  __$$GoodsListParamsModelImplCopyWithImpl(_$GoodsListParamsModelImpl _value,
+      $Res Function(_$GoodsListParamsModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -144,7 +172,7 @@ class __$$_GoodsListParamsModelCopyWithImpl<$Res>
     Object? initLoading = null,
     Object? cancelToken = freezed,
   }) {
-    return _then(_$_GoodsListParamsModel(
+    return _then(_$GoodsListParamsModelImpl(
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -179,8 +207,8 @@ class __$$_GoodsListParamsModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GoodsListParamsModel implements _GoodsListParamsModel {
-  _$_GoodsListParamsModel(
+class _$GoodsListParamsModelImpl implements _GoodsListParamsModel {
+  _$GoodsListParamsModelImpl(
       {required this.category,
       this.subcategor,
       this.sort = DdSort.defaultSort,
@@ -213,9 +241,10 @@ class _$_GoodsListParamsModel implements _GoodsListParamsModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GoodsListParamsModelCopyWith<_$_GoodsListParamsModel> get copyWith =>
-      __$$_GoodsListParamsModelCopyWithImpl<_$_GoodsListParamsModel>(
-          this, _$identity);
+  _$$GoodsListParamsModelImplCopyWith<_$GoodsListParamsModelImpl>
+      get copyWith =>
+          __$$GoodsListParamsModelImplCopyWithImpl<_$GoodsListParamsModelImpl>(
+              this, _$identity);
 }
 
 abstract class _GoodsListParamsModel implements GoodsListParamsModel {
@@ -226,7 +255,7 @@ abstract class _GoodsListParamsModel implements GoodsListParamsModel {
       required List<Product> products,
       required int page,
       required bool initLoading,
-      CancelToken? cancelToken}) = _$_GoodsListParamsModel;
+      CancelToken? cancelToken}) = _$GoodsListParamsModelImpl;
 
   @override
   Category get category;
@@ -251,6 +280,6 @@ abstract class _GoodsListParamsModel implements GoodsListParamsModel {
   set cancelToken(CancelToken? value);
   @override
   @JsonKey(ignore: true)
-  _$$_GoodsListParamsModelCopyWith<_$_GoodsListParamsModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GoodsListParamsModelImplCopyWith<_$GoodsListParamsModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

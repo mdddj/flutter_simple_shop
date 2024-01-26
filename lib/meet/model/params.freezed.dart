@@ -136,11 +136,11 @@ class _$AddMeetParamsCopyWithImpl<$Res, $Val extends AddMeetParams>
 }
 
 /// @nodoc
-abstract class _$$_AddMeetParamsCopyWith<$Res>
+abstract class _$$AddMeetParamsImplCopyWith<$Res>
     implements $AddMeetParamsCopyWith<$Res> {
-  factory _$$_AddMeetParamsCopyWith(
-          _$_AddMeetParams value, $Res Function(_$_AddMeetParams) then) =
-      __$$_AddMeetParamsCopyWithImpl<$Res>;
+  factory _$$AddMeetParamsImplCopyWith(
+          _$AddMeetParamsImpl value, $Res Function(_$AddMeetParamsImpl) then) =
+      __$$AddMeetParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -157,11 +157,11 @@ abstract class _$$_AddMeetParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AddMeetParamsCopyWithImpl<$Res>
-    extends _$AddMeetParamsCopyWithImpl<$Res, _$_AddMeetParams>
-    implements _$$_AddMeetParamsCopyWith<$Res> {
-  __$$_AddMeetParamsCopyWithImpl(
-      _$_AddMeetParams _value, $Res Function(_$_AddMeetParams) _then)
+class __$$AddMeetParamsImplCopyWithImpl<$Res>
+    extends _$AddMeetParamsCopyWithImpl<$Res, _$AddMeetParamsImpl>
+    implements _$$AddMeetParamsImplCopyWith<$Res> {
+  __$$AddMeetParamsImplCopyWithImpl(
+      _$AddMeetParamsImpl _value, $Res Function(_$AddMeetParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -178,7 +178,7 @@ class __$$_AddMeetParamsCopyWithImpl<$Res>
     Object? aboutdiandian = null,
     Object? state = null,
   }) {
-    return _then(_$_AddMeetParams(
+    return _then(_$AddMeetParamsImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -225,8 +225,8 @@ class __$$_AddMeetParamsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AddMeetParams extends _AddMeetParams {
-  const _$_AddMeetParams(
+class _$AddMeetParamsImpl extends _AddMeetParams {
+  const _$AddMeetParamsImpl(
       {@JsonKey(name: 'id') this.id = 0,
       @JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'age') this.age = 0,
@@ -239,8 +239,8 @@ class _$_AddMeetParams extends _AddMeetParams {
       @JsonKey(name: 'state') this.state = 0})
       : super._();
 
-  factory _$_AddMeetParams.fromJson(Map<String, dynamic> json) =>
-      _$$_AddMeetParamsFromJson(json);
+  factory _$AddMeetParamsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AddMeetParamsImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -279,10 +279,10 @@ class _$_AddMeetParams extends _AddMeetParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddMeetParams &&
+            other is _$AddMeetParamsImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.age, age) || other.age == age) &&
@@ -309,12 +309,12 @@ class _$_AddMeetParams extends _AddMeetParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddMeetParamsCopyWith<_$_AddMeetParams> get copyWith =>
-      __$$_AddMeetParamsCopyWithImpl<_$_AddMeetParams>(this, _$identity);
+  _$$AddMeetParamsImplCopyWith<_$AddMeetParamsImpl> get copyWith =>
+      __$$AddMeetParamsImplCopyWithImpl<_$AddMeetParamsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AddMeetParamsToJson(
+    return _$$AddMeetParamsImplToJson(
       this,
     );
   }
@@ -331,11 +331,11 @@ abstract class _AddMeetParams extends AddMeetParams {
       @JsonKey(name: 'location') final String location,
       @JsonKey(name: 'toLocation') final String tolocation,
       @JsonKey(name: 'aboutDiandian') final String aboutdiandian,
-      @JsonKey(name: 'state') final int state}) = _$_AddMeetParams;
+      @JsonKey(name: 'state') final int state}) = _$AddMeetParamsImpl;
   const _AddMeetParams._() : super._();
 
   factory _AddMeetParams.fromJson(Map<String, dynamic> json) =
-      _$_AddMeetParams.fromJson;
+      _$AddMeetParamsImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -369,6 +369,6 @@ abstract class _AddMeetParams extends AddMeetParams {
   int get state;
   @override
   @JsonKey(ignore: true)
-  _$$_AddMeetParamsCopyWith<_$_AddMeetParams> get copyWith =>
+  _$$AddMeetParamsImplCopyWith<_$AddMeetParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
