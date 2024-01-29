@@ -21,7 +21,6 @@ class MyApp extends ApplicationWidget {
   @override
   Widget buildErrorWidget(
       Object e, StackTrace s, BuildContext context, WidgetRef ref) {
-    Logger().e('启动失败', error: e, stackTrace: s);
     return InitLoadingWidget(
       errorMessage: switch (e) { BaseApiException() => e.message, _ => "$e" },
       retry: () =>

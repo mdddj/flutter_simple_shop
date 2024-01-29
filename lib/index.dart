@@ -17,12 +17,11 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:logger/logger.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'api/apis.dart';
+import 'api/new/part.dart';
 import 'cache/index.dart';
 import 'common/index.dart';
 import 'common/view.dart';
@@ -54,9 +53,6 @@ export 'util/index.dart';
 export 'widgets/index.dart';
 
 part 'ad.dart';
-
 part 'app.dart';
-
 part 'init.dart';
-
 part 'router.dart';

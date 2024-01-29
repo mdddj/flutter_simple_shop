@@ -18,15 +18,10 @@ import 'model/email_register_params.dart';
 import 'model/login_params.dart';
 
 part 'base.dart';
-
 part 'report.dart';
-
 part 'resource.dart';
-
 part 'tkapi.dart';
-
 part 'user.dart';
-
 part 'zhe_api.dart';
 
 mixin ApiPageMixin<T> on BaseApi<T> {
@@ -92,8 +87,9 @@ abstract class BaseApiPublic<T> extends BaseApi<T> {
   Future<Dio> getDio(BaseOptions baseOptions) async {
     final dio = await super.getDio(baseOptions);
     await DdCheckPlugin().init(dio,
-        initHost: '192.168.100.64',
+        initHost: '192.168.199.92',
         port: 9998,
+        timeOut: const Duration(milliseconds: 1500),
         projectName: 'shop',
         extend: [
           HiveToolManager(boxList: [MyCategoryCache()])

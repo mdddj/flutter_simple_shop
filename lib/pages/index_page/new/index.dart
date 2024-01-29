@@ -8,8 +8,14 @@ class IndexHomeNew extends ConsumerStatefulWidget {
   IndexHomeNewState createState() => IndexHomeNewState();
 }
 
-class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-  late TabController tabController = TabController(length: ref.watch(categoryRiverpod.select((value) => value.categorys)).length + 1, vsync: this);
+class IndexHomeNewState extends ConsumerState<IndexHomeNew>
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+  late TabController tabController = TabController(
+      length: ref
+              .watch(categoryRiverpod.select((value) => value.categorys))
+              .length +
+          1,
+      vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,12 @@ class IndexHomeNewState extends ConsumerState<IndexHomeNew> with SingleTickerPro
       ),
       body: TabBarView(
         controller: tabController,
-        children: [const HomeWidgets(), ...ref.watch(categoryRiverpod.select((value) => value.categorys)).map(CategoryGoodsList.new)],
+        children: [
+          const HomeWidgets(),
+          ...ref
+              .watch(categoryRiverpod.select((value) => value.categorys))
+              .map(CategoryGoodsList.new)
+        ],
       ),
     );
   }
@@ -36,7 +47,8 @@ class HomeWidgets extends ConsumerStatefulWidget {
   ConsumerState<HomeWidgets> createState() => _HomeWidgetsState();
 }
 
-class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAliveClientMixin {
+class _HomeWidgetsState extends ConsumerState<HomeWidgets>
+    with AutomaticKeepAliveClientMixin {
   final repository = NewProductsLoadMore();
 
   @override
@@ -44,28 +56,25 @@ class _HomeWidgetsState extends ConsumerState<HomeWidgets> with AutomaticKeepAli
     super.build(context);
     return LoadingMoreCustomScrollView(
       slivers: [
-        SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-          switch (index) {
-            case 1:
-              // return const IndexCarousel();//轮播
-              return const SizedBox();
-            case 0:
-              return const GridMenuComponent();
-            case 2:
-              return const IndexColumnWidget();
-            case 3:
-              return const IndexProductTitle();
-            default:
-              return const SizedBox();
-          }
-        }, childCount: 4)),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+          sliver: SliverList.list(children: const [
+            _Space(),
+            IndexCarousel(),
+            _Space(),
+            GridMenuComponent(),
+            _Space(),
+            IndexProductTitle(),
+          ]),
+        ),
         LoadingMoreSliverList(
           SliverListConfig<ProductModel>(
               itemBuilder: (c, ite, index) => WaterfallGoodsCard(ite),
               sourceList: repository,
+              lock: false,
               indicatorBuilder: CustomLoadingMoreWidgetWithSliver.new,
-              extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+              extendedListDelegate:
+                  SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: context.waterfallFlowCrossAxisCount,
                 crossAxisSpacing: kDefaultPadding,
                 mainAxisSpacing: kDefaultPadding,
@@ -101,11 +110,13 @@ class IndexProductTitle extends StatelessWidget {
             'assets/svg/rmtj.svg',
             width: 120,
             height: 30,
-            colorFilter: ColorFilter.mode(context.iconColor ?? Colors.red, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+                context.iconColor ?? Colors.red, BlendMode.srcIn),
           ),
           Text(
             '典:没啥事就购物把,反正便宜',
-            style: context.textTheme.bodyMedium?.copyWith(color: Colors.grey, fontSize: 12),
+            style: context.textTheme.bodyMedium
+                ?.copyWith(color: Colors.grey, fontSize: 12),
           )
         ],
       ),
@@ -119,7 +130,8 @@ class IndexProducts extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final products = ref.watch(riverpodIndexProducts.select((value) => value.products));
+    final products =
+        ref.watch(riverpodIndexProducts.select((value) => value.products));
     return SliverPadding(
         padding: const EdgeInsets.all(8),
         sliver: SliverWaterfallFlow.count(
@@ -128,5 +140,16 @@ class IndexProducts extends ConsumerWidget {
           crossAxisSpacing: 8,
           children: products.map(WaterfallGoodsCard.new).toList(),
         ));
+  }
+}
+
+class _Space extends StatelessWidget {
+  const _Space();
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      height: kDefaultPadding,
+    );
   }
 }

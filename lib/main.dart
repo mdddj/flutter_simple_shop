@@ -10,7 +10,7 @@ import 'index.dart';
 
 ///本地测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.199.82",
+    host: "http://192.168.199.76",
     port: '8082',
     debugMode: true,
     fontFamily: '');
@@ -25,13 +25,14 @@ const releaseEnvConfig = EnvConfig(
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
 const useEnv = releaseEnvConfig;
 
-//
 void main() async {
-  appInit(() => runApp(const ProviderScope(
-          child: UMEWidget(
-        enable: true,
-        child: DdShop(),
-      ))));
+  appInit(() {
+    runApp(const ProviderScope(
+        child: UMEWidget(
+      enable: true,
+      child: DdShop(),
+    )));
+  });
 }
 
 class DdShop extends View {
@@ -43,7 +44,7 @@ class DdShop extends View {
       return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: '典典小卖部',
-          theme: model.theme,
+          theme: AppTheme.getTheme(model.theme),
           darkTheme: model.darkTheme,
           themeMode: model.getThemeMode,
           routerConfig: routers,
@@ -54,13 +55,23 @@ class DdShop extends View {
   }
 }
 
-class Demo extends StatelessWidget {
-  const Demo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (ctx, cons) {
-      return const SizedBox();
-    });
+class AppTheme {
+  static ThemeData getTheme(ThemeData def) {
+    return def.copyWith(
+        scaffoldBackgroundColor: Colors.grey.shade200,
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.white,
+            surfaceTintColor: Colors.white,
+            scrolledUnderElevation: 0,
+            elevation: 0.1),
+        cardTheme: const CardTheme(
+            elevation: 0,
+            margin: EdgeInsets.zero,
+            color: Colors.white,
+            surfaceTintColor: Colors.white,
+            shadowColor: Colors.white),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.white,
+        ));
   }
 }

@@ -8,9 +8,6 @@ class IndexState extends ChangeNotifier {
 
   List<ProductModel> products = [];
 
-  // 首页推广轮播图
-  List<Carousel> carousel = [];
-
   // 每日榜单的商品列表
   List<ProductModel> hotDayProducts = [];
 
@@ -43,16 +40,7 @@ class IndexState extends ChangeNotifier {
     if (result != null) {
       products.addAll(result.list ?? []);
     }
-    await getAllCarousel();
     notifyListeners();
-  }
-
-  // 加载轮播图
-  Future<void> getAllCarousel() async {
-    final result = await kApi.getCarousel(requestParamsBuilder: (o) {
-      return o.copyWith(showDefaultLoading: false);
-    });
-    carousel = result;
   }
 
   Future<void> nextPage() async {

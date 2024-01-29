@@ -1,31 +1,37 @@
 part of '../../../index.dart';
 
+final _carouselfuture = NewApiByCarousel().cancelFuture;
+
 class IndexCarousel extends ConsumerWidget {
   const IndexCarousel({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final data = ref.watch(indexStateRiverpod.select((value) => value.carousel));
-    if (data.isEmpty) {
-      return const ZhetaokeCarouselWidget();
-    }
-    return WaterfallFlow.count(
-      padding: const EdgeInsets.all(8),
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      crossAxisCount: 1,
-      children: [IndexTopicComponentCarousel(list: data), LayoutBuilder(builder: _builder)],
+    return ref
+        .watch(_carouselfuture(const RequestParams(showDefaultLoading: false)))
+        .when(
+      data: (data) {
+        return IndexTopicComponentCarousel(data);
+      },
+      error: (error, stackTrace) {
+        return Center(
+          child: Text(switch (error) {
+            BaseApiException() => error.message,
+            _ => "$error"
+          }),
+        );
+      },
+      loading: () {
+        return const Center(child: CircularProgressIndicator());
+      },
     );
-  }
-
-  Widget _builder(BuildContext context, BoxConstraints constraints) {
-    return Container();
   }
 }
 
 final kRivCarouseApiFuture = FutureProvider<WrapJson>((ref) async {
   try {
-    return await (KZheTaokeApiWithCarousel()).request(const RequestParams(showDefaultLoading: false));
+    return await (KZheTaokeApiWithCarousel())
+        .request(const RequestParams(showDefaultLoading: false));
   } on BaseApiException catch (_) {
     rethrow;
   }
@@ -55,7 +61,8 @@ class ZhetaokeCarouselWidget extends ConsumerWidget {
           ).aspectRatio(2.53);
         },
         error: (e, s) => const Text('error'),
-        loading: () => const CupertinoActivityIndicator().center.aspectRatio(2.53));
+        loading: () =>
+            const CupertinoActivityIndicator().center.aspectRatio(2.53));
   }
 
   List<dynamic> _getCarouselList(final Map<String, dynamic> map) {

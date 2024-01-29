@@ -8,7 +8,7 @@ class IndexCardWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(12),
+      margin: EdgeInsets.zero,
       child: child,
     );
   }

@@ -41,12 +41,19 @@ class DeskTopAppbar extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("典典的小卖部", style: context.textTheme.titleLarge).marginOnly(left: 12),
+              Text("典典的小卖部", style: context.textTheme.titleLarge)
+                  .marginOnly(left: 12),
               Container(
                       constraints: const BoxConstraints(maxWidth: 180),
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                      decoration: BoxDecoration(color: Colors.grey.shade200, borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.grey.shade400)),
-                      child: const Text("搜索内容,比如:辣条").addIcon(icon: Icon(Icons.search, size: 17, color: context.primaryColor)))
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.grey.shade400)),
+                      child: const Text("搜索内容,比如:辣条").addIcon(
+                          icon: Icon(Icons.search,
+                              size: 17, color: context.primaryColor)))
                   .marginOnly(right: 12)
                   .click(() {
                 context.push(pagerUtil.search.routername);
@@ -79,7 +86,9 @@ class MobileAppbar extends View implements PreferredSizeWidget {
       leadingWidth: 58,
       title: Container(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 6),
-        decoration: BoxDecoration(border: Border.all(color: Colors.grey.shade100), borderRadius: 12.borderRadius),
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey.shade100),
+            borderRadius: 12.borderRadius),
         child: Row(
           children: [
             const Icon(CupertinoIcons.search, color: Colors.grey, size: 16),
@@ -128,6 +137,7 @@ class IndexHomeBottomTabbar extends View {
     return TabBar(
       controller: tabController,
       isScrollable: true,
+      tabAlignment: TabAlignment.start,
       tabs: [
         const Tab(
           text: '精选',
@@ -161,7 +171,13 @@ class CategoryItemLayout extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ImageView(image: MyImage.network(url: item.cpic, params: ImageParams(size: 22, shape: BoxShape.rectangle, borderRadius: BorderRadius.circular(8)))),
+            ImageView(
+                image: MyImage.network(
+                    url: item.cpic,
+                    params: ImageParams(
+                        size: 22,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(8)))),
             const SizedBox(width: 4),
             Text(item.cname)
           ],

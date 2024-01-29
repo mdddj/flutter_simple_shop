@@ -9,8 +9,6 @@ Future<void> appInit(VoidCallback start) async {
   await initCaches();
   start.call();
   TKBaseApi.opt = BaseApiPublic.opt;
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  prefs.setString("token", "fsdkjfksdjfkjsdfkfjdsj你好啊");
 }
 
 void initNetUtil() {
@@ -50,6 +48,8 @@ void initInstanceObject() {
   getIt.registerSingleton(ZheElmApi());
   getIt.registerSingleton(PrivacyCache());
   getIt.registerSingleton(TkXianbaoApi());
+  getIt.registerSingleton(NewApiDioInstance());
+  getIt.registerSingleton(NewApiByCarouselProductsApi());
 }
 
 Future<void> initCaches() async {
@@ -66,7 +66,9 @@ Future<void> initCaches() async {
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
-    return super.createHttpClient(context)..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }
 
@@ -74,5 +76,7 @@ class MyCategoryCache extends DdPluginHiveBox<CategoryWrapper> {
   MyCategoryCache() : super("dd_category_box");
 
   @override
-  Future<Box<CategoryWrapper>> get getBox => Hive.isBoxOpen(boxName) ? Future.value(Hive.box(boxName)) : Hive.openBox(boxName);
+  Future<Box<CategoryWrapper>> get getBox => Hive.isBoxOpen(boxName)
+      ? Future.value(Hive.box(boxName))
+      : Hive.openBox(boxName);
 }
