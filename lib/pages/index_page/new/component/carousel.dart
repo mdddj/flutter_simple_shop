@@ -1,29 +1,36 @@
 part of '../../../index.dart';
 
-final _carouselfuture = NewApiByCarousel().cancelFuture;
+final _carouselfuture = NewApiByCarousel().future;
 
 class IndexCarousel extends ConsumerWidget {
   const IndexCarousel({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ref
-        .watch(_carouselfuture(const RequestParams(showDefaultLoading: false)))
-        .when(
-      data: (data) {
-        return IndexTopicComponentCarousel(data);
-      },
-      error: (error, stackTrace) {
-        return Center(
-          child: Text(switch (error) {
-            BaseApiException() => error.message,
-            _ => "$error"
-          }),
-        );
-      },
-      loading: () {
-        return const Center(child: CircularProgressIndicator());
-      },
+    return AspectRatio(
+      aspectRatio: 2.53,
+      child: ref
+          .watch(
+              _carouselfuture(const RequestParams(showDefaultLoading: false)))
+          .when(
+        data: (data) {
+          return IndexTopicComponentCarousel(data);
+        },
+        error: (error, stackTrace) {
+          return Center(
+            child: Text(switch (error) {
+              BaseApiException() => error.message,
+              _ => "$error"
+            }),
+          );
+        },
+        loading: () {
+          return const SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Center(child: CircularProgressIndicator()));
+        },
+      ),
     );
   }
 }
