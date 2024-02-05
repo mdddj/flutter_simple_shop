@@ -278,7 +278,7 @@
         <entry key="dataoke_sdk">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.7/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.9/lib" />
             </list>
           </value>
         </entry>
@@ -1822,7 +1822,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/csslib-0.17.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/cupertino_icons-1.0.6/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dart_style-2.3.2/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.7/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.9/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/date_format-2.0.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dbus-0.7.8/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-3.1.4/lib" />

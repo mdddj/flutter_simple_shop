@@ -11,6 +11,7 @@ import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
+import 'package:dataoke_sdk/model/detail_base_data.dart';
 import 'package:dd_js_util/dd_js_util.dart' hide asT;
 import 'package:dd_js_util/theme/model.dart';
 import 'package:dd_models/models/brand.dart';

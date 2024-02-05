@@ -14,9 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="bug fix">
+      <change afterPath="$PROJECT_DIR$/lib/api/new/product_detail_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/loading/custom_loading_more_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/loading/custom_loading_more_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/new/part.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/part.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -957,7 +963,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701057122108</updated>
     </task>
-    <option name="localTasksCounter" value="235" />
+    <option name="localTasksCounter" value="236" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -20,7 +20,6 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/url_launcher_ios-6.2.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/sqflite-2.2.4+1" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/permission_handler_html-0.1.1" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.7" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/path_provider_windows-2.2.0" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/connectivity_plus-5.0.2" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/package_info_plus-5.0.1" />
@@ -47,6 +46,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/image_picker_android-0.8.7+4" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus-7.2.2" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter-4.5.0" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dataoke_sdk-4.0.9" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

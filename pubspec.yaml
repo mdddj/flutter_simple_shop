@@ -72,7 +72,7 @@ dependencies:
   dd_js_util: ^6.0.5
   dd_models: ^0.1.0
   dd_check_plugin: ^3.1.4
-  dataoke_sdk: ^4.0.7
+  dataoke_sdk: ^4.0.9
   permission_handler: ^11.2.0
   go_router: ^13.1.0
   responsive_builder: ^0.7.0

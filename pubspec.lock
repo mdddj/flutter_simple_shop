@@ -317,10 +317,10 @@ packages:
     dependency: "direct main"
     description:
       name: dataoke_sdk
-      sha256: "4840fa199bf8df195c7ad46a0457d8ae3875548e1b219ec692630c1734855b7a"
+      sha256: "6243554a7557fed22dcabe0950722cc7935b36229415fcd57d9b171b51312d9a"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.7"
+    version: "4.0.9"
   date_format:
     dependency: "direct main"
     description:
