@@ -13,6 +13,7 @@ import 'package:loading_more_list_library_fast/model/status.dart';
 
 import '../api/apis.dart';
 import '../api/model/login_params.dart';
+import '../api/new/part.dart';
 import '../freezed/login_result_model.dart';
 import '../index.dart';
 import '../pages/user_home_page/login/login_base.dart';

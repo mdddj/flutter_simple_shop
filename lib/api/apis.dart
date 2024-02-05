@@ -16,6 +16,7 @@ import '../freezed/zhe_elm_model.dart';
 import '../index.dart';
 import 'model/email_register_params.dart';
 import 'model/login_params.dart';
+import 'new/part.dart';
 
 part 'base.dart';
 part 'report.dart';
@@ -87,7 +88,7 @@ abstract class BaseApiPublic<T> extends BaseApi<T> {
   Future<Dio> getDio(BaseOptions baseOptions) async {
     final dio = await super.getDio(baseOptions);
     await DdCheckPlugin().init(dio,
-        initHost: '192.168.199.92',
+        initHost: '192.168.0.104',
         port: 9998,
         timeOut: const Duration(milliseconds: 1500),
         projectName: 'shop',
@@ -200,17 +201,10 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApiWithWrapJson {
 
   @Doc(message: '加载折淘客的APP Key')
   static Future<String> doRequest(Ref ref) async {
-    final cacehData =
-        await TokenCache.instance.getValue('zhe-app-key', defaultValue: '');
-    if (cacehData.isNotEmpty) {
-      ref.read(riverpodZhetaokeAppKeyState.notifier).state = cacehData;
-      return cacehData;
-    }
-    final api = KZheTaokeApiWithAppkeyGet();
-    final r = await api.request(const RequestParams(showDefaultLoading: false));
-    final appKey = r.getString('data');
-    await appKey.saveToCaceh("zhe-app-key");
-    return appKey;
+    final appkey = await MyNewApiByZhetaokeAppKey()
+        .request(const RequestParams(showDefaultLoading: false));
+    ref.read(riverpodZhetaokeAppKeyState.notifier).state = appkey;
+    return appkey;
   }
 }
 

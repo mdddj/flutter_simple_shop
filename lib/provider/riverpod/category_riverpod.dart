@@ -1,7 +1,8 @@
 part of '../index.dart';
 
 extension CategoryRiverpodEx on WidgetRef {
-  IList<Category> get categorys => watch(categoryRiverpod.select((value) => value.categorys));
+  IList<Category> get categorys =>
+      watch(categoryRiverpod.select((value) => value.categorys));
 }
 
 final categoryRiverpod = ChangeNotifierProvider((ref) => CategoryState());
@@ -21,7 +22,8 @@ class CategoryState extends ChangeNotifier {
 
   /// 加载大淘客超级分类数据
   Future<IList<Category>> init() async {
-    final result = await kApi.getCategorys();
+    final result = await MyNewApiByCategoryApi()
+        .request(const RequestParams(showDefaultLoading: false));
     categorys = result.lock;
     if (categorys.isNotEmpty) {
       setCurrent(result[0]);

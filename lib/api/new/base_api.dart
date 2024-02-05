@@ -16,7 +16,7 @@ class NewApiDioInstance {
     dio = Dio(options);
     await dioCheckPlugin
         .init(dio!,
-            initHost: '192.168.199.76',
+            initHost: '192.168.0.104',
             port: 9998,
             projectName: 'shop',
             timeOut: const Duration(milliseconds: 1200))

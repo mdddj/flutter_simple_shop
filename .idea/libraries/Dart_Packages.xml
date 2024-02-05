@@ -306,7 +306,7 @@
         <entry key="dd_js_util">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-6.0.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-6.0.5/lib" />
             </list>
           </value>
         </entry>
@@ -432,7 +432,7 @@
         <entry key="fast_immutable_collections">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fast_immutable_collections-10.0.0/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fast_immutable_collections-10.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -579,7 +579,7 @@
         <entry key="flutter_riverpod">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.9/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.10/lib" />
             </list>
           </value>
         </entry>
@@ -614,7 +614,7 @@
         <entry key="flutter_swiper_null_safety_flutter3">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_swiper_null_safety_flutter3-4.0.2/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_swiper_null_safety_flutter3-4.0.3/lib" />
             </list>
           </value>
         </entry>
@@ -698,7 +698,7 @@
         <entry key="freezed">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed-2.4.6/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed-2.4.7/lib" />
             </list>
           </value>
         </entry>
@@ -754,7 +754,7 @@
         <entry key="go_router">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/go_router-13.0.1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/go_router-13.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -789,7 +789,7 @@
         <entry key="hooks_riverpod">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.9/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.10/lib" />
             </list>
           </value>
         </entry>
@@ -1286,7 +1286,7 @@
         <entry key="riverpod">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/riverpod-2.4.9/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/riverpod-2.5.0/lib" />
             </list>
           </value>
         </entry>
@@ -1321,7 +1321,7 @@
         <entry key="share_plus">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus-7.2.1/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus-7.2.2/lib" />
             </list>
           </value>
         </entry>
@@ -1713,7 +1713,7 @@
         <entry key="webview_flutter">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter-4.4.4/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter-4.5.0/lib" />
             </list>
           </value>
         </entry>
@@ -1826,7 +1826,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/date_format-2.0.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dbus-0.7.8/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_check_plugin-3.1.4/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-6.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_js_util-6.0.5/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dd_models-0.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/decimal-2.3.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/device_info-2.0.3/lib" />
@@ -1844,7 +1844,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_tabs-4.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text-12.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_text_library-12.0.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fast_immutable_collections-10.0.0/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fast_immutable_collections-10.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fbutton_nullsafety-5.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fcontrol_nullsafety-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/ffi-2.0.1/lib" />
@@ -1863,12 +1863,12 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_lints-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_markdown-0.6.18+3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.7/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.9/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_riverpod-2.4.10/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_slidable-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_smart_dialog-4.9.6/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_spinkit-5.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_svg-2.0.9/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_swiper_null_safety_flutter3-4.0.2/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_swiper_null_safety_flutter3-4.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_syntax_view-4.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_ume_kit_channel_monitor_plus-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_ume_kit_console_plus-2.0.2/lib" />
@@ -1879,7 +1879,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_ume_kit_ui_plus-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_ume_plus-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/flutter_widget_from_html_core-0.14.11/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed-2.4.6/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed-2.4.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/freezed_annotation-2.4.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/frontend_server_client-3.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/fsearch_nullsafety-2.0.0/lib" />
@@ -1887,12 +1887,12 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/get_it-7.6.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/glob-2.1.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/globbing-1.0.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/go_router-13.0.1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/go_router-13.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/graphs-2.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive-2.2.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive_flutter-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hive_generator_plus-3.0.4/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.9/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/hooks_riverpod-2.4.10/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/html-0.15.4/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http-1.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/http_client_helper-3.0.0/lib" />
@@ -1963,12 +1963,12 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/quiver-3.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/rational-2.2.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/responsive_builder-0.7.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/riverpod-2.4.9/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/riverpod-2.5.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/rxdart-0.27.7/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/saver_gallery-3.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/scoped_model-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share-2.0.4/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus-7.2.1/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus-7.2.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus_platform_interface-3.3.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/shared_preferences-2.2.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/shared_preferences_android-2.1.4/lib" />
@@ -2023,7 +2023,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/waterfall_flow-3.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/web-0.3.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/web_socket_channel-2.3.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter-4.4.4/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter-4.5.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter_android-3.13.2/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter_platform_interface-2.9.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-3.10.1/lib" />
