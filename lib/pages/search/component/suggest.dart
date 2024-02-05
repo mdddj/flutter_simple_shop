@@ -14,19 +14,13 @@ class Suggest extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   '热搜榜',
                   style: TextStyle(fontSize: 16),
-                ),
-                Text(
-                  '刷新',
-                  style: TextStyle(color: context.primaryColor),
-                ).click(() {
-                  ref.invalidate(_riverpodSuggest);
-                })
+                )
               ],
             ),
             const SizedBox(
@@ -70,12 +64,12 @@ class Suggest extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: Row(
           children: [
-            Text('${item.rankNum!}'),
             SizedBox(
               width: 30,
               height: 58,
               child: Container(
                 alignment: Alignment.center,
+                child: Text('${item.rankNum!}'),
               ),
             ),
             SizedBox(

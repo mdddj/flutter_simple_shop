@@ -28,11 +28,14 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
         activityId = '10247';
       }
       try {
-        final result = await getIt.get<ZheElmApi>().request(R(data: {"activityId": activityId, "customerId": '${ref.user?.id ?? 1}'}));
+        final result = await getIt.get<ZheElmApi>().request(R(data: {
+              "activityId": activityId,
+              "customerId": '${ref.user?.id ?? 1}'
+            }));
         zheModel = result;
         setState(() {});
-      } on BaseApiException catch (e) {
-        showIosDialog(e.message);
+      } catch (e) {
+        showIosDialog(e.errorMessage);
       }
     });
   }
@@ -40,11 +43,20 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: widget.type == '1' ? const Color.fromRGBO(255, 97, 97, 1) : const Color.fromRGBO(1, 171, 245, 1),
+      backgroundColor: widget.type == '1'
+          ? const Color.fromRGBO(255, 97, 97, 1)
+          : const Color.fromRGBO(1, 171, 245, 1),
       appBar: const SimpleAppBar(title: '红包领取'),
       body: SingleChildScrollView(
         child: Column(
-          children: [renderHeaderImage(), renderNavLink(), utils.widgetUtils.marginTop(), renderKl(), utils.widgetUtils.marginTop(), rendenGuize()],
+          children: [
+            renderHeaderImage(),
+            renderNavLink(),
+            utils.widgetUtils.marginTop(),
+            renderKl(),
+            utils.widgetUtils.marginTop(),
+            rendenGuize()
+          ],
         ),
       ),
     );
@@ -69,7 +81,10 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
 
   // 头部
   Widget renderHeaderImage() {
-    return AspectRatio(aspectRatio: 1.87, child: Image.asset('assets/images/waimai/hb/${widget.type == '1' ? '1' : 'sc_bg'}.png'));
+    return AspectRatio(
+        aspectRatio: 1.87,
+        child: Image.asset(
+            'assets/images/waimai/hb/${widget.type == '1' ? '1' : 'sc_bg'}.png'));
   }
 
   /// 复制口令模块
@@ -90,7 +105,11 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
                   child: Column(
                     children: [
                       const Text('微信小程序领取').marginOnly(bottom: 6),
-                      ImageView(image: MyImage.network(url: zheModel!.links.miniqrcode, params: const ImageParams(size: 80))).wrapper(zheModel!.links.miniqrcode),
+                      ImageView(
+                              image: MyImage.network(
+                                  url: zheModel!.links.miniqrcode,
+                                  params: const ImageParams(size: 80)))
+                          .wrapper(zheModel!.links.miniqrcode),
                     ],
                   ))),
         Positioned(
@@ -100,7 +119,8 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
           child: FButton(
             height: 40,
             text: '或者去支付宝领取',
-            style: const TextStyle(color: Colors.pink, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+                color: Colors.pink, fontWeight: FontWeight.bold),
             onPressed: () {
               if (zheModel != null) {
                 appLaunchUrl(zheModel!.links.alipayminiurl);
@@ -159,7 +179,8 @@ class WaimaiDetailState extends ConsumerState<WaimaiDetail> {
               bottom: 60,
               child: Text(
                 '去饿了么APP领取',
-                style: context.textTheme.bodyLarge?.copyWith(color: context.primaryColor),
+                style: context.textTheme.bodyLarge
+                    ?.copyWith(color: context.primaryColor),
               ).center.click(() {
                 appLaunchUrl(zheModel?.links.eleschemeurl ?? '');
               }),

@@ -54,7 +54,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   TextFormField(
                     controller: _codeController,
-                    decoration: InputDecoration(label: const Text("邮箱验证码"), suffixIcon: _getCodeBtn),
+                    decoration: InputDecoration(
+                        label: const Text("邮箱验证码"), suffixIcon: _getCodeBtn),
                     validator: (value) => value?.length != 6 ? "请输入验证码" : null,
                   ),
                   const SizedBox(
@@ -63,7 +64,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   TextFormField(
                     controller: _passController,
                     decoration: const InputDecoration(label: Text("密码")),
-                    validator: (value) => (value?.length ?? 0) < 6 ? "请输入正确的密码" : null,
+                    validator: (value) =>
+                        (value?.length ?? 0) < 6 ? "请输入正确的密码" : null,
                   ),
                   const SizedBox(
                     height: 20,
@@ -84,7 +86,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  SizedBox(width: double.infinity, child: FilledButton(onPressed: _register, child: const Text("注册")))
+                  SizedBox(
+                      width: double.infinity,
+                      child: FilledButton(
+                          onPressed: _register, child: const Text("注册")))
                 ],
               )),
         ),
@@ -95,13 +100,16 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget get _getCodeBtn {
     return CountDown(
       builder: (ctx, a, b, c, d, e) {
-        return ElevatedButton(onPressed: _disableGetCodeBtn ? null : _getValidCode, child: Text(_disableGetCodeBtn ? "$d秒后重试" : "获取验证码"));
+        return OutlinedButton(
+            onPressed: _disableGetCodeBtn ? null : _getValidCode,
+            child: Text(_disableGetCodeBtn ? "$d秒后重试" : "获取验证码"));
       },
       controller: _countDownController,
       onStart: () => setState(() => _disableGetCodeBtn = true),
       onEnd: () => setState(() => _disableGetCodeBtn = false),
       interval: const Duration(seconds: 1),
-      endTime: DateTime.now().add(const Duration(seconds: 60)).toIso8601String(),
+      endTime:
+          DateTime.now().add(const Duration(seconds: 60)).toIso8601String(),
     ).marginOnly(right: 12);
   }
 
@@ -111,24 +119,34 @@ class _RegisterPageState extends State<RegisterPage> {
       return;
     }
     context.hideKeyBoard();
-    MyApiWithEmailRegister(EmailRegisterParams(email: _email, code: _code, password: _finalPass)).request().then((value) {
+    MyApiWithEmailRegister(EmailRegisterParams(
+            email: _email, code: _code, password: _finalPass))
+        .request()
+        .then((value) {
       value.ifSuccessPop(context);
     });
   }
 
   //获取验证码
-  void _getValidCode() {
+  Future<void> _getValidCode() async {
     if (_email.isEmpty) {
       toast('请输入邮箱');
       return;
     }
     context.hideKeyBoard();
-    getIt.get<MyApiWithSendEmailValidCode>().request(R(data: GetEmailValidCodeParams(email: _email).toJson())).then((value) {
-      value.simpleToast();
-      if (value.isSuccess) {
-        _countDownController.start();
-      }
-    });
+    try {
+      await getIt
+          .get<MyApiWithSendEmailValidCode>()
+          .request(R(data: GetEmailValidCodeParams(email: _email).toJson()))
+          .then((value) {
+        value.simpleToast();
+        if (value.isSuccess) {
+          _countDownController.start();
+        }
+      });
+    } catch (e) {
+      toast(e.errorMessage);
+    }
   }
 
   //表单是否验证通过

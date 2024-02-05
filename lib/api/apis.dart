@@ -63,7 +63,7 @@ extension DartTypeModelEx on DartTypeModel {
     throwBizError();
     return whenOrNull(
           json: (value) {
-            return value.json.getValue('data').dartModel;
+            return DartTypeModel.createFrom(value['data']);
           },
         ) ??
         const DartTypeModel.nil();

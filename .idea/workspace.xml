@@ -14,12 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="bug fix">
-      <change afterPath="$PROJECT_DIR$/lib/api/new/hot_search_api.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/new/part.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/part.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/topic_carousel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/topic_carousel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/carousel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/carousel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/apis.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/login/register_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/login/register_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +149,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.23908046",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
@@ -960,7 +959,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701057122108</updated>
     </task>
-    <option name="localTasksCounter" value="231" />
+    <option name="localTasksCounter" value="232" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
