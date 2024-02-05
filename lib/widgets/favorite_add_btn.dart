@@ -2,6 +2,7 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart' hide View;
 
 import '../api/apis.dart';
+import '../api/new/part.dart';
 import '../common/view.dart';
 import '../freezed/add_favorites_params.dart';
 import '../pages/index.dart';
@@ -30,15 +31,16 @@ class FavoriteAddBtn extends View {
       showDialog(context: context, builder: (_) => const LoginDialog());
       return;
     }
-    final r = await FavoritesAddApi.doRequeset(params);
-    r.handle(success: () {
-      kLog(r.data);
+    try {
+      final r = await FavoritesAddApi.doRequeset(params);
       try {
         applicationModel.favoritesRepository
-            .addNew(MyFavoritesModel.fromJson(r.getDataMap));
+            .addNew(MyFavoritesModel.fromJson(r.data));
       } catch (e) {
-        kLogErr('$e');
+        toast(e.errorMessage);
       }
-    });
+    } catch (e) {
+      showIosDialog(e.errorMessage);
+    }
   }
 }

@@ -2,7 +2,7 @@ import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
-import '../../../index.dart';
+import '../../../api/new/part.dart';
 import 'types.dart';
 
 class JiujiuRepository extends LoadingMoreBase<ProductModel> {
@@ -23,24 +23,18 @@ class JiujiuRepository extends LoadingMoreBase<ProductModel> {
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
     if (_page == 1) clear();
-    try {
-      final value = await kApi.getNineNineProducts(
-          param: NineNineParam(
-              nineCid: type.paramsValue, pageId: '$_page', pageSize: '20'),
-          requestParamsBuilder: (RequestParams requestParams) {
-            return requestParams.copyWith(showDefaultLoading: false);
-          });
-      if (value != null) {
-        final list = value.list ?? [];
-        addAll(list);
-        _page++;
-        _hasMore = list.isNotEmpty;
-        return true;
-      }
-      return false;
-    } catch (e) {
-      return false;
+    final list = await MyNewApiByNineNine().request(RequestParams(
+        showDefaultLoading: false,
+        data: NineNineParam(
+                nineCid: type.paramsValue, pageId: '$_page', pageSize: '20')
+            .toJson()));
+    if (list.isNotEmpty) {
+      addAll(list);
+      _page++;
+      _hasMore = list.isNotEmpty;
+      return true;
     }
+    return false;
   }
 
   @override

@@ -55,18 +55,16 @@ class _RenderZheProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, size) {
-      return Container(
-        child: Column(
-          children: [
-            ImageView(
-                image: MyImage.network(
-                    url: product.pictUrl,
-                    params: ImageParams(
-                        fit: BoxFit.cover,
-                        width: size.maxWidth,
-                        height: size.maxWidth)))
-          ],
-        ),
+      return Column(
+        children: [
+          ImageView(
+              image: MyImage.network(
+                  url: product.pictUrl,
+                  params: ImageParams(
+                      fit: BoxFit.cover,
+                      width: size.maxWidth,
+                      height: size.maxWidth)))
+        ],
       );
     });
   }

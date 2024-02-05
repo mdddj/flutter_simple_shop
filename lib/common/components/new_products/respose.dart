@@ -13,21 +13,16 @@ class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
 
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
-    final r = await kApi.getProducts(
-        param: ProductListParam(pageId: '$page', pageSize: '10'),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams.copyWith(showDefaultLoading: false);
-        });
+    final r = await MyNewApiByProducts().request(RequestParams(
+        showDefaultLoading: false,
+        data: ProductListParam(pageId: '$page', pageSize: '10').toJson()));
     if (page == 1) clear();
-    if (r != null) {
-      final list = r.list ?? [];
-      if (list.isNotEmpty) {
-        more = true;
-        addAll(list);
-        page++;
-      } else {
-        more = false;
-      }
+    if (r.isNotEmpty) {
+      more = true;
+      addAll(r);
+      page++;
+    } else {
+      more = false;
     }
     return true;
   }
@@ -54,7 +49,8 @@ class _NewProductWidgetState extends State<NewProductWidget> {
           return WaterfallGoodsCard(ite);
         },
         sourceList: sourceList,
-        extendedListDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+        extendedListDelegate:
+            const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,

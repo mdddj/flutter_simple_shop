@@ -1,4 +1,4 @@
-part of newapi;
+part of 'part.dart';
 
 class MyNewApiByCategoryApi extends MyBaseApi<List<Category>> {
   MyNewApiByCategoryApi() : super('/tkapi/api/v1/dtk/apis/categorys');

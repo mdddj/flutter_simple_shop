@@ -1,9 +1,7 @@
 library api;
 
-import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dio/dio.dart';
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -19,10 +17,15 @@ import 'model/login_params.dart';
 import 'new/part.dart';
 
 part 'base.dart';
+
 part 'report.dart';
+
 part 'resource.dart';
+
 part 'tkapi.dart';
+
 part 'user.dart';
+
 part 'zhe_api.dart';
 
 mixin ApiPageMixin<T> on BaseApi<T> {
@@ -70,36 +73,7 @@ extension DartTypeModelEx on DartTypeModel {
   }
 }
 
-abstract class BaseApiPublic<T> extends BaseApi<T> {
-  BaseApiPublic(super.url, {super.httpMethod});
-
-  static BaseOptions get opt => BaseOptions(
-      connectTimeout: const Duration(seconds: 30),
-      baseUrl: "${useEnv.host}:${useEnv.port}");
-
-  @override
-  ISet<Interceptor> get interceptions =>
-      ISet([getIt.get<MyTokenInterceptor>()]);
-
-  @override
-  Future<BaseOptions> getOptions(param) async => opt;
-
-  @override
-  Future<Dio> getDio(BaseOptions baseOptions) async {
-    final dio = await super.getDio(baseOptions);
-    await DdCheckPlugin().init(dio,
-        initHost: '192.168.0.104',
-        port: 9998,
-        timeOut: const Duration(milliseconds: 1500),
-        projectName: 'shop',
-        extend: [
-          HiveToolManager(boxList: [MyCategoryCache()])
-        ]);
-    return dio;
-  }
-}
-
-abstract class AppCoreApiWithT<T> extends BaseApiPublic<T> {
+abstract class AppCoreApiWithT<T> extends MyBaseApi<T> {
   AppCoreApiWithT(super.url, [HttpMethod httpMethod = HttpMethod.get])
       : super(httpMethod: httpMethod);
 
@@ -111,7 +85,7 @@ abstract class AppCoreApiWithT<T> extends BaseApiPublic<T> {
   T fromJson(Map<String, dynamic> json);
 }
 
-abstract class AppCoreApiWithListT<T> extends BaseApiPublic<List<T>> {
+abstract class AppCoreApiWithListT<T> extends MyBaseApi<List<T>> {
   AppCoreApiWithListT(super.url, HttpMethod httpMethod)
       : super(httpMethod: httpMethod);
 

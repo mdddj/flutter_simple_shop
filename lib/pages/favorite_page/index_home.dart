@@ -8,7 +8,8 @@ class FavoriteIndexHome extends ConsumerStatefulWidget {
   ConsumerState<FavoriteIndexHome> createState() => _FavoriteIndexHomeState();
 }
 
-class _FavoriteIndexHomeState extends ConsumerState<FavoriteIndexHome> with AutomaticKeepAliveClientMixin {
+class _FavoriteIndexHomeState extends ConsumerState<FavoriteIndexHome>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -16,10 +17,15 @@ class _FavoriteIndexHomeState extends ConsumerState<FavoriteIndexHome> with Auto
       appBar: AppBar(
         title: const Text("收藏"),
       ),
-      body: IfWidget(
-        expression: ref.isLoginFun,
-        trueBuild: _FavoritesListWidget.new,
-        elseBuild: LoginTipWidget.new,
+      body: RefreshIndicator(
+        onRefresh: () async {
+          await getIt.get<FavoritesRepository>().refresh(true);
+        },
+        child: IfWidget(
+          expression: ref.isLoginFun,
+          trueBuild: _FavoritesListWidget.new,
+          elseBuild: LoginTipWidget.new,
+        ),
       ),
     );
   }
@@ -33,7 +39,10 @@ class _FavoritesListWidget extends View {
   Widget renderView(BuildContext context, ApplicationModel appCore) {
     return LoadingMoreList(ListConfig<MyFavoritesModel>(
       itemBuilder: (context, model, index) {
-        return FavoriteGoodsItem(item: model, isShowEditIcon: false, repository: appCore.favoritesRepository);
+        return FavoriteGoodsItem(
+            item: model,
+            isShowEditIcon: false,
+            repository: appCore.favoritesRepository);
       },
       sourceList: appCore.favoritesRepository,
       indicatorBuilder: (context, status) {

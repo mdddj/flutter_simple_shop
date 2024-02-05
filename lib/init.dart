@@ -8,7 +8,6 @@ Future<void> appInit(VoidCallback start) async {
   initInstanceObject();
   await initCaches();
   start.call();
-  TKBaseApi.opt = BaseApiPublic.opt;
 }
 
 void initNetUtil() {

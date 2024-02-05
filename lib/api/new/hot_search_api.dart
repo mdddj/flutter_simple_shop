@@ -1,4 +1,4 @@
-part of newapi;
+part of 'part.dart';
 
 class MyNewApiByHotSearch extends MyBaseApi<List<HotSearchWorlds>> {
   MyNewApiByHotSearch() : super('/tkapi/api/v1/dtk/apis/hot-search-worlds');

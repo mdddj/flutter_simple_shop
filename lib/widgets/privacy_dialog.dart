@@ -34,7 +34,8 @@ class _PrivacyDialogState extends State<PrivacyDialog> {
                   )),
       ),
       actions: [
-        TextButton(onPressed: () => exit(0), child: const Text('退出程序')).marginOnly(right: 12),
+        TextButton(onPressed: () => exit(0), child: const Text('退出程序'))
+            .marginOnly(right: 12),
         FilledButton(
             onPressed: () async {
               final nav = context.nav;
@@ -72,18 +73,21 @@ class _HtmlTextWidgetState extends State<HtmlTextWidget> {
       model: _model,
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(12),
-        child: ScopedModelDescendant<_Model>(builder: (_, __, model) => HtmlWidget(model.html)),
+        child: ScopedModelDescendant<_Model>(
+            builder: (_, __, model) => HtmlWidget(model.html)),
       ),
     );
   }
 }
 
-class StringRequest extends BaseApiPublic<String> {
+class StringRequest extends MyBaseApi<String> {
   StringRequest(super.url);
 
   @override
   String covertToModel(DartTypeModel data, RequestParams param) {
-    return data.whenOrNull(string: (value) => value).ifNullThrowBizException("获取数据失败");
+    return data
+        .whenOrNull(string: (value) => value)
+        .ifNullThrowBizException("获取数据失败");
   }
 }
 
@@ -98,7 +102,8 @@ class _Model extends Model {
   //加载html
   Future<void> loadHtml(String url) async {
     try {
-      final response = await StringRequest(Uri.parse(url).path).request(const R(showDefaultLoading: false, returnIsString: true));
+      final response = await StringRequest(Uri.parse(url).path)
+          .request(const R(showDefaultLoading: false, returnIsString: true));
       change(response);
     } on BaseApiException catch (e) {
       toast(e.message);

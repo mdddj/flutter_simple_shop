@@ -20,6 +20,7 @@ import 'package:show_up_animation/show_up_animation.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 import '../api/apis.dart';
+import '../api/new/part.dart';
 import '../freezed/jpa_page.dart';
 import '../freezed/simple_result.dart';
 import '../index.dart';

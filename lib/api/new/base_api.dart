@@ -12,7 +12,6 @@ class NewApiDioInstance {
     if (dio != null) {
       return dio!;
     }
-    print(options.baseUrl);
     dio = Dio(options);
     await dioCheckPlugin
         .init(dio!,

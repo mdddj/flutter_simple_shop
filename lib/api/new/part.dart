@@ -18,5 +18,6 @@ part 'carousel.dart';
 part 'category_api.dart';
 part 'full_api.dart';
 part 'hot_search_api.dart';
+part 'products_api.dart';
 part 'topic_products.dart';
 part 'zhe_app_key_api.dart';

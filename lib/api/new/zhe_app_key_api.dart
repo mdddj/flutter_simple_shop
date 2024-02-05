@@ -1,4 +1,4 @@
-part of newapi;
+part of 'part.dart';
 
 class MyNewApiByZhetaokeAppKey extends MyBaseApi<String> {
   MyNewApiByZhetaokeAppKey() : super('/api/zhe/app-key');

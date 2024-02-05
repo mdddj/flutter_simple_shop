@@ -4,7 +4,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dataoke_sdk/model/category.dart';
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
@@ -53,6 +52,9 @@ export 'util/index.dart';
 export 'widgets/index.dart';
 
 part 'ad.dart';
+
 part 'app.dart';
+
 part 'init.dart';
+
 part 'router.dart';
