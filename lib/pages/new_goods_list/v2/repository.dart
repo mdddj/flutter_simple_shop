@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
+import '../../../api/new/part.dart';
 import 'goods_list_params_model.dart';
 
 ///产品列表的数据仓库
@@ -32,22 +33,22 @@ class ProductListRepository extends LoadingModel<ProductModel> {
   Future<void> fetchData(
       ValueChanged<bool> nomoreHandle, ValueChanged<bool> loadState) async {
     state = state.copyWith(cancelToken: CancelToken());
-    final result = await DdTaokeSdk.instance.getProducts(
-        param: ProductListParam(
-            pageId: '${state.page}',
-            sort: state.sort,
-            cids: '${state.subcategor == null ? state.category.cid : ''}',
-            subcid:
-                '${state.subcategor == null ? '' : state.subcategor!.subcid}'),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams.copyWith(showDefaultLoading: false);
-        });
-    if (result != null) {
-      final resultProducts = getNewList(result.list ?? []);
-      state = state.copyWith(
-          products: resultProducts, page: state.page++, initLoading: false);
+    final api = MyNewApiByProducts();
+    final r = await api.request(RequestParams(
+        data: ProductListParam(
+                pageId: '${state.page}',
+                sort: state.sort,
+                cids: '${state.subcategor == null ? state.category.cid : ''}',
+                subcid:
+                    '${state.subcategor == null ? '' : state.subcategor!.subcid}')
+            .toJson(),
+        showDefaultLoading: false));
+
+    if (r.isNotEmpty) {
+      state =
+          state.copyWith(products: r, page: state.page++, initLoading: false);
       loadState.call(true);
-      nomoreHandle.call(resultProducts.isNotEmpty);
+      nomoreHandle.call(r.isNotEmpty);
     } else {
       loadState.call(false);
     }

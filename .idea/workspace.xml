@@ -14,25 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="bug fix">
-      <change afterPath="$PROJECT_DIR$/lib/api/new/products_api.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/apis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/new/base_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/base_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/new/category_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/category_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/new/hot_search_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/hot_search_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/new/part.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/part.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/new/zhe_app_key_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/zhe_app_key_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/components/new_products/respose.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/components/new_products/respose.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/init.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/init.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/favorite_page/goods_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/favorite_page/goods_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/favorite_page/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/favorite_page/index_home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/zhe_carousel_products.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/zhe_carousel_products.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/jiujiu_page/new/repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/jiujiu_page/new/repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/favorite_add_btn.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/favorite_add_btn.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/index.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/index.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/privacy_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/loading/custom_loading_more_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/loading/custom_loading_more_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -973,7 +957,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701057122108</updated>
     </task>
-    <option name="localTasksCounter" value="234" />
+    <option name="localTasksCounter" value="235" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

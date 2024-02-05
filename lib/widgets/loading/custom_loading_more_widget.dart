@@ -69,7 +69,11 @@ class CustomLoadingMoreWidget extends StatelessWidget {
         child = const _Error();
       },
       fullScreenError: (error, stackTrace, action) {
-        child = _FullScreenError(retry: retry);
+        child = _FullScreenError(
+          retry: () {
+            action.errorRefresh();
+          },
+        );
         if (isSliver) {
           child = SliverFillRemaining(child: child);
         }
