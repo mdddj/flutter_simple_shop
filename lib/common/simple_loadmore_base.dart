@@ -1,6 +1,7 @@
 part of 'index.dart';
 
-abstract class SimpleLoadingMoreBaes<T, A extends ApiPageMixin> extends LoadingMoreBase<T> {
+abstract class SimpleLoadingMoreBaes<T, A extends ApiPageMixin<WrapJson>>
+    extends LoadingMoreBase<T> {
   int vPageSize = 20;
   int vPage = 0;
   bool nomore = false;
@@ -21,15 +22,18 @@ abstract class SimpleLoadingMoreBaes<T, A extends ApiPageMixin> extends LoadingM
     pageParams.addAll(otherParams);
     var isSuccess = true;
     final token = await getIt.get<Api>().getAuthorizationHeader();
-    final r = await api.request(RequestParams(showDefaultLoading: false, data: pageParams, headers: token));
-    isSuccess = r.isSuccess;
-    if (r.isSuccess) {
-      final data = r.getValue('data');
-      final list = transformResponseData(WrapJson(data));
-      nomore = transformIsNomore(WrapJson(data));
-      addAll(list);
-      vPage++;
+    final r = await api.request(RequestParams(
+        showDefaultLoading: false, data: pageParams, headers: token));
+    if (vPage == 0) {
+      clear();
     }
+    isSuccess = true;
+    Logger().t(r.data);
+    final data = r.data;
+    final list = transformResponseData(WrapJson(data));
+    nomore = transformIsNomore(WrapJson(data));
+    addAll(list);
+    vPage++;
     return isSuccess;
   }
 

@@ -15,10 +15,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/apis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/waimai/detail.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/user_home_page/login/register_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/user_home_page/login/register_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/common/simple_loadmore_base.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/simple_loadmore_base.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/user_riverpod.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/user_riverpod.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/resource/repository/my_resource_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resource/repository/my_resource_repository.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -959,7 +958,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701057122108</updated>
     </task>
-    <option name="localTasksCounter" value="232" />
+    <option name="localTasksCounter" value="233" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,6 +1,7 @@
 part of '../index.dart';
 
-final userRiverpod = StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
+final userRiverpod =
+    StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
 
 typedef UpdateModelCall<T> = T Function(T oldModel);
 
@@ -14,7 +15,7 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
   Future<LoginResultModel> login(LoginParams params) async {
     try {
       final response = await MyApiWithLogin(params).request();
-      final model = LoginResultModel.fromJson(response.getMap("data"));
+      final model = LoginResultModel.fromJson(response.data);
       setUserInfoToProvider(model.user);
       setTokenToCatch(model.token);
       return model;
