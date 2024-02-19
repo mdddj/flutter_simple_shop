@@ -39,7 +39,9 @@ class _ThemeItem extends StatelessWidget {
       width: size,
       height: size,
       margin: const EdgeInsets.all(4),
-      decoration: BoxDecoration(color: theme.primaryColor, borderRadius: BorderRadius.circular(size / 2)),
+      decoration: BoxDecoration(
+          color: theme.primaryColor,
+          borderRadius: BorderRadius.circular(size / 2)),
     ).click(() {
       AppThemeUtil().changeThemeWithEnum(data);
     });
@@ -53,17 +55,23 @@ class DarkAndLightSetting extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(5.0),
       child: ThemeBuildWidget(
         themeBuild: (theme) {
           return CupertinoSlidingSegmentedControl<ThemeMode>(
-              children: const {ThemeMode.system: Text('系统'), ThemeMode.light: Text('明亮'), ThemeMode.dark: Text('深色')},
-              onValueChanged: (ThemeMode? value) async {
-                if (value != null) {
-                  AppThemeUtil().changeThemeMode(value);
-                }
-              },
-              groupValue: theme.getThemeMode);
+            children: const {
+              ThemeMode.system: Text('跟随'),
+              ThemeMode.light: Text('亮'),
+              ThemeMode.dark: Text('暗')
+            },
+            onValueChanged: (ThemeMode? value) async {
+              if (value != null) {
+                AppThemeUtil().changeThemeMode(value);
+              }
+            },
+            groupValue: theme.getThemeMode,
+            padding: EdgeInsets.zero,
+          );
         },
       ),
     );

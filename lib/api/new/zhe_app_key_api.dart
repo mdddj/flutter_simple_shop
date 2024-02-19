@@ -10,6 +10,6 @@ class MyNewApiByZhetaokeAppKey extends MyBaseApi<String> {
       return appKey;
     }
     throw const BaseApiException.businessException(
-        message: '或者折淘客APPkey失败,请配置');
+        message: '获取折淘客APP Key失败,请检查');
   }
 }

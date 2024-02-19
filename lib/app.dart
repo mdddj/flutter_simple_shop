@@ -69,6 +69,7 @@ class App extends ConsumerWidget {
                             currentIndex == bottomMenus.indexOf(element)),
                         width: kNavIconSize,
                         height: kNavIconSize,
+                        color: context.iconColor,
                       ),
                       label: Text(element.title));
                 }).toList(),

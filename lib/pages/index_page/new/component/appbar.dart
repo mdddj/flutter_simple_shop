@@ -165,7 +165,6 @@ class CategoryItemLayout extends StatelessWidget {
       return Container(
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
-          color: context.colorScheme.secondaryContainer,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Row(
