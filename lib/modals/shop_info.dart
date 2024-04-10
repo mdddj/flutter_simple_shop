@@ -3,44 +3,22 @@
 //     final shoInfo = shoInfoFromJson(jsonString);
 
 // Dart imports:
-import 'dart:convert';
 
-ShopInfo shoInfoFromJson(String str) => ShopInfo.fromJson(json.decode(str));
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-String shoInfoToJson(ShopInfo data) => json.encode(data.toJson());
+part 'shop_info.freezed.dart';
+part 'shop_info.g.dart';
 
-class ShopInfo {
-  ShopInfo({
-    this.sellerNick,
-    this.pictUrl,
-    this.shopTitle,
-    this.shopType,
-    this.userId,
-    this.shopUrl,
-  });
+@freezed
+class ShopInfo with _$ShopInfo {
+  const factory ShopInfo(
+      {@JsonKey(name: 'seller_nick') @Default("") String sellerNick,
+      @JsonKey(name: 'pict_url') @Default("") String pictUrl,
+      @JsonKey(name: 'shop_title') @Default("") String shopTitle,
+      @JsonKey(name: 'shop_type') @Default("") String shopType,
+      @JsonKey(name: 'user_id') @Default(0) int userId,
+      @JsonKey(name: 'shop_url') @Default("") String shopUrl}) = _ShopInfo;
 
-  String? sellerNick;
-  String? pictUrl;
-  String? shopTitle;
-  String? shopType;
-  int? userId;
-  String? shopUrl;
-
-  factory ShopInfo.fromJson(Map<String, dynamic> json) => ShopInfo(
-    sellerNick: json['seller_nick'],
-    pictUrl: json['pict_url'],
-    shopTitle: json['shop_title'],
-    shopType: json['shop_type'],
-    userId: json['user_id'],
-    shopUrl: json['shop_url'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    'seller_nick': sellerNick,
-    'pict_url': pictUrl,
-    'shop_title': shopTitle,
-    'shop_type': shopType,
-    'user_id': userId,
-    'shop_url': shopUrl,
-  };
+  factory ShopInfo.fromJson(Map<String, dynamic> json) =>
+      _$ShopInfoFromJson(json);
 }

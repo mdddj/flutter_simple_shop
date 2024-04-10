@@ -21,7 +21,8 @@ class MyLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingAnimationWidget.flickr(leftDotColor: Colors.red, rightDotColor: Colors.blue, size: 38);
+    return LoadingAnimationWidget.flickr(
+        leftDotColor: Colors.red, rightDotColor: Colors.blue, size: 38);
   }
 }
 
@@ -32,6 +33,9 @@ class MyCustomLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(padding: const EdgeInsets.only(top: 12, bottom: 12), alignment: Alignment.center, child: const MyLoading());
+    return Container(
+        padding: const EdgeInsets.only(top: 12, bottom: 12),
+        alignment: Alignment.center,
+        child: const MyLoading());
   }
 }

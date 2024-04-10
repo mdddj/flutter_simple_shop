@@ -1,6 +1,7 @@
 part of '../../index.dart';
 
-final _riverpodSuggest = MyNewApiByHotSearch().cancelFuture;
+final _riverpodSuggest = FutureProvider((ref) => MyNewApiByHotSearch()
+    .request(const RequestParams(showDefaultLoading: false)));
 
 ///热搜榜
 class Suggest extends ConsumerWidget {
@@ -26,28 +27,24 @@ class Suggest extends ConsumerWidget {
             const SizedBox(
               height: 12,
             ),
-            ref
-                .watch(_riverpodSuggest(
-                    const RequestParams(showDefaultLoading: false)))
-                .when(
-                    data: (list) {
-                      return Wrap(
-                        children: list
-                            .map((e) => _renderItem(e, context, ref))
-                            .toList(),
-                      );
-                    },
-                    error: (e, s) => RiverpodErrorWidget(
-                          message: '加载热搜榜单失败',
-                          retry: () {
-                            ref.invalidate(_riverpodSuggest);
-                          },
-                        ),
-                    loading: () => const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: MyLoading(),
-                        ).center,
-                    skipLoadingOnRefresh: false)
+            ref.watch(_riverpodSuggest).when(
+                data: (list) {
+                  return Wrap(
+                    children:
+                        list.map((e) => _renderItem(e, context, ref)).toList(),
+                  );
+                },
+                error: (e, s) => RiverpodErrorWidget(
+                      message: '加载热搜榜单失败',
+                      retry: () {
+                        ref.invalidate(_riverpodSuggest);
+                      },
+                    ),
+                loading: () => const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: MyLoading(),
+                    ).center,
+                skipLoadingOnRefresh: false)
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 part of '../../../index.dart';
 
-final _carouselfuture = NewApiByCarousel().future;
+final _carouselfuture = FutureProvider((ref) =>
+    NewApiByCarousel().request(const RequestParams(showDefaultLoading: false)));
 
 class IndexCarousel extends ConsumerWidget {
   const IndexCarousel({super.key});
@@ -9,10 +10,7 @@ class IndexCarousel extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return AspectRatio(
       aspectRatio: 2.53,
-      child: ref
-          .watch(
-              _carouselfuture(const RequestParams(showDefaultLoading: false)))
-          .when(
+      child: ref.watch(_carouselfuture).when(
         data: (data) {
           return IndexTopicComponentCarousel(data);
         },

@@ -316,9 +316,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
               children: <Widget>[
                 CircleAvatar(
                   backgroundImage: (_shopInfo != null &&
-                              _shopInfo!.pictUrl != null
+                              _shopInfo!.pictUrl.isNotEmpty
                           ? NetworkImage(
-                              MImageUtils.magesProcessor(_shopInfo!.pictUrl!))
+                              MImageUtils.magesProcessor(_shopInfo!.pictUrl))
                           : const AssetImage('assets/images/ava.png'))
                       as ImageProvider<Object>?,
                 ),
@@ -326,7 +326,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                   width: 12,
                 ),
                 Text(
-                  _shopInfo != null ? _shopInfo!.sellerNick! : '店铺名初始化',
+                  _shopInfo != null ? _shopInfo!.sellerNick : '店铺名初始化',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 )

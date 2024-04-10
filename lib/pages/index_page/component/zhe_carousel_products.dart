@@ -1,7 +1,9 @@
 part of '../../index.dart';
 
 final _zheCarouselProductsPageProvider =
-    NewApiByCarouselProductsApi.instance.cancelFuture;
+    FutureProvider.family<List<ZheProduct>, String>((ref, apiUrl) =>
+        NewApiByCarouselProductsApi.instance.request(
+            RequestParams(showDefaultLoading: false, fullUrl: apiUrl)));
 
 class ZheCarouselProductsPage extends ConsumerWidget {
   final String apiUrl;
@@ -16,10 +18,7 @@ class ZheCarouselProductsPage extends ConsumerWidget {
       appBar: AppBar(
         title: Text(name),
       ),
-      body: ref
-          .watch(_zheCarouselProductsPageProvider(
-              RequestParams(showDefaultLoading: false, fullUrl: apiUrl)))
-          .when(
+      body: ref.watch(_zheCarouselProductsPageProvider(apiUrl)).when(
         data: (data) {
           return CustomScrollView(
             slivers: [
