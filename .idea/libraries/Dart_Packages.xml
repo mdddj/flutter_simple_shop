@@ -362,7 +362,7 @@
         <entry key="dio">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.4.3/lib" />
+              <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.4.3+1/lib" />
             </list>
           </value>
         </entry>
@@ -1834,7 +1834,7 @@
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/device_info_platform_interface-2.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/device_info_plus-10.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/device_info_plus_platform_interface-7.0.0/lib" />
-      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.4.3/lib" />
+      <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/dio-5.4.3+1/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/encrypt-5.0.3/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_image-8.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/extended_image_library-4.0.4/lib" />

@@ -14,18 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="依赖升级">
-      <change afterPath="$PROJECT_DIR$/lib/modals/page_info_model.freezed.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/modals/page_info_model.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/JsonToFreezedSettingModelConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JsonToFreezedSettingModelConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/new/base_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/base_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modals/page_info_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modals/page_info_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/jiujiu_page/new/widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/jiujiu_page/new/widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -984,7 +975,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701057122108</updated>
     </task>
-    <option name="localTasksCounter" value="239" />
+    <option name="localTasksCounter" value="240" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,5 +1,6 @@
 import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../../constant/index.dart';
@@ -15,8 +16,10 @@ class JiuJiuIndex extends StatefulWidget {
   State<JiuJiuIndex> createState() => _JiuJiuIndexState();
 }
 
-class _JiuJiuIndexState extends State<JiuJiuIndex> with SingleTickerProviderStateMixin {
-  late final _tabController = TabController(length: ninenineTypes.length, vsync: this);
+class _JiuJiuIndexState extends State<JiuJiuIndex>
+    with SingleTickerProviderStateMixin {
+  late final _tabController =
+      TabController(length: ninenineTypes.length, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -36,38 +39,54 @@ class _JiuJiuIndexState extends State<JiuJiuIndex> with SingleTickerProviderStat
       ),
       body: TabBarView(
         controller: _tabController,
-        children: ninenineTypes.map((element) => _Item(repository: JiujiuRepository(element))).toList(),
+        children: ninenineTypes
+            .map((element) => _Item(repository: JiujiuRepository(element)))
+            .toList(),
       ),
     );
   }
 }
 
-class _Item extends StatelessWidget {
+class _Item extends ConsumerStatefulWidget {
   final JiujiuRepository repository;
 
   const _Item({required this.repository});
 
   @override
+  ConsumerState<_Item> createState() => _ItemState();
+}
+
+class _ItemState extends ConsumerState<_Item>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return LoadingMoreCustomScrollView(
       slivers: [
         LoadingMoreSliverList(SliverListConfig<ProductModel>(
             itemBuilder: (ctx, item, index) {
               return WaterfallGoodsCard(item);
             },
-            sourceList: repository,
+            sourceList: widget.repository,
             padding: const EdgeInsets.all(8),
             indicatorBuilder: (context, status) {
               return CustomLoadingMoreWidgetWithSliver(
                 context,
                 status,
                 retry: () {
-                  repository.refresh(true);
+                  widget.repository.refresh(true);
                 },
               );
             },
-            extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 8, crossAxisSpacing: 8)))
+            extendedListDelegate:
+                SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: context.waterfallFlowCrossAxisCount,
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8)))
       ],
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
