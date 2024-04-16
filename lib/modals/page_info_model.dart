@@ -1,76 +1,39 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class Pageable {
-  Pageable({
-    this.sort,
-    this.offset,
-    this.pageNumber,
-    this.pageSize,
-    this.unpaged,
-    this.paged,
-  });
+part 'page_info_model.freezed.dart';
+part 'page_info_model.g.dart';
 
-  PageableSort? sort;
-  int? offset;
-  int? pageNumber;
-  int? pageSize;
-  bool? unpaged;
-  bool? paged;
+@freezed
+class Pageable with _$Pageable {
+  const factory Pageable(
+      {@Default(PageableSort()) PageableSort sort,
+      @Default(0) int offset,
+      @Default(0) int pageNumber,
+      @Default(0) int pageSize,
+      @Default(false) bool unpaged,
+      @Default(false) bool paged}) = _Pageable;
 
-  factory Pageable.fromJson(Map<String, dynamic> json) => Pageable(
-    sort: PageableSort.fromJson(json['sort']),
-    offset: json['offset'],
-    pageNumber: json['pageNumber'],
-    pageSize: json['pageSize'],
-    unpaged: json['unpaged'],
-    paged: json['paged'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    'sort': sort!.toJson(),
-    'offset': offset,
-    'pageNumber': pageNumber,
-    'pageSize': pageSize,
-    'unpaged': unpaged,
-    'paged': paged,
-  };
+  factory Pageable.fromJson(Map<String, dynamic> json) =>
+      _$PageableFromJson(json);
 }
 
-class PageableSort {
-  PageableSort({
-    this.ref,
-  });
+@freezed
+class PageableSort with _$PageableSort {
+  const PageableSort._();
 
-  String? ref;
+  const factory PageableSort({@Default("") String ref}) = _PageableSort;
 
-  factory PageableSort.fromJson(Map<String, dynamic> json) => PageableSort(
-    ref: json['\u0024ref'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    '\u0024ref': ref,
-  };
+  factory PageableSort.fromJson(Map<String, dynamic> json) =>
+      _$PageableSortFromJson(json);
 }
 
-class OrderAllDataSort {
-  OrderAllDataSort({
-    this.sorted,
-    this.unsorted,
-    this.empty,
-  });
+@freezed
+class OrderAllDataSort with _$OrderAllDataSort {
+  const factory OrderAllDataSort(
+      {@Default(false) bool sorted,
+      @Default(false) bool unsorted,
+      @Default(false) bool empty}) = _OrderAllDataSort;
 
-  bool? sorted;
-  bool? unsorted;
-  bool? empty;
-
-  factory OrderAllDataSort.fromJson(Map<String, dynamic> json) => OrderAllDataSort(
-    sorted: json['sorted'],
-    unsorted: json['unsorted'],
-    empty: json['empty'],
-  );
-
-  Map<String, dynamic> toJson() => {
-    'sorted': sorted,
-    'unsorted': unsorted,
-    'empty': empty,
-  };
+  factory OrderAllDataSort.fromJson(Map<String, dynamic> json) =>
+      _$OrderAllDataSortFromJson(json);
 }

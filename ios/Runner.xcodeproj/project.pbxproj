@@ -11,13 +11,6 @@
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		674BB7942A7CE09400E78F31 /* yw_1222_baichuan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 674BB7932A7CE09400E78F31 /* yw_1222_baichuan.jpg */; };
 		674F6C67284C533E006FCF63 /* mtopsdk_configuartion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 674F6C66284C533E006FCF63 /* mtopsdk_configuartion.plist */; };
-		67E2C8992A711123004DC4CB /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6710BDD3285D812C009287B6 /* libresolv.tbd */; };
-		67E2C89A2A71112F004DC4CB /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6710BDD5285D8133009287B6 /* JavaScriptCore.framework */; };
-		67E2C89B2A71113B004DC4CB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C5C284C4BAA006FCF63 /* libz.tbd */; };
-		67E2C89C2A71114D004DC4CB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C5E284C4BB8006FCF63 /* libsqlite3.tbd */; };
-		67E2C89D2A71115C004DC4CB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C60284C4BC3006FCF63 /* CoreTelephony.framework */; };
-		67E2C89E2A71116A004DC4CB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F6C62284C4BCA006FCF63 /* CoreMotion.framework */; };
-		67E2C8A22A711A99004DC4CB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E2C8A12A711A99004DC4CB /* SystemConfiguration.framework */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		88CB80B29606B003191FE951 /* libPods-Runner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED38469FDBDB7FAE1ECB22E /* libPods-Runner.a */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
@@ -46,6 +39,11 @@
 		61F65066A30C7A2D438B5528 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		6710BDD3285D812C009287B6 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		6710BDD5285D8133009287B6 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		672612022BCA6AB100F56D9F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		672612042BCA6AE400F56D9F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		672612072BCA6C1800F56D9F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		6726120A2BCA6C2800F56D9F /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		672612112BCA6FC900F56D9F /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		674BB7932A7CE09400E78F31 /* yw_1222_baichuan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222_baichuan.jpg; sourceTree = "<group>"; };
 		674F6C5C284C4BAA006FCF63 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		674F6C5E284C4BB8006FCF63 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -99,13 +97,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E2C8A22A711A99004DC4CB /* SystemConfiguration.framework in Frameworks */,
-				67E2C89E2A71116A004DC4CB /* CoreMotion.framework in Frameworks */,
-				67E2C89D2A71115C004DC4CB /* CoreTelephony.framework in Frameworks */,
-				67E2C89C2A71114D004DC4CB /* libsqlite3.tbd in Frameworks */,
-				67E2C89B2A71113B004DC4CB /* libz.tbd in Frameworks */,
-				67E2C89A2A71112F004DC4CB /* JavaScriptCore.framework in Frameworks */,
-				67E2C8992A711123004DC4CB /* libresolv.tbd in Frameworks */,
 				88CB80B29606B003191FE951 /* libPods-Runner.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +173,11 @@
 		E09A32FD93B94E9ABEA91ABF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				672612112BCA6FC900F56D9F /* CoreAudioKit.framework */,
+				6726120A2BCA6C2800F56D9F /* Contacts.framework */,
+				672612072BCA6C1800F56D9F /* AssetsLibrary.framework */,
+				672612042BCA6AE400F56D9F /* libicucore.tbd */,
+				672612022BCA6AB100F56D9F /* libc++.tbd */,
 				67E2C8A12A711A99004DC4CB /* SystemConfiguration.framework */,
 				679F0BEA2A6B67020051E348 /* AudioUnit.framework */,
 				679F0BE82A6B66F10051E348 /* CoreAudio.framework */,
@@ -234,6 +230,7 @@
 				97C146EC1CF9000F007C117D /* Resources */,
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
+				AB7D527A3C90C52FABE50CC0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,7 +248,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "The Chromium Authors";
 				TargetAttributes = {
 					97C146ED1CF9000F007C117D = {
@@ -347,6 +344,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+		};
+		AB7D527A3C90C52FABE50CC0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -472,7 +484,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
 					"-l\"c++.1\"",
 					"-l\"iconv\"",
 					"-l\"icucore\"",
@@ -485,6 +496,7 @@
 					"-weak_framework",
 					"\"WebKit\"",
 					"-lstdc++",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = shop.itbug.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -652,7 +664,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
 					"-l\"c++.1\"",
 					"-l\"iconv\"",
 					"-l\"icucore\"",
@@ -665,6 +676,7 @@
 					"-weak_framework",
 					"\"WebKit\"",
 					"-lstdc++",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = shop.itbug.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -720,7 +732,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
 					"-l\"c++.1\"",
 					"-l\"iconv\"",
 					"-l\"icucore\"",
@@ -733,6 +744,7 @@
 					"-weak_framework",
 					"\"WebKit\"",
 					"-lstdc++",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = shop.itbug.store;
 				PRODUCT_NAME = "$(TARGET_NAME)";

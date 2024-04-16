@@ -13,57 +13,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="bug fix">
-      <change afterPath="$PROJECT_DIR$/lib/modals/shop_info.freezed.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/modals/shop_info.g.dart" afterDir="false" />
+    <list default="true" id="0176b463-8d3f-4389-a018-53cfffa7fa91" name="Default Changelist" comment="依赖升级">
+      <change afterPath="$PROJECT_DIR$/lib/modals/page_info_model.freezed.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/modals/page_info_model.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JsonToFreezedSettingModelConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JsonToFreezedSettingModelConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/model/email_register_params.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/model/email_register_params.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/model/get_email_valid_code.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/model/get_email_valid_code.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/model/login_params.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/model/login_params.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/api/new/models.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/models.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/common/view.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/common/view.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/add_favorites_params.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/add_favorites_params.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/anking_list_param.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/anking_list_param.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/app_action_menu.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/app_action_menu.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/appbar_menu.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/appbar_menu.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/base_layout.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/base_layout.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/comment.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/comment.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/env_config.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/env_config.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/file_info.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/file_info.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/home_menu.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/home_menu.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/jpa_page.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/jpa_page.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/login_result_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/login_result_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/meituran_result.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/meituran_result.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/pager.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/pager.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/product_share.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/product_share.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/report.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/report.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/resource_category.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/resource_category.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/simple_result.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/simple_result.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/test.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/test.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/user_order_info.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/user_order_info.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/xb_result.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/xb_result.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/zhe_carousel_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/zhe_carousel_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/zhe_elm_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/freezed/zhe_product.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/freezed/zhe_product.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/meet/meet_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/meet/meet_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/meet/model/params.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/meet/model/params.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modals/blog_category_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modals/blog_category_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modals/shop_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modals/shop_info.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/detail_page/hdk/index_home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/component/zhe_carousel_products.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/component/zhe_carousel_products.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/index_page/new/component/carousel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/index_page/new/component/carousel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/goods_list_params_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/new_goods_list/v2/goods_list_params_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/search/component/suggest.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/favorites/model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/favorites/model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/favorites/riverpod_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/favorites/riverpod_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/index/index_products_model.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/index/index_products_model.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/my_user.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/provider/riverpod/model/user.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/provider/riverpod/model/user.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/loading_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/loading_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/api/new/base_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/api/new/base_api.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modals/page_info_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modals/page_info_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,16 +56,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "mdddj"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mdddj&quot;
   }
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": []
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{}]]></component>
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: []
+}</component>
+  <component name="GitLabMergeRequestsSettings">{}</component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -116,13 +77,14 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:mdddj/flutter_simple_shop.git",
-    "accountId": "b74026e6-fcde-4dec-b87f-24f99a89363a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:mdddj/flutter_simple_shop.git&quot;,
+    &quot;accountId&quot;: &quot;067b9acb-12e5-425a-8f7a-8cf428fdb9a1&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dev/share_plus-8.0.3/ios/PrivacyInfo.xcprivacy" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../flutter/packages/flutter/lib/src/material/tabs.dart" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/android/build.gradle" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ios/Podfile" root0="FORCE_HIGHLIGHTING" />
@@ -182,36 +144,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flutter.main.dart.executor": "Run",
-    "ResourceManagerPrefKey.ResourceType": "DRAWABLE",
-    "RunOnceActivity.Enable generate summary features in internal mode": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable": "ALL",
-    "git-widget-placeholder": "master",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ldd/flutter_simple_shop",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.23908046",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flutter.main.dart.executor&quot;: &quot;Run&quot;,
+    &quot;ResourceManagerPrefKey.ResourceType&quot;: &quot;DRAWABLE&quot;,
+    &quot;RunOnceActivity.Enable generate summary features in internal mode&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable&quot;: &quot;ALL&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ldd/flutter_simple_shop&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.23908046&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;setting.flutterx&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
@@ -235,6 +198,14 @@
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -666,6 +637,9 @@
       <workItem from="1705712681828" duration="1258000" />
       <workItem from="1705715259291" duration="346000" />
       <workItem from="1706490805309" duration="114000" />
+      <workItem from="1712988895722" duration="179000" />
+      <workItem from="1712989086893" duration="7757000" />
+      <workItem from="1712997091332" duration="103000" />
     </task>
     <task id="LOCAL-00152" summary=":rocket: 细节优化">
       <created>1679021546640</created>
@@ -1010,7 +984,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701057122108</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <option name="localTasksCounter" value="239" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1063,12 +1037,12 @@
     <MESSAGE value="升级优化" />
     <MESSAGE value="细节优化" />
     <MESSAGE value="升级 flutter 3.13.9" />
-    <MESSAGE value="依赖升级" />
     <MESSAGE value="适配 flutter3.16.0" />
     <MESSAGE value="升级依赖到最新版" />
     <MESSAGE value="更新线上接口" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="依赖升级" />
+    <option name="LAST_COMMIT_MESSAGE" value="依赖升级" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
