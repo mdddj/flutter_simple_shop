@@ -5,10 +5,12 @@ class UpdateUserAvatarWidget extends ConsumerStatefulWidget {
   const UpdateUserAvatarWidget({super.key});
 
   @override
-  ConsumerState<UpdateUserAvatarWidget> createState() => _UpdateUserAvatarWidgetState();
+  ConsumerState<UpdateUserAvatarWidget> createState() =>
+      _UpdateUserAvatarWidgetState();
 }
 
-class _UpdateUserAvatarWidgetState extends ConsumerState<UpdateUserAvatarWidget> {
+class _UpdateUserAvatarWidgetState
+    extends ConsumerState<UpdateUserAvatarWidget> {
   dio.MultipartFile? file;
 
   @override
@@ -43,15 +45,24 @@ class _UpdateUserAvatarWidgetState extends ConsumerState<UpdateUserAvatarWidget>
               FilledButton(
                   onPressed: file != null
                       ? () async {
-                          final nav = context.nav;
-                          final data = dio.FormData.fromMap({"file": file});
-                          final result = await getIt.get<MyUpdateUserAvatarApi>().request(R(data: data));
-                          nav.pop(); //关掉弹窗
-                          result.simpleToast(ifOk: () {
-                            ///更新头像
-                            final fileInfo = FileInfo.fromJson(result.getMap("data"));
-                            ref.read(userRiverpod.notifier).updateUser((oldModel) => oldModel.copyWith(picture: fileInfo.url));
-                          });
+                          try {
+                            final nav = context.nav;
+                            final data = dio.FormData.fromMap({"file": file});
+                            final result = await getIt
+                                .get<MyUpdateUserAvatarApi>()
+                                .request(R(data: data));
+                            nav.pop(); //关掉弹窗
+                            result.simpleToast(ifOk: () {
+                              ///更新头像
+                              final fileInfo =
+                                  FileInfo.fromJson(result.getMap("data"));
+                              ref.read(userRiverpod.notifier).updateUser(
+                                  (oldModel) =>
+                                      oldModel.copyWith(picture: fileInfo.url));
+                            });
+                          } on BaseApiException catch (e) {
+                            e.showErrorMessage();
+                          }
                         }
                       : null,
                   child: const Text('上传'))

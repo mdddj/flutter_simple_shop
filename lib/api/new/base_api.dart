@@ -13,13 +13,16 @@ class NewApiDioInstance {
       return dio!;
     }
     dio = Dio(options);
-    await dioCheckPlugin
-        .init(dio!,
-            initHost: '192.168.199.66',
-            port: 9998,
-            projectName: 'shop',
-            timeOut: const Duration(milliseconds: 1200))
-        .catchError((e) => debugPrint('$e'));
+    if (useEnv.debugMode) {
+      await dioCheckPlugin
+          .init(dio!,
+              initHost: Uri.parse(useEnv.host).host,
+              port: 9998,
+              projectName: 'shop',
+              timeOut: const Duration(milliseconds: 1200))
+          .catchError((e) => debugPrint('$e'));
+    }
+
     return dio!;
   }
 }
@@ -41,6 +44,9 @@ abstract class MyBaseApi<T> extends BaseApi<T> {
         receiveTimeout: _timeout,
         sendTimeout: _timeout);
   }
+
+  @override
+  ISet<Interceptor> interceptions = ISet([getIt.get<MyTokenInterceptor>()]);
 }
 
 extension ApiErrorMessageEx on Object {

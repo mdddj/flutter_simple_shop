@@ -10,7 +10,7 @@ import 'index.dart';
 
 ///本地测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.0.104",
+    host: "http://192.168.199.79",
     port: '8082',
     debugMode: true,
     fontFamily: '');
@@ -19,11 +19,11 @@ const debugEnvConfig = EnvConfig(
 const releaseEnvConfig = EnvConfig(
     host: "https://api.itbug.shop",
     port: '443',
-    debugMode: true,
+    debugMode: false,
     fontFamily: '');
 
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
-const useEnv = releaseEnvConfig;
+const useEnv = debugEnvConfig;
 
 void main() async {
   appInit(() {

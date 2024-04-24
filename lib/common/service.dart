@@ -21,8 +21,12 @@ class Api extends ApiService {
   /// 可以通过token获取用户相关信息
   /// 函数返回bool类型,true表示成功
   @override
-  Future<bool> login(String username, String password, {ValueChanged<String>? tokenHandle, ValueChanged<String>? loginFail}) async {
-    final result = await request.post('/api/user-public/login', data: {'loginNumber': username, 'password': password}, error: (int code, String msg, data) {
+  Future<bool> login(String username, String password,
+      {ValueChanged<String>? tokenHandle,
+      ValueChanged<String>? loginFail}) async {
+    final result = await request.post('/api/user-public/login',
+        data: {'loginNumber': username, 'password': password},
+        error: (int code, String msg, data) {
       loginFail?.call(msg);
     }, isTaokeApi: false);
     if (result.isNotEmpty) {
@@ -48,6 +52,7 @@ class Api extends ApiService {
         }
       }
     } catch (e) {
+      Logger().w('获取用户信息失败:$e');
       TokenCache().cleanToken();
       return null;
     }

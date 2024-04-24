@@ -114,17 +114,21 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   //注册用户
-  void _register() {
+  Future<void> _register() async {
     if (!_isValid) {
       return;
     }
     context.hideKeyBoard();
-    MyApiWithEmailRegister(EmailRegisterParams(
-            email: _email, code: _code, password: _finalPass))
-        .request()
-        .then((value) {
-      value.ifSuccessPop(context);
-    });
+    final nav = context.nav;
+    try {
+      await MyApiWithEmailRegister(EmailRegisterParams(
+              email: _email, code: _code, password: _finalPass))
+          .request();
+      toast('注册成功');
+      nav.pop(true);
+    } on BaseApiException catch (e) {
+      e.showErrorMessage();
+    }
   }
 
   //获取验证码
@@ -137,13 +141,9 @@ class _RegisterPageState extends State<RegisterPage> {
     try {
       await getIt
           .get<MyApiWithSendEmailValidCode>()
-          .request(R(data: GetEmailValidCodeParams(email: _email).toJson()))
-          .then((value) {
-        value.simpleToast();
-        if (value.isSuccess) {
-          _countDownController.start();
-        }
-      });
+          .request(R(data: GetEmailValidCodeParams(email: _email).toJson()));
+      SmartDialog.showNotify(msg: '验证码发送成功', notifyType: NotifyType.success);
+      _countDownController.start();
     } catch (e) {
       toast(e.errorMessage);
     }

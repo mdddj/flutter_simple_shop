@@ -17,12 +17,13 @@ class JiuJiuIndex extends StatefulWidget {
 }
 
 class _JiuJiuIndexState extends State<JiuJiuIndex>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final _tabController =
       TabController(length: ninenineTypes.length, vsync: this);
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('9块9包邮'),
@@ -45,6 +46,9 @@ class _JiuJiuIndexState extends State<JiuJiuIndex>
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 class _Item extends ConsumerStatefulWidget {
