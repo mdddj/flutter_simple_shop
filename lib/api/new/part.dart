@@ -15,21 +15,13 @@ import '../../index.dart';
 import '../apis.dart';
 
 part 'base_api.dart';
-
 part 'carousel.dart';
-
 part 'category_api.dart';
-
 part 'full_api.dart';
-
 part 'hot_search_api.dart';
-
 part 'product_detail_info.dart';
-
 part 'products_api.dart';
-
-part 'topic_products.dart';
-
 part 'search_key_word_api.dart';
-
+part 'super_search_api.dart';
+part 'topic_products.dart';
 part 'zhe_app_key_api.dart';
