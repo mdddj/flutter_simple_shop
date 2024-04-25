@@ -39,18 +39,9 @@ class Api extends ApiService {
   @override
   Future<MyUser?> getUser(String token) async {
     try {
-      final result = await request.get('/api/get-user-by-token',
-          isTaokeApi: false,
-          requestParams: RequestParams(headers: {
-            "Authorization": token,
-          }, showDefaultLoading: false));
-      if (result.isNotEmpty) {
-        try {
-          return MyUser.fromJson(jsonDecode(result));
-        } catch (e, s) {
-          Logger().d("用户数据解析失败:$e\n$s");
-        }
-      }
+      final result = await GetUserByTokenApi()
+          .request(RequestParams(headers: {"Authorization": token}));
+      return result;
     } catch (e) {
       Logger().w('获取用户信息失败:$e');
       TokenCache().cleanToken();

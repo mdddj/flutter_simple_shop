@@ -61,7 +61,7 @@ dependencies:
   flutter_widget_from_html_core: ^0.14.11
   flex_color_scheme: ^7.3.1
   freezed_annotation: ^2.4.1
-  json_annotation: ^4.8.1
+  json_annotation: ^4.9.0
   loading_animation_widget: ^1.2.1
   keyboard_actions: ^4.2.0
   fast_immutable_collections: ^10.2.2
@@ -73,7 +73,7 @@ dependencies:
   dd_check_plugin: ^3.1.9
   dataoke_sdk: ^4.1.0
   permission_handler: ^11.3.1
-  go_router: ^13.2.4
+  go_router: ^14.0.0
   responsive_builder: ^0.7.0
   image_picker: ^1.1.0
   shared_preferences: ^2.2.3
@@ -93,7 +93,7 @@ dependencies:
 dev_dependencies:
   build_runner: ^2.4.9
   freezed: ^2.5.2
-  json_serializable: ^6.7.1
+  json_serializable: ^6.8.0
   hive_generator_plus: ^3.0.4
 
 dependency_overrides:

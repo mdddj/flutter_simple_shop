@@ -50,7 +50,6 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
   void startAppTryLogin() {
     TokenCache().userToken.then((value) {
       if (value.isNotEmpty) {
-        actionLog("尝试自动登录", "token", value);
         getIt.get<UserApi>().token = value;
         getIt.get<Api>().getUser(value).then((user) {
           state = state.copyWith(user: user);

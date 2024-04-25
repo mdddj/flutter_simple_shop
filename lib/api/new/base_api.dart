@@ -46,7 +46,8 @@ abstract class MyBaseApi<T> extends BaseApi<T> {
   }
 
   @override
-  ISet<Interceptor> interceptions = ISet([getIt.get<MyTokenInterceptor>()]);
+  ISet<Interceptor> get interceptions =>
+      ISet([getIt.get<MyTokenInterceptor>()]);
 }
 
 extension ApiErrorMessageEx on Object {
@@ -55,6 +56,18 @@ extension ApiErrorMessageEx on Object {
       BaseApiException() => (this as BaseApiException).message,
       _ => "$this"
     };
+  }
+}
+
+extension DartTypeModelApiEx on DartTypeModel {
+  Map<String, dynamic>? get tryGetMap {
+    if (whenOrNull(
+      json: (value) => value['data'],
+    )
+        case final Map<String, dynamic> data) {
+      return data;
+    }
+    return null;
   }
 }
 

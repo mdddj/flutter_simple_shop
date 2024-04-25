@@ -9,16 +9,19 @@ import 'package:dd_models/models/product.dart';
 import 'package:dio/dio.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 import '../../freezed/zhe_carousel_model.dart';
 import '../../freezed/zhe_product.dart';
 import '../../index.dart';
+import '../../provider/riverpod/model/my_user.dart';
 import '../apis.dart';
 
 part 'base_api.dart';
 part 'carousel.dart';
 part 'category_api.dart';
 part 'full_api.dart';
+part 'get_user_by_token.dart';
 part 'hot_search_api.dart';
 part 'product_detail_info.dart';
 part 'products_api.dart';

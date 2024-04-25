@@ -28,7 +28,6 @@ abstract class SimpleLoadingMoreBaes<T, A extends ApiPageMixin<WrapJson>>
       clear();
     }
     isSuccess = true;
-    Logger().t(r.data);
     final data = r.data;
     final list = transformResponseData(WrapJson(data));
     nomore = transformIsNomore(WrapJson(data));

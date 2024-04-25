@@ -34,3 +34,19 @@ extension BaseApiExceptionEx on BaseApiException {
     toast(message);
   }
 }
+
+extension ExceptionTryHandleEx on Object {
+  ///尝试处理api接口异常
+  void tryHandleException() {
+    switch (this) {
+      case final BaseApiException exception:
+        {
+          exception.showErrorMessage();
+        }
+      default:
+        {
+          toast('App内部错误');
+        }
+    }
+  }
+}
