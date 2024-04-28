@@ -27,7 +27,7 @@ class TokenCache extends CacheBase<String> {
 
   factory TokenCache() => instance;
 
-  static TokenCache get instance => TokenCache._();
+  static final TokenCache instance = TokenCache._();
 
   final tokenKey = "u-token";
 

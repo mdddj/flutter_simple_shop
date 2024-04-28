@@ -17,15 +17,10 @@ import 'model/login_params.dart';
 import 'new/part.dart';
 
 part 'base.dart';
-
 part 'report.dart';
-
 part 'resource.dart';
-
 part 'tkapi.dart';
-
 part 'user.dart';
-
 part 'zhe_api.dart';
 
 mixin ApiPageMixin<T> on BaseApi<T> {
@@ -241,8 +236,14 @@ class MyResourceListApi extends MyAppCoreApiWithWrapJson with ApiPageMixin {
 }
 
 ///修改用户昵称
-class MyUpdateUserNameApi extends MyAppCoreApiWithWrapJson {
-  MyUpdateUserNameApi() : super('/api/user/update-username', HttpMethod.post);
+class MyUpdateUserNameApi extends MyBaseApi<bool> {
+  MyUpdateUserNameApi()
+      : super('/api/user/update-username', httpMethod: HttpMethod.post);
+
+  @override
+  bool covertToModel(DartTypeModel data, RequestParams param) {
+    return data.tryGetBoolData ?? false;
+  }
 }
 
 ///修改用户城市

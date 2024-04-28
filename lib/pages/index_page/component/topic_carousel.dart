@@ -8,6 +8,7 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    Logger().t(zheModel.toJson());
     final ZheCarouselResult(:content) = zheModel;
     return Swiper(
       itemBuilder: (BuildContext context, int index) {

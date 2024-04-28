@@ -14,13 +14,14 @@ class NewApiDioInstance {
     }
     dio = Dio(options);
     if (useEnv.debugMode) {
-      await dioCheckPlugin
-          .init(dio!,
-              initHost: Uri.parse(useEnv.host).host,
-              port: 9998,
-              projectName: 'shop',
-              timeOut: const Duration(milliseconds: 1200))
-          .catchError((e) => debugPrint('$e'));
+      // await dioCheckPlugin
+      //     .init(dio!,
+      //         initHost: Uri.parse(useEnv.host).host,
+      //         port: 9998,
+      //         projectName: 'shop',
+      //         timeOut: const Duration(milliseconds: 1200))
+      //     .catchError((e) => debugPrint('$e'));
+      PluginManager.instance.register(DioInspector(dio: dio!));
     }
 
     return dio!;
@@ -68,6 +69,10 @@ extension DartTypeModelApiEx on DartTypeModel {
       return data;
     }
     return null;
+  }
+
+  bool? get tryGetBoolData {
+    return whenOrNull(bool: (value) => value);
   }
 }
 

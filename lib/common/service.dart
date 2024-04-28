@@ -47,7 +47,6 @@ class Api extends ApiService {
       TokenCache().cleanToken();
       return null;
     }
-    return null;
   }
 
   @override

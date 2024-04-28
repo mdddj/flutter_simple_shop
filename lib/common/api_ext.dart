@@ -31,6 +31,7 @@ void dialog(String message) {
 
 extension BaseApiExceptionEx on BaseApiException {
   void showErrorMessage() {
+    debugPrint('try show error message: $this');
     toast(message);
   }
 }
