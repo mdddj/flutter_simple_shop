@@ -165,7 +165,7 @@ class PhotoUploadWidget extends View {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: CupertinoListTile(
-        backgroundColor: context.colorScheme.surfaceVariant,
+        backgroundColor: context.colorScheme.surfaceContainerHighest,
         leading: const Icon(CupertinoIcons.photo),
         title: Text('添加自拍或者生活照',
             style: context.textTheme.titleMedium

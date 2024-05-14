@@ -46,7 +46,8 @@ class DdShop extends View {
           title: '典典小卖部',
           theme: AppTheme.getTheme(model.theme),
           darkTheme: model.darkTheme,
-          themeMode: model.getThemeMode,
+          // themeMode: model.getThemeMode,
+          themeMode: ThemeMode.light,
           routerConfig: routers,
           builder: FlutterSmartDialog.init(
               loadingBuilder: MyCustomLoadingWidget.new,

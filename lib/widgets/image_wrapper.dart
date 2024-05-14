@@ -8,7 +8,7 @@ class ImageWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: context.colorScheme.surfaceVariant,
+      backgroundColor: context.colorScheme.surfaceContainerHighest,
       child: Center(child: child),
     );
   }

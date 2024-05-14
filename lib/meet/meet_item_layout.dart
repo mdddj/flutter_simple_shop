@@ -38,7 +38,7 @@ class MeetItemLayout extends StatelessWidget {
             width: double.infinity,
             child: Card(
               elevation: 0,
-              color: context.colorScheme.surfaceVariant,
+              color: context.colorScheme.surfaceContainerHighest,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

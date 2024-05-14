@@ -34,7 +34,7 @@ class VipHeader extends ConsumerWidget {
               ),
             ),
           ),
-           Expanded(
+          Expanded(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Text(
@@ -44,7 +44,8 @@ class VipHeader extends ConsumerWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.bold),
               ),
-              Text(_isVip(vip) ? '您已经是 VIP 会员' : '未开通特权', style: const TextStyle(color: Colors.black))
+              Text(_isVip(vip) ? '您已经是 VIP 会员' : '未开通特权',
+                  style: const TextStyle(color: Colors.black))
             ]),
           ),
           Center(
@@ -53,11 +54,11 @@ class VipHeader extends ConsumerWidget {
               height: 38,
               child: ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.black),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    backgroundColor: WidgetStateProperty.all(Colors.black),
+                    shape: WidgetStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100)))),
-                onPressed:_isVip(vip)? null : ()=>_openVip(ref),
-                child:  Text(
+                onPressed: _isVip(vip) ? null : () => _openVip(ref),
+                child: Text(
                   _buttonText(vip),
                   style: const TextStyle(color: Colors.yellow),
                 ),
@@ -72,44 +73,46 @@ class VipHeader extends ConsumerWidget {
     );
   }
 
-
-
-
   //开通会员
   void _openVip(WidgetRef ref) {
     MyOpenVipApi().request(const R()).then((value) {
-      value.simpleToast(ifOk: (){
+      value.simpleToast(ifOk: () {
         ref.read(userRiverpod.notifier).openVip();
       });
     });
   }
 
   String _buttonText(Vip vip) {
-     switch(vip){
-      case Vip.none: {
-        return "开通会员";
-      }
-      case Vip.vip: {
-        return "已开通";
-      }
-      case Vip.superVip: {
-        return "已开通";
-      }
-      case Vip.specialVip:{
-        return "已开通";
-      }
+    switch (vip) {
+      case Vip.none:
+        {
+          return "开通会员";
+        }
+      case Vip.vip:
+        {
+          return "已开通";
+        }
+      case Vip.superVip:
+        {
+          return "已开通";
+        }
+      case Vip.specialVip:
+        {
+          return "已开通";
+        }
     }
   }
 
-
   bool _isVip(Vip vip) {
-    switch(vip){
-      case Vip.none:{
-        return false;
-      }
-      default:{
-        return true;
-      }
+    switch (vip) {
+      case Vip.none:
+        {
+          return false;
+        }
+      default:
+        {
+          return true;
+        }
     }
   }
 }

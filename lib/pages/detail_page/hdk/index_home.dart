@@ -466,7 +466,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                             Text(
                               '使用日期:${getTimeStr(info!.couponStartTime)} - ${getTimeStr(info!.couponEndTime)}',
                               style: context.textTheme.bodyMedium?.copyWith(
-                                  color: context.colorScheme.surfaceVariant),
+                                  color: context
+                                      .colorScheme.surfaceContainerHighest),
                             )
                           ],
                         ),
