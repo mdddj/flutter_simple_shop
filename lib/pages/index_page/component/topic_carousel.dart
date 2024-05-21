@@ -8,7 +8,6 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Logger().t(zheModel.toJson());
     final ZheCarouselResult(:content) = zheModel;
     return Swiper(
       itemBuilder: (BuildContext context, int index) {
@@ -29,8 +28,7 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
         final ZheCarousel(:getUrl, :name) = content[index];
         final zheAppKey = ref.zheAppKey;
         final url = getUrl.replaceAll("{替换appkey}", zheAppKey);
-        context.navToWidget(
-            to: ZheCarouselProductsPage(apiUrl: url, name: name));
+        context.navToWidget(to: ZheCarouselProductsPage(apiUrl: url, name: name));
       },
     );
   }

@@ -1,6 +1,6 @@
 part of 'part.dart';
 
-const _timeout = Duration(seconds: 5);
+const _timeout = Duration(seconds: 20);
 final dioCheckPlugin = DdCheckPlugin();
 
 class NewApiDioInstance {
@@ -47,16 +47,12 @@ abstract class MyBaseApi<T> extends BaseApi<T> {
   }
 
   @override
-  ISet<Interceptor> get interceptions =>
-      ISet([getIt.get<MyTokenInterceptor>()]);
+  ISet<Interceptor> get interceptions => ISet([getIt.get<MyTokenInterceptor>()]);
 }
 
 extension ApiErrorMessageEx on Object {
   String get errorMessage {
-    return switch (this) {
-      BaseApiException() => (this as BaseApiException).message,
-      _ => "$this"
-    };
+    return switch (this) { BaseApiException() => (this as BaseApiException).message, _ => "$this" };
   }
 }
 

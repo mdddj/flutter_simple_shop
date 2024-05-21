@@ -24,7 +24,7 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
   bool loading = false; // 是否登录中
   final usernameEditController = TextEditingController(text: '');
   final passwordEditController = TextEditingController(text: '');
-  final LoginType _loginType = LoginType.email;
+  LoginType _loginType = LoginType.email;
   final _formState = GlobalKey<FormState>();
 
   @override
@@ -52,7 +52,8 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(height: context.screenHeight * 0.16),
-                    Text('登录', style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold, fontSize: 53)),
+                    Text('登录',
+                        style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold, fontSize: 53)),
                     SizedBox(height: context.screenHeight * 0.032),
                     Card(
                       child: Padding(
@@ -63,11 +64,12 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                             children: [
                               TextFormField(
                                 decoration: InputDecoration(
-                                  hintText: '请输入邮箱',
+                                  hintText: _loginType.hintText,
                                   labelText: _accountLabel,
                                 ),
                                 controller: usernameEditController,
-                                validator: (value) => value == null || value.isEmpty ? "请输入邮箱" : null,
+                                validator: (value) =>
+                                    value == null || value.isEmpty ? "请输入${_loginType.hintText}" : null,
                               ),
 
                               const SizedBox(
@@ -87,6 +89,24 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
                                 height: 40,
                               ),
                               renderLoginButton(),
+                              if (_loginType != LoginType.email)
+                                OutlinedButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            _loginType = LoginType.email;
+                                          });
+                                        },
+                                        child: const Text('使用邮箱登录'))
+                                    .maxWidthButton,
+                              if (_loginType != LoginType.account)
+                                OutlinedButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            _loginType = LoginType.account;
+                                          });
+                                        },
+                                        child: const Text('使用账号密码登录'))
+                                    .maxWidthButton
                             ],
                           ),
                         ),
@@ -189,7 +209,9 @@ class UserLoginPageState extends ConsumerState<UserLoginPage> {
     }
     try {
       final nav = context.nav;
-      await ref.read(userRiverpod.notifier).login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
+      await ref
+          .read(userRiverpod.notifier)
+          .login(LoginParams(loginnumber: username, password: password, logintype: _loginType.type));
       nav.pop();
     } on BaseApiException catch (e) {
       toast(e.message);

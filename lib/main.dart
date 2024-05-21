@@ -23,7 +23,7 @@ const releaseEnvConfig = EnvConfig(
     fontFamily: '');
 
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
-const useEnv = debugEnvConfig;
+const useEnv = releaseEnvConfig;
 
 void main() async {
   appInit(() {
