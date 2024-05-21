@@ -10,8 +10,6 @@
     <a href="https://github.com/mdddj/flutter_simple_shop/network/members"><img src="https://badgen.net/github/forks/mdddj/flutter_simple_shop" /></a>
 </p>
 
-
-
 ## 1 配套资源
 
 * 接口文档: <a href='https://apifox.com/apidoc/shared-6f74775d-40ca-4a07-ad1e-dd9c8480f927'>Apifox</a>
@@ -21,14 +19,15 @@
 
 > 服务端支持docker构建,需要准备mysql,Redis数据库,资源存储使用minio
 
-
 ## 2 测试服务接口
+
 修改`lib/main.dart`,仅供学习,有很多bug没修复
+
 ```dart
+
 const apiHost = 'https://api.itbug.shop';
 const apiPort = '443';
 ```
-
 
 ## 3 关于本项目
 
@@ -43,6 +42,20 @@ const apiPort = '443';
 * 系统定时任务,没5秒查询一下渠道订单,如果查询到数据,会插入到本地数据库中,并关联用户
 * 接口数据来自大淘客,和折淘客,可以在web后台绑定自己的apikey
 
+- [x] 用户管理
+- [x] 权限管理
+- [x] 企业管理
+- [x] 文章管理(博客)
+- [x] 群组管理(频道)
+- [x] 订单管理
+- [x] 文件管理
+- [x] 账号管理
+- [x] app版本管理
+- [x] 友情链接
+- [x] 字典管理
+- [x] 项目管理
+- [x] 配置管理管理
+
 ## 5 项目截图
 
 | 一些                                                                                         | 截图                                                                                         | 预览                                                                                         |
@@ -53,12 +66,11 @@ const apiPort = '443';
 | ![1598619478848.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619478848.jpg) | ![1598619472801.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619472801.jpg) | ![1598619476671.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619476671.jpg) |
 | ![1598619475878.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619475878.jpg) | -                                                                                          | -                                                                                          |
 
-
-
 ## 构建web应用
 
 ```dart
-flutter build web --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://unpkg.zhimg.com/canvaskit-wasm@0.24.0/bin/
+flutter build
+web --dart-define=FLUTTER_WEB_CANVASKIT_URL=https: //unpkg.zhimg.com/canvaskit-wasm@0.24.0/bin/
 ```
 
 ## flutter web 全局加载器
@@ -88,6 +100,6 @@ flutter build web --dart-define=FLUTTER_WEB_CANVASKIT_URL=https://unpkg.zhimg.co
 <script src="js/uikit.min.js"></script>
 ```
 
-##  请喝咖啡
+## 请喝咖啡
 
 ![1603946039040.png](https://static.saintic.com/picbed/huang/2020/10/29/1603946039040.png)
