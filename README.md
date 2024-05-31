@@ -17,6 +17,7 @@
 * 后台管理: <a href='https://github.com/mdddj/dd_server/tree/main/dd_server_admin'>后台管理源码(React18+Antd Pro)</a>
 * 博客前台: <a href='https://github.com/mdddj/blog'>博客前台源码</a> - <a href='https://itbug.shop'>博客预览</a>
 
+
 > 服务端支持docker构建,需要准备mysql,Redis数据库,资源存储使用minio
 
 ## 2 测试服务接口
@@ -65,6 +66,14 @@ const apiPort = '443';
 | ![1598619516304.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619516304.jpg) | ![1598619516278.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619516278.jpg) | ![1598619478353.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619478353.jpg) |
 | ![1598619478848.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619478848.jpg) | ![1598619472801.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619472801.jpg) | ![1598619476671.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619476671.jpg) |
 | ![1598619475878.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619475878.jpg) | -                                                                                          | -                                                                                          |
+
+
+
+## 快速开发工具
+
+- <a href='https://flutterx.itbug.shop/'>FlutterX</a>
+- <a href='https://mdddj.github.io/kotlin-spring-tool-doc'>SpringbootKotlinTool</a>
+
 
 ## 构建web应用
 

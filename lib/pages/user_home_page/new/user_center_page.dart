@@ -11,7 +11,8 @@ class UserCenterPage extends ConsumerStatefulWidget {
   ConsumerState<UserCenterPage> createState() => _UserCenterPageState();
 }
 
-class _UserCenterPageState extends ConsumerState<UserCenterPage> with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+class _UserCenterPageState extends ConsumerState<UserCenterPage>
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final TabController _tabController = TabController(length: TabItem.values.length, vsync: this);
 
   double get paddingTop => MediaQuery.of(context).padding.top;
@@ -154,11 +155,14 @@ class _Tabs extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       alignment: Alignment.centerLeft,
-      decoration: BoxDecoration(color: context.userCenterPageNavBg, borderRadius: const BorderRadius.only(topRight: Radius.circular(8), topLeft: Radius.circular(8))),
+      decoration: BoxDecoration(
+          color: context.userCenterPageNavBg,
+          borderRadius: const BorderRadius.only(topRight: Radius.circular(8), topLeft: Radius.circular(8))),
       child: TabBar(
         isScrollable: true,
         tabs: TabItem.values.map((e) => Tab(text: e.text)).toList(),
         controller: controller,
+        tabAlignment: TabAlignment.start,
       ),
     );
   }
@@ -260,7 +264,10 @@ class _Userinfo extends ConsumerWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     ImageWrapper(
-                                      child: SvgPicture.asset('assets/svg/user/llls.svg', width: 32, height: 32, colorFilter: ColorFilter.mode(context.primaryColor, BlendMode.srcIn)),
+                                      child: SvgPicture.asset('assets/svg/user/llls.svg',
+                                          width: 32,
+                                          height: 32,
+                                          colorFilter: ColorFilter.mode(context.primaryColor, BlendMode.srcIn)),
                                     ),
                                     const SizedBox(
                                       height: 3,
@@ -277,7 +284,10 @@ class _Userinfo extends ConsumerWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   ImageWrapper(
-                                    child: SvgPicture.asset('assets/svg/user/qb.svg', width: 32, height: 32, colorFilter: ColorFilter.mode(context.primaryColor, BlendMode.srcIn)),
+                                    child: SvgPicture.asset('assets/svg/user/qb.svg',
+                                        width: 32,
+                                        height: 32,
+                                        colorFilter: ColorFilter.mode(context.primaryColor, BlendMode.srcIn)),
                                   ),
                                   const SizedBox(
                                     height: 3,
@@ -349,7 +359,13 @@ class _Files extends JpaListWidget<FileInfo, MyUserFilesApi> {
           aspectRatio: item.width == 0 ? 1 : item.width / item.height,
           child: ImageView(
             image: MyImage.network(
-                url: item.url, params: ImageParams(borderRadius: BorderRadius.circular(12), shape: BoxShape.rectangle, width: double.infinity, height: double.infinity, fit: BoxFit.cover)),
+                url: item.url,
+                params: ImageParams(
+                    borderRadius: BorderRadius.circular(12),
+                    shape: BoxShape.rectangle,
+                    width: double.infinity,
+                    height: double.infinity,
+                    fit: BoxFit.cover)),
           ),
         )
       ],

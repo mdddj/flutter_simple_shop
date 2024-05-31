@@ -9,21 +9,17 @@ class SearchRepository extends MyLoadingModel<ProductModel> {
 
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
-    final result = await kApi.superSearch(
-        param: SuperSearchParam(
-          keyWords: searchKeyWorlds,
-          pageId: _page.toString(),
-          pageSize: '20',
-          type: '0',
-        ),
-        requestParamsBuilder: (r) => r.copyWith(showDefaultLoading: false));
-    if (result != null) {
-      addAll(result.list ?? []);
-      _page++;
-      _hasMore = (result.list ?? []).isNotEmpty;
-      return true;
-    }
-    return false;
+    final params = SuperSearchParam(
+      keyWords: searchKeyWorlds,
+      pageId: _page.toString(),
+      pageSize: '20',
+      type: '0',
+    ).toJson();
+    final response = await SuperSearchApi().request(RequestParams(showDefaultLoading: false, data: params));
+    addAll(response);
+    _page++;
+    _hasMore = response.isNotEmpty;
+    return true;
   }
 
   @override

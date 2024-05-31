@@ -6,6 +6,9 @@ class SuperSearchApi extends MyBaseApi<List<Product>> {
 
   @override
   List<Product> covertToModel(DartTypeModel data, RequestParams param) {
+    if (data.whenOrNull(json: (value) => value['data']['list']) case final List<dynamic> datas) {
+      return List.from(datas.map(Product.fromJson));
+    }
     return [];
   }
 }

@@ -1,6 +1,6 @@
 part of 'part.dart';
 
-const _timeout = Duration(seconds: 20);
+const _timeout = Duration(seconds: 5);
 final dioCheckPlugin = DdCheckPlugin();
 
 class NewApiDioInstance {
@@ -13,14 +13,22 @@ class NewApiDioInstance {
       return dio!;
     }
     dio = Dio(options);
-    if (useEnv.debugMode) {
-      // await dioCheckPlugin
-      //     .init(dio!,
-      //         initHost: Uri.parse(useEnv.host).host,
-      //         port: 9998,
-      //         projectName: 'shop',
-      //         timeOut: const Duration(milliseconds: 1200))
-      //     .catchError((e) => debugPrint('$e'));
+    // 安装android studio flutterX插件
+    // if (useEnv.debugMode) {
+    //   await dioCheckPlugin
+    //       .init(dio!,
+    //           initHost: Uri.parse(useEnv.host).host,
+    //           port: 9998,
+    //           projectName: 'shop',
+    //           timeOut: const Duration(milliseconds: 1200))
+    //       .catchError((e) => debugPrint('$e'));
+    //   PluginManager.instance.register(DioInspector(dio: dio!));
+    // }
+    if (true) {
+      await dioCheckPlugin
+          .init(dio!,
+              initHost: '192.168.199.92', port: 9999, projectName: 'shop', timeOut: const Duration(milliseconds: 1200))
+          .catchError((e) => debugPrint('$e'));
       PluginManager.instance.register(DioInspector(dio: dio!));
     }
 
