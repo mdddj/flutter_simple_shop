@@ -13,22 +13,22 @@ class NewApiDioInstance {
       return dio!;
     }
     dio = Dio(options);
-    // 安装android studio flutterX插件
-    // if (useEnv.debugMode) {
-    //   await dioCheckPlugin
-    //       .init(dio!,
-    //           initHost: Uri.parse(useEnv.host).host,
-    //           port: 9998,
-    //           projectName: 'shop',
-    //           timeOut: const Duration(milliseconds: 1200))
-    //       .catchError((e) => debugPrint('$e'));
-    //   PluginManager.instance.register(DioInspector(dio: dio!));
-    // }
-    if (true) {
+    //需安装android studio flutterX插件 https://flutterx.itbug.shop/starter.html
+    if (false) {
       await dioCheckPlugin
           .init(dio!,
-              initHost: '192.168.199.92', port: 9999, projectName: 'shop', timeOut: const Duration(milliseconds: 1200))
+              initHost: '192.168.199.82',
+              port: 9998,
+              projectName: '典典的小卖部',
+              timeOut: const Duration(milliseconds: 1200))
           .catchError((e) => debugPrint('$e'));
+      PluginManager.instance.register(DioInspector(dio: dio!));
+    }
+    if (true) {
+      // await dioCheckPlugin
+      //     .init(dio!,
+      //         initHost: '192.168.199.92', port: 9999, projectName: 'shop', timeOut: const Duration(milliseconds: 1200))
+      //     .catchError((e) => debugPrint('$e'));
       PluginManager.instance.register(DioInspector(dio: dio!));
     }
 
@@ -55,12 +55,16 @@ abstract class MyBaseApi<T> extends BaseApi<T> {
   }
 
   @override
-  ISet<Interceptor> get interceptions => ISet([getIt.get<MyTokenInterceptor>()]);
+  ISet<Interceptor> get interceptions =>
+      ISet([getIt.get<MyTokenInterceptor>()]);
 }
 
 extension ApiErrorMessageEx on Object {
   String get errorMessage {
-    return switch (this) { BaseApiException() => (this as BaseApiException).message, _ => "$this" };
+    return switch (this) {
+      BaseApiException() => (this as BaseApiException).message,
+      _ => "$this"
+    };
   }
 }
 

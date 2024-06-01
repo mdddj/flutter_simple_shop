@@ -16,10 +16,9 @@ class SearchListIndex extends ConsumerWidget {
           itemBuilder: _itemBuilder,
           sourceList: SearchRepository(value),
           padding: const EdgeInsets.all(8),
-          indicatorBuilder: (context, status) {
-            return CustomLoadingMoreWidget(context, status);
-          },
-          extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 8, crossAxisSpacing: 8))),
+          indicatorBuilder: CustomLoadingMoreWidget.defaultWidget,
+          extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+              crossAxisCount: context.waterfallFlowCrossAxisCount, mainAxisSpacing: 8, crossAxisSpacing: 8))),
     );
   }
 
