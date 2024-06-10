@@ -5,18 +5,18 @@
 <p align="center">
     <a href="https://jq.qq.com/?_wv=1027&k=Z0AHodXB"><img src="https://badgen.net/badge/QQ%E7%BE%A4/706438100/pink" /></a>
     <a href="https://itbug.shop"><img src="https://badgen.net/badge/%E5%85%B8%E5%85%B8%E7%9A%84%E5%B0%8F%E5%8D%96%E9%83%A8/v3.0.0/red" /></a>
-    <a href="https://flutter.dev/docs/get-started/install/windows"><img src="https://badgen.net/badge/flutter/3.22.0/red" /></a>
+    <a href="https://flutter.dev/docs/get-started/install/windows"><img src="https://badgen.net/badge/flutter/3.22.2/red" /></a>
     <a href="https://github.com/mdddj/flutter_simple_shop/stargazers"><img src="https://badgen.net/github/stars/mdddj/flutter_simple_shop" /></a>
     <a href="https://github.com/mdddj/flutter_simple_shop/network/members"><img src="https://badgen.net/github/forks/mdddj/flutter_simple_shop" /></a>
 </p>
 
 ## 1 配套资源
 
+* 商城预览: <a href='https://q.itbug.shop'>(web端)</a>
 * 接口文档: <a href='https://apifox.com/apidoc/shared-6f74775d-40ca-4a07-ad1e-dd9c8480f927'>Apifox</a>
 * 服务端:   <a href='https://github.com/mdddj/dd_server'>服务端源码(Java21+Springboot3.x)</a>
 * 后台管理: <a href='https://github.com/mdddj/dd_server/tree/main/dd_server_admin'>后台管理源码(React18+Antd Pro)</a>
 * 博客前台: <a href='https://github.com/mdddj/blog'>博客前台源码</a> - <a href='https://itbug.shop'>博客预览</a>
-
 
 > 服务端支持docker构建,需要准备mysql,Redis数据库,资源存储使用minio
 
@@ -67,13 +67,10 @@ const apiPort = '443';
 | ![1598619478848.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619478848.jpg) | ![1598619472801.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619472801.jpg) | ![1598619476671.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619476671.jpg) |
 | ![1598619475878.jpg](https://static.saintic.com/picbed/huang/2020/08/28/1598619475878.jpg) | -                                                                                          | -                                                                                          |
 
-
-
 ## 快速开发工具
 
 - <a href='https://flutterx.itbug.shop/'>FlutterX</a>
 - <a href='https://mdddj.github.io/kotlin-spring-tool-doc'>SpringbootKotlinTool</a>
-
 
 ## 构建web应用
 
