@@ -5,8 +5,6 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dio/dio.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ume_kit_dio_plus/flutter_ume_kit_dio_plus.dart';
-import 'package:flutter_ume_plus/flutter_ume_plus.dart';
 
 import '../../freezed/zhe_carousel_model.dart';
 import '../../freezed/zhe_product.dart';

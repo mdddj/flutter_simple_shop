@@ -1,9 +1,7 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../../common/index.dart';
 import '../../freezed/anking_list_param.dart';
-import '../../modals/dataoke/top_param.dart';
 import '../../modals/dd/product.dart';
 
 ///第二版

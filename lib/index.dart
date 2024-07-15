@@ -27,6 +27,7 @@ import 'constant/index.dart';
 import 'freezed/appbar_menu.dart';
 import 'freezed/application.dart';
 import 'freezed/pager.dart';
+import 'main.dart';
 import 'meet/add_new_meet.dart';
 import 'modals/dataoke/category.dart';
 import 'pages/index.dart';

@@ -22,16 +22,7 @@ class NewApiDioInstance {
               projectName: '典典的小卖部',
               timeOut: const Duration(milliseconds: 1200))
           .catchError((e) => debugPrint('$e'));
-      PluginManager.instance.register(DioInspector(dio: dio!));
     }
-    if (true) {
-      // await dioCheckPlugin
-      //     .init(dio!,
-      //         initHost: '192.168.199.92', port: 9999, projectName: 'shop', timeOut: const Duration(milliseconds: 1200))
-      //     .catchError((e) => debugPrint('$e'));
-      PluginManager.instance.register(DioInspector(dio: dio!));
-    }
-
     return dio!;
   }
 }
