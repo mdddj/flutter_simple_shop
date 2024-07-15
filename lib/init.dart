@@ -58,7 +58,6 @@ Future<void> initCaches() async {
     final appDocumentDirectory = await getApplicationDocumentsDirectory();
     Hive.init(appDocumentDirectory.path);
   }
-  await kApi.objectAdapterInit();
   await AppThemeUtil().registerAdapterAndOpenBox();
 }
 

@@ -1,11 +1,10 @@
 // Dart imports:
 import 'dart:convert';
 
-import 'package:dataoke_sdk/dataoke_sdk.dart';
+import 'package:dd_js_util/dd_js_util.dart';
 
-
-
-List<PddGoods> pddCovertList(List<dynamic> list)=> List<PddGoods>.from(list.map(PddGoods.fromJson)).toList();
+List<PddGoods> pddCovertList(List<dynamic> list) =>
+    List<PddGoods>.from(list.map(PddGoods.fromJson)).toList();
 
 class PddGoods {
   PddGoods({
@@ -91,7 +90,7 @@ class PddGoods {
       }
     }
     return PddGoods(
-      activityPromotionRate: asT<int>(jsonRes['activity_promotion_rate']??0)!,
+      activityPromotionRate: asT<int>(jsonRes['activity_promotion_rate'] ?? 0)!,
       activityTags: activityTags!,
       catIds: catIds!,
       couponDiscount: asT<int>(jsonRes['coupon_discount'])!,
@@ -123,8 +122,9 @@ class PddGoods {
       searchId: asT<String>(jsonRes['search_id'])!,
       servTxt: asT<String>(jsonRes['serv_txt'])!,
       shareRate: asT<int>(jsonRes['share_rate'])!,
-      subsidyAmount: asT<int>(jsonRes['subsidy_amount']??0)!,
-      subsidyDuoAmountTenMillion: asT<int>(jsonRes['subsidy_duo_amount_ten_million']??0)!,
+      subsidyAmount: asT<int>(jsonRes['subsidy_amount'] ?? 0)!,
+      subsidyDuoAmountTenMillion:
+          asT<int>(jsonRes['subsidy_duo_amount_ten_million'] ?? 0)!,
       unifiedTags: unifiedTags!,
     );
   }
@@ -208,5 +208,6 @@ class PddGoods {
         'unified_tags': unifiedTags,
       };
 
-  PddGoods clone() => PddGoods.fromJson(asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
+  PddGoods clone() => PddGoods.fromJson(
+      asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
 }

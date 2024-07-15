@@ -1,10 +1,8 @@
 library common;
 
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory, asT;
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
@@ -24,15 +22,16 @@ import '../api/new/part.dart';
 import '../freezed/jpa_page.dart';
 import '../freezed/simple_result.dart';
 import '../index.dart';
+import '../modals/dd/product.dart';
 import '../pages/public_detail/view.dart';
 import '../provider/riverpod/model/my_user.dart';
 import '../widgets/loading/custom_loading_more_widget.dart';
+import 'components/jd/product_model.dart';
 
 part './components/jd/jd_category_mini_widget.dart';
 part './components/jd/jd_constant.dart';
 part './components/jd/jd_products_view.dart';
 part './components/jd/jd_types_model.dart';
-part './components/jd/product_model.dart';
 part './components/pdd/resp.dart';
 part './components/pdd/view.dart';
 part 'base_provider.dart';

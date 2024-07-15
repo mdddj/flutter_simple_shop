@@ -1,7 +1,5 @@
 part of 'index.dart';
 
-DdTaokeSdk get kApi => DdTaokeSdk.instance;
-
 /// 工具类
 class Utils {
   WidgetUtils get widgetUtils => GetIt.instance.get<WidgetUtils>();

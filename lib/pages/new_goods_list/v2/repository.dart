@@ -1,14 +1,15 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../../api/new/part.dart';
+import '../../../modals/dataoke/product_list_param.dart';
+import '../../../modals/dd/product.dart';
 import 'goods_list_params_model.dart';
 
 ///产品列表的数据仓库
-class ProductListRepository extends LoadingModel<ProductModel> {
+class ProductListRepository extends LoadingModel<Product> {
   late GoodsListParamsModel state; //筛选产品参数
 
   int page = 1; //默认第一页

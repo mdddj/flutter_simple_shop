@@ -16,28 +16,28 @@ class BrandProvider extends ChangeNotifier {
   Future<void> refresh() async {
     lists.clear();
     page = 1;
-    final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-        });
-    if (result != null) {
-      lists.addAll(result.lists);
-    }
-    notifyListeners();
+    // final result = await DdTaokeSdk.instance.getBrandList(
+    //     param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'),
+    //     requestParamsBuilder: (RequestParams requestParams) {
+    //       return requestParams;
+    //     });
+    // if (result != null) {
+    //   lists.addAll(result.lists);
+    // }
+    // notifyListeners();
   }
 
   /// 加载下一页
   Future<void> load() async {
     page = page + 1;
-    final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-        });
-    if (result != null) {
-      lists.addAll(result.lists);
-    }
+    // final result = await DdTaokeSdk.instance.getBrandList(
+    //     param: BrandListParam(cid: cid, pageId: '$page', pageSize: '$size'),
+    //     requestParamsBuilder: (RequestParams requestParams) {
+    //       return requestParams;
+    //     });
+    // if (result != null) {
+    //   lists.addAll(result.lists);
+    // }
     notifyListeners();
   }
 

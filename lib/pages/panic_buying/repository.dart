@@ -23,17 +23,18 @@ class PanicBuyingModel extends ChangeNotifier {
 
   // 加载实时榜单商品
   Future<bool> loadRealTimeProduct() async {
-    final result = await DdTaokeSdk.instance.getTopProducts(
-        param: TopParam(rankType: rankType, pageId: '$_page', cid: cid, pageSize: '20'),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-        });
-    if (result.isNotEmpty) {
-      products.addAll(result);
-    }
-    changeLoading = false;
-    notifyListeners();
-    return result.length < 20;
+    // final result = await DdTaokeSdk.instance.getTopProducts(
+    //     param: TopParam(rankType: rankType, pageId: '$_page', cid: cid, pageSize: '20'),
+    //     requestParamsBuilder: (RequestParams requestParams) {
+    //       return requestParams;
+    //     });
+    // if (result.isNotEmpty) {
+    //   products.addAll(result);
+    // }
+    // changeLoading = false;
+    // notifyListeners();
+    // return result.length < 20;
+    return true;
   }
 
   // 选项卡被切换

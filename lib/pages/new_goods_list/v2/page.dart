@@ -1,6 +1,6 @@
-import 'package:dataoke_sdk/model/category.dart';
 import 'package:flutter/material.dart';
 
+import '../../../modals/dataoke/category.dart';
 import '../../index.dart';
 
 class CategoryListPage extends StatelessWidget {

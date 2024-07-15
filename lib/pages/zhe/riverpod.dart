@@ -1,10 +1,10 @@
 // Flutter imports:
 // Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../modals/dd/product.dart';
 import '../../provider/index.dart';
 
 final zheRiverpod = ChangeNotifierProvider(ZheState.new);
@@ -17,25 +17,26 @@ class ZheState extends ChangeNotifier {
 
   bool loading = true;
 
-  List<ProductModel> products = [];
+  List<Product> products = [];
 
   ZheState(this.ref);
 
   /// 加载商品
   Future<bool> fetchData() async {
-    final result = await DdTaokeSdk.instance.getDiscountTwoProduct(
-        param: DiscountTwoParam(
-            pageSize: '$_pageSize', sort: '2', pageId: '$_page', cids: cid),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-        });
-    if (result != null) {
-      products.addAll(result.list ?? []);
-    }
-    loading = false;
-    notifyListeners();
-
-    return result != null && (result.list ?? []).length < _pageSize;
+    // final result = await DdTaokeSdk.instance.getDiscountTwoProduct(
+    //     param: DiscountTwoParam(
+    //         pageSize: '$_pageSize', sort: '2', pageId: '$_page', cids: cid),
+    //     requestParamsBuilder: (RequestParams requestParams) {
+    //       return requestParams;
+    //     });
+    // if (result != null) {
+    //   products.addAll(result.list ?? []);
+    // }
+    // loading = false;
+    // notifyListeners();
+    //
+    // return result != null && (result.list ?? []).length < _pageSize;
+    return true;
   }
 
   void onTabChange(int index, BuildContext context) {

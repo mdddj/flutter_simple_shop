@@ -1,4 +1,19 @@
-part of '../../../../index.dart';
+import 'package:dd_js_util/dd_js_util.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+
+import '../../../../../common/index.dart';
+import '../../../../../common/view.dart';
+import '../../../../../freezed/home_menu.dart';
+import '../../../../../widgets/image_wrapper.dart';
+import '../../../../index.dart';
+import '../../../../jd/recommend/view.dart';
+import '../../../../mianji/mianji/view.dart';
+import '../../../../zhe/view.dart';
+import '../../../model/menus.dart';
+import '../../index_card_wrapper.dart';
 
 const elmImage = 'assets/svg/elm_logo.svg';
 const phbImage = 'assets/svg/phb.svg';
@@ -54,8 +69,9 @@ List<Widget> buildIndexGridMenuItems(ApplocationContext applocationContext) {
         item: GridMenuModel(
             title: '每日半价',
             image: banjiaImage,
-            onTap: () =>
-                applocationContext.context.navToWidget(to: const BanjiaIndex()),
+            onTap: () {
+              toast('已废除');
+            },
             isAssets: true)),
 
     GridMenuItem(
@@ -93,7 +109,7 @@ List<Widget> buildIndexGridMenuItems(ApplocationContext applocationContext) {
 }
 
 /// 首页的网格菜单
-class GridMenuComponent extends View {
+class GridMenuComponent extends MyView {
   const GridMenuComponent({super.key});
 
   @override

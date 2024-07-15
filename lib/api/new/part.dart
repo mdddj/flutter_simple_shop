@@ -1,11 +1,7 @@
 library newapi;
 
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dataoke_sdk/model/category.dart';
-import 'package:dataoke_sdk/model/detail_base_data.dart';
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_models/models/product.dart';
 import 'package:dio/dio.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +11,10 @@ import 'package:flutter_ume_plus/flutter_ume_plus.dart';
 import '../../freezed/zhe_carousel_model.dart';
 import '../../freezed/zhe_product.dart';
 import '../../index.dart';
+import '../../modals/dataoke/category.dart';
+import '../../modals/dataoke/detail_base_data.dart';
+import '../../modals/dataoke/hot_search_worlds_result.dart';
+import '../../modals/dd/product.dart';
 import '../../provider/riverpod/model/my_user.dart';
 import '../apis.dart';
 

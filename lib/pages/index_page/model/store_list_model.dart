@@ -1,4 +1,6 @@
-part of '../../index.dart';
+import 'dart:convert';
+
+import 'package:dd_js_util/dd_js_util.dart';
 
 class StoreData {
   StoreData({

@@ -5,7 +5,6 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   connectivity_plus
   dd_check_plugin
-  dd_models
   file_selector_windows
   permission_handler_windows
   share_plus

@@ -2,11 +2,7 @@ PODS:
   - connectivity_plus (0.0.1):
     - Flutter
     - FlutterMacOS
-  - dataoke_sdk (0.0.1):
-    - Flutter
   - dd_check_plugin (0.0.1):
-    - Flutter
-  - dd_models (0.0.1):
     - Flutter
   - device_info (0.0.1):
     - Flutter
@@ -43,9 +39,7 @@ PODS:
 
 DEPENDENCIES:
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/darwin`)
-  - dataoke_sdk (from `.symlinks/plugins/dataoke_sdk/ios`)
   - dd_check_plugin (from `.symlinks/plugins/dd_check_plugin/ios`)
-  - dd_models (from `.symlinks/plugins/dd_models/ios`)
   - device_info (from `.symlinks/plugins/device_info/ios`)
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - Flutter (from `Flutter`)
@@ -65,12 +59,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   connectivity_plus:
     :path: ".symlinks/plugins/connectivity_plus/darwin"
-  dataoke_sdk:
-    :path: ".symlinks/plugins/dataoke_sdk/ios"
   dd_check_plugin:
     :path: ".symlinks/plugins/dd_check_plugin/ios"
-  dd_models:
-    :path: ".symlinks/plugins/dd_models/ios"
   device_info:
     :path: ".symlinks/plugins/device_info/ios"
   device_info_plus:
@@ -104,9 +94,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   connectivity_plus: ddd7f30999e1faaef5967c23d5b6d503d10434db
-  dataoke_sdk: aa95616c89b448c7b3f698825a49bed62c9b7b9d
   dd_check_plugin: fadd604fdabcd4c8674046cbda00aeda61646a03
-  dd_models: 5bd836519341310a49aa6c53a2203c300021d790
   device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
   device_info_plus: 97af1d7e84681a90d0693e63169a5d50e0839a0d
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7

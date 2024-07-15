@@ -1,12 +1,10 @@
-// Flutter imports:
-// Package imports:
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 
+import '../../modals/dd/product.dart';
 import '../../util/index.dart';
 
 class ShopInfoWidget extends StatelessWidget {
-  final ProductModel goodsInfo;
+  final Product goodsInfo;
 
   const ShopInfoWidget({required this.goodsInfo, super.key});
 
@@ -20,7 +18,8 @@ class ShopInfoWidget extends StatelessWidget {
               children: <Widget>[
                 // 商铺logo
                 Container(
-                  padding: const EdgeInsets.only(top: 5.0, bottom: 5.0, right: 10.0),
+                  padding:
+                      const EdgeInsets.only(top: 5.0, bottom: 5.0, right: 10.0),
                   child: goodsInfo.shopLogo.isNotEmpty
                       ? Image.network(
                           MImageUtils.magesProcessor(goodsInfo.shopLogo),
@@ -40,7 +39,8 @@ class ShopInfoWidget extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         goodsInfo.shopName,
-                        style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 12),
                       ),
                       Row(
                         children: <Widget>[
@@ -86,10 +86,17 @@ class ShopInfoWidget extends StatelessWidget {
             // 描述
             Container(
               padding: const EdgeInsets.all(10.0),
-              decoration: const BoxDecoration(border: Border(top: BorderSide(color: Color.fromRGBO(245, 245, 249, 1.0)))),
+              decoration: const BoxDecoration(
+                  border: Border(
+                      top: BorderSide(
+                          color: Color.fromRGBO(245, 245, 249, 1.0)))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[Text('宝贝描述:${goodsInfo.descScore}'), Text('卖家服务:${goodsInfo.serviceScore}'), Text('物流服务:${goodsInfo.shipScore}')],
+                children: <Widget>[
+                  Text('宝贝描述:${goodsInfo.descScore}'),
+                  Text('卖家服务:${goodsInfo.serviceScore}'),
+                  Text('物流服务:${goodsInfo.shipScore}')
+                ],
               ),
             ),
           ],
