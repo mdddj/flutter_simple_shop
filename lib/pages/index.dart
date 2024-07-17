@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:after_layout/after_layout.dart';
+import 'package:animate_do/animate_do.dart';
 import 'package:async/async.dart';
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
