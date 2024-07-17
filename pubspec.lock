@@ -713,10 +713,10 @@ packages:
     dependency: "direct main"
     description:
       name: freezed_annotation
-      sha256: f9f6597ac43cc262fa7d7f2e65259a6060c23a560525d1f2631be374540f2a9b
+      sha256: c2e2d632dd9b8a2b7751117abcfc2b4888ecfe181bd9fca7170d9ef02e595fe2
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.3"
+    version: "2.4.4"
   frontend_server_client:
     dependency: transitive
     description:
@@ -985,18 +985,18 @@ packages:
     dependency: "direct main"
     description:
       name: loading_more_list_fast
-      sha256: "01699aa9c65c4787c2a06f2142c27948a5d58125ffeb2a71e727737e9c6b9161"
+      sha256: "3cc06e183b579eb827d3b476b6e1b734852d007e75aeb9f41e83097646ac8683"
       url: "https://pub.dev"
     source: hosted
-    version: "7.1.4"
+    version: "7.1.6"
   loading_more_list_library_fast:
     dependency: "direct main"
     description:
       name: loading_more_list_library_fast
-      sha256: "2a6095864c6986590cde096ba644b79f85ef852f011f8d18afbad302d5c7d705"
+      sha256: db2aec373daafeb59d29df62b97b0a52ee9de1fa73efbf2ae811e964eb1e2d8f
       url: "https://pub.dev"
     source: hosted
-    version: "4.1.3"
+    version: "4.1.4"
   logger:
     dependency: "direct main"
     description:

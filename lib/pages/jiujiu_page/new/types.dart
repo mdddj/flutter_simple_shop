@@ -1,5 +1,3 @@
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
-
 enum JiujiuTabTypes {
   recommend("推荐", "-1"),
   five('5.9元专区', '1'),
@@ -12,4 +10,4 @@ enum JiujiuTabTypes {
   final String paramsValue;
 }
 
-final ninenineTypes = JiujiuTabTypes.values.lock;
+const ninenineTypes = JiujiuTabTypes.values;
