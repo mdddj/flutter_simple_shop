@@ -130,7 +130,12 @@ class App extends ConsumerWidget {
                     alignment: Alignment.center,
                     child: LazyIndexedStack(
                       index: ref.watch(homeModuleShowIndex),
-                      children: _pages,
+                      children: _pages
+                          .map((e) => FadeInUp(
+                                duration: const Duration(milliseconds: 334),
+                                child: e,
+                              ))
+                          .toList(),
                     ),
                   ),
                 ),
