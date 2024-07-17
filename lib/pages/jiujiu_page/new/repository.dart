@@ -1,11 +1,11 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:loading_more_list_library_fast/loading_more_list_library_fast.dart';
 
 import '../../../api/new/part.dart';
+import '../../../modals/dd/product.dart';
 import 'types.dart';
 
-class JiujiuRepository extends LoadingMoreBase<ProductModel> {
+class JiujiuRepository extends LoadingMoreBase<Product> {
   final JiujiuTabTypes type;
 
   JiujiuRepository(this.type);
@@ -22,12 +22,17 @@ class JiujiuRepository extends LoadingMoreBase<ProductModel> {
 
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
+    //NineNineParam(
+    //                 nineCid: type.paramsValue, pageId: '$_page', pageSize: '20')
+    //             .toJson()
     if (_page == 1) clear();
     final list = await MyNewApiByNineNine().request(RequestParams(
         showDefaultLoading: false,
-        data: NineNineParam(
-                nineCid: type.paramsValue, pageId: '$_page', pageSize: '20')
-            .toJson()));
+        data: {
+          "nineCid": type.paramsValue,
+          "pageId": "$_page",
+          "pageSize": "20"
+        }));
     if (list.isNotEmpty) {
       addAll(list);
       _page++;

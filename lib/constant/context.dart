@@ -6,7 +6,7 @@ extension ContextEx on BuildContext {
     var crossAxisCount = 2;
     switch (deviceScreenType) {
       case DeviceScreenType.desktop:
-        crossAxisCount = 4;
+        crossAxisCount = 3;
         break;
       case DeviceScreenType.tablet:
         crossAxisCount = 3;
@@ -96,5 +96,6 @@ extension ContextEx on BuildContext {
     return result;
   }
 
-  DeviceScreenType get deviceScreenType => getDeviceType(MediaQuery.of(this).size);
+  DeviceScreenType get deviceScreenType =>
+      getDeviceType(MediaQuery.of(this).size);
 }

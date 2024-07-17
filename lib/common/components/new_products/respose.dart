@@ -1,6 +1,6 @@
 part of '../../index.dart';
 
-class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
+class NewProductsLoadMore extends LoadingMoreBase<Product> {
   int page = 1;
   bool more = true;
 
@@ -13,9 +13,10 @@ class NewProductsLoadMore extends LoadingMoreBase<ProductModel> {
 
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
+    //ProductListParam(pageId: '$page', pageSize: '10').toJson()
     final r = await MyNewApiByProducts().request(RequestParams(
         showDefaultLoading: false,
-        data: ProductListParam(pageId: '$page', pageSize: '10').toJson()));
+        data: {"pageId": "$page", "pageSize": "10"}));
     if (page == 1) clear();
     if (r.isNotEmpty) {
       more = true;
@@ -44,7 +45,7 @@ class _NewProductWidgetState extends State<NewProductWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingMoreSliverList(SliverListConfig<ProductModel>(
+    return LoadingMoreSliverList(SliverListConfig<Product>(
         itemBuilder: (c, ite, index) {
           return WaterfallGoodsCard(ite);
         },

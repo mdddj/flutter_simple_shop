@@ -13,7 +13,7 @@ abstract class WidgetUtilService {
 
   Widget loading(double width, double height, {double? radius});
 
-  Widget renderProductCard(ProductModel product);
+  Widget renderProductCard(Product product);
 }
 
 class WidgetUtils extends WidgetUtilService {
@@ -46,7 +46,7 @@ class WidgetUtils extends WidgetUtilService {
   }
 
   @override
-  Widget renderProductCard(ProductModel product) {
+  Widget renderProductCard(Product product) {
     return WaterfallGoodsCard(product);
   }
 }

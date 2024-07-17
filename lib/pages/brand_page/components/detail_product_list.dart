@@ -2,7 +2,7 @@ part of '../../index.dart';
 
 /// 品牌的商品列表
 class DetailProductList extends StatelessWidget {
-  final List<ProductModel> list;
+  final List<Product> list;
 
   const DetailProductList({super.key, required this.list});
 
@@ -11,7 +11,12 @@ class DetailProductList extends StatelessWidget {
     return SliverPadding(
       padding: const EdgeInsets.all(12),
       sliver: SliverWaterfallFlow.count(
-          crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand, crossAxisSpacing: 12, mainAxisSpacing: 12, children: [...list.map((e) => _builderList(context, list.indexOf(e)))]),
+          crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand,
+          crossAxisSpacing: 12,
+          mainAxisSpacing: 12,
+          children: [
+            ...list.map((e) => _builderList(context, list.indexOf(e)))
+          ]),
     );
   }
 
@@ -19,20 +24,25 @@ class DetailProductList extends StatelessWidget {
     var brandDetailGoodsList = list[index];
     return GestureDetector(
       onTap: () {
-        NavigatorUtil.gotoGoodsDetailPage(context, brandDetailGoodsList.id.toString());
+        NavigatorUtil.gotoGoodsDetailPage(
+            context, brandDetailGoodsList.id.toString());
       },
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            children: [_buildImage(brandDetailGoodsList), const SizedBox(width: 12), Expanded(child: _buildData(brandDetailGoodsList))],
+            children: [
+              _buildImage(brandDetailGoodsList),
+              const SizedBox(width: 12),
+              Expanded(child: _buildData(brandDetailGoodsList))
+            ],
           ),
         ),
       ),
     );
   }
 
-  Widget _buildData(ProductModel item) {
+  Widget _buildData(Product item) {
     return Container(
       constraints: const BoxConstraints(minHeight: 120),
       child: Column(
@@ -45,7 +55,8 @@ class DetailProductList extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
-          CouponDiscountShow(value: item.couponPrice.toString().replaceAll('.0', '')),
+          CouponDiscountShow(
+              value: item.couponPrice.toString().replaceAll('.0', '')),
           SimplePrice(
             price: item.actualPrice.toString(),
             orignPrice: item.originalPrice.toString(),
@@ -56,7 +67,7 @@ class DetailProductList extends StatelessWidget {
   }
 
   // 商品主图
-  Widget _buildImage(ProductModel item) {
+  Widget _buildImage(Product item) {
     var imageSize = const Size(80, 80);
     return Container(
         decoration: BoxDecoration(

@@ -1,10 +1,6 @@
 library provider;
 
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dataoke_sdk/model/category.dart';
 import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory;
-import 'package:dd_models/models/brand.dart';
-import 'package:dd_models/models/carousel.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -14,8 +10,16 @@ import 'package:loading_more_list_library_fast/model/status.dart';
 import '../api/apis.dart';
 import '../api/model/login_params.dart';
 import '../api/new/part.dart';
+import '../common/components/jd/product_model.dart';
 import '../freezed/login_result_model.dart';
 import '../index.dart';
+import '../modals/dataoke/category.dart';
+import '../modals/dataoke/ddq_result.dart';
+import '../modals/dataoke/pdd/pdd_category.dart';
+import '../modals/dataoke/super_search_param.dart';
+import '../modals/dd/brand.dart';
+import '../modals/dd/carousel.dart';
+import '../modals/dd/product.dart';
 import '../pages/user_home_page/login/login_base.dart';
 import 'riverpod/favorites/riverpod_model.dart';
 import 'riverpod/model/my_user.dart';

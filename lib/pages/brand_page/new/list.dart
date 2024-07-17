@@ -9,13 +9,6 @@ class BrandRepository extends MyLoadingModel<BrandItem> {
 
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {
-    final result = await kApi.getBrandList(param: BrandListParam(cid: cid, pageId: '$_page', pageSize: '20'), requestParamsBuilder: (r) => r.copyWith(showDefaultLoading: false));
-    if (result != null) {
-      addAll(result.lists);
-      _hasMore = result.lists.isNotEmpty;
-      _page++;
-      return true;
-    }
     return false;
   }
 
@@ -32,7 +25,8 @@ class BrandListWidget extends StatefulWidget {
   State<BrandListWidget> createState() => _BrandListWidgetState();
 }
 
-class _BrandListWidgetState extends State<BrandListWidget> with AutomaticKeepAliveClientMixin {
+class _BrandListWidgetState extends State<BrandListWidget>
+    with AutomaticKeepAliveClientMixin {
   late final response = BrandRepository(widget.cid);
 
   @override
@@ -43,7 +37,8 @@ class _BrandListWidgetState extends State<BrandListWidget> with AutomaticKeepAli
         itemBuilder: _itemBuilder,
         sourceList: response,
         indicatorBuilder: _indicatorBuilder,
-        extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+        extendedListDelegate:
+            SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
           crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand,
           crossAxisSpacing: 12,
           mainAxisSpacing: 12,

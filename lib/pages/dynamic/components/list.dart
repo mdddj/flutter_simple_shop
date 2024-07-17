@@ -1,13 +1,11 @@
 import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dd_js_util/dd_js_util.dart';
 import 'package:fbutton_nullsafety/fbutton_nullsafety.dart';
 import 'package:fcontrol_nullsafety/fdefine.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
-import '../../../common/index.dart';
+import '../../../modals/dd/product.dart';
 import '../../../util/index.dart';
 import '../../../widgets/index.dart';
 import '../pyq_riverpod.dart';
@@ -25,7 +23,7 @@ class PyqList extends ConsumerWidget {
     );
   }
 
-  Widget renderItem(ProductModel product) {
+  Widget renderItem(Product product) {
     return Container(
       width: double.infinity,
       alignment: Alignment.center,
@@ -132,17 +130,17 @@ class PyqList extends ConsumerWidget {
                                 text: '复制口令',
                                 color: Colors.white,
                                 onPressed: () async {
-                                  final result = await DdTaokeSdk.instance
-                                      .getCouponsDetail(
-                                          taobaoGoodsId: product.goodsId,
-                                          requestParamsBuilder:
-                                              (RequestParams requestParams) {
-                                            return requestParams;
-                                          });
-                                  if (result != null) {
-                                    utils.copy(result.longTpwd,
-                                        message: '复制成功,打开淘宝即可领取优惠券');
-                                  }
+                                  // final result = await DdTaokeSdk.instance
+                                  //     .getCouponsDetail(
+                                  //         taobaoGoodsId: product.goodsId,
+                                  //         requestParamsBuilder:
+                                  //             (RequestParams requestParams) {
+                                  //           return requestParams;
+                                  //         });
+                                  // if (result != null) {
+                                  //   utils.copy(result.longTpwd,
+                                  //       message: '复制成功,打开淘宝即可领取优惠券');
+                                  // }
                                 },
                                 strokeWidth: 1,
                                 strokeColor: Colors.grey.shade200,

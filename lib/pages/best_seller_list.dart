@@ -4,14 +4,16 @@ part of 'index.dart';
 class BestSellerListPage extends ConsumerStatefulWidget {
   const BestSellerListPage({super.key});
 
-  static void nav(BuildContext context) => context.navToWidget(to: const BestSellerListPage());
+  static void nav(BuildContext context) =>
+      context.navToWidget(to: const BestSellerListPage());
 
   @override
   BestSellerListPageState createState() => BestSellerListPageState();
 }
 
 class BestSellerListPageState extends ConsumerState<BestSellerListPage> {
-  late final List<ProductModel> _products = ref.read(indexStateRiverpod).hotDayProducts;
+  late final List<Product> _products =
+      ref.read(indexStateRiverpod).hotDayProducts;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class BestSellerListPageState extends ConsumerState<BestSellerListPage> {
     );
   }
 
-  Widget _renderItemCell(ProductModel product) {
+  Widget _renderItemCell(Product product) {
     return utils.widgetUtils.renderProductCard(product);
   }
 }

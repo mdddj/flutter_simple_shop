@@ -31,26 +31,26 @@ class IndexProvider extends ChangeNotifier {
   /// 加载超级分类菜单
   Future<void> fetchCategorys() async {
     categorys.clear();
-    final result = await DdTaokeSdk.instance.getCategorys();
-    categorys.addAll(result);
+    // final result = await DdTaokeSdk.instance.getCategorys();
+    // categorys.addAll(result);
     notifyListeners();
   }
 
   /// 获取首页的轮播图
   Future<void> fetchTopics() async {
-    final result = await DdTaokeSdk.instance.getCarousel();
-    carousel.addAll(result);
+    // final result = await DdTaokeSdk.instance.getCarousel();
+    // carousel.addAll(result);
     notifyListeners();
   }
 
   /// 获取品牌栏目列表
   Future<void> fetchStores() async {
-    final result = await DdTaokeSdk.instance.getBrandList(
-        param: BrandListParam(cid: categorys[0].cid.toString(), pageId: '1', pageSize: '1'),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-        });
-    storeData = result;
+    // final result = await DdTaokeSdk.instance.getBrandList(
+    //     param: BrandListParam(cid: categorys[0].cid.toString(), pageId: '1', pageSize: '1'),
+    //     requestParamsBuilder: (RequestParams requestParams) {
+    //       return requestParams;
+    //     });
+    // storeData = result;
     await getBrandBgColors();
     notifyListeners();
   }

@@ -46,15 +46,15 @@ class GoodsListState extends ChangeNotifier {
   // 加载数据
   Future<void> fetchData() async {
     cancelToken = dio.CancelToken();
-    final result = await DdTaokeSdk.instance.getProducts(
-        param: ProductListParam(pageId: '$page', sort: sort, cids: '${subcategory == null ? category.cid : ''}', subcid: '${subcategory == null ? '' : subcategory!.subcid}'),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-        });
-    if (result != null) {
-      products.addAll(result.list ?? []);
-    }
-    notifyListeners();
+    // final result = await DdTaokeSdk.instance.getProducts(
+    //     param: ProductListParam(pageId: '$page', sort: sort, cids: '${subcategory == null ? category.cid : ''}', subcid: '${subcategory == null ? '' : subcategory!.subcid}'),
+    //     requestParamsBuilder: (RequestParams requestParams) {
+    //       return requestParams;
+    //     });
+    // if (result != null) {
+    //   products.addAll(result.list ?? []);
+    // }
+    // notifyListeners();
   }
 
   // 主分类切换

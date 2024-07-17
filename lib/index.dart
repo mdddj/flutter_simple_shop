@@ -3,8 +3,8 @@ library index;
 import 'dart:async';
 import 'dart:io';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dataoke_sdk/model/category.dart';
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/theme/model.dart';
@@ -28,7 +28,9 @@ import 'constant/index.dart';
 import 'freezed/appbar_menu.dart';
 import 'freezed/application.dart';
 import 'freezed/pager.dart';
+import 'main.dart';
 import 'meet/add_new_meet.dart';
+import 'modals/dataoke/category.dart';
 import 'pages/index.dart';
 import 'pages/jiujiu_page/new/widget.dart';
 import 'pages/mianji/mianji/view.dart';
@@ -52,9 +54,6 @@ export 'util/index.dart';
 export 'widgets/index.dart';
 
 part 'ad.dart';
-
 part 'app.dart';
-
 part 'init.dart';
-
 part 'router.dart';

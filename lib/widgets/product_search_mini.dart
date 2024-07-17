@@ -17,20 +17,20 @@ class ProductSearchMiniState extends State<ProductSearchMini> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() async {
-      final result = await DdTaokeSdk.instance.superSearch(
-          param: SuperSearchParam(keyWords: widget.keyWorlds, pageSize: '50', type: '1', pageId: '1'),
-          requestParamsBuilder: (RequestParams requestParams) {
-            return requestParams;
-          });
-      if (result != null) {
-        if (mounted) {
-          setState(() {
-            _products.addAll(result.list ?? []);
-          });
-        }
-      }
-    });
+    // Future.microtask(() async {
+    //   final result = await DdTaokeSdk.instance.superSearch(
+    //       param: SuperSearchParam(keyWords: widget.keyWorlds, pageSize: '50', type: '1', pageId: '1'),
+    //       requestParamsBuilder: (RequestParams requestParams) {
+    //         return requestParams;
+    //       });
+    //   if (result != null) {
+    //     if (mounted) {
+    //       setState(() {
+    //         _products.addAll(result.list ?? []);
+    //       });
+    //     }
+    //   }
+    // });
   }
 
   @override

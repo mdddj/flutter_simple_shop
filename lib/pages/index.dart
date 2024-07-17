@@ -9,12 +9,8 @@ import 'package:async/async.dart';
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:common_utils/common_utils.dart';
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-import 'package:dataoke_sdk/model/category.dart';
-import 'package:dataoke_sdk/model/detail_base_data.dart';
 import 'package:dd_js_util/dd_js_util.dart' hide asT;
 import 'package:dd_js_util/theme/model.dart';
-import 'package:dd_models/models/brand.dart';
 import 'package:dio/dio.dart' as dio;
 import 'package:extended_image/extended_image.dart';
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
@@ -57,7 +53,6 @@ import '../common/view.dart';
 import '../freezed/add_favorites_params.dart';
 import '../freezed/anking_list_param.dart';
 import '../freezed/file_info.dart';
-import '../freezed/home_menu.dart';
 import '../freezed/pager.dart';
 import '../freezed/product_share.dart';
 import '../freezed/resource_category.dart';
@@ -67,6 +62,13 @@ import '../freezed/zhe_carousel_model.dart';
 import '../freezed/zhe_elm_model.dart';
 import '../freezed/zhe_product.dart';
 import '../index.dart';
+import '../modals/dataoke/brand_detail_result.dart';
+import '../modals/dataoke/category.dart';
+import '../modals/dataoke/detail_base_data.dart';
+import '../modals/dataoke/hot_search_worlds_result.dart';
+import '../modals/dd/brand.dart';
+import '../modals/dd/product.dart';
+import '../modals/dd_sort.dart';
 import '../provider/riverpod/model/my_user.dart';
 import '../r_gen_file.dart';
 import '../util/number_cover.dart';
@@ -77,31 +79,18 @@ import '../widgets/login_tip_widget.dart';
 import '../widgets/logo.dart';
 import '../widgets/pullto_refresh_header.dart';
 import '../widgets/riverpod_error.dart';
+import 'brand_page/models/brand_detail_model.dart';
 import 'detail_page/action_buttons.dart';
 import 'detail_page/detail_imgs_widget.dart';
 import 'detail_page/swiper_widget.dart';
 import 'dynamic/model/wph_detail_resul.dart';
-import 'index_page/model/menus.dart';
-import 'index_page/new/index_card_wrapper.dart';
-import 'jd/recommend/view.dart';
-import 'mianji/mianji/view.dart';
+import 'index_page/new/component/gridmenu/view.dart';
 import 'new_goods_list/v2/goods_list_params_model.dart';
 import 'new_goods_list/v2/page.dart';
 import 'new_goods_list/v2/repository.dart';
 import 'panic_buying/repository_v2.dart';
 import 'user_home_page/header/vip_header.dart';
 import 'user_home_page/pages/resource_list.dart';
-import 'zhe/view.dart';
-
-part 'activity_page/activity_view/view.dart';
-
-part 'banjia/component/appbar.dart';
-
-part 'banjia/component/list.dart';
-
-part 'banjia/resp.dart';
-
-part 'banjia/view.dart';
 
 part 'best_seller_list.dart';
 
@@ -120,8 +109,6 @@ part 'brand_page/components/detail_product_list.dart';
 part 'brand_page/components/item.dart';
 
 part 'brand_page/index.dart';
-
-part 'brand_page/models/brand_detail_model.dart';
 
 part 'brand_page/new/list.dart';
 
@@ -175,8 +162,6 @@ part 'index_page/model/index_carousel_item_model.dart';
 
 part 'index_page/model/index_grid_menu_item_model.dart';
 
-part 'index_page/model/store_list_model.dart';
-
 part 'index_page/model/topic_model.dart';
 
 part 'index_page/new/component/appbar.dart';
@@ -186,8 +171,6 @@ part 'index_page/new/component/carousel.dart';
 part 'index_page/new/component/gridmenu/menu_item.dart';
 
 part 'index_page/new/component/gridmenu/model.dart';
-
-part 'index_page/new/component/gridmenu/view.dart';
 
 part 'index_page/new/component/index_tabbar.dart';
 

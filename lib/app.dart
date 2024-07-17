@@ -55,70 +55,87 @@ class App extends ConsumerWidget {
         return Scaffold(
           body: Row(
             children: [
-              NavigationRail(
-                leading: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Logo(),
-                ),
-                elevation: 10,
-                labelType: NavigationRailLabelType.selected,
-                destinations: bottomMenus.map((element) {
-                  return NavigationRailDestination(
-                      icon: Image.asset(
-                        element.getAssetPath(
-                            currentIndex == bottomMenus.indexOf(element)),
-                        width: kNavIconSize,
-                        height: kNavIconSize,
-                        color: context.iconColor,
-                      ),
-                      label: Text(element.title));
-                }).toList(),
-                selectedIndex: currentIndex,
-                onDestinationSelected: (v) {
-                  ref.read(homeModuleShowIndex.notifier).state = v;
-                },
-                trailing: Expanded(
-                  child: Column(
-                    children: [
-                      const Spacer(),
-                      const MiniThemeSetting(),
-                      const DarkAndLightSetting(),
-                      IconButton(
-                          onPressed: () {
-                            if (!ref.isLogin) {
-                              toast('请先登录');
-                              if (context.isDesktop) {
-                                showDialog(
-                                    context: context,
-                                    builder: (_) {
-                                      return const LoginDialog();
-                                    });
+              SizedBox(
+                width: 150,
+                child: NavigationRail(
+                  leading: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Logo(),
+                        const SizedBox(
+                          width: 2,
+                        ),
+                        Text('典典的小卖部', style: context.textTheme.titleMedium)
+                      ],
+                    ),
+                  ),
+                  labelType: NavigationRailLabelType.selected,
+                  destinations: bottomMenus.map((element) {
+                    return NavigationRailDestination(
+                        icon: Image.asset(
+                          element.getAssetPath(
+                              currentIndex == bottomMenus.indexOf(element)),
+                          width: kNavIconSize,
+                          height: kNavIconSize,
+                        ),
+                        label: Text(element.title));
+                  }).toList(),
+                  selectedIndex: currentIndex,
+                  onDestinationSelected: (v) {
+                    ref.read(homeModuleShowIndex.notifier).state = v;
+                  },
+                  trailing: Expanded(
+                    child: Column(
+                      children: [
+                        const Spacer(),
+                        const MiniThemeSetting(),
+                        const DarkAndLightSetting(),
+                        IconButton(
+                            onPressed: () {
+                              if (!ref.isLogin) {
+                                toast('请先登录');
+                                if (context.isDesktop) {
+                                  showDialog(
+                                      context: context,
+                                      builder: (_) {
+                                        return const LoginDialog();
+                                      });
+                                }
+                                return;
                               }
-                              return;
-                            }
-                            context.push(pagerUtil.setting.routername);
-                          },
-                          icon: const Icon(Icons.settings)),
-                      Tooltip(
-                        message: "退出登录",
-                        child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.logout))
-                            .ifShow(ref.isLogin),
-                      ),
-                      const SizedBox(height: 12)
-                    ],
+                              context.push(pagerUtil.setting.routername);
+                            },
+                            icon: const Icon(Icons.settings)),
+                        Tooltip(
+                          message: "退出登录",
+                          child: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.logout))
+                              .ifShow(ref.isLogin),
+                        ),
+                        const SizedBox(height: 12)
+                      ],
+                    ),
                   ),
                 ),
               ),
               Expanded(
                 child: Center(
                   child: Container(
+                    constraints: const BoxConstraints(
+                        maxWidth: AppTheme.desktopContainerMaxWidth),
                     height: context.screenHeight,
                     alignment: Alignment.center,
                     child: LazyIndexedStack(
                       index: ref.watch(homeModuleShowIndex),
-                      children: _pages,
+                      children: _pages
+                          .map((e) => FadeInUp(
+                                duration: const Duration(milliseconds: 334),
+                                child: e,
+                              ))
+                          .toList(),
                     ),
                   ),
                 ),

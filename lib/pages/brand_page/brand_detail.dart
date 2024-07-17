@@ -10,8 +10,9 @@ class BrandDetailPage extends StatefulWidget {
   BrandDetailPageState createState() => BrandDetailPageState();
 }
 
-class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<BrandDetailPage> {
-  final products = <ProductModel>[];
+class BrandDetailPageState extends State<BrandDetailPage>
+    with AfterLayoutMixin<BrandDetailPage> {
+  final products = <Product>[];
   BrandDetail? brandDetailModel;
 
   @override
@@ -46,24 +47,13 @@ class BrandDetailPageState extends State<BrandDetailPage> with AfterLayoutMixin<
     );
   }
 
-  Widget get _detailWidget => BrandDetailView(brandDetailModel: brandDetailModel);
+  Widget get _detailWidget =>
+      BrandDetailView(brandDetailModel: brandDetailModel);
 
   Widget get _productList => DetailProductList(
         list: products,
       );
 
   @override
-  void afterFirstLayout(BuildContext context) async {
-    final result = await DdTaokeSdk.instance.getBrandDetail(
-        param: BrandProductParam(brandId: widget.brandId, pageId: '1', pageSize: '100'),
-        requestParamsBuilder: (RequestParams requestParams) {
-          return requestParams;
-        });
-    if (result != null) {
-      products.addAll(result.list ?? []);
-    }
-    wtfLog("是否加载到品牌的数据:$result");
-    brandDetailModel = result;
-    setState(() {});
-  }
+  void afterFirstLayout(BuildContext context) async {}
 }

@@ -465,9 +465,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                             ),
                             Text(
                               '使用日期:${getTimeStr(info!.couponStartTime)} - ${getTimeStr(info!.couponEndTime)}',
-                              style: context.textTheme.bodyMedium?.copyWith(
-                                  color: context
-                                      .colorScheme.surfaceContainerHighest),
+                              style: context.textTheme.bodySmall,
                             )
                           ],
                         ),
@@ -503,9 +501,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                 ),
                 Container(
                   alignment: Alignment.center,
-                  child: const Text(
+                  child: Text(
                     '立即领券 >',
-                    style: TextStyle(color: Colors.white, fontSize: 12),
+                    style: context.textTheme.titleSmall,
                   ),
                 )
               ],

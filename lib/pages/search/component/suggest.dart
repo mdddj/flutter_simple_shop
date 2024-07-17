@@ -29,6 +29,9 @@ class Suggest extends ConsumerWidget {
             ),
             ref.watch(_riverpodSuggest).when(
                 data: (list) {
+                  if (list.isEmpty) {
+                    return const Text('暂无数据');
+                  }
                   return Wrap(
                     children:
                         list.map((e) => _renderItem(e, context, ref)).toList(),

@@ -1,4 +1,6 @@
-part of '../../index.dart';
+import 'dart:convert';
+
+import 'package:dd_js_util/dd_js_util.dart';
 
 class BrandDetailModel {
   BrandDetailModel({
@@ -19,7 +21,8 @@ class BrandDetailModel {
     if (list != null) {
       for (final dynamic item in jsonRes['list']) {
         if (item != null) {
-          list.add(BrandDetailGoodsList.fromJson(asT<Map<String, dynamic>>(item)!));
+          list.add(
+              BrandDetailGoodsList.fromJson(asT<Map<String, dynamic>>(item)!));
         }
       }
     }

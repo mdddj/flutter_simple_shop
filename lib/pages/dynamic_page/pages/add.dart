@@ -1,7 +1,7 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
 
+import '../../../modals/dataoke/res_category.dart';
 import '../../../widgets/index.dart';
 
 //发布动态页面
@@ -14,7 +14,8 @@ class AddDynamicPage extends StatefulWidget {
 
 class _AddDynamicPageState extends State<AddDynamicPage> {
   final TextEditingController _textEditingController = TextEditingController();
-  final PictureSelectionController _pictureSelectionController = PictureSelectionController();
+  final PictureSelectionController _pictureSelectionController =
+      PictureSelectionController();
   final List<ResCategory> _list = [];
   ResCategory? _selectCategory;
 
@@ -58,12 +59,14 @@ class _AddDynamicPageState extends State<AddDynamicPage> {
               decoration: BoxDecoration(
                 color: Colors.grey.shade200,
               ),
-              child: TextField(controller: _textEditingController, minLines: 3, maxLines: 6),
+              child: TextField(
+                  controller: _textEditingController, minLines: 3, maxLines: 6),
             ),
 
             //选择分类
             ListTile(
-              title: Text(_selectCategory == null ? '选择分类' : _selectCategory!.name),
+              title: Text(
+                  _selectCategory == null ? '选择分类' : _selectCategory!.name),
               onTap: () async {
                 final select = await context.navToWidget<ResCategory?>(
                     to: CategoryListSelect(

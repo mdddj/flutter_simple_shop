@@ -1,9 +1,7 @@
 // Dart imports:
 import 'dart:convert';
 
-import 'package:dataoke_sdk/dataoke_sdk.dart';
-
-
+import 'package:dd_js_util/dd_js_util.dart';
 
 class PddSearchItemModel {
   PddSearchItemModel({
@@ -120,7 +118,8 @@ class PddSearchItemModel {
       predictPromotionRate: asT<double>(jsonRes['predictPromotionRate'])!,
       optIds: optIds!,
       hasCoupon: asT<bool>(jsonRes['hasCoupon'])!,
-      mallCouponMaxDiscountAmount: asT<int>(jsonRes['mallCouponMaxDiscountAmount'])!,
+      mallCouponMaxDiscountAmount:
+          asT<int>(jsonRes['mallCouponMaxDiscountAmount'])!,
       descTxt: asT<String>(jsonRes['descTxt'])!,
       searchId: asT<String>(jsonRes['searchId'])!,
       couponRemainQuantity: asT<int>(jsonRes['couponRemainQuantity'])!,
@@ -257,5 +256,6 @@ class PddSearchItemModel {
         'optId': optId,
       };
 
-  PddSearchItemModel clone() => PddSearchItemModel.fromJson(asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
+  PddSearchItemModel clone() => PddSearchItemModel.fromJson(
+      asT<Map<String, dynamic>>(jsonDecode(jsonEncode(this)))!);
 }

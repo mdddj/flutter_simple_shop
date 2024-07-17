@@ -1,7 +1,6 @@
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:flutter_ume_plus/flutter_ume_plus.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'common/view.dart';
@@ -27,11 +26,7 @@ const useEnv = releaseEnvConfig;
 
 void main() async {
   appInit(() {
-    runApp(ProviderScope(
-        child: UMEWidget(
-      enable: useEnv == debugEnvConfig,
-      child: const DdShop(),
-    )));
+    runApp(const ProviderScope(child: DdShop()));
   });
 }
 
@@ -57,13 +52,16 @@ class DdShop extends View {
 }
 
 class AppTheme {
+  static const desktopContainerMaxWidth = 620.0;
+
   static ThemeData getTheme(ThemeData def) {
     return def.copyWith(
-        scaffoldBackgroundColor: Colors.grey.shade200,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
             surfaceTintColor: Colors.white,
-            scrolledUnderElevation: 0,
+            scrolledUnderElevation: 10,
+            shadowColor: Colors.grey,
             elevation: 0.1),
         cardTheme: const CardTheme(
             elevation: 0,
@@ -71,8 +69,15 @@ class AppTheme {
             color: Colors.white,
             surfaceTintColor: Colors.white,
             shadowColor: Colors.white),
+        navigationRailTheme: NavigationRailThemeData(
+            backgroundColor: Colors.white,
+            indicatorColor: def.primaryColor,
+            selectedIconTheme:
+                IconThemeData(color: def.colorScheme.inverseSurface),
+            selectedLabelTextStyle: TextStyle(color: def.primaryColor)),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white,
-        ));
+        ),
+        tabBarTheme: TabBarTheme(dividerColor: Colors.transparent));
   }
 }

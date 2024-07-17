@@ -1,9 +1,9 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../../constant/index.dart';
+import '../../../modals/dd/product.dart';
 import '../../../widgets/index.dart';
 import '../../../widgets/loading/custom_loading_more_widget.dart';
 import 'repository.dart';
@@ -67,7 +67,7 @@ class _ItemState extends ConsumerState<_Item>
     super.build(context);
     return LoadingMoreCustomScrollView(
       slivers: [
-        LoadingMoreSliverList(SliverListConfig<ProductModel>(
+        LoadingMoreSliverList(SliverListConfig<Product>(
             itemBuilder: (ctx, item, index) {
               return WaterfallGoodsCard(item);
             },

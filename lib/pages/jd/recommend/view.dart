@@ -1,7 +1,8 @@
-import 'package:dataoke_sdk/dataoke_sdk.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
+
+import '../../../modals/dataoke/jd/jd_product.dart';
 
 class RecommendPage extends StatefulWidget {
   const RecommendPage({super.key});
@@ -29,14 +30,16 @@ class RecommendPageState extends State<RecommendPage> {
       itemBuilder: itemBuilder,
       itemCount: items.length,
       padding: const EdgeInsets.all(12),
-      gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 12, crossAxisSpacing: 12),
+      gridDelegate: const SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, mainAxisSpacing: 12, crossAxisSpacing: 12),
     );
   }
 
   Widget itemBuilder(BuildContext context, int index) {
     late JdProduct item = JdProduct.fromJson({});
     return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: Colors.white),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8), color: Colors.white),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -60,7 +63,10 @@ class RecommendPageState extends State<RecommendPage> {
                 // 产品类型
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 4),
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(5), gradient: const LinearGradient(colors: [Colors.pink, Colors.pinkAccent])),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      gradient: const LinearGradient(
+                          colors: [Colors.pink, Colors.pinkAccent])),
                   child: const Text(
                     '京东',
                     style: TextStyle(color: Colors.white, fontSize: 12),
@@ -79,7 +85,10 @@ class RecommendPageState extends State<RecommendPage> {
             // 标题
             Text(
               item.skuName,
-              style: const TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
@@ -96,12 +105,21 @@ class RecommendPageState extends State<RecommendPage> {
             Row(
               children: [
                 RichText(
-                  text: TextSpan(text: '￥', style: const TextStyle(color: Colors.red, fontSize: 12, fontWeight: FontWeight.bold), children: [
-                    TextSpan(
-                      text: '${item.actualPrice}',
-                      style: const TextStyle(color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                  ]),
+                  text: TextSpan(
+                      text: '￥',
+                      style: const TextStyle(
+                          color: Colors.red,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                      children: [
+                        TextSpan(
+                          text: '${item.actualPrice}',
+                          style: const TextStyle(
+                              color: Colors.red,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ]),
                 )
               ],
             ),
