@@ -1,4 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/models.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -41,8 +42,7 @@ class DdShop extends View {
           title: '典典小卖部',
           theme: AppTheme.getTheme(model.theme),
           darkTheme: model.darkTheme,
-          // themeMode: model.getThemeMode,
-          themeMode: ThemeMode.light,
+          themeMode: model.getThemeMode,
           routerConfig: routers,
           builder: FlutterSmartDialog.init(
               loadingBuilder: MyCustomLoadingWidget.new,
@@ -78,6 +78,6 @@ class AppTheme {
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white,
         ),
-        tabBarTheme: TabBarTheme(dividerColor: Colors.transparent));
+        tabBarTheme: const TabBarTheme(dividerColor: Colors.transparent));
   }
 }

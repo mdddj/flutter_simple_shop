@@ -11,6 +11,7 @@ import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:dd_js_util/dd_js_util.dart' hide asT;
+import 'package:dd_js_util/model/models.dart';
 import 'package:dd_js_util/theme/model.dart';
 import 'package:dio/dio.dart' as dio;
 import 'package:extended_image/extended_image.dart';
@@ -53,6 +54,7 @@ import '../common/api_ext.dart';
 import '../common/view.dart';
 import '../freezed/add_favorites_params.dart';
 import '../freezed/anking_list_param.dart';
+import '../freezed/appbar_menu.dart';
 import '../freezed/file_info.dart';
 import '../freezed/pager.dart';
 import '../freezed/product_share.dart';
@@ -298,5 +300,9 @@ part 'user_home_page/widgets/list_item.dart';
 part 'user_home_page/widgets/svg_title.dart';
 
 part 'xb/xianbao_index.dart';
+
+part 'config/mobile.dart';
+
+part 'config/desktop.dart';
 
 part 'index_page/component/zhe_carousel_products.dart';

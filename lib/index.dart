@@ -7,6 +7,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/models.dart';
 import 'package:dd_js_util/theme/model.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
@@ -54,6 +55,9 @@ export 'util/index.dart';
 export 'widgets/index.dart';
 
 part 'ad.dart';
+
 part 'app.dart';
+
 part 'init.dart';
+
 part 'router.dart';

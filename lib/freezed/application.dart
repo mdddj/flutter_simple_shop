@@ -1,4 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/models.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 

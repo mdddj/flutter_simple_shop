@@ -71,8 +71,9 @@ class _UserCenterPageState extends ConsumerState<UserCenterPage>
                     return null;
                   }
                   return SlideInLeft(
+                    duration: const Duration(milliseconds: 300),
                     child: SlideInUp(
-                      duration: const Duration(milliseconds: 424),
+                      duration: const Duration(milliseconds: 224),
                       child: const Hero(
                         tag: 'user-page-ava',
                         child: LoginUserAvatar(

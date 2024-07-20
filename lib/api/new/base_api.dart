@@ -14,11 +14,11 @@ class NewApiDioInstance {
     }
     dio = Dio(options);
     //需安装android studio flutterX插件 https://flutterx.itbug.shop/starter.html
-    if (false) {
+    if (true) {
       await dioCheckPlugin
           .init(dio!,
-              initHost: '192.168.199.82',
-              port: 9998,
+              initHost: '192.168.199.74',
+              port: 9999,
               projectName: '典典的小卖部',
               timeOut: const Duration(milliseconds: 1200))
           .catchError((e) => debugPrint('$e'));

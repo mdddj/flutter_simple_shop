@@ -1,4 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/models.dart';
 import 'package:flutter/material.dart';
 
 import '../freezed/app_action_menu.dart';
@@ -12,9 +13,11 @@ class ResourceWidget extends StatelessWidget {
   final AppActionMenu? menu;
   final DynPageParams? params;
 
-  const ResourceWidget({super.key, required this.resource, this.menu, this.params});
+  const ResourceWidget(
+      {super.key, required this.resource, this.menu, this.params});
 
-  ResourceWidgetCardStyle get cardStyle => params?.style ?? ResourceWidgetCardStyle.waterfall; //样式
+  ResourceWidgetCardStyle get cardStyle =>
+      params?.style ?? ResourceWidgetCardStyle.waterfall; //样式
   bool get isCard => cardStyle == ResourceWidgetCardStyle.card;
 
   @override
@@ -30,7 +33,9 @@ class ResourceWidget extends StatelessWidget {
           }
         },
         child: Card(
-          shape: isCard ? const RoundedRectangleBorder(borderRadius: BorderRadius.zero) : null,
+          shape: isCard
+              ? const RoundedRectangleBorder(borderRadius: BorderRadius.zero)
+              : null,
           margin: isCard ? EdgeInsets.zero : null,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +57,9 @@ class ResourceWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(resource.title, style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700))
+                    Text(resource.title,
+                            style: context.textTheme.titleLarge
+                                ?.copyWith(fontWeight: FontWeight.w700))
                         .marginOnly(bottom: 12)
                         .visible(resource.title.isNotEmpty),
                     Text(resource.content),
@@ -138,9 +145,11 @@ class _Images extends StatelessWidget {
           right: 1,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-            decoration:
-                BoxDecoration(color: context.cardColor.withOpacity(.27), borderRadius: BorderRadius.circular(12)),
-            child: Text('${resource.imageSize}张', style: context.textTheme.labelSmall),
+            decoration: BoxDecoration(
+                color: context.cardColor.withOpacity(.27),
+                borderRadius: BorderRadius.circular(12)),
+            child: Text('${resource.imageSize}张',
+                style: context.textTheme.labelSmall),
           ),
         )
       ],

@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/models.dart';
 
 import '../dd/product.dart';
 
