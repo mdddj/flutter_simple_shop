@@ -9,19 +9,19 @@ part of 'test.dart';
 _$RootImpl _$$RootImplFromJson(Map<String, dynamic> json) => _$RootImpl(
       currentCurrency: json['Current_currency'] as String? ?? '',
       id: json['id'] as String? ?? '',
-      itemsQty: json['items_qty'] as int? ?? 0,
+      itemsQty: (json['items_qty'] as num?)?.toInt() ?? 0,
       cartPoints: json['cart_points'] as String? ?? '',
       basesubtotalwithdiscount:
           (json['BaseSubtotalWithDiscount'] as num?)?.toDouble() ?? 0.0,
       subtotal: (json['subtotal'] as num?)?.toDouble() ?? 0.0,
       baseSubtotal: (json['base_subtotal'] as num?)?.toDouble() ?? 0.0,
-      baseDiscountValue: json['base_discount_value'] as int? ?? 0,
+      baseDiscountValue: (json['base_discount_value'] as num?)?.toInt() ?? 0,
       cartNotification: (json['cart_notification'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
       quoteCurrency: json['quote_currency'] as String? ?? '',
-      maxsize: json['maxSize'] as int? ?? 0,
+      maxsize: (json['maxSize'] as num?)?.toInt() ?? 0,
       items: (json['items'] as List<dynamic>?)
               ?.map((e) => Items.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -58,7 +58,7 @@ _$ItemsImpl _$$ItemsImplFromJson(Map<String, dynamic> json) => _$ItemsImpl(
           const [],
       id: json['id'] as String? ?? '',
       sku: json['sku'] as String? ?? '',
-      qty: json['qty'] as int? ?? 0,
+      qty: (json['qty'] as num?)?.toInt() ?? 0,
       finalprice: json['finalPrice'] as String? ?? '',
       productid: json['productId'] as String? ?? '',
       productOriginalPrice: json['product_original_price'] as String? ?? '',

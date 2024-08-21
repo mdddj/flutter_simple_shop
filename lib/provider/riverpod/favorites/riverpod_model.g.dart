@@ -12,7 +12,7 @@ _$FavoritesStateModelImpl _$$FavoritesStateModelImplFromJson(
       favorites: (json['favorites'] as List<dynamic>)
           .map(MyFavoritesModel.fromJson)
           .toList(),
-      page: json['page'] as int,
+      page: (json['page'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$FavoritesStateModelImplToJson(

@@ -78,6 +78,9 @@ class _$BaseLayoutCopyWithImpl<$Res, $Val extends BaseLayout>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of BaseLayout
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -94,6 +97,9 @@ class __$$MobileLayoutImplCopyWithImpl<$Res>
   __$$MobileLayoutImplCopyWithImpl(
       _$MobileLayoutImpl _value, $Res Function(_$MobileLayoutImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BaseLayout
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -203,6 +209,9 @@ class __$$TableLayoutImplCopyWithImpl<$Res>
   __$$TableLayoutImplCopyWithImpl(
       _$TableLayoutImpl _value, $Res Function(_$TableLayoutImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BaseLayout
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -312,6 +321,9 @@ class __$$DesktopLayoutImplCopyWithImpl<$Res>
   __$$DesktopLayoutImplCopyWithImpl(
       _$DesktopLayoutImpl _value, $Res Function(_$DesktopLayoutImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BaseLayout
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

@@ -8,16 +8,16 @@ part of 'brand.dart';
 
 _$BrandItemImpl _$$BrandItemImplFromJson(Map<String, dynamic> json) =>
     _$BrandItemImpl(
-      brandid: json['brandId'] as int? ?? 0,
-      cid: json['cid'] as int? ?? 0,
+      brandid: (json['brandId'] as num?)?.toInt() ?? 0,
+      cid: (json['cid'] as num?)?.toInt() ?? 0,
       brandname: json['brandName'] as String? ?? '',
       brandlogo: json['brandLogo'] as String? ?? '',
       brandfeatures: json['brandFeatures'] as String? ?? '',
-      sales: json['sales'] as int? ?? 0,
-      maxdiscountamount: json['maxDiscountAmount'] as int? ?? 0,
+      sales: (json['sales'] as num?)?.toInt() ?? 0,
+      maxdiscountamount: (json['maxDiscountAmount'] as num?)?.toInt() ?? 0,
       maxdiscount: (json['maxDiscount'] as num?)?.toDouble() ?? 0.0,
       branddesc: json['brandDesc'] as String? ?? '',
-      sort: json['sort'] as int? ?? 0,
+      sort: (json['sort'] as num?)?.toInt() ?? 0,
       goodslist: json['goodsList'] == null
           ? const IListConst([])
           : IList<BrandGoodslist>.fromJson(
@@ -119,9 +119,9 @@ _$BrandListResultImpl _$$BrandListResultImplFromJson(
           ? const IListConst([])
           : IList<BrandItem>.fromJson(json['lists'],
               (value) => BrandItem.fromJson(value as Map<String, dynamic>)),
-      pagesize: json['pagesize'] as int? ?? 0,
-      currentpage: json['currentpage'] as int? ?? 0,
-      totalcount: json['totalcount'] as int? ?? 0,
+      pagesize: (json['pagesize'] as num?)?.toInt() ?? 0,
+      currentpage: (json['currentpage'] as num?)?.toInt() ?? 0,
+      totalcount: (json['totalcount'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$BrandListResultImplToJson(

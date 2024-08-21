@@ -143,8 +143,12 @@ mixin _$ZheProduct {
   @JsonKey(name: 'presale_deposit')
   String get presaleDeposit => throw _privateConstructorUsedError;
 
+  /// Serializes this ZheProduct to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ZheProduct
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ZheProductCopyWith<ZheProduct> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -229,6 +233,8 @@ class _$ZheProductCopyWithImpl<$Res, $Val extends ZheProduct>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ZheProduct
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -623,6 +629,8 @@ class __$$ZheProductImplCopyWithImpl<$Res>
       _$ZheProductImpl _value, $Res Function(_$ZheProductImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ZheProduct
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1308,7 +1316,7 @@ class _$ZheProductImpl extends _ZheProduct {
                 other.presaleDeposit == presaleDeposit));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1375,7 +1383,9 @@ class _$ZheProductImpl extends _ZheProduct {
         presaleDeposit
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ZheProduct
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ZheProductImplCopyWith<_$ZheProductImpl> get copyWith =>
@@ -1644,8 +1654,11 @@ abstract class _ZheProduct extends ZheProduct {
   @override
   @JsonKey(name: 'presale_deposit')
   String get presaleDeposit;
+
+  /// Create a copy of ZheProduct
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ZheProductImplCopyWith<_$ZheProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

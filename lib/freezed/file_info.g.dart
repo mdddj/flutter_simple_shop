@@ -12,15 +12,15 @@ _$FileInfoImpl _$$FileInfoImplFromJson(Map<String, dynamic> json) =>
       collect: json['collect'] as bool? ?? false,
       createDate: json['createDate'] as String? ?? '',
       fileName: json['fileName'] as String? ?? '',
-      fileSize: json['fileSize'] as int? ?? 0,
+      fileSize: (json['fileSize'] as num?)?.toInt() ?? 0,
       fileType: json['fileType'] as String? ?? '',
-      height: json['height'] as int? ?? 0,
-      id: json['id'] as int? ?? 0,
+      height: (json['height'] as num?)?.toInt() ?? 0,
+      id: (json['id'] as num?)?.toInt() ?? 0,
       intro: json['intro'] as String? ?? '',
       tagColor: json['tagColor'] as String? ?? '',
       updateDate: json['updateDate'] as String? ?? '',
       url: json['url'] as String? ?? '',
-      width: json['width'] as int? ?? 0,
+      width: (json['width'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$FileInfoImplToJson(_$FileInfoImpl instance) =>

@@ -31,8 +31,12 @@ mixin _$SimpleResult {
   @JsonKey(name: 'data')
   dynamic get data => throw _privateConstructorUsedError;
 
+  /// Serializes this SimpleResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SimpleResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SimpleResultCopyWith<SimpleResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,6 +65,8 @@ class _$SimpleResultCopyWithImpl<$Res, $Val extends SimpleResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SimpleResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class __$$SimpleResultImplCopyWithImpl<$Res>
       _$SimpleResultImpl _value, $Res Function(_$SimpleResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SimpleResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -200,12 +208,14 @@ class _$SimpleResultImpl extends _SimpleResult {
             const DeepCollectionEquality().equals(other.data, data));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, message, state, success, type,
       const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SimpleResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SimpleResultImplCopyWith<_$SimpleResultImpl> get copyWith =>
@@ -246,8 +256,11 @@ abstract class _SimpleResult extends SimpleResult {
   @override
   @JsonKey(name: 'data')
   dynamic get data;
+
+  /// Create a copy of SimpleResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SimpleResultImplCopyWith<_$SimpleResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

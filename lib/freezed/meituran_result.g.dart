@@ -10,7 +10,7 @@ _$MeituanResultImpl _$$MeituanResultImplFromJson(Map<String, dynamic> json) =>
     _$MeituanResultImpl(
       data: json['data'] as String? ?? '',
       des: json['des'] as String? ?? '',
-      status: json['status'] as int? ?? 0,
+      status: (json['status'] as num?)?.toInt() ?? 0,
       successful: json['successful'] as bool? ?? false,
     );
 

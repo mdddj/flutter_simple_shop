@@ -33,8 +33,12 @@ mixin _$TKCarousel {
   @JsonKey(name: 'topicName')
   String get topicName => throw _privateConstructorUsedError;
 
+  /// Serializes this TKCarousel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TKCarousel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TKCarouselCopyWith<TKCarousel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -64,6 +68,8 @@ class _$TKCarouselCopyWithImpl<$Res, $Val extends TKCarousel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TKCarousel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,6 +134,8 @@ class __$$TKCarouselImplCopyWithImpl<$Res>
       _$TKCarouselImpl _value, $Res Function(_$TKCarouselImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TKCarousel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -223,12 +231,14 @@ class _$TKCarouselImpl extends _TKCarousel {
                 other.topicName == topicName));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, activityID, link, sourceType,
       topicID, topicImage, topicName);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TKCarousel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TKCarouselImplCopyWith<_$TKCarouselImpl> get copyWith =>
@@ -273,8 +283,11 @@ abstract class _TKCarousel extends TKCarousel {
   @override
   @JsonKey(name: 'topicName')
   String get topicName;
+
+  /// Create a copy of TKCarousel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TKCarouselImplCopyWith<_$TKCarouselImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

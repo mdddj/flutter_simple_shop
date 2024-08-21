@@ -43,8 +43,12 @@ mixin _$JpaPage {
   @JsonKey(name: 'totalPages')
   int get totalpages => throw _privateConstructorUsedError;
 
+  /// Serializes this JpaPage to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of JpaPage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $JpaPageCopyWith<JpaPage> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -80,6 +84,8 @@ class _$JpaPageCopyWithImpl<$Res, $Val extends JpaPage>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of JpaPage
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -143,6 +149,8 @@ class _$JpaPageCopyWithImpl<$Res, $Val extends JpaPage>
     ) as $Val);
   }
 
+  /// Create a copy of JpaPage
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PageableCopyWith<$Res> get pageable {
@@ -151,6 +159,8 @@ class _$JpaPageCopyWithImpl<$Res, $Val extends JpaPage>
     });
   }
 
+  /// Create a copy of JpaPage
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SortCopyWith<$Res> get sort {
@@ -194,6 +204,8 @@ class __$$JpaPageImplCopyWithImpl<$Res>
       _$JpaPageImpl _value, $Res Function(_$JpaPageImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of JpaPage
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -339,7 +351,7 @@ class _$JpaPageImpl extends _JpaPage {
                 other.totalpages == totalpages));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -355,7 +367,9 @@ class _$JpaPageImpl extends _JpaPage {
       totalElements,
       totalpages);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of JpaPage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$JpaPageImplCopyWith<_$JpaPageImpl> get copyWith =>
@@ -419,8 +433,11 @@ abstract class _JpaPage extends JpaPage {
   @override
   @JsonKey(name: 'totalPages')
   int get totalpages;
+
+  /// Create a copy of JpaPage
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$JpaPageImplCopyWith<_$JpaPageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -444,8 +461,12 @@ mixin _$Pageable {
   @JsonKey(name: 'unpaged')
   bool get unpaged => throw _privateConstructorUsedError;
 
+  /// Serializes this Pageable to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Pageable
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PageableCopyWith<Pageable> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -476,6 +497,8 @@ class _$PageableCopyWithImpl<$Res, $Val extends Pageable>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Pageable
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -514,6 +537,8 @@ class _$PageableCopyWithImpl<$Res, $Val extends Pageable>
     ) as $Val);
   }
 
+  /// Create a copy of Pageable
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SortCopyWith<$Res> get sort {
@@ -551,6 +576,8 @@ class __$$PageableImplCopyWithImpl<$Res>
       _$PageableImpl _value, $Res Function(_$PageableImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Pageable
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -644,12 +671,14 @@ class _$PageableImpl extends _Pageable {
             (identical(other.unpaged, unpaged) || other.unpaged == unpaged));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, offset, pageNumber, pageSize, paged, sort, unpaged);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Pageable
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PageableImplCopyWith<_$PageableImpl> get copyWith =>
@@ -694,8 +723,11 @@ abstract class _Pageable extends Pageable {
   @override
   @JsonKey(name: 'unpaged')
   bool get unpaged;
+
+  /// Create a copy of Pageable
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PageableImplCopyWith<_$PageableImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -713,8 +745,12 @@ mixin _$Sort {
   @JsonKey(name: 'unsorted')
   bool get unsorted => throw _privateConstructorUsedError;
 
+  /// Serializes this Sort to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Sort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SortCopyWith<Sort> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -739,6 +775,8 @@ class _$SortCopyWithImpl<$Res, $Val extends Sort>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Sort
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -783,6 +821,8 @@ class __$$SortImplCopyWithImpl<$Res>
   __$$SortImplCopyWithImpl(_$SortImpl _value, $Res Function(_$SortImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Sort
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -845,11 +885,13 @@ class _$SortImpl extends _Sort {
                 other.unsorted == unsorted));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, empty, sorted, unsorted);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Sort
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SortImplCopyWith<_$SortImpl> get copyWith =>
@@ -881,8 +923,11 @@ abstract class _Sort extends Sort {
   @override
   @JsonKey(name: 'unsorted')
   bool get unsorted;
+
+  /// Create a copy of Sort
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SortImplCopyWith<_$SortImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

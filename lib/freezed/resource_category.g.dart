@@ -10,7 +10,7 @@ _$ResourceCategoryImpl _$$ResourceCategoryImplFromJson(
         Map<String, dynamic> json) =>
     _$ResourceCategoryImpl(
       description: json['description'] as String? ?? '',
-      id: json['id'] as int? ?? 0,
+      id: (json['id'] as num?)?.toInt() ?? 0,
       logo: json['logo'] as String? ?? '',
       name: json['name'] as String? ?? '',
       type: json['type'],
@@ -28,12 +28,12 @@ Map<String, dynamic> _$$ResourceCategoryImplToJson(
 
 _$ResourceImpl _$$ResourceImplFromJson(Map<String, dynamic> json) =>
     _$ResourceImpl(
-      authority: json['authority'] as int? ?? 0,
-      clickcount: json['clickCount'] as int? ?? 0,
+      authority: (json['authority'] as num?)?.toInt() ?? 0,
+      clickcount: (json['clickCount'] as num?)?.toInt() ?? 0,
       content: json['content'] as String? ?? '',
       createdate: json['createDate'] as String? ?? '',
       description: json['description'] as String? ?? '',
-      id: json['id'] as int? ?? 0,
+      id: (json['id'] as num?)?.toInt() ?? 0,
       label: json['label'] as String? ?? '',
       links: json['links'] as String? ?? '',
       thumbnailimage: json['thumbnailImage'] as String? ?? '',

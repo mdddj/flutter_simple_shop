@@ -31,8 +31,12 @@ mixin _$ResourceCategory {
   @JsonKey(name: 'type')
   dynamic get type => throw _privateConstructorUsedError;
 
+  /// Serializes this ResourceCategory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ResourceCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ResourceCategoryCopyWith<ResourceCategory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,6 +65,8 @@ class _$ResourceCategoryCopyWithImpl<$Res, $Val extends ResourceCategory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ResourceCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class __$$ResourceCategoryImplCopyWithImpl<$Res>
       $Res Function(_$ResourceCategoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ResourceCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -201,12 +209,14 @@ class _$ResourceCategoryImpl extends _ResourceCategory {
             const DeepCollectionEquality().equals(other.type, type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, description, id, logo, name,
       const DeepCollectionEquality().hash(type));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ResourceCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ResourceCategoryImplCopyWith<_$ResourceCategoryImpl> get copyWith =>
@@ -248,8 +258,11 @@ abstract class _ResourceCategory extends ResourceCategory {
   @override
   @JsonKey(name: 'type')
   dynamic get type;
+
+  /// Create a copy of ResourceCategory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResourceCategoryImplCopyWith<_$ResourceCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -297,8 +310,12 @@ mixin _$Resource {
   @JsonKey(name: 'share')
   ProductShare? get share => throw _privateConstructorUsedError;
 
+  /// Serializes this Resource to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ResourceCopyWith<Resource> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -344,6 +361,8 @@ class _$ResourceCopyWithImpl<$Res, $Val extends Resource>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -442,6 +461,8 @@ class _$ResourceCopyWithImpl<$Res, $Val extends Resource>
     ) as $Val);
   }
 
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ResourceCategoryCopyWith<$Res> get category {
@@ -450,6 +471,8 @@ class _$ResourceCopyWithImpl<$Res, $Val extends Resource>
     });
   }
 
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MyUserCopyWith<$Res> get user {
@@ -458,6 +481,8 @@ class _$ResourceCopyWithImpl<$Res, $Val extends Resource>
     });
   }
 
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MeetModelCopyWith<$Res>? get meetModel {
@@ -470,6 +495,8 @@ class _$ResourceCopyWithImpl<$Res, $Val extends Resource>
     });
   }
 
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductShareCopyWith<$Res>? get share {
@@ -529,6 +556,8 @@ class __$$ResourceImplCopyWithImpl<$Res>
       _$ResourceImpl _value, $Res Function(_$ResourceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -749,7 +778,7 @@ class _$ResourceImpl extends _Resource {
             (identical(other.share, share) || other.share == share));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -772,7 +801,9 @@ class _$ResourceImpl extends _Resource {
       thumbnailPath,
       share);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ResourceImplCopyWith<_$ResourceImpl> get copyWith =>
@@ -865,8 +896,11 @@ abstract class _Resource extends Resource {
   @override
   @JsonKey(name: 'share')
   ProductShare? get share;
+
+  /// Create a copy of Resource
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ResourceImplCopyWith<_$ResourceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

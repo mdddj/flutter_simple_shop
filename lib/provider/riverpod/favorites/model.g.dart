@@ -13,7 +13,7 @@ _$MyFavoritesModelImpl _$$MyFavoritesModelImplFromJson(
       arrivalPrice: json['arrivalPrice'] as String,
       createTime: json['createTime'] as String,
       endTime: json['endTime'] as String,
-      id: json['id'] as int,
+      id: (json['id'] as num).toInt(),
       imageUrl: json['imageUrl'] as String,
       productId: json['productId'] as String,
       title: json['title'] as String,

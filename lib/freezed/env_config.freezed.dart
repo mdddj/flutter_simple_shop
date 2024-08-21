@@ -29,8 +29,12 @@ mixin _$EnvConfig {
   @JsonKey(name: 'fontFamily')
   String get fontFamily => throw _privateConstructorUsedError;
 
+  /// Serializes this EnvConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EnvConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EnvConfigCopyWith<EnvConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +61,8 @@ class _$EnvConfigCopyWithImpl<$Res, $Val extends EnvConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EnvConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -109,6 +115,8 @@ class __$$EnvConfigImplCopyWithImpl<$Res>
       _$EnvConfigImpl _value, $Res Function(_$EnvConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EnvConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -182,12 +190,14 @@ class _$EnvConfigImpl extends _EnvConfig {
                 other.fontFamily == fontFamily));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, port, host, debugMode, fontFamily);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EnvConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EnvConfigImplCopyWith<_$EnvConfigImpl> get copyWith =>
@@ -224,8 +234,11 @@ abstract class _EnvConfig extends EnvConfig {
   @override
   @JsonKey(name: 'fontFamily')
   String get fontFamily;
+
+  /// Create a copy of EnvConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EnvConfigImplCopyWith<_$EnvConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

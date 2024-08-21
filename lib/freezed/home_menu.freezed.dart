@@ -28,7 +28,9 @@ mixin _$HomeMenu {
   VoidCallback? get onTap => throw _privateConstructorUsedError;
   VoidCallback? get onLongTap => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeMenu
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HomeMenuCopyWith<HomeMenu> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +61,8 @@ class _$HomeMenuCopyWithImpl<$Res, $Val extends HomeMenu>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HomeMenu
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,6 +136,8 @@ class __$$HomeMenuImplCopyWithImpl<$Res>
       _$HomeMenuImpl _value, $Res Function(_$HomeMenuImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeMenu
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -238,7 +244,9 @@ class _$HomeMenuImpl extends _HomeMenu {
   int get hashCode => Object.hash(runtimeType, title, svgpath, icon, image,
       routerPath, const DeepCollectionEquality().hash(extra), onTap, onLongTap);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeMenu
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HomeMenuImplCopyWith<_$HomeMenuImpl> get copyWith =>
@@ -276,8 +284,11 @@ abstract class _HomeMenu extends HomeMenu {
   VoidCallback? get onTap;
   @override
   VoidCallback? get onLongTap;
+
+  /// Create a copy of HomeMenu
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HomeMenuImplCopyWith<_$HomeMenuImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

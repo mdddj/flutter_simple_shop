@@ -29,8 +29,12 @@ mixin _$Category {
   @HiveField(3)
   int get cid => throw _privateConstructorUsedError;
 
+  /// Serializes this Category to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CategoryCopyWith<Category> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +61,8 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -109,6 +115,8 @@ class __$$CategoryImplCopyWithImpl<$Res>
       _$CategoryImpl _value, $Res Function(_$CategoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -192,12 +200,14 @@ class _$CategoryImpl extends _Category {
             (identical(other.cid, cid) || other.cid == cid));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, cname, cpic,
       const DeepCollectionEquality().hash(_subcategories), cid);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
@@ -234,8 +244,11 @@ abstract class _Category extends Category {
   @override
   @HiveField(3)
   int get cid;
+
+  /// Create a copy of Category
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -253,8 +266,12 @@ mixin _$Subcategory {
   @HiveField(2)
   String get subcname => throw _privateConstructorUsedError;
 
+  /// Serializes this Subcategory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Subcategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubcategoryCopyWith<Subcategory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -281,6 +298,8 @@ class _$SubcategoryCopyWithImpl<$Res, $Val extends Subcategory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Subcategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -327,6 +346,8 @@ class __$$SubcategoryImplCopyWithImpl<$Res>
       _$SubcategoryImpl _value, $Res Function(_$SubcategoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Subcategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -392,11 +413,13 @@ class _$SubcategoryImpl extends _Subcategory {
                 other.subcname == subcname));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, subcid, scpic, subcname);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Subcategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubcategoryImplCopyWith<_$SubcategoryImpl> get copyWith =>
@@ -429,8 +452,11 @@ abstract class _Subcategory extends Subcategory {
   @override
   @HiveField(2)
   String get subcname;
+
+  /// Create a copy of Subcategory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubcategoryImplCopyWith<_$SubcategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -444,8 +470,12 @@ mixin _$CategoryWrapper {
   @HiveField(0)
   List<Category> get categorys => throw _privateConstructorUsedError;
 
+  /// Serializes this CategoryWrapper to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CategoryWrapper
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CategoryWrapperCopyWith<CategoryWrapper> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -469,6 +499,8 @@ class _$CategoryWrapperCopyWithImpl<$Res, $Val extends CategoryWrapper>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CategoryWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -502,6 +534,8 @@ class __$$CategoryWrapperImplCopyWithImpl<$Res>
       _$CategoryWrapperImpl _value, $Res Function(_$CategoryWrapperImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CategoryWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -551,12 +585,14 @@ class _$CategoryWrapperImpl extends _CategoryWrapper {
                 .equals(other._categorys, _categorys));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_categorys));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CategoryWrapper
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CategoryWrapperImplCopyWith<_$CategoryWrapperImpl> get copyWith =>
@@ -582,8 +618,11 @@ abstract class _CategoryWrapper extends CategoryWrapper {
   @override
   @HiveField(0)
   List<Category> get categorys;
+
+  /// Create a copy of CategoryWrapper
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CategoryWrapperImplCopyWith<_$CategoryWrapperImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

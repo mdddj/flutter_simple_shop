@@ -33,8 +33,12 @@ mixin _$ProductShare {
   @JsonKey(name: 'type')
   ProductShareType get type => throw _privateConstructorUsedError;
 
+  /// Serializes this ProductShare to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProductShare
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProductShareCopyWith<ProductShare> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -64,6 +68,8 @@ class _$ProductShareCopyWithImpl<$Res, $Val extends ProductShare>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProductShare
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,6 +134,8 @@ class __$$ProductShareImplCopyWithImpl<$Res>
       _$ProductShareImpl _value, $Res Function(_$ProductShareImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProductShare
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -220,12 +228,14 @@ class _$ProductShareImpl extends _ProductShare {
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, title, price, image, productId, type);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProductShare
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProductShareImplCopyWith<_$ProductShareImpl> get copyWith =>
@@ -270,8 +280,11 @@ abstract class _ProductShare extends ProductShare {
   @override
   @JsonKey(name: 'type')
   ProductShareType get type;
+
+  /// Create a copy of ProductShare
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductShareImplCopyWith<_$ProductShareImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

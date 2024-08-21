@@ -24,8 +24,12 @@ mixin _$Pager {
   String get routername => throw _privateConstructorUsedError;
   PagerParams? get params => throw _privateConstructorUsedError;
 
+  /// Serializes this Pager to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Pager
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PagerCopyWith<Pager> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -50,6 +54,8 @@ class _$PagerCopyWithImpl<$Res, $Val extends Pager>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Pager
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -68,6 +74,8 @@ class _$PagerCopyWithImpl<$Res, $Val extends Pager>
     ) as $Val);
   }
 
+  /// Create a copy of Pager
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PagerParamsCopyWith<$Res>? get params {
@@ -103,6 +111,8 @@ class __$$PagerImplCopyWithImpl<$Res>
       _$PagerImpl _value, $Res Function(_$PagerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Pager
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,11 +163,13 @@ class _$PagerImpl extends _Pager {
             (identical(other.params, params) || other.params == params));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, routername, params);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Pager
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PagerImplCopyWith<_$PagerImpl> get copyWith =>
@@ -184,8 +196,11 @@ abstract class _Pager extends Pager {
   String get routername;
   @override
   PagerParams? get params;
+
+  /// Create a copy of Pager
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PagerImplCopyWith<_$PagerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -287,6 +302,8 @@ mixin _$PagerParams {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this PagerParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -306,6 +323,9 @@ class _$PagerParamsCopyWithImpl<$Res, $Val extends PagerParams>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -322,6 +342,9 @@ class __$$PagerParamsImplCopyWithImpl<$Res>
   __$$PagerParamsImplCopyWithImpl(
       _$PagerParamsImpl _value, $Res Function(_$PagerParamsImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -348,7 +371,7 @@ class _$PagerParamsImpl extends _PagerParams {
         (other.runtimeType == runtimeType && other is _$PagerParamsImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -498,6 +521,8 @@ class __$$DynPageParamsImplCopyWithImpl<$Res>
       _$DynPageParamsImpl _value, $Res Function(_$DynPageParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -584,12 +609,14 @@ class _$DynPageParamsImpl extends DynPageParams {
                 other.emptyChild == emptyChild));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, name, emptyText, style, emptyChild);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DynPageParamsImplCopyWith<_$DynPageParamsImpl> get copyWith =>
@@ -732,7 +759,10 @@ abstract class DynPageParams extends PagerParams {
       includeToJson: false,
       includeFromJson: false)
   Widget? get emptyChild;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DynPageParamsImplCopyWith<_$DynPageParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -761,6 +791,8 @@ class __$$DynWriteParamsImplCopyWithImpl<$Res>
       _$DynWriteParamsImpl _value, $Res Function(_$DynWriteParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -794,6 +826,8 @@ class __$$DynWriteParamsImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductShareCopyWith<$Res>? get productShare {
@@ -860,12 +894,14 @@ class _$DynWriteParamsImpl extends DynWriteParams {
                 other.hintText == hintText));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, productShare, title,
       disableSelectOtherCategory, hintText);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DynWriteParamsImplCopyWith<_$DynWriteParamsImpl> get copyWith =>
@@ -1004,7 +1040,10 @@ abstract class DynWriteParams extends PagerParams {
   String? get title;
   bool get disableSelectOtherCategory;
   String? get hintText;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PagerParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DynWriteParamsImplCopyWith<_$DynWriteParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

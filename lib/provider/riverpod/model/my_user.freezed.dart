@@ -43,8 +43,12 @@ mixin _$MyUser {
   String get relationId => throw _privateConstructorUsedError;
   Enterprise? get enterprise => throw _privateConstructorUsedError;
 
+  /// Serializes this MyUser to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MyUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MyUserCopyWith<MyUser> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -90,6 +94,8 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MyUser
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -208,6 +214,8 @@ class _$MyUserCopyWithImpl<$Res, $Val extends MyUser>
     ) as $Val);
   }
 
+  /// Create a copy of MyUser
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EnterpriseCopyWith<$Res>? get enterprise {
@@ -264,6 +272,8 @@ class __$$MyUserImplCopyWithImpl<$Res>
       _$MyUserImpl _value, $Res Function(_$MyUserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MyUser
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -523,7 +533,7 @@ class _$MyUserImpl implements _MyUser {
                 other.enterprise == enterprise));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -551,7 +561,9 @@ class _$MyUserImpl implements _MyUser {
         enterprise
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MyUser
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MyUserImplCopyWith<_$MyUserImpl> get copyWith =>
@@ -636,8 +648,11 @@ abstract class _MyUser implements MyUser {
   String get relationId;
   @override
   Enterprise? get enterprise;
+
+  /// Create a copy of MyUser
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MyUserImplCopyWith<_$MyUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -663,8 +678,12 @@ mixin _$Enterprise {
   @JsonKey(name: 'wechat')
   String get wechat => throw _privateConstructorUsedError;
 
+  /// Serializes this Enterprise to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Enterprise
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EnterpriseCopyWith<Enterprise> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -695,6 +714,8 @@ class _$EnterpriseCopyWithImpl<$Res, $Val extends Enterprise>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Enterprise
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -765,6 +786,8 @@ class __$$EnterpriseImplCopyWithImpl<$Res>
       _$EnterpriseImpl _value, $Res Function(_$EnterpriseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Enterprise
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -866,12 +889,14 @@ class _$EnterpriseImpl extends _Enterprise {
             (identical(other.wechat, wechat) || other.wechat == wechat));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, enable, id, name, phone, profile, qq, wechat);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Enterprise
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EnterpriseImplCopyWith<_$EnterpriseImpl> get copyWith =>
@@ -920,8 +945,11 @@ abstract class _Enterprise extends Enterprise {
   @override
   @JsonKey(name: 'wechat')
   String get wechat;
+
+  /// Create a copy of Enterprise
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EnterpriseImplCopyWith<_$EnterpriseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

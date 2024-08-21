@@ -11,8 +11,8 @@ _$XbDataImpl _$$XbDataImplFromJson(Map<String, dynamic> json) => _$XbDataImpl(
               ?.map((e) => XbItem.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      pageId: json['pageId'] as int? ?? 0,
-      totalNum: json['totalNum'] as int? ?? 0,
+      pageId: (json['pageId'] as num?)?.toInt() ?? 0,
+      totalNum: (json['totalNum'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$XbDataImplToJson(_$XbDataImpl instance) =>

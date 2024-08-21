@@ -25,8 +25,12 @@ mixin _$ZheCarouselResult {
   @JsonKey(name: 'status')
   int get status => throw _privateConstructorUsedError;
 
+  /// Serializes this ZheCarouselResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ZheCarouselResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ZheCarouselResultCopyWith<ZheCarouselResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$ZheCarouselResultCopyWithImpl<$Res, $Val extends ZheCarouselResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ZheCarouselResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$ZheCarouselResultImplCopyWithImpl<$Res>
       $Res Function(_$ZheCarouselResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ZheCarouselResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -150,12 +158,14 @@ class _$ZheCarouselResultImpl extends _ZheCarouselResult {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_content), status);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ZheCarouselResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ZheCarouselResultImplCopyWith<_$ZheCarouselResultImpl> get copyWith =>
@@ -185,8 +195,11 @@ abstract class _ZheCarouselResult extends ZheCarouselResult {
   @override
   @JsonKey(name: 'status')
   int get status;
+
+  /// Create a copy of ZheCarouselResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ZheCarouselResultImplCopyWith<_$ZheCarouselResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -208,8 +221,12 @@ mixin _$ZheCarousel {
   @JsonKey(name: 'pic')
   String get pic => throw _privateConstructorUsedError;
 
+  /// Serializes this ZheCarousel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ZheCarousel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ZheCarouselCopyWith<ZheCarousel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -238,6 +255,8 @@ class _$ZheCarouselCopyWithImpl<$Res, $Val extends ZheCarousel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ZheCarousel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -296,6 +315,8 @@ class __$$ZheCarouselImplCopyWithImpl<$Res>
       _$ZheCarouselImpl _value, $Res Function(_$ZheCarouselImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ZheCarousel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -378,12 +399,14 @@ class _$ZheCarouselImpl extends _ZheCarousel {
             (identical(other.pic, pic) || other.pic == pic));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, code, dateTime, getUrl, name, pic);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ZheCarousel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ZheCarouselImplCopyWith<_$ZheCarouselImpl> get copyWith =>
@@ -424,8 +447,11 @@ abstract class _ZheCarousel extends ZheCarousel {
   @override
   @JsonKey(name: 'pic')
   String get pic;
+
+  /// Create a copy of ZheCarousel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ZheCarouselImplCopyWith<_$ZheCarouselImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

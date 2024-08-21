@@ -164,8 +164,12 @@ mixin _$UserOrderInfo {
   @JsonKey(name: 'zheUpdateTime')
   String get zheUpdateTime => throw _privateConstructorUsedError;
 
+  /// Serializes this UserOrderInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserOrderInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserOrderInfoCopyWith<UserOrderInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -262,6 +266,8 @@ class _$UserOrderInfoCopyWithImpl<$Res, $Val extends UserOrderInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserOrderInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -714,6 +720,8 @@ class __$$UserOrderInfoImplCopyWithImpl<$Res>
       _$UserOrderInfoImpl _value, $Res Function(_$UserOrderInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserOrderInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1491,7 +1499,7 @@ class _$UserOrderInfoImpl extends _UserOrderInfo {
             (identical(other.zheUpdateTime, zheUpdateTime) || other.zheUpdateTime == zheUpdateTime));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1567,7 +1575,9 @@ class _$UserOrderInfoImpl extends _UserOrderInfo {
         zheUpdateTime
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserOrderInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserOrderInfoImplCopyWith<_$UserOrderInfoImpl> get copyWith =>
@@ -1872,8 +1882,11 @@ abstract class _UserOrderInfo extends UserOrderInfo {
   @override
   @JsonKey(name: 'zheUpdateTime')
   String get zheUpdateTime;
+
+  /// Create a copy of UserOrderInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserOrderInfoImplCopyWith<_$UserOrderInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

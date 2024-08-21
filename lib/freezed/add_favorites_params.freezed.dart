@@ -37,8 +37,12 @@ mixin _$AddFavoritesParams {
   @JsonKey(name: 'createTime')
   String get createtime => throw _privateConstructorUsedError;
 
+  /// Serializes this AddFavoritesParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddFavoritesParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AddFavoritesParamsCopyWith<AddFavoritesParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -70,6 +74,8 @@ class _$AddFavoritesParamsCopyWithImpl<$Res, $Val extends AddFavoritesParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AddFavoritesParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -146,6 +152,8 @@ class __$$AddFavoritesParamsImplCopyWithImpl<$Res>
       $Res Function(_$AddFavoritesParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddFavoritesParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -260,12 +268,14 @@ class _$AddFavoritesParamsImpl implements _AddFavoritesParams {
                 other.createtime == createtime));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, productid, type, endtime,
       imageurl, title, amount, arrivalprice, createtime);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddFavoritesParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddFavoritesParamsImplCopyWith<_$AddFavoritesParamsImpl> get copyWith =>
@@ -319,8 +329,11 @@ abstract class _AddFavoritesParams implements AddFavoritesParams {
   @override
   @JsonKey(name: 'createTime')
   String get createtime;
+
+  /// Create a copy of AddFavoritesParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddFavoritesParamsImplCopyWith<_$AddFavoritesParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

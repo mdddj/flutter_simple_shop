@@ -10,8 +10,8 @@ _$TKCarouselImpl _$$TKCarouselImplFromJson(Map<String, dynamic> json) =>
     _$TKCarouselImpl(
       activityID: json['activityID'] as String? ?? '',
       link: json['link'] as String? ?? '',
-      sourceType: json['sourceType'] as int? ?? 0,
-      topicID: json['topicID'] as int? ?? 0,
+      sourceType: (json['sourceType'] as num?)?.toInt() ?? 0,
+      topicID: (json['topicID'] as num?)?.toInt() ?? 0,
       topicImage: json['topicImage'] as String? ?? '',
       topicName: json['topicName'] as String? ?? '',
     );

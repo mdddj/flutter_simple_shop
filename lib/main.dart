@@ -19,13 +19,14 @@ const debugEnvConfig = EnvConfig(
 const releaseEnvConfig = EnvConfig(
     host: "https://api.itbug.shop",
     port: '443',
-    debugMode: false,
+    debugMode: true,
     fontFamily: '');
 
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
 const useEnv = releaseEnvConfig;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   appInit(() {
     runApp(const ProviderScope(child: DdShop()));
   });
@@ -60,7 +61,6 @@ class AppTheme {
         appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
             surfaceTintColor: Colors.white,
-            scrolledUnderElevation: 10,
             shadowColor: Colors.grey,
             elevation: 0.1),
         cardTheme: const CardTheme(

@@ -34,8 +34,12 @@ mixin _$MeetModel {
   MyUser get user => throw _privateConstructorUsedError;
   IList<FileInfo> get images => throw _privateConstructorUsedError;
 
+  /// Serializes this MeetModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MeetModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MeetModelCopyWith<MeetModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -73,6 +77,8 @@ class _$MeetModelCopyWithImpl<$Res, $Val extends MeetModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MeetModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -146,6 +152,8 @@ class _$MeetModelCopyWithImpl<$Res, $Val extends MeetModel>
     ) as $Val);
   }
 
+  /// Create a copy of MeetModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MyUserCopyWith<$Res> get user {
@@ -190,6 +198,8 @@ class __$$MeetModelImplCopyWithImpl<$Res>
       _$MeetModelImpl _value, $Res Function(_$MeetModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MeetModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -355,7 +365,7 @@ class _$MeetModelImpl implements _MeetModel {
             const DeepCollectionEquality().equals(other.images, images));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -373,7 +383,9 @@ class _$MeetModelImpl implements _MeetModel {
       user,
       const DeepCollectionEquality().hash(images));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MeetModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MeetModelImplCopyWith<_$MeetModelImpl> get copyWith =>
@@ -432,8 +444,11 @@ abstract class _MeetModel implements MeetModel {
   MyUser get user;
   @override
   IList<FileInfo> get images;
+
+  /// Create a copy of MeetModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MeetModelImplCopyWith<_$MeetModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

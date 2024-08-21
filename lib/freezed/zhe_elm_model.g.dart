@@ -33,7 +33,7 @@ _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl
               ? const Data()
               : Data.fromJson(json['data'] as Map<String, dynamic>),
           message: json['message'] as String? ?? '',
-          resultcode: json['resultCode'] as int? ?? 0,
+          resultcode: (json['resultCode'] as num?)?.toInt() ?? 0,
           requestid: json['requestid'] as String? ?? '',
         );
 
@@ -50,13 +50,13 @@ Map<String, dynamic>
 
 _$DataImpl _$$DataImplFromJson(Map<String, dynamic> json) => _$DataImpl(
       description: json['description'] as String? ?? '',
-      endtime: json['endTime'] as int? ?? 0,
+      endtime: (json['endTime'] as num?)?.toInt() ?? 0,
       id: json['id'] as String? ?? '',
       link: json['link'] == null
           ? const Link()
           : Link.fromJson(json['link'] as Map<String, dynamic>),
       picture: json['picture'] as String? ?? '',
-      starttime: json['startTime'] as int? ?? 0,
+      starttime: (json['startTime'] as num?)?.toInt() ?? 0,
       title: json['title'] as String? ?? '',
     );
 

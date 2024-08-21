@@ -10,8 +10,8 @@ _$CarouselImpl _$$CarouselImplFromJson(Map<String, dynamic> json) =>
     _$CarouselImpl(
       topicImage: json['topicImage'] as String? ?? '',
       activityId: json['activityId'] as String? ?? '',
-      topicId: json['topicId'] as int? ?? 0,
-      sourceType: json['sourceType'] as int? ?? 0,
+      topicId: (json['topicId'] as num?)?.toInt() ?? 0,
+      sourceType: (json['sourceType'] as num?)?.toInt() ?? 0,
       link: json['link'] as String? ?? '',
       topicName: json['topicName'] as String? ?? '',
     );

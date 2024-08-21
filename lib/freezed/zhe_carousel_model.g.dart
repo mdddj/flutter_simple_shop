@@ -13,7 +13,7 @@ _$ZheCarouselResultImpl _$$ZheCarouselResultImplFromJson(
               ?.map((e) => ZheCarousel.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      status: json['status'] as int? ?? 0,
+      status: (json['status'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$ZheCarouselResultImplToJson(

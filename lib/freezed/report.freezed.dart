@@ -39,8 +39,12 @@ mixin _$Report {
   @JsonKey(name: 'resourceId')
   int? get resourceId => throw _privateConstructorUsedError;
 
+  /// Serializes this Report to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ReportCopyWith<Report> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -73,6 +77,8 @@ class _$ReportCopyWithImpl<$Res, $Val extends Report>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,6 +132,8 @@ class _$ReportCopyWithImpl<$Res, $Val extends Report>
     ) as $Val);
   }
 
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MyUserCopyWith<$Res> get user {
@@ -165,6 +173,8 @@ class __$$ReportImplCopyWithImpl<$Res>
       _$ReportImpl _value, $Res Function(_$ReportImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -288,7 +298,7 @@ class _$ReportImpl extends _Report {
                 other.resourceId == resourceId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -302,7 +312,9 @@ class _$ReportImpl extends _Report {
       const DeepCollectionEquality().hash(images),
       resourceId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
@@ -358,8 +370,11 @@ abstract class _Report extends Report {
   @override
   @JsonKey(name: 'resourceId')
   int? get resourceId;
+
+  /// Create a copy of Report
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -375,8 +390,12 @@ mixin _$AddReportParams {
   @JsonKey(name: 'type')
   String get type => throw _privateConstructorUsedError;
 
+  /// Serializes this AddReportParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddReportParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AddReportParamsCopyWith<AddReportParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -402,6 +421,8 @@ class _$AddReportParamsCopyWithImpl<$Res, $Val extends AddReportParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AddReportParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -442,6 +463,8 @@ class __$$AddReportParamsImplCopyWithImpl<$Res>
       _$AddReportParamsImpl _value, $Res Function(_$AddReportParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddReportParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -493,11 +516,13 @@ class _$AddReportParamsImpl extends _AddReportParams {
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, content, type);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddReportParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddReportParamsImplCopyWith<_$AddReportParamsImpl> get copyWith =>
@@ -527,8 +552,11 @@ abstract class _AddReportParams extends AddReportParams {
   @override
   @JsonKey(name: 'type')
   String get type;
+
+  /// Create a copy of AddReportParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddReportParamsImplCopyWith<_$AddReportParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

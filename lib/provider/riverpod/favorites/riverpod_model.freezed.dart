@@ -26,8 +26,12 @@ mixin _$FavoritesStateModel {
   int get page => throw _privateConstructorUsedError;
   set page(int value) => throw _privateConstructorUsedError;
 
+  /// Serializes this FavoritesStateModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FavoritesStateModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FavoritesStateModelCopyWith<FavoritesStateModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$FavoritesStateModelCopyWithImpl<$Res, $Val extends FavoritesStateModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FavoritesStateModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -89,6 +95,8 @@ class __$$FavoritesStateModelImplCopyWithImpl<$Res>
       $Res Function(_$FavoritesStateModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FavoritesStateModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,7 +134,9 @@ class _$FavoritesStateModelImpl implements _FavoritesStateModel {
     return 'FavoritesStateModel(favorites: $favorites, page: $page)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FavoritesStateModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FavoritesStateModelImplCopyWith<_$FavoritesStateModelImpl> get copyWith =>
@@ -155,8 +165,11 @@ abstract class _FavoritesStateModel implements FavoritesStateModel {
   @override
   int get page;
   set page(int value);
+
+  /// Create a copy of FavoritesStateModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FavoritesStateModelImplCopyWith<_$FavoritesStateModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
