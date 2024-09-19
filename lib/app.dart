@@ -11,10 +11,12 @@ class InitView extends ApplicationWidget {
   Widget buildApplication(ApplicationModel applicationModel) => child;
 
   @override
-  Widget buildErrorWidget(Object e, StackTrace s, BuildContext context, WidgetRef ref) {
+  Widget buildErrorWidget(
+      Object e, StackTrace s, BuildContext context, WidgetRef ref) {
     return InitLoadingWidget(
       errorMessage: switch (e) { BaseApiException() => e.message, _ => "$e" },
-      retry: () => ref.invalidate(application(ApplocationContext(context, ref))),
+      retry: () =>
+          ref.invalidate(application(ApplocationContext(context, ref))),
     );
   }
 
@@ -29,9 +31,11 @@ class AppBottomNav extends View {
   final int currentIndex;
   final ValueChanged<int> onIndexChange;
 
-  const AppBottomNav({super.key, required this.currentIndex, required this.onIndexChange});
+  const AppBottomNav(
+      {super.key, required this.currentIndex, required this.onIndexChange});
 
-  Widget _buildIcon(int currentIndex, int index, String filename, BuildContext context) {
+  Widget _buildIcon(
+      int currentIndex, int index, String filename, BuildContext context) {
     return IfWidget(
         expression: () => currentIndex == index,
         trueBuild: () => ExtendedImage.asset(
@@ -52,15 +56,29 @@ class AppBottomNav extends View {
 
   @override
   Widget renderView(BuildContext context, ApplicationModel appCore) {
-    return BottomNavigationBar(type: BottomNavigationBarType.fixed, currentIndex: currentIndex, onTap: (onIndexChange), items: [
-      BottomNavigationBarItem(label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
-      BottomNavigationBarItem(label: '9.9包邮', icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
-      BottomNavigationBarItem(label: '分类', icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
-      BottomNavigationBarItem(label: '收藏', icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
-      BottomNavigationBarItem(label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
-    ]);
+    return BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: currentIndex,
+        onTap: (onIndexChange),
+        items: [
+          BottomNavigationBarItem(
+              label: '首页', icon: _buildIcon(currentIndex, 0, 'home', context)),
+          BottomNavigationBarItem(
+              label: '9.9包邮',
+              icon: _buildIcon(currentIndex, 1, 'jiujiu', context)),
+          BottomNavigationBarItem(
+              label: '分类',
+              icon: _buildIcon(currentIndex, 2, 'fenlei', context)),
+          BottomNavigationBarItem(
+              label: '收藏',
+              icon: _buildIcon(currentIndex, 3, 'shoucang', context)),
+          BottomNavigationBarItem(
+              label: '我的', icon: _buildIcon(currentIndex, 4, 'my', context)),
+        ]);
   }
 }
+
+void remove() {}
 
 final bottomMenus = IList<AppbarMenu>(const IListConst([
   AppbarMenu(icon: 'home', title: '首页'),
