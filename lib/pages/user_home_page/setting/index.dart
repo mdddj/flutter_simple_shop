@@ -51,10 +51,33 @@ class SettingIndex extends ConsumerWidget {
               title: const Text('关于典典的小卖部'),
               trailing: const Icon(Icons.keyboard_arrow_right),
               onTap: () {},
-            )
+            ),
+            const _LogoutButton()
           ],
         ),
       ),
+    );
+  }
+}
+
+class _LogoutButton extends ConsumerWidget {
+  const _LogoutButton();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    if (!ref.isLogin) {
+      return const SizedBox.shrink();
+    }
+    return ListTile(
+      trailing: const Icon(Icons.keyboard_arrow_right),
+      title: const Text(
+        '退出登录',
+        style: TextStyle(color: Colors.red),
+      ),
+      onTap: () {
+        ref.read(userRiverpod.notifier).logout();
+        toast('已退出登录');
+      },
     );
   }
 }

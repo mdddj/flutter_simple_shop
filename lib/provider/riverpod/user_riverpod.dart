@@ -1,9 +1,8 @@
 part of '../index.dart';
 
 final userRiverpod =
-    StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
+StateNotifierProvider<UserModel, UserDetailModal>(UserModel.new);
 
-typedef UpdateModelCall<T> = T Function(T oldModel);
 
 // 用户信息
 class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
@@ -27,7 +26,9 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
   @override
   void setTokenToCatch(String token) {
     TokenCache().setToken(token);
-    GetIt.instance.get<UserApi>().token = token;
+    GetIt.instance
+        .get<UserApi>()
+        .token = token;
   }
 
   @override
@@ -38,7 +39,9 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
   @override
   void logout() {
     state = state.copyWith(user: null);
-    GetIt.instance.get<UserApi>().token = null;
+    GetIt.instance
+        .get<UserApi>()
+        .token = null;
   }
 
   //更新用户会员状态
@@ -50,17 +53,21 @@ class UserModel extends StateNotifier<UserDetailModal> implements LoginBase {
   void startAppTryLogin() {
     TokenCache().userToken.then((value) {
       if (value.isNotEmpty) {
-        getIt.get<UserApi>().token = value;
+        getIt
+            .get<UserApi>()
+            .token = value;
         getIt.get<Api>().getUser(value).then((user) {
           state = state.copyWith(user: user);
-          GetIt.instance.get<UserApi>().token = user == null ? '' : value;
+          GetIt.instance
+              .get<UserApi>()
+              .token = user == null ? '' : value;
         });
       }
     });
   }
 
   ///更新用户信息
-  void updateUser(UpdateModelCall<MyUser> update) {
+  void updateUser(ValueCopyWith<MyUser> update) {
     final user = state.user;
     if (user != null) {
       state = state.copyWith(user: update.call(user));

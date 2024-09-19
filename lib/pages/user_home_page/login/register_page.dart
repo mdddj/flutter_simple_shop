@@ -63,7 +63,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   TextFormField(
                     controller: _passController,
-                    decoration: const InputDecoration(label: Text("密码")),
+                    decoration: const InputDecoration(
+                        label: Text("密码"), helperText: "大小写字母+数字+特殊符号"),
                     validator: (value) =>
                         (value?.length ?? 0) < 6 ? "请输入正确的密码" : null,
                   ),
