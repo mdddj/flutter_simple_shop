@@ -23,10 +23,13 @@ class IndexCarousel extends ConsumerWidget {
           );
         },
         loading: () {
-          return const SizedBox(
+          return Container(
               width: double.infinity,
               height: double.infinity,
-              child: Center(child: CircularProgressIndicator()));
+              decoration: BoxDecoration(
+                  color: Colors.grey.shade200,
+                  borderRadius: BorderRadius.circular(12)),
+              child: const Center(child: CupertinoActivityIndicator()));
         },
       ),
     );

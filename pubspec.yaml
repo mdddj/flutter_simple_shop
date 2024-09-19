@@ -3,8 +3,8 @@ description: 典典的小卖部,淘客版本 qq群667186542
 version: 3.2.0
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.19.5"
+  sdk: ">=3.4.3 <4.0.0"
+  flutter: ">=3.24.3"
 
 dependencies:
   flutter:
@@ -94,6 +94,7 @@ dependency_overrides:
   web: ^1.0.0
   meta: ^1.15.0
   collection: 1.19.0
+
 flutter:
   uses-material-design: true
   assets:
