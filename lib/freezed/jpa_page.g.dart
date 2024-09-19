@@ -14,17 +14,17 @@ _$JpaPageImpl _$$JpaPageImplFromJson(Map<String, dynamic> json) =>
       empty: json['empty'] as bool? ?? false,
       first: json['first'] as bool? ?? false,
       last: json['last'] as bool? ?? false,
-      number: json['number'] as int? ?? 0,
-      numberOfElements: json['numberOfElements'] as int? ?? 0,
+      number: (json['number'] as num?)?.toInt() ?? 0,
+      numberOfElements: (json['numberOfElements'] as num?)?.toInt() ?? 0,
       pageable: json['pageable'] == null
           ? const Pageable()
           : Pageable.fromJson(json['pageable'] as Map<String, dynamic>),
-      size: json['size'] as int? ?? 0,
+      size: (json['size'] as num?)?.toInt() ?? 0,
       sort: json['sort'] == null
           ? const Sort()
           : Sort.fromJson(json['sort'] as Map<String, dynamic>),
-      totalElements: json['totalElements'] as int? ?? 0,
-      totalpages: json['totalPages'] as int? ?? 0,
+      totalElements: (json['totalElements'] as num?)?.toInt() ?? 0,
+      totalpages: (json['totalPages'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$JpaPageImplToJson(_$JpaPageImpl instance) =>
@@ -46,9 +46,9 @@ Map<String, dynamic> _$$JpaPageImplToJson(_$JpaPageImpl instance) =>
 
 _$PageableImpl _$$PageableImplFromJson(Map<String, dynamic> json) =>
     _$PageableImpl(
-      offset: json['offset'] as int? ?? 0,
-      pageNumber: json['pageNumber'] as int? ?? 0,
-      pageSize: json['pageSize'] as int? ?? 0,
+      offset: (json['offset'] as num?)?.toInt() ?? 0,
+      pageNumber: (json['pageNumber'] as num?)?.toInt() ?? 0,
+      pageSize: (json['pageSize'] as num?)?.toInt() ?? 0,
       paged: json['paged'] as bool? ?? false,
       sort: json['sort'] == null
           ? const Sort()

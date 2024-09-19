@@ -1,4 +1,5 @@
 import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/models.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -18,13 +19,14 @@ const debugEnvConfig = EnvConfig(
 const releaseEnvConfig = EnvConfig(
     host: "https://api.itbug.shop",
     port: '443',
-    debugMode: false,
+    debugMode: true,
     fontFamily: '');
 
 ///切换线上环境使用releaseEnvConfig  const useEnv = releaseEnvConfig;
 const useEnv = releaseEnvConfig;
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   appInit(() {
     runApp(const ProviderScope(child: DdShop()));
   });
@@ -41,8 +43,7 @@ class DdShop extends View {
           title: '典典小卖部',
           theme: AppTheme.getTheme(model.theme),
           darkTheme: model.darkTheme,
-          // themeMode: model.getThemeMode,
-          themeMode: ThemeMode.light,
+          themeMode: model.getThemeMode,
           routerConfig: routers,
           builder: FlutterSmartDialog.init(
               loadingBuilder: MyCustomLoadingWidget.new,
@@ -60,7 +61,6 @@ class AppTheme {
         appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
             surfaceTintColor: Colors.white,
-            scrolledUnderElevation: 10,
             shadowColor: Colors.grey,
             elevation: 0.1),
         cardTheme: const CardTheme(
@@ -78,6 +78,6 @@ class AppTheme {
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white,
         ),
-        tabBarTheme: TabBarTheme(dividerColor: Colors.transparent));
+        tabBarTheme: const TabBarTheme(dividerColor: Colors.transparent));
   }
 }

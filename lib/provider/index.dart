@@ -1,6 +1,7 @@
 library provider;
 
 import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory;
+import 'package:dd_js_util/model/models.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';

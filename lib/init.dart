@@ -2,7 +2,6 @@ part of 'index.dart';
 
 /// 初始化
 Future<void> appInit(VoidCallback start) async {
-  WidgetsFlutterBinding.ensureInitialized();
   await (Connectivity().checkConnectivity());
   initNetUtil();
   initInstanceObject();

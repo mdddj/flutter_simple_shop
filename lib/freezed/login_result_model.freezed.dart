@@ -25,8 +25,12 @@ mixin _$LoginResultModel {
   @JsonKey(name: 'user')
   MyUser get user => throw _privateConstructorUsedError;
 
+  /// Serializes this LoginResultModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LoginResultModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LoginResultModelCopyWith<LoginResultModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$LoginResultModelCopyWithImpl<$Res, $Val extends LoginResultModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LoginResultModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -72,6 +78,8 @@ class _$LoginResultModelCopyWithImpl<$Res, $Val extends LoginResultModel>
     ) as $Val);
   }
 
+  /// Create a copy of LoginResultModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MyUserCopyWith<$Res> get user {
@@ -105,6 +113,8 @@ class __$$LoginResultModelImplCopyWithImpl<$Res>
       $Res Function(_$LoginResultModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginResultModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -155,11 +165,13 @@ class _$LoginResultModelImpl implements _LoginResultModel {
             (identical(other.user, user) || other.user == user));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, token, user);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginResultModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LoginResultModelImplCopyWith<_$LoginResultModelImpl> get copyWith =>
@@ -189,8 +201,11 @@ abstract class _LoginResultModel implements LoginResultModel {
   @override
   @JsonKey(name: 'user')
   MyUser get user;
+
+  /// Create a copy of LoginResultModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoginResultModelImplCopyWith<_$LoginResultModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

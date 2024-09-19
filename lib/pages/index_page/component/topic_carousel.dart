@@ -16,9 +16,20 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
             image: MyImage.network(
                 url: item.pic,
                 params: ImageParams(
+                    customLoadingWidget: Container(
+                      width: double.infinity,
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          borderRadius: BorderRadius.circular(12)),
+                    ),
                     width: double.infinity,
                     height: double.infinity,
                     fit: BoxFit.cover,
+                    enableMemoryCache: true,
+                    cache: true,
+                    cacheRawData: true,
+                    clearMemoryCacheIfFailed: true,
                     borderRadius: BorderRadius.circular(12),
                     shape: BoxShape.rectangle)));
       },
@@ -28,7 +39,8 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
         final ZheCarousel(:getUrl, :name) = content[index];
         final zheAppKey = ref.zheAppKey;
         final url = getUrl.replaceAll("{替换appkey}", zheAppKey);
-        context.navToWidget(to: ZheCarouselProductsPage(apiUrl: url, name: name));
+        context.navToWidget(
+            to: ZheCarouselProductsPage(apiUrl: url, name: name));
       },
     );
   }

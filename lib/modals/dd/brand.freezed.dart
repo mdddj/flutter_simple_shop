@@ -12,7 +12,7 @@ part of 'brand.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 BrandItem _$BrandItemFromJson(Map<String, dynamic> json) {
   return _BrandItem.fromJson(json);
@@ -43,8 +43,12 @@ mixin _$BrandItem {
   @JsonKey(name: 'goodsList')
   IList<BrandGoodslist> get goodslist => throw _privateConstructorUsedError;
 
+  /// Serializes this BrandItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BrandItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BrandItemCopyWith<BrandItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -78,6 +82,8 @@ class _$BrandItemCopyWithImpl<$Res, $Val extends BrandItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BrandItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -172,6 +178,8 @@ class __$$BrandItemImplCopyWithImpl<$Res>
       _$BrandItemImpl _value, $Res Function(_$BrandItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BrandItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -319,7 +327,7 @@ class _$BrandItemImpl extends _BrandItem {
             const DeepCollectionEquality().equals(other.goodslist, goodslist));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -335,7 +343,9 @@ class _$BrandItemImpl extends _BrandItem {
       sort,
       const DeepCollectionEquality().hash(goodslist));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BrandItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BrandItemImplCopyWith<_$BrandItemImpl> get copyWith =>
@@ -401,8 +411,11 @@ abstract class _BrandItem extends BrandItem {
   @override
   @JsonKey(name: 'goodsList')
   IList<BrandGoodslist> get goodslist;
+
+  /// Create a copy of BrandItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BrandItemImplCopyWith<_$BrandItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -474,8 +487,12 @@ mixin _$BrandGoodslist {
   @JsonKey(name: 'video')
   String get video => throw _privateConstructorUsedError;
 
+  /// Serializes this BrandGoodslist to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BrandGoodslist
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BrandGoodslistCopyWith<BrandGoodslist> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -529,6 +546,8 @@ class _$BrandGoodslistCopyWithImpl<$Res, $Val extends BrandGoodslist>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BrandGoodslist
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -737,6 +756,8 @@ class __$$BrandGoodslistImplCopyWithImpl<$Res>
       _$BrandGoodslistImpl _value, $Res Function(_$BrandGoodslistImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BrandGoodslist
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1096,7 +1117,7 @@ class _$BrandGoodslistImpl extends _BrandGoodslist {
             (identical(other.video, video) || other.video == video));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1132,7 +1153,9 @@ class _$BrandGoodslistImpl extends _BrandGoodslist {
         video
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BrandGoodslist
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BrandGoodslistImplCopyWith<_$BrandGoodslistImpl> get copyWith =>
@@ -1274,8 +1297,11 @@ abstract class _BrandGoodslist extends BrandGoodslist {
   @override
   @JsonKey(name: 'video')
   String get video;
+
+  /// Create a copy of BrandGoodslist
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BrandGoodslistImplCopyWith<_$BrandGoodslistImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1291,8 +1317,12 @@ mixin _$BrandListResult {
   int get currentpage => throw _privateConstructorUsedError;
   int get totalcount => throw _privateConstructorUsedError;
 
+  /// Serializes this BrandListResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BrandListResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BrandListResultCopyWith<BrandListResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1317,6 +1347,8 @@ class _$BrandListResultCopyWithImpl<$Res, $Val extends BrandListResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BrandListResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1366,6 +1398,8 @@ class __$$BrandListResultImplCopyWithImpl<$Res>
       _$BrandListResultImpl _value, $Res Function(_$BrandListResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BrandListResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1440,7 +1474,7 @@ class _$BrandListResultImpl extends _BrandListResult {
                 other.totalcount == totalcount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1449,7 +1483,9 @@ class _$BrandListResultImpl extends _BrandListResult {
       currentpage,
       totalcount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BrandListResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BrandListResultImplCopyWith<_$BrandListResultImpl> get copyWith =>
@@ -1483,8 +1519,11 @@ abstract class _BrandListResult extends BrandListResult {
   int get currentpage;
   @override
   int get totalcount;
+
+  /// Create a copy of BrandListResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BrandListResultImplCopyWith<_$BrandListResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

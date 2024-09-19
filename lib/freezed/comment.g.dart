@@ -8,7 +8,7 @@ part of 'comment.dart';
 
 _$CommentImpl _$$CommentImplFromJson(Map<String, dynamic> json) =>
     _$CommentImpl(
-      id: json['id'] as int? ?? 0,
+      id: (json['id'] as num?)?.toInt() ?? 0,
       email: json['email'] as String? ?? '',
       website: json['website'] as String? ?? '',
       content: json['content'] as String? ?? '',

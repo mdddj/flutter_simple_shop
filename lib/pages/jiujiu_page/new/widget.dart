@@ -9,18 +9,17 @@ import '../../../widgets/loading/custom_loading_more_widget.dart';
 import 'repository.dart';
 import 'types.dart';
 
-class JiuJiuIndex extends StatefulWidget {
+class JiuJiuIndex extends ConsumerStatefulWidget {
   const JiuJiuIndex({super.key});
 
   @override
-  State<JiuJiuIndex> createState() => _JiuJiuIndexState();
+  ConsumerState<JiuJiuIndex> createState() => _JiuJiuIndexState();
 }
 
-class _JiuJiuIndexState extends State<JiuJiuIndex>
-    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
+class _JiuJiuIndexState extends ConsumerState<JiuJiuIndex>
+    with AutomaticKeepAliveClientMixin, SingleTickerProviderStateMixin {
   late final _tabController =
       TabController(length: ninenineTypes.length, vsync: this);
-
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -30,19 +29,24 @@ class _JiuJiuIndexState extends State<JiuJiuIndex>
         bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48),
             child: TabBar(
-                isScrollable: context.tabIsScrollable,
-                tabs: ninenineTypes
-                    .map((element) => Tab(
-                          text: element.title,
-                        ))
-                    .toList(),
-                controller: _tabController)),
+              tabs: [
+                ...ninenineTypes.map((element) => Tab(
+                      text: element.title,
+                    ))
+              ],
+              onTap: (value) {
+                _tabController.animateTo(value);
+              },
+              controller: _tabController,
+            )),
       ),
+      // body: LazyIndexedStack(
+      //   index: ref.watch(_indexProvider),
+      //   children: [...ninenineTypes.map((e) => _Item(type: e))],
+      // ),
       body: TabBarView(
         controller: _tabController,
-        children: ninenineTypes
-            .map((element) => _Item(repository: JiujiuRepository(element)))
-            .toList(),
+        children: ninenineTypes.map(_Item.new).toList(),
       ),
     );
   }
@@ -52,9 +56,9 @@ class _JiuJiuIndexState extends State<JiuJiuIndex>
 }
 
 class _Item extends ConsumerStatefulWidget {
-  final JiujiuRepository repository;
+  final JiujiuTabTypes type;
 
-  const _Item({required this.repository});
+  const _Item(this.type);
 
   @override
   ConsumerState<_Item> createState() => _ItemState();
@@ -62,6 +66,7 @@ class _Item extends ConsumerStatefulWidget {
 
 class _ItemState extends ConsumerState<_Item>
     with AutomaticKeepAliveClientMixin {
+  late final _repostory = JiujiuRepository(widget.type);
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -71,14 +76,14 @@ class _ItemState extends ConsumerState<_Item>
             itemBuilder: (ctx, item, index) {
               return WaterfallGoodsCard(item);
             },
-            sourceList: widget.repository,
+            sourceList: _repostory,
             padding: const EdgeInsets.all(8),
             indicatorBuilder: (context, status) {
               return CustomLoadingMoreWidgetWithSliver(
                 context,
                 status,
                 retry: () {
-                  widget.repository.refresh(true);
+                  _repostory.refresh(true);
                 },
               );
             },

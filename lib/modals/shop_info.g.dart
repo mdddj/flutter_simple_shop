@@ -12,7 +12,7 @@ _$ShopInfoImpl _$$ShopInfoImplFromJson(Map<String, dynamic> json) =>
       pictUrl: json['pict_url'] as String? ?? "",
       shopTitle: json['shop_title'] as String? ?? "",
       shopType: json['shop_type'] as String? ?? "",
-      userId: json['user_id'] as int? ?? 0,
+      userId: (json['user_id'] as num?)?.toInt() ?? 0,
       shopUrl: json['shop_url'] as String? ?? "",
     );
 

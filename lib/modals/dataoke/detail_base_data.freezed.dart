@@ -27,8 +27,12 @@ mixin _$DetailBaseDataResult {
   @JsonKey(name: 'privilegeLink')
   CouponLinkResult get couponInfo => throw _privateConstructorUsedError;
 
+  /// Serializes this DetailBaseDataResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DetailBaseDataResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DetailBaseDataResultCopyWith<DetailBaseDataResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,6 +63,8 @@ class _$DetailBaseDataResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DetailBaseDataResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -82,6 +88,8 @@ class _$DetailBaseDataResultCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of DetailBaseDataResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ProductCopyWith<$Res> get info {
@@ -90,6 +98,8 @@ class _$DetailBaseDataResultCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of DetailBaseDataResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CouponLinkResultCopyWith<$Res> get couponInfo {
@@ -126,6 +136,8 @@ class __$$DetailBaseDataResultImplCopyWithImpl<$Res>
       $Res Function(_$DetailBaseDataResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DetailBaseDataResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -198,12 +210,14 @@ class _$DetailBaseDataResultImpl extends _DetailBaseDataResult {
                 other.couponInfo == couponInfo));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, info,
       const DeepCollectionEquality().hash(_similarProducts), couponInfo);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DetailBaseDataResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DetailBaseDataResultImplCopyWith<_$DetailBaseDataResultImpl>
@@ -239,8 +253,11 @@ abstract class _DetailBaseDataResult extends DetailBaseDataResult {
   @override
   @JsonKey(name: 'privilegeLink')
   CouponLinkResult get couponInfo;
+
+  /// Create a copy of DetailBaseDataResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DetailBaseDataResultImplCopyWith<_$DetailBaseDataResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -268,8 +285,12 @@ mixin _$CouponLinkResult {
   String? get longTpwd => throw _privateConstructorUsedError;
   String? get tpwd => throw _privateConstructorUsedError;
 
+  /// Serializes this CouponLinkResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CouponLinkResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CouponLinkResultCopyWith<CouponLinkResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -309,6 +330,8 @@ class _$CouponLinkResultCopyWithImpl<$Res, $Val extends CouponLinkResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CouponLinkResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -433,6 +456,8 @@ class __$$CouponLinkResultImplCopyWithImpl<$Res>
       $Res Function(_$CouponLinkResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CouponLinkResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -637,7 +662,7 @@ class _$CouponLinkResultImpl extends _CouponLinkResult {
             (identical(other.tpwd, tpwd) || other.tpwd == tpwd));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -658,7 +683,9 @@ class _$CouponLinkResultImpl extends _CouponLinkResult {
       longTpwd,
       tpwd);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CouponLinkResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CouponLinkResultImplCopyWith<_$CouponLinkResultImpl> get copyWith =>
@@ -728,8 +755,11 @@ abstract class _CouponLinkResult extends CouponLinkResult {
   String? get longTpwd;
   @override
   String? get tpwd;
+
+  /// Create a copy of CouponLinkResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CouponLinkResultImplCopyWith<_$CouponLinkResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -8,11 +8,11 @@ part of 'blog_category_model.dart';
 
 _$BlogCategoryImpl _$$BlogCategoryImplFromJson(Map<String, dynamic> json) =>
     _$BlogCategoryImpl(
-      id: json['id'] as int,
+      id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       logo: json['logo'] as String,
       intro: json['intro'] as String,
-      createTime: json['createTime'] as int,
+      createTime: (json['createTime'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$BlogCategoryImplToJson(_$BlogCategoryImpl instance) =>

@@ -31,7 +31,9 @@ mixin _$GoodsListParamsModel {
   CancelToken? get cancelToken => throw _privateConstructorUsedError;
   set cancelToken(CancelToken? value) => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GoodsListParamsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GoodsListParamsModelCopyWith<GoodsListParamsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -66,6 +68,8 @@ class _$GoodsListParamsModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GoodsListParamsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -109,6 +113,8 @@ class _$GoodsListParamsModelCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of GoodsListParamsModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CategoryCopyWith<$Res> get category {
@@ -117,6 +123,8 @@ class _$GoodsListParamsModelCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of GoodsListParamsModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SubcategoryCopyWith<$Res>? get subcategor {
@@ -161,6 +169,8 @@ class __$$GoodsListParamsModelImplCopyWithImpl<$Res>
       $Res Function(_$GoodsListParamsModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GoodsListParamsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -238,7 +248,9 @@ class _$GoodsListParamsModelImpl implements _GoodsListParamsModel {
     return 'GoodsListParamsModel(category: $category, subcategor: $subcategor, sort: $sort, products: $products, page: $page, initLoading: $initLoading, cancelToken: $cancelToken)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GoodsListParamsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GoodsListParamsModelImplCopyWith<_$GoodsListParamsModelImpl>
@@ -278,8 +290,11 @@ abstract class _GoodsListParamsModel implements GoodsListParamsModel {
   @override
   CancelToken? get cancelToken;
   set cancelToken(CancelToken? value);
+
+  /// Create a copy of GoodsListParamsModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GoodsListParamsModelImplCopyWith<_$GoodsListParamsModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -7,11 +7,11 @@ part of 'report.dart';
 // **************************************************************************
 
 _$ReportImpl _$$ReportImplFromJson(Map<String, dynamic> json) => _$ReportImpl(
-      id: json['id'] as int? ?? 0,
+      id: (json['id'] as num?)?.toInt() ?? 0,
       content: json['content'] as String? ?? '',
       type: json['type'] as String? ?? '',
       createtime: json['createTime'] as String? ?? '',
-      status: json['status'] as int? ?? 0,
+      status: (json['status'] as num?)?.toInt() ?? 0,
       comment: json['comment'] as String? ?? '',
       user: json['user'] == null
           ? anonymousUser
@@ -20,7 +20,7 @@ _$ReportImpl _$$ReportImplFromJson(Map<String, dynamic> json) => _$ReportImpl(
           ? const IListConst([])
           : IList<FileInfo>.fromJson(json['images'],
               (value) => FileInfo.fromJson(value as Map<String, dynamic>)),
-      resourceId: json['resourceId'] as int?,
+      resourceId: (json['resourceId'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ReportImplToJson(_$ReportImpl instance) =>

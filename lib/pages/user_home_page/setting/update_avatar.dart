@@ -19,7 +19,8 @@ class _UpdateUserAvatarWidgetState
       child: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 37),
-          decoration: BoxDecoration(color: context.theme.dialogBackgroundColor),
+          decoration:
+              BoxDecoration(color: context.kTheme.dialogBackgroundColor),
           child: Column(
             children: [
               Text(

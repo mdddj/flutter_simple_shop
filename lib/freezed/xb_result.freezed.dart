@@ -27,8 +27,12 @@ mixin _$XbData {
   @JsonKey(name: 'totalNum')
   int get totalNum => throw _privateConstructorUsedError;
 
+  /// Serializes this XbData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XbData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $XbDataCopyWith<XbData> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -53,6 +57,8 @@ class _$XbDataCopyWithImpl<$Res, $Val extends XbData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of XbData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -98,6 +104,8 @@ class __$$XbDataImplCopyWithImpl<$Res>
       _$XbDataImpl _value, $Res Function(_$XbDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of XbData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -167,12 +175,14 @@ class _$XbDataImpl extends _XbData {
                 other.totalNum == totalNum));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_list), pageId, totalNum);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XbData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$XbDataImplCopyWith<_$XbDataImpl> get copyWith =>
@@ -204,8 +214,11 @@ abstract class _XbData extends XbData {
   @override
   @JsonKey(name: 'totalNum')
   int get totalNum;
+
+  /// Create a copy of XbData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$XbDataImplCopyWith<_$XbDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -245,8 +258,12 @@ mixin _$XbItem {
   @JsonKey(name: 'updateTime')
   String get updateTime => throw _privateConstructorUsedError;
 
+  /// Serializes this XbItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of XbItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $XbItemCopyWith<XbItem> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -282,6 +299,8 @@ class _$XbItemCopyWithImpl<$Res, $Val extends XbItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of XbItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -393,6 +412,8 @@ class __$$XbItemImplCopyWithImpl<$Res>
       _$XbItemImpl _value, $Res Function(_$XbItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of XbItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -569,7 +590,7 @@ class _$XbItemImpl extends _XbItem {
                 other.updateTime == updateTime));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -588,7 +609,9 @@ class _$XbItemImpl extends _XbItem {
       title,
       updateTime);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of XbItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$XbItemImplCopyWith<_$XbItemImpl> get copyWith =>
@@ -664,8 +687,11 @@ abstract class _XbItem extends XbItem {
   @override
   @JsonKey(name: 'updateTime')
   String get updateTime;
+
+  /// Create a copy of XbItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$XbItemImplCopyWith<_$XbItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

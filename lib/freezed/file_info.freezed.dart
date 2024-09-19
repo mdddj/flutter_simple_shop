@@ -47,8 +47,12 @@ mixin _$FileInfo {
   @JsonKey(name: 'width')
   int get width => throw _privateConstructorUsedError;
 
+  /// Serializes this FileInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FileInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FileInfoCopyWith<FileInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -84,6 +88,8 @@ class _$FileInfoCopyWithImpl<$Res, $Val extends FileInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FileInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -190,6 +196,8 @@ class __$$FileInfoImplCopyWithImpl<$Res>
       _$FileInfoImpl _value, $Res Function(_$FileInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FileInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -358,7 +366,7 @@ class _$FileInfoImpl extends _FileInfo {
             (identical(other.width, width) || other.width == width));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -376,7 +384,9 @@ class _$FileInfoImpl extends _FileInfo {
       url,
       width);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FileInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FileInfoImplCopyWith<_$FileInfoImpl> get copyWith =>
@@ -449,8 +459,11 @@ abstract class _FileInfo extends FileInfo {
   @override
   @JsonKey(name: 'width')
   int get width;
+
+  /// Create a copy of FileInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FileInfoImplCopyWith<_$FileInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

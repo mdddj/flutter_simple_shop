@@ -41,8 +41,12 @@ mixin _$AddMeetParams {
   @JsonKey(name: 'state')
   int get state => throw _privateConstructorUsedError;
 
+  /// Serializes this AddMeetParams to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AddMeetParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AddMeetParamsCopyWith<AddMeetParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -76,6 +80,8 @@ class _$AddMeetParamsCopyWithImpl<$Res, $Val extends AddMeetParams>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AddMeetParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -164,6 +170,8 @@ class __$$AddMeetParamsImplCopyWithImpl<$Res>
       _$AddMeetParamsImpl _value, $Res Function(_$AddMeetParamsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddMeetParams
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -301,12 +309,14 @@ class _$AddMeetParamsImpl extends _AddMeetParams {
             (identical(other.state, state) || other.state == state));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, age, soulname,
       soulcodeimage, mianjiinfo, location, tolocation, aboutdiandian, state);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddMeetParams
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddMeetParamsImplCopyWith<_$AddMeetParamsImpl> get copyWith =>
@@ -367,8 +377,11 @@ abstract class _AddMeetParams extends AddMeetParams {
   @override
   @JsonKey(name: 'state')
   int get state;
+
+  /// Create a copy of AddMeetParams
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddMeetParamsImplCopyWith<_$AddMeetParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

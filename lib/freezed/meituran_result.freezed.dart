@@ -29,8 +29,12 @@ mixin _$MeituanResult {
   @JsonKey(name: 'successful')
   bool get successful => throw _privateConstructorUsedError;
 
+  /// Serializes this MeituanResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MeituanResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MeituanResultCopyWith<MeituanResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$MeituanResultCopyWithImpl<$Res, $Val extends MeituanResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MeituanResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -110,6 +116,8 @@ class __$$MeituanResultImplCopyWithImpl<$Res>
       _$MeituanResultImpl _value, $Res Function(_$MeituanResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MeituanResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -182,11 +190,13 @@ class _$MeituanResultImpl extends _MeituanResult {
                 other.successful == successful));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, data, des, status, successful);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MeituanResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MeituanResultImplCopyWith<_$MeituanResultImpl> get copyWith =>
@@ -224,8 +234,11 @@ abstract class _MeituanResult extends MeituanResult {
   @override
   @JsonKey(name: 'successful')
   bool get successful;
+
+  /// Create a copy of MeituanResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MeituanResultImplCopyWith<_$MeituanResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

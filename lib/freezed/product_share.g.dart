@@ -8,7 +8,7 @@ part of 'product_share.dart';
 
 _$ProductShareImpl _$$ProductShareImplFromJson(Map<String, dynamic> json) =>
     _$ProductShareImpl(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       title: json['title'] as String? ?? '',
       price: json['price'] as String? ?? '',
       image: json['image'] as String? ?? '',

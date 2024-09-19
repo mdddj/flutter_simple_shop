@@ -1,4 +1,4 @@
-import 'package:dd_js_util/dd_js_util.dart';
+import 'package:dd_js_util/model/models.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 
 import '../../freezed/anking_list_param.dart';

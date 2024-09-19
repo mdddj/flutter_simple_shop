@@ -26,8 +26,12 @@ mixin _$BlogCategory {
   String get intro => throw _privateConstructorUsedError;
   int get createTime => throw _privateConstructorUsedError;
 
+  /// Serializes this BlogCategory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BlogCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BlogCategoryCopyWith<BlogCategory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$BlogCategoryCopyWithImpl<$Res, $Val extends BlogCategory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BlogCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -104,6 +110,8 @@ class __$$BlogCategoryImplCopyWithImpl<$Res>
       _$BlogCategoryImpl _value, $Res Function(_$BlogCategoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BlogCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,12 +189,14 @@ class _$BlogCategoryImpl extends _BlogCategory {
                 other.createTime == createTime));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, name, logo, intro, createTime);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BlogCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BlogCategoryImplCopyWith<_$BlogCategoryImpl> get copyWith =>
@@ -222,8 +232,11 @@ abstract class _BlogCategory extends BlogCategory {
   String get intro;
   @override
   int get createTime;
+
+  /// Create a copy of BlogCategory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BlogCategoryImplCopyWith<_$BlogCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

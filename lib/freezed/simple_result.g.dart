@@ -9,7 +9,7 @@ part of 'simple_result.dart';
 _$SimpleResultImpl _$$SimpleResultImplFromJson(Map<String, dynamic> json) =>
     _$SimpleResultImpl(
       message: json['message'] as String? ?? '',
-      state: json['state'] as int? ?? 0,
+      state: (json['state'] as num?)?.toInt() ?? 0,
       success: json['success'] as bool? ?? false,
       type: $enumDecodeNullable(_$ResultTypeEnumMap, json['type']) ??
           ResultType.none,

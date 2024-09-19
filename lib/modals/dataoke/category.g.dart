@@ -135,7 +135,7 @@ _$CategoryImpl _$$CategoryImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => Subcategory.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      cid: json['cid'] as int? ?? 0,
+      cid: (json['cid'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$CategoryImplToJson(_$CategoryImpl instance) =>
@@ -148,7 +148,7 @@ Map<String, dynamic> _$$CategoryImplToJson(_$CategoryImpl instance) =>
 
 _$SubcategoryImpl _$$SubcategoryImplFromJson(Map<String, dynamic> json) =>
     _$SubcategoryImpl(
-      subcid: json['subcid'] as int? ?? 0,
+      subcid: (json['subcid'] as num?)?.toInt() ?? 0,
       scpic: json['scpic'] as String? ?? '',
       subcname: json['subcname'] as String? ?? '',
     );

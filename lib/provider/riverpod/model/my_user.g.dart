@@ -7,15 +7,15 @@ part of 'my_user.dart';
 // **************************************************************************
 
 _$MyUserImpl _$$MyUserImplFromJson(Map<String, dynamic> json) => _$MyUserImpl(
-      id: json['id'] as int,
+      id: (json['id'] as num).toInt(),
       loginNumber: json['loginNumber'] as String? ?? '',
       username: json['username'] as String? ?? '',
       email: json['email'] as String? ?? '',
       nickName: json['nickName'] as String? ?? '未设置昵称',
       picture: json['picture'] as String? ?? '',
       phone: json['phone'] as String? ?? '',
-      type: json['type'] as int? ?? -1,
-      status: json['status'] as int? ?? -1,
+      type: (json['type'] as num?)?.toInt() ?? -1,
+      status: (json['status'] as num?)?.toInt() ?? -1,
       loginTime: json['loginTime'] as String? ?? '',
       enabled: json['enabled'] as bool? ?? false,
       accountNonExpired: json['accountNonExpired'] as bool? ?? false,
@@ -69,7 +69,7 @@ const _$VipEnumMap = {
 _$EnterpriseImpl _$$EnterpriseImplFromJson(Map<String, dynamic> json) =>
     _$EnterpriseImpl(
       enable: json['enable'] as bool? ?? false,
-      id: json['id'] as int? ?? 0,
+      id: (json['id'] as num?)?.toInt() ?? 0,
       name: json['name'] as String? ?? '',
       phone: json['phone'] as String? ?? '',
       profile: json['profile'] as String? ?? '',

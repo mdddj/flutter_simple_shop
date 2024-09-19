@@ -25,8 +25,12 @@ mixin _$ZheElmResultModel {
       get alibabaalscunionelemepromotionofficialactivitygetresponse =>
           throw _privateConstructorUsedError;
 
+  /// Serializes this ZheElmResultModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ZheElmResultModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ZheElmResultModelCopyWith<ZheElmResultModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +61,8 @@ class _$ZheElmResultModelCopyWithImpl<$Res, $Val extends ZheElmResultModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ZheElmResultModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -71,6 +77,8 @@ class _$ZheElmResultModelCopyWithImpl<$Res, $Val extends ZheElmResultModel>
     ) as $Val);
   }
 
+  /// Create a copy of ZheElmResultModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<$Res>
@@ -113,6 +121,8 @@ class __$$ZheElmResultModelImplCopyWithImpl<$Res>
       $Res Function(_$ZheElmResultModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ZheElmResultModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -164,12 +174,14 @@ class _$ZheElmResultModelImpl extends _ZheElmResultModel {
                     alibabaalscunionelemepromotionofficialactivitygetresponse));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, alibabaalscunionelemepromotionofficialactivitygetresponse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ZheElmResultModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ZheElmResultModelImplCopyWith<_$ZheElmResultModelImpl> get copyWith =>
@@ -200,8 +212,11 @@ abstract class _ZheElmResultModel extends ZheElmResultModel {
   @JsonKey(name: 'alibabaAlscUnionElemePromotionOfficialactivityGetResponse')
   Alibabaalscunionelemepromotionofficialactivitygetresponse
       get alibabaalscunionelemepromotionofficialactivitygetresponse;
+
+  /// Create a copy of ZheElmResultModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ZheElmResultModelImplCopyWith<_$ZheElmResultModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -224,8 +239,12 @@ mixin _$Alibabaalscunionelemepromotionofficialactivitygetresponse {
   @JsonKey(name: 'requestid')
   String get requestid => throw _privateConstructorUsedError;
 
+  /// Serializes this Alibabaalscunionelemepromotionofficialactivitygetresponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Alibabaalscunionelemepromotionofficialactivitygetresponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWith<
           Alibabaalscunionelemepromotionofficialactivitygetresponse>
       get copyWith => throw _privateConstructorUsedError;
@@ -266,6 +285,8 @@ class _$AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl<
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Alibabaalscunionelemepromotionofficialactivitygetresponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -294,6 +315,8 @@ class _$AlibabaalscunionelemepromotionofficialactivitygetresponseCopyWithImpl<
     ) as $Val);
   }
 
+  /// Create a copy of Alibabaalscunionelemepromotionofficialactivitygetresponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DataCopyWith<$Res> get data {
@@ -343,6 +366,8 @@ class __$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWithI
           _then)
       : super(_value, _then);
 
+  /// Create a copy of Alibabaalscunionelemepromotionofficialactivitygetresponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -421,12 +446,14 @@ class _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl
                 other.requestid == requestid));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, data, message, resultcode, requestid);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Alibabaalscunionelemepromotionofficialactivitygetresponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWith<
@@ -471,8 +498,11 @@ abstract class _Alibabaalscunionelemepromotionofficialactivitygetresponse
   @override
   @JsonKey(name: 'requestid')
   String get requestid;
+
+  /// Create a copy of Alibabaalscunionelemepromotionofficialactivitygetresponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AlibabaalscunionelemepromotionofficialactivitygetresponseImplCopyWith<
           _$AlibabaalscunionelemepromotionofficialactivitygetresponseImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -499,8 +529,12 @@ mixin _$Data {
   @JsonKey(name: 'title')
   String get title => throw _privateConstructorUsedError;
 
+  /// Serializes this Data to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DataCopyWith<Data> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -531,6 +565,8 @@ class _$DataCopyWithImpl<$Res, $Val extends Data>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -574,6 +610,8 @@ class _$DataCopyWithImpl<$Res, $Val extends Data>
     ) as $Val);
   }
 
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $LinkCopyWith<$Res> get link {
@@ -610,6 +648,8 @@ class __$$DataImplCopyWithImpl<$Res>
   __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -713,12 +753,14 @@ class _$DataImpl extends _Data {
             (identical(other.title, title) || other.title == title));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, description, endtime, id, link, picture, starttime, title);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
@@ -766,8 +808,11 @@ abstract class _Data extends Data {
   @override
   @JsonKey(name: 'title')
   String get title;
+
+  /// Create a copy of Data
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -801,8 +846,12 @@ mixin _$Link {
   @JsonKey(name: 'h5MiniQrcode')
   String get h5MiniQrcode => throw _privateConstructorUsedError;
 
+  /// Serializes this Link to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LinkCopyWith<Link> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -835,6 +884,8 @@ class _$LinkCopyWithImpl<$Res, $Val extends Link>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -927,6 +978,8 @@ class __$$LinkImplCopyWithImpl<$Res>
   __$$LinkImplCopyWithImpl(_$LinkImpl _value, $Res Function(_$LinkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1075,7 +1128,7 @@ class _$LinkImpl extends _Link {
                 other.h5MiniQrcode == h5MiniQrcode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1091,7 +1144,9 @@ class _$LinkImpl extends _Link {
       wxpath,
       h5MiniQrcode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LinkImplCopyWith<_$LinkImpl> get copyWith =>
@@ -1155,8 +1210,11 @@ abstract class _Link extends Link {
   @override
   @JsonKey(name: 'h5MiniQrcode')
   String get h5MiniQrcode;
+
+  /// Create a copy of Link
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LinkImplCopyWith<_$LinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

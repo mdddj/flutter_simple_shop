@@ -11,9 +11,9 @@ _$PageableImpl _$$PageableImplFromJson(Map<String, dynamic> json) =>
       sort: json['sort'] == null
           ? const PageableSort()
           : PageableSort.fromJson(json['sort'] as Map<String, dynamic>),
-      offset: json['offset'] as int? ?? 0,
-      pageNumber: json['pageNumber'] as int? ?? 0,
-      pageSize: json['pageSize'] as int? ?? 0,
+      offset: (json['offset'] as num?)?.toInt() ?? 0,
+      pageNumber: (json['pageNumber'] as num?)?.toInt() ?? 0,
+      pageSize: (json['pageSize'] as num?)?.toInt() ?? 0,
       unpaged: json['unpaged'] as bool? ?? false,
       paged: json['paged'] as bool? ?? false,
     );

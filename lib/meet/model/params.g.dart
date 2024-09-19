@@ -8,16 +8,16 @@ part of 'params.dart';
 
 _$AddMeetParamsImpl _$$AddMeetParamsImplFromJson(Map<String, dynamic> json) =>
     _$AddMeetParamsImpl(
-      id: json['id'] as int? ?? 0,
+      id: (json['id'] as num?)?.toInt() ?? 0,
       name: json['name'] as String? ?? '',
-      age: json['age'] as int? ?? 0,
+      age: (json['age'] as num?)?.toInt() ?? 0,
       soulname: json['soulName'] as String? ?? '',
       soulcodeimage: json['soulCodeImage'] as String? ?? '',
       mianjiinfo: json['mianjiInfo'] as String? ?? '',
       location: json['location'] as String? ?? '',
       tolocation: json['toLocation'] as String? ?? '',
       aboutdiandian: json['aboutDiandian'] as String? ?? '',
-      state: json['state'] as int? ?? 0,
+      state: (json['state'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$AddMeetParamsImplToJson(_$AddMeetParamsImpl instance) =>

@@ -19,7 +19,9 @@ mixin _$IndexProductsModel {
   List<Product> get products => throw _privateConstructorUsedError;
   int get page => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IndexProductsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $IndexProductsModelCopyWith<IndexProductsModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$IndexProductsModelCopyWithImpl<$Res, $Val extends IndexProductsModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of IndexProductsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$IndexProductsModelImplCopyWithImpl<$Res>
       $Res Function(_$IndexProductsModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of IndexProductsModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -136,7 +142,9 @@ class _$IndexProductsModelImpl implements _IndexProductsModel {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_products), page);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of IndexProductsModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$IndexProductsModelImplCopyWith<_$IndexProductsModelImpl> get copyWith =>
@@ -153,8 +161,11 @@ abstract class _IndexProductsModel implements IndexProductsModel {
   List<Product> get products;
   @override
   int get page;
+
+  /// Create a copy of IndexProductsModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$IndexProductsModelImplCopyWith<_$IndexProductsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

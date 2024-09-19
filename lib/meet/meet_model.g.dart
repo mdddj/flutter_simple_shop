@@ -9,8 +9,8 @@ part of 'meet_model.dart';
 _$MeetModelImpl _$$MeetModelImplFromJson(Map<String, dynamic> json) =>
     _$MeetModelImpl(
       aboutDiandian: json['aboutDiandian'] as String? ?? '',
-      age: json['age'] as int? ?? 0,
-      id: json['id'] as int,
+      age: (json['age'] as num?)?.toInt() ?? 0,
+      id: (json['id'] as num).toInt(),
       location: json['location'] as String? ?? '',
       mianjiInfo: json['mianjiInfo'] as String? ?? '',
       name: json['name'] as String? ?? '',
@@ -18,7 +18,7 @@ _$MeetModelImpl _$$MeetModelImplFromJson(Map<String, dynamic> json) =>
       soulName: json['soulName'] as String? ?? '',
       toLocation: json['toLocation'] as String? ?? '',
       createDate: json['createDate'] as String? ?? '',
-      state: json['state'] as int? ?? 0,
+      state: (json['state'] as num?)?.toInt() ?? 0,
       user: MyUser.fromJson(json['user'] as Map<String, dynamic>),
       images: json['images'] == null
           ? const IListConst([])

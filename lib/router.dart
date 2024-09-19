@@ -4,7 +4,10 @@ PagerUtil pagerUtil = GetIt.instance.get<PagerUtil>();
 
 class PagerUtil {
   ///首页
-  Pager get app => const Pager(routername: '/');
+  Pager get app => const Pager(routername: '/app');
+
+  /// home
+  Pager get home => const Pager(routername: '/home');
 
   ///发布动态页面
   Pager get resourceWrite => const Pager(routername: '/resource/write');
@@ -18,17 +21,38 @@ class PagerUtil {
   ///面基申请
   Pager get meetAdd => const Pager(routername: '/meet/add');
 
+  ///设置
   Pager get setting => const Pager(routername: '/setting');
 
+  ///登录
   Pager get login => const Pager(routername: '/login');
 
+  ///饿了么
   Pager get elm => const Pager(routername: '/elm');
 
+  ///品牌
   Pager get brand => const Pager(routername: '/brand');
 
+  ///搜索
   Pager get search => const Pager(routername: '/search');
 
+  ///订单
   Pager get order => const Pager(routername: '/order');
+
+  ///产品详情
+  Pager get goodsDetail => const Pager(routername: "/goods");
+
+  ///9.9
+  Pager get nineNine => const Pager(routername: '/nine-nine');
+
+  ///大分类
+  Pager get mainCategory => const Pager(routername: '/cates');
+
+  /// 产品收藏
+  Pager get fav => const Pager(routername: '/fav');
+
+  ///个人中心
+  Pager get profile => const Pager(routername: '/profile');
 }
 
 FutureOr<String?> redirectToLogin(BuildContext context, GoRouterState state) {
@@ -40,10 +64,51 @@ FutureOr<String?> redirectToLogin(BuildContext context, GoRouterState state) {
 
 ///页面路由
 final routers = GoRouter(
+  initialLocation: pagerUtil.home.routername,
   routes: [
+    StatefulShellRoute.indexedStack(
+      branches: [
+        StatefulShellBranch(routes: [
+          GoRoute(
+            path: pagerUtil.home.routername,
+            builder: (context, state) => const IndexHomeNew(),
+          ),
+        ]),
+        StatefulShellBranch(routes: [
+          GoRoute(
+            path: pagerUtil.nineNine.routername,
+            builder: (context, state) => const JiuJiuIndex(),
+          ),
+        ]),
+        StatefulShellBranch(routes: [
+          GoRoute(
+            path: pagerUtil.mainCategory.routername,
+            builder: (context, state) => const CategoryIndexPage(),
+          ),
+        ]),
+        StatefulShellBranch(routes: [
+          GoRoute(
+            path: pagerUtil.fav.routername,
+            builder: (context, state) => const FavoriteIndexHome(),
+          ),
+        ]),
+        StatefulShellBranch(routes: [
+          GoRoute(
+            path: pagerUtil.profile.routername,
+            builder: (context, state) => const UserCenterPage(),
+          ),
+        ])
+      ],
+      builder: (context, state, child) {
+        final isDesk = context.isDesktop;
+        final view =
+            isDesk ? DesktopApp(child: child) : MobileApp(child: child);
+        return InitView(view);
+      },
+    ),
     GoRoute(
       path: pagerUtil.app.routername,
-      builder: (context, state) => const MyApp(),
+      builder: (context, state) => const IndexHomeNew(),
     ),
     //发布动态
     GoRoute(
@@ -106,6 +171,10 @@ final routers = GoRouter(
     GoRoute(
       path: pagerUtil.order.routername,
       builder: (context, state) => const UserOrderIndex(),
-    )
+    ),
+    GoRoute(
+        path: pagerUtil.goodsDetail.routername,
+        builder: (context, state) =>
+            HaoDanKuDetailItem(goodsId: state.extra as String))
   ],
 );

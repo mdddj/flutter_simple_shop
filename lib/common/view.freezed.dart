@@ -19,7 +19,9 @@ mixin _$ApplocationContext {
   BuildContext get context => throw _privateConstructorUsedError;
   WidgetRef get ref => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplocationContext
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApplocationContextCopyWith<ApplocationContext> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$ApplocationContextCopyWithImpl<$Res, $Val extends ApplocationContext>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApplocationContext
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$ApplocationContextImplCopyWithImpl<$Res>
       $Res Function(_$ApplocationContextImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplocationContext
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,7 +133,9 @@ class _$ApplocationContextImpl implements _ApplocationContext {
   @override
   int get hashCode => Object.hash(runtimeType, context, ref);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplocationContext
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApplocationContextImplCopyWith<_$ApplocationContextImpl> get copyWith =>
@@ -144,8 +152,11 @@ abstract class _ApplocationContext implements ApplocationContext {
   BuildContext get context;
   @override
   WidgetRef get ref;
+
+  /// Create a copy of ApplocationContext
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApplocationContextImplCopyWith<_$ApplocationContextImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -159,7 +170,9 @@ mixin _$ApplicationModel {
   ApplocationContext get applocationContext =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplicationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ApplicationModelCopyWith<ApplicationModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -189,6 +202,8 @@ class _$ApplicationModelCopyWithImpl<$Res, $Val extends ApplicationModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ApplicationModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -217,6 +232,8 @@ class _$ApplicationModelCopyWithImpl<$Res, $Val extends ApplicationModel>
     ) as $Val);
   }
 
+  /// Create a copy of ApplicationModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ApplocationContextCopyWith<$Res> get applocationContext {
@@ -253,6 +270,8 @@ class __$$ApplicationModelImplCopyWithImpl<$Res>
       $Res Function(_$ApplicationModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ApplicationModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -326,7 +345,9 @@ class _$ApplicationModelImpl implements _ApplicationModel {
       const DeepCollectionEquality().hash(favoritesRepository),
       applocationContext);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ApplicationModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ApplicationModelImplCopyWith<_$ApplicationModelImpl> get copyWith =>
@@ -350,8 +371,11 @@ abstract class _ApplicationModel implements ApplicationModel {
   FavoritesRepository get favoritesRepository;
   @override
   ApplocationContext get applocationContext;
+
+  /// Create a copy of ApplicationModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ApplicationModelImplCopyWith<_$ApplicationModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

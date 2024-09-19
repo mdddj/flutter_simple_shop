@@ -22,8 +22,12 @@ UserDetailModal _$UserDetailModalFromJson(Map<String, dynamic> json) {
 mixin _$UserDetailModal {
   MyUser? get user => throw _privateConstructorUsedError;
 
+  /// Serializes this UserDetailModal to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserDetailModal
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserDetailModalCopyWith<UserDetailModal> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$UserDetailModalCopyWithImpl<$Res, $Val extends UserDetailModal>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserDetailModal
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -62,6 +68,8 @@ class _$UserDetailModalCopyWithImpl<$Res, $Val extends UserDetailModal>
     ) as $Val);
   }
 
+  /// Create a copy of UserDetailModal
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MyUserCopyWith<$Res>? get user {
@@ -97,6 +105,8 @@ class __$$UserDetailModalImplCopyWithImpl<$Res>
       _$UserDetailModalImpl _value, $Res Function(_$UserDetailModalImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserDetailModal
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -135,11 +145,13 @@ class _$UserDetailModalImpl implements _UserDetailModal {
             (identical(other.user, user) || other.user == user));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, user);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserDetailModal
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserDetailModalImplCopyWith<_$UserDetailModalImpl> get copyWith =>
@@ -162,8 +174,11 @@ abstract class _UserDetailModal implements UserDetailModal {
 
   @override
   MyUser? get user;
+
+  /// Create a copy of UserDetailModal
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserDetailModalImplCopyWith<_$UserDetailModalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
