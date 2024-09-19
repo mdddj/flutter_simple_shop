@@ -106,7 +106,7 @@ jobs:
     name: Build Flutter (${{ matrix.config }})
     runs-on: ${{ matrix.os }}
     env:
-      APP_DIR: example
+      APP_DIR: ./
     strategy:
       matrix:
         name: [ android, android-aab, web, linux, windows, ios, macos ]

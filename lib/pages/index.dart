@@ -42,7 +42,6 @@ import 'package:pull_to_refresh_notification/pull_to_refresh_notification.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 
 import '../api/apis.dart';
 import '../api/model/email_register_params.dart';

@@ -38,14 +38,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.3.4"
-  animated_text_kit:
-    dependency: "direct main"
-    description:
-      name: animated_text_kit
-      sha256: "37392a5376c9a1a503b02463c38bc0342ef814ddbb8f9977bc90f2a84b22fa92"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.2.2"
   archive:
     dependency: transitive
     description:
@@ -78,14 +70,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
-  badges:
-    dependency: "direct main"
-    description:
-      name: badges
-      sha256: a7b6bbd60dce418df0db3058b53f9d083c22cdb5132a052145dc267494df0b84
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.2"
   blurrycontainer:
     dependency: "direct main"
     description:
@@ -198,22 +182,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
-  carousel_pro_nullsafety:
-    dependency: "direct main"
-    description:
-      name: carousel_pro_nullsafety
-      sha256: "2b45788fb88f55f5d58ec2f2c0d1430bcb1096fec57969052bb831a68c9609d0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
-  carousel_slider:
-    dependency: "direct main"
-    description:
-      name: carousel_slider
-      sha256: "7b006ec356205054af5beaef62e2221160ea36b90fb70a35e4deacd49d0349ae"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.0"
   characters:
     dependency: transitive
     description:
@@ -326,14 +294,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.6"
-  date_format:
-    dependency: "direct main"
-    description:
-      name: date_format
-      sha256: a48254e60bdb7f1d5a15cac7f86e37491808056c0a99dbdc850841def4754ddc
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.9"
   dbus:
     dependency: transitive
     description:
@@ -446,38 +406,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.2.1"
-  extended_sliver:
-    dependency: "direct main"
-    description:
-      name: extended_sliver
-      sha256: "2198476e535aa0210656a9cf8b59331bf860bb543ac2431c5ec8d49bd76a310d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.3"
-  extended_tabs:
-    dependency: "direct main"
-    description:
-      name: extended_tabs
-      sha256: "97080e2d380e5217d257b3a68ddccf5077e705b74c24acd37b6f2c28cf6c2f01"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.0"
-  extended_text:
-    dependency: "direct main"
-    description:
-      name: extended_text
-      sha256: b0cdd240b4ddf61d18d7e33e7775195971f2d033bd69706fa897446dc96c3b81
-      url: "https://pub.dev"
-    source: hosted
-    version: "14.1.0"
-  extended_text_library:
-    dependency: transitive
-    description:
-      name: extended_text_library
-      sha256: "55d09098ec56fab0d9a8a68950ca0bbf2efa1327937f7cec6af6dfa066234829"
-      url: "https://pub.dev"
-    source: hosted
-    version: "12.0.0"
   fast_immutable_collections:
     dependency: "direct main"
     description:
@@ -664,14 +592,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.9.8+2"
-  flutter_spinkit:
-    dependency: "direct main"
-    description:
-      name: flutter_spinkit
-      sha256: d2696eed13732831414595b98863260e33e8882fc069ee80ec35d4ac9ddb0472
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.2.1"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -688,14 +608,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.3"
-  flutter_syntax_view:
-    dependency: "direct main"
-    description:
-      name: flutter_syntax_view
-      sha256: "09adfc7c4fa538587a9157cb4a98841bb96cb94bdc8176912da6a35c8b000e70"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.0"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -733,14 +645,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-  fsearch_nullsafety:
-    dependency: "direct main"
-    description:
-      name: fsearch_nullsafety
-      sha256: "1bb2f52547e6ef142a0fc6f21c6ef9316e94e94f4444a96a25bcc18fdf273f92"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
   fsuper_nullsafety:
     dependency: "direct main"
     description:
@@ -1101,14 +1005,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.0"
-  notus_format:
-    dependency: transitive
-    description:
-      name: notus_format
-      sha256: c3905a83a7106cc6b0986d097ca11dec71e20434d05a0e911c0ddb12baf838eb
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.3"
   octo_image:
     dependency: transitive
     description:
@@ -1341,14 +1237,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
-  quill_format:
-    dependency: transitive
-    description:
-      name: quill_format
-      sha256: f0b276ac31f5712b629e746186181f6a4e332c9c6f7687e57101d9cca8cab689
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.2"
   rational:
     dependency: transitive
     description:
@@ -1477,14 +1365,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.1"
-  shelf_proxy:
-    dependency: "direct main"
-    description:
-      name: shelf_proxy
-      sha256: a71d2307f4393211930c590c3d2c00630f6c5a7a77edc1ef6436dfd85a6a7ee3
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.4"
   shelf_web_socket:
     dependency: transitive
     description:
@@ -1514,14 +1394,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  sliver_tools:
-    dependency: "direct main"
-    description:
-      name: sliver_tools
-      sha256: eae28220badfb9d0559207badcbbc9ad5331aac829a88cb0964d330d2a4636a6
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.12"
   source_gen:
     dependency: transitive
     description:
@@ -1626,14 +1498,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  sync_scroll_library:
-    dependency: transitive
-    description:
-      name: sync_scroll_library
-      sha256: "2e266be24bb7b34686a4b9c592f8a1cd29778060fadd9f5df8535f2410caf196"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   synchronized:
     dependency: transitive
     description:
@@ -1642,14 +1506,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
-  tab_indicator_styler:
-    dependency: "direct main"
-    description:
-      name: tab_indicator_styler
-      sha256: "9e7e90367e20f71f3882fc6578fdcced35ab1c66ab20fcb623cdcc20d2796c76"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
   term_glyph:
     dependency: transitive
     description:
@@ -1906,14 +1762,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
-  zefyrka:
-    dependency: "direct main"
-    description:
-      name: zefyrka
-      sha256: "547066b152ba1258c65e57bf14a0245f1db4a16d2dab3e4a04cecdd9ea391471"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.6.0"
 sdks:
   dart: ">=3.5.0 <4.0.0"
   flutter: ">=3.24.3"
