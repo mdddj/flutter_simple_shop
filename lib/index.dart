@@ -3,7 +3,6 @@ library index;
 import 'dart:async';
 import 'dart:io';
 
-import 'package:animate_do/animate_do.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
@@ -18,18 +17,15 @@ import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 import 'api/apis.dart';
 import 'api/new/part.dart';
 import 'cache/index.dart';
 import 'common/index.dart';
 import 'common/view.dart';
-import 'constant/index.dart';
 import 'freezed/appbar_menu.dart';
 import 'freezed/application.dart';
 import 'freezed/pager.dart';
-import 'main.dart';
 import 'meet/add_new_meet.dart';
 import 'modals/dataoke/category.dart';
 import 'pages/index.dart';
@@ -40,8 +36,6 @@ import 'provider/index.dart';
 import 'resource/view.dart';
 import 'service/user_api.dart';
 import 'util/index.dart';
-import 'widgets/index.dart';
-import 'widgets/logo.dart';
 
 export 'common/index.dart';
 export 'constant/index.dart';
@@ -55,9 +49,6 @@ export 'util/index.dart';
 export 'widgets/index.dart';
 
 part 'ad.dart';
-
 part 'app.dart';
-
 part 'init.dart';
-
 part 'router.dart';
