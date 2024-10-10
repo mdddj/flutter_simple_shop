@@ -2,8 +2,7 @@ part of '../../index.dart';
 
 class BrandRepository extends MyLoadingModel<BrandItem> {
   final String cid;
-  int _page = 1;
-  bool _hasMore = true;
+  final bool _hasMore = true;
 
   BrandRepository(this.cid);
 
@@ -25,8 +24,7 @@ class BrandListWidget extends StatefulWidget {
   State<BrandListWidget> createState() => _BrandListWidgetState();
 }
 
-class _BrandListWidgetState extends State<BrandListWidget>
-    with AutomaticKeepAliveClientMixin {
+class _BrandListWidgetState extends State<BrandListWidget> with AutomaticKeepAliveClientMixin {
   late final response = BrandRepository(widget.cid);
 
   @override
@@ -37,8 +35,7 @@ class _BrandListWidgetState extends State<BrandListWidget>
         itemBuilder: _itemBuilder,
         sourceList: response,
         indicatorBuilder: _indicatorBuilder,
-        extendedListDelegate:
-            SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+        extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
           crossAxisCount: context.waterfallFlowCrossAxisCountWithBrand,
           crossAxisSpacing: 12,
           mainAxisSpacing: 12,

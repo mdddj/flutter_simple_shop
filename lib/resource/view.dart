@@ -1,4 +1,4 @@
-library resource;
+library;
 
 import 'dart:convert';
 import 'dart:io';
@@ -56,13 +56,10 @@ class _MyResourceListWidgetState extends State<MyResourceListWidget> {
         sourceList: _repository,
         indicatorBuilder: _indicatorBuilder,
         padding: isCard ? EdgeInsets.zero : const EdgeInsets.all(12),
-        extendedListDelegate:
-            SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
-                crossAxisCount: style == ResourceWidgetCardStyle.waterfall
-                    ? context.waterfallFlowCrossAxisCount
-                    : 1,
-                mainAxisSpacing: isCard ? 0 : 12,
-                crossAxisSpacing: 12),
+        extendedListDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+            crossAxisCount: style == ResourceWidgetCardStyle.waterfall ? context.waterfallFlowCrossAxisCount : 1,
+            mainAxisSpacing: isCard ? 0 : 12,
+            crossAxisSpacing: 12),
         lock: false));
   }
 

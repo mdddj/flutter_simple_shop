@@ -6,7 +6,6 @@ import '../../modals/dd/product.dart';
 final pyqRiverpod = ChangeNotifierProvider((ref) => PyqState());
 
 class PyqState extends ChangeNotifier {
-  int _page = 1;
   bool loading = false;
   List<Product> products = [];
   bool isQrcode = false;
@@ -36,7 +35,6 @@ class PyqState extends ChangeNotifier {
   }
 
   Future<void> nextPage() async {
-    _page++;
     await fetchData(nextPage: true);
   }
 }

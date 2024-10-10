@@ -1,4 +1,4 @@
-library api;
+library;
 
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/models.dart';
@@ -33,7 +33,7 @@ mixin ApiPageMixin<T> on BaseApi<T> {
 extension ApiExceptionEx on BaseApiException {
   String get message {
     return when(
-      cancel: () => '请求取消',
+      cancel: (err, _) => err?.toString() ?? '请求取消',
       connectionTimeout: () => "服务器无响应,请稍后再试-1",
       sendTimeout: () => '服务繁忙,请稍后再试-2',
       receiveTimeout: () => '服务繁忙,请稍后再试-3',
@@ -70,8 +70,7 @@ extension DartTypeModelEx on DartTypeModel {
 }
 
 abstract class AppCoreApiWithT<T> extends MyBaseApi<T> {
-  AppCoreApiWithT(super.url, [HttpMethod httpMethod = HttpMethod.get])
-      : super(httpMethod: httpMethod);
+  AppCoreApiWithT(super.url, [HttpMethod httpMethod = HttpMethod.get]) : super(httpMethod: httpMethod);
 
   @override
   T covertToModel(DartTypeModel data, RequestParams param) {
@@ -82,8 +81,7 @@ abstract class AppCoreApiWithT<T> extends MyBaseApi<T> {
 }
 
 abstract class AppCoreApiWithListT<T> extends MyBaseApi<List<T>> {
-  AppCoreApiWithListT(super.url, HttpMethod httpMethod)
-      : super(httpMethod: httpMethod);
+  AppCoreApiWithListT(super.url, HttpMethod httpMethod) : super(httpMethod: httpMethod);
 
   @override
   List<T> covertToModel(DartTypeModel data, RequestParams param) {
@@ -134,8 +132,7 @@ class FavoritesAddApi extends MyAppCoreApiWithWrapJson {
 
   @Doc(message: "服务器发起请求,添加收藏")
   static Future<WrapJson> doRequeset(AddFavoritesParams params) async {
-    final r =
-        await (FavoritesAddApi()).request(RequestParams(data: params.toJson()));
+    final r = await (FavoritesAddApi()).request(RequestParams(data: params.toJson()));
     return r;
   }
 }
@@ -154,8 +151,7 @@ class FavoritesFindListApi extends MyAppCoreApiWithWrapJson with ApiPageMixin {
 
 //删除收藏
 class FavoritesRemoveApi extends MyAppCoreApiWithWrapJson {
-  FavoritesRemoveApi(int id)
-      : super("$favoritesPrefix/remove", HttpMethod.post) {
+  FavoritesRemoveApi(int id) : super("$favoritesPrefix/remove", HttpMethod.post) {
     super.params.addAll({"idValue": id});
   }
 }
@@ -171,8 +167,7 @@ class KZheTaokeApiWithAppkeyGet extends MyAppCoreApiWithWrapJson {
 
   @Doc(message: '加载折淘客的APP Key')
   static Future<String> doRequest(Ref ref) async {
-    final appkey = await MyNewApiByZhetaokeAppKey()
-        .request(const RequestParams(showDefaultLoading: false));
+    final appkey = await MyNewApiByZhetaokeAppKey().request(const RequestParams(showDefaultLoading: false));
     ref.read(riverpodZhetaokeAppKeyState.notifier).state = appkey;
     return appkey;
   }
@@ -189,8 +184,7 @@ class SelectMeetListData extends MyAppCoreApiWithWrapJson with ApiPageMixin {
 }
 
 ///查询资源动态列表
-class SelectMyRsourceListData extends MyAppCoreApiWithWrapJson
-    with ApiPageMixin {
+class SelectMyRsourceListData extends MyAppCoreApiWithWrapJson with ApiPageMixin {
   SelectMyRsourceListData() : super("/api/app/resource/list");
 }
 
@@ -201,22 +195,19 @@ class MyResourceCreateApi extends MyAppCoreApiWithWrapJson {
 
 ///获取邮箱验证码接口
 class MyApiWithSendEmailValidCode extends MyAppCoreApiWithWrapJson {
-  MyApiWithSendEmailValidCode()
-      : super("/api/user-public/email-register", HttpMethod.post);
+  MyApiWithSendEmailValidCode() : super("/api/user-public/email-register", HttpMethod.post);
 }
 
 ///邮箱注册接口
 class MyApiWithEmailRegister extends MyAppCoreApiWithWrapJson {
-  MyApiWithEmailRegister(EmailRegisterParams params)
-      : super("/api/user-public/email-valid", HttpMethod.post) {
+  MyApiWithEmailRegister(EmailRegisterParams params) : super("/api/user-public/email-valid", HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
 }
 
 ///登录接口
 class MyApiWithLogin extends MyAppCoreApiWithWrapJson {
-  MyApiWithLogin(LoginParams params)
-      : super(params.getApiPath, HttpMethod.post) {
+  MyApiWithLogin(LoginParams params) : super(params.getApiPath, HttpMethod.post) {
     super.params.addAll(params.toJson());
   }
 }
@@ -238,8 +229,7 @@ class MyResourceListApi extends MyAppCoreApiWithWrapJson with ApiPageMixin {
 
 ///修改用户昵称
 class MyUpdateUserNameApi extends MyBaseApi<bool> {
-  MyUpdateUserNameApi()
-      : super('/api/user/update-username', httpMethod: HttpMethod.post);
+  MyUpdateUserNameApi() : super('/api/user/update-username', httpMethod: HttpMethod.post);
 
   @override
   bool covertToModel(DartTypeModel data, RequestParams param) {
@@ -265,8 +255,7 @@ class MyFindResourceCategoryApi extends AppCoreApiWithT<ResourceCategory> {
         );
 
   Future<ResourceCategory> doRequest(String name) async {
-    return await getIt.get<MyFindResourceCategoryApi>().request(
-        R(data: <String, dynamic>{"name": name}, showDefaultLoading: false));
+    return await getIt.get<MyFindResourceCategoryApi>().request(R(data: <String, dynamic>{"name": name}, showDefaultLoading: false));
   }
 
   @override
@@ -282,8 +271,7 @@ class MyUpdateUserAvatarApi extends MyAppCoreApiWithWrapJson {
 
 ///删除用户动态接口
 class MyDeleteUserResourceApi extends MyAppCoreApiWithWrapJson {
-  MyDeleteUserResourceApi()
-      : super('/api/app/resource/delete', HttpMethod.delete);
+  MyDeleteUserResourceApi() : super('/api/app/resource/delete', HttpMethod.delete);
 }
 
 ///获取用户的资源列表

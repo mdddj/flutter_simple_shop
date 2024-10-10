@@ -1,4 +1,4 @@
-library newapi;
+library;
 
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';

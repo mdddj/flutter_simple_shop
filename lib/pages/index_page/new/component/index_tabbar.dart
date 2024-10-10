@@ -6,7 +6,8 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
   IndexTabbar(this.tabController);
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       width: double.infinity,
       alignment: Alignment.center,
@@ -32,7 +33,6 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
               controller: tabController,
               isScrollable: true,
               labelColor: Colors.black,
-              indicator: MaterialIndicator(color: Colors.green, height: 5, horizontalPadding: 16, bottomLeftRadius: 15, bottomRightRadius: 15, topLeftRadius: 15, topRightRadius: 15),
             ),
             if (tabController.index == 2) categoryWidget()
           ],
@@ -72,12 +72,14 @@ class IndexTabbar extends SliverPersistentHeaderDelegate {
   double get minExtent => calcHei;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
+      false;
 }
 
 class IndexJdCategory extends SliverPersistentHeaderDelegate {
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return const SizedBox(height: 36, child: JdCategoryMiniWidget());
   }
 
@@ -88,7 +90,8 @@ class IndexJdCategory extends SliverPersistentHeaderDelegate {
   double get minExtent => 36;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
+      false;
 }
 
 class PindSliverWidget extends SliverPersistentHeaderDelegate {
@@ -97,7 +100,8 @@ class PindSliverWidget extends SliverPersistentHeaderDelegate {
   PindSliverWidget(this.child);
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return child;
   }
 
@@ -108,7 +112,8 @@ class PindSliverWidget extends SliverPersistentHeaderDelegate {
   double get minExtent => 36;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => false;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
+      false;
 }
 
 ///Android Studio Chipmunk | 2021.2.1 Patch 1
