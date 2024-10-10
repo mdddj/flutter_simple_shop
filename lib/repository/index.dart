@@ -1,4 +1,4 @@
-library repository;
+library;
 
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';

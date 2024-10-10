@@ -1,8 +1,8 @@
 // Flutter imports:
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:flutter/material.dart';
-
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import '../../widgets/index.dart';
 import '../index.dart';
 import 'riverpod.dart';
@@ -21,7 +21,7 @@ class ZheIndexState extends ConsumerState<ZheIndex> {
   void initState() {
     super.initState();
     Future.microtask(() async {
-      ref.read(zheRiverpod).onTabChange(0, context);
+      ref.read(zheRiverpod).onTabChange(0);
     });
   }
 
@@ -33,7 +33,7 @@ class ZheIndexState extends ConsumerState<ZheIndex> {
       appBar: SimpleAppBar(
         title: '折上折 - 拍两件更优惠',
         bottom: BottomCategoryTabs(
-          onTap: (index) => ref.read(zheRiverpod).onTabChange(index, context),
+          onTap: (index) => ref.read(zheRiverpod).onTabChange(index),
           insets: const [
             Tab(
               text: '推荐',

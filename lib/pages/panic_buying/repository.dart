@@ -8,7 +8,6 @@ class PanicBuyingModel extends ChangeNotifier {
 
   List<Category> cates = [];
   List<ProductModel> products = [];
-  int _page = 1;
   bool changeLoading = false;
 
   String rankType = '1';
@@ -61,7 +60,6 @@ class PanicBuyingModel extends ChangeNotifier {
   /// 下一页
   /// true 表示没有下一页了
   Future<bool> nextPage() async {
-    _page++;
     return await loadRealTimeProduct();
   }
 }

@@ -1,4 +1,4 @@
-library util;
+library;
 
 import 'dart:convert';
 import 'dart:io';

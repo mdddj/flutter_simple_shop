@@ -12,8 +12,7 @@ class RankingListRepository extends LoadingModel<Product> {
 
   RankingListRepository(this.params);
 
-  int _page = 1;
-  bool _hasmore = true;
+  final bool _hasmore = true;
 
   @override
   Future<bool> loadData([bool isLoadMoreAction = false]) async {

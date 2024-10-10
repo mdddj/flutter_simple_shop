@@ -1,2 +1,3 @@
-library service;
+library;
+
 export 'user_api.dart';

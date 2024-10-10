@@ -1,4 +1,4 @@
-library provider;
+library;
 
 import 'package:dd_js_util/dd_js_util.dart' hide CacheFactory;
 import 'package:dd_js_util/model/models.dart';
@@ -30,16 +30,29 @@ export 'riverpod/favorites/model.dart';
 export 'riverpod/index/index_products_model.dart';
 
 part 'ddq_provider.dart';
+
 part 'dtk_index_goods_provider.dart';
+
 part 'goods_detail_provider.dart';
+
 part 'goods_list_provider.dart';
+
 part 'index_provider.dart';
+
 part 'jd_products_provider.dart';
+
 part 'riverpod/base.dart';
+
 part 'riverpod/category_riverpod.dart';
+
 part 'riverpod/favorites/repository/favorites_repository.dart';
+
 part 'riverpod/favorites/riverpod.dart';
+
 part 'riverpod/index/riverpod.dart';
+
 part 'riverpod/search_riverpod.dart';
+
 part 'riverpod/user_riverpod.dart';
+
 part 'user_provider.dart';

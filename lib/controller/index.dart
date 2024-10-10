@@ -1,2 +1,3 @@
-library controller;
+library;
+
 export 'scroll_controllers.dart';

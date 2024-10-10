@@ -1,4 +1,4 @@
-library pages;
+library;
 
 import 'dart:async';
 import 'dart:convert';

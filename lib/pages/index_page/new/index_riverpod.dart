@@ -11,8 +11,6 @@ class IndexState extends ChangeNotifier {
   // 每日榜单的商品列表
   List<Product> hotDayProducts = [];
 
-  int _page = 1;
-
   // 获取畅销榜单商品
   Future<void> getHotDayProducts() async {
     notifyListeners();
@@ -28,7 +26,6 @@ class IndexState extends ChangeNotifier {
   Future<void> fetch() async {}
 
   Future<void> nextPage() async {
-    _page++;
     await fetch();
   }
 }

@@ -1,4 +1,4 @@
-library numeral;
+library;
 
 class Numeral {
   final num _number;

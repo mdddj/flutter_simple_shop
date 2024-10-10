@@ -3,8 +3,7 @@ part of 'index.dart';
 // 路由工具类
 class NavigatorUtil {
   // 跳转商品详情页方法
-  static void gotoGoodsDetailPage(BuildContext context, String goodsId,
-      {bool newViewPage = false}) {
+  static void gotoGoodsDetailPage(BuildContext context, String goodsId, {bool newViewPage = false}) {
     context.push(pagerUtil.goodsDetail.routername, extra: goodsId);
   }
 
@@ -36,8 +35,7 @@ class NavigatorUtil {
   }
 
   // 前往好单库商品详情页面
-  static void gotoHaodankuGoodsDetailPage(
-      BuildContext context, String? goodsId) {
+  static void gotoHaodankuGoodsDetailPage(BuildContext context, String? goodsId) {
     context.navToWidget(to: HaoDanKuDetailItem(goodsId: goodsId!));
   }
 
@@ -54,8 +52,9 @@ class NavigatorUtil {
 
   ///显示隐私政策的弹出
   static Future<void> showPrivacyPolicyDialog(BuildContext context) async {
+    final ctx = context;
     getIt.get<PrivacyCache>().isAgree().then((value) {
-      if (value.not) {
+      if (value.not && ctx.mounted) {
         //弹出隐私政策的弹出
         showDialog<bool>(
             context: context,
