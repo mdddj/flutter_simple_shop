@@ -386,7 +386,7 @@ class _Bg extends StatelessWidget {
               ),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                  context.primaryColor.withOpacity(.2), BlendMode.hue))),
+                  context.primaryColor.withValues(alpha: .2), BlendMode.hue))),
     );
   }
 }

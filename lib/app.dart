@@ -42,14 +42,12 @@ class AppBottomNav extends View {
               'assets/nav/$filename.png',
               height: kNavIconSize,
               width: kNavIconSize,
-              enableMemoryCache: true,
               color: context.primaryColor,
             ),
         elseBuild: () => ExtendedImage.asset(
               'assets/nav/$filename-n.png',
               height: kNavIconSize,
               width: kNavIconSize,
-              enableMemoryCache: true,
               color: context.iconColor,
             ));
   }

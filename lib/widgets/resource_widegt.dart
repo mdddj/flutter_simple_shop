@@ -146,7 +146,7 @@ class _Images extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
             decoration: BoxDecoration(
-                color: context.cardColor.withOpacity(.27),
+                color: context.cardColor.withValues(alpha: .27),
                 borderRadius: BorderRadius.circular(12)),
             child: Text('${resource.imageSize}张',
                 style: context.textTheme.labelSmall),

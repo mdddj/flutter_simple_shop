@@ -9,7 +9,14 @@ class CouponPriceWidget extends StatelessWidget {
   final double? interval; // 券后价和原价之间的间隔距离
   final bool? showDiscount; // 是否显示折扣
 
-  const CouponPriceWidget({required this.actualPrice, required this.originalPrice, this.couponPriceFontSize, this.originalPriceFontSize, this.interval, this.showDiscount, super.key});
+  const CouponPriceWidget(
+      {required this.actualPrice,
+      required this.originalPrice,
+      this.couponPriceFontSize,
+      this.originalPriceFontSize,
+      this.interval,
+      this.showDiscount,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +28,8 @@ class CouponPriceWidget extends StatelessWidget {
         ),
         Text(
           '¥',
-          style: TextStyle(fontSize: 15, color: context.primaryColor.withOpacity(.78)),
+          style: TextStyle(
+              fontSize: 15, color: context.primaryColor.withValues(alpha: .78)),
         ),
         Text(
           actualPrice.toString(),
@@ -31,11 +39,15 @@ class CouponPriceWidget extends StatelessWidget {
           margin: EdgeInsets.only(left: interval ?? 2.0),
           child: Text(
             '原价$originalPrice',
-            style: context.textTheme.labelSmall?.copyWith(decoration: TextDecoration.lineThrough, decorationColor: context.colorScheme.error),
+            style: context.textTheme.labelSmall?.copyWith(
+                decoration: TextDecoration.lineThrough,
+                decorationColor: context.colorScheme.error),
           ),
         ),
         //多少折
-        showDiscount != null && showDiscount! ? _buildDiscount() : const SizedBox()
+        showDiscount != null && showDiscount!
+            ? _buildDiscount()
+            : const SizedBox()
       ],
     );
   }
@@ -51,7 +63,8 @@ class CouponPriceWidget extends StatelessWidget {
       backgroundColor: primaryColor,
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       margin: const EdgeInsets.only(left: 10),
-      text: '${discount.toStringAsFixed(discount.truncateToDouble() == discount ? 0 : 1)}折',
+      text:
+          '${discount.toStringAsFixed(discount.truncateToDouble() == discount ? 0 : 1)}折',
     );
   }
 }

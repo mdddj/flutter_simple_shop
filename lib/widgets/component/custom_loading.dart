@@ -29,7 +29,5 @@ Widget loadingState(ExtendedImageState state) {
           ],
         ),
       );
-    default:
-      return Container();
   }
 }
