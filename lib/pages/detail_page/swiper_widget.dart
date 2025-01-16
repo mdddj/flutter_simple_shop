@@ -42,7 +42,7 @@ class SwiperWidget extends StatelessWidget {
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
-                      color: Colors.black26.withOpacity(0.8),
+                      color: Colors.black26.withValues(alpha: 0.8),
                     ),
                     child: Center(
                         child: IconButton(

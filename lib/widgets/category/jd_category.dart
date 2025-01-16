@@ -87,7 +87,12 @@ class JDCategoryItem extends StatelessWidget {
   final String name; // 分类名字
   final String svgName; // svg图标路径
   final Color color; // 背景颜色
-  const JDCategoryItem({super.key, required this.id, required this.name, required this.svgName, this.color = Colors.greenAccent});
+  const JDCategoryItem(
+      {super.key,
+      required this.id,
+      required this.name,
+      required this.svgName,
+      this.color = Colors.greenAccent});
 
   @override
   Widget build(BuildContext context) {
@@ -98,11 +103,14 @@ class JDCategoryItem extends StatelessWidget {
           Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                    color.withOpacity(.28),
-                    color.withOpacity(.77),
-                    color.withOpacity(.37),
-                  ], begin: AlignmentDirectional.topCenter, end: AlignmentDirectional.bottomCenter),
+                  gradient: LinearGradient(
+                      colors: [
+                        color.withValues(alpha: .28),
+                        color.withValues(alpha: .77),
+                        color.withValues(alpha: .37),
+                      ],
+                      begin: AlignmentDirectional.topCenter,
+                      end: AlignmentDirectional.bottomCenter),
                   borderRadius: BorderRadius.circular(1000)),
               alignment: Alignment.center,
               child: SvgPicture.asset(

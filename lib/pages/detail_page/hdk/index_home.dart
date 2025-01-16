@@ -190,7 +190,8 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                       color: Colors.white,
                       borderRadius: const BorderRadius.all(Radius.circular(35)),
                       border: Border.all(
-                          width: .5, color: Colors.black26.withOpacity(.2))),
+                          width: .5,
+                          color: Colors.black26.withValues(alpha: .2))),
                   child: const Icon(
                     Icons.vertical_align_top,
                     color: Colors.black,
@@ -676,7 +677,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           bottom: 12,
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.black26.withOpacity(.3),
+                color: Colors.black26.withValues(alpha: .3),
                 borderRadius: const BorderRadius.all(Radius.circular(5))),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
             child: Text(

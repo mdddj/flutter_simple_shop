@@ -12,11 +12,13 @@ class StoreItemCard extends ConsumerWidget {
   }
 
   Widget _buildInfo(BuildContext context, WidgetRef ref) {
-    final bgColor = ref.read(indexProviderRiverpod).brandBgColorMap[storeInfo.brandid] ?? Colors.grey[200];
+    final bgColor =
+        ref.read(indexProviderRiverpod).brandBgColorMap[storeInfo.brandid] ??
+            Colors.grey[200];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: bgColor!.withOpacity(.05),
+        color: bgColor!.withValues(alpha: .05),
         borderRadius: const BorderRadius.all(Radius.circular(5)),
       ),
       child: Column(
@@ -40,11 +42,15 @@ class StoreItemCard extends ConsumerWidget {
                     storeInfo.brandname,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 14, color: Colors.red, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.red,
+                        fontWeight: FontWeight.bold),
                   )
                 ],
               ),
-              Text('近期销量${storeInfo.sales}件', style: const TextStyle(color: Colors.black, fontSize: 11))
+              Text('近期销量${storeInfo.sales}件',
+                  style: const TextStyle(color: Colors.black, fontSize: 11))
             ],
           ),
         ],

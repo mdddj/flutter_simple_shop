@@ -19,7 +19,6 @@ class InitLoadingWidget extends StatelessWidget {
           SizedBox(height: context.paddingTop + 100),
           ExtendedImage.asset(
             'assets/images/logo.png',
-            enableMemoryCache: true,
             width: kLogoSize,
             height: kLogoSize,
           ),
