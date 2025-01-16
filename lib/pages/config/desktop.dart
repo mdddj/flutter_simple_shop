@@ -35,6 +35,7 @@ class DesktopApp extends ConsumerWidget {
                           currentIndex == bottomMenus.indexOf(element)),
                       width: kNavIconSize,
                       height: kNavIconSize,
+                      color: context.isDarkModel ? Colors.white : null,
                     ),
                     label: Text(element.title));
               }).toList(),
@@ -65,7 +66,7 @@ class DesktopApp extends ConsumerWidget {
                     Tooltip(
                       message: "退出登录",
                       child: IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.logout))
+                              onPressed: () {}, icon: const Icon(Icons.logout))
                           .ifShow(ref.isLogin),
                     ),
                     const SizedBox(height: 12)
@@ -77,6 +78,7 @@ class DesktopApp extends ConsumerWidget {
           Expanded(
             child: Center(
               child: Container(
+                  padding: EdgeInsets.all(12),
                   constraints: const BoxConstraints(
                       maxWidth: AppTheme.desktopContainerMaxWidth),
                   height: context.screenHeight,

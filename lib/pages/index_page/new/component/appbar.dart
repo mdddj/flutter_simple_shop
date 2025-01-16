@@ -35,7 +35,8 @@ class DeskTopAppbar extends StatelessWidget {
     return Container(
       height: kToolbarHeight + 38,
       width: context.screenWidth,
-      decoration: BoxDecoration(color: context.cardColor),
+      decoration: BoxDecoration(
+          color: context.cardColor, borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
           Row(
@@ -138,6 +139,7 @@ class IndexHomeBottomTabbar extends View {
       controller: tabController,
       isScrollable: true,
       tabAlignment: TabAlignment.start,
+      dividerHeight: 0,
       tabs: [
         const Tab(
           text: '精选',

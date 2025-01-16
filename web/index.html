@@ -1,38 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+    <base href="$FLUTTER_BASE_HREF">
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="A new Flutter project.">
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    <!-- iOS meta tags & icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="demo1">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+    <title>典典的小卖部</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        /* 加载动画的容器 */
+        #loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999; /* 保证在最上层 */
+        }
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="flutter_simple_shop">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+        /* 加载动画 */
+        #loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ccc; /* 灰色边框 */
+            border-top: 5px solid #007bff; /* 蓝色边框 */
+            border-radius: 50%; /* 圆形 */
+            animation: spin 1s linear infinite; /* 旋转动画 */
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>flutter_simple_shop</title>
-  <link rel="manifest" href="manifest.json">
+        /* 旋转动画 */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
-<body>
-  <script src="flutter_bootstrap.js" async></script>
+<body id="loading-container">
+<div id="loading-spinner"></div>
+<script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
