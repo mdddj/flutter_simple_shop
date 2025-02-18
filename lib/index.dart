@@ -26,6 +26,7 @@ import 'common/view.dart';
 import 'freezed/appbar_menu.dart';
 import 'freezed/application.dart';
 import 'freezed/pager.dart';
+import 'freezed/text_model.dart';
 import 'meet/add_new_meet.dart';
 import 'modals/dataoke/category.dart';
 import 'pages/index.dart';
@@ -49,6 +50,8 @@ export 'util/index.dart';
 export 'widgets/index.dart';
 
 part 'ad.dart';
+part 'api/new/text_api.dart';
 part 'app.dart';
 part 'init.dart';
+part 'provider/riverpod/text_list_provider.dart';
 part 'router.dart';

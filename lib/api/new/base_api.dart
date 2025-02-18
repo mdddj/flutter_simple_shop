@@ -14,8 +14,8 @@ class NewApiDioInstance {
     if (useEnv.debugMode) {
       await dioCheckPlugin
           .init(dio!,
-              initHost: '192.168.199.86',
-              port: 9999,
+              initHost: '192.168.199.89',
+              port: 9998,
               projectName: '典典的小卖部',
               timeOut: const Duration(milliseconds: 1200))
           .catchError((e) => debugPrint('$e'));

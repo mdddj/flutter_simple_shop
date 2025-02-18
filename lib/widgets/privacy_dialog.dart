@@ -8,7 +8,13 @@ class PrivacyDialog extends StatefulWidget {
 }
 
 class _PrivacyDialogState extends State<PrivacyDialog> {
-  final url = "${useEnv.host}:${useEnv.port}/privacy";
+  final url = "https://itbug.shop/single/privacy";
+
+  @override
+  void initState() {
+    super.initState();
+    Logger().d(url);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +27,20 @@ class _PrivacyDialogState extends State<PrivacyDialog> {
         margin: const EdgeInsets.only(bottom: 12, top: 12),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
         child: kIsWeb
-            ? HtmlTextWidget(
-                url: url,
-              )
+            ? HtmlTextWidget()
             : (Platform.isAndroid || Platform.isIOS
-                ? WebViewWidget(
-                    controller: WebViewController()
-                      ..loadRequest(Uri.parse(url))
-                      ..setBackgroundColor(context.theme.dialogBackgroundColor))
-                : HtmlTextWidget(
-                    url: url,
-                  )),
+            ? WebViewWidget(
+            controller: WebViewController()
+              ..loadRequest(Uri.parse(url))
+              ..setBackgroundColor(
+                  context.theme.dialogTheme.backgroundColor ??
+                      Colors.white))
+            : HtmlTextWidget()),
       ),
       actions: [
-        TextButton(onPressed: () => exit(0), child: const Text('退出程序'))
-            .marginOnly(right: 12),
+        if (!kIsWeb)
+          TextButton(onPressed: () => exit(0), child: const Text('退出程序'))
+              .marginOnly(right: 12),
         FilledButton(
             onPressed: () async {
               final nav = context.nav;
@@ -48,35 +53,29 @@ class _PrivacyDialogState extends State<PrivacyDialog> {
   }
 }
 
-class HtmlTextWidget extends StatefulWidget {
-  final String url;
-
-  const HtmlTextWidget({super.key, required this.url});
+class HtmlTextWidget extends ConsumerStatefulWidget {
+  const HtmlTextWidget({super.key});
 
   @override
-  State<HtmlTextWidget> createState() => _HtmlTextWidgetState();
+  ConsumerState<HtmlTextWidget> createState() => _HtmlTextWidgetState();
 }
 
-class _HtmlTextWidgetState extends State<HtmlTextWidget> {
-  String get url => widget.url;
-  final _model = _Model();
-
+class _HtmlTextWidgetState extends ConsumerState<HtmlTextWidget> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => _model.loadHtml(url));
   }
 
   @override
   Widget build(BuildContext context) {
-    return ScopedModel<_Model>(
-      model: _model,
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.all(12),
-        child: ScopedModelDescendant<_Model>(
-            builder: (_, __, model) => HtmlWidget(model.html)),
-      ),
-    );
+    return ref.watch(textListAllProvider).whenOrNull(
+      data: (data) {
+        final item = data.find((element) => element.name == "privacy");
+        final html = item?.context ?? '服务端没有配置隐私协议';
+        return HtmlWidget(html);
+      },
+    ) ??
+        SizedBox();
   }
 }
 
@@ -88,25 +87,5 @@ class StringRequest extends MyBaseApi<String> {
     return data
         .whenOrNull(string: (value) => value)
         .ifNullThrowBizException("获取数据失败");
-  }
-}
-
-class _Model extends Model {
-  String html = '';
-
-  void change(String value) {
-    html = value;
-    notifyListeners();
-  }
-
-  //加载html
-  Future<void> loadHtml(String url) async {
-    try {
-      final response = await StringRequest(Uri.parse(url).path)
-          .request(const R(showDefaultLoading: false, returnIsString: true));
-      change(response);
-    } on BaseApiException catch (e) {
-      toast(e.message);
-    }
   }
 }
