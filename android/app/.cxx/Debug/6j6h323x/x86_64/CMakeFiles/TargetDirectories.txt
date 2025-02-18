@@ -1,0 +1,2 @@
+/Users/ldd/flutter_simple_shop/android/app/.cxx/Debug/6j6h323x/x86_64/CMakeFiles/edit_cache.dir
+/Users/ldd/flutter_simple_shop/android/app/.cxx/Debug/6j6h323x/x86_64/CMakeFiles/rebuild_cache.dir

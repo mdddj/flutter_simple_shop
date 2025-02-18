@@ -23,7 +23,6 @@ linter:
     - constant_identifier_names
     - directives_ordering
     - slash_for_doc_comments
-    - package_api_docs
     - implementation_imports
     - avoid_relative_lib_imports
     - prefer_relative_imports

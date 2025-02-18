@@ -20,7 +20,7 @@ class _UpdateUserAvatarWidgetState
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 37),
           decoration:
-              BoxDecoration(color: context.kTheme.dialogBackgroundColor),
+              BoxDecoration(color: context.kTheme.dialogTheme.backgroundColor),
           child: Column(
             children: [
               Text(
