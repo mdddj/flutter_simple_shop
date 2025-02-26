@@ -1,6 +1,7 @@
 part of '../../index.dart';
 
 ///字典列表api
+///
 class MyTextModeListApi extends MyBaseApi<List<TextModel>> {
   MyTextModeListApi()
     : super("/api/blog/getTextAll", httpMethod: HttpMethod.get);

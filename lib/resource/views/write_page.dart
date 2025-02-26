@@ -20,14 +20,20 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   bool _showImageUploadComp = false; //是否显示图片上传组件
 
   ///分享的产品
-  late ProductShare? share = params.mapOrNull((value) => null,
-      dynWritePageParam: (value) => value.productShare);
+  late ProductShare? share = params.mapOrNull(
+    (value) => null,
+    dynWritePageParam: (value) => value.productShare,
+  );
 
-  late String appbarTitle = params.mapOrNull((value) => "发布",
-          dynWritePageParam: (value) => value.title) ??
+  late String appbarTitle =
+      params.mapOrNull(
+        (value) => "发布",
+        dynWritePageParam: (value) => value.title,
+      ) ??
       "发布";
 
-  late bool selectOtherCategoryDisabled = params.mapOrNull(
+  late bool selectOtherCategoryDisabled =
+      params.mapOrNull(
         (value) => false,
         dynWritePageParam: (value) => value.disableSelectOtherCategory,
       ) ??
@@ -47,22 +53,24 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
         ),
         actions: [
           IconButton(
-              onPressed: () {
-                context.hideKeyBoard();
-                context.askOk(const AskOkDialogParams(
-                    title: Text("提示"),
-                    content: Text('请文明发言,不要发布违规内容'),
-                    cancelText: '关闭',
-                    okText: '我知道了'));
-              },
-              icon: const Icon(
-                Icons.help,
-                color: Colors.grey,
-              )),
+            onPressed: () {
+              context.hideKeyBoard();
+              context.askOk(
+                const AskOkDialogParams(
+                  title: Text("提示"),
+                  content: Text('请文明发言,不要发布违规内容'),
+                  cancelText: '关闭',
+                  okText: '我知道了',
+                ),
+              );
+            },
+            icon: const Icon(Icons.help, color: Colors.grey),
+          ),
           FilledButton(
-              onPressed: content.isEmpty ? null : _submit,
-              child: const Text("发布")),
-          const SizedBox(width: 12)
+            onPressed: content.isEmpty ? null : _submit,
+            child: const Text("发布"),
+          ),
+          const SizedBox(width: 12),
         ],
       ),
       body: BodyExpandedWidget(
@@ -71,18 +79,15 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
           children: [
             TextField(
               decoration: _decoration("取个标题吧，非必须").copyWith(
-                  prefixIcon: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: LoginUserAvatar(),
-                  ),
-                  prefixIconColor: Colors.transparent),
+                prefixIcon: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: LoginUserAvatar(),
+                ),
+                prefixIconColor: Colors.transparent,
+              ),
               onChanged: (v) => title = v,
             ),
-            const Divider(
-              indent: 12,
-              endIndent: 12,
-              color: Colors.transparent,
-            ),
+            const Divider(indent: 12, endIndent: 12, color: Colors.transparent),
             Expanded(
               child: TextField(
                 decoration: _decoration(params.hintText ?? "说点什么吧"),
@@ -101,10 +106,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '添加图片(最多9张)',
-                      style: context.textTheme.titleMedium,
-                    ),
+                    Text('添加图片(最多9张)', style: context.textTheme.titleMedium),
                     const SizedBox(height: 6),
                     PictureSelection(
                       multipleChoice: true,
@@ -116,10 +118,12 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                           height: 100,
                           width: double.infinity,
                           decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: context.colorScheme.surfaceTint,
-                                  width: .2),
-                              borderRadius: BorderRadius.circular(12)),
+                            border: Border.all(
+                              color: context.colorScheme.surfaceTint,
+                              width: .2,
+                            ),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             padding: const EdgeInsets.all(12),
@@ -127,21 +131,27 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                ...images.map((e) => ConstrainedBox(
-                                      constraints:
-                                          const BoxConstraints(maxWidth: 92),
-                                      child: _ImageShow(
-                                          image: e,
-                                          onDelete: controller.remove),
-                                    )),
+                                ...images.map(
+                                  (e) => ConstrainedBox(
+                                    constraints: const BoxConstraints(
+                                      maxWidth: 92,
+                                    ),
+                                    child: _ImageShow(
+                                      image: e,
+                                      onDelete: controller.remove,
+                                    ),
+                                  ),
+                                ),
                                 if (showAddButton)
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: InkWell(
-                                        onTap: controller.showMenu,
-                                        child: const ImageWrapper(
-                                            child: Icon(Icons.add))),
-                                  )
+                                      onTap: controller.showMenu,
+                                      child: const ImageWrapper(
+                                        child: Icon(Icons.add),
+                                      ),
+                                    ),
+                                  ),
                               ],
                             ),
                           ),
@@ -152,7 +162,7 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
                 ),
               ),
             if (!_showImageUploadComp && showProductShareCard)
-              _ShareProductWidget(model: share)
+              _ShareProductWidget(model: share),
           ],
         ),
       ),
@@ -164,13 +174,14 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
 
   InputDecoration _decoration(String hint) {
     return InputDecoration(
-        hintText: hint,
-        fillColor: context.kTheme.scaffoldBackgroundColor,
-        filled: true,
-        hintStyle: const TextStyle(color: Colors.grey),
-        border: _inputBorder,
-        enabledBorder: _inputBorder,
-        focusedBorder: _inputBorder);
+      hintText: hint,
+      fillColor: context.kTheme.scaffoldBackgroundColor,
+      filled: true,
+      hintStyle: const TextStyle(color: Colors.grey),
+      border: _inputBorder,
+      enabledBorder: _inputBorder,
+      focusedBorder: _inputBorder,
+    );
   }
 
   Future<void> _submit() async {
@@ -189,17 +200,20 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
     kLog(data);
     api.formData = FormData.fromMap(data);
     final r = await api.request(const R());
-    r.simpleToast(ifOk: () {
-      GetIt.instance.get<UserResourceListRepository>().refresh(true); //刷新
-    });
+    r.simpleToast(
+      ifOk: () {
+        GetIt.instance.get<UserResourceListRepository>().refresh(true); //刷新
+      },
+    );
   }
 
   ///获取文件列表
   Future<List<MultipartFile>> _getFiles() async {
     var files = <MultipartFile>[];
     await Future.forEach(_selectionController.getFiles, (element) async {
-      final mf =
-          await MultipartFile.fromFile(element.localFilePath?.path ?? '');
+      final mf = await MultipartFile.fromFile(
+        element.localFilePath?.path ?? '',
+      );
       files.add(mf);
     });
     return files;
@@ -209,7 +223,11 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   Widget _builderActionButton() {
     return Container(
       padding: EdgeInsets.only(
-          bottom: context.bottomPadding - 6, left: 12, right: 12, top: 12),
+        bottom: context.bottomPadding - 6,
+        left: 12,
+        right: 12,
+        top: 12,
+      ),
       child: Column(
         children: [
           Row(
@@ -217,43 +235,47 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
             children: [
               SelectResCategory(
                 initCategoryName: widget.params.name,
-                onChange: (value) => setState(() {
-                  params = params.copyWith(name: value.name);
-                }),
+                onChange:
+                    (value) => setState(() {
+                      params = params.copyWith(name: value.name);
+                    }),
                 selectOther: !selectOtherCategoryDisabled,
               ).expanded,
               if (share != null)
                 ImageWrapper(
-                        child: Badge.count(
-                            count: 1,
-                            child: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    showProductShareCard =
-                                        !showProductShareCard;
-                                  });
-                                },
-                                icon: const Icon(Icons.shopping_bag_rounded))))
-                    .marginOnly(right: 6),
+                  child: Badge.count(
+                    count: 1,
+                    child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          showProductShareCard = !showProductShareCard;
+                        });
+                      },
+                      icon: const Icon(Icons.shopping_bag_rounded),
+                    ),
+                  ),
+                ).marginOnly(right: 6),
               ImageWrapper(
                 child: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        _showImageUploadComp = !_showImageUploadComp;
-                      });
-                    },
-                    icon: const Icon(Icons.image)),
+                  onPressed: () {
+                    setState(() {
+                      _showImageUploadComp = !_showImageUploadComp;
+                    });
+                  },
+                  icon: const Icon(Icons.image),
+                ),
               ),
               const SizedBox(width: 6),
               ImageWrapper(
                 child: IconButton(
-                    onPressed: () {
-                      context.hideKeyBoard();
-                    },
-                    icon: const Icon(Icons.keyboard_hide_outlined)),
-              )
+                  onPressed: () {
+                    context.hideKeyBoard();
+                  },
+                  icon: const Icon(Icons.keyboard_hide_outlined),
+                ),
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -277,39 +299,35 @@ class _ImageShow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final param = ImageParams(
-        size: double.infinity,
-        borderRadius: BorderRadius.circular(12),
-        shape: BoxShape.rectangle,
-        fit: BoxFit.cover);
+      size: double.infinity,
+      borderRadius: BorderRadius.circular(12),
+      shape: BoxShape.rectangle,
+      fit: BoxFit.cover,
+    );
     return Container(
       margin: const EdgeInsets.only(right: 12),
       child: Stack(
         children: [
-          image.when(
-            file: (file) {
-              return ImageView(
-                  image: MyImage.filePath(filePath: file.path, params: param));
-            },
-            network: (url) {
-              return ImageView(
-                image: MyImage.network(url: url, params: param),
-              );
-            },
-          ),
+          switch (image) {
+            XXFile(:final file) => ImageView(
+              image: MyImage.filePath(filePath: file.path, params: param),
+            ),
+            XXImage(:final url) => ImageView(
+              image: MyImage.network(url: url, params: param),
+            ),
+          },
           Positioned(
-              right: 0,
-              top: 0,
-              child: SizedBox(
-                width: 22,
-                height: 22,
-                child: IconButton(
-                    onPressed: () => onDelete?.call(image),
-                    icon: const Icon(
-                      Icons.delete,
-                      size: 12,
-                      color: Colors.grey,
-                    )),
-              ))
+            right: 0,
+            top: 0,
+            child: SizedBox(
+              width: 22,
+              height: 22,
+              child: IconButton(
+                onPressed: () => onDelete?.call(image),
+                icon: const Icon(Icons.delete, size: 12, color: Colors.grey),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -322,11 +340,12 @@ class SelectResCategory extends StatefulWidget {
   final ValueChanged<ResourceCategory>? onChange;
   final bool selectOther;
 
-  const SelectResCategory(
-      {super.key,
-      required this.initCategoryName,
-      this.onChange,
-      required this.selectOther});
+  const SelectResCategory({
+    super.key,
+    required this.initCategoryName,
+    this.onChange,
+    required this.selectOther,
+  });
 
   @override
   State<SelectResCategory> createState() => _SelectResCategoryState();
@@ -349,8 +368,9 @@ class _SelectResCategoryState extends State<SelectResCategory> {
         setState(() {});
         return;
       }
-      final result =
-          await getIt.get<MyFindResourceCategoryApi>().doRequest(name);
+      final result = await getIt.get<MyFindResourceCategoryApi>().doRequest(
+        name,
+      );
       selectResCategory = result;
       widget.onChange?.call(result);
       setState(() {});
@@ -365,18 +385,21 @@ class _SelectResCategoryState extends State<SelectResCategory> {
       width: context.screenWidth * 0.5,
       height: 50,
       child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Chip(
-                  label:
-                      Text(selectResCategory?.name ?? widget.initCategoryName)),
-              //后面放一些推荐的
-              if (widget.selectOther)
-                TextButton(onPressed: _selectMore, child: const Text('选择其他'))
-                    .marginOnly(left: 12)
-            ],
-          )),
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            Chip(
+              label: Text(selectResCategory?.name ?? widget.initCategoryName),
+            ),
+            //后面放一些推荐的
+            if (widget.selectOther)
+              TextButton(
+                onPressed: _selectMore,
+                child: const Text('选择其他'),
+              ).marginOnly(left: 12),
+          ],
+        ),
+      ),
     );
   }
 
@@ -392,13 +415,13 @@ class _SelectResCategoryState extends State<SelectResCategory> {
     context
         .navToWidget<ResourceCategory>(to: const SelectResourceCategoryPage())
         .then((value) {
-      if (value != null) {
-        setState(() {
-          selectResCategory = value;
+          if (value != null) {
+            setState(() {
+              selectResCategory = value;
+            });
+            widget.onChange?.call(value);
+          }
         });
-        widget.onChange?.call(value);
-      }
-    });
   }
 }
 
@@ -420,16 +443,17 @@ class _ShareProductWidget extends StatelessWidget {
         child: Row(
           children: [
             ImageView(
-                image: MyImage.network(
-                    url: model!.image,
-                    params: ImageParams(
-                        size: size,
-                        borderRadius: BorderRadius.circular(12),
-                        shape: BoxShape.rectangle,
-                        fit: BoxFit.cover))),
-            const SizedBox(
-              width: 12,
+              image: MyImage.network(
+                url: model!.image,
+                params: ImageParams(
+                  size: size,
+                  borderRadius: BorderRadius.circular(12),
+                  shape: BoxShape.rectangle,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
+            const SizedBox(width: 12),
             Expanded(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(minHeight: size),
@@ -440,13 +464,14 @@ class _ShareProductWidget extends StatelessWidget {
                     Text(model!.title, style: context.textTheme.titleMedium),
                     Text(
                       "售价:${model!.price}",
-                      style: context.textTheme.bodyMedium
-                          ?.copyWith(color: context.primaryColor),
-                    )
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        color: context.primaryColor,
+                      ),
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
