@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,236 +10,148 @@ part of 'meituran_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-MeituanResult _$MeituanResultFromJson(Map<String, dynamic> json) {
-  return _MeituanResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$MeituanResult {
-  @JsonKey(name: 'data')
-  String get data => throw _privateConstructorUsedError;
-  @JsonKey(name: 'des')
-  String get des => throw _privateConstructorUsedError;
-  @JsonKey(name: 'status')
-  int get status => throw _privateConstructorUsedError;
-  @JsonKey(name: 'successful')
-  bool get successful => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'data') String get data;@JsonKey(name: 'des') String get des;@JsonKey(name: 'status') int get status;@JsonKey(name: 'successful') bool get successful;
+/// Create a copy of MeituanResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$MeituanResultCopyWith<MeituanResult> get copyWith => _$MeituanResultCopyWithImpl<MeituanResult>(this as MeituanResult, _$identity);
 
   /// Serializes this MeituanResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of MeituanResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $MeituanResultCopyWith<MeituanResult> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MeituanResult&&(identical(other.data, data) || other.data == data)&&(identical(other.des, des) || other.des == des)&&(identical(other.status, status) || other.status == status)&&(identical(other.successful, successful) || other.successful == successful));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,data,des,status,successful);
+
+@override
+String toString() {
+  return 'MeituanResult(data: $data, des: $des, status: $status, successful: $successful)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $MeituanResultCopyWith<$Res> {
-  factory $MeituanResultCopyWith(
-          MeituanResult value, $Res Function(MeituanResult) then) =
-      _$MeituanResultCopyWithImpl<$Res, MeituanResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'data') String data,
-      @JsonKey(name: 'des') String des,
-      @JsonKey(name: 'status') int status,
-      @JsonKey(name: 'successful') bool successful});
-}
+abstract mixin class $MeituanResultCopyWith<$Res>  {
+  factory $MeituanResultCopyWith(MeituanResult value, $Res Function(MeituanResult) _then) = _$MeituanResultCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'data') String data,@JsonKey(name: 'des') String des,@JsonKey(name: 'status') int status,@JsonKey(name: 'successful') bool successful
+});
 
+
+
+
+}
 /// @nodoc
-class _$MeituanResultCopyWithImpl<$Res, $Val extends MeituanResult>
+class _$MeituanResultCopyWithImpl<$Res>
     implements $MeituanResultCopyWith<$Res> {
-  _$MeituanResultCopyWithImpl(this._value, this._then);
+  _$MeituanResultCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final MeituanResult _self;
+  final $Res Function(MeituanResult) _then;
 
-  /// Create a copy of MeituanResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-    Object? des = null,
-    Object? status = null,
-    Object? successful = null,
-  }) {
-    return _then(_value.copyWith(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String,
-      des: null == des
-          ? _value.des
-          : des // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
-      successful: null == successful
-          ? _value.successful
-          : successful // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
+/// Create a copy of MeituanResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? data = null,Object? des = null,Object? status = null,Object? successful = null,}) {
+  return _then(_self.copyWith(
+data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as String,des: null == des ? _self.des : des // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as int,successful: null == successful ? _self.successful : successful // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
 }
 
-/// @nodoc
-abstract class _$$MeituanResultImplCopyWith<$Res>
-    implements $MeituanResultCopyWith<$Res> {
-  factory _$$MeituanResultImplCopyWith(
-          _$MeituanResultImpl value, $Res Function(_$MeituanResultImpl) then) =
-      __$$MeituanResultImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'data') String data,
-      @JsonKey(name: 'des') String des,
-      @JsonKey(name: 'status') int status,
-      @JsonKey(name: 'successful') bool successful});
 }
 
-/// @nodoc
-class __$$MeituanResultImplCopyWithImpl<$Res>
-    extends _$MeituanResultCopyWithImpl<$Res, _$MeituanResultImpl>
-    implements _$$MeituanResultImplCopyWith<$Res> {
-  __$$MeituanResultImplCopyWithImpl(
-      _$MeituanResultImpl _value, $Res Function(_$MeituanResultImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of MeituanResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-    Object? des = null,
-    Object? status = null,
-    Object? successful = null,
-  }) {
-    return _then(_$MeituanResultImpl(
-      data: null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String,
-      des: null == des
-          ? _value.des
-          : des // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
-      successful: null == successful
-          ? _value.successful
-          : successful // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$MeituanResultImpl extends _MeituanResult {
-  const _$MeituanResultImpl(
-      {@JsonKey(name: 'data') this.data = '',
-      @JsonKey(name: 'des') this.des = '',
-      @JsonKey(name: 'status') this.status = 0,
-      @JsonKey(name: 'successful') this.successful = false})
-      : super._();
 
-  factory _$MeituanResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MeituanResultImplFromJson(json);
+class _MeituanResult extends MeituanResult {
+  const _MeituanResult({@JsonKey(name: 'data') this.data = '', @JsonKey(name: 'des') this.des = '', @JsonKey(name: 'status') this.status = 0, @JsonKey(name: 'successful') this.successful = false}): super._();
+  factory _MeituanResult.fromJson(Map<String, dynamic> json) => _$MeituanResultFromJson(json);
 
-  @override
-  @JsonKey(name: 'data')
-  final String data;
-  @override
-  @JsonKey(name: 'des')
-  final String des;
-  @override
-  @JsonKey(name: 'status')
-  final int status;
-  @override
-  @JsonKey(name: 'successful')
-  final bool successful;
+@override@JsonKey(name: 'data') final  String data;
+@override@JsonKey(name: 'des') final  String des;
+@override@JsonKey(name: 'status') final  int status;
+@override@JsonKey(name: 'successful') final  bool successful;
 
-  @override
-  String toString() {
-    return 'MeituanResult(data: $data, des: $des, status: $status, successful: $successful)';
-  }
+/// Create a copy of MeituanResult
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$MeituanResultCopyWith<_MeituanResult> get copyWith => __$MeituanResultCopyWithImpl<_MeituanResult>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MeituanResultImpl &&
-            (identical(other.data, data) || other.data == data) &&
-            (identical(other.des, des) || other.des == des) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.successful, successful) ||
-                other.successful == successful));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, data, des, status, successful);
-
-  /// Create a copy of MeituanResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MeituanResultImplCopyWith<_$MeituanResultImpl> get copyWith =>
-      __$$MeituanResultImplCopyWithImpl<_$MeituanResultImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MeituanResultImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$MeituanResultToJson(this, );
 }
 
-abstract class _MeituanResult extends MeituanResult {
-  const factory _MeituanResult(
-          {@JsonKey(name: 'data') final String data,
-          @JsonKey(name: 'des') final String des,
-          @JsonKey(name: 'status') final int status,
-          @JsonKey(name: 'successful') final bool successful}) =
-      _$MeituanResultImpl;
-  const _MeituanResult._() : super._();
-
-  factory _MeituanResult.fromJson(Map<String, dynamic> json) =
-      _$MeituanResultImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'data')
-  String get data;
-  @override
-  @JsonKey(name: 'des')
-  String get des;
-  @override
-  @JsonKey(name: 'status')
-  int get status;
-  @override
-  @JsonKey(name: 'successful')
-  bool get successful;
-
-  /// Create a copy of MeituanResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MeituanResultImplCopyWith<_$MeituanResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MeituanResult&&(identical(other.data, data) || other.data == data)&&(identical(other.des, des) || other.des == des)&&(identical(other.status, status) || other.status == status)&&(identical(other.successful, successful) || other.successful == successful));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,data,des,status,successful);
+
+@override
+String toString() {
+  return 'MeituanResult(data: $data, des: $des, status: $status, successful: $successful)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$MeituanResultCopyWith<$Res> implements $MeituanResultCopyWith<$Res> {
+  factory _$MeituanResultCopyWith(_MeituanResult value, $Res Function(_MeituanResult) _then) = __$MeituanResultCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'data') String data,@JsonKey(name: 'des') String des,@JsonKey(name: 'status') int status,@JsonKey(name: 'successful') bool successful
+});
+
+
+
+
+}
+/// @nodoc
+class __$MeituanResultCopyWithImpl<$Res>
+    implements _$MeituanResultCopyWith<$Res> {
+  __$MeituanResultCopyWithImpl(this._self, this._then);
+
+  final _MeituanResult _self;
+  final $Res Function(_MeituanResult) _then;
+
+/// Create a copy of MeituanResult
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? data = null,Object? des = null,Object? status = null,Object? successful = null,}) {
+  return _then(_MeituanResult(
+data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as String,des: null == des ? _self.des : des // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as int,successful: null == successful ? _self.successful : successful // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
+}
+
+// dart format on

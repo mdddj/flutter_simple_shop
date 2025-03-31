@@ -6,17 +6,18 @@ part of 'simple_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SimpleResultImpl _$$SimpleResultImplFromJson(Map<String, dynamic> json) =>
-    _$SimpleResultImpl(
+_SimpleResult _$SimpleResultFromJson(Map<String, dynamic> json) =>
+    _SimpleResult(
       message: json['message'] as String? ?? '',
       state: (json['state'] as num?)?.toInt() ?? 0,
       success: json['success'] as bool? ?? false,
-      type: $enumDecodeNullable(_$ResultTypeEnumMap, json['type']) ??
+      type:
+          $enumDecodeNullable(_$ResultTypeEnumMap, json['type']) ??
           ResultType.none,
       data: json['data'],
     );
 
-Map<String, dynamic> _$$SimpleResultImplToJson(_$SimpleResultImpl instance) =>
+Map<String, dynamic> _$SimpleResultToJson(_SimpleResult instance) =>
     <String, dynamic>{
       'message': instance.message,
       'state': instance.state,

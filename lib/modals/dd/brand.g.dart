@@ -6,27 +6,27 @@ part of 'brand.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BrandItemImpl _$$BrandItemImplFromJson(Map<String, dynamic> json) =>
-    _$BrandItemImpl(
-      brandid: (json['brandId'] as num?)?.toInt() ?? 0,
-      cid: (json['cid'] as num?)?.toInt() ?? 0,
-      brandname: json['brandName'] as String? ?? '',
-      brandlogo: json['brandLogo'] as String? ?? '',
-      brandfeatures: json['brandFeatures'] as String? ?? '',
-      sales: (json['sales'] as num?)?.toInt() ?? 0,
-      maxdiscountamount: (json['maxDiscountAmount'] as num?)?.toInt() ?? 0,
-      maxdiscount: (json['maxDiscount'] as num?)?.toDouble() ?? 0.0,
-      branddesc: json['brandDesc'] as String? ?? '',
-      sort: (json['sort'] as num?)?.toInt() ?? 0,
-      goodslist: json['goodsList'] == null
+_BrandItem _$BrandItemFromJson(Map<String, dynamic> json) => _BrandItem(
+  brandid: (json['brandId'] as num?)?.toInt() ?? 0,
+  cid: (json['cid'] as num?)?.toInt() ?? 0,
+  brandname: json['brandName'] as String? ?? '',
+  brandlogo: json['brandLogo'] as String? ?? '',
+  brandfeatures: json['brandFeatures'] as String? ?? '',
+  sales: (json['sales'] as num?)?.toInt() ?? 0,
+  maxdiscountamount: (json['maxDiscountAmount'] as num?)?.toInt() ?? 0,
+  maxdiscount: (json['maxDiscount'] as num?)?.toDouble() ?? 0.0,
+  branddesc: json['brandDesc'] as String? ?? '',
+  sort: (json['sort'] as num?)?.toInt() ?? 0,
+  goodslist:
+      json['goodsList'] == null
           ? const IListConst([])
           : IList<BrandGoodslist>.fromJson(
-              json['goodsList'],
-              (value) =>
-                  BrandGoodslist.fromJson(value as Map<String, dynamic>)),
-    );
+            json['goodsList'],
+            (value) => BrandGoodslist.fromJson(value as Map<String, dynamic>),
+          ),
+);
 
-Map<String, dynamic> _$$BrandItemImplToJson(_$BrandItemImpl instance) =>
+Map<String, dynamic> _$BrandItemToJson(_BrandItem instance) =>
     <String, dynamic>{
       'brandId': instance.brandid,
       'cid': instance.cid,
@@ -38,13 +38,11 @@ Map<String, dynamic> _$$BrandItemImplToJson(_$BrandItemImpl instance) =>
       'maxDiscount': instance.maxdiscount,
       'brandDesc': instance.branddesc,
       'sort': instance.sort,
-      'goodsList': instance.goodslist.toJson(
-        (value) => value,
-      ),
+      'goodsList': instance.goodslist.toJson((value) => value),
     };
 
-_$BrandGoodslistImpl _$$BrandGoodslistImplFromJson(Map<String, dynamic> json) =>
-    _$BrandGoodslistImpl(
+_BrandGoodslist _$BrandGoodslistFromJson(Map<String, dynamic> json) =>
+    _BrandGoodslist(
       activitytype: json['activityType'] as num? ?? 0,
       actualprice: json['actualPrice'] as num? ?? 0,
       brandid: json['brandId'] as String? ?? '',
@@ -77,8 +75,7 @@ _$BrandGoodslistImpl _$$BrandGoodslistImplFromJson(Map<String, dynamic> json) =>
       video: json['video'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$BrandGoodslistImplToJson(
-        _$BrandGoodslistImpl instance) =>
+Map<String, dynamic> _$BrandGoodslistToJson(_BrandGoodslist instance) =>
     <String, dynamic>{
       'activityType': instance.activitytype,
       'actualPrice': instance.actualprice,
@@ -112,24 +109,23 @@ Map<String, dynamic> _$$BrandGoodslistImplToJson(
       'video': instance.video,
     };
 
-_$BrandListResultImpl _$$BrandListResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BrandListResultImpl(
-      lists: json['lists'] == null
-          ? const IListConst([])
-          : IList<BrandItem>.fromJson(json['lists'],
-              (value) => BrandItem.fromJson(value as Map<String, dynamic>)),
+_BrandListResult _$BrandListResultFromJson(Map<String, dynamic> json) =>
+    _BrandListResult(
+      lists:
+          json['lists'] == null
+              ? const IListConst([])
+              : IList<BrandItem>.fromJson(
+                json['lists'],
+                (value) => BrandItem.fromJson(value as Map<String, dynamic>),
+              ),
       pagesize: (json['pagesize'] as num?)?.toInt() ?? 0,
       currentpage: (json['currentpage'] as num?)?.toInt() ?? 0,
       totalcount: (json['totalcount'] as num?)?.toInt() ?? 0,
     );
 
-Map<String, dynamic> _$$BrandListResultImplToJson(
-        _$BrandListResultImpl instance) =>
+Map<String, dynamic> _$BrandListResultToJson(_BrandListResult instance) =>
     <String, dynamic>{
-      'lists': instance.lists.toJson(
-        (value) => value,
-      ),
+      'lists': instance.lists.toJson((value) => value),
       'pagesize': instance.pagesize,
       'currentpage': instance.currentpage,
       'totalcount': instance.totalcount,

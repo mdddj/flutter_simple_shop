@@ -6,16 +6,13 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserDetailModalImpl _$$UserDetailModalImplFromJson(
-        Map<String, dynamic> json) =>
-    _$UserDetailModalImpl(
-      user: json['user'] == null
-          ? null
-          : MyUser.fromJson(json['user'] as Map<String, dynamic>),
+_UserDetailModal _$UserDetailModalFromJson(Map<String, dynamic> json) =>
+    _UserDetailModal(
+      user:
+          json['user'] == null
+              ? null
+              : MyUser.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$UserDetailModalImplToJson(
-        _$UserDetailModalImpl instance) =>
-    <String, dynamic>{
-      'user': instance.user,
-    };
+Map<String, dynamic> _$UserDetailModalToJson(_UserDetailModal instance) =>
+    <String, dynamic>{'user': instance.user};

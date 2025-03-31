@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,176 +10,163 @@ part of 'user.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-UserDetailModal _$UserDetailModalFromJson(Map<String, dynamic> json) {
-  return _UserDetailModal.fromJson(json);
-}
 
 /// @nodoc
 mixin _$UserDetailModal {
-  MyUser? get user => throw _privateConstructorUsedError;
+
+ MyUser? get user;
+/// Create a copy of UserDetailModal
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$UserDetailModalCopyWith<UserDetailModal> get copyWith => _$UserDetailModalCopyWithImpl<UserDetailModal>(this as UserDetailModal, _$identity);
 
   /// Serializes this UserDetailModal to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of UserDetailModal
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $UserDetailModalCopyWith<UserDetailModal> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UserDetailModal&&(identical(other.user, user) || other.user == user));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,user);
+
+@override
+String toString() {
+  return 'UserDetailModal(user: $user)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $UserDetailModalCopyWith<$Res> {
-  factory $UserDetailModalCopyWith(
-          UserDetailModal value, $Res Function(UserDetailModal) then) =
-      _$UserDetailModalCopyWithImpl<$Res, UserDetailModal>;
-  @useResult
-  $Res call({MyUser? user});
+abstract mixin class $UserDetailModalCopyWith<$Res>  {
+  factory $UserDetailModalCopyWith(UserDetailModal value, $Res Function(UserDetailModal) _then) = _$UserDetailModalCopyWithImpl;
+@useResult
+$Res call({
+ MyUser? user
+});
 
-  $MyUserCopyWith<$Res>? get user;
+
+$MyUserCopyWith<$Res>? get user;
+
 }
-
 /// @nodoc
-class _$UserDetailModalCopyWithImpl<$Res, $Val extends UserDetailModal>
+class _$UserDetailModalCopyWithImpl<$Res>
     implements $UserDetailModalCopyWith<$Res> {
-  _$UserDetailModalCopyWithImpl(this._value, this._then);
+  _$UserDetailModalCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final UserDetailModal _self;
+  final $Res Function(UserDetailModal) _then;
 
-  /// Create a copy of UserDetailModal
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(_value.copyWith(
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as MyUser?,
-    ) as $Val);
+/// Create a copy of UserDetailModal
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? user = freezed,}) {
+  return _then(_self.copyWith(
+user: freezed == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
+as MyUser?,
+  ));
+}
+/// Create a copy of UserDetailModal
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$MyUserCopyWith<$Res>? get user {
+    if (_self.user == null) {
+    return null;
   }
 
-  /// Create a copy of UserDetailModal
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $MyUserCopyWith<$Res>? get user {
-    if (_value.user == null) {
-      return null;
-    }
-
-    return $MyUserCopyWith<$Res>(_value.user!, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
+  return $MyUserCopyWith<$Res>(_self.user!, (value) {
+    return _then(_self.copyWith(user: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$UserDetailModalImplCopyWith<$Res>
-    implements $UserDetailModalCopyWith<$Res> {
-  factory _$$UserDetailModalImplCopyWith(_$UserDetailModalImpl value,
-          $Res Function(_$UserDetailModalImpl) then) =
-      __$$UserDetailModalImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({MyUser? user});
-
-  @override
-  $MyUserCopyWith<$Res>? get user;
-}
-
-/// @nodoc
-class __$$UserDetailModalImplCopyWithImpl<$Res>
-    extends _$UserDetailModalCopyWithImpl<$Res, _$UserDetailModalImpl>
-    implements _$$UserDetailModalImplCopyWith<$Res> {
-  __$$UserDetailModalImplCopyWithImpl(
-      _$UserDetailModalImpl _value, $Res Function(_$UserDetailModalImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UserDetailModal
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(_$UserDetailModalImpl(
-      user: freezed == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as MyUser?,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$UserDetailModalImpl implements _UserDetailModal {
-  const _$UserDetailModalImpl({this.user});
 
-  factory _$UserDetailModalImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserDetailModalImplFromJson(json);
+class _UserDetailModal implements UserDetailModal {
+  const _UserDetailModal({this.user});
+  factory _UserDetailModal.fromJson(Map<String, dynamic> json) => _$UserDetailModalFromJson(json);
 
-  @override
-  final MyUser? user;
+@override final  MyUser? user;
 
-  @override
-  String toString() {
-    return 'UserDetailModal(user: $user)';
-  }
+/// Create a copy of UserDetailModal
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$UserDetailModalCopyWith<_UserDetailModal> get copyWith => __$UserDetailModalCopyWithImpl<_UserDetailModal>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserDetailModalImpl &&
-            (identical(other.user, user) || other.user == user));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, user);
-
-  /// Create a copy of UserDetailModal
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserDetailModalImplCopyWith<_$UserDetailModalImpl> get copyWith =>
-      __$$UserDetailModalImplCopyWithImpl<_$UserDetailModalImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UserDetailModalImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$UserDetailModalToJson(this, );
 }
 
-abstract class _UserDetailModal implements UserDetailModal {
-  const factory _UserDetailModal({final MyUser? user}) = _$UserDetailModalImpl;
-
-  factory _UserDetailModal.fromJson(Map<String, dynamic> json) =
-      _$UserDetailModalImpl.fromJson;
-
-  @override
-  MyUser? get user;
-
-  /// Create a copy of UserDetailModal
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserDetailModalImplCopyWith<_$UserDetailModalImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UserDetailModal&&(identical(other.user, user) || other.user == user));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,user);
+
+@override
+String toString() {
+  return 'UserDetailModal(user: $user)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$UserDetailModalCopyWith<$Res> implements $UserDetailModalCopyWith<$Res> {
+  factory _$UserDetailModalCopyWith(_UserDetailModal value, $Res Function(_UserDetailModal) _then) = __$UserDetailModalCopyWithImpl;
+@override @useResult
+$Res call({
+ MyUser? user
+});
+
+
+@override $MyUserCopyWith<$Res>? get user;
+
+}
+/// @nodoc
+class __$UserDetailModalCopyWithImpl<$Res>
+    implements _$UserDetailModalCopyWith<$Res> {
+  __$UserDetailModalCopyWithImpl(this._self, this._then);
+
+  final _UserDetailModal _self;
+  final $Res Function(_UserDetailModal) _then;
+
+/// Create a copy of UserDetailModal
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? user = freezed,}) {
+  return _then(_UserDetailModal(
+user: freezed == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
+as MyUser?,
+  ));
+}
+
+/// Create a copy of UserDetailModal
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$MyUserCopyWith<$Res>? get user {
+    if (_self.user == null) {
+    return null;
+  }
+
+  return $MyUserCopyWith<$Res>(_self.user!, (value) {
+    return _then(_self.copyWith(user: value));
+  });
+}
+}
+
+// dart format on

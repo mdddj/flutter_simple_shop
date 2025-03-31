@@ -6,14 +6,13 @@ part of 'login_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LoginParamsImpl _$$LoginParamsImplFromJson(Map<String, dynamic> json) =>
-    _$LoginParamsImpl(
-      logintype: json['loginType'] as String? ?? '',
-      password: json['password'] as String? ?? '',
-      loginnumber: json['loginNumber'] as String? ?? '',
-    );
+_LoginParams _$LoginParamsFromJson(Map<String, dynamic> json) => _LoginParams(
+  logintype: json['loginType'] as String? ?? '',
+  password: json['password'] as String? ?? '',
+  loginnumber: json['loginNumber'] as String? ?? '',
+);
 
-Map<String, dynamic> _$$LoginParamsImplToJson(_$LoginParamsImpl instance) =>
+Map<String, dynamic> _$LoginParamsToJson(_LoginParams instance) =>
     <String, dynamic>{
       'loginType': instance.logintype,
       'password': instance.password,

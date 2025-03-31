@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,292 +10,179 @@ part of 'goods_list_params_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$GoodsListParamsModel {
-  Category get category => throw _privateConstructorUsedError;
-  set category(Category value) => throw _privateConstructorUsedError;
-  Subcategory? get subcategor => throw _privateConstructorUsedError;
-  set subcategor(Subcategory? value) => throw _privateConstructorUsedError;
-  String get sort => throw _privateConstructorUsedError;
-  set sort(String value) => throw _privateConstructorUsedError;
-  List<Product> get products => throw _privateConstructorUsedError;
-  set products(List<Product> value) => throw _privateConstructorUsedError;
-  int get page => throw _privateConstructorUsedError;
-  set page(int value) => throw _privateConstructorUsedError;
-  bool get initLoading => throw _privateConstructorUsedError;
-  set initLoading(bool value) => throw _privateConstructorUsedError;
-  CancelToken? get cancelToken => throw _privateConstructorUsedError;
-  set cancelToken(CancelToken? value) => throw _privateConstructorUsedError;
 
-  /// Create a copy of GoodsListParamsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $GoodsListParamsModelCopyWith<GoodsListParamsModel> get copyWith =>
-      throw _privateConstructorUsedError;
+ Category get category; set category(Category value); Subcategory? get subcategor; set subcategor(Subcategory? value); String get sort; set sort(String value); List<Product> get products; set products(List<Product> value); int get page; set page(int value); bool get initLoading; set initLoading(bool value); CancelToken? get cancelToken; set cancelToken(CancelToken? value);
+/// Create a copy of GoodsListParamsModel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GoodsListParamsModelCopyWith<GoodsListParamsModel> get copyWith => _$GoodsListParamsModelCopyWithImpl<GoodsListParamsModel>(this as GoodsListParamsModel, _$identity);
+
+
+
+
+
+@override
+String toString() {
+  return 'GoodsListParamsModel(category: $category, subcategor: $subcategor, sort: $sort, products: $products, page: $page, initLoading: $initLoading, cancelToken: $cancelToken)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $GoodsListParamsModelCopyWith<$Res> {
-  factory $GoodsListParamsModelCopyWith(GoodsListParamsModel value,
-          $Res Function(GoodsListParamsModel) then) =
-      _$GoodsListParamsModelCopyWithImpl<$Res, GoodsListParamsModel>;
-  @useResult
-  $Res call(
-      {Category category,
-      Subcategory? subcategor,
-      String sort,
-      List<Product> products,
-      int page,
-      bool initLoading,
-      CancelToken? cancelToken});
+abstract mixin class $GoodsListParamsModelCopyWith<$Res>  {
+  factory $GoodsListParamsModelCopyWith(GoodsListParamsModel value, $Res Function(GoodsListParamsModel) _then) = _$GoodsListParamsModelCopyWithImpl;
+@useResult
+$Res call({
+ Category category, Subcategory? subcategor, String sort, List<Product> products, int page, bool initLoading, CancelToken? cancelToken
+});
 
-  $CategoryCopyWith<$Res> get category;
-  $SubcategoryCopyWith<$Res>? get subcategor;
+
+$CategoryCopyWith<$Res> get category;$SubcategoryCopyWith<$Res>? get subcategor;
+
 }
-
 /// @nodoc
-class _$GoodsListParamsModelCopyWithImpl<$Res,
-        $Val extends GoodsListParamsModel>
+class _$GoodsListParamsModelCopyWithImpl<$Res>
     implements $GoodsListParamsModelCopyWith<$Res> {
-  _$GoodsListParamsModelCopyWithImpl(this._value, this._then);
+  _$GoodsListParamsModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final GoodsListParamsModel _self;
+  final $Res Function(GoodsListParamsModel) _then;
 
-  /// Create a copy of GoodsListParamsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? category = null,
-    Object? subcategor = freezed,
-    Object? sort = null,
-    Object? products = null,
-    Object? page = null,
-    Object? initLoading = null,
-    Object? cancelToken = freezed,
-  }) {
-    return _then(_value.copyWith(
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as Category,
-      subcategor: freezed == subcategor
-          ? _value.subcategor
-          : subcategor // ignore: cast_nullable_to_non_nullable
-              as Subcategory?,
-      sort: null == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as String,
-      products: null == products
-          ? _value.products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      initLoading: null == initLoading
-          ? _value.initLoading
-          : initLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      cancelToken: freezed == cancelToken
-          ? _value.cancelToken
-          : cancelToken // ignore: cast_nullable_to_non_nullable
-              as CancelToken?,
-    ) as $Val);
+/// Create a copy of GoodsListParamsModel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? category = null,Object? subcategor = freezed,Object? sort = null,Object? products = null,Object? page = null,Object? initLoading = null,Object? cancelToken = freezed,}) {
+  return _then(_self.copyWith(
+category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as Category,subcategor: freezed == subcategor ? _self.subcategor : subcategor // ignore: cast_nullable_to_non_nullable
+as Subcategory?,sort: null == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as String,products: null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
+as List<Product>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int,initLoading: null == initLoading ? _self.initLoading : initLoading // ignore: cast_nullable_to_non_nullable
+as bool,cancelToken: freezed == cancelToken ? _self.cancelToken : cancelToken // ignore: cast_nullable_to_non_nullable
+as CancelToken?,
+  ));
+}
+/// Create a copy of GoodsListParamsModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CategoryCopyWith<$Res> get category {
+  
+  return $CategoryCopyWith<$Res>(_self.category, (value) {
+    return _then(_self.copyWith(category: value));
+  });
+}/// Create a copy of GoodsListParamsModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SubcategoryCopyWith<$Res>? get subcategor {
+    if (_self.subcategor == null) {
+    return null;
   }
 
-  /// Create a copy of GoodsListParamsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CategoryCopyWith<$Res> get category {
-    return $CategoryCopyWith<$Res>(_value.category, (value) {
-      return _then(_value.copyWith(category: value) as $Val);
-    });
-  }
-
-  /// Create a copy of GoodsListParamsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SubcategoryCopyWith<$Res>? get subcategor {
-    if (_value.subcategor == null) {
-      return null;
-    }
-
-    return $SubcategoryCopyWith<$Res>(_value.subcategor!, (value) {
-      return _then(_value.copyWith(subcategor: value) as $Val);
-    });
-  }
+  return $SubcategoryCopyWith<$Res>(_self.subcategor!, (value) {
+    return _then(_self.copyWith(subcategor: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$GoodsListParamsModelImplCopyWith<$Res>
-    implements $GoodsListParamsModelCopyWith<$Res> {
-  factory _$$GoodsListParamsModelImplCopyWith(_$GoodsListParamsModelImpl value,
-          $Res Function(_$GoodsListParamsModelImpl) then) =
-      __$$GoodsListParamsModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {Category category,
-      Subcategory? subcategor,
-      String sort,
-      List<Product> products,
-      int page,
-      bool initLoading,
-      CancelToken? cancelToken});
-
-  @override
-  $CategoryCopyWith<$Res> get category;
-  @override
-  $SubcategoryCopyWith<$Res>? get subcategor;
-}
-
-/// @nodoc
-class __$$GoodsListParamsModelImplCopyWithImpl<$Res>
-    extends _$GoodsListParamsModelCopyWithImpl<$Res, _$GoodsListParamsModelImpl>
-    implements _$$GoodsListParamsModelImplCopyWith<$Res> {
-  __$$GoodsListParamsModelImplCopyWithImpl(_$GoodsListParamsModelImpl _value,
-      $Res Function(_$GoodsListParamsModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GoodsListParamsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? category = null,
-    Object? subcategor = freezed,
-    Object? sort = null,
-    Object? products = null,
-    Object? page = null,
-    Object? initLoading = null,
-    Object? cancelToken = freezed,
-  }) {
-    return _then(_$GoodsListParamsModelImpl(
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as Category,
-      subcategor: freezed == subcategor
-          ? _value.subcategor
-          : subcategor // ignore: cast_nullable_to_non_nullable
-              as Subcategory?,
-      sort: null == sort
-          ? _value.sort
-          : sort // ignore: cast_nullable_to_non_nullable
-              as String,
-      products: null == products
-          ? _value.products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      initLoading: null == initLoading
-          ? _value.initLoading
-          : initLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      cancelToken: freezed == cancelToken
-          ? _value.cancelToken
-          : cancelToken // ignore: cast_nullable_to_non_nullable
-              as CancelToken?,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$GoodsListParamsModelImpl implements _GoodsListParamsModel {
-  _$GoodsListParamsModelImpl(
-      {required this.category,
-      this.subcategor,
-      this.sort = DdSort.defaultSort,
-      required this.products,
-      required this.page,
-      required this.initLoading,
-      this.cancelToken});
 
-  @override
-  Category category;
-  @override
-  Subcategory? subcategor;
-  @override
-  @JsonKey()
-  String sort;
-  @override
-  List<Product> products;
-  @override
-  int page;
-  @override
-  bool initLoading;
-  @override
-  CancelToken? cancelToken;
+class _GoodsListParamsModel implements GoodsListParamsModel {
+   _GoodsListParamsModel({required this.category, this.subcategor, this.sort = DdSort.defaultSort, required this.products, required this.page, required this.initLoading, this.cancelToken});
+  
 
-  @override
-  String toString() {
-    return 'GoodsListParamsModel(category: $category, subcategor: $subcategor, sort: $sort, products: $products, page: $page, initLoading: $initLoading, cancelToken: $cancelToken)';
+@override  Category category;
+@override  Subcategory? subcategor;
+@override@JsonKey()  String sort;
+@override  List<Product> products;
+@override  int page;
+@override  bool initLoading;
+@override  CancelToken? cancelToken;
+
+/// Create a copy of GoodsListParamsModel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$GoodsListParamsModelCopyWith<_GoodsListParamsModel> get copyWith => __$GoodsListParamsModelCopyWithImpl<_GoodsListParamsModel>(this, _$identity);
+
+
+
+
+
+@override
+String toString() {
+  return 'GoodsListParamsModel(category: $category, subcategor: $subcategor, sort: $sort, products: $products, page: $page, initLoading: $initLoading, cancelToken: $cancelToken)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$GoodsListParamsModelCopyWith<$Res> implements $GoodsListParamsModelCopyWith<$Res> {
+  factory _$GoodsListParamsModelCopyWith(_GoodsListParamsModel value, $Res Function(_GoodsListParamsModel) _then) = __$GoodsListParamsModelCopyWithImpl;
+@override @useResult
+$Res call({
+ Category category, Subcategory? subcategor, String sort, List<Product> products, int page, bool initLoading, CancelToken? cancelToken
+});
+
+
+@override $CategoryCopyWith<$Res> get category;@override $SubcategoryCopyWith<$Res>? get subcategor;
+
+}
+/// @nodoc
+class __$GoodsListParamsModelCopyWithImpl<$Res>
+    implements _$GoodsListParamsModelCopyWith<$Res> {
+  __$GoodsListParamsModelCopyWithImpl(this._self, this._then);
+
+  final _GoodsListParamsModel _self;
+  final $Res Function(_GoodsListParamsModel) _then;
+
+/// Create a copy of GoodsListParamsModel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? category = null,Object? subcategor = freezed,Object? sort = null,Object? products = null,Object? page = null,Object? initLoading = null,Object? cancelToken = freezed,}) {
+  return _then(_GoodsListParamsModel(
+category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as Category,subcategor: freezed == subcategor ? _self.subcategor : subcategor // ignore: cast_nullable_to_non_nullable
+as Subcategory?,sort: null == sort ? _self.sort : sort // ignore: cast_nullable_to_non_nullable
+as String,products: null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
+as List<Product>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int,initLoading: null == initLoading ? _self.initLoading : initLoading // ignore: cast_nullable_to_non_nullable
+as bool,cancelToken: freezed == cancelToken ? _self.cancelToken : cancelToken // ignore: cast_nullable_to_non_nullable
+as CancelToken?,
+  ));
+}
+
+/// Create a copy of GoodsListParamsModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CategoryCopyWith<$Res> get category {
+  
+  return $CategoryCopyWith<$Res>(_self.category, (value) {
+    return _then(_self.copyWith(category: value));
+  });
+}/// Create a copy of GoodsListParamsModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$SubcategoryCopyWith<$Res>? get subcategor {
+    if (_self.subcategor == null) {
+    return null;
   }
 
-  /// Create a copy of GoodsListParamsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GoodsListParamsModelImplCopyWith<_$GoodsListParamsModelImpl>
-      get copyWith =>
-          __$$GoodsListParamsModelImplCopyWithImpl<_$GoodsListParamsModelImpl>(
-              this, _$identity);
+  return $SubcategoryCopyWith<$Res>(_self.subcategor!, (value) {
+    return _then(_self.copyWith(subcategor: value));
+  });
+}
 }
 
-abstract class _GoodsListParamsModel implements GoodsListParamsModel {
-  factory _GoodsListParamsModel(
-      {required Category category,
-      Subcategory? subcategor,
-      String sort,
-      required List<Product> products,
-      required int page,
-      required bool initLoading,
-      CancelToken? cancelToken}) = _$GoodsListParamsModelImpl;
-
-  @override
-  Category get category;
-  set category(Category value);
-  @override
-  Subcategory? get subcategor;
-  set subcategor(Subcategory? value);
-  @override
-  String get sort;
-  set sort(String value);
-  @override
-  List<Product> get products;
-  set products(List<Product> value);
-  @override
-  int get page;
-  set page(int value);
-  @override
-  bool get initLoading;
-  set initLoading(bool value);
-  @override
-  CancelToken? get cancelToken;
-  set cancelToken(CancelToken? value);
-
-  /// Create a copy of GoodsListParamsModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GoodsListParamsModelImplCopyWith<_$GoodsListParamsModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

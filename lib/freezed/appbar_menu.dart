@@ -1,8 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'appbar_menu.g.dart';
-
 part 'appbar_menu.freezed.dart';
+part 'appbar_menu.g.dart';
 
 extension AppbarMenuEx on AppbarMenu {
   String getAssetPath(bool isSelect) {
@@ -11,7 +10,7 @@ extension AppbarMenuEx on AppbarMenu {
 }
 
 @freezed
-class AppbarMenu with _$AppbarMenu {
+abstract class AppbarMenu with _$AppbarMenu {
   const AppbarMenu._();
 
   const factory AppbarMenu({

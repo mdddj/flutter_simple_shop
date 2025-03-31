@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,167 +10,142 @@ part of 'app_action_menu.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$AppActionMenu {
-  @JsonKey(name: 'title')
-  String get title => throw _privateConstructorUsedError;
-  List<ListTile> get actions => throw _privateConstructorUsedError;
 
-  /// Create a copy of AppActionMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AppActionMenuCopyWith<AppActionMenu> get copyWith =>
-      throw _privateConstructorUsedError;
+@JsonKey(name: 'title') String get title; List<ListTile> get actions;
+/// Create a copy of AppActionMenu
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AppActionMenuCopyWith<AppActionMenu> get copyWith => _$AppActionMenuCopyWithImpl<AppActionMenu>(this as AppActionMenu, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppActionMenu&&(identical(other.title, title) || other.title == title)&&const DeepCollectionEquality().equals(other.actions, actions));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,title,const DeepCollectionEquality().hash(actions));
+
+@override
+String toString() {
+  return 'AppActionMenu(title: $title, actions: $actions)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AppActionMenuCopyWith<$Res> {
-  factory $AppActionMenuCopyWith(
-          AppActionMenu value, $Res Function(AppActionMenu) then) =
-      _$AppActionMenuCopyWithImpl<$Res, AppActionMenu>;
-  @useResult
-  $Res call({@JsonKey(name: 'title') String title, List<ListTile> actions});
-}
+abstract mixin class $AppActionMenuCopyWith<$Res>  {
+  factory $AppActionMenuCopyWith(AppActionMenu value, $Res Function(AppActionMenu) _then) = _$AppActionMenuCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'title') String title, List<ListTile> actions
+});
 
+
+
+
+}
 /// @nodoc
-class _$AppActionMenuCopyWithImpl<$Res, $Val extends AppActionMenu>
+class _$AppActionMenuCopyWithImpl<$Res>
     implements $AppActionMenuCopyWith<$Res> {
-  _$AppActionMenuCopyWithImpl(this._value, this._then);
+  _$AppActionMenuCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AppActionMenu _self;
+  final $Res Function(AppActionMenu) _then;
 
-  /// Create a copy of AppActionMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? title = null,
-    Object? actions = null,
-  }) {
-    return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      actions: null == actions
-          ? _value.actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as List<ListTile>,
-    ) as $Val);
-  }
+/// Create a copy of AppActionMenu
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? title = null,Object? actions = null,}) {
+  return _then(_self.copyWith(
+title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,actions: null == actions ? _self.actions : actions // ignore: cast_nullable_to_non_nullable
+as List<ListTile>,
+  ));
 }
 
-/// @nodoc
-abstract class _$$AppActionMenuImplCopyWith<$Res>
-    implements $AppActionMenuCopyWith<$Res> {
-  factory _$$AppActionMenuImplCopyWith(
-          _$AppActionMenuImpl value, $Res Function(_$AppActionMenuImpl) then) =
-      __$$AppActionMenuImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'title') String title, List<ListTile> actions});
 }
 
-/// @nodoc
-class __$$AppActionMenuImplCopyWithImpl<$Res>
-    extends _$AppActionMenuCopyWithImpl<$Res, _$AppActionMenuImpl>
-    implements _$$AppActionMenuImplCopyWith<$Res> {
-  __$$AppActionMenuImplCopyWithImpl(
-      _$AppActionMenuImpl _value, $Res Function(_$AppActionMenuImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AppActionMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? title = null,
-    Object? actions = null,
-  }) {
-    return _then(_$AppActionMenuImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      actions: null == actions
-          ? _value._actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as List<ListTile>,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$AppActionMenuImpl extends _AppActionMenu {
-  const _$AppActionMenuImpl(
-      {@JsonKey(name: 'title') this.title = '',
-      required final List<ListTile> actions})
-      : _actions = actions,
-        super._();
 
-  @override
-  @JsonKey(name: 'title')
-  final String title;
-  final List<ListTile> _actions;
-  @override
-  List<ListTile> get actions {
-    if (_actions is EqualUnmodifiableListView) return _actions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_actions);
-  }
+class _AppActionMenu extends AppActionMenu {
+  const _AppActionMenu({@JsonKey(name: 'title') this.title = '', required final  List<ListTile> actions}): _actions = actions,super._();
+  
 
-  @override
-  String toString() {
-    return 'AppActionMenu(title: $title, actions: $actions)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AppActionMenuImpl &&
-            (identical(other.title, title) || other.title == title) &&
-            const DeepCollectionEquality().equals(other._actions, _actions));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, title, const DeepCollectionEquality().hash(_actions));
-
-  /// Create a copy of AppActionMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AppActionMenuImplCopyWith<_$AppActionMenuImpl> get copyWith =>
-      __$$AppActionMenuImplCopyWithImpl<_$AppActionMenuImpl>(this, _$identity);
+@override@JsonKey(name: 'title') final  String title;
+ final  List<ListTile> _actions;
+@override List<ListTile> get actions {
+  if (_actions is EqualUnmodifiableListView) return _actions;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_actions);
 }
 
-abstract class _AppActionMenu extends AppActionMenu {
-  const factory _AppActionMenu(
-      {@JsonKey(name: 'title') final String title,
-      required final List<ListTile> actions}) = _$AppActionMenuImpl;
-  const _AppActionMenu._() : super._();
 
-  @override
-  @JsonKey(name: 'title')
-  String get title;
-  @override
-  List<ListTile> get actions;
+/// Create a copy of AppActionMenu
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AppActionMenuCopyWith<_AppActionMenu> get copyWith => __$AppActionMenuCopyWithImpl<_AppActionMenu>(this, _$identity);
 
-  /// Create a copy of AppActionMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppActionMenuImplCopyWith<_$AppActionMenuImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppActionMenu&&(identical(other.title, title) || other.title == title)&&const DeepCollectionEquality().equals(other._actions, _actions));
 }
+
+
+@override
+int get hashCode => Object.hash(runtimeType,title,const DeepCollectionEquality().hash(_actions));
+
+@override
+String toString() {
+  return 'AppActionMenu(title: $title, actions: $actions)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AppActionMenuCopyWith<$Res> implements $AppActionMenuCopyWith<$Res> {
+  factory _$AppActionMenuCopyWith(_AppActionMenu value, $Res Function(_AppActionMenu) _then) = __$AppActionMenuCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'title') String title, List<ListTile> actions
+});
+
+
+
+
+}
+/// @nodoc
+class __$AppActionMenuCopyWithImpl<$Res>
+    implements _$AppActionMenuCopyWith<$Res> {
+  __$AppActionMenuCopyWithImpl(this._self, this._then);
+
+  final _AppActionMenu _self;
+  final $Res Function(_AppActionMenu) _then;
+
+/// Create a copy of AppActionMenu
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? title = null,Object? actions = null,}) {
+  return _then(_AppActionMenu(
+title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,actions: null == actions ? _self._actions : actions // ignore: cast_nullable_to_non_nullable
+as List<ListTile>,
+  ));
+}
+
+
+}
+
+// dart format on

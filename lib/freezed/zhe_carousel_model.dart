@@ -1,10 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'zhe_carousel_model.freezed.dart';
+
 part 'zhe_carousel_model.g.dart';
 
 @freezed
-class ZheCarouselResult with _$ZheCarouselResult {
+sealed class ZheCarouselResult with _$ZheCarouselResult {
   const ZheCarouselResult._();
 
   const factory ZheCarouselResult({
@@ -17,7 +18,7 @@ class ZheCarouselResult with _$ZheCarouselResult {
 }
 
 @freezed
-class ZheCarousel with _$ZheCarousel {
+sealed class ZheCarousel with _$ZheCarousel {
   const ZheCarousel._();
 
   const factory ZheCarousel({

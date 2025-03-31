@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,203 +10,160 @@ part of 'login_result_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-LoginResultModel _$LoginResultModelFromJson(Map<String, dynamic> json) {
-  return _LoginResultModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$LoginResultModel {
-  @JsonKey(name: 'token')
-  String get token => throw _privateConstructorUsedError;
-  @JsonKey(name: 'user')
-  MyUser get user => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'token') String get token;@JsonKey(name: 'user') MyUser get user;
+/// Create a copy of LoginResultModel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$LoginResultModelCopyWith<LoginResultModel> get copyWith => _$LoginResultModelCopyWithImpl<LoginResultModel>(this as LoginResultModel, _$identity);
 
   /// Serializes this LoginResultModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of LoginResultModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LoginResultModelCopyWith<LoginResultModel> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginResultModel&&(identical(other.token, token) || other.token == token)&&(identical(other.user, user) || other.user == user));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,token,user);
+
+@override
+String toString() {
+  return 'LoginResultModel(token: $token, user: $user)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $LoginResultModelCopyWith<$Res> {
-  factory $LoginResultModelCopyWith(
-          LoginResultModel value, $Res Function(LoginResultModel) then) =
-      _$LoginResultModelCopyWithImpl<$Res, LoginResultModel>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'token') String token,
-      @JsonKey(name: 'user') MyUser user});
+abstract mixin class $LoginResultModelCopyWith<$Res>  {
+  factory $LoginResultModelCopyWith(LoginResultModel value, $Res Function(LoginResultModel) _then) = _$LoginResultModelCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'token') String token,@JsonKey(name: 'user') MyUser user
+});
 
-  $MyUserCopyWith<$Res> get user;
+
+$MyUserCopyWith<$Res> get user;
+
 }
-
 /// @nodoc
-class _$LoginResultModelCopyWithImpl<$Res, $Val extends LoginResultModel>
+class _$LoginResultModelCopyWithImpl<$Res>
     implements $LoginResultModelCopyWith<$Res> {
-  _$LoginResultModelCopyWithImpl(this._value, this._then);
+  _$LoginResultModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final LoginResultModel _self;
+  final $Res Function(LoginResultModel) _then;
 
-  /// Create a copy of LoginResultModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-    Object? user = null,
-  }) {
-    return _then(_value.copyWith(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as MyUser,
-    ) as $Val);
-  }
-
-  /// Create a copy of LoginResultModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $MyUserCopyWith<$Res> get user {
-    return $MyUserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
+/// Create a copy of LoginResultModel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? token = null,Object? user = null,}) {
+  return _then(_self.copyWith(
+token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
+as MyUser,
+  ));
+}
+/// Create a copy of LoginResultModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$MyUserCopyWith<$Res> get user {
+  
+  return $MyUserCopyWith<$Res>(_self.user, (value) {
+    return _then(_self.copyWith(user: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$LoginResultModelImplCopyWith<$Res>
-    implements $LoginResultModelCopyWith<$Res> {
-  factory _$$LoginResultModelImplCopyWith(_$LoginResultModelImpl value,
-          $Res Function(_$LoginResultModelImpl) then) =
-      __$$LoginResultModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'token') String token,
-      @JsonKey(name: 'user') MyUser user});
-
-  @override
-  $MyUserCopyWith<$Res> get user;
-}
-
-/// @nodoc
-class __$$LoginResultModelImplCopyWithImpl<$Res>
-    extends _$LoginResultModelCopyWithImpl<$Res, _$LoginResultModelImpl>
-    implements _$$LoginResultModelImplCopyWith<$Res> {
-  __$$LoginResultModelImplCopyWithImpl(_$LoginResultModelImpl _value,
-      $Res Function(_$LoginResultModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LoginResultModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-    Object? user = null,
-  }) {
-    return _then(_$LoginResultModelImpl(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as MyUser,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$LoginResultModelImpl implements _LoginResultModel {
-  const _$LoginResultModelImpl(
-      {@JsonKey(name: 'token') required this.token,
-      @JsonKey(name: 'user') required this.user});
 
-  factory _$LoginResultModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LoginResultModelImplFromJson(json);
+class _LoginResultModel implements LoginResultModel {
+  const _LoginResultModel({@JsonKey(name: 'token') required this.token, @JsonKey(name: 'user') required this.user});
+  factory _LoginResultModel.fromJson(Map<String, dynamic> json) => _$LoginResultModelFromJson(json);
 
-  @override
-  @JsonKey(name: 'token')
-  final String token;
-  @override
-  @JsonKey(name: 'user')
-  final MyUser user;
+@override@JsonKey(name: 'token') final  String token;
+@override@JsonKey(name: 'user') final  MyUser user;
 
-  @override
-  String toString() {
-    return 'LoginResultModel(token: $token, user: $user)';
-  }
+/// Create a copy of LoginResultModel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$LoginResultModelCopyWith<_LoginResultModel> get copyWith => __$LoginResultModelCopyWithImpl<_LoginResultModel>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoginResultModelImpl &&
-            (identical(other.token, token) || other.token == token) &&
-            (identical(other.user, user) || other.user == user));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, token, user);
-
-  /// Create a copy of LoginResultModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoginResultModelImplCopyWith<_$LoginResultModelImpl> get copyWith =>
-      __$$LoginResultModelImplCopyWithImpl<_$LoginResultModelImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LoginResultModelImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$LoginResultModelToJson(this, );
 }
 
-abstract class _LoginResultModel implements LoginResultModel {
-  const factory _LoginResultModel(
-          {@JsonKey(name: 'token') required final String token,
-          @JsonKey(name: 'user') required final MyUser user}) =
-      _$LoginResultModelImpl;
-
-  factory _LoginResultModel.fromJson(Map<String, dynamic> json) =
-      _$LoginResultModelImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'token')
-  String get token;
-  @override
-  @JsonKey(name: 'user')
-  MyUser get user;
-
-  /// Create a copy of LoginResultModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoginResultModelImplCopyWith<_$LoginResultModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LoginResultModel&&(identical(other.token, token) || other.token == token)&&(identical(other.user, user) || other.user == user));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,token,user);
+
+@override
+String toString() {
+  return 'LoginResultModel(token: $token, user: $user)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$LoginResultModelCopyWith<$Res> implements $LoginResultModelCopyWith<$Res> {
+  factory _$LoginResultModelCopyWith(_LoginResultModel value, $Res Function(_LoginResultModel) _then) = __$LoginResultModelCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'token') String token,@JsonKey(name: 'user') MyUser user
+});
+
+
+@override $MyUserCopyWith<$Res> get user;
+
+}
+/// @nodoc
+class __$LoginResultModelCopyWithImpl<$Res>
+    implements _$LoginResultModelCopyWith<$Res> {
+  __$LoginResultModelCopyWithImpl(this._self, this._then);
+
+  final _LoginResultModel _self;
+  final $Res Function(_LoginResultModel) _then;
+
+/// Create a copy of LoginResultModel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? token = null,Object? user = null,}) {
+  return _then(_LoginResultModel(
+token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
+as MyUser,
+  ));
+}
+
+/// Create a copy of LoginResultModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$MyUserCopyWith<$Res> get user {
+  
+  return $MyUserCopyWith<$Res>(_self.user, (value) {
+    return _then(_self.copyWith(user: value));
+  });
+}
+}
+
+// dart format on

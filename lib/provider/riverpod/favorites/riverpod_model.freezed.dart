@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,167 +10,128 @@ part of 'riverpod_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-FavoritesStateModel _$FavoritesStateModelFromJson(Map<String, dynamic> json) {
-  return _FavoritesStateModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$FavoritesStateModel {
-  List<MyFavoritesModel> get favorites => throw _privateConstructorUsedError;
-  set favorites(List<MyFavoritesModel> value) =>
-      throw _privateConstructorUsedError;
-  int get page => throw _privateConstructorUsedError;
-  set page(int value) => throw _privateConstructorUsedError;
+
+ List<MyFavoritesModel> get favorites; set favorites(List<MyFavoritesModel> value); int get page; set page(int value);
+/// Create a copy of FavoritesStateModel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$FavoritesStateModelCopyWith<FavoritesStateModel> get copyWith => _$FavoritesStateModelCopyWithImpl<FavoritesStateModel>(this as FavoritesStateModel, _$identity);
 
   /// Serializes this FavoritesStateModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of FavoritesStateModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $FavoritesStateModelCopyWith<FavoritesStateModel> get copyWith =>
-      throw _privateConstructorUsedError;
+
+
+
+@override
+String toString() {
+  return 'FavoritesStateModel(favorites: $favorites, page: $page)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $FavoritesStateModelCopyWith<$Res> {
-  factory $FavoritesStateModelCopyWith(
-          FavoritesStateModel value, $Res Function(FavoritesStateModel) then) =
-      _$FavoritesStateModelCopyWithImpl<$Res, FavoritesStateModel>;
-  @useResult
-  $Res call({List<MyFavoritesModel> favorites, int page});
-}
+abstract mixin class $FavoritesStateModelCopyWith<$Res>  {
+  factory $FavoritesStateModelCopyWith(FavoritesStateModel value, $Res Function(FavoritesStateModel) _then) = _$FavoritesStateModelCopyWithImpl;
+@useResult
+$Res call({
+ List<MyFavoritesModel> favorites, int page
+});
 
+
+
+
+}
 /// @nodoc
-class _$FavoritesStateModelCopyWithImpl<$Res, $Val extends FavoritesStateModel>
+class _$FavoritesStateModelCopyWithImpl<$Res>
     implements $FavoritesStateModelCopyWith<$Res> {
-  _$FavoritesStateModelCopyWithImpl(this._value, this._then);
+  _$FavoritesStateModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final FavoritesStateModel _self;
+  final $Res Function(FavoritesStateModel) _then;
 
-  /// Create a copy of FavoritesStateModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? favorites = null,
-    Object? page = null,
-  }) {
-    return _then(_value.copyWith(
-      favorites: null == favorites
-          ? _value.favorites
-          : favorites // ignore: cast_nullable_to_non_nullable
-              as List<MyFavoritesModel>,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
+/// Create a copy of FavoritesStateModel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? favorites = null,Object? page = null,}) {
+  return _then(_self.copyWith(
+favorites: null == favorites ? _self.favorites : favorites // ignore: cast_nullable_to_non_nullable
+as List<MyFavoritesModel>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-abstract class _$$FavoritesStateModelImplCopyWith<$Res>
-    implements $FavoritesStateModelCopyWith<$Res> {
-  factory _$$FavoritesStateModelImplCopyWith(_$FavoritesStateModelImpl value,
-          $Res Function(_$FavoritesStateModelImpl) then) =
-      __$$FavoritesStateModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({List<MyFavoritesModel> favorites, int page});
 }
 
-/// @nodoc
-class __$$FavoritesStateModelImplCopyWithImpl<$Res>
-    extends _$FavoritesStateModelCopyWithImpl<$Res, _$FavoritesStateModelImpl>
-    implements _$$FavoritesStateModelImplCopyWith<$Res> {
-  __$$FavoritesStateModelImplCopyWithImpl(_$FavoritesStateModelImpl _value,
-      $Res Function(_$FavoritesStateModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of FavoritesStateModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? favorites = null,
-    Object? page = null,
-  }) {
-    return _then(_$FavoritesStateModelImpl(
-      favorites: null == favorites
-          ? _value.favorites
-          : favorites // ignore: cast_nullable_to_non_nullable
-              as List<MyFavoritesModel>,
-      page: null == page
-          ? _value.page
-          : page // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$FavoritesStateModelImpl implements _FavoritesStateModel {
-  _$FavoritesStateModelImpl({required this.favorites, required this.page});
 
-  factory _$FavoritesStateModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FavoritesStateModelImplFromJson(json);
+class _FavoritesStateModel implements FavoritesStateModel {
+   _FavoritesStateModel({required this.favorites, required this.page});
+  factory _FavoritesStateModel.fromJson(Map<String, dynamic> json) => _$FavoritesStateModelFromJson(json);
 
-  @override
-  List<MyFavoritesModel> favorites;
-  @override
-  int page;
+@override  List<MyFavoritesModel> favorites;
+@override  int page;
 
-  @override
-  String toString() {
-    return 'FavoritesStateModel(favorites: $favorites, page: $page)';
-  }
+/// Create a copy of FavoritesStateModel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$FavoritesStateModelCopyWith<_FavoritesStateModel> get copyWith => __$FavoritesStateModelCopyWithImpl<_FavoritesStateModel>(this, _$identity);
 
-  /// Create a copy of FavoritesStateModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FavoritesStateModelImplCopyWith<_$FavoritesStateModelImpl> get copyWith =>
-      __$$FavoritesStateModelImplCopyWithImpl<_$FavoritesStateModelImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FavoritesStateModelImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$FavoritesStateModelToJson(this, );
 }
 
-abstract class _FavoritesStateModel implements FavoritesStateModel {
-  factory _FavoritesStateModel(
-      {required List<MyFavoritesModel> favorites,
-      required int page}) = _$FavoritesStateModelImpl;
 
-  factory _FavoritesStateModel.fromJson(Map<String, dynamic> json) =
-      _$FavoritesStateModelImpl.fromJson;
 
-  @override
-  List<MyFavoritesModel> get favorites;
-  set favorites(List<MyFavoritesModel> value);
-  @override
-  int get page;
-  set page(int value);
-
-  /// Create a copy of FavoritesStateModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FavoritesStateModelImplCopyWith<_$FavoritesStateModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'FavoritesStateModel(favorites: $favorites, page: $page)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$FavoritesStateModelCopyWith<$Res> implements $FavoritesStateModelCopyWith<$Res> {
+  factory _$FavoritesStateModelCopyWith(_FavoritesStateModel value, $Res Function(_FavoritesStateModel) _then) = __$FavoritesStateModelCopyWithImpl;
+@override @useResult
+$Res call({
+ List<MyFavoritesModel> favorites, int page
+});
+
+
+
+
+}
+/// @nodoc
+class __$FavoritesStateModelCopyWithImpl<$Res>
+    implements _$FavoritesStateModelCopyWith<$Res> {
+  __$FavoritesStateModelCopyWithImpl(this._self, this._then);
+
+  final _FavoritesStateModel _self;
+  final $Res Function(_FavoritesStateModel) _then;
+
+/// Create a copy of FavoritesStateModel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? favorites = null,Object? page = null,}) {
+  return _then(_FavoritesStateModel(
+favorites: null == favorites ? _self.favorites : favorites // ignore: cast_nullable_to_non_nullable
+as List<MyFavoritesModel>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+// dart format on

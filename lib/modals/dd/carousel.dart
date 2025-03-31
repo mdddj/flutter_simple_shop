@@ -1,8 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'carousel.freezed.dart';
+
 part 'carousel.g.dart';
+
 @freezed
-class Carousel with _$Carousel {
+sealed class Carousel with _$Carousel {
   const Carousel._();
 
   const factory Carousel({
@@ -14,6 +17,6 @@ class Carousel with _$Carousel {
     @Default('') String topicName,
   }) = _Carousel;
 
-  factory Carousel.fromJson(Map<String, dynamic> json) => _$CarouselFromJson(json);
-
+  factory Carousel.fromJson(Map<String, dynamic> json) =>
+      _$CarouselFromJson(json);
 }

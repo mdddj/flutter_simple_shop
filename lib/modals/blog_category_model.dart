@@ -2,11 +2,12 @@ import 'package:dd_js_util/dd_js_util.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'blog_category_model.freezed.dart';
+
 part 'blog_category_model.g.dart';
 
 @freezed
 @Doc(message: "")
-class BlogCategory with _$BlogCategory {
+sealed class BlogCategory with _$BlogCategory {
   const BlogCategory._();
 
   const factory BlogCategory({
@@ -17,5 +18,6 @@ class BlogCategory with _$BlogCategory {
     required int createTime,
   }) = _BlogCategory;
 
-  factory BlogCategory.fromJson(Map<String, dynamic> json) => _$BlogCategoryFromJson(json);
+  factory BlogCategory.fromJson(Map<String, dynamic> json) =>
+      _$BlogCategoryFromJson(json);
 }

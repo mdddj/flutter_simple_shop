@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'my_user.freezed.dart';
+
 part 'my_user.g.dart';
 
 const anonymousUser = MyUser(id: 0, nickName: "匿名用户");
@@ -23,19 +24,20 @@ extension UserEx on MyUser {
       return SizedBox(
         width: size,
         height: size,
-        child: CircleAvatar(
-          child: Icon(Icons.people, size: size * 0.8),
-        ),
+        child: CircleAvatar(child: Icon(Icons.people, size: size * 0.8)),
       );
     }
     return ImageView(
-        image: MyImage.network(
-            url: picture,
-            params: ImageParams(
-                size: size,
-                fit: BoxFit.cover,
-                borderRadius: BorderRadius.circular(size / 2),
-                shape: BoxShape.rectangle)));
+      image: MyImage.network(
+        url: picture,
+        params: ImageParams(
+          size: size,
+          fit: BoxFit.cover,
+          borderRadius: BorderRadius.circular(size / 2),
+          shape: BoxShape.rectangle,
+        ),
+      ),
+    );
   }
 
   String getIntro() {
@@ -47,30 +49,31 @@ extension UserEx on MyUser {
 }
 
 @freezed
-class MyUser with _$MyUser {
-  const factory MyUser(
-      {required int id,
-      @Default('') String loginNumber,
-      @Default('') String username,
-      @Default('') String email,
-      @Default('未设置昵称') String nickName,
-      @Default('') String picture,
-      @Default('') String phone,
-      @Default(-1) int type,
-      @Default(-1) int status,
-      @Default('') String loginTime,
-      @Default(false) bool enabled,
-      @Default(false) bool accountNonExpired,
-      @Default(false) bool accountNonLocked,
-      @Default(false) bool credentialsNonExpired,
-      @Default("") String city,
-      @Default("") String job,
-      @Default(Vip.none) Vip vip,
-      @Default('') String intro,
-      @Default(0) num openAiTokens,
-      @Default(false) bool openAiFlag,
-      @Default('') String relationId,
-      Enterprise? enterprise}) = _MyUser;
+sealed class MyUser with _$MyUser {
+  const factory MyUser({
+    required int id,
+    @Default('') String loginNumber,
+    @Default('') String username,
+    @Default('') String email,
+    @Default('未设置昵称') String nickName,
+    @Default('') String picture,
+    @Default('') String phone,
+    @Default(-1) int type,
+    @Default(-1) int status,
+    @Default('') String loginTime,
+    @Default(false) bool enabled,
+    @Default(false) bool accountNonExpired,
+    @Default(false) bool accountNonLocked,
+    @Default(false) bool credentialsNonExpired,
+    @Default("") String city,
+    @Default("") String job,
+    @Default(Vip.none) Vip vip,
+    @Default('') String intro,
+    @Default(0) num openAiTokens,
+    @Default(false) bool openAiFlag,
+    @Default('') String relationId,
+    Enterprise? enterprise,
+  }) = _MyUser;
 
   factory MyUser.fromJson(Map<String, Object?> json) => _$MyUserFromJson(json);
 }
@@ -84,12 +87,12 @@ enum Vip {
   @JsonValue(2)
   superVip,
   @JsonValue(3)
-  specialVip
+  specialVip,
 }
 
 //公司
 @freezed
-class Enterprise with _$Enterprise {
+sealed class Enterprise with _$Enterprise {
   const Enterprise._();
 
   const factory Enterprise({
