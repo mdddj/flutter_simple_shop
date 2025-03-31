@@ -3,10 +3,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../dd/product.dart';
 
 part 'detail_base_data.freezed.dart';
+
 part 'detail_base_data.g.dart';
 
 @freezed
-class DetailBaseDataResult with _$DetailBaseDataResult {
+sealed class DetailBaseDataResult with _$DetailBaseDataResult {
   const DetailBaseDataResult._();
 
   const factory DetailBaseDataResult({
@@ -22,7 +23,7 @@ class DetailBaseDataResult with _$DetailBaseDataResult {
 }
 
 @freezed
-class CouponLinkResult with _$CouponLinkResult {
+sealed class CouponLinkResult with _$CouponLinkResult {
   const CouponLinkResult._();
 
   const factory CouponLinkResult({

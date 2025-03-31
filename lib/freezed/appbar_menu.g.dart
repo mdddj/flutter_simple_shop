@@ -6,14 +6,10 @@ part of 'appbar_menu.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AppbarMenuImpl _$$AppbarMenuImplFromJson(Map<String, dynamic> json) =>
-    _$AppbarMenuImpl(
-      icon: json['icon'] as String? ?? '',
-      title: json['title'] as String? ?? '',
-    );
+_AppbarMenu _$AppbarMenuFromJson(Map<String, dynamic> json) => _AppbarMenu(
+  icon: json['icon'] as String? ?? '',
+  title: json['title'] as String? ?? '',
+);
 
-Map<String, dynamic> _$$AppbarMenuImplToJson(_$AppbarMenuImpl instance) =>
-    <String, dynamic>{
-      'icon': instance.icon,
-      'title': instance.title,
-    };
+Map<String, dynamic> _$AppbarMenuToJson(_AppbarMenu instance) =>
+    <String, dynamic>{'icon': instance.icon, 'title': instance.title};

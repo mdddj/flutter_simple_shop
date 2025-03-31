@@ -10,25 +10,26 @@ part 'report.g.dart';
 
 ///举报信息
 @freezed
-class Report with _$Report {
+sealed class Report with _$Report {
   const Report._();
 
-  const factory Report(
-      {@JsonKey(name: 'id') @Default(0) int id,
-      @JsonKey(name: 'content') @Default('') String content,
-      @JsonKey(name: 'type') @Default('') String type,
-      @JsonKey(name: 'createTime') @Default('') String createtime,
-      @JsonKey(name: 'status') @Default(0) int status,
-      @JsonKey(name: 'comment') @Default('') String comment,
-      @JsonKey(name: "user") @Default(anonymousUser) MyUser user,
-      @JsonKey(name: "images") @Default(IListConst([])) IList<FileInfo> images,
-      @JsonKey(name: 'resourceId') int? resourceId}) = _Report;
+  const factory Report({
+    @JsonKey(name: 'id') @Default(0) int id,
+    @JsonKey(name: 'content') @Default('') String content,
+    @JsonKey(name: 'type') @Default('') String type,
+    @JsonKey(name: 'createTime') @Default('') String createtime,
+    @JsonKey(name: 'status') @Default(0) int status,
+    @JsonKey(name: 'comment') @Default('') String comment,
+    @JsonKey(name: "user") @Default(anonymousUser) MyUser user,
+    @JsonKey(name: "images") @Default(IListConst([])) IList<FileInfo> images,
+    @JsonKey(name: 'resourceId') int? resourceId,
+  }) = _Report;
 
   factory Report.fromJson(dynamic json) => _$ReportFromJson(json);
 }
 
 @freezed
-class AddReportParams with _$AddReportParams {
+sealed class AddReportParams with _$AddReportParams {
   const AddReportParams._();
 
   const factory AddReportParams({

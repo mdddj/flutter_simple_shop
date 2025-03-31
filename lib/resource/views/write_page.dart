@@ -20,24 +20,11 @@ class _MyResourceWritePageState extends State<MyResourceWritePage> {
   bool _showImageUploadComp = false; //是否显示图片上传组件
 
   ///分享的产品
-  late ProductShare? share = params.mapOrNull(
-    (value) => null,
-    dynWritePageParam: (value) => value.productShare,
-  );
+  late ProductShare? share = params.productShare;
 
-  late String appbarTitle =
-      params.mapOrNull(
-        (value) => "发布",
-        dynWritePageParam: (value) => value.title,
-      ) ??
-      "发布";
+  late String appbarTitle = params.title ?? "发布";
 
-  late bool selectOtherCategoryDisabled =
-      params.mapOrNull(
-        (value) => false,
-        dynWritePageParam: (value) => value.disableSelectOtherCategory,
-      ) ??
-      false;
+  late bool selectOtherCategoryDisabled = params.disableSelectOtherCategory;
 
   late bool showProductShareCard = share != null;
 

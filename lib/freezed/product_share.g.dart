@@ -6,18 +6,19 @@ part of 'product_share.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ProductShareImpl _$$ProductShareImplFromJson(Map<String, dynamic> json) =>
-    _$ProductShareImpl(
+_ProductShare _$ProductShareFromJson(Map<String, dynamic> json) =>
+    _ProductShare(
       id: (json['id'] as num?)?.toInt(),
       title: json['title'] as String? ?? '',
       price: json['price'] as String? ?? '',
       image: json['image'] as String? ?? '',
       productId: json['productId'] as String? ?? '',
-      type: $enumDecodeNullable(_$ProductShareTypeEnumMap, json['type']) ??
+      type:
+          $enumDecodeNullable(_$ProductShareTypeEnumMap, json['type']) ??
           ProductShareType.tb,
     );
 
-Map<String, dynamic> _$$ProductShareImplToJson(_$ProductShareImpl instance) =>
+Map<String, dynamic> _$ProductShareToJson(_ProductShare instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

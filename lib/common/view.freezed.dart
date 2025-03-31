@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,373 +10,290 @@ part of 'view.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$ApplocationContext {
-  BuildContext get context => throw _privateConstructorUsedError;
-  WidgetRef get ref => throw _privateConstructorUsedError;
 
-  /// Create a copy of ApplocationContext
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ApplocationContextCopyWith<ApplocationContext> get copyWith =>
-      throw _privateConstructorUsedError;
+ BuildContext get context; WidgetRef get ref;
+/// Create a copy of ApplocationContext
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ApplocationContextCopyWith<ApplocationContext> get copyWith => _$ApplocationContextCopyWithImpl<ApplocationContext>(this as ApplocationContext, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApplocationContext&&(identical(other.context, context) || other.context == context)&&(identical(other.ref, ref) || other.ref == ref));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,context,ref);
+
+@override
+String toString() {
+  return 'ApplocationContext(context: $context, ref: $ref)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ApplocationContextCopyWith<$Res> {
-  factory $ApplocationContextCopyWith(
-          ApplocationContext value, $Res Function(ApplocationContext) then) =
-      _$ApplocationContextCopyWithImpl<$Res, ApplocationContext>;
-  @useResult
-  $Res call({BuildContext context, WidgetRef ref});
-}
+abstract mixin class $ApplocationContextCopyWith<$Res>  {
+  factory $ApplocationContextCopyWith(ApplocationContext value, $Res Function(ApplocationContext) _then) = _$ApplocationContextCopyWithImpl;
+@useResult
+$Res call({
+ BuildContext context, WidgetRef ref
+});
 
+
+
+
+}
 /// @nodoc
-class _$ApplocationContextCopyWithImpl<$Res, $Val extends ApplocationContext>
+class _$ApplocationContextCopyWithImpl<$Res>
     implements $ApplocationContextCopyWith<$Res> {
-  _$ApplocationContextCopyWithImpl(this._value, this._then);
+  _$ApplocationContextCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ApplocationContext _self;
+  final $Res Function(ApplocationContext) _then;
 
-  /// Create a copy of ApplocationContext
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? context = null,
-    Object? ref = null,
-  }) {
-    return _then(_value.copyWith(
-      context: null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as BuildContext,
-      ref: null == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as WidgetRef,
-    ) as $Val);
-  }
+/// Create a copy of ApplocationContext
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? context = null,Object? ref = null,}) {
+  return _then(_self.copyWith(
+context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as BuildContext,ref: null == ref ? _self.ref : ref // ignore: cast_nullable_to_non_nullable
+as WidgetRef,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ApplocationContextImplCopyWith<$Res>
-    implements $ApplocationContextCopyWith<$Res> {
-  factory _$$ApplocationContextImplCopyWith(_$ApplocationContextImpl value,
-          $Res Function(_$ApplocationContextImpl) then) =
-      __$$ApplocationContextImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({BuildContext context, WidgetRef ref});
 }
 
-/// @nodoc
-class __$$ApplocationContextImplCopyWithImpl<$Res>
-    extends _$ApplocationContextCopyWithImpl<$Res, _$ApplocationContextImpl>
-    implements _$$ApplocationContextImplCopyWith<$Res> {
-  __$$ApplocationContextImplCopyWithImpl(_$ApplocationContextImpl _value,
-      $Res Function(_$ApplocationContextImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ApplocationContext
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? context = null,
-    Object? ref = null,
-  }) {
-    return _then(_$ApplocationContextImpl(
-      null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as BuildContext,
-      null == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as WidgetRef,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$ApplocationContextImpl implements _ApplocationContext {
-  const _$ApplocationContextImpl(this.context, this.ref);
 
-  @override
-  final BuildContext context;
-  @override
-  final WidgetRef ref;
+class _ApplocationContext implements ApplocationContext {
+  const _ApplocationContext(this.context, this.ref);
+  
 
-  @override
-  String toString() {
-    return 'ApplocationContext(context: $context, ref: $ref)';
-  }
+@override final  BuildContext context;
+@override final  WidgetRef ref;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ApplocationContextImpl &&
-            (identical(other.context, context) || other.context == context) &&
-            (identical(other.ref, ref) || other.ref == ref));
-  }
+/// Create a copy of ApplocationContext
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ApplocationContextCopyWith<_ApplocationContext> get copyWith => __$ApplocationContextCopyWithImpl<_ApplocationContext>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, context, ref);
 
-  /// Create a copy of ApplocationContext
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ApplocationContextImplCopyWith<_$ApplocationContextImpl> get copyWith =>
-      __$$ApplocationContextImplCopyWithImpl<_$ApplocationContextImpl>(
-          this, _$identity);
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApplocationContext&&(identical(other.context, context) || other.context == context)&&(identical(other.ref, ref) || other.ref == ref));
 }
 
-abstract class _ApplocationContext implements ApplocationContext {
-  const factory _ApplocationContext(
-          final BuildContext context, final WidgetRef ref) =
-      _$ApplocationContextImpl;
 
-  @override
-  BuildContext get context;
-  @override
-  WidgetRef get ref;
+@override
+int get hashCode => Object.hash(runtimeType,context,ref);
 
-  /// Create a copy of ApplocationContext
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ApplocationContextImplCopyWith<_$ApplocationContextImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ApplocationContext(context: $context, ref: $ref)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ApplocationContextCopyWith<$Res> implements $ApplocationContextCopyWith<$Res> {
+  factory _$ApplocationContextCopyWith(_ApplocationContext value, $Res Function(_ApplocationContext) _then) = __$ApplocationContextCopyWithImpl;
+@override @useResult
+$Res call({
+ BuildContext context, WidgetRef ref
+});
+
+
+
+
+}
+/// @nodoc
+class __$ApplocationContextCopyWithImpl<$Res>
+    implements _$ApplocationContextCopyWith<$Res> {
+  __$ApplocationContextCopyWithImpl(this._self, this._then);
+
+  final _ApplocationContext _self;
+  final $Res Function(_ApplocationContext) _then;
+
+/// Create a copy of ApplocationContext
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? context = null,Object? ref = null,}) {
+  return _then(_ApplocationContext(
+null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as BuildContext,null == ref ? _self.ref : ref // ignore: cast_nullable_to_non_nullable
+as WidgetRef,
+  ));
+}
+
+
 }
 
 /// @nodoc
 mixin _$ApplicationModel {
-  BuildContext get context => throw _privateConstructorUsedError;
-  WidgetRef get ref => throw _privateConstructorUsedError;
-  FavoritesRepository get favoritesRepository =>
-      throw _privateConstructorUsedError;
-  ApplocationContext get applocationContext =>
-      throw _privateConstructorUsedError;
 
-  /// Create a copy of ApplicationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ApplicationModelCopyWith<ApplicationModel> get copyWith =>
-      throw _privateConstructorUsedError;
+ BuildContext get context; WidgetRef get ref; FavoritesRepository get favoritesRepository; ApplocationContext get applocationContext;
+/// Create a copy of ApplicationModel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ApplicationModelCopyWith<ApplicationModel> get copyWith => _$ApplicationModelCopyWithImpl<ApplicationModel>(this as ApplicationModel, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApplicationModel&&(identical(other.context, context) || other.context == context)&&(identical(other.ref, ref) || other.ref == ref)&&const DeepCollectionEquality().equals(other.favoritesRepository, favoritesRepository)&&(identical(other.applocationContext, applocationContext) || other.applocationContext == applocationContext));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,context,ref,const DeepCollectionEquality().hash(favoritesRepository),applocationContext);
+
+@override
+String toString() {
+  return 'ApplicationModel(context: $context, ref: $ref, favoritesRepository: $favoritesRepository, applocationContext: $applocationContext)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ApplicationModelCopyWith<$Res> {
-  factory $ApplicationModelCopyWith(
-          ApplicationModel value, $Res Function(ApplicationModel) then) =
-      _$ApplicationModelCopyWithImpl<$Res, ApplicationModel>;
-  @useResult
-  $Res call(
-      {BuildContext context,
-      WidgetRef ref,
-      FavoritesRepository favoritesRepository,
-      ApplocationContext applocationContext});
+abstract mixin class $ApplicationModelCopyWith<$Res>  {
+  factory $ApplicationModelCopyWith(ApplicationModel value, $Res Function(ApplicationModel) _then) = _$ApplicationModelCopyWithImpl;
+@useResult
+$Res call({
+ BuildContext context, WidgetRef ref, FavoritesRepository favoritesRepository, ApplocationContext applocationContext
+});
 
-  $ApplocationContextCopyWith<$Res> get applocationContext;
+
+$ApplocationContextCopyWith<$Res> get applocationContext;
+
 }
-
 /// @nodoc
-class _$ApplicationModelCopyWithImpl<$Res, $Val extends ApplicationModel>
+class _$ApplicationModelCopyWithImpl<$Res>
     implements $ApplicationModelCopyWith<$Res> {
-  _$ApplicationModelCopyWithImpl(this._value, this._then);
+  _$ApplicationModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ApplicationModel _self;
+  final $Res Function(ApplicationModel) _then;
 
-  /// Create a copy of ApplicationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? context = null,
-    Object? ref = null,
-    Object? favoritesRepository = null,
-    Object? applocationContext = null,
-  }) {
-    return _then(_value.copyWith(
-      context: null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as BuildContext,
-      ref: null == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as WidgetRef,
-      favoritesRepository: null == favoritesRepository
-          ? _value.favoritesRepository
-          : favoritesRepository // ignore: cast_nullable_to_non_nullable
-              as FavoritesRepository,
-      applocationContext: null == applocationContext
-          ? _value.applocationContext
-          : applocationContext // ignore: cast_nullable_to_non_nullable
-              as ApplocationContext,
-    ) as $Val);
-  }
-
-  /// Create a copy of ApplicationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ApplocationContextCopyWith<$Res> get applocationContext {
-    return $ApplocationContextCopyWith<$Res>(_value.applocationContext,
-        (value) {
-      return _then(_value.copyWith(applocationContext: value) as $Val);
-    });
-  }
+/// Create a copy of ApplicationModel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? context = null,Object? ref = null,Object? favoritesRepository = null,Object? applocationContext = null,}) {
+  return _then(_self.copyWith(
+context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as BuildContext,ref: null == ref ? _self.ref : ref // ignore: cast_nullable_to_non_nullable
+as WidgetRef,favoritesRepository: null == favoritesRepository ? _self.favoritesRepository : favoritesRepository // ignore: cast_nullable_to_non_nullable
+as FavoritesRepository,applocationContext: null == applocationContext ? _self.applocationContext : applocationContext // ignore: cast_nullable_to_non_nullable
+as ApplocationContext,
+  ));
+}
+/// Create a copy of ApplicationModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ApplocationContextCopyWith<$Res> get applocationContext {
+  
+  return $ApplocationContextCopyWith<$Res>(_self.applocationContext, (value) {
+    return _then(_self.copyWith(applocationContext: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$ApplicationModelImplCopyWith<$Res>
-    implements $ApplicationModelCopyWith<$Res> {
-  factory _$$ApplicationModelImplCopyWith(_$ApplicationModelImpl value,
-          $Res Function(_$ApplicationModelImpl) then) =
-      __$$ApplicationModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {BuildContext context,
-      WidgetRef ref,
-      FavoritesRepository favoritesRepository,
-      ApplocationContext applocationContext});
-
-  @override
-  $ApplocationContextCopyWith<$Res> get applocationContext;
-}
-
-/// @nodoc
-class __$$ApplicationModelImplCopyWithImpl<$Res>
-    extends _$ApplicationModelCopyWithImpl<$Res, _$ApplicationModelImpl>
-    implements _$$ApplicationModelImplCopyWith<$Res> {
-  __$$ApplicationModelImplCopyWithImpl(_$ApplicationModelImpl _value,
-      $Res Function(_$ApplicationModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ApplicationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? context = null,
-    Object? ref = null,
-    Object? favoritesRepository = null,
-    Object? applocationContext = null,
-  }) {
-    return _then(_$ApplicationModelImpl(
-      context: null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as BuildContext,
-      ref: null == ref
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as WidgetRef,
-      favoritesRepository: null == favoritesRepository
-          ? _value.favoritesRepository
-          : favoritesRepository // ignore: cast_nullable_to_non_nullable
-              as FavoritesRepository,
-      applocationContext: null == applocationContext
-          ? _value.applocationContext
-          : applocationContext // ignore: cast_nullable_to_non_nullable
-              as ApplocationContext,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$ApplicationModelImpl implements _ApplicationModel {
-  const _$ApplicationModelImpl(
-      {required this.context,
-      required this.ref,
-      required this.favoritesRepository,
-      required this.applocationContext});
 
-  @override
-  final BuildContext context;
-  @override
-  final WidgetRef ref;
-  @override
-  final FavoritesRepository favoritesRepository;
-  @override
-  final ApplocationContext applocationContext;
+class _ApplicationModel implements ApplicationModel {
+  const _ApplicationModel({required this.context, required this.ref, required this.favoritesRepository, required this.applocationContext});
+  
 
-  @override
-  String toString() {
-    return 'ApplicationModel(context: $context, ref: $ref, favoritesRepository: $favoritesRepository, applocationContext: $applocationContext)';
-  }
+@override final  BuildContext context;
+@override final  WidgetRef ref;
+@override final  FavoritesRepository favoritesRepository;
+@override final  ApplocationContext applocationContext;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ApplicationModelImpl &&
-            (identical(other.context, context) || other.context == context) &&
-            (identical(other.ref, ref) || other.ref == ref) &&
-            const DeepCollectionEquality()
-                .equals(other.favoritesRepository, favoritesRepository) &&
-            (identical(other.applocationContext, applocationContext) ||
-                other.applocationContext == applocationContext));
-  }
+/// Create a copy of ApplicationModel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ApplicationModelCopyWith<_ApplicationModel> get copyWith => __$ApplicationModelCopyWithImpl<_ApplicationModel>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      context,
-      ref,
-      const DeepCollectionEquality().hash(favoritesRepository),
-      applocationContext);
 
-  /// Create a copy of ApplicationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ApplicationModelImplCopyWith<_$ApplicationModelImpl> get copyWith =>
-      __$$ApplicationModelImplCopyWithImpl<_$ApplicationModelImpl>(
-          this, _$identity);
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApplicationModel&&(identical(other.context, context) || other.context == context)&&(identical(other.ref, ref) || other.ref == ref)&&const DeepCollectionEquality().equals(other.favoritesRepository, favoritesRepository)&&(identical(other.applocationContext, applocationContext) || other.applocationContext == applocationContext));
 }
 
-abstract class _ApplicationModel implements ApplicationModel {
-  const factory _ApplicationModel(
-          {required final BuildContext context,
-          required final WidgetRef ref,
-          required final FavoritesRepository favoritesRepository,
-          required final ApplocationContext applocationContext}) =
-      _$ApplicationModelImpl;
 
-  @override
-  BuildContext get context;
-  @override
-  WidgetRef get ref;
-  @override
-  FavoritesRepository get favoritesRepository;
-  @override
-  ApplocationContext get applocationContext;
+@override
+int get hashCode => Object.hash(runtimeType,context,ref,const DeepCollectionEquality().hash(favoritesRepository),applocationContext);
 
-  /// Create a copy of ApplicationModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ApplicationModelImplCopyWith<_$ApplicationModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'ApplicationModel(context: $context, ref: $ref, favoritesRepository: $favoritesRepository, applocationContext: $applocationContext)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ApplicationModelCopyWith<$Res> implements $ApplicationModelCopyWith<$Res> {
+  factory _$ApplicationModelCopyWith(_ApplicationModel value, $Res Function(_ApplicationModel) _then) = __$ApplicationModelCopyWithImpl;
+@override @useResult
+$Res call({
+ BuildContext context, WidgetRef ref, FavoritesRepository favoritesRepository, ApplocationContext applocationContext
+});
+
+
+@override $ApplocationContextCopyWith<$Res> get applocationContext;
+
+}
+/// @nodoc
+class __$ApplicationModelCopyWithImpl<$Res>
+    implements _$ApplicationModelCopyWith<$Res> {
+  __$ApplicationModelCopyWithImpl(this._self, this._then);
+
+  final _ApplicationModel _self;
+  final $Res Function(_ApplicationModel) _then;
+
+/// Create a copy of ApplicationModel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? context = null,Object? ref = null,Object? favoritesRepository = null,Object? applocationContext = null,}) {
+  return _then(_ApplicationModel(
+context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
+as BuildContext,ref: null == ref ? _self.ref : ref // ignore: cast_nullable_to_non_nullable
+as WidgetRef,favoritesRepository: null == favoritesRepository ? _self.favoritesRepository : favoritesRepository // ignore: cast_nullable_to_non_nullable
+as FavoritesRepository,applocationContext: null == applocationContext ? _self.applocationContext : applocationContext // ignore: cast_nullable_to_non_nullable
+as ApplocationContext,
+  ));
+}
+
+/// Create a copy of ApplicationModel
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ApplocationContextCopyWith<$Res> get applocationContext {
+  
+  return $ApplocationContextCopyWith<$Res>(_self.applocationContext, (value) {
+    return _then(_self.copyWith(applocationContext: value));
+  });
+}
+}
+
+// dart format on

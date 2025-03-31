@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,379 +10,166 @@ part of 'params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AddMeetParams _$AddMeetParamsFromJson(Map<String, dynamic> json) {
-  return _AddMeetParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AddMeetParams {
-  @JsonKey(name: 'id')
-  int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name')
-  String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'age')
-  int get age => throw _privateConstructorUsedError;
-  @JsonKey(name: 'soulName')
-  String get soulname => throw _privateConstructorUsedError;
-  @JsonKey(name: 'soulCodeImage')
-  String get soulcodeimage => throw _privateConstructorUsedError;
-  @JsonKey(name: 'mianjiInfo')
-  String get mianjiinfo => throw _privateConstructorUsedError;
-  @JsonKey(name: 'location')
-  String get location => throw _privateConstructorUsedError;
-  @JsonKey(name: 'toLocation')
-  String get tolocation => throw _privateConstructorUsedError;
-  @JsonKey(name: 'aboutDiandian')
-  String get aboutdiandian => throw _privateConstructorUsedError;
-  @JsonKey(name: 'state')
-  int get state => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'id') int get id;@JsonKey(name: 'name') String get name;@JsonKey(name: 'age') int get age;@JsonKey(name: 'soulName') String get soulname;@JsonKey(name: 'soulCodeImage') String get soulcodeimage;@JsonKey(name: 'mianjiInfo') String get mianjiinfo;@JsonKey(name: 'location') String get location;@JsonKey(name: 'toLocation') String get tolocation;@JsonKey(name: 'aboutDiandian') String get aboutdiandian;@JsonKey(name: 'state') int get state;
+/// Create a copy of AddMeetParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AddMeetParamsCopyWith<AddMeetParams> get copyWith => _$AddMeetParamsCopyWithImpl<AddMeetParams>(this as AddMeetParams, _$identity);
 
   /// Serializes this AddMeetParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of AddMeetParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AddMeetParamsCopyWith<AddMeetParams> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddMeetParams&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.age, age) || other.age == age)&&(identical(other.soulname, soulname) || other.soulname == soulname)&&(identical(other.soulcodeimage, soulcodeimage) || other.soulcodeimage == soulcodeimage)&&(identical(other.mianjiinfo, mianjiinfo) || other.mianjiinfo == mianjiinfo)&&(identical(other.location, location) || other.location == location)&&(identical(other.tolocation, tolocation) || other.tolocation == tolocation)&&(identical(other.aboutdiandian, aboutdiandian) || other.aboutdiandian == aboutdiandian)&&(identical(other.state, state) || other.state == state));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,age,soulname,soulcodeimage,mianjiinfo,location,tolocation,aboutdiandian,state);
+
+@override
+String toString() {
+  return 'AddMeetParams(id: $id, name: $name, age: $age, soulname: $soulname, soulcodeimage: $soulcodeimage, mianjiinfo: $mianjiinfo, location: $location, tolocation: $tolocation, aboutdiandian: $aboutdiandian, state: $state)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AddMeetParamsCopyWith<$Res> {
-  factory $AddMeetParamsCopyWith(
-          AddMeetParams value, $Res Function(AddMeetParams) then) =
-      _$AddMeetParamsCopyWithImpl<$Res, AddMeetParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'age') int age,
-      @JsonKey(name: 'soulName') String soulname,
-      @JsonKey(name: 'soulCodeImage') String soulcodeimage,
-      @JsonKey(name: 'mianjiInfo') String mianjiinfo,
-      @JsonKey(name: 'location') String location,
-      @JsonKey(name: 'toLocation') String tolocation,
-      @JsonKey(name: 'aboutDiandian') String aboutdiandian,
-      @JsonKey(name: 'state') int state});
-}
+abstract mixin class $AddMeetParamsCopyWith<$Res>  {
+  factory $AddMeetParamsCopyWith(AddMeetParams value, $Res Function(AddMeetParams) _then) = _$AddMeetParamsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'id') int id,@JsonKey(name: 'name') String name,@JsonKey(name: 'age') int age,@JsonKey(name: 'soulName') String soulname,@JsonKey(name: 'soulCodeImage') String soulcodeimage,@JsonKey(name: 'mianjiInfo') String mianjiinfo,@JsonKey(name: 'location') String location,@JsonKey(name: 'toLocation') String tolocation,@JsonKey(name: 'aboutDiandian') String aboutdiandian,@JsonKey(name: 'state') int state
+});
 
+
+
+
+}
 /// @nodoc
-class _$AddMeetParamsCopyWithImpl<$Res, $Val extends AddMeetParams>
+class _$AddMeetParamsCopyWithImpl<$Res>
     implements $AddMeetParamsCopyWith<$Res> {
-  _$AddMeetParamsCopyWithImpl(this._value, this._then);
+  _$AddMeetParamsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AddMeetParams _self;
+  final $Res Function(AddMeetParams) _then;
 
-  /// Create a copy of AddMeetParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? age = null,
-    Object? soulname = null,
-    Object? soulcodeimage = null,
-    Object? mianjiinfo = null,
-    Object? location = null,
-    Object? tolocation = null,
-    Object? aboutdiandian = null,
-    Object? state = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      age: null == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int,
-      soulname: null == soulname
-          ? _value.soulname
-          : soulname // ignore: cast_nullable_to_non_nullable
-              as String,
-      soulcodeimage: null == soulcodeimage
-          ? _value.soulcodeimage
-          : soulcodeimage // ignore: cast_nullable_to_non_nullable
-              as String,
-      mianjiinfo: null == mianjiinfo
-          ? _value.mianjiinfo
-          : mianjiinfo // ignore: cast_nullable_to_non_nullable
-              as String,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String,
-      tolocation: null == tolocation
-          ? _value.tolocation
-          : tolocation // ignore: cast_nullable_to_non_nullable
-              as String,
-      aboutdiandian: null == aboutdiandian
-          ? _value.aboutdiandian
-          : aboutdiandian // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
+/// Create a copy of AddMeetParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? age = null,Object? soulname = null,Object? soulcodeimage = null,Object? mianjiinfo = null,Object? location = null,Object? tolocation = null,Object? aboutdiandian = null,Object? state = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,age: null == age ? _self.age : age // ignore: cast_nullable_to_non_nullable
+as int,soulname: null == soulname ? _self.soulname : soulname // ignore: cast_nullable_to_non_nullable
+as String,soulcodeimage: null == soulcodeimage ? _self.soulcodeimage : soulcodeimage // ignore: cast_nullable_to_non_nullable
+as String,mianjiinfo: null == mianjiinfo ? _self.mianjiinfo : mianjiinfo // ignore: cast_nullable_to_non_nullable
+as String,location: null == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as String,tolocation: null == tolocation ? _self.tolocation : tolocation // ignore: cast_nullable_to_non_nullable
+as String,aboutdiandian: null == aboutdiandian ? _self.aboutdiandian : aboutdiandian // ignore: cast_nullable_to_non_nullable
+as String,state: null == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-abstract class _$$AddMeetParamsImplCopyWith<$Res>
-    implements $AddMeetParamsCopyWith<$Res> {
-  factory _$$AddMeetParamsImplCopyWith(
-          _$AddMeetParamsImpl value, $Res Function(_$AddMeetParamsImpl) then) =
-      __$$AddMeetParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'age') int age,
-      @JsonKey(name: 'soulName') String soulname,
-      @JsonKey(name: 'soulCodeImage') String soulcodeimage,
-      @JsonKey(name: 'mianjiInfo') String mianjiinfo,
-      @JsonKey(name: 'location') String location,
-      @JsonKey(name: 'toLocation') String tolocation,
-      @JsonKey(name: 'aboutDiandian') String aboutdiandian,
-      @JsonKey(name: 'state') int state});
 }
 
-/// @nodoc
-class __$$AddMeetParamsImplCopyWithImpl<$Res>
-    extends _$AddMeetParamsCopyWithImpl<$Res, _$AddMeetParamsImpl>
-    implements _$$AddMeetParamsImplCopyWith<$Res> {
-  __$$AddMeetParamsImplCopyWithImpl(
-      _$AddMeetParamsImpl _value, $Res Function(_$AddMeetParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AddMeetParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? age = null,
-    Object? soulname = null,
-    Object? soulcodeimage = null,
-    Object? mianjiinfo = null,
-    Object? location = null,
-    Object? tolocation = null,
-    Object? aboutdiandian = null,
-    Object? state = null,
-  }) {
-    return _then(_$AddMeetParamsImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      age: null == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int,
-      soulname: null == soulname
-          ? _value.soulname
-          : soulname // ignore: cast_nullable_to_non_nullable
-              as String,
-      soulcodeimage: null == soulcodeimage
-          ? _value.soulcodeimage
-          : soulcodeimage // ignore: cast_nullable_to_non_nullable
-              as String,
-      mianjiinfo: null == mianjiinfo
-          ? _value.mianjiinfo
-          : mianjiinfo // ignore: cast_nullable_to_non_nullable
-              as String,
-      location: null == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String,
-      tolocation: null == tolocation
-          ? _value.tolocation
-          : tolocation // ignore: cast_nullable_to_non_nullable
-              as String,
-      aboutdiandian: null == aboutdiandian
-          ? _value.aboutdiandian
-          : aboutdiandian // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$AddMeetParamsImpl extends _AddMeetParams {
-  const _$AddMeetParamsImpl(
-      {@JsonKey(name: 'id') this.id = 0,
-      @JsonKey(name: 'name') this.name = '',
-      @JsonKey(name: 'age') this.age = 0,
-      @JsonKey(name: 'soulName') this.soulname = '',
-      @JsonKey(name: 'soulCodeImage') this.soulcodeimage = '',
-      @JsonKey(name: 'mianjiInfo') this.mianjiinfo = '',
-      @JsonKey(name: 'location') this.location = '',
-      @JsonKey(name: 'toLocation') this.tolocation = '',
-      @JsonKey(name: 'aboutDiandian') this.aboutdiandian = '',
-      @JsonKey(name: 'state') this.state = 0})
-      : super._();
 
-  factory _$AddMeetParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AddMeetParamsImplFromJson(json);
+class _AddMeetParams extends AddMeetParams {
+  const _AddMeetParams({@JsonKey(name: 'id') this.id = 0, @JsonKey(name: 'name') this.name = '', @JsonKey(name: 'age') this.age = 0, @JsonKey(name: 'soulName') this.soulname = '', @JsonKey(name: 'soulCodeImage') this.soulcodeimage = '', @JsonKey(name: 'mianjiInfo') this.mianjiinfo = '', @JsonKey(name: 'location') this.location = '', @JsonKey(name: 'toLocation') this.tolocation = '', @JsonKey(name: 'aboutDiandian') this.aboutdiandian = '', @JsonKey(name: 'state') this.state = 0}): super._();
+  factory _AddMeetParams.fromJson(Map<String, dynamic> json) => _$AddMeetParamsFromJson(json);
 
-  @override
-  @JsonKey(name: 'id')
-  final int id;
-  @override
-  @JsonKey(name: 'name')
-  final String name;
-  @override
-  @JsonKey(name: 'age')
-  final int age;
-  @override
-  @JsonKey(name: 'soulName')
-  final String soulname;
-  @override
-  @JsonKey(name: 'soulCodeImage')
-  final String soulcodeimage;
-  @override
-  @JsonKey(name: 'mianjiInfo')
-  final String mianjiinfo;
-  @override
-  @JsonKey(name: 'location')
-  final String location;
-  @override
-  @JsonKey(name: 'toLocation')
-  final String tolocation;
-  @override
-  @JsonKey(name: 'aboutDiandian')
-  final String aboutdiandian;
-  @override
-  @JsonKey(name: 'state')
-  final int state;
+@override@JsonKey(name: 'id') final  int id;
+@override@JsonKey(name: 'name') final  String name;
+@override@JsonKey(name: 'age') final  int age;
+@override@JsonKey(name: 'soulName') final  String soulname;
+@override@JsonKey(name: 'soulCodeImage') final  String soulcodeimage;
+@override@JsonKey(name: 'mianjiInfo') final  String mianjiinfo;
+@override@JsonKey(name: 'location') final  String location;
+@override@JsonKey(name: 'toLocation') final  String tolocation;
+@override@JsonKey(name: 'aboutDiandian') final  String aboutdiandian;
+@override@JsonKey(name: 'state') final  int state;
 
-  @override
-  String toString() {
-    return 'AddMeetParams(id: $id, name: $name, age: $age, soulname: $soulname, soulcodeimage: $soulcodeimage, mianjiinfo: $mianjiinfo, location: $location, tolocation: $tolocation, aboutdiandian: $aboutdiandian, state: $state)';
-  }
+/// Create a copy of AddMeetParams
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AddMeetParamsCopyWith<_AddMeetParams> get copyWith => __$AddMeetParamsCopyWithImpl<_AddMeetParams>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddMeetParamsImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.age, age) || other.age == age) &&
-            (identical(other.soulname, soulname) ||
-                other.soulname == soulname) &&
-            (identical(other.soulcodeimage, soulcodeimage) ||
-                other.soulcodeimage == soulcodeimage) &&
-            (identical(other.mianjiinfo, mianjiinfo) ||
-                other.mianjiinfo == mianjiinfo) &&
-            (identical(other.location, location) ||
-                other.location == location) &&
-            (identical(other.tolocation, tolocation) ||
-                other.tolocation == tolocation) &&
-            (identical(other.aboutdiandian, aboutdiandian) ||
-                other.aboutdiandian == aboutdiandian) &&
-            (identical(other.state, state) || other.state == state));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, age, soulname,
-      soulcodeimage, mianjiinfo, location, tolocation, aboutdiandian, state);
-
-  /// Create a copy of AddMeetParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddMeetParamsImplCopyWith<_$AddMeetParamsImpl> get copyWith =>
-      __$$AddMeetParamsImplCopyWithImpl<_$AddMeetParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AddMeetParamsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AddMeetParamsToJson(this, );
 }
 
-abstract class _AddMeetParams extends AddMeetParams {
-  const factory _AddMeetParams(
-      {@JsonKey(name: 'id') final int id,
-      @JsonKey(name: 'name') final String name,
-      @JsonKey(name: 'age') final int age,
-      @JsonKey(name: 'soulName') final String soulname,
-      @JsonKey(name: 'soulCodeImage') final String soulcodeimage,
-      @JsonKey(name: 'mianjiInfo') final String mianjiinfo,
-      @JsonKey(name: 'location') final String location,
-      @JsonKey(name: 'toLocation') final String tolocation,
-      @JsonKey(name: 'aboutDiandian') final String aboutdiandian,
-      @JsonKey(name: 'state') final int state}) = _$AddMeetParamsImpl;
-  const _AddMeetParams._() : super._();
-
-  factory _AddMeetParams.fromJson(Map<String, dynamic> json) =
-      _$AddMeetParamsImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'id')
-  int get id;
-  @override
-  @JsonKey(name: 'name')
-  String get name;
-  @override
-  @JsonKey(name: 'age')
-  int get age;
-  @override
-  @JsonKey(name: 'soulName')
-  String get soulname;
-  @override
-  @JsonKey(name: 'soulCodeImage')
-  String get soulcodeimage;
-  @override
-  @JsonKey(name: 'mianjiInfo')
-  String get mianjiinfo;
-  @override
-  @JsonKey(name: 'location')
-  String get location;
-  @override
-  @JsonKey(name: 'toLocation')
-  String get tolocation;
-  @override
-  @JsonKey(name: 'aboutDiandian')
-  String get aboutdiandian;
-  @override
-  @JsonKey(name: 'state')
-  int get state;
-
-  /// Create a copy of AddMeetParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AddMeetParamsImplCopyWith<_$AddMeetParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AddMeetParams&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.age, age) || other.age == age)&&(identical(other.soulname, soulname) || other.soulname == soulname)&&(identical(other.soulcodeimage, soulcodeimage) || other.soulcodeimage == soulcodeimage)&&(identical(other.mianjiinfo, mianjiinfo) || other.mianjiinfo == mianjiinfo)&&(identical(other.location, location) || other.location == location)&&(identical(other.tolocation, tolocation) || other.tolocation == tolocation)&&(identical(other.aboutdiandian, aboutdiandian) || other.aboutdiandian == aboutdiandian)&&(identical(other.state, state) || other.state == state));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,age,soulname,soulcodeimage,mianjiinfo,location,tolocation,aboutdiandian,state);
+
+@override
+String toString() {
+  return 'AddMeetParams(id: $id, name: $name, age: $age, soulname: $soulname, soulcodeimage: $soulcodeimage, mianjiinfo: $mianjiinfo, location: $location, tolocation: $tolocation, aboutdiandian: $aboutdiandian, state: $state)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AddMeetParamsCopyWith<$Res> implements $AddMeetParamsCopyWith<$Res> {
+  factory _$AddMeetParamsCopyWith(_AddMeetParams value, $Res Function(_AddMeetParams) _then) = __$AddMeetParamsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'id') int id,@JsonKey(name: 'name') String name,@JsonKey(name: 'age') int age,@JsonKey(name: 'soulName') String soulname,@JsonKey(name: 'soulCodeImage') String soulcodeimage,@JsonKey(name: 'mianjiInfo') String mianjiinfo,@JsonKey(name: 'location') String location,@JsonKey(name: 'toLocation') String tolocation,@JsonKey(name: 'aboutDiandian') String aboutdiandian,@JsonKey(name: 'state') int state
+});
+
+
+
+
+}
+/// @nodoc
+class __$AddMeetParamsCopyWithImpl<$Res>
+    implements _$AddMeetParamsCopyWith<$Res> {
+  __$AddMeetParamsCopyWithImpl(this._self, this._then);
+
+  final _AddMeetParams _self;
+  final $Res Function(_AddMeetParams) _then;
+
+/// Create a copy of AddMeetParams
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? age = null,Object? soulname = null,Object? soulcodeimage = null,Object? mianjiinfo = null,Object? location = null,Object? tolocation = null,Object? aboutdiandian = null,Object? state = null,}) {
+  return _then(_AddMeetParams(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,age: null == age ? _self.age : age // ignore: cast_nullable_to_non_nullable
+as int,soulname: null == soulname ? _self.soulname : soulname // ignore: cast_nullable_to_non_nullable
+as String,soulcodeimage: null == soulcodeimage ? _self.soulcodeimage : soulcodeimage // ignore: cast_nullable_to_non_nullable
+as String,mianjiinfo: null == mianjiinfo ? _self.mianjiinfo : mianjiinfo // ignore: cast_nullable_to_non_nullable
+as String,location: null == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as String,tolocation: null == tolocation ? _self.tolocation : tolocation // ignore: cast_nullable_to_non_nullable
+as String,aboutdiandian: null == aboutdiandian ? _self.aboutdiandian : aboutdiandian // ignore: cast_nullable_to_non_nullable
+as String,state: null == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+// dart format on

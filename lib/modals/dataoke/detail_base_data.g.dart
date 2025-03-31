@@ -6,31 +6,31 @@ part of 'detail_base_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DetailBaseDataResultImpl _$$DetailBaseDataResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$DetailBaseDataResultImpl(
-      info: Product.fromJson(json['detail']),
-      similarProducts: (json['similarList'] as List<dynamic>?)
-              ?.map(Product.fromJson)
-              .toList() ??
-          const [],
-      couponInfo: json['privilegeLink'] == null
+_DetailBaseDataResult _$DetailBaseDataResultFromJson(
+  Map<String, dynamic> json,
+) => _DetailBaseDataResult(
+  info: Product.fromJson(json['detail']),
+  similarProducts:
+      (json['similarList'] as List<dynamic>?)?.map(Product.fromJson).toList() ??
+      const [],
+  couponInfo:
+      json['privilegeLink'] == null
           ? const CouponLinkResult()
           : CouponLinkResult.fromJson(
-              json['privilegeLink'] as Map<String, dynamic>),
-    );
+            json['privilegeLink'] as Map<String, dynamic>,
+          ),
+);
 
-Map<String, dynamic> _$$DetailBaseDataResultImplToJson(
-        _$DetailBaseDataResultImpl instance) =>
-    <String, dynamic>{
-      'detail': instance.info,
-      'similarList': instance.similarProducts,
-      'privilegeLink': instance.couponInfo,
-    };
+Map<String, dynamic> _$DetailBaseDataResultToJson(
+  _DetailBaseDataResult instance,
+) => <String, dynamic>{
+  'detail': instance.info,
+  'similarList': instance.similarProducts,
+  'privilegeLink': instance.couponInfo,
+};
 
-_$CouponLinkResultImpl _$$CouponLinkResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$CouponLinkResultImpl(
+_CouponLinkResult _$CouponLinkResultFromJson(Map<String, dynamic> json) =>
+    _CouponLinkResult(
       couponRemainCount: json['couponRemainCount'] as String? ?? '',
       kuaiZhanUrl: json['kuaiZhanUrl'] as String? ?? '',
       minCommissionRate: json['minCommissionRate'] as String? ?? '',
@@ -49,8 +49,7 @@ _$CouponLinkResultImpl _$$CouponLinkResultImplFromJson(
       tpwd: json['tpwd'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$CouponLinkResultImplToJson(
-        _$CouponLinkResultImpl instance) =>
+Map<String, dynamic> _$CouponLinkResultToJson(_CouponLinkResult instance) =>
     <String, dynamic>{
       'couponRemainCount': instance.couponRemainCount,
       'kuaiZhanUrl': instance.kuaiZhanUrl,

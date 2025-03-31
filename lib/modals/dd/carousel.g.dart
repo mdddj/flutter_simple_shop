@@ -6,22 +6,20 @@ part of 'carousel.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CarouselImpl _$$CarouselImplFromJson(Map<String, dynamic> json) =>
-    _$CarouselImpl(
-      topicImage: json['topicImage'] as String? ?? '',
-      activityId: json['activityId'] as String? ?? '',
-      topicId: (json['topicId'] as num?)?.toInt() ?? 0,
-      sourceType: (json['sourceType'] as num?)?.toInt() ?? 0,
-      link: json['link'] as String? ?? '',
-      topicName: json['topicName'] as String? ?? '',
-    );
+_Carousel _$CarouselFromJson(Map<String, dynamic> json) => _Carousel(
+  topicImage: json['topicImage'] as String? ?? '',
+  activityId: json['activityId'] as String? ?? '',
+  topicId: (json['topicId'] as num?)?.toInt() ?? 0,
+  sourceType: (json['sourceType'] as num?)?.toInt() ?? 0,
+  link: json['link'] as String? ?? '',
+  topicName: json['topicName'] as String? ?? '',
+);
 
-Map<String, dynamic> _$$CarouselImplToJson(_$CarouselImpl instance) =>
-    <String, dynamic>{
-      'topicImage': instance.topicImage,
-      'activityId': instance.activityId,
-      'topicId': instance.topicId,
-      'sourceType': instance.sourceType,
-      'link': instance.link,
-      'topicName': instance.topicName,
-    };
+Map<String, dynamic> _$CarouselToJson(_Carousel instance) => <String, dynamic>{
+  'topicImage': instance.topicImage,
+  'activityId': instance.activityId,
+  'topicId': instance.topicId,
+  'sourceType': instance.sourceType,
+  'link': instance.link,
+  'topicName': instance.topicName,
+};

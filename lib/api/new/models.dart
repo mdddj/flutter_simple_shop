@@ -1,10 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'models.freezed.dart';
+
 part 'models.g.dart';
 
 @freezed
-class TKCarousel with _$TKCarousel {
+sealed class TKCarousel with _$TKCarousel {
   const TKCarousel._();
 
   const factory TKCarousel({

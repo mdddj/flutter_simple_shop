@@ -4,29 +4,29 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'jpa_page.dart';
 
 part 'simple_result.freezed.dart';
+
 part 'simple_result.g.dart';
 
-
 @freezed
-class SimpleResult with _$SimpleResult {
+sealed class SimpleResult with _$SimpleResult {
   const SimpleResult._();
 
   const factory SimpleResult({
-      @JsonKey(name: 'message') @Default('')  String message,
-      @JsonKey(name: 'state') @Default(0)  int state,
-      @JsonKey(name: 'success') @Default(false)  bool success,
-      @JsonKey(name: 'type') @Default(ResultType.none)  ResultType type,
-     @JsonKey(name: 'data') dynamic data
-    }) = _SimpleResult;
-  
-  factory SimpleResult.fromJson(Map<String, dynamic> json) => _$SimpleResultFromJson(json);
+    @JsonKey(name: 'message') @Default('') String message,
+    @JsonKey(name: 'state') @Default(0) int state,
+    @JsonKey(name: 'success') @Default(false) bool success,
+    @JsonKey(name: 'type') @Default(ResultType.none) ResultType type,
+    @JsonKey(name: 'data') dynamic data,
+  }) = _SimpleResult;
 
+  factory SimpleResult.fromJson(Map<String, dynamic> json) =>
+      _$SimpleResultFromJson(json);
 }
 
 @JsonEnum(valueField: 'type')
 enum ResultType {
   @JsonValue("Toast")
-  toast, 
+  toast,
   @JsonValue("Dialog")
   dialog,
   @JsonValue("Notice")
@@ -36,12 +36,12 @@ enum ResultType {
   @JsonValue("FinalToast")
   finalToast,
   @JsonValue("FinalDialog")
-  finalDialog }
+  finalDialog,
+}
 
+class JpaDataWrapper {
+  final Map<String, dynamic> json;
 
-
-class JpaDataWrapper  {
-  final Map<String,dynamic> json;
   JpaDataWrapper(this.json);
 
   SimpleResult get result {
@@ -54,5 +54,4 @@ class JpaDataWrapper  {
   }
 
   IList<dynamic> get content => jpaData.content;
-
 }

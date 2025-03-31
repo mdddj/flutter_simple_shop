@@ -6,8 +6,8 @@ part of 'blog_category_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BlogCategoryImpl _$$BlogCategoryImplFromJson(Map<String, dynamic> json) =>
-    _$BlogCategoryImpl(
+_BlogCategory _$BlogCategoryFromJson(Map<String, dynamic> json) =>
+    _BlogCategory(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       logo: json['logo'] as String,
@@ -15,7 +15,7 @@ _$BlogCategoryImpl _$$BlogCategoryImplFromJson(Map<String, dynamic> json) =>
       createTime: (json['createTime'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$BlogCategoryImplToJson(_$BlogCategoryImpl instance) =>
+Map<String, dynamic> _$BlogCategoryToJson(_BlogCategory instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

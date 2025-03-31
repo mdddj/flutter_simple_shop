@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,236 +10,148 @@ part of 'env_config.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-EnvConfig _$EnvConfigFromJson(Map<String, dynamic> json) {
-  return _EnvConfig.fromJson(json);
-}
 
 /// @nodoc
 mixin _$EnvConfig {
-  @JsonKey(name: 'port')
-  String get port => throw _privateConstructorUsedError;
-  @JsonKey(name: 'host')
-  String get host => throw _privateConstructorUsedError;
-  @JsonKey(name: 'debugMode')
-  bool get debugMode => throw _privateConstructorUsedError;
-  @JsonKey(name: 'fontFamily')
-  String get fontFamily => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'port') String get port;@JsonKey(name: 'host') String get host;@JsonKey(name: 'debugMode') bool get debugMode;@JsonKey(name: 'fontFamily') String get fontFamily;
+/// Create a copy of EnvConfig
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EnvConfigCopyWith<EnvConfig> get copyWith => _$EnvConfigCopyWithImpl<EnvConfig>(this as EnvConfig, _$identity);
 
   /// Serializes this EnvConfig to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of EnvConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $EnvConfigCopyWith<EnvConfig> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EnvConfig&&(identical(other.port, port) || other.port == port)&&(identical(other.host, host) || other.host == host)&&(identical(other.debugMode, debugMode) || other.debugMode == debugMode)&&(identical(other.fontFamily, fontFamily) || other.fontFamily == fontFamily));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,port,host,debugMode,fontFamily);
+
+@override
+String toString() {
+  return 'EnvConfig(port: $port, host: $host, debugMode: $debugMode, fontFamily: $fontFamily)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $EnvConfigCopyWith<$Res> {
-  factory $EnvConfigCopyWith(EnvConfig value, $Res Function(EnvConfig) then) =
-      _$EnvConfigCopyWithImpl<$Res, EnvConfig>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'port') String port,
-      @JsonKey(name: 'host') String host,
-      @JsonKey(name: 'debugMode') bool debugMode,
-      @JsonKey(name: 'fontFamily') String fontFamily});
-}
+abstract mixin class $EnvConfigCopyWith<$Res>  {
+  factory $EnvConfigCopyWith(EnvConfig value, $Res Function(EnvConfig) _then) = _$EnvConfigCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'port') String port,@JsonKey(name: 'host') String host,@JsonKey(name: 'debugMode') bool debugMode,@JsonKey(name: 'fontFamily') String fontFamily
+});
 
+
+
+
+}
 /// @nodoc
-class _$EnvConfigCopyWithImpl<$Res, $Val extends EnvConfig>
+class _$EnvConfigCopyWithImpl<$Res>
     implements $EnvConfigCopyWith<$Res> {
-  _$EnvConfigCopyWithImpl(this._value, this._then);
+  _$EnvConfigCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final EnvConfig _self;
+  final $Res Function(EnvConfig) _then;
 
-  /// Create a copy of EnvConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? port = null,
-    Object? host = null,
-    Object? debugMode = null,
-    Object? fontFamily = null,
-  }) {
-    return _then(_value.copyWith(
-      port: null == port
-          ? _value.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as String,
-      host: null == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String,
-      debugMode: null == debugMode
-          ? _value.debugMode
-          : debugMode // ignore: cast_nullable_to_non_nullable
-              as bool,
-      fontFamily: null == fontFamily
-          ? _value.fontFamily
-          : fontFamily // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of EnvConfig
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? port = null,Object? host = null,Object? debugMode = null,Object? fontFamily = null,}) {
+  return _then(_self.copyWith(
+port: null == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
+as String,host: null == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String,debugMode: null == debugMode ? _self.debugMode : debugMode // ignore: cast_nullable_to_non_nullable
+as bool,fontFamily: null == fontFamily ? _self.fontFamily : fontFamily // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$EnvConfigImplCopyWith<$Res>
-    implements $EnvConfigCopyWith<$Res> {
-  factory _$$EnvConfigImplCopyWith(
-          _$EnvConfigImpl value, $Res Function(_$EnvConfigImpl) then) =
-      __$$EnvConfigImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'port') String port,
-      @JsonKey(name: 'host') String host,
-      @JsonKey(name: 'debugMode') bool debugMode,
-      @JsonKey(name: 'fontFamily') String fontFamily});
 }
 
-/// @nodoc
-class __$$EnvConfigImplCopyWithImpl<$Res>
-    extends _$EnvConfigCopyWithImpl<$Res, _$EnvConfigImpl>
-    implements _$$EnvConfigImplCopyWith<$Res> {
-  __$$EnvConfigImplCopyWithImpl(
-      _$EnvConfigImpl _value, $Res Function(_$EnvConfigImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of EnvConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? port = null,
-    Object? host = null,
-    Object? debugMode = null,
-    Object? fontFamily = null,
-  }) {
-    return _then(_$EnvConfigImpl(
-      port: null == port
-          ? _value.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as String,
-      host: null == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String,
-      debugMode: null == debugMode
-          ? _value.debugMode
-          : debugMode // ignore: cast_nullable_to_non_nullable
-              as bool,
-      fontFamily: null == fontFamily
-          ? _value.fontFamily
-          : fontFamily // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$EnvConfigImpl extends _EnvConfig {
-  const _$EnvConfigImpl(
-      {@JsonKey(name: 'port') this.port = '',
-      @JsonKey(name: 'host') this.host = '',
-      @JsonKey(name: 'debugMode') this.debugMode = false,
-      @JsonKey(name: 'fontFamily') this.fontFamily = ''})
-      : super._();
 
-  factory _$EnvConfigImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EnvConfigImplFromJson(json);
+class _EnvConfig extends EnvConfig {
+  const _EnvConfig({@JsonKey(name: 'port') this.port = '', @JsonKey(name: 'host') this.host = '', @JsonKey(name: 'debugMode') this.debugMode = false, @JsonKey(name: 'fontFamily') this.fontFamily = ''}): super._();
+  factory _EnvConfig.fromJson(Map<String, dynamic> json) => _$EnvConfigFromJson(json);
 
-  @override
-  @JsonKey(name: 'port')
-  final String port;
-  @override
-  @JsonKey(name: 'host')
-  final String host;
-  @override
-  @JsonKey(name: 'debugMode')
-  final bool debugMode;
-  @override
-  @JsonKey(name: 'fontFamily')
-  final String fontFamily;
+@override@JsonKey(name: 'port') final  String port;
+@override@JsonKey(name: 'host') final  String host;
+@override@JsonKey(name: 'debugMode') final  bool debugMode;
+@override@JsonKey(name: 'fontFamily') final  String fontFamily;
 
-  @override
-  String toString() {
-    return 'EnvConfig(port: $port, host: $host, debugMode: $debugMode, fontFamily: $fontFamily)';
-  }
+/// Create a copy of EnvConfig
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EnvConfigCopyWith<_EnvConfig> get copyWith => __$EnvConfigCopyWithImpl<_EnvConfig>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EnvConfigImpl &&
-            (identical(other.port, port) || other.port == port) &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.debugMode, debugMode) ||
-                other.debugMode == debugMode) &&
-            (identical(other.fontFamily, fontFamily) ||
-                other.fontFamily == fontFamily));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, port, host, debugMode, fontFamily);
-
-  /// Create a copy of EnvConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EnvConfigImplCopyWith<_$EnvConfigImpl> get copyWith =>
-      __$$EnvConfigImplCopyWithImpl<_$EnvConfigImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EnvConfigImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$EnvConfigToJson(this, );
 }
 
-abstract class _EnvConfig extends EnvConfig {
-  const factory _EnvConfig(
-      {@JsonKey(name: 'port') final String port,
-      @JsonKey(name: 'host') final String host,
-      @JsonKey(name: 'debugMode') final bool debugMode,
-      @JsonKey(name: 'fontFamily') final String fontFamily}) = _$EnvConfigImpl;
-  const _EnvConfig._() : super._();
-
-  factory _EnvConfig.fromJson(Map<String, dynamic> json) =
-      _$EnvConfigImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'port')
-  String get port;
-  @override
-  @JsonKey(name: 'host')
-  String get host;
-  @override
-  @JsonKey(name: 'debugMode')
-  bool get debugMode;
-  @override
-  @JsonKey(name: 'fontFamily')
-  String get fontFamily;
-
-  /// Create a copy of EnvConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EnvConfigImplCopyWith<_$EnvConfigImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _EnvConfig&&(identical(other.port, port) || other.port == port)&&(identical(other.host, host) || other.host == host)&&(identical(other.debugMode, debugMode) || other.debugMode == debugMode)&&(identical(other.fontFamily, fontFamily) || other.fontFamily == fontFamily));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,port,host,debugMode,fontFamily);
+
+@override
+String toString() {
+  return 'EnvConfig(port: $port, host: $host, debugMode: $debugMode, fontFamily: $fontFamily)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$EnvConfigCopyWith<$Res> implements $EnvConfigCopyWith<$Res> {
+  factory _$EnvConfigCopyWith(_EnvConfig value, $Res Function(_EnvConfig) _then) = __$EnvConfigCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'port') String port,@JsonKey(name: 'host') String host,@JsonKey(name: 'debugMode') bool debugMode,@JsonKey(name: 'fontFamily') String fontFamily
+});
+
+
+
+
+}
+/// @nodoc
+class __$EnvConfigCopyWithImpl<$Res>
+    implements _$EnvConfigCopyWith<$Res> {
+  __$EnvConfigCopyWithImpl(this._self, this._then);
+
+  final _EnvConfig _self;
+  final $Res Function(_EnvConfig) _then;
+
+/// Create a copy of EnvConfig
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? port = null,Object? host = null,Object? debugMode = null,Object? fontFamily = null,}) {
+  return _then(_EnvConfig(
+port: null == port ? _self.port : port // ignore: cast_nullable_to_non_nullable
+as String,host: null == host ? _self.host : host // ignore: cast_nullable_to_non_nullable
+as String,debugMode: null == debugMode ? _self.debugMode : debugMode // ignore: cast_nullable_to_non_nullable
+as bool,fontFamily: null == fontFamily ? _self.fontFamily : fontFamily // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

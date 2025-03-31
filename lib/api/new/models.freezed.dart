@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,285 +10,154 @@ part of 'models.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TKCarousel _$TKCarouselFromJson(Map<String, dynamic> json) {
-  return _TKCarousel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TKCarousel {
-  @JsonKey(name: 'activityID')
-  String get activityID => throw _privateConstructorUsedError;
-  @JsonKey(name: 'link')
-  String get link => throw _privateConstructorUsedError;
-  @JsonKey(name: 'sourceType')
-  int get sourceType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'topicID')
-  int get topicID => throw _privateConstructorUsedError;
-  @JsonKey(name: 'topicImage')
-  String get topicImage => throw _privateConstructorUsedError;
-  @JsonKey(name: 'topicName')
-  String get topicName => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'activityID') String get activityID;@JsonKey(name: 'link') String get link;@JsonKey(name: 'sourceType') int get sourceType;@JsonKey(name: 'topicID') int get topicID;@JsonKey(name: 'topicImage') String get topicImage;@JsonKey(name: 'topicName') String get topicName;
+/// Create a copy of TKCarousel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TKCarouselCopyWith<TKCarousel> get copyWith => _$TKCarouselCopyWithImpl<TKCarousel>(this as TKCarousel, _$identity);
 
   /// Serializes this TKCarousel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of TKCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $TKCarouselCopyWith<TKCarousel> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TKCarousel&&(identical(other.activityID, activityID) || other.activityID == activityID)&&(identical(other.link, link) || other.link == link)&&(identical(other.sourceType, sourceType) || other.sourceType == sourceType)&&(identical(other.topicID, topicID) || other.topicID == topicID)&&(identical(other.topicImage, topicImage) || other.topicImage == topicImage)&&(identical(other.topicName, topicName) || other.topicName == topicName));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,activityID,link,sourceType,topicID,topicImage,topicName);
+
+@override
+String toString() {
+  return 'TKCarousel(activityID: $activityID, link: $link, sourceType: $sourceType, topicID: $topicID, topicImage: $topicImage, topicName: $topicName)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $TKCarouselCopyWith<$Res> {
-  factory $TKCarouselCopyWith(
-          TKCarousel value, $Res Function(TKCarousel) then) =
-      _$TKCarouselCopyWithImpl<$Res, TKCarousel>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'activityID') String activityID,
-      @JsonKey(name: 'link') String link,
-      @JsonKey(name: 'sourceType') int sourceType,
-      @JsonKey(name: 'topicID') int topicID,
-      @JsonKey(name: 'topicImage') String topicImage,
-      @JsonKey(name: 'topicName') String topicName});
-}
+abstract mixin class $TKCarouselCopyWith<$Res>  {
+  factory $TKCarouselCopyWith(TKCarousel value, $Res Function(TKCarousel) _then) = _$TKCarouselCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'activityID') String activityID,@JsonKey(name: 'link') String link,@JsonKey(name: 'sourceType') int sourceType,@JsonKey(name: 'topicID') int topicID,@JsonKey(name: 'topicImage') String topicImage,@JsonKey(name: 'topicName') String topicName
+});
 
+
+
+
+}
 /// @nodoc
-class _$TKCarouselCopyWithImpl<$Res, $Val extends TKCarousel>
+class _$TKCarouselCopyWithImpl<$Res>
     implements $TKCarouselCopyWith<$Res> {
-  _$TKCarouselCopyWithImpl(this._value, this._then);
+  _$TKCarouselCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final TKCarousel _self;
+  final $Res Function(TKCarousel) _then;
 
-  /// Create a copy of TKCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? activityID = null,
-    Object? link = null,
-    Object? sourceType = null,
-    Object? topicID = null,
-    Object? topicImage = null,
-    Object? topicName = null,
-  }) {
-    return _then(_value.copyWith(
-      activityID: null == activityID
-          ? _value.activityID
-          : activityID // ignore: cast_nullable_to_non_nullable
-              as String,
-      link: null == link
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceType: null == sourceType
-          ? _value.sourceType
-          : sourceType // ignore: cast_nullable_to_non_nullable
-              as int,
-      topicID: null == topicID
-          ? _value.topicID
-          : topicID // ignore: cast_nullable_to_non_nullable
-              as int,
-      topicImage: null == topicImage
-          ? _value.topicImage
-          : topicImage // ignore: cast_nullable_to_non_nullable
-              as String,
-      topicName: null == topicName
-          ? _value.topicName
-          : topicName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of TKCarousel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? activityID = null,Object? link = null,Object? sourceType = null,Object? topicID = null,Object? topicImage = null,Object? topicName = null,}) {
+  return _then(_self.copyWith(
+activityID: null == activityID ? _self.activityID : activityID // ignore: cast_nullable_to_non_nullable
+as String,link: null == link ? _self.link : link // ignore: cast_nullable_to_non_nullable
+as String,sourceType: null == sourceType ? _self.sourceType : sourceType // ignore: cast_nullable_to_non_nullable
+as int,topicID: null == topicID ? _self.topicID : topicID // ignore: cast_nullable_to_non_nullable
+as int,topicImage: null == topicImage ? _self.topicImage : topicImage // ignore: cast_nullable_to_non_nullable
+as String,topicName: null == topicName ? _self.topicName : topicName // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$TKCarouselImplCopyWith<$Res>
-    implements $TKCarouselCopyWith<$Res> {
-  factory _$$TKCarouselImplCopyWith(
-          _$TKCarouselImpl value, $Res Function(_$TKCarouselImpl) then) =
-      __$$TKCarouselImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'activityID') String activityID,
-      @JsonKey(name: 'link') String link,
-      @JsonKey(name: 'sourceType') int sourceType,
-      @JsonKey(name: 'topicID') int topicID,
-      @JsonKey(name: 'topicImage') String topicImage,
-      @JsonKey(name: 'topicName') String topicName});
 }
 
-/// @nodoc
-class __$$TKCarouselImplCopyWithImpl<$Res>
-    extends _$TKCarouselCopyWithImpl<$Res, _$TKCarouselImpl>
-    implements _$$TKCarouselImplCopyWith<$Res> {
-  __$$TKCarouselImplCopyWithImpl(
-      _$TKCarouselImpl _value, $Res Function(_$TKCarouselImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TKCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? activityID = null,
-    Object? link = null,
-    Object? sourceType = null,
-    Object? topicID = null,
-    Object? topicImage = null,
-    Object? topicName = null,
-  }) {
-    return _then(_$TKCarouselImpl(
-      activityID: null == activityID
-          ? _value.activityID
-          : activityID // ignore: cast_nullable_to_non_nullable
-              as String,
-      link: null == link
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceType: null == sourceType
-          ? _value.sourceType
-          : sourceType // ignore: cast_nullable_to_non_nullable
-              as int,
-      topicID: null == topicID
-          ? _value.topicID
-          : topicID // ignore: cast_nullable_to_non_nullable
-              as int,
-      topicImage: null == topicImage
-          ? _value.topicImage
-          : topicImage // ignore: cast_nullable_to_non_nullable
-              as String,
-      topicName: null == topicName
-          ? _value.topicName
-          : topicName // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$TKCarouselImpl extends _TKCarousel {
-  const _$TKCarouselImpl(
-      {@JsonKey(name: 'activityID') this.activityID = '',
-      @JsonKey(name: 'link') this.link = '',
-      @JsonKey(name: 'sourceType') this.sourceType = 0,
-      @JsonKey(name: 'topicID') this.topicID = 0,
-      @JsonKey(name: 'topicImage') this.topicImage = '',
-      @JsonKey(name: 'topicName') this.topicName = ''})
-      : super._();
 
-  factory _$TKCarouselImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TKCarouselImplFromJson(json);
+class _TKCarousel extends TKCarousel {
+  const _TKCarousel({@JsonKey(name: 'activityID') this.activityID = '', @JsonKey(name: 'link') this.link = '', @JsonKey(name: 'sourceType') this.sourceType = 0, @JsonKey(name: 'topicID') this.topicID = 0, @JsonKey(name: 'topicImage') this.topicImage = '', @JsonKey(name: 'topicName') this.topicName = ''}): super._();
+  factory _TKCarousel.fromJson(Map<String, dynamic> json) => _$TKCarouselFromJson(json);
 
-  @override
-  @JsonKey(name: 'activityID')
-  final String activityID;
-  @override
-  @JsonKey(name: 'link')
-  final String link;
-  @override
-  @JsonKey(name: 'sourceType')
-  final int sourceType;
-  @override
-  @JsonKey(name: 'topicID')
-  final int topicID;
-  @override
-  @JsonKey(name: 'topicImage')
-  final String topicImage;
-  @override
-  @JsonKey(name: 'topicName')
-  final String topicName;
+@override@JsonKey(name: 'activityID') final  String activityID;
+@override@JsonKey(name: 'link') final  String link;
+@override@JsonKey(name: 'sourceType') final  int sourceType;
+@override@JsonKey(name: 'topicID') final  int topicID;
+@override@JsonKey(name: 'topicImage') final  String topicImage;
+@override@JsonKey(name: 'topicName') final  String topicName;
 
-  @override
-  String toString() {
-    return 'TKCarousel(activityID: $activityID, link: $link, sourceType: $sourceType, topicID: $topicID, topicImage: $topicImage, topicName: $topicName)';
-  }
+/// Create a copy of TKCarousel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$TKCarouselCopyWith<_TKCarousel> get copyWith => __$TKCarouselCopyWithImpl<_TKCarousel>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TKCarouselImpl &&
-            (identical(other.activityID, activityID) ||
-                other.activityID == activityID) &&
-            (identical(other.link, link) || other.link == link) &&
-            (identical(other.sourceType, sourceType) ||
-                other.sourceType == sourceType) &&
-            (identical(other.topicID, topicID) || other.topicID == topicID) &&
-            (identical(other.topicImage, topicImage) ||
-                other.topicImage == topicImage) &&
-            (identical(other.topicName, topicName) ||
-                other.topicName == topicName));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, activityID, link, sourceType,
-      topicID, topicImage, topicName);
-
-  /// Create a copy of TKCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TKCarouselImplCopyWith<_$TKCarouselImpl> get copyWith =>
-      __$$TKCarouselImplCopyWithImpl<_$TKCarouselImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TKCarouselImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$TKCarouselToJson(this, );
 }
 
-abstract class _TKCarousel extends TKCarousel {
-  const factory _TKCarousel(
-      {@JsonKey(name: 'activityID') final String activityID,
-      @JsonKey(name: 'link') final String link,
-      @JsonKey(name: 'sourceType') final int sourceType,
-      @JsonKey(name: 'topicID') final int topicID,
-      @JsonKey(name: 'topicImage') final String topicImage,
-      @JsonKey(name: 'topicName') final String topicName}) = _$TKCarouselImpl;
-  const _TKCarousel._() : super._();
-
-  factory _TKCarousel.fromJson(Map<String, dynamic> json) =
-      _$TKCarouselImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'activityID')
-  String get activityID;
-  @override
-  @JsonKey(name: 'link')
-  String get link;
-  @override
-  @JsonKey(name: 'sourceType')
-  int get sourceType;
-  @override
-  @JsonKey(name: 'topicID')
-  int get topicID;
-  @override
-  @JsonKey(name: 'topicImage')
-  String get topicImage;
-  @override
-  @JsonKey(name: 'topicName')
-  String get topicName;
-
-  /// Create a copy of TKCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TKCarouselImplCopyWith<_$TKCarouselImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TKCarousel&&(identical(other.activityID, activityID) || other.activityID == activityID)&&(identical(other.link, link) || other.link == link)&&(identical(other.sourceType, sourceType) || other.sourceType == sourceType)&&(identical(other.topicID, topicID) || other.topicID == topicID)&&(identical(other.topicImage, topicImage) || other.topicImage == topicImage)&&(identical(other.topicName, topicName) || other.topicName == topicName));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,activityID,link,sourceType,topicID,topicImage,topicName);
+
+@override
+String toString() {
+  return 'TKCarousel(activityID: $activityID, link: $link, sourceType: $sourceType, topicID: $topicID, topicImage: $topicImage, topicName: $topicName)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$TKCarouselCopyWith<$Res> implements $TKCarouselCopyWith<$Res> {
+  factory _$TKCarouselCopyWith(_TKCarousel value, $Res Function(_TKCarousel) _then) = __$TKCarouselCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'activityID') String activityID,@JsonKey(name: 'link') String link,@JsonKey(name: 'sourceType') int sourceType,@JsonKey(name: 'topicID') int topicID,@JsonKey(name: 'topicImage') String topicImage,@JsonKey(name: 'topicName') String topicName
+});
+
+
+
+
+}
+/// @nodoc
+class __$TKCarouselCopyWithImpl<$Res>
+    implements _$TKCarouselCopyWith<$Res> {
+  __$TKCarouselCopyWithImpl(this._self, this._then);
+
+  final _TKCarousel _self;
+  final $Res Function(_TKCarousel) _then;
+
+/// Create a copy of TKCarousel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? activityID = null,Object? link = null,Object? sourceType = null,Object? topicID = null,Object? topicImage = null,Object? topicName = null,}) {
+  return _then(_TKCarousel(
+activityID: null == activityID ? _self.activityID : activityID // ignore: cast_nullable_to_non_nullable
+as String,link: null == link ? _self.link : link // ignore: cast_nullable_to_non_nullable
+as String,sourceType: null == sourceType ? _self.sourceType : sourceType // ignore: cast_nullable_to_non_nullable
+as int,topicID: null == topicID ? _self.topicID : topicID // ignore: cast_nullable_to_non_nullable
+as int,topicImage: null == topicImage ? _self.topicImage : topicImage // ignore: cast_nullable_to_non_nullable
+as String,topicName: null == topicName ? _self.topicName : topicName // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

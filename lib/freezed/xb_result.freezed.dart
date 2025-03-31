@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,689 +10,323 @@ part of 'xb_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-XbData _$XbDataFromJson(Map<String, dynamic> json) {
-  return _XbData.fromJson(json);
-}
 
 /// @nodoc
 mixin _$XbData {
-  @JsonKey(name: 'list')
-  List<XbItem> get list => throw _privateConstructorUsedError;
-  @JsonKey(name: 'pageId')
-  int get pageId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'totalNum')
-  int get totalNum => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'list') List<XbItem> get list;@JsonKey(name: 'pageId') int get pageId;@JsonKey(name: 'totalNum') int get totalNum;
+/// Create a copy of XbData
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$XbDataCopyWith<XbData> get copyWith => _$XbDataCopyWithImpl<XbData>(this as XbData, _$identity);
 
   /// Serializes this XbData to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of XbData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $XbDataCopyWith<XbData> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is XbData&&const DeepCollectionEquality().equals(other.list, list)&&(identical(other.pageId, pageId) || other.pageId == pageId)&&(identical(other.totalNum, totalNum) || other.totalNum == totalNum));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(list),pageId,totalNum);
+
+@override
+String toString() {
+  return 'XbData(list: $list, pageId: $pageId, totalNum: $totalNum)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $XbDataCopyWith<$Res> {
-  factory $XbDataCopyWith(XbData value, $Res Function(XbData) then) =
-      _$XbDataCopyWithImpl<$Res, XbData>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'list') List<XbItem> list,
-      @JsonKey(name: 'pageId') int pageId,
-      @JsonKey(name: 'totalNum') int totalNum});
-}
+abstract mixin class $XbDataCopyWith<$Res>  {
+  factory $XbDataCopyWith(XbData value, $Res Function(XbData) _then) = _$XbDataCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'list') List<XbItem> list,@JsonKey(name: 'pageId') int pageId,@JsonKey(name: 'totalNum') int totalNum
+});
 
+
+
+
+}
 /// @nodoc
-class _$XbDataCopyWithImpl<$Res, $Val extends XbData>
+class _$XbDataCopyWithImpl<$Res>
     implements $XbDataCopyWith<$Res> {
-  _$XbDataCopyWithImpl(this._value, this._then);
+  _$XbDataCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final XbData _self;
+  final $Res Function(XbData) _then;
 
-  /// Create a copy of XbData
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? list = null,
-    Object? pageId = null,
-    Object? totalNum = null,
-  }) {
-    return _then(_value.copyWith(
-      list: null == list
-          ? _value.list
-          : list // ignore: cast_nullable_to_non_nullable
-              as List<XbItem>,
-      pageId: null == pageId
-          ? _value.pageId
-          : pageId // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalNum: null == totalNum
-          ? _value.totalNum
-          : totalNum // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
+/// Create a copy of XbData
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? list = null,Object? pageId = null,Object? totalNum = null,}) {
+  return _then(_self.copyWith(
+list: null == list ? _self.list : list // ignore: cast_nullable_to_non_nullable
+as List<XbItem>,pageId: null == pageId ? _self.pageId : pageId // ignore: cast_nullable_to_non_nullable
+as int,totalNum: null == totalNum ? _self.totalNum : totalNum // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-abstract class _$$XbDataImplCopyWith<$Res> implements $XbDataCopyWith<$Res> {
-  factory _$$XbDataImplCopyWith(
-          _$XbDataImpl value, $Res Function(_$XbDataImpl) then) =
-      __$$XbDataImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'list') List<XbItem> list,
-      @JsonKey(name: 'pageId') int pageId,
-      @JsonKey(name: 'totalNum') int totalNum});
 }
 
-/// @nodoc
-class __$$XbDataImplCopyWithImpl<$Res>
-    extends _$XbDataCopyWithImpl<$Res, _$XbDataImpl>
-    implements _$$XbDataImplCopyWith<$Res> {
-  __$$XbDataImplCopyWithImpl(
-      _$XbDataImpl _value, $Res Function(_$XbDataImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of XbData
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? list = null,
-    Object? pageId = null,
-    Object? totalNum = null,
-  }) {
-    return _then(_$XbDataImpl(
-      list: null == list
-          ? _value._list
-          : list // ignore: cast_nullable_to_non_nullable
-              as List<XbItem>,
-      pageId: null == pageId
-          ? _value.pageId
-          : pageId // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalNum: null == totalNum
-          ? _value.totalNum
-          : totalNum // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$XbDataImpl extends _XbData {
-  const _$XbDataImpl(
-      {@JsonKey(name: 'list') final List<XbItem> list = const [],
-      @JsonKey(name: 'pageId') this.pageId = 0,
-      @JsonKey(name: 'totalNum') this.totalNum = 0})
-      : _list = list,
-        super._();
 
-  factory _$XbDataImpl.fromJson(Map<String, dynamic> json) =>
-      _$$XbDataImplFromJson(json);
+class _XbData extends XbData {
+  const _XbData({@JsonKey(name: 'list') final  List<XbItem> list = const [], @JsonKey(name: 'pageId') this.pageId = 0, @JsonKey(name: 'totalNum') this.totalNum = 0}): _list = list,super._();
+  factory _XbData.fromJson(Map<String, dynamic> json) => _$XbDataFromJson(json);
 
-  final List<XbItem> _list;
-  @override
-  @JsonKey(name: 'list')
-  List<XbItem> get list {
-    if (_list is EqualUnmodifiableListView) return _list;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_list);
-  }
-
-  @override
-  @JsonKey(name: 'pageId')
-  final int pageId;
-  @override
-  @JsonKey(name: 'totalNum')
-  final int totalNum;
-
-  @override
-  String toString() {
-    return 'XbData(list: $list, pageId: $pageId, totalNum: $totalNum)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$XbDataImpl &&
-            const DeepCollectionEquality().equals(other._list, _list) &&
-            (identical(other.pageId, pageId) || other.pageId == pageId) &&
-            (identical(other.totalNum, totalNum) ||
-                other.totalNum == totalNum));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_list), pageId, totalNum);
-
-  /// Create a copy of XbData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$XbDataImplCopyWith<_$XbDataImpl> get copyWith =>
-      __$$XbDataImplCopyWithImpl<_$XbDataImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$XbDataImplToJson(
-      this,
-    );
-  }
+ final  List<XbItem> _list;
+@override@JsonKey(name: 'list') List<XbItem> get list {
+  if (_list is EqualUnmodifiableListView) return _list;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_list);
 }
 
-abstract class _XbData extends XbData {
-  const factory _XbData(
-      {@JsonKey(name: 'list') final List<XbItem> list,
-      @JsonKey(name: 'pageId') final int pageId,
-      @JsonKey(name: 'totalNum') final int totalNum}) = _$XbDataImpl;
-  const _XbData._() : super._();
+@override@JsonKey(name: 'pageId') final  int pageId;
+@override@JsonKey(name: 'totalNum') final  int totalNum;
 
-  factory _XbData.fromJson(Map<String, dynamic> json) = _$XbDataImpl.fromJson;
+/// Create a copy of XbData
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$XbDataCopyWith<_XbData> get copyWith => __$XbDataCopyWithImpl<_XbData>(this, _$identity);
 
-  @override
-  @JsonKey(name: 'list')
-  List<XbItem> get list;
-  @override
-  @JsonKey(name: 'pageId')
-  int get pageId;
-  @override
-  @JsonKey(name: 'totalNum')
-  int get totalNum;
-
-  /// Create a copy of XbData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$XbDataImplCopyWith<_$XbDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$XbDataToJson(this, );
 }
 
-XbItem _$XbItemFromJson(Map<String, dynamic> json) {
-  return _XbItem.fromJson(json);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _XbData&&const DeepCollectionEquality().equals(other._list, _list)&&(identical(other.pageId, pageId) || other.pageId == pageId)&&(identical(other.totalNum, totalNum) || other.totalNum == totalNum));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_list),pageId,totalNum);
+
+@override
+String toString() {
+  return 'XbData(list: $list, pageId: $pageId, totalNum: $totalNum)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$XbDataCopyWith<$Res> implements $XbDataCopyWith<$Res> {
+  factory _$XbDataCopyWith(_XbData value, $Res Function(_XbData) _then) = __$XbDataCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'list') List<XbItem> list,@JsonKey(name: 'pageId') int pageId,@JsonKey(name: 'totalNum') int totalNum
+});
+
+
+
+
+}
+/// @nodoc
+class __$XbDataCopyWithImpl<$Res>
+    implements _$XbDataCopyWith<$Res> {
+  __$XbDataCopyWithImpl(this._self, this._then);
+
+  final _XbData _self;
+  final $Res Function(_XbData) _then;
+
+/// Create a copy of XbData
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? list = null,Object? pageId = null,Object? totalNum = null,}) {
+  return _then(_XbData(
+list: null == list ? _self._list : list // ignore: cast_nullable_to_non_nullable
+as List<XbItem>,pageId: null == pageId ? _self.pageId : pageId // ignore: cast_nullable_to_non_nullable
+as int,totalNum: null == totalNum ? _self.totalNum : totalNum // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
 
 /// @nodoc
 mixin _$XbItem {
-  @JsonKey(name: 'content')
-  String get content => throw _privateConstructorUsedError;
-  @JsonKey(name: 'contentApp')
-  String get contentApp => throw _privateConstructorUsedError;
-  @JsonKey(name: 'couponUrl')
-  String get couponUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'createTime')
-  String get createTime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'img')
-  String get img => throw _privateConstructorUsedError;
-  @JsonKey(name: 'itemId')
-  String get itemId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'itemUrl')
-  String get itemUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'msgId')
-  String get msgId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'remark')
-  String get remark => throw _privateConstructorUsedError;
-  @JsonKey(name: 'source')
-  String get source => throw _privateConstructorUsedError;
-  @JsonKey(name: 'sourceType')
-  String get sourceType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'tag')
-  String get tag => throw _privateConstructorUsedError;
-  @JsonKey(name: 'title')
-  String get title => throw _privateConstructorUsedError;
-  @JsonKey(name: 'updateTime')
-  String get updateTime => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'content') String get content;@JsonKey(name: 'contentApp') String get contentApp;@JsonKey(name: 'couponUrl') String get couponUrl;@JsonKey(name: 'createTime') String get createTime;@JsonKey(name: 'img') String get img;@JsonKey(name: 'itemId') String get itemId;@JsonKey(name: 'itemUrl') String get itemUrl;@JsonKey(name: 'msgId') String get msgId;@JsonKey(name: 'remark') String get remark;@JsonKey(name: 'source') String get source;@JsonKey(name: 'sourceType') String get sourceType;@JsonKey(name: 'tag') String get tag;@JsonKey(name: 'title') String get title;@JsonKey(name: 'updateTime') String get updateTime;
+/// Create a copy of XbItem
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$XbItemCopyWith<XbItem> get copyWith => _$XbItemCopyWithImpl<XbItem>(this as XbItem, _$identity);
 
   /// Serializes this XbItem to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of XbItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $XbItemCopyWith<XbItem> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is XbItem&&(identical(other.content, content) || other.content == content)&&(identical(other.contentApp, contentApp) || other.contentApp == contentApp)&&(identical(other.couponUrl, couponUrl) || other.couponUrl == couponUrl)&&(identical(other.createTime, createTime) || other.createTime == createTime)&&(identical(other.img, img) || other.img == img)&&(identical(other.itemId, itemId) || other.itemId == itemId)&&(identical(other.itemUrl, itemUrl) || other.itemUrl == itemUrl)&&(identical(other.msgId, msgId) || other.msgId == msgId)&&(identical(other.remark, remark) || other.remark == remark)&&(identical(other.source, source) || other.source == source)&&(identical(other.sourceType, sourceType) || other.sourceType == sourceType)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.title, title) || other.title == title)&&(identical(other.updateTime, updateTime) || other.updateTime == updateTime));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,content,contentApp,couponUrl,createTime,img,itemId,itemUrl,msgId,remark,source,sourceType,tag,title,updateTime);
+
+@override
+String toString() {
+  return 'XbItem(content: $content, contentApp: $contentApp, couponUrl: $couponUrl, createTime: $createTime, img: $img, itemId: $itemId, itemUrl: $itemUrl, msgId: $msgId, remark: $remark, source: $source, sourceType: $sourceType, tag: $tag, title: $title, updateTime: $updateTime)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $XbItemCopyWith<$Res> {
-  factory $XbItemCopyWith(XbItem value, $Res Function(XbItem) then) =
-      _$XbItemCopyWithImpl<$Res, XbItem>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'content') String content,
-      @JsonKey(name: 'contentApp') String contentApp,
-      @JsonKey(name: 'couponUrl') String couponUrl,
-      @JsonKey(name: 'createTime') String createTime,
-      @JsonKey(name: 'img') String img,
-      @JsonKey(name: 'itemId') String itemId,
-      @JsonKey(name: 'itemUrl') String itemUrl,
-      @JsonKey(name: 'msgId') String msgId,
-      @JsonKey(name: 'remark') String remark,
-      @JsonKey(name: 'source') String source,
-      @JsonKey(name: 'sourceType') String sourceType,
-      @JsonKey(name: 'tag') String tag,
-      @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'updateTime') String updateTime});
-}
+abstract mixin class $XbItemCopyWith<$Res>  {
+  factory $XbItemCopyWith(XbItem value, $Res Function(XbItem) _then) = _$XbItemCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'content') String content,@JsonKey(name: 'contentApp') String contentApp,@JsonKey(name: 'couponUrl') String couponUrl,@JsonKey(name: 'createTime') String createTime,@JsonKey(name: 'img') String img,@JsonKey(name: 'itemId') String itemId,@JsonKey(name: 'itemUrl') String itemUrl,@JsonKey(name: 'msgId') String msgId,@JsonKey(name: 'remark') String remark,@JsonKey(name: 'source') String source,@JsonKey(name: 'sourceType') String sourceType,@JsonKey(name: 'tag') String tag,@JsonKey(name: 'title') String title,@JsonKey(name: 'updateTime') String updateTime
+});
 
+
+
+
+}
 /// @nodoc
-class _$XbItemCopyWithImpl<$Res, $Val extends XbItem>
+class _$XbItemCopyWithImpl<$Res>
     implements $XbItemCopyWith<$Res> {
-  _$XbItemCopyWithImpl(this._value, this._then);
+  _$XbItemCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final XbItem _self;
+  final $Res Function(XbItem) _then;
 
-  /// Create a copy of XbItem
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? content = null,
-    Object? contentApp = null,
-    Object? couponUrl = null,
-    Object? createTime = null,
-    Object? img = null,
-    Object? itemId = null,
-    Object? itemUrl = null,
-    Object? msgId = null,
-    Object? remark = null,
-    Object? source = null,
-    Object? sourceType = null,
-    Object? tag = null,
-    Object? title = null,
-    Object? updateTime = null,
-  }) {
-    return _then(_value.copyWith(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-      contentApp: null == contentApp
-          ? _value.contentApp
-          : contentApp // ignore: cast_nullable_to_non_nullable
-              as String,
-      couponUrl: null == couponUrl
-          ? _value.couponUrl
-          : couponUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      createTime: null == createTime
-          ? _value.createTime
-          : createTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      img: null == img
-          ? _value.img
-          : img // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemUrl: null == itemUrl
-          ? _value.itemUrl
-          : itemUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      msgId: null == msgId
-          ? _value.msgId
-          : msgId // ignore: cast_nullable_to_non_nullable
-              as String,
-      remark: null == remark
-          ? _value.remark
-          : remark // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceType: null == sourceType
-          ? _value.sourceType
-          : sourceType // ignore: cast_nullable_to_non_nullable
-              as String,
-      tag: null == tag
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      updateTime: null == updateTime
-          ? _value.updateTime
-          : updateTime // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of XbItem
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? content = null,Object? contentApp = null,Object? couponUrl = null,Object? createTime = null,Object? img = null,Object? itemId = null,Object? itemUrl = null,Object? msgId = null,Object? remark = null,Object? source = null,Object? sourceType = null,Object? tag = null,Object? title = null,Object? updateTime = null,}) {
+  return _then(_self.copyWith(
+content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String,contentApp: null == contentApp ? _self.contentApp : contentApp // ignore: cast_nullable_to_non_nullable
+as String,couponUrl: null == couponUrl ? _self.couponUrl : couponUrl // ignore: cast_nullable_to_non_nullable
+as String,createTime: null == createTime ? _self.createTime : createTime // ignore: cast_nullable_to_non_nullable
+as String,img: null == img ? _self.img : img // ignore: cast_nullable_to_non_nullable
+as String,itemId: null == itemId ? _self.itemId : itemId // ignore: cast_nullable_to_non_nullable
+as String,itemUrl: null == itemUrl ? _self.itemUrl : itemUrl // ignore: cast_nullable_to_non_nullable
+as String,msgId: null == msgId ? _self.msgId : msgId // ignore: cast_nullable_to_non_nullable
+as String,remark: null == remark ? _self.remark : remark // ignore: cast_nullable_to_non_nullable
+as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String,sourceType: null == sourceType ? _self.sourceType : sourceType // ignore: cast_nullable_to_non_nullable
+as String,tag: null == tag ? _self.tag : tag // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,updateTime: null == updateTime ? _self.updateTime : updateTime // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$XbItemImplCopyWith<$Res> implements $XbItemCopyWith<$Res> {
-  factory _$$XbItemImplCopyWith(
-          _$XbItemImpl value, $Res Function(_$XbItemImpl) then) =
-      __$$XbItemImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'content') String content,
-      @JsonKey(name: 'contentApp') String contentApp,
-      @JsonKey(name: 'couponUrl') String couponUrl,
-      @JsonKey(name: 'createTime') String createTime,
-      @JsonKey(name: 'img') String img,
-      @JsonKey(name: 'itemId') String itemId,
-      @JsonKey(name: 'itemUrl') String itemUrl,
-      @JsonKey(name: 'msgId') String msgId,
-      @JsonKey(name: 'remark') String remark,
-      @JsonKey(name: 'source') String source,
-      @JsonKey(name: 'sourceType') String sourceType,
-      @JsonKey(name: 'tag') String tag,
-      @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'updateTime') String updateTime});
 }
 
-/// @nodoc
-class __$$XbItemImplCopyWithImpl<$Res>
-    extends _$XbItemCopyWithImpl<$Res, _$XbItemImpl>
-    implements _$$XbItemImplCopyWith<$Res> {
-  __$$XbItemImplCopyWithImpl(
-      _$XbItemImpl _value, $Res Function(_$XbItemImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of XbItem
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? content = null,
-    Object? contentApp = null,
-    Object? couponUrl = null,
-    Object? createTime = null,
-    Object? img = null,
-    Object? itemId = null,
-    Object? itemUrl = null,
-    Object? msgId = null,
-    Object? remark = null,
-    Object? source = null,
-    Object? sourceType = null,
-    Object? tag = null,
-    Object? title = null,
-    Object? updateTime = null,
-  }) {
-    return _then(_$XbItemImpl(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-      contentApp: null == contentApp
-          ? _value.contentApp
-          : contentApp // ignore: cast_nullable_to_non_nullable
-              as String,
-      couponUrl: null == couponUrl
-          ? _value.couponUrl
-          : couponUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      createTime: null == createTime
-          ? _value.createTime
-          : createTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      img: null == img
-          ? _value.img
-          : img // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemId: null == itemId
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as String,
-      itemUrl: null == itemUrl
-          ? _value.itemUrl
-          : itemUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      msgId: null == msgId
-          ? _value.msgId
-          : msgId // ignore: cast_nullable_to_non_nullable
-              as String,
-      remark: null == remark
-          ? _value.remark
-          : remark // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceType: null == sourceType
-          ? _value.sourceType
-          : sourceType // ignore: cast_nullable_to_non_nullable
-              as String,
-      tag: null == tag
-          ? _value.tag
-          : tag // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      updateTime: null == updateTime
-          ? _value.updateTime
-          : updateTime // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$XbItemImpl extends _XbItem {
-  const _$XbItemImpl(
-      {@JsonKey(name: 'content') this.content = '',
-      @JsonKey(name: 'contentApp') this.contentApp = '',
-      @JsonKey(name: 'couponUrl') this.couponUrl = '',
-      @JsonKey(name: 'createTime') this.createTime = '',
-      @JsonKey(name: 'img') this.img = '',
-      @JsonKey(name: 'itemId') this.itemId = '',
-      @JsonKey(name: 'itemUrl') this.itemUrl = '',
-      @JsonKey(name: 'msgId') this.msgId = '',
-      @JsonKey(name: 'remark') this.remark = '',
-      @JsonKey(name: 'source') this.source = '',
-      @JsonKey(name: 'sourceType') this.sourceType = '',
-      @JsonKey(name: 'tag') this.tag = '',
-      @JsonKey(name: 'title') this.title = '',
-      @JsonKey(name: 'updateTime') this.updateTime = ''})
-      : super._();
 
-  factory _$XbItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$XbItemImplFromJson(json);
+class _XbItem extends XbItem {
+  const _XbItem({@JsonKey(name: 'content') this.content = '', @JsonKey(name: 'contentApp') this.contentApp = '', @JsonKey(name: 'couponUrl') this.couponUrl = '', @JsonKey(name: 'createTime') this.createTime = '', @JsonKey(name: 'img') this.img = '', @JsonKey(name: 'itemId') this.itemId = '', @JsonKey(name: 'itemUrl') this.itemUrl = '', @JsonKey(name: 'msgId') this.msgId = '', @JsonKey(name: 'remark') this.remark = '', @JsonKey(name: 'source') this.source = '', @JsonKey(name: 'sourceType') this.sourceType = '', @JsonKey(name: 'tag') this.tag = '', @JsonKey(name: 'title') this.title = '', @JsonKey(name: 'updateTime') this.updateTime = ''}): super._();
+  factory _XbItem.fromJson(Map<String, dynamic> json) => _$XbItemFromJson(json);
 
-  @override
-  @JsonKey(name: 'content')
-  final String content;
-  @override
-  @JsonKey(name: 'contentApp')
-  final String contentApp;
-  @override
-  @JsonKey(name: 'couponUrl')
-  final String couponUrl;
-  @override
-  @JsonKey(name: 'createTime')
-  final String createTime;
-  @override
-  @JsonKey(name: 'img')
-  final String img;
-  @override
-  @JsonKey(name: 'itemId')
-  final String itemId;
-  @override
-  @JsonKey(name: 'itemUrl')
-  final String itemUrl;
-  @override
-  @JsonKey(name: 'msgId')
-  final String msgId;
-  @override
-  @JsonKey(name: 'remark')
-  final String remark;
-  @override
-  @JsonKey(name: 'source')
-  final String source;
-  @override
-  @JsonKey(name: 'sourceType')
-  final String sourceType;
-  @override
-  @JsonKey(name: 'tag')
-  final String tag;
-  @override
-  @JsonKey(name: 'title')
-  final String title;
-  @override
-  @JsonKey(name: 'updateTime')
-  final String updateTime;
+@override@JsonKey(name: 'content') final  String content;
+@override@JsonKey(name: 'contentApp') final  String contentApp;
+@override@JsonKey(name: 'couponUrl') final  String couponUrl;
+@override@JsonKey(name: 'createTime') final  String createTime;
+@override@JsonKey(name: 'img') final  String img;
+@override@JsonKey(name: 'itemId') final  String itemId;
+@override@JsonKey(name: 'itemUrl') final  String itemUrl;
+@override@JsonKey(name: 'msgId') final  String msgId;
+@override@JsonKey(name: 'remark') final  String remark;
+@override@JsonKey(name: 'source') final  String source;
+@override@JsonKey(name: 'sourceType') final  String sourceType;
+@override@JsonKey(name: 'tag') final  String tag;
+@override@JsonKey(name: 'title') final  String title;
+@override@JsonKey(name: 'updateTime') final  String updateTime;
 
-  @override
-  String toString() {
-    return 'XbItem(content: $content, contentApp: $contentApp, couponUrl: $couponUrl, createTime: $createTime, img: $img, itemId: $itemId, itemUrl: $itemUrl, msgId: $msgId, remark: $remark, source: $source, sourceType: $sourceType, tag: $tag, title: $title, updateTime: $updateTime)';
-  }
+/// Create a copy of XbItem
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$XbItemCopyWith<_XbItem> get copyWith => __$XbItemCopyWithImpl<_XbItem>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$XbItemImpl &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.contentApp, contentApp) ||
-                other.contentApp == contentApp) &&
-            (identical(other.couponUrl, couponUrl) ||
-                other.couponUrl == couponUrl) &&
-            (identical(other.createTime, createTime) ||
-                other.createTime == createTime) &&
-            (identical(other.img, img) || other.img == img) &&
-            (identical(other.itemId, itemId) || other.itemId == itemId) &&
-            (identical(other.itemUrl, itemUrl) || other.itemUrl == itemUrl) &&
-            (identical(other.msgId, msgId) || other.msgId == msgId) &&
-            (identical(other.remark, remark) || other.remark == remark) &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.sourceType, sourceType) ||
-                other.sourceType == sourceType) &&
-            (identical(other.tag, tag) || other.tag == tag) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.updateTime, updateTime) ||
-                other.updateTime == updateTime));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      content,
-      contentApp,
-      couponUrl,
-      createTime,
-      img,
-      itemId,
-      itemUrl,
-      msgId,
-      remark,
-      source,
-      sourceType,
-      tag,
-      title,
-      updateTime);
-
-  /// Create a copy of XbItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$XbItemImplCopyWith<_$XbItemImpl> get copyWith =>
-      __$$XbItemImplCopyWithImpl<_$XbItemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$XbItemImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$XbItemToJson(this, );
 }
 
-abstract class _XbItem extends XbItem {
-  const factory _XbItem(
-      {@JsonKey(name: 'content') final String content,
-      @JsonKey(name: 'contentApp') final String contentApp,
-      @JsonKey(name: 'couponUrl') final String couponUrl,
-      @JsonKey(name: 'createTime') final String createTime,
-      @JsonKey(name: 'img') final String img,
-      @JsonKey(name: 'itemId') final String itemId,
-      @JsonKey(name: 'itemUrl') final String itemUrl,
-      @JsonKey(name: 'msgId') final String msgId,
-      @JsonKey(name: 'remark') final String remark,
-      @JsonKey(name: 'source') final String source,
-      @JsonKey(name: 'sourceType') final String sourceType,
-      @JsonKey(name: 'tag') final String tag,
-      @JsonKey(name: 'title') final String title,
-      @JsonKey(name: 'updateTime') final String updateTime}) = _$XbItemImpl;
-  const _XbItem._() : super._();
-
-  factory _XbItem.fromJson(Map<String, dynamic> json) = _$XbItemImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'content')
-  String get content;
-  @override
-  @JsonKey(name: 'contentApp')
-  String get contentApp;
-  @override
-  @JsonKey(name: 'couponUrl')
-  String get couponUrl;
-  @override
-  @JsonKey(name: 'createTime')
-  String get createTime;
-  @override
-  @JsonKey(name: 'img')
-  String get img;
-  @override
-  @JsonKey(name: 'itemId')
-  String get itemId;
-  @override
-  @JsonKey(name: 'itemUrl')
-  String get itemUrl;
-  @override
-  @JsonKey(name: 'msgId')
-  String get msgId;
-  @override
-  @JsonKey(name: 'remark')
-  String get remark;
-  @override
-  @JsonKey(name: 'source')
-  String get source;
-  @override
-  @JsonKey(name: 'sourceType')
-  String get sourceType;
-  @override
-  @JsonKey(name: 'tag')
-  String get tag;
-  @override
-  @JsonKey(name: 'title')
-  String get title;
-  @override
-  @JsonKey(name: 'updateTime')
-  String get updateTime;
-
-  /// Create a copy of XbItem
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$XbItemImplCopyWith<_$XbItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _XbItem&&(identical(other.content, content) || other.content == content)&&(identical(other.contentApp, contentApp) || other.contentApp == contentApp)&&(identical(other.couponUrl, couponUrl) || other.couponUrl == couponUrl)&&(identical(other.createTime, createTime) || other.createTime == createTime)&&(identical(other.img, img) || other.img == img)&&(identical(other.itemId, itemId) || other.itemId == itemId)&&(identical(other.itemUrl, itemUrl) || other.itemUrl == itemUrl)&&(identical(other.msgId, msgId) || other.msgId == msgId)&&(identical(other.remark, remark) || other.remark == remark)&&(identical(other.source, source) || other.source == source)&&(identical(other.sourceType, sourceType) || other.sourceType == sourceType)&&(identical(other.tag, tag) || other.tag == tag)&&(identical(other.title, title) || other.title == title)&&(identical(other.updateTime, updateTime) || other.updateTime == updateTime));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,content,contentApp,couponUrl,createTime,img,itemId,itemUrl,msgId,remark,source,sourceType,tag,title,updateTime);
+
+@override
+String toString() {
+  return 'XbItem(content: $content, contentApp: $contentApp, couponUrl: $couponUrl, createTime: $createTime, img: $img, itemId: $itemId, itemUrl: $itemUrl, msgId: $msgId, remark: $remark, source: $source, sourceType: $sourceType, tag: $tag, title: $title, updateTime: $updateTime)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$XbItemCopyWith<$Res> implements $XbItemCopyWith<$Res> {
+  factory _$XbItemCopyWith(_XbItem value, $Res Function(_XbItem) _then) = __$XbItemCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'content') String content,@JsonKey(name: 'contentApp') String contentApp,@JsonKey(name: 'couponUrl') String couponUrl,@JsonKey(name: 'createTime') String createTime,@JsonKey(name: 'img') String img,@JsonKey(name: 'itemId') String itemId,@JsonKey(name: 'itemUrl') String itemUrl,@JsonKey(name: 'msgId') String msgId,@JsonKey(name: 'remark') String remark,@JsonKey(name: 'source') String source,@JsonKey(name: 'sourceType') String sourceType,@JsonKey(name: 'tag') String tag,@JsonKey(name: 'title') String title,@JsonKey(name: 'updateTime') String updateTime
+});
+
+
+
+
+}
+/// @nodoc
+class __$XbItemCopyWithImpl<$Res>
+    implements _$XbItemCopyWith<$Res> {
+  __$XbItemCopyWithImpl(this._self, this._then);
+
+  final _XbItem _self;
+  final $Res Function(_XbItem) _then;
+
+/// Create a copy of XbItem
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? content = null,Object? contentApp = null,Object? couponUrl = null,Object? createTime = null,Object? img = null,Object? itemId = null,Object? itemUrl = null,Object? msgId = null,Object? remark = null,Object? source = null,Object? sourceType = null,Object? tag = null,Object? title = null,Object? updateTime = null,}) {
+  return _then(_XbItem(
+content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String,contentApp: null == contentApp ? _self.contentApp : contentApp // ignore: cast_nullable_to_non_nullable
+as String,couponUrl: null == couponUrl ? _self.couponUrl : couponUrl // ignore: cast_nullable_to_non_nullable
+as String,createTime: null == createTime ? _self.createTime : createTime // ignore: cast_nullable_to_non_nullable
+as String,img: null == img ? _self.img : img // ignore: cast_nullable_to_non_nullable
+as String,itemId: null == itemId ? _self.itemId : itemId // ignore: cast_nullable_to_non_nullable
+as String,itemUrl: null == itemUrl ? _self.itemUrl : itemUrl // ignore: cast_nullable_to_non_nullable
+as String,msgId: null == msgId ? _self.msgId : msgId // ignore: cast_nullable_to_non_nullable
+as String,remark: null == remark ? _self.remark : remark // ignore: cast_nullable_to_non_nullable
+as String,source: null == source ? _self.source : source // ignore: cast_nullable_to_non_nullable
+as String,sourceType: null == sourceType ? _self.sourceType : sourceType // ignore: cast_nullable_to_non_nullable
+as String,tag: null == tag ? _self.tag : tag // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,updateTime: null == updateTime ? _self.updateTime : updateTime // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

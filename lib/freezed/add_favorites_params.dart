@@ -1,11 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'add_favorites_params.freezed.dart';
 part 'add_favorites_params.g.dart';
 
-part 'add_favorites_params.freezed.dart';
-
 @freezed
-class AddFavoritesParams with _$AddFavoritesParams {
+sealed class AddFavoritesParams with _$AddFavoritesParams {
   const factory AddFavoritesParams({
     @JsonKey(name: 'productId') @Default('') String productid,
     @JsonKey(name: 'type') @Default('') String type,

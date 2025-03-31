@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,449 +10,293 @@ part of 'zhe_carousel_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ZheCarouselResult _$ZheCarouselResultFromJson(Map<String, dynamic> json) {
-  return _ZheCarouselResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ZheCarouselResult {
-  @JsonKey(name: 'content')
-  List<ZheCarousel> get content => throw _privateConstructorUsedError;
-  @JsonKey(name: 'status')
-  int get status => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'content') List<ZheCarousel> get content;@JsonKey(name: 'status') int get status;
+/// Create a copy of ZheCarouselResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZheCarouselResultCopyWith<ZheCarouselResult> get copyWith => _$ZheCarouselResultCopyWithImpl<ZheCarouselResult>(this as ZheCarouselResult, _$identity);
 
   /// Serializes this ZheCarouselResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of ZheCarouselResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ZheCarouselResultCopyWith<ZheCarouselResult> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZheCarouselResult&&const DeepCollectionEquality().equals(other.content, content)&&(identical(other.status, status) || other.status == status));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(content),status);
+
+@override
+String toString() {
+  return 'ZheCarouselResult(content: $content, status: $status)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ZheCarouselResultCopyWith<$Res> {
-  factory $ZheCarouselResultCopyWith(
-          ZheCarouselResult value, $Res Function(ZheCarouselResult) then) =
-      _$ZheCarouselResultCopyWithImpl<$Res, ZheCarouselResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'content') List<ZheCarousel> content,
-      @JsonKey(name: 'status') int status});
-}
+abstract mixin class $ZheCarouselResultCopyWith<$Res>  {
+  factory $ZheCarouselResultCopyWith(ZheCarouselResult value, $Res Function(ZheCarouselResult) _then) = _$ZheCarouselResultCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'content') List<ZheCarousel> content,@JsonKey(name: 'status') int status
+});
 
+
+
+
+}
 /// @nodoc
-class _$ZheCarouselResultCopyWithImpl<$Res, $Val extends ZheCarouselResult>
+class _$ZheCarouselResultCopyWithImpl<$Res>
     implements $ZheCarouselResultCopyWith<$Res> {
-  _$ZheCarouselResultCopyWithImpl(this._value, this._then);
+  _$ZheCarouselResultCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ZheCarouselResult _self;
+  final $Res Function(ZheCarouselResult) _then;
 
-  /// Create a copy of ZheCarouselResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? content = null,
-    Object? status = null,
-  }) {
-    return _then(_value.copyWith(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as List<ZheCarousel>,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
+/// Create a copy of ZheCarouselResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? content = null,Object? status = null,}) {
+  return _then(_self.copyWith(
+content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as List<ZheCarousel>,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ZheCarouselResultImplCopyWith<$Res>
-    implements $ZheCarouselResultCopyWith<$Res> {
-  factory _$$ZheCarouselResultImplCopyWith(_$ZheCarouselResultImpl value,
-          $Res Function(_$ZheCarouselResultImpl) then) =
-      __$$ZheCarouselResultImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'content') List<ZheCarousel> content,
-      @JsonKey(name: 'status') int status});
 }
 
-/// @nodoc
-class __$$ZheCarouselResultImplCopyWithImpl<$Res>
-    extends _$ZheCarouselResultCopyWithImpl<$Res, _$ZheCarouselResultImpl>
-    implements _$$ZheCarouselResultImplCopyWith<$Res> {
-  __$$ZheCarouselResultImplCopyWithImpl(_$ZheCarouselResultImpl _value,
-      $Res Function(_$ZheCarouselResultImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ZheCarouselResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? content = null,
-    Object? status = null,
-  }) {
-    return _then(_$ZheCarouselResultImpl(
-      content: null == content
-          ? _value._content
-          : content // ignore: cast_nullable_to_non_nullable
-              as List<ZheCarousel>,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$ZheCarouselResultImpl extends _ZheCarouselResult {
-  const _$ZheCarouselResultImpl(
-      {@JsonKey(name: 'content') final List<ZheCarousel> content = const [],
-      @JsonKey(name: 'status') this.status = 0})
-      : _content = content,
-        super._();
 
-  factory _$ZheCarouselResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ZheCarouselResultImplFromJson(json);
+class _ZheCarouselResult extends ZheCarouselResult {
+  const _ZheCarouselResult({@JsonKey(name: 'content') final  List<ZheCarousel> content = const [], @JsonKey(name: 'status') this.status = 0}): _content = content,super._();
+  factory _ZheCarouselResult.fromJson(Map<String, dynamic> json) => _$ZheCarouselResultFromJson(json);
 
-  final List<ZheCarousel> _content;
-  @override
-  @JsonKey(name: 'content')
-  List<ZheCarousel> get content {
-    if (_content is EqualUnmodifiableListView) return _content;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_content);
-  }
-
-  @override
-  @JsonKey(name: 'status')
-  final int status;
-
-  @override
-  String toString() {
-    return 'ZheCarouselResult(content: $content, status: $status)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ZheCarouselResultImpl &&
-            const DeepCollectionEquality().equals(other._content, _content) &&
-            (identical(other.status, status) || other.status == status));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_content), status);
-
-  /// Create a copy of ZheCarouselResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ZheCarouselResultImplCopyWith<_$ZheCarouselResultImpl> get copyWith =>
-      __$$ZheCarouselResultImplCopyWithImpl<_$ZheCarouselResultImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ZheCarouselResultImplToJson(
-      this,
-    );
-  }
+ final  List<ZheCarousel> _content;
+@override@JsonKey(name: 'content') List<ZheCarousel> get content {
+  if (_content is EqualUnmodifiableListView) return _content;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_content);
 }
 
-abstract class _ZheCarouselResult extends ZheCarouselResult {
-  const factory _ZheCarouselResult(
-      {@JsonKey(name: 'content') final List<ZheCarousel> content,
-      @JsonKey(name: 'status') final int status}) = _$ZheCarouselResultImpl;
-  const _ZheCarouselResult._() : super._();
+@override@JsonKey(name: 'status') final  int status;
 
-  factory _ZheCarouselResult.fromJson(Map<String, dynamic> json) =
-      _$ZheCarouselResultImpl.fromJson;
+/// Create a copy of ZheCarouselResult
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZheCarouselResultCopyWith<_ZheCarouselResult> get copyWith => __$ZheCarouselResultCopyWithImpl<_ZheCarouselResult>(this, _$identity);
 
-  @override
-  @JsonKey(name: 'content')
-  List<ZheCarousel> get content;
-  @override
-  @JsonKey(name: 'status')
-  int get status;
-
-  /// Create a copy of ZheCarouselResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ZheCarouselResultImplCopyWith<_$ZheCarouselResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$ZheCarouselResultToJson(this, );
 }
 
-ZheCarousel _$ZheCarouselFromJson(Map<String, dynamic> json) {
-  return _ZheCarousel.fromJson(json);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZheCarouselResult&&const DeepCollectionEquality().equals(other._content, _content)&&(identical(other.status, status) || other.status == status));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_content),status);
+
+@override
+String toString() {
+  return 'ZheCarouselResult(content: $content, status: $status)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZheCarouselResultCopyWith<$Res> implements $ZheCarouselResultCopyWith<$Res> {
+  factory _$ZheCarouselResultCopyWith(_ZheCarouselResult value, $Res Function(_ZheCarouselResult) _then) = __$ZheCarouselResultCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'content') List<ZheCarousel> content,@JsonKey(name: 'status') int status
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZheCarouselResultCopyWithImpl<$Res>
+    implements _$ZheCarouselResultCopyWith<$Res> {
+  __$ZheCarouselResultCopyWithImpl(this._self, this._then);
+
+  final _ZheCarouselResult _self;
+  final $Res Function(_ZheCarouselResult) _then;
+
+/// Create a copy of ZheCarouselResult
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? content = null,Object? status = null,}) {
+  return _then(_ZheCarouselResult(
+content: null == content ? _self._content : content // ignore: cast_nullable_to_non_nullable
+as List<ZheCarousel>,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
 
 /// @nodoc
 mixin _$ZheCarousel {
-  @JsonKey(name: 'code')
-  String get code => throw _privateConstructorUsedError;
-  @JsonKey(name: 'date_time')
-  String get dateTime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'get_url')
-  String get getUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'name')
-  String get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'pic')
-  String get pic => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'code') String get code;@JsonKey(name: 'date_time') String get dateTime;@JsonKey(name: 'get_url') String get getUrl;@JsonKey(name: 'name') String get name;@JsonKey(name: 'pic') String get pic;
+/// Create a copy of ZheCarousel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ZheCarouselCopyWith<ZheCarousel> get copyWith => _$ZheCarouselCopyWithImpl<ZheCarousel>(this as ZheCarousel, _$identity);
 
   /// Serializes this ZheCarousel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of ZheCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ZheCarouselCopyWith<ZheCarousel> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ZheCarousel&&(identical(other.code, code) || other.code == code)&&(identical(other.dateTime, dateTime) || other.dateTime == dateTime)&&(identical(other.getUrl, getUrl) || other.getUrl == getUrl)&&(identical(other.name, name) || other.name == name)&&(identical(other.pic, pic) || other.pic == pic));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,code,dateTime,getUrl,name,pic);
+
+@override
+String toString() {
+  return 'ZheCarousel(code: $code, dateTime: $dateTime, getUrl: $getUrl, name: $name, pic: $pic)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ZheCarouselCopyWith<$Res> {
-  factory $ZheCarouselCopyWith(
-          ZheCarousel value, $Res Function(ZheCarousel) then) =
-      _$ZheCarouselCopyWithImpl<$Res, ZheCarousel>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'code') String code,
-      @JsonKey(name: 'date_time') String dateTime,
-      @JsonKey(name: 'get_url') String getUrl,
-      @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'pic') String pic});
-}
+abstract mixin class $ZheCarouselCopyWith<$Res>  {
+  factory $ZheCarouselCopyWith(ZheCarousel value, $Res Function(ZheCarousel) _then) = _$ZheCarouselCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'code') String code,@JsonKey(name: 'date_time') String dateTime,@JsonKey(name: 'get_url') String getUrl,@JsonKey(name: 'name') String name,@JsonKey(name: 'pic') String pic
+});
 
+
+
+
+}
 /// @nodoc
-class _$ZheCarouselCopyWithImpl<$Res, $Val extends ZheCarousel>
+class _$ZheCarouselCopyWithImpl<$Res>
     implements $ZheCarouselCopyWith<$Res> {
-  _$ZheCarouselCopyWithImpl(this._value, this._then);
+  _$ZheCarouselCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ZheCarousel _self;
+  final $Res Function(ZheCarousel) _then;
 
-  /// Create a copy of ZheCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? dateTime = null,
-    Object? getUrl = null,
-    Object? name = null,
-    Object? pic = null,
-  }) {
-    return _then(_value.copyWith(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      dateTime: null == dateTime
-          ? _value.dateTime
-          : dateTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      getUrl: null == getUrl
-          ? _value.getUrl
-          : getUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      pic: null == pic
-          ? _value.pic
-          : pic // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of ZheCarousel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? code = null,Object? dateTime = null,Object? getUrl = null,Object? name = null,Object? pic = null,}) {
+  return _then(_self.copyWith(
+code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,dateTime: null == dateTime ? _self.dateTime : dateTime // ignore: cast_nullable_to_non_nullable
+as String,getUrl: null == getUrl ? _self.getUrl : getUrl // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,pic: null == pic ? _self.pic : pic // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ZheCarouselImplCopyWith<$Res>
-    implements $ZheCarouselCopyWith<$Res> {
-  factory _$$ZheCarouselImplCopyWith(
-          _$ZheCarouselImpl value, $Res Function(_$ZheCarouselImpl) then) =
-      __$$ZheCarouselImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'code') String code,
-      @JsonKey(name: 'date_time') String dateTime,
-      @JsonKey(name: 'get_url') String getUrl,
-      @JsonKey(name: 'name') String name,
-      @JsonKey(name: 'pic') String pic});
 }
 
-/// @nodoc
-class __$$ZheCarouselImplCopyWithImpl<$Res>
-    extends _$ZheCarouselCopyWithImpl<$Res, _$ZheCarouselImpl>
-    implements _$$ZheCarouselImplCopyWith<$Res> {
-  __$$ZheCarouselImplCopyWithImpl(
-      _$ZheCarouselImpl _value, $Res Function(_$ZheCarouselImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ZheCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? dateTime = null,
-    Object? getUrl = null,
-    Object? name = null,
-    Object? pic = null,
-  }) {
-    return _then(_$ZheCarouselImpl(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      dateTime: null == dateTime
-          ? _value.dateTime
-          : dateTime // ignore: cast_nullable_to_non_nullable
-              as String,
-      getUrl: null == getUrl
-          ? _value.getUrl
-          : getUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      pic: null == pic
-          ? _value.pic
-          : pic // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$ZheCarouselImpl extends _ZheCarousel {
-  const _$ZheCarouselImpl(
-      {@JsonKey(name: 'code') this.code = '',
-      @JsonKey(name: 'date_time') this.dateTime = '',
-      @JsonKey(name: 'get_url') this.getUrl = '',
-      @JsonKey(name: 'name') this.name = '',
-      @JsonKey(name: 'pic') this.pic = ''})
-      : super._();
 
-  factory _$ZheCarouselImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ZheCarouselImplFromJson(json);
+class _ZheCarousel extends ZheCarousel {
+  const _ZheCarousel({@JsonKey(name: 'code') this.code = '', @JsonKey(name: 'date_time') this.dateTime = '', @JsonKey(name: 'get_url') this.getUrl = '', @JsonKey(name: 'name') this.name = '', @JsonKey(name: 'pic') this.pic = ''}): super._();
+  factory _ZheCarousel.fromJson(Map<String, dynamic> json) => _$ZheCarouselFromJson(json);
 
-  @override
-  @JsonKey(name: 'code')
-  final String code;
-  @override
-  @JsonKey(name: 'date_time')
-  final String dateTime;
-  @override
-  @JsonKey(name: 'get_url')
-  final String getUrl;
-  @override
-  @JsonKey(name: 'name')
-  final String name;
-  @override
-  @JsonKey(name: 'pic')
-  final String pic;
+@override@JsonKey(name: 'code') final  String code;
+@override@JsonKey(name: 'date_time') final  String dateTime;
+@override@JsonKey(name: 'get_url') final  String getUrl;
+@override@JsonKey(name: 'name') final  String name;
+@override@JsonKey(name: 'pic') final  String pic;
 
-  @override
-  String toString() {
-    return 'ZheCarousel(code: $code, dateTime: $dateTime, getUrl: $getUrl, name: $name, pic: $pic)';
-  }
+/// Create a copy of ZheCarousel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ZheCarouselCopyWith<_ZheCarousel> get copyWith => __$ZheCarouselCopyWithImpl<_ZheCarousel>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ZheCarouselImpl &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.dateTime, dateTime) ||
-                other.dateTime == dateTime) &&
-            (identical(other.getUrl, getUrl) || other.getUrl == getUrl) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.pic, pic) || other.pic == pic));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, code, dateTime, getUrl, name, pic);
-
-  /// Create a copy of ZheCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ZheCarouselImplCopyWith<_$ZheCarouselImpl> get copyWith =>
-      __$$ZheCarouselImplCopyWithImpl<_$ZheCarouselImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ZheCarouselImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ZheCarouselToJson(this, );
 }
 
-abstract class _ZheCarousel extends ZheCarousel {
-  const factory _ZheCarousel(
-      {@JsonKey(name: 'code') final String code,
-      @JsonKey(name: 'date_time') final String dateTime,
-      @JsonKey(name: 'get_url') final String getUrl,
-      @JsonKey(name: 'name') final String name,
-      @JsonKey(name: 'pic') final String pic}) = _$ZheCarouselImpl;
-  const _ZheCarousel._() : super._();
-
-  factory _ZheCarousel.fromJson(Map<String, dynamic> json) =
-      _$ZheCarouselImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'code')
-  String get code;
-  @override
-  @JsonKey(name: 'date_time')
-  String get dateTime;
-  @override
-  @JsonKey(name: 'get_url')
-  String get getUrl;
-  @override
-  @JsonKey(name: 'name')
-  String get name;
-  @override
-  @JsonKey(name: 'pic')
-  String get pic;
-
-  /// Create a copy of ZheCarousel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ZheCarouselImplCopyWith<_$ZheCarouselImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ZheCarousel&&(identical(other.code, code) || other.code == code)&&(identical(other.dateTime, dateTime) || other.dateTime == dateTime)&&(identical(other.getUrl, getUrl) || other.getUrl == getUrl)&&(identical(other.name, name) || other.name == name)&&(identical(other.pic, pic) || other.pic == pic));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,code,dateTime,getUrl,name,pic);
+
+@override
+String toString() {
+  return 'ZheCarousel(code: $code, dateTime: $dateTime, getUrl: $getUrl, name: $name, pic: $pic)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ZheCarouselCopyWith<$Res> implements $ZheCarouselCopyWith<$Res> {
+  factory _$ZheCarouselCopyWith(_ZheCarousel value, $Res Function(_ZheCarousel) _then) = __$ZheCarouselCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'code') String code,@JsonKey(name: 'date_time') String dateTime,@JsonKey(name: 'get_url') String getUrl,@JsonKey(name: 'name') String name,@JsonKey(name: 'pic') String pic
+});
+
+
+
+
+}
+/// @nodoc
+class __$ZheCarouselCopyWithImpl<$Res>
+    implements _$ZheCarouselCopyWith<$Res> {
+  __$ZheCarouselCopyWithImpl(this._self, this._then);
+
+  final _ZheCarousel _self;
+  final $Res Function(_ZheCarousel) _then;
+
+/// Create a copy of ZheCarousel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? code = null,Object? dateTime = null,Object? getUrl = null,Object? name = null,Object? pic = null,}) {
+  return _then(_ZheCarousel(
+code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,dateTime: null == dateTime ? _self.dateTime : dateTime // ignore: cast_nullable_to_non_nullable
+as String,getUrl: null == getUrl ? _self.getUrl : getUrl // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,pic: null == pic ? _self.pic : pic // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

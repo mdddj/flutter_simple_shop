@@ -1,10 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'zhe_product.freezed.dart';
+
 part 'zhe_product.g.dart';
 
 @freezed
-class ZheProduct with _$ZheProduct {
+sealed class ZheProduct with _$ZheProduct {
   const ZheProduct._();
 
   const factory ZheProduct({

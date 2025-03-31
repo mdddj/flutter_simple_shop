@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,188 +10,142 @@ part of 'appbar_menu.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AppbarMenu _$AppbarMenuFromJson(Map<String, dynamic> json) {
-  return _AppbarMenu.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AppbarMenu {
-  @JsonKey(name: 'icon')
-  String get icon => throw _privateConstructorUsedError;
-  @JsonKey(name: 'title')
-  String get title => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'icon') String get icon;@JsonKey(name: 'title') String get title;
+/// Create a copy of AppbarMenu
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AppbarMenuCopyWith<AppbarMenu> get copyWith => _$AppbarMenuCopyWithImpl<AppbarMenu>(this as AppbarMenu, _$identity);
 
   /// Serializes this AppbarMenu to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of AppbarMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AppbarMenuCopyWith<AppbarMenu> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppbarMenu&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.title, title) || other.title == title));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,icon,title);
+
+@override
+String toString() {
+  return 'AppbarMenu(icon: $icon, title: $title)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AppbarMenuCopyWith<$Res> {
-  factory $AppbarMenuCopyWith(
-          AppbarMenu value, $Res Function(AppbarMenu) then) =
-      _$AppbarMenuCopyWithImpl<$Res, AppbarMenu>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'icon') String icon,
-      @JsonKey(name: 'title') String title});
-}
+abstract mixin class $AppbarMenuCopyWith<$Res>  {
+  factory $AppbarMenuCopyWith(AppbarMenu value, $Res Function(AppbarMenu) _then) = _$AppbarMenuCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'icon') String icon,@JsonKey(name: 'title') String title
+});
 
+
+
+
+}
 /// @nodoc
-class _$AppbarMenuCopyWithImpl<$Res, $Val extends AppbarMenu>
+class _$AppbarMenuCopyWithImpl<$Res>
     implements $AppbarMenuCopyWith<$Res> {
-  _$AppbarMenuCopyWithImpl(this._value, this._then);
+  _$AppbarMenuCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AppbarMenu _self;
+  final $Res Function(AppbarMenu) _then;
 
-  /// Create a copy of AppbarMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? icon = null,
-    Object? title = null,
-  }) {
-    return _then(_value.copyWith(
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of AppbarMenu
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? icon = null,Object? title = null,}) {
+  return _then(_self.copyWith(
+icon: null == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$AppbarMenuImplCopyWith<$Res>
-    implements $AppbarMenuCopyWith<$Res> {
-  factory _$$AppbarMenuImplCopyWith(
-          _$AppbarMenuImpl value, $Res Function(_$AppbarMenuImpl) then) =
-      __$$AppbarMenuImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'icon') String icon,
-      @JsonKey(name: 'title') String title});
 }
 
-/// @nodoc
-class __$$AppbarMenuImplCopyWithImpl<$Res>
-    extends _$AppbarMenuCopyWithImpl<$Res, _$AppbarMenuImpl>
-    implements _$$AppbarMenuImplCopyWith<$Res> {
-  __$$AppbarMenuImplCopyWithImpl(
-      _$AppbarMenuImpl _value, $Res Function(_$AppbarMenuImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AppbarMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? icon = null,
-    Object? title = null,
-  }) {
-    return _then(_$AppbarMenuImpl(
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$AppbarMenuImpl extends _AppbarMenu {
-  const _$AppbarMenuImpl(
-      {@JsonKey(name: 'icon') this.icon = '',
-      @JsonKey(name: 'title') this.title = ''})
-      : super._();
 
-  factory _$AppbarMenuImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AppbarMenuImplFromJson(json);
+class _AppbarMenu extends AppbarMenu {
+  const _AppbarMenu({@JsonKey(name: 'icon') this.icon = '', @JsonKey(name: 'title') this.title = ''}): super._();
+  factory _AppbarMenu.fromJson(Map<String, dynamic> json) => _$AppbarMenuFromJson(json);
 
-  @override
-  @JsonKey(name: 'icon')
-  final String icon;
-  @override
-  @JsonKey(name: 'title')
-  final String title;
+@override@JsonKey(name: 'icon') final  String icon;
+@override@JsonKey(name: 'title') final  String title;
 
-  @override
-  String toString() {
-    return 'AppbarMenu(icon: $icon, title: $title)';
-  }
+/// Create a copy of AppbarMenu
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AppbarMenuCopyWith<_AppbarMenu> get copyWith => __$AppbarMenuCopyWithImpl<_AppbarMenu>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AppbarMenuImpl &&
-            (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.title, title) || other.title == title));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, icon, title);
-
-  /// Create a copy of AppbarMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AppbarMenuImplCopyWith<_$AppbarMenuImpl> get copyWith =>
-      __$$AppbarMenuImplCopyWithImpl<_$AppbarMenuImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AppbarMenuImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AppbarMenuToJson(this, );
 }
 
-abstract class _AppbarMenu extends AppbarMenu {
-  const factory _AppbarMenu(
-      {@JsonKey(name: 'icon') final String icon,
-      @JsonKey(name: 'title') final String title}) = _$AppbarMenuImpl;
-  const _AppbarMenu._() : super._();
-
-  factory _AppbarMenu.fromJson(Map<String, dynamic> json) =
-      _$AppbarMenuImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'icon')
-  String get icon;
-  @override
-  @JsonKey(name: 'title')
-  String get title;
-
-  /// Create a copy of AppbarMenu
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppbarMenuImplCopyWith<_$AppbarMenuImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppbarMenu&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.title, title) || other.title == title));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,icon,title);
+
+@override
+String toString() {
+  return 'AppbarMenu(icon: $icon, title: $title)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AppbarMenuCopyWith<$Res> implements $AppbarMenuCopyWith<$Res> {
+  factory _$AppbarMenuCopyWith(_AppbarMenu value, $Res Function(_AppbarMenu) _then) = __$AppbarMenuCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'icon') String icon,@JsonKey(name: 'title') String title
+});
+
+
+
+
+}
+/// @nodoc
+class __$AppbarMenuCopyWithImpl<$Res>
+    implements _$AppbarMenuCopyWith<$Res> {
+  __$AppbarMenuCopyWithImpl(this._self, this._then);
+
+  final _AppbarMenu _self;
+  final $Res Function(_AppbarMenu) _then;
+
+/// Create a copy of AppbarMenu
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? icon = null,Object? title = null,}) {
+  return _then(_AppbarMenu(
+icon: null == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,258 +10,151 @@ part of 'simple_result.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SimpleResult _$SimpleResultFromJson(Map<String, dynamic> json) {
-  return _SimpleResult.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SimpleResult {
-  @JsonKey(name: 'message')
-  String get message => throw _privateConstructorUsedError;
-  @JsonKey(name: 'state')
-  int get state => throw _privateConstructorUsedError;
-  @JsonKey(name: 'success')
-  bool get success => throw _privateConstructorUsedError;
-  @JsonKey(name: 'type')
-  ResultType get type => throw _privateConstructorUsedError;
-  @JsonKey(name: 'data')
-  dynamic get data => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'message') String get message;@JsonKey(name: 'state') int get state;@JsonKey(name: 'success') bool get success;@JsonKey(name: 'type') ResultType get type;@JsonKey(name: 'data') dynamic get data;
+/// Create a copy of SimpleResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SimpleResultCopyWith<SimpleResult> get copyWith => _$SimpleResultCopyWithImpl<SimpleResult>(this as SimpleResult, _$identity);
 
   /// Serializes this SimpleResult to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of SimpleResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $SimpleResultCopyWith<SimpleResult> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SimpleResult&&(identical(other.message, message) || other.message == message)&&(identical(other.state, state) || other.state == state)&&(identical(other.success, success) || other.success == success)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.data, data));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,message,state,success,type,const DeepCollectionEquality().hash(data));
+
+@override
+String toString() {
+  return 'SimpleResult(message: $message, state: $state, success: $success, type: $type, data: $data)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $SimpleResultCopyWith<$Res> {
-  factory $SimpleResultCopyWith(
-          SimpleResult value, $Res Function(SimpleResult) then) =
-      _$SimpleResultCopyWithImpl<$Res, SimpleResult>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'message') String message,
-      @JsonKey(name: 'state') int state,
-      @JsonKey(name: 'success') bool success,
-      @JsonKey(name: 'type') ResultType type,
-      @JsonKey(name: 'data') dynamic data});
-}
+abstract mixin class $SimpleResultCopyWith<$Res>  {
+  factory $SimpleResultCopyWith(SimpleResult value, $Res Function(SimpleResult) _then) = _$SimpleResultCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'message') String message,@JsonKey(name: 'state') int state,@JsonKey(name: 'success') bool success,@JsonKey(name: 'type') ResultType type,@JsonKey(name: 'data') dynamic data
+});
 
+
+
+
+}
 /// @nodoc
-class _$SimpleResultCopyWithImpl<$Res, $Val extends SimpleResult>
+class _$SimpleResultCopyWithImpl<$Res>
     implements $SimpleResultCopyWith<$Res> {
-  _$SimpleResultCopyWithImpl(this._value, this._then);
+  _$SimpleResultCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SimpleResult _self;
+  final $Res Function(SimpleResult) _then;
 
-  /// Create a copy of SimpleResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-    Object? state = null,
-    Object? success = null,
-    Object? type = null,
-    Object? data = freezed,
-  }) {
-    return _then(_value.copyWith(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as int,
-      success: null == success
-          ? _value.success
-          : success // ignore: cast_nullable_to_non_nullable
-              as bool,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ResultType,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ) as $Val);
-  }
+/// Create a copy of SimpleResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? message = null,Object? state = null,Object? success = null,Object? type = null,Object? data = freezed,}) {
+  return _then(_self.copyWith(
+message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,state: null == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
+as int,success: null == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
+as bool,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as ResultType,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as dynamic,
+  ));
 }
 
-/// @nodoc
-abstract class _$$SimpleResultImplCopyWith<$Res>
-    implements $SimpleResultCopyWith<$Res> {
-  factory _$$SimpleResultImplCopyWith(
-          _$SimpleResultImpl value, $Res Function(_$SimpleResultImpl) then) =
-      __$$SimpleResultImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'message') String message,
-      @JsonKey(name: 'state') int state,
-      @JsonKey(name: 'success') bool success,
-      @JsonKey(name: 'type') ResultType type,
-      @JsonKey(name: 'data') dynamic data});
 }
 
-/// @nodoc
-class __$$SimpleResultImplCopyWithImpl<$Res>
-    extends _$SimpleResultCopyWithImpl<$Res, _$SimpleResultImpl>
-    implements _$$SimpleResultImplCopyWith<$Res> {
-  __$$SimpleResultImplCopyWithImpl(
-      _$SimpleResultImpl _value, $Res Function(_$SimpleResultImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SimpleResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-    Object? state = null,
-    Object? success = null,
-    Object? type = null,
-    Object? data = freezed,
-  }) {
-    return _then(_$SimpleResultImpl(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as int,
-      success: null == success
-          ? _value.success
-          : success // ignore: cast_nullable_to_non_nullable
-              as bool,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as ResultType,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$SimpleResultImpl extends _SimpleResult {
-  const _$SimpleResultImpl(
-      {@JsonKey(name: 'message') this.message = '',
-      @JsonKey(name: 'state') this.state = 0,
-      @JsonKey(name: 'success') this.success = false,
-      @JsonKey(name: 'type') this.type = ResultType.none,
-      @JsonKey(name: 'data') this.data})
-      : super._();
 
-  factory _$SimpleResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SimpleResultImplFromJson(json);
+class _SimpleResult extends SimpleResult {
+  const _SimpleResult({@JsonKey(name: 'message') this.message = '', @JsonKey(name: 'state') this.state = 0, @JsonKey(name: 'success') this.success = false, @JsonKey(name: 'type') this.type = ResultType.none, @JsonKey(name: 'data') this.data}): super._();
+  factory _SimpleResult.fromJson(Map<String, dynamic> json) => _$SimpleResultFromJson(json);
 
-  @override
-  @JsonKey(name: 'message')
-  final String message;
-  @override
-  @JsonKey(name: 'state')
-  final int state;
-  @override
-  @JsonKey(name: 'success')
-  final bool success;
-  @override
-  @JsonKey(name: 'type')
-  final ResultType type;
-  @override
-  @JsonKey(name: 'data')
-  final dynamic data;
+@override@JsonKey(name: 'message') final  String message;
+@override@JsonKey(name: 'state') final  int state;
+@override@JsonKey(name: 'success') final  bool success;
+@override@JsonKey(name: 'type') final  ResultType type;
+@override@JsonKey(name: 'data') final  dynamic data;
 
-  @override
-  String toString() {
-    return 'SimpleResult(message: $message, state: $state, success: $success, type: $type, data: $data)';
-  }
+/// Create a copy of SimpleResult
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$SimpleResultCopyWith<_SimpleResult> get copyWith => __$SimpleResultCopyWithImpl<_SimpleResult>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SimpleResultImpl &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.success, success) || other.success == success) &&
-            (identical(other.type, type) || other.type == type) &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, message, state, success, type,
-      const DeepCollectionEquality().hash(data));
-
-  /// Create a copy of SimpleResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SimpleResultImplCopyWith<_$SimpleResultImpl> get copyWith =>
-      __$$SimpleResultImplCopyWithImpl<_$SimpleResultImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SimpleResultImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$SimpleResultToJson(this, );
 }
 
-abstract class _SimpleResult extends SimpleResult {
-  const factory _SimpleResult(
-      {@JsonKey(name: 'message') final String message,
-      @JsonKey(name: 'state') final int state,
-      @JsonKey(name: 'success') final bool success,
-      @JsonKey(name: 'type') final ResultType type,
-      @JsonKey(name: 'data') final dynamic data}) = _$SimpleResultImpl;
-  const _SimpleResult._() : super._();
-
-  factory _SimpleResult.fromJson(Map<String, dynamic> json) =
-      _$SimpleResultImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'message')
-  String get message;
-  @override
-  @JsonKey(name: 'state')
-  int get state;
-  @override
-  @JsonKey(name: 'success')
-  bool get success;
-  @override
-  @JsonKey(name: 'type')
-  ResultType get type;
-  @override
-  @JsonKey(name: 'data')
-  dynamic get data;
-
-  /// Create a copy of SimpleResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SimpleResultImplCopyWith<_$SimpleResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _SimpleResult&&(identical(other.message, message) || other.message == message)&&(identical(other.state, state) || other.state == state)&&(identical(other.success, success) || other.success == success)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.data, data));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,message,state,success,type,const DeepCollectionEquality().hash(data));
+
+@override
+String toString() {
+  return 'SimpleResult(message: $message, state: $state, success: $success, type: $type, data: $data)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$SimpleResultCopyWith<$Res> implements $SimpleResultCopyWith<$Res> {
+  factory _$SimpleResultCopyWith(_SimpleResult value, $Res Function(_SimpleResult) _then) = __$SimpleResultCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'message') String message,@JsonKey(name: 'state') int state,@JsonKey(name: 'success') bool success,@JsonKey(name: 'type') ResultType type,@JsonKey(name: 'data') dynamic data
+});
+
+
+
+
+}
+/// @nodoc
+class __$SimpleResultCopyWithImpl<$Res>
+    implements _$SimpleResultCopyWith<$Res> {
+  __$SimpleResultCopyWithImpl(this._self, this._then);
+
+  final _SimpleResult _self;
+  final $Res Function(_SimpleResult) _then;
+
+/// Create a copy of SimpleResult
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? message = null,Object? state = null,Object? success = null,Object? type = null,Object? data = freezed,}) {
+  return _then(_SimpleResult(
+message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,state: null == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
+as int,success: null == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
+as bool,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as ResultType,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as dynamic,
+  ));
+}
+
+
+}
+
+// dart format on

@@ -6,40 +6,39 @@ part of 'pager.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PagerImpl _$$PagerImplFromJson(Map<String, dynamic> json) => _$PagerImpl(
-      routername: json['routerName'] as String? ?? '',
-      params: json['params'] == null
+_Pager _$PagerFromJson(Map<String, dynamic> json) => _Pager(
+  routername: json['routerName'] as String? ?? '',
+  params:
+      json['params'] == null
           ? null
           : PagerParams.fromJson(json['params'] as Map<String, dynamic>),
-    );
+);
 
-Map<String, dynamic> _$$PagerImplToJson(_$PagerImpl instance) =>
-    <String, dynamic>{
-      'routerName': instance.routername,
-      'params': instance.params,
-    };
+Map<String, dynamic> _$PagerToJson(_Pager instance) => <String, dynamic>{
+  'routerName': instance.routername,
+  'params': instance.params,
+};
 
-_$PagerParamsImpl _$$PagerParamsImplFromJson(Map<String, dynamic> json) =>
-    _$PagerParamsImpl(
-      $type: json['runtimeType'] as String?,
-    );
+DefaultPagerParams _$DefaultPagerParamsFromJson(Map<String, dynamic> json) =>
+    DefaultPagerParams($type: json['runtimeType'] as String?);
 
-Map<String, dynamic> _$$PagerParamsImplToJson(_$PagerParamsImpl instance) =>
-    <String, dynamic>{
-      'runtimeType': instance.$type,
-    };
+Map<String, dynamic> _$DefaultPagerParamsToJson(DefaultPagerParams instance) =>
+    <String, dynamic>{'runtimeType': instance.$type};
 
-_$DynPageParamsImpl _$$DynPageParamsImplFromJson(Map<String, dynamic> json) =>
-    _$DynPageParamsImpl(
+DynPageParams _$DynPageParamsFromJson(Map<String, dynamic> json) =>
+    DynPageParams(
       name: json['name'] as String,
       emptyText: json['emptyText'] as String? ?? '暂无动态，快去发布一条吧',
-      style: $enumDecodeNullable(
-              _$ResourceWidgetCardStyleEnumMap, json['style']) ??
+      style:
+          $enumDecodeNullable(
+            _$ResourceWidgetCardStyleEnumMap,
+            json['style'],
+          ) ??
           ResourceWidgetCardStyle.waterfall,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$DynPageParamsImplToJson(_$DynPageParamsImpl instance) =>
+Map<String, dynamic> _$DynPageParamsToJson(DynPageParams instance) =>
     <String, dynamic>{
       'name': instance.name,
       'emptyText': instance.emptyText,
@@ -52,12 +51,15 @@ const _$ResourceWidgetCardStyleEnumMap = {
   ResourceWidgetCardStyle.card: 'card',
 };
 
-_$DynWriteParamsImpl _$$DynWriteParamsImplFromJson(Map<String, dynamic> json) =>
-    _$DynWriteParamsImpl(
+DynWriteParams _$DynWriteParamsFromJson(Map<String, dynamic> json) =>
+    DynWriteParams(
       name: json['name'] as String,
-      productShare: json['productShare'] == null
-          ? null
-          : ProductShare.fromJson(json['productShare'] as Map<String, dynamic>),
+      productShare:
+          json['productShare'] == null
+              ? null
+              : ProductShare.fromJson(
+                json['productShare'] as Map<String, dynamic>,
+              ),
       title: json['title'] as String?,
       disableSelectOtherCategory:
           json['disableSelectOtherCategory'] as bool? ?? false,
@@ -65,8 +67,7 @@ _$DynWriteParamsImpl _$$DynWriteParamsImplFromJson(Map<String, dynamic> json) =>
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$DynWriteParamsImplToJson(
-        _$DynWriteParamsImpl instance) =>
+Map<String, dynamic> _$DynWriteParamsToJson(DynWriteParams instance) =>
     <String, dynamic>{
       'name': instance.name,
       'productShare': instance.productShare,

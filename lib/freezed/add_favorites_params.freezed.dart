@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,331 +10,160 @@ part of 'add_favorites_params.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AddFavoritesParams _$AddFavoritesParamsFromJson(Map<String, dynamic> json) {
-  return _AddFavoritesParams.fromJson(json);
-}
 
 /// @nodoc
 mixin _$AddFavoritesParams {
-  @JsonKey(name: 'productId')
-  String get productid => throw _privateConstructorUsedError;
-  @JsonKey(name: 'type')
-  String get type => throw _privateConstructorUsedError;
-  @JsonKey(name: 'endTime')
-  String get endtime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'imageUrl')
-  String get imageurl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'title')
-  String get title => throw _privateConstructorUsedError;
-  @JsonKey(name: 'amount')
-  String get amount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'arrivalPrice')
-  String get arrivalprice => throw _privateConstructorUsedError;
-  @JsonKey(name: 'createTime')
-  String get createtime => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'productId') String get productid;@JsonKey(name: 'type') String get type;@JsonKey(name: 'endTime') String get endtime;@JsonKey(name: 'imageUrl') String get imageurl;@JsonKey(name: 'title') String get title;@JsonKey(name: 'amount') String get amount;@JsonKey(name: 'arrivalPrice') String get arrivalprice;@JsonKey(name: 'createTime') String get createtime;
+/// Create a copy of AddFavoritesParams
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AddFavoritesParamsCopyWith<AddFavoritesParams> get copyWith => _$AddFavoritesParamsCopyWithImpl<AddFavoritesParams>(this as AddFavoritesParams, _$identity);
 
   /// Serializes this AddFavoritesParams to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of AddFavoritesParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AddFavoritesParamsCopyWith<AddFavoritesParams> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AddFavoritesParams&&(identical(other.productid, productid) || other.productid == productid)&&(identical(other.type, type) || other.type == type)&&(identical(other.endtime, endtime) || other.endtime == endtime)&&(identical(other.imageurl, imageurl) || other.imageurl == imageurl)&&(identical(other.title, title) || other.title == title)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.arrivalprice, arrivalprice) || other.arrivalprice == arrivalprice)&&(identical(other.createtime, createtime) || other.createtime == createtime));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,productid,type,endtime,imageurl,title,amount,arrivalprice,createtime);
+
+@override
+String toString() {
+  return 'AddFavoritesParams(productid: $productid, type: $type, endtime: $endtime, imageurl: $imageurl, title: $title, amount: $amount, arrivalprice: $arrivalprice, createtime: $createtime)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AddFavoritesParamsCopyWith<$Res> {
-  factory $AddFavoritesParamsCopyWith(
-          AddFavoritesParams value, $Res Function(AddFavoritesParams) then) =
-      _$AddFavoritesParamsCopyWithImpl<$Res, AddFavoritesParams>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'productId') String productid,
-      @JsonKey(name: 'type') String type,
-      @JsonKey(name: 'endTime') String endtime,
-      @JsonKey(name: 'imageUrl') String imageurl,
-      @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'amount') String amount,
-      @JsonKey(name: 'arrivalPrice') String arrivalprice,
-      @JsonKey(name: 'createTime') String createtime});
-}
+abstract mixin class $AddFavoritesParamsCopyWith<$Res>  {
+  factory $AddFavoritesParamsCopyWith(AddFavoritesParams value, $Res Function(AddFavoritesParams) _then) = _$AddFavoritesParamsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'productId') String productid,@JsonKey(name: 'type') String type,@JsonKey(name: 'endTime') String endtime,@JsonKey(name: 'imageUrl') String imageurl,@JsonKey(name: 'title') String title,@JsonKey(name: 'amount') String amount,@JsonKey(name: 'arrivalPrice') String arrivalprice,@JsonKey(name: 'createTime') String createtime
+});
 
+
+
+
+}
 /// @nodoc
-class _$AddFavoritesParamsCopyWithImpl<$Res, $Val extends AddFavoritesParams>
+class _$AddFavoritesParamsCopyWithImpl<$Res>
     implements $AddFavoritesParamsCopyWith<$Res> {
-  _$AddFavoritesParamsCopyWithImpl(this._value, this._then);
+  _$AddFavoritesParamsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AddFavoritesParams _self;
+  final $Res Function(AddFavoritesParams) _then;
 
-  /// Create a copy of AddFavoritesParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? productid = null,
-    Object? type = null,
-    Object? endtime = null,
-    Object? imageurl = null,
-    Object? title = null,
-    Object? amount = null,
-    Object? arrivalprice = null,
-    Object? createtime = null,
-  }) {
-    return _then(_value.copyWith(
-      productid: null == productid
-          ? _value.productid
-          : productid // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      endtime: null == endtime
-          ? _value.endtime
-          : endtime // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageurl: null == imageurl
-          ? _value.imageurl
-          : imageurl // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String,
-      arrivalprice: null == arrivalprice
-          ? _value.arrivalprice
-          : arrivalprice // ignore: cast_nullable_to_non_nullable
-              as String,
-      createtime: null == createtime
-          ? _value.createtime
-          : createtime // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of AddFavoritesParams
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? productid = null,Object? type = null,Object? endtime = null,Object? imageurl = null,Object? title = null,Object? amount = null,Object? arrivalprice = null,Object? createtime = null,}) {
+  return _then(_self.copyWith(
+productid: null == productid ? _self.productid : productid // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,endtime: null == endtime ? _self.endtime : endtime // ignore: cast_nullable_to_non_nullable
+as String,imageurl: null == imageurl ? _self.imageurl : imageurl // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
+as String,arrivalprice: null == arrivalprice ? _self.arrivalprice : arrivalprice // ignore: cast_nullable_to_non_nullable
+as String,createtime: null == createtime ? _self.createtime : createtime // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$AddFavoritesParamsImplCopyWith<$Res>
-    implements $AddFavoritesParamsCopyWith<$Res> {
-  factory _$$AddFavoritesParamsImplCopyWith(_$AddFavoritesParamsImpl value,
-          $Res Function(_$AddFavoritesParamsImpl) then) =
-      __$$AddFavoritesParamsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'productId') String productid,
-      @JsonKey(name: 'type') String type,
-      @JsonKey(name: 'endTime') String endtime,
-      @JsonKey(name: 'imageUrl') String imageurl,
-      @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'amount') String amount,
-      @JsonKey(name: 'arrivalPrice') String arrivalprice,
-      @JsonKey(name: 'createTime') String createtime});
 }
 
-/// @nodoc
-class __$$AddFavoritesParamsImplCopyWithImpl<$Res>
-    extends _$AddFavoritesParamsCopyWithImpl<$Res, _$AddFavoritesParamsImpl>
-    implements _$$AddFavoritesParamsImplCopyWith<$Res> {
-  __$$AddFavoritesParamsImplCopyWithImpl(_$AddFavoritesParamsImpl _value,
-      $Res Function(_$AddFavoritesParamsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AddFavoritesParams
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? productid = null,
-    Object? type = null,
-    Object? endtime = null,
-    Object? imageurl = null,
-    Object? title = null,
-    Object? amount = null,
-    Object? arrivalprice = null,
-    Object? createtime = null,
-  }) {
-    return _then(_$AddFavoritesParamsImpl(
-      productid: null == productid
-          ? _value.productid
-          : productid // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      endtime: null == endtime
-          ? _value.endtime
-          : endtime // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageurl: null == imageurl
-          ? _value.imageurl
-          : imageurl // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String,
-      arrivalprice: null == arrivalprice
-          ? _value.arrivalprice
-          : arrivalprice // ignore: cast_nullable_to_non_nullable
-              as String,
-      createtime: null == createtime
-          ? _value.createtime
-          : createtime // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$AddFavoritesParamsImpl implements _AddFavoritesParams {
-  const _$AddFavoritesParamsImpl(
-      {@JsonKey(name: 'productId') this.productid = '',
-      @JsonKey(name: 'type') this.type = '',
-      @JsonKey(name: 'endTime') this.endtime = '',
-      @JsonKey(name: 'imageUrl') this.imageurl = '',
-      @JsonKey(name: 'title') this.title = '',
-      @JsonKey(name: 'amount') this.amount = '',
-      @JsonKey(name: 'arrivalPrice') this.arrivalprice = '',
-      @JsonKey(name: 'createTime') this.createtime = ''});
 
-  factory _$AddFavoritesParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AddFavoritesParamsImplFromJson(json);
+class _AddFavoritesParams implements AddFavoritesParams {
+  const _AddFavoritesParams({@JsonKey(name: 'productId') this.productid = '', @JsonKey(name: 'type') this.type = '', @JsonKey(name: 'endTime') this.endtime = '', @JsonKey(name: 'imageUrl') this.imageurl = '', @JsonKey(name: 'title') this.title = '', @JsonKey(name: 'amount') this.amount = '', @JsonKey(name: 'arrivalPrice') this.arrivalprice = '', @JsonKey(name: 'createTime') this.createtime = ''});
+  factory _AddFavoritesParams.fromJson(Map<String, dynamic> json) => _$AddFavoritesParamsFromJson(json);
 
-  @override
-  @JsonKey(name: 'productId')
-  final String productid;
-  @override
-  @JsonKey(name: 'type')
-  final String type;
-  @override
-  @JsonKey(name: 'endTime')
-  final String endtime;
-  @override
-  @JsonKey(name: 'imageUrl')
-  final String imageurl;
-  @override
-  @JsonKey(name: 'title')
-  final String title;
-  @override
-  @JsonKey(name: 'amount')
-  final String amount;
-  @override
-  @JsonKey(name: 'arrivalPrice')
-  final String arrivalprice;
-  @override
-  @JsonKey(name: 'createTime')
-  final String createtime;
+@override@JsonKey(name: 'productId') final  String productid;
+@override@JsonKey(name: 'type') final  String type;
+@override@JsonKey(name: 'endTime') final  String endtime;
+@override@JsonKey(name: 'imageUrl') final  String imageurl;
+@override@JsonKey(name: 'title') final  String title;
+@override@JsonKey(name: 'amount') final  String amount;
+@override@JsonKey(name: 'arrivalPrice') final  String arrivalprice;
+@override@JsonKey(name: 'createTime') final  String createtime;
 
-  @override
-  String toString() {
-    return 'AddFavoritesParams(productid: $productid, type: $type, endtime: $endtime, imageurl: $imageurl, title: $title, amount: $amount, arrivalprice: $arrivalprice, createtime: $createtime)';
-  }
+/// Create a copy of AddFavoritesParams
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AddFavoritesParamsCopyWith<_AddFavoritesParams> get copyWith => __$AddFavoritesParamsCopyWithImpl<_AddFavoritesParams>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddFavoritesParamsImpl &&
-            (identical(other.productid, productid) ||
-                other.productid == productid) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.endtime, endtime) || other.endtime == endtime) &&
-            (identical(other.imageurl, imageurl) ||
-                other.imageurl == imageurl) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.amount, amount) || other.amount == amount) &&
-            (identical(other.arrivalprice, arrivalprice) ||
-                other.arrivalprice == arrivalprice) &&
-            (identical(other.createtime, createtime) ||
-                other.createtime == createtime));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, productid, type, endtime,
-      imageurl, title, amount, arrivalprice, createtime);
-
-  /// Create a copy of AddFavoritesParams
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddFavoritesParamsImplCopyWith<_$AddFavoritesParamsImpl> get copyWith =>
-      __$$AddFavoritesParamsImplCopyWithImpl<_$AddFavoritesParamsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AddFavoritesParamsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AddFavoritesParamsToJson(this, );
 }
 
-abstract class _AddFavoritesParams implements AddFavoritesParams {
-  const factory _AddFavoritesParams(
-          {@JsonKey(name: 'productId') final String productid,
-          @JsonKey(name: 'type') final String type,
-          @JsonKey(name: 'endTime') final String endtime,
-          @JsonKey(name: 'imageUrl') final String imageurl,
-          @JsonKey(name: 'title') final String title,
-          @JsonKey(name: 'amount') final String amount,
-          @JsonKey(name: 'arrivalPrice') final String arrivalprice,
-          @JsonKey(name: 'createTime') final String createtime}) =
-      _$AddFavoritesParamsImpl;
-
-  factory _AddFavoritesParams.fromJson(Map<String, dynamic> json) =
-      _$AddFavoritesParamsImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'productId')
-  String get productid;
-  @override
-  @JsonKey(name: 'type')
-  String get type;
-  @override
-  @JsonKey(name: 'endTime')
-  String get endtime;
-  @override
-  @JsonKey(name: 'imageUrl')
-  String get imageurl;
-  @override
-  @JsonKey(name: 'title')
-  String get title;
-  @override
-  @JsonKey(name: 'amount')
-  String get amount;
-  @override
-  @JsonKey(name: 'arrivalPrice')
-  String get arrivalprice;
-  @override
-  @JsonKey(name: 'createTime')
-  String get createtime;
-
-  /// Create a copy of AddFavoritesParams
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AddFavoritesParamsImplCopyWith<_$AddFavoritesParamsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AddFavoritesParams&&(identical(other.productid, productid) || other.productid == productid)&&(identical(other.type, type) || other.type == type)&&(identical(other.endtime, endtime) || other.endtime == endtime)&&(identical(other.imageurl, imageurl) || other.imageurl == imageurl)&&(identical(other.title, title) || other.title == title)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.arrivalprice, arrivalprice) || other.arrivalprice == arrivalprice)&&(identical(other.createtime, createtime) || other.createtime == createtime));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,productid,type,endtime,imageurl,title,amount,arrivalprice,createtime);
+
+@override
+String toString() {
+  return 'AddFavoritesParams(productid: $productid, type: $type, endtime: $endtime, imageurl: $imageurl, title: $title, amount: $amount, arrivalprice: $arrivalprice, createtime: $createtime)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AddFavoritesParamsCopyWith<$Res> implements $AddFavoritesParamsCopyWith<$Res> {
+  factory _$AddFavoritesParamsCopyWith(_AddFavoritesParams value, $Res Function(_AddFavoritesParams) _then) = __$AddFavoritesParamsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'productId') String productid,@JsonKey(name: 'type') String type,@JsonKey(name: 'endTime') String endtime,@JsonKey(name: 'imageUrl') String imageurl,@JsonKey(name: 'title') String title,@JsonKey(name: 'amount') String amount,@JsonKey(name: 'arrivalPrice') String arrivalprice,@JsonKey(name: 'createTime') String createtime
+});
+
+
+
+
+}
+/// @nodoc
+class __$AddFavoritesParamsCopyWithImpl<$Res>
+    implements _$AddFavoritesParamsCopyWith<$Res> {
+  __$AddFavoritesParamsCopyWithImpl(this._self, this._then);
+
+  final _AddFavoritesParams _self;
+  final $Res Function(_AddFavoritesParams) _then;
+
+/// Create a copy of AddFavoritesParams
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? productid = null,Object? type = null,Object? endtime = null,Object? imageurl = null,Object? title = null,Object? amount = null,Object? arrivalprice = null,Object? createtime = null,}) {
+  return _then(_AddFavoritesParams(
+productid: null == productid ? _self.productid : productid // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,endtime: null == endtime ? _self.endtime : endtime // ignore: cast_nullable_to_non_nullable
+as String,imageurl: null == imageurl ? _self.imageurl : imageurl // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
+as String,arrivalprice: null == arrivalprice ? _self.arrivalprice : arrivalprice // ignore: cast_nullable_to_non_nullable
+as String,createtime: null == createtime ? _self.createtime : createtime // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on
