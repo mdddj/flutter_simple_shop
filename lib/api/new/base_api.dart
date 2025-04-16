@@ -13,11 +13,13 @@ class NewApiDioInstance {
     dio = Dio(options);
     if (useEnv.debugMode) {
       await dioCheckPlugin
-          .init(dio!,
-              initHost: '192.168.199.89',
-              port: 9998,
-              projectName: '典典的小卖部',
-              timeOut: const Duration(milliseconds: 1200))
+          .init(
+            dio!,
+            initHost: '192.168.199.72',
+            port: 9998,
+            projectName: '典典的小卖部',
+            timeOut: const Duration(milliseconds: 1200),
+          )
           .catchError((e) => debugPrint('$e'));
     }
     return dio!;
@@ -36,10 +38,11 @@ abstract class MyBaseApi<T> extends BaseApi<T> {
   @override
   Future<BaseOptions> getOptions(RequestParams param) async {
     return BaseOptions(
-        baseUrl: '${useEnv.host}:${useEnv.port}',
-        connectTimeout: _timeout,
-        receiveTimeout: _timeout,
-        sendTimeout: _timeout);
+      baseUrl: '${useEnv.host}:${useEnv.port}',
+      connectTimeout: _timeout,
+      receiveTimeout: _timeout,
+      sendTimeout: _timeout,
+    );
   }
 
   @override
@@ -51,16 +54,14 @@ extension ApiErrorMessageEx on Object {
   String get errorMessage {
     return switch (this) {
       BaseApiException() => (this as BaseApiException).message,
-      _ => "$this"
+      _ => "$this",
     };
   }
 }
 
 extension DartTypeModelApiEx on DartTypeModel {
   Map<String, dynamic>? get tryGetMap {
-    if (whenOrNull(
-      json: (value) => value['data'],
-    )
+    if (whenOrNull(json: (value) => value['data'])
         case final Map<String, dynamic> data) {
       return data;
     }

@@ -55,3 +55,4 @@ part 'app.dart';
 part 'init.dart';
 part 'provider/riverpod/text_list_provider.dart';
 part 'router.dart';
+part 'test.dart';
