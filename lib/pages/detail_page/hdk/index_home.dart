@@ -123,21 +123,20 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           return AnimatedSwitcher(
             duration: const Duration(milliseconds: 200),
             switchInCurve: Curves.fastOutSlowIn,
-            child:
-                snapshot.hasData
-                    ? buildCustomScrollViewShop()
-                    : snapshot.hasError
+            child: snapshot.hasData
+                ? buildCustomScrollViewShop()
+                : snapshot.hasError
                     ? Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          NoDataWidget(
-                            title: snapshot.error?.errorMessage ?? '-',
-                          ),
-                          const BackButton(),
-                        ],
-                      ),
-                    )
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            NoDataWidget(
+                              title: snapshot.error?.errorMessage ?? '-',
+                            ),
+                            const BackButton(),
+                          ],
+                        ),
+                      )
                     : const LoadingWidget(),
           );
         },
@@ -337,10 +336,10 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
                     backgroundImage:
                         (_shopInfo != null && _shopInfo!.pictUrl.isNotEmpty
                                 ? NetworkImage(
-                                  MImageUtils.magesProcessor(
-                                    _shopInfo!.pictUrl,
-                                  ),
-                                )
+                                    MImageUtils.magesProcessor(
+                                      _shopInfo!.pictUrl,
+                                    ),
+                                  )
                                 : const AssetImage('assets/images/ava.png'))
                             as ImageProvider<Object>?,
                   ),
@@ -420,11 +419,10 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
             TextSpan(
               text: '复制文案',
               style: const TextStyle(color: Colors.pinkAccent),
-              recognizer:
-                  TapGestureRecognizer()
-                    ..onTap = () {
-                      utils.copy(info!.desc);
-                    },
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  utils.copy(info!.desc);
+                },
             ),
           ],
         ),
@@ -588,10 +586,9 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
         width: context.screenWidth,
         child: DrawableStartText(
           lettersCountOfAfterImage: info!.dtitle.length,
-          assetImage:
-              info!.shopType == 1
-                  ? 'assets/icons/tianmao2.png'
-                  : 'assets/icons/taobao2.png',
+          assetImage: info!.shopType == 1
+              ? 'assets/icons/tianmao2.png'
+              : 'assets/icons/taobao2.png',
           text: ' ${info!.title}',
           textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
         ),
@@ -734,7 +731,7 @@ class HaoDanKuDetailItemState extends ConsumerState<HaoDanKuDetailItem>
           ).click(() {
             final url = couponLinkResult?.kuaiZhanUrl;
             if (url != null) {
-              Share.share(url);
+              SharePlus.instance.share(ShareParams(text: url));
             }
           }),
         ],

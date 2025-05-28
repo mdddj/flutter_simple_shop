@@ -1,11 +1,8 @@
 
-
-
 .idea
 .vscode
 .dart_tool
 build
-
 
 # Miscellaneous
 *.class
@@ -44,3 +41,6 @@ build
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# FVM Version Cache
+.fvm/
