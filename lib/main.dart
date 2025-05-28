@@ -63,7 +63,7 @@ class AppTheme {
             surfaceTintColor: Colors.white,
             shadowColor: Colors.grey,
             elevation: 0.1),
-        cardTheme: const CardTheme(
+        cardTheme: const CardThemeData(
             elevation: 0,
             margin: EdgeInsets.zero,
             color: Colors.white,
@@ -78,6 +78,6 @@ class AppTheme {
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white,
         ),
-        tabBarTheme: const TabBarTheme(dividerColor: Colors.transparent));
+        tabBarTheme: const TabBarThemeData(dividerColor: Colors.transparent));
   }
 }

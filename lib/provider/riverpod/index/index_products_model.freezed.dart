@@ -46,7 +46,7 @@ abstract mixin class $IndexProductsModelCopyWith<$Res>  {
   factory $IndexProductsModelCopyWith(IndexProductsModel value, $Res Function(IndexProductsModel) _then) = _$IndexProductsModelCopyWithImpl;
 @useResult
 $Res call({
- List<Product> products, int page
+ List<ProductModel> products, int page
 });
 
 
@@ -65,8 +65,8 @@ class _$IndexProductsModelCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? products = null,Object? page = null,}) {
   return _then(_self.copyWith(
-products: null == products ? _self.products! : products // ignore: cast_nullable_to_non_nullable
-as List<Product>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+products: null == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
+as List<ProductModel>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }
@@ -78,11 +78,11 @@ as int,
 
 
 class _IndexProductsModel implements IndexProductsModel {
-   _IndexProductsModel({required final  List<Product> products, required this.page}): _products = products;
+   _IndexProductsModel({required final  List<ProductModel> products, required this.page}): _products = products;
   
 
- final  List<Product> _products;
-@override List<Product> get products {
+ final  List<ProductModel> _products;
+@override List<ProductModel> get products {
   if (_products is EqualUnmodifiableListView) return _products;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_products);
@@ -120,7 +120,7 @@ abstract mixin class _$IndexProductsModelCopyWith<$Res> implements $IndexProduct
   factory _$IndexProductsModelCopyWith(_IndexProductsModel value, $Res Function(_IndexProductsModel) _then) = __$IndexProductsModelCopyWithImpl;
 @override @useResult
 $Res call({
- List<Product> products, int page
+ List<ProductModel> products, int page
 });
 
 
@@ -140,7 +140,7 @@ class __$IndexProductsModelCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? products = null,Object? page = null,}) {
   return _then(_IndexProductsModel(
 products: null == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
-as List<Product>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
+as List<ProductModel>,page: null == page ? _self.page : page // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }

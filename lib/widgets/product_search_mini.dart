@@ -41,7 +41,7 @@ class ProductSearchMiniState extends State<ProductSearchMini> {
     );
   }
 
-  Widget itemBuilder(_, int index) {
+  Widget itemBuilder(BuildContext context, int index) {
     final product = _products[index];
     return ListTile(
       leading: ExtendedImage.network(product.mainPic),

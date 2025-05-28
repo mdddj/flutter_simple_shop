@@ -6,10 +6,13 @@ class MoneyCounterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), itemBuilder: _itemBuilder);
+    return GridView.builder(
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemBuilder: _itemBuilder);
   }
 
-  Widget _itemBuilder(innerContext, int index) {
+  Widget _itemBuilder(BuildContext innerContext, int index) {
     return const Column(
       children: [Text('100'), Text('累计提现')],
     );
