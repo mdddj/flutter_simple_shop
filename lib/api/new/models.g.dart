@@ -7,13 +7,13 @@ part of 'models.dart';
 // **************************************************************************
 
 _TKCarousel _$TKCarouselFromJson(Map<String, dynamic> json) => _TKCarousel(
-  activityID: json['activityID'] as String? ?? '',
-  link: json['link'] as String? ?? '',
-  sourceType: (json['sourceType'] as num?)?.toInt() ?? 0,
-  topicID: (json['topicID'] as num?)?.toInt() ?? 0,
-  topicImage: json['topicImage'] as String? ?? '',
-  topicName: json['topicName'] as String? ?? '',
-);
+      activityID: json['activityID'] as String? ?? '',
+      link: json['link'] as String? ?? '',
+      sourceType: (json['sourceType'] as num?)?.toInt() ?? 0,
+      topicID: (json['topicID'] as num?)?.toInt() ?? 0,
+      topicImage: json['topicImage'] as String? ?? '',
+      topicName: json['topicName'] as String? ?? '',
+    );
 
 Map<String, dynamic> _$TKCarouselToJson(_TKCarousel instance) =>
     <String, dynamic>{

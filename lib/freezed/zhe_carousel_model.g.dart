@@ -8,8 +8,7 @@ part of 'zhe_carousel_model.dart';
 
 _ZheCarouselResult _$ZheCarouselResultFromJson(Map<String, dynamic> json) =>
     _ZheCarouselResult(
-      content:
-          (json['content'] as List<dynamic>?)
+      content: (json['content'] as List<dynamic>?)
               ?.map((e) => ZheCarousel.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -17,15 +16,18 @@ _ZheCarouselResult _$ZheCarouselResultFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$ZheCarouselResultToJson(_ZheCarouselResult instance) =>
-    <String, dynamic>{'content': instance.content, 'status': instance.status};
+    <String, dynamic>{
+      'content': instance.content,
+      'status': instance.status,
+    };
 
 _ZheCarousel _$ZheCarouselFromJson(Map<String, dynamic> json) => _ZheCarousel(
-  code: json['code'] as String? ?? '',
-  dateTime: json['date_time'] as String? ?? '',
-  getUrl: json['get_url'] as String? ?? '',
-  name: json['name'] as String? ?? '',
-  pic: json['pic'] as String? ?? '',
-);
+      code: json['code'] as String? ?? '',
+      dateTime: json['date_time'] as String? ?? '',
+      getUrl: json['get_url'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      pic: json['pic'] as String? ?? '',
+    );
 
 Map<String, dynamic> _$ZheCarouselToJson(_ZheCarousel instance) =>
     <String, dynamic>{

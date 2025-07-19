@@ -14,9 +14,9 @@ _EmailRegisterParams _$EmailRegisterParamsFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$EmailRegisterParamsToJson(
-  _EmailRegisterParams instance,
-) => <String, dynamic>{
-  'email': instance.email,
-  'code': instance.code,
-  'password': instance.password,
-};
+        _EmailRegisterParams instance) =>
+    <String, dynamic>{
+      'email': instance.email,
+      'code': instance.code,
+      'password': instance.password,
+    };

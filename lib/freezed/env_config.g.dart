@@ -7,11 +7,11 @@ part of 'env_config.dart';
 // **************************************************************************
 
 _EnvConfig _$EnvConfigFromJson(Map<String, dynamic> json) => _EnvConfig(
-  port: json['port'] as String? ?? '',
-  host: json['host'] as String? ?? '',
-  debugMode: json['debugMode'] as bool? ?? false,
-  fontFamily: json['fontFamily'] as String? ?? '',
-);
+      port: json['port'] as String? ?? '',
+      host: json['host'] as String? ?? '',
+      debugMode: json['debugMode'] as bool? ?? false,
+      fontFamily: json['fontFamily'] as String? ?? '',
+    );
 
 Map<String, dynamic> _$EnvConfigToJson(_EnvConfig instance) =>
     <String, dynamic>{

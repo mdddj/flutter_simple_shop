@@ -13,4 +13,7 @@ _AnkingListParam _$AnkingListParamFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$AnkingListParamToJson(_AnkingListParam instance) =>
-    <String, dynamic>{'rank': instance.rank, 'cid': instance.cid};
+    <String, dynamic>{
+      'rank': instance.rank,
+      'cid': instance.cid,
+    };

@@ -8,13 +8,15 @@ part of 'riverpod_model.dart';
 
 _FavoritesStateModel _$FavoritesStateModelFromJson(Map<String, dynamic> json) =>
     _FavoritesStateModel(
-      favorites:
-          (json['favorites'] as List<dynamic>)
-              .map(MyFavoritesModel.fromJson)
-              .toList(),
+      favorites: (json['favorites'] as List<dynamic>)
+          .map(MyFavoritesModel.fromJson)
+          .toList(),
       page: (json['page'] as num).toInt(),
     );
 
 Map<String, dynamic> _$FavoritesStateModelToJson(
-  _FavoritesStateModel instance,
-) => <String, dynamic>{'favorites': instance.favorites, 'page': instance.page};
+        _FavoritesStateModel instance) =>
+    <String, dynamic>{
+      'favorites': instance.favorites,
+      'page': instance.page,
+    };

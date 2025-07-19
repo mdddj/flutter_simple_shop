@@ -8,11 +8,12 @@ part of 'user.dart';
 
 _UserDetailModal _$UserDetailModalFromJson(Map<String, dynamic> json) =>
     _UserDetailModal(
-      user:
-          json['user'] == null
-              ? null
-              : MyUser.fromJson(json['user'] as Map<String, dynamic>),
+      user: json['user'] == null
+          ? null
+          : MyUser.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$UserDetailModalToJson(_UserDetailModal instance) =>
-    <String, dynamic>{'user': instance.user};
+    <String, dynamic>{
+      'user': instance.user,
+    };

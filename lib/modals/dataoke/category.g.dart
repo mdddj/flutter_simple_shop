@@ -99,7 +99,9 @@ class CategoryWrapperAdapter extends TypeAdapter<CategoryWrapper> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return CategoryWrapper(categorys: (fields[0] as List).cast<Category>());
+    return CategoryWrapper(
+      categorys: (fields[0] as List).cast<Category>(),
+    );
   }
 
   @override
@@ -126,28 +128,27 @@ class CategoryWrapperAdapter extends TypeAdapter<CategoryWrapper> {
 // **************************************************************************
 
 _Category _$CategoryFromJson(Map<String, dynamic> json) => _Category(
-  cname: json['cname'] as String? ?? '',
-  cpic: json['cpic'] as String? ?? '',
-  subcategories:
-      (json['subcategories'] as List<dynamic>?)
-          ?.map((e) => Subcategory.fromJson(e as Map<String, dynamic>))
-          .toList() ??
-      const [],
-  cid: (json['cid'] as num?)?.toInt() ?? 0,
-);
+      cname: json['cname'] as String? ?? '',
+      cpic: json['cpic'] as String? ?? '',
+      subcategories: (json['subcategories'] as List<dynamic>?)
+              ?.map((e) => Subcategory.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      cid: (json['cid'] as num?)?.toInt() ?? 0,
+    );
 
 Map<String, dynamic> _$CategoryToJson(_Category instance) => <String, dynamic>{
-  'cname': instance.cname,
-  'cpic': instance.cpic,
-  'subcategories': instance.subcategories,
-  'cid': instance.cid,
-};
+      'cname': instance.cname,
+      'cpic': instance.cpic,
+      'subcategories': instance.subcategories,
+      'cid': instance.cid,
+    };
 
 _Subcategory _$SubcategoryFromJson(Map<String, dynamic> json) => _Subcategory(
-  subcid: (json['subcid'] as num?)?.toInt() ?? 0,
-  scpic: json['scpic'] as String? ?? '',
-  subcname: json['subcname'] as String? ?? '',
-);
+      subcid: (json['subcid'] as num?)?.toInt() ?? 0,
+      scpic: json['scpic'] as String? ?? '',
+      subcname: json['subcname'] as String? ?? '',
+    );
 
 Map<String, dynamic> _$SubcategoryToJson(_Subcategory instance) =>
     <String, dynamic>{
@@ -158,12 +159,13 @@ Map<String, dynamic> _$SubcategoryToJson(_Subcategory instance) =>
 
 _CategoryWrapper _$CategoryWrapperFromJson(Map<String, dynamic> json) =>
     _CategoryWrapper(
-      categorys:
-          (json['categorys'] as List<dynamic>?)
+      categorys: (json['categorys'] as List<dynamic>?)
               ?.map(Category.fromJson)
               .toList() ??
           const [],
     );
 
 Map<String, dynamic> _$CategoryWrapperToJson(_CategoryWrapper instance) =>
-    <String, dynamic>{'categorys': instance.categorys};
+    <String, dynamic>{
+      'categorys': instance.categorys,
+    };

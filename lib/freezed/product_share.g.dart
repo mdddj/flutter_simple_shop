@@ -13,8 +13,7 @@ _ProductShare _$ProductShareFromJson(Map<String, dynamic> json) =>
       price: json['price'] as String? ?? '',
       image: json['image'] as String? ?? '',
       productId: json['productId'] as String? ?? '',
-      type:
-          $enumDecodeNullable(_$ProductShareTypeEnumMap, json['type']) ??
+      type: $enumDecodeNullable(_$ProductShareTypeEnumMap, json['type']) ??
           ProductShareType.tb,
     );
 

@@ -7,26 +7,23 @@ part of 'meet_model.dart';
 // **************************************************************************
 
 _MeetModel _$MeetModelFromJson(Map<String, dynamic> json) => _MeetModel(
-  aboutDiandian: json['aboutDiandian'] as String? ?? '',
-  age: (json['age'] as num?)?.toInt() ?? 0,
-  id: (json['id'] as num).toInt(),
-  location: json['location'] as String? ?? '',
-  mianjiInfo: json['mianjiInfo'] as String? ?? '',
-  name: json['name'] as String? ?? '',
-  soulCodeImage: json['soulCodeImage'] as String? ?? '',
-  soulName: json['soulName'] as String? ?? '',
-  toLocation: json['toLocation'] as String? ?? '',
-  createDate: json['createDate'] as String? ?? '',
-  state: (json['state'] as num?)?.toInt() ?? 0,
-  user: MyUser.fromJson(json['user'] as Map<String, dynamic>),
-  images:
-      json['images'] == null
+      aboutDiandian: json['aboutDiandian'] as String? ?? '',
+      age: (json['age'] as num?)?.toInt() ?? 0,
+      id: (json['id'] as num).toInt(),
+      location: json['location'] as String? ?? '',
+      mianjiInfo: json['mianjiInfo'] as String? ?? '',
+      name: json['name'] as String? ?? '',
+      soulCodeImage: json['soulCodeImage'] as String? ?? '',
+      soulName: json['soulName'] as String? ?? '',
+      toLocation: json['toLocation'] as String? ?? '',
+      createDate: json['createDate'] as String? ?? '',
+      state: (json['state'] as num?)?.toInt() ?? 0,
+      user: MyUser.fromJson(json['user'] as Map<String, dynamic>),
+      images: json['images'] == null
           ? const IListConst([])
-          : IList<FileInfo>.fromJson(
-            json['images'],
-            (value) => FileInfo.fromJson(value as Map<String, dynamic>),
-          ),
-);
+          : IList<FileInfo>.fromJson(json['images'],
+              (value) => FileInfo.fromJson(value as Map<String, dynamic>)),
+    );
 
 Map<String, dynamic> _$MeetModelToJson(_MeetModel instance) =>
     <String, dynamic>{
@@ -42,5 +39,7 @@ Map<String, dynamic> _$MeetModelToJson(_MeetModel instance) =>
       'createDate': instance.createDate,
       'state': instance.state,
       'user': instance.user,
-      'images': instance.images.toJson((value) => value),
+      'images': instance.images.toJson(
+        (value) => value,
+      ),
     };
