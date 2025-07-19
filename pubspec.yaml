@@ -72,11 +72,16 @@ dev_dependencies:
   hive_generator_plus: ^4.0.2
 
 dependency_overrides:
-
   flutter_lints: ^6.0.0
   web: ^1.1.1
   meta: ^1.17.0
   collection: ^1.19.1
+  dd_js_util:
+    path: ../dd_js_util
+
+  # 3.32.0 适配
+  flex_color_scheme:
+    path: ../../hlx/github/flex_color_scheme
 
 flutter:
   uses-material-design: true
