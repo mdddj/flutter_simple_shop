@@ -15,8 +15,8 @@ class NewApiDioInstance {
       await dioCheckPlugin
           .init(
             dio!,
-            initHost: '192.168.199.72',
-            port: 9998,
+            initHost: '192.168.199.60',
+            port: 9999,
             projectName: '典典的小卖部',
             timeOut: const Duration(milliseconds: 1200),
           )
@@ -33,6 +33,16 @@ abstract class MyBaseApi<T> extends BaseApi<T> {
   Future<Dio> getDio(BaseOptions baseOptions) async {
     final r = await NewApiDioInstance.instance.getDio(baseOptions);
     return r;
+  }
+
+  @override
+  void beforeHandleDartTypeModel(
+      DartTypeModel model, RequestParams requestParams, Response response) {
+    if (!model.isSuccess) {
+      throw BaseApiException.businessException(
+          message: "API ERROR ${model.apiStateCode}:${model.apiMessage}");
+    }
+    super.beforeHandleDartTypeModel(model, requestParams, response);
   }
 
   @override
@@ -70,6 +80,24 @@ extension DartTypeModelApiEx on DartTypeModel {
 
   bool? get tryGetBoolData {
     return whenOrNull(bool: (value) => value);
+  }
+
+  bool get isSuccess {
+    return switch (this) {
+      JsonData(:final value) => value['success'] == true,
+      _ => false
+    };
+  }
+
+  String get apiMessage {
+    return switch (this) {
+      JsonData(:final value) => value['message'],
+      _ => ''
+    };
+  }
+
+  int get apiStateCode {
+    return switch (this) { JsonData(:final value) => value['state'], _ => "" };
   }
 }
 

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:loading_more_list_library_fast/model/status.dart';
 
+import '../../api/new/part.dart';
 import '../../assets.dart';
 import '../../index.dart';
 
@@ -54,37 +55,43 @@ class CustomLoadingMoreWidget extends StatelessWidget {
   static CustomLoadingMoreWidget defaultWidget(
     BuildContext ctx,
     IndicatorStatusModel status,
-  ) => CustomLoadingMoreWidget(ctx, status);
+  ) =>
+      CustomLoadingMoreWidget(ctx, status);
 
   @override
   Widget build(BuildContext context) {
     return switch (indicatorStatus) {
       IndicatorStatusModelWithNone() => _Nothing(),
-      IndicatorStatusModelWithEmpty() =>
-        isSliver
-            ? SliverFillRemaining(child: _Empty(child: emptyChild))
-            : _Empty(child: emptyChild),
+      IndicatorStatusModelWithEmpty() => isSliver
+          ? SliverFillRemaining(child: _Empty(child: emptyChild))
+          : _Empty(child: emptyChild),
       IndicatorStatusModelWithLoadingMoreBusying() => _LoadingMoreBusying(),
-      IndicatorStatusModelWithFullScreenBusying() =>
-        isSliver
-            ? SliverFillRemaining(child: _FullScreenBusying())
-            : _FullScreenBusying(),
+      IndicatorStatusModelWithFullScreenBusying() => isSliver
+          ? SliverFillRemaining(child: _FullScreenBusying())
+          : _FullScreenBusying(),
       IndicatorStatusModelWithError() => _Error(),
-      IndicatorStatusModelWithFullScreenError(:final refreshBase) =>
+      IndicatorStatusModelWithFullScreenError(
+        :final refreshBase,
+        :final error,
+      ) =>
         isSliver
             ? SliverFillRemaining(
-              child: _FullScreenError(retry: refreshBase.errorRefresh),
-            )
+                child: _FullScreenError(
+                  retry: refreshBase.errorRefresh,
+                  error: error,
+                ),
+              )
             : _FullScreenError(retry: refreshBase.errorRefresh),
       IndicatorStatusModelWithNoMoreLoad() => Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Center(
-          child: Text(
-            '没有更多了',
-            style: context.textTheme.labelMedium?.copyWith(color: Colors.grey),
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: Text(
+              '没有更多了',
+              style:
+                  context.textTheme.labelMedium?.copyWith(color: Colors.grey),
+            ),
           ),
         ),
-      ),
     };
   }
 }
@@ -92,11 +99,13 @@ class CustomLoadingMoreWidget extends StatelessWidget {
 ///全面模式下出现异常
 class _FullScreenError extends StatelessWidget {
   final VoidCallback? retry;
+  final Object? error;
 
-  const _FullScreenError({this.retry});
+  const _FullScreenError({this.retry, this.error});
 
   @override
   Widget build(BuildContext context) {
+    print(error);
     return Align(
       alignment: Alignment.center,
       child: SingleChildScrollView(
@@ -117,7 +126,7 @@ class _FullScreenError extends StatelessWidget {
               ),
             ),
             Text(
-              "服务繁忙,请稍后重试 (-1)",
+              error?.errorMessage ?? "服务繁忙,请稍后重试 (-1)",
               style: TextStyle(color: context.colorScheme.secondary),
             ),
             if (retry != null)
