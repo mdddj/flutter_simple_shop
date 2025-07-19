@@ -7,27 +7,26 @@ part of 'detail_base_data.dart';
 // **************************************************************************
 
 _DetailBaseDataResult _$DetailBaseDataResultFromJson(
-  Map<String, dynamic> json,
-) => _DetailBaseDataResult(
-  info: Product.fromJson(json['detail']),
-  similarProducts:
-      (json['similarList'] as List<dynamic>?)?.map(Product.fromJson).toList() ??
-      const [],
-  couponInfo:
-      json['privilegeLink'] == null
+        Map<String, dynamic> json) =>
+    _DetailBaseDataResult(
+      info: Product.fromJson(json['detail']),
+      similarProducts: (json['similarList'] as List<dynamic>?)
+              ?.map(Product.fromJson)
+              .toList() ??
+          const [],
+      couponInfo: json['privilegeLink'] == null
           ? const CouponLinkResult()
           : CouponLinkResult.fromJson(
-            json['privilegeLink'] as Map<String, dynamic>,
-          ),
-);
+              json['privilegeLink'] as Map<String, dynamic>),
+    );
 
 Map<String, dynamic> _$DetailBaseDataResultToJson(
-  _DetailBaseDataResult instance,
-) => <String, dynamic>{
-  'detail': instance.info,
-  'similarList': instance.similarProducts,
-  'privilegeLink': instance.couponInfo,
-};
+        _DetailBaseDataResult instance) =>
+    <String, dynamic>{
+      'detail': instance.info,
+      'similarList': instance.similarProducts,
+      'privilegeLink': instance.couponInfo,
+    };
 
 _CouponLinkResult _$CouponLinkResultFromJson(Map<String, dynamic> json) =>
     _CouponLinkResult(

@@ -12,130 +12,87 @@ part of 'base_layout.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
+
 /// @nodoc
 mixin _$BaseLayout {
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is BaseLayout);
+  }
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BaseLayout);
-}
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'BaseLayout()';
-}
-
-
+  @override
+  String toString() {
+    return 'BaseLayout()';
+  }
 }
 
 /// @nodoc
-class $BaseLayoutCopyWith<$Res>  {
-$BaseLayoutCopyWith(BaseLayout _, $Res Function(BaseLayout) __);
+class $BaseLayoutCopyWith<$Res> {
+  $BaseLayoutCopyWith(BaseLayout _, $Res Function(BaseLayout) __);
 }
 
-
 /// @nodoc
-
 
 class MobileLayout extends BaseLayout {
-   MobileLayout(): super._();
-  
+  MobileLayout() : super._();
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is MobileLayout);
+  }
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MobileLayout);
+  @override
+  String toString() {
+    return 'BaseLayout.mobile()';
+  }
 }
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'BaseLayout.mobile()';
-}
-
-
-}
-
-
-
 
 /// @nodoc
-
 
 class TableLayout extends BaseLayout {
-   TableLayout(): super._();
-  
+  TableLayout() : super._();
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is TableLayout);
+  }
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TableLayout);
+  @override
+  String toString() {
+    return 'BaseLayout.table()';
+  }
 }
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'BaseLayout.table()';
-}
-
-
-}
-
-
-
 
 /// @nodoc
 
-
 class DesktopLayout extends BaseLayout {
-   DesktopLayout(): super._();
-  
+  DesktopLayout() : super._();
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is DesktopLayout);
+  }
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DesktopLayout);
+  @override
+  String toString() {
+    return 'BaseLayout.desktop()';
+  }
 }
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'BaseLayout.desktop()';
-}
-
-
-}
-
-
-
 
 // dart format on

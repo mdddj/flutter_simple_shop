@@ -7,9 +7,12 @@ part of 'appbar_menu.dart';
 // **************************************************************************
 
 _AppbarMenu _$AppbarMenuFromJson(Map<String, dynamic> json) => _AppbarMenu(
-  icon: json['icon'] as String? ?? '',
-  title: json['title'] as String? ?? '',
-);
+      icon: json['icon'] as String? ?? '',
+      title: json['title'] as String? ?? '',
+    );
 
 Map<String, dynamic> _$AppbarMenuToJson(_AppbarMenu instance) =>
-    <String, dynamic>{'icon': instance.icon, 'title': instance.title};
+    <String, dynamic>{
+      'icon': instance.icon,
+      'title': instance.title,
+    };

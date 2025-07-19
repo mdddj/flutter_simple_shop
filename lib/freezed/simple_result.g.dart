@@ -11,8 +11,7 @@ _SimpleResult _$SimpleResultFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String? ?? '',
       state: (json['state'] as num?)?.toInt() ?? 0,
       success: json['success'] as bool? ?? false,
-      type:
-          $enumDecodeNullable(_$ResultTypeEnumMap, json['type']) ??
+      type: $enumDecodeNullable(_$ResultTypeEnumMap, json['type']) ??
           ResultType.none,
       data: json['data'],
     );
