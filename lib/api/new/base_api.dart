@@ -48,6 +48,18 @@ abstract class MyBaseApi<T> extends BaseApi<T> {
   @override
   ISet<Interceptor> get interceptions =>
       ISet([getIt.get<MyTokenInterceptor>()]);
+
+  @override
+  void beforeHandleDartTypeModel(
+      DartTypeModel model, RequestParams requestParams, Response response) {
+    final serverJson = model.whenOrNull(json: (json) => json) ?? {};
+    if (serverJson['success'] case final bool success when !success) {
+      final serverMsg = serverJson['message'];
+      final code = serverJson['state'];
+      throw BaseApiException.businessException(message: "$serverMsg [$code]");
+    }
+    super.beforeHandleDartTypeModel(model, requestParams, response);
+  }
 }
 
 extension ApiErrorMessageEx on Object {
