@@ -72,7 +72,7 @@ class CustomLoadingMoreWidget extends StatelessWidget {
       IndicatorStatusModelWithError() => _Error(),
       IndicatorStatusModelWithFullScreenError(
         :final refreshBase,
-        :final error,
+        :final error
       ) =>
         isSliver
             ? SliverFillRemaining(
@@ -81,7 +81,10 @@ class CustomLoadingMoreWidget extends StatelessWidget {
                   error: error,
                 ),
               )
-            : _FullScreenError(retry: refreshBase.errorRefresh),
+            : _FullScreenError(
+                retry: refreshBase.errorRefresh,
+                error: error,
+              ),
       IndicatorStatusModelWithNoMoreLoad() => Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(

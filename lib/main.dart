@@ -10,7 +10,7 @@ import 'index.dart';
 
 ///本地测试环境
 const debugEnvConfig = EnvConfig(
-    host: "http://192.168.199.82",
+    host: "http://192.168.199.79",
     port: '8082',
     debugMode: true,
     fontFamily: '');
