@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Dockerfile: Compose 部署" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+  <configuration default="false" name="部署到服务器" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
         <option name="imageTag" value="dd-shop-flutter" />
