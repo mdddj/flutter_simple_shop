@@ -108,6 +108,7 @@ class _FullScreenError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(error);
     return Align(
       alignment: Alignment.center,
       child: SingleChildScrollView(
