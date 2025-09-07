@@ -14,7 +14,8 @@ class IndexTopicComponentCarousel extends ConsumerWidget {
         final item = content[index];
         return ImageView(
             image: MyImage.network(
-                url: item.pic,
+                url:
+                    "${useEnv.host}/api/public/img-proxy?url=${Uri.encodeQueryComponent(item.pic)}",
                 params: ImageParams(
                     customLoadingWidget: Container(
                       width: double.infinity,
