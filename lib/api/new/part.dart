@@ -6,7 +6,6 @@ import 'package:dd_js_util/model/models.dart';
 import 'package:dio/dio.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
 
 import '../../freezed/zhe_carousel_model.dart';
 import '../../freezed/zhe_product.dart';

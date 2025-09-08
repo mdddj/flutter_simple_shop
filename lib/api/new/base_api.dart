@@ -36,16 +36,6 @@ abstract class MyBaseApi<T> extends BaseApi<T> {
   }
 
   @override
-  void beforeHandleDartTypeModel(
-      DartTypeModel model, RequestParams requestParams, Response response) {
-    if (!model.isSuccess) {
-      throw BaseApiException.businessException(
-          message: "API ERROR ${model.apiStateCode}:${model.apiMessage}");
-    }
-    super.beforeHandleDartTypeModel(model, requestParams, response);
-  }
-
-  @override
   Future<BaseOptions> getOptions(RequestParams param) async {
     return BaseOptions(
       baseUrl: '${useEnv.host}:${useEnv.port}',
