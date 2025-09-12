@@ -5,7 +5,6 @@ class MyNewApiByZhetaokeAppKey extends MyBaseApi<String> {
 
   @override
   String covertToModel(DartTypeModel data, RequestParams param) {
-    print(data.toJson());
     if (data.whenOrNull(json: (value) => value['data']) case final String appKey
         when appKey.isNotEmpty) {
       return appKey;

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:hooks_riverpod/legacy.dart';
 
 import '../api/apis.dart';
 import '../freezed/application.dart';
@@ -11,18 +12,15 @@ import '../modals/dataoke/category.dart';
 
 part 'view.freezed.dart';
 
-final appModel = StateNotifierProvider.family<
-  AppModelState,
-  ApplicationModel,
-  ApplocationContext
->(AppModelState.new);
+final appModel = StateNotifierProvider.family<AppModelState, ApplicationModel,
+    ApplocationContext>(AppModelState.new);
 
 class AppModelState extends StateNotifier<ApplicationModel> {
   final Ref ref;
   final ApplocationContext applocationContext;
 
   AppModelState(this.ref, this.applocationContext)
-    : super(builderDefaultApplication(applocationContext));
+      : super(builderDefaultApplication(applocationContext));
 
   ApplicationModel setNewState(
     ApplicationModel Function(ApplicationModel old) newState,
@@ -95,9 +93,7 @@ abstract class ApplicationWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ctx = ApplocationContext(context, ref);
-    return ref
-        .watch(application(ctx))
-        .when(
+    return ref.watch(application(ctx)).when(
           data: buildApplication,
           error: (e, s) => buildErrorWidget(e, s, context, ref),
           loading: () => buildInitLoadingWidget(ref),

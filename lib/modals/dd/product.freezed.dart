@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -723,6 +722,570 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
           : specialText // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [Product].
+extension ProductPatterns on Product {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Product value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Product() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Product value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Product():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Product value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Product() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String teamName,
+            num tbcid,
+            num shipPercent,
+            String itemLink,
+            num freeshipRemoteDistrict,
+            num yunfeixian,
+            num goldSellers,
+            String reimgs,
+            String couponLink,
+            num haitao,
+            String sellerId,
+            num discounts,
+            String directCommissionLink,
+            String couponStartTime,
+            num serviceScore,
+            String mainPic,
+            num id,
+            num brand,
+            String imgs,
+            String brandName,
+            String couponConditions,
+            String detailPics,
+            List<dynamic> subcid,
+            num subdivisionId,
+            num dsrScore,
+            num dailySales,
+            String shopLogo,
+            num shopLevel,
+            num couponTotalNum,
+            num descScore,
+            String brandWenan,
+            String activityEndTime,
+            num shipScore,
+            dynamic brandId,
+            num couponReceiveNum,
+            num shopType,
+            num cid,
+            String desc,
+            num commissionRate,
+            num originalPrice,
+            num actualPrice,
+            String goodsId,
+            num quanMLink,
+            String shopName,
+            String activityStartTime,
+            String video,
+            String title,
+            String dtitle,
+            num monthSales,
+            num subdivisionRank,
+            num hzQuanOver,
+            num isSubdivision,
+            num directCommissionType,
+            num servicePercent,
+            num commissionType,
+            num directCommission,
+            num twoHoursSales,
+            num dsrPercent,
+            num estimateAmount,
+            num couponPrice,
+            num activityType,
+            num hotPush,
+            String marketingMainPic,
+            String couponEndTime,
+            String createTime,
+            String subdivisionName,
+            String circleText,
+            List<dynamic> specialText)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Product() when $default != null:
+        return $default(
+            _that.teamName,
+            _that.tbcid,
+            _that.shipPercent,
+            _that.itemLink,
+            _that.freeshipRemoteDistrict,
+            _that.yunfeixian,
+            _that.goldSellers,
+            _that.reimgs,
+            _that.couponLink,
+            _that.haitao,
+            _that.sellerId,
+            _that.discounts,
+            _that.directCommissionLink,
+            _that.couponStartTime,
+            _that.serviceScore,
+            _that.mainPic,
+            _that.id,
+            _that.brand,
+            _that.imgs,
+            _that.brandName,
+            _that.couponConditions,
+            _that.detailPics,
+            _that.subcid,
+            _that.subdivisionId,
+            _that.dsrScore,
+            _that.dailySales,
+            _that.shopLogo,
+            _that.shopLevel,
+            _that.couponTotalNum,
+            _that.descScore,
+            _that.brandWenan,
+            _that.activityEndTime,
+            _that.shipScore,
+            _that.brandId,
+            _that.couponReceiveNum,
+            _that.shopType,
+            _that.cid,
+            _that.desc,
+            _that.commissionRate,
+            _that.originalPrice,
+            _that.actualPrice,
+            _that.goodsId,
+            _that.quanMLink,
+            _that.shopName,
+            _that.activityStartTime,
+            _that.video,
+            _that.title,
+            _that.dtitle,
+            _that.monthSales,
+            _that.subdivisionRank,
+            _that.hzQuanOver,
+            _that.isSubdivision,
+            _that.directCommissionType,
+            _that.servicePercent,
+            _that.commissionType,
+            _that.directCommission,
+            _that.twoHoursSales,
+            _that.dsrPercent,
+            _that.estimateAmount,
+            _that.couponPrice,
+            _that.activityType,
+            _that.hotPush,
+            _that.marketingMainPic,
+            _that.couponEndTime,
+            _that.createTime,
+            _that.subdivisionName,
+            _that.circleText,
+            _that.specialText);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String teamName,
+            num tbcid,
+            num shipPercent,
+            String itemLink,
+            num freeshipRemoteDistrict,
+            num yunfeixian,
+            num goldSellers,
+            String reimgs,
+            String couponLink,
+            num haitao,
+            String sellerId,
+            num discounts,
+            String directCommissionLink,
+            String couponStartTime,
+            num serviceScore,
+            String mainPic,
+            num id,
+            num brand,
+            String imgs,
+            String brandName,
+            String couponConditions,
+            String detailPics,
+            List<dynamic> subcid,
+            num subdivisionId,
+            num dsrScore,
+            num dailySales,
+            String shopLogo,
+            num shopLevel,
+            num couponTotalNum,
+            num descScore,
+            String brandWenan,
+            String activityEndTime,
+            num shipScore,
+            dynamic brandId,
+            num couponReceiveNum,
+            num shopType,
+            num cid,
+            String desc,
+            num commissionRate,
+            num originalPrice,
+            num actualPrice,
+            String goodsId,
+            num quanMLink,
+            String shopName,
+            String activityStartTime,
+            String video,
+            String title,
+            String dtitle,
+            num monthSales,
+            num subdivisionRank,
+            num hzQuanOver,
+            num isSubdivision,
+            num directCommissionType,
+            num servicePercent,
+            num commissionType,
+            num directCommission,
+            num twoHoursSales,
+            num dsrPercent,
+            num estimateAmount,
+            num couponPrice,
+            num activityType,
+            num hotPush,
+            String marketingMainPic,
+            String couponEndTime,
+            String createTime,
+            String subdivisionName,
+            String circleText,
+            List<dynamic> specialText)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Product():
+        return $default(
+            _that.teamName,
+            _that.tbcid,
+            _that.shipPercent,
+            _that.itemLink,
+            _that.freeshipRemoteDistrict,
+            _that.yunfeixian,
+            _that.goldSellers,
+            _that.reimgs,
+            _that.couponLink,
+            _that.haitao,
+            _that.sellerId,
+            _that.discounts,
+            _that.directCommissionLink,
+            _that.couponStartTime,
+            _that.serviceScore,
+            _that.mainPic,
+            _that.id,
+            _that.brand,
+            _that.imgs,
+            _that.brandName,
+            _that.couponConditions,
+            _that.detailPics,
+            _that.subcid,
+            _that.subdivisionId,
+            _that.dsrScore,
+            _that.dailySales,
+            _that.shopLogo,
+            _that.shopLevel,
+            _that.couponTotalNum,
+            _that.descScore,
+            _that.brandWenan,
+            _that.activityEndTime,
+            _that.shipScore,
+            _that.brandId,
+            _that.couponReceiveNum,
+            _that.shopType,
+            _that.cid,
+            _that.desc,
+            _that.commissionRate,
+            _that.originalPrice,
+            _that.actualPrice,
+            _that.goodsId,
+            _that.quanMLink,
+            _that.shopName,
+            _that.activityStartTime,
+            _that.video,
+            _that.title,
+            _that.dtitle,
+            _that.monthSales,
+            _that.subdivisionRank,
+            _that.hzQuanOver,
+            _that.isSubdivision,
+            _that.directCommissionType,
+            _that.servicePercent,
+            _that.commissionType,
+            _that.directCommission,
+            _that.twoHoursSales,
+            _that.dsrPercent,
+            _that.estimateAmount,
+            _that.couponPrice,
+            _that.activityType,
+            _that.hotPush,
+            _that.marketingMainPic,
+            _that.couponEndTime,
+            _that.createTime,
+            _that.subdivisionName,
+            _that.circleText,
+            _that.specialText);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String teamName,
+            num tbcid,
+            num shipPercent,
+            String itemLink,
+            num freeshipRemoteDistrict,
+            num yunfeixian,
+            num goldSellers,
+            String reimgs,
+            String couponLink,
+            num haitao,
+            String sellerId,
+            num discounts,
+            String directCommissionLink,
+            String couponStartTime,
+            num serviceScore,
+            String mainPic,
+            num id,
+            num brand,
+            String imgs,
+            String brandName,
+            String couponConditions,
+            String detailPics,
+            List<dynamic> subcid,
+            num subdivisionId,
+            num dsrScore,
+            num dailySales,
+            String shopLogo,
+            num shopLevel,
+            num couponTotalNum,
+            num descScore,
+            String brandWenan,
+            String activityEndTime,
+            num shipScore,
+            dynamic brandId,
+            num couponReceiveNum,
+            num shopType,
+            num cid,
+            String desc,
+            num commissionRate,
+            num originalPrice,
+            num actualPrice,
+            String goodsId,
+            num quanMLink,
+            String shopName,
+            String activityStartTime,
+            String video,
+            String title,
+            String dtitle,
+            num monthSales,
+            num subdivisionRank,
+            num hzQuanOver,
+            num isSubdivision,
+            num directCommissionType,
+            num servicePercent,
+            num commissionType,
+            num directCommission,
+            num twoHoursSales,
+            num dsrPercent,
+            num estimateAmount,
+            num couponPrice,
+            num activityType,
+            num hotPush,
+            String marketingMainPic,
+            String couponEndTime,
+            String createTime,
+            String subdivisionName,
+            String circleText,
+            List<dynamic> specialText)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Product() when $default != null:
+        return $default(
+            _that.teamName,
+            _that.tbcid,
+            _that.shipPercent,
+            _that.itemLink,
+            _that.freeshipRemoteDistrict,
+            _that.yunfeixian,
+            _that.goldSellers,
+            _that.reimgs,
+            _that.couponLink,
+            _that.haitao,
+            _that.sellerId,
+            _that.discounts,
+            _that.directCommissionLink,
+            _that.couponStartTime,
+            _that.serviceScore,
+            _that.mainPic,
+            _that.id,
+            _that.brand,
+            _that.imgs,
+            _that.brandName,
+            _that.couponConditions,
+            _that.detailPics,
+            _that.subcid,
+            _that.subdivisionId,
+            _that.dsrScore,
+            _that.dailySales,
+            _that.shopLogo,
+            _that.shopLevel,
+            _that.couponTotalNum,
+            _that.descScore,
+            _that.brandWenan,
+            _that.activityEndTime,
+            _that.shipScore,
+            _that.brandId,
+            _that.couponReceiveNum,
+            _that.shopType,
+            _that.cid,
+            _that.desc,
+            _that.commissionRate,
+            _that.originalPrice,
+            _that.actualPrice,
+            _that.goodsId,
+            _that.quanMLink,
+            _that.shopName,
+            _that.activityStartTime,
+            _that.video,
+            _that.title,
+            _that.dtitle,
+            _that.monthSales,
+            _that.subdivisionRank,
+            _that.hzQuanOver,
+            _that.isSubdivision,
+            _that.directCommissionType,
+            _that.servicePercent,
+            _that.commissionType,
+            _that.directCommission,
+            _that.twoHoursSales,
+            _that.dsrPercent,
+            _that.estimateAmount,
+            _that.couponPrice,
+            _that.activityType,
+            _that.hotPush,
+            _that.marketingMainPic,
+            _that.couponEndTime,
+            _that.createTime,
+            _that.subdivisionName,
+            _that.circleText,
+            _that.specialText);
+      case _:
+        return null;
+    }
   }
 }
 

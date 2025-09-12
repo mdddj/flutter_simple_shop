@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -204,6 +203,244 @@ class _$FileInfoCopyWithImpl<$Res> implements $FileInfoCopyWith<$Res> {
           : width // ignore: cast_nullable_to_non_nullable
               as int,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [FileInfo].
+extension FileInfoPatterns on FileInfo {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_FileInfo value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _FileInfo() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_FileInfo value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FileInfo():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_FileInfo value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FileInfo() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'absolutePath') String absolutePath,
+            @JsonKey(name: 'collect') bool collect,
+            @JsonKey(name: 'createDate') String createDate,
+            @JsonKey(name: 'fileName') String fileName,
+            @JsonKey(name: 'fileSize') int fileSize,
+            @JsonKey(name: 'fileType') String fileType,
+            @JsonKey(name: 'height') int height,
+            @JsonKey(name: 'id') int id,
+            @JsonKey(name: 'intro') String intro,
+            @JsonKey(name: 'tagColor') String tagColor,
+            @JsonKey(name: 'updateDate') String updateDate,
+            @JsonKey(name: 'url') String url,
+            @JsonKey(name: 'width') int width)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _FileInfo() when $default != null:
+        return $default(
+            _that.absolutePath,
+            _that.collect,
+            _that.createDate,
+            _that.fileName,
+            _that.fileSize,
+            _that.fileType,
+            _that.height,
+            _that.id,
+            _that.intro,
+            _that.tagColor,
+            _that.updateDate,
+            _that.url,
+            _that.width);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'absolutePath') String absolutePath,
+            @JsonKey(name: 'collect') bool collect,
+            @JsonKey(name: 'createDate') String createDate,
+            @JsonKey(name: 'fileName') String fileName,
+            @JsonKey(name: 'fileSize') int fileSize,
+            @JsonKey(name: 'fileType') String fileType,
+            @JsonKey(name: 'height') int height,
+            @JsonKey(name: 'id') int id,
+            @JsonKey(name: 'intro') String intro,
+            @JsonKey(name: 'tagColor') String tagColor,
+            @JsonKey(name: 'updateDate') String updateDate,
+            @JsonKey(name: 'url') String url,
+            @JsonKey(name: 'width') int width)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FileInfo():
+        return $default(
+            _that.absolutePath,
+            _that.collect,
+            _that.createDate,
+            _that.fileName,
+            _that.fileSize,
+            _that.fileType,
+            _that.height,
+            _that.id,
+            _that.intro,
+            _that.tagColor,
+            _that.updateDate,
+            _that.url,
+            _that.width);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'absolutePath') String absolutePath,
+            @JsonKey(name: 'collect') bool collect,
+            @JsonKey(name: 'createDate') String createDate,
+            @JsonKey(name: 'fileName') String fileName,
+            @JsonKey(name: 'fileSize') int fileSize,
+            @JsonKey(name: 'fileType') String fileType,
+            @JsonKey(name: 'height') int height,
+            @JsonKey(name: 'id') int id,
+            @JsonKey(name: 'intro') String intro,
+            @JsonKey(name: 'tagColor') String tagColor,
+            @JsonKey(name: 'updateDate') String updateDate,
+            @JsonKey(name: 'url') String url,
+            @JsonKey(name: 'width') int width)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _FileInfo() when $default != null:
+        return $default(
+            _that.absolutePath,
+            _that.collect,
+            _that.createDate,
+            _that.fileName,
+            _that.fileSize,
+            _that.fileType,
+            _that.height,
+            _that.id,
+            _that.intro,
+            _that.tagColor,
+            _that.updateDate,
+            _that.url,
+            _that.width);
+      case _:
+        return null;
+    }
   }
 }
 

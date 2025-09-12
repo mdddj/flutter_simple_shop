@@ -37,9 +37,11 @@ class MySliverAppBar extends StatefulWidget {
     this.toolbarTextStyle,
     this.titleTextStyle,
     this.systemOverlayStyle,
-  })  : assert(floating || !snap, 'The "snap" argument only makes sense for floating app bars.'),
+  })  : assert(floating || !snap,
+            'The "snap" argument only makes sense for floating app bars.'),
         assert(stretchTriggerOffset > 0.0),
-        assert(collapsedHeight == null || collapsedHeight >= toolbarHeight, 'The "collapsedHeight" argument has to be larger than or equal to [toolbarHeight].');
+        assert(collapsedHeight == null || collapsedHeight >= toolbarHeight,
+            'The "collapsedHeight" argument has to be larger than or equal to [toolbarHeight].');
 
   /// {@macro flutter.material.appbar.leading}
   ///
@@ -299,13 +301,15 @@ class MySliverAppBar extends StatefulWidget {
 
 // This class is only Stateful because it owns the TickerProvider used
 // by the floating appbar snap animation (via FloatingHeaderSnapConfiguration).
-class MySliverAppBarState extends State<MySliverAppBar> with TickerProviderStateMixin {
+class MySliverAppBarState extends State<MySliverAppBar>
+    with TickerProviderStateMixin {
   FloatingHeaderSnapConfiguration? _snapConfiguration;
   OverScrollHeaderStretchConfiguration? _stretchConfiguration;
   PersistentHeaderShowOnScreenConfiguration? _showOnScreenConfiguration;
   final _model = _Model();
 
-  final AppBarStateChangeController _appBarStateChangeController = AppBarStateChangeController();
+  final AppBarStateChangeController _appBarStateChangeController =
+      AppBarStateChangeController();
 
   void _listenAppbarAvatarChange() {
     _appBarStateChangeController.addListener(() {
@@ -328,7 +332,10 @@ class MySliverAppBarState extends State<MySliverAppBar> with TickerProviderState
       _snapConfiguration = null;
     }
 
-    _showOnScreenConfiguration = widget.floating & widget.snap ? const PersistentHeaderShowOnScreenConfiguration(minShowOnScreenExtent: double.infinity) : null;
+    _showOnScreenConfiguration = widget.floating & widget.snap
+        ? const PersistentHeaderShowOnScreenConfiguration(
+            minShowOnScreenExtent: double.infinity)
+        : null;
   }
 
   void _updateStretchConfiguration() {
@@ -353,7 +360,8 @@ class MySliverAppBarState extends State<MySliverAppBar> with TickerProviderState
   @override
   void didUpdateWidget(MySliverAppBar oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.snap != oldWidget.snap || widget.floating != oldWidget.floating) {
+    if (widget.snap != oldWidget.snap ||
+        widget.floating != oldWidget.floating) {
       _updateSnapConfiguration();
     }
     if (widget.stretch != oldWidget.stretch) _updateStretchConfiguration();
@@ -363,10 +371,14 @@ class MySliverAppBarState extends State<MySliverAppBar> with TickerProviderState
   Widget build(BuildContext context) {
     assert(!widget.primary || debugCheckHasMediaQuery(context));
     final double bottomHeight = widget.bottom?.preferredSize.height ?? 0.0;
-    final double topPadding = widget.primary ? MediaQuery.of(context).padding.top : 0.0;
-    final double collapsedHeight = (widget.pinned && widget.floating && widget.bottom != null)
-        ? (widget.collapsedHeight ?? 0.0) + bottomHeight + topPadding
-        : (widget.collapsedHeight ?? widget.toolbarHeight) + bottomHeight + topPadding;
+    final double topPadding =
+        widget.primary ? MediaQuery.of(context).padding.top : 0.0;
+    final double collapsedHeight =
+        (widget.pinned && widget.floating && widget.bottom != null)
+            ? (widget.collapsedHeight ?? 0.0) + bottomHeight + topPadding
+            : (widget.collapsedHeight ?? widget.toolbarHeight) +
+                bottomHeight +
+                topPadding;
     return MediaQuery.removePadding(
       context: context,
       removeBottom: true,
@@ -461,7 +473,8 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
     required this.appBarStateChangeController,
   })  : assert(primary || topPadding == 0.0),
         assert(
-          !floating || (snapConfiguration == null && showOnScreenConfiguration == null),
+          !floating ||
+              (snapConfiguration == null && showOnScreenConfiguration == null),
           'vsync cannot be null when snapConfiguration or showOnScreenConfiguration is not null, and floating is true',
         ),
         _bottomHeight = bottom?.preferredSize.height ?? 0.0;
@@ -504,7 +517,10 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   double get minExtent => collapsedHeight;
 
   @override
-  double get maxExtent => max(topPadding + (expandedHeight ?? (toolbarHeight ?? kToolbarHeight) + _bottomHeight), minExtent);
+  double get maxExtent => max(
+      topPadding +
+          (expandedHeight ?? (toolbarHeight ?? kToolbarHeight) + _bottomHeight),
+      minExtent);
 
   @override
   final TickerProvider vsync;
@@ -519,14 +535,26 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   final PersistentHeaderShowOnScreenConfiguration? showOnScreenConfiguration;
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     final double visibleMainHeight = maxExtent - shrinkOffset - topPadding;
-    final double extraToolbarHeight = max(minExtent - _bottomHeight - topPadding - (toolbarHeight ?? kToolbarHeight), 0.0);
-    final double visibleToolbarHeight = visibleMainHeight - _bottomHeight - extraToolbarHeight;
+    final double extraToolbarHeight = max(
+        minExtent -
+            _bottomHeight -
+            topPadding -
+            (toolbarHeight ?? kToolbarHeight),
+        0.0);
+    final double visibleToolbarHeight =
+        visibleMainHeight - _bottomHeight - extraToolbarHeight;
 
-    final bool isPinnedWithOpacityFade = pinned && floating && bottom != null && extraToolbarHeight == 0.0;
-    final double toolbarOpacity = !pinned || isPinnedWithOpacityFade ? (visibleToolbarHeight / (toolbarHeight ?? kToolbarHeight)).clamp(0.0, 1.0) : 1.0;
-    appBarStateChangeController?.setValue((max(minExtent, maxExtent - shrinkOffset) == minExtent));
+    final bool isPinnedWithOpacityFade =
+        pinned && floating && bottom != null && extraToolbarHeight == 0.0;
+    final double toolbarOpacity = !pinned || isPinnedWithOpacityFade
+        ? (visibleToolbarHeight / (toolbarHeight ?? kToolbarHeight))
+            .clamp(0.0, 1.0)
+        : 1.0;
+    appBarStateChangeController
+        ?.setValue((max(minExtent, maxExtent - shrinkOffset) == minExtent));
     final Widget appBar = FlexibleSpaceBar.createSettings(
       minExtent: minExtent,
       maxExtent: maxExtent,
@@ -537,9 +565,16 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
         automaticallyImplyLeading: automaticallyImplyLeading,
         title: title,
         actions: actions,
-        flexibleSpace: (title == null && flexibleSpace != null && !excludeHeaderSemantics) ? Semantics(header: true, child: flexibleSpace) : flexibleSpace,
+        flexibleSpace:
+            (title == null && flexibleSpace != null && !excludeHeaderSemantics)
+                ? Semantics(header: true, child: flexibleSpace)
+                : flexibleSpace,
         bottom: bottom,
-        elevation: forceElevated || overlapsContent || (pinned && shrinkOffset > maxExtent - minExtent) ? elevation : 0.0,
+        elevation: forceElevated ||
+                overlapsContent ||
+                (pinned && shrinkOffset > maxExtent - minExtent)
+            ? elevation
+            : 0.0,
         shadowColor: shadowColor,
         backgroundColor: backgroundColor,
         foregroundColor: foregroundColor,
@@ -551,7 +586,9 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
         titleSpacing: titleSpacing,
         shape: shape,
         toolbarOpacity: toolbarOpacity,
-        bottomOpacity: pinned ? 1.0 : ((visibleMainHeight / _bottomHeight).clamp(0.0, 1.0)),
+        bottomOpacity: pinned
+            ? 1.0
+            : ((visibleMainHeight / _bottomHeight).clamp(0.0, 1.0)),
         toolbarHeight: toolbarHeight,
         leadingWidth: leadingWidth,
         toolbarTextStyle: toolbarTextStyle,
@@ -601,7 +638,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   String toString() {
-    return '${describeIdentity(this)}(topPadding: ${topPadding.toStringAsFixed(1)}, bottomHeight: ${_bottomHeight.toStringAsFixed(1)}, ...)';
+    return '(topPadding: ${topPadding.toStringAsFixed(1)}, bottomHeight: ${_bottomHeight.toStringAsFixed(1)}, ...)';
   }
 }
 
@@ -640,7 +677,8 @@ class FloatingAppBarState extends State<_FloatingAppBar> {
   }
 
   RenderSliverFloatingPersistentHeader? _headerRenderer() {
-    return context.findAncestorRenderObjectOfType<RenderSliverFloatingPersistentHeader>();
+    return context
+        .findAncestorRenderObjectOfType<RenderSliverFloatingPersistentHeader>();
   }
 
   void _isScrollingListener() {

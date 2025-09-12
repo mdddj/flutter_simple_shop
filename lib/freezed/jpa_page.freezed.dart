@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -204,6 +203,232 @@ class _$JpaPageCopyWithImpl<$Res> implements $JpaPageCopyWith<$Res> {
     return $SortCopyWith<$Res>(_self.sort, (value) {
       return _then(_self.copyWith(sort: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [JpaPage].
+extension JpaPagePatterns on JpaPage {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_JpaPage value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _JpaPage() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_JpaPage value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _JpaPage():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_JpaPage value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _JpaPage() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'content') IList<dynamic> content,
+            @JsonKey(name: 'empty') bool empty,
+            @JsonKey(name: 'first') bool first,
+            @JsonKey(name: 'last') bool last,
+            @JsonKey(name: 'number') int number,
+            @JsonKey(name: 'numberOfElements') int numberOfElements,
+            @JsonKey(name: 'pageable') Pageable pageable,
+            @JsonKey(name: 'size') int size,
+            @JsonKey(name: 'sort') Sort sort,
+            @JsonKey(name: 'totalElements') int totalElements,
+            @JsonKey(name: 'totalPages') int totalpages)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _JpaPage() when $default != null:
+        return $default(
+            _that.content,
+            _that.empty,
+            _that.first,
+            _that.last,
+            _that.number,
+            _that.numberOfElements,
+            _that.pageable,
+            _that.size,
+            _that.sort,
+            _that.totalElements,
+            _that.totalpages);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'content') IList<dynamic> content,
+            @JsonKey(name: 'empty') bool empty,
+            @JsonKey(name: 'first') bool first,
+            @JsonKey(name: 'last') bool last,
+            @JsonKey(name: 'number') int number,
+            @JsonKey(name: 'numberOfElements') int numberOfElements,
+            @JsonKey(name: 'pageable') Pageable pageable,
+            @JsonKey(name: 'size') int size,
+            @JsonKey(name: 'sort') Sort sort,
+            @JsonKey(name: 'totalElements') int totalElements,
+            @JsonKey(name: 'totalPages') int totalpages)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _JpaPage():
+        return $default(
+            _that.content,
+            _that.empty,
+            _that.first,
+            _that.last,
+            _that.number,
+            _that.numberOfElements,
+            _that.pageable,
+            _that.size,
+            _that.sort,
+            _that.totalElements,
+            _that.totalpages);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'content') IList<dynamic> content,
+            @JsonKey(name: 'empty') bool empty,
+            @JsonKey(name: 'first') bool first,
+            @JsonKey(name: 'last') bool last,
+            @JsonKey(name: 'number') int number,
+            @JsonKey(name: 'numberOfElements') int numberOfElements,
+            @JsonKey(name: 'pageable') Pageable pageable,
+            @JsonKey(name: 'size') int size,
+            @JsonKey(name: 'sort') Sort sort,
+            @JsonKey(name: 'totalElements') int totalElements,
+            @JsonKey(name: 'totalPages') int totalpages)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _JpaPage() when $default != null:
+        return $default(
+            _that.content,
+            _that.empty,
+            _that.first,
+            _that.last,
+            _that.number,
+            _that.numberOfElements,
+            _that.pageable,
+            _that.size,
+            _that.sort,
+            _that.totalElements,
+            _that.totalpages);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -562,6 +787,187 @@ class _$PageableCopyWithImpl<$Res> implements $PageableCopyWith<$Res> {
   }
 }
 
+/// Adds pattern-matching-related methods to [Pageable].
+extension PageablePatterns on Pageable {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Pageable value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Pageable() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Pageable value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Pageable():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Pageable value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Pageable() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'offset') int offset,
+            @JsonKey(name: 'pageNumber') int pageNumber,
+            @JsonKey(name: 'pageSize') int pageSize,
+            @JsonKey(name: 'paged') bool paged,
+            @JsonKey(name: 'sort') Sort sort,
+            @JsonKey(name: 'unpaged') bool unpaged)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Pageable() when $default != null:
+        return $default(_that.offset, _that.pageNumber, _that.pageSize,
+            _that.paged, _that.sort, _that.unpaged);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'offset') int offset,
+            @JsonKey(name: 'pageNumber') int pageNumber,
+            @JsonKey(name: 'pageSize') int pageSize,
+            @JsonKey(name: 'paged') bool paged,
+            @JsonKey(name: 'sort') Sort sort,
+            @JsonKey(name: 'unpaged') bool unpaged)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Pageable():
+        return $default(_that.offset, _that.pageNumber, _that.pageSize,
+            _that.paged, _that.sort, _that.unpaged);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'offset') int offset,
+            @JsonKey(name: 'pageNumber') int pageNumber,
+            @JsonKey(name: 'pageSize') int pageSize,
+            @JsonKey(name: 'paged') bool paged,
+            @JsonKey(name: 'sort') Sort sort,
+            @JsonKey(name: 'unpaged') bool unpaged)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Pageable() when $default != null:
+        return $default(_that.offset, _that.pageNumber, _that.pageSize,
+            _that.paged, _that.sort, _that.unpaged);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 @JsonSerializable()
 class _Pageable extends Pageable {
@@ -794,6 +1200,175 @@ class _$SortCopyWithImpl<$Res> implements $SortCopyWith<$Res> {
           : unsorted // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [Sort].
+extension SortPatterns on Sort {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Sort value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Sort() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Sort value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Sort():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Sort value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Sort() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'empty') bool empty,
+            @JsonKey(name: 'sorted') bool sorted,
+            @JsonKey(name: 'unsorted') bool unsorted)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Sort() when $default != null:
+        return $default(_that.empty, _that.sorted, _that.unsorted);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'empty') bool empty,
+            @JsonKey(name: 'sorted') bool sorted,
+            @JsonKey(name: 'unsorted') bool unsorted)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Sort():
+        return $default(_that.empty, _that.sorted, _that.unsorted);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'empty') bool empty,
+            @JsonKey(name: 'sorted') bool sorted,
+            @JsonKey(name: 'unsorted') bool unsorted)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Sort() when $default != null:
+        return $default(_that.empty, _that.sorted, _that.unsorted);
+      case _:
+        return null;
+    }
   }
 }
 

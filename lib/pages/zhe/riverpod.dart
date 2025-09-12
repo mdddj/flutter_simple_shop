@@ -2,6 +2,7 @@
 // Package imports:
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:hooks_riverpod/legacy.dart';
 
 import '../../modals/dd/product.dart';
 import '../../provider/index.dart';

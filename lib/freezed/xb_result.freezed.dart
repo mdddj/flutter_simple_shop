@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -95,6 +94,171 @@ class _$XbDataCopyWithImpl<$Res> implements $XbDataCopyWith<$Res> {
           : totalNum // ignore: cast_nullable_to_non_nullable
               as int,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [XbData].
+extension XbDataPatterns on XbData {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XbData value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XbData() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XbData value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XbData():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XbData value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XbData() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'list') List<XbItem> list,
+            @JsonKey(name: 'pageId') int pageId,
+            @JsonKey(name: 'totalNum') int totalNum)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XbData() when $default != null:
+        return $default(_that.list, _that.pageId, _that.totalNum);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'list') List<XbItem> list,
+            @JsonKey(name: 'pageId') int pageId,
+            @JsonKey(name: 'totalNum') int totalNum)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XbData():
+        return $default(_that.list, _that.pageId, _that.totalNum);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'list') List<XbItem> list,
+            @JsonKey(name: 'pageId') int pageId,
+            @JsonKey(name: 'totalNum') int totalNum)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XbData() when $default != null:
+        return $default(_that.list, _that.pageId, _that.totalNum);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -406,6 +570,246 @@ class _$XbItemCopyWithImpl<$Res> implements $XbItemCopyWith<$Res> {
           : updateTime // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [XbItem].
+extension XbItemPatterns on XbItem {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_XbItem value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XbItem() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_XbItem value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XbItem():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_XbItem value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XbItem() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'content') String content,
+            @JsonKey(name: 'contentApp') String contentApp,
+            @JsonKey(name: 'couponUrl') String couponUrl,
+            @JsonKey(name: 'createTime') String createTime,
+            @JsonKey(name: 'img') String img,
+            @JsonKey(name: 'itemId') String itemId,
+            @JsonKey(name: 'itemUrl') String itemUrl,
+            @JsonKey(name: 'msgId') String msgId,
+            @JsonKey(name: 'remark') String remark,
+            @JsonKey(name: 'source') String source,
+            @JsonKey(name: 'sourceType') String sourceType,
+            @JsonKey(name: 'tag') String tag,
+            @JsonKey(name: 'title') String title,
+            @JsonKey(name: 'updateTime') String updateTime)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _XbItem() when $default != null:
+        return $default(
+            _that.content,
+            _that.contentApp,
+            _that.couponUrl,
+            _that.createTime,
+            _that.img,
+            _that.itemId,
+            _that.itemUrl,
+            _that.msgId,
+            _that.remark,
+            _that.source,
+            _that.sourceType,
+            _that.tag,
+            _that.title,
+            _that.updateTime);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'content') String content,
+            @JsonKey(name: 'contentApp') String contentApp,
+            @JsonKey(name: 'couponUrl') String couponUrl,
+            @JsonKey(name: 'createTime') String createTime,
+            @JsonKey(name: 'img') String img,
+            @JsonKey(name: 'itemId') String itemId,
+            @JsonKey(name: 'itemUrl') String itemUrl,
+            @JsonKey(name: 'msgId') String msgId,
+            @JsonKey(name: 'remark') String remark,
+            @JsonKey(name: 'source') String source,
+            @JsonKey(name: 'sourceType') String sourceType,
+            @JsonKey(name: 'tag') String tag,
+            @JsonKey(name: 'title') String title,
+            @JsonKey(name: 'updateTime') String updateTime)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XbItem():
+        return $default(
+            _that.content,
+            _that.contentApp,
+            _that.couponUrl,
+            _that.createTime,
+            _that.img,
+            _that.itemId,
+            _that.itemUrl,
+            _that.msgId,
+            _that.remark,
+            _that.source,
+            _that.sourceType,
+            _that.tag,
+            _that.title,
+            _that.updateTime);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'content') String content,
+            @JsonKey(name: 'contentApp') String contentApp,
+            @JsonKey(name: 'couponUrl') String couponUrl,
+            @JsonKey(name: 'createTime') String createTime,
+            @JsonKey(name: 'img') String img,
+            @JsonKey(name: 'itemId') String itemId,
+            @JsonKey(name: 'itemUrl') String itemUrl,
+            @JsonKey(name: 'msgId') String msgId,
+            @JsonKey(name: 'remark') String remark,
+            @JsonKey(name: 'source') String source,
+            @JsonKey(name: 'sourceType') String sourceType,
+            @JsonKey(name: 'tag') String tag,
+            @JsonKey(name: 'title') String title,
+            @JsonKey(name: 'updateTime') String updateTime)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _XbItem() when $default != null:
+        return $default(
+            _that.content,
+            _that.contentApp,
+            _that.couponUrl,
+            _that.createTime,
+            _that.img,
+            _that.itemId,
+            _that.itemUrl,
+            _that.msgId,
+            _that.remark,
+            _that.source,
+            _that.sourceType,
+            _that.tag,
+            _that.title,
+            _that.updateTime);
+      case _:
+        return null;
+    }
   }
 }
 

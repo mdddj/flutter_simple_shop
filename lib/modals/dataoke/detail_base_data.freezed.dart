@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -122,6 +121,171 @@ class _$DetailBaseDataResultCopyWithImpl<$Res>
     return $CouponLinkResultCopyWith<$Res>(_self.couponInfo, (value) {
       return _then(_self.copyWith(couponInfo: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [DetailBaseDataResult].
+extension DetailBaseDataResultPatterns on DetailBaseDataResult {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_DetailBaseDataResult value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DetailBaseDataResult() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_DetailBaseDataResult value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DetailBaseDataResult():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_DetailBaseDataResult value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DetailBaseDataResult() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'detail') Product info,
+            @JsonKey(name: 'similarList') List<Product> similarProducts,
+            @JsonKey(name: 'privilegeLink') CouponLinkResult couponInfo)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _DetailBaseDataResult() when $default != null:
+        return $default(_that.info, _that.similarProducts, _that.couponInfo);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'detail') Product info,
+            @JsonKey(name: 'similarList') List<Product> similarProducts,
+            @JsonKey(name: 'privilegeLink') CouponLinkResult couponInfo)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DetailBaseDataResult():
+        return $default(_that.info, _that.similarProducts, _that.couponInfo);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'detail') Product info,
+            @JsonKey(name: 'similarList') List<Product> similarProducts,
+            @JsonKey(name: 'privilegeLink') CouponLinkResult couponInfo)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _DetailBaseDataResult() when $default != null:
+        return $default(_that.info, _that.similarProducts, _that.couponInfo);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -481,6 +645,258 @@ class _$CouponLinkResultCopyWithImpl<$Res>
           : tpwd // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [CouponLinkResult].
+extension CouponLinkResultPatterns on CouponLinkResult {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CouponLinkResult value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CouponLinkResult() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CouponLinkResult value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CouponLinkResult():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_CouponLinkResult value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CouponLinkResult() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? couponRemainCount,
+            String? kuaiZhanUrl,
+            String? minCommissionRate,
+            num originalPrice,
+            String? couponInfo,
+            num actualPrice,
+            String? shortUrl,
+            String? maxCommissionRate,
+            String? couponEndTime,
+            String? couponTotalCount,
+            String? itemId,
+            String? couponStartTime,
+            String? couponClickUrl,
+            String? itemUrl,
+            String? longTpwd,
+            String? tpwd)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _CouponLinkResult() when $default != null:
+        return $default(
+            _that.couponRemainCount,
+            _that.kuaiZhanUrl,
+            _that.minCommissionRate,
+            _that.originalPrice,
+            _that.couponInfo,
+            _that.actualPrice,
+            _that.shortUrl,
+            _that.maxCommissionRate,
+            _that.couponEndTime,
+            _that.couponTotalCount,
+            _that.itemId,
+            _that.couponStartTime,
+            _that.couponClickUrl,
+            _that.itemUrl,
+            _that.longTpwd,
+            _that.tpwd);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? couponRemainCount,
+            String? kuaiZhanUrl,
+            String? minCommissionRate,
+            num originalPrice,
+            String? couponInfo,
+            num actualPrice,
+            String? shortUrl,
+            String? maxCommissionRate,
+            String? couponEndTime,
+            String? couponTotalCount,
+            String? itemId,
+            String? couponStartTime,
+            String? couponClickUrl,
+            String? itemUrl,
+            String? longTpwd,
+            String? tpwd)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CouponLinkResult():
+        return $default(
+            _that.couponRemainCount,
+            _that.kuaiZhanUrl,
+            _that.minCommissionRate,
+            _that.originalPrice,
+            _that.couponInfo,
+            _that.actualPrice,
+            _that.shortUrl,
+            _that.maxCommissionRate,
+            _that.couponEndTime,
+            _that.couponTotalCount,
+            _that.itemId,
+            _that.couponStartTime,
+            _that.couponClickUrl,
+            _that.itemUrl,
+            _that.longTpwd,
+            _that.tpwd);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String? couponRemainCount,
+            String? kuaiZhanUrl,
+            String? minCommissionRate,
+            num originalPrice,
+            String? couponInfo,
+            num actualPrice,
+            String? shortUrl,
+            String? maxCommissionRate,
+            String? couponEndTime,
+            String? couponTotalCount,
+            String? itemId,
+            String? couponStartTime,
+            String? couponClickUrl,
+            String? itemUrl,
+            String? longTpwd,
+            String? tpwd)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _CouponLinkResult() when $default != null:
+        return $default(
+            _that.couponRemainCount,
+            _that.kuaiZhanUrl,
+            _that.minCommissionRate,
+            _that.originalPrice,
+            _that.couponInfo,
+            _that.actualPrice,
+            _that.shortUrl,
+            _that.maxCommissionRate,
+            _that.couponEndTime,
+            _that.couponTotalCount,
+            _that.itemId,
+            _that.couponStartTime,
+            _that.couponClickUrl,
+            _that.itemUrl,
+            _that.longTpwd,
+            _that.tpwd);
+      case _:
+        return null;
+    }
   }
 }
 

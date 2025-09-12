@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -99,6 +98,165 @@ class _$PagerCopyWithImpl<$Res> implements $PagerCopyWith<$Res> {
     return $PagerParamsCopyWith<$Res>(_self.params!, (value) {
       return _then(_self.copyWith(params: value));
     });
+  }
+}
+
+/// Adds pattern-matching-related methods to [Pager].
+extension PagerPatterns on Pager {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Pager value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Pager() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Pager value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Pager():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Pager value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Pager() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(@JsonKey(name: 'routerName') String routername,
+            PagerParams? params)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Pager() when $default != null:
+        return $default(_that.routername, _that.params);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'routerName') String routername, PagerParams? params)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Pager():
+        return $default(_that.routername, _that.params);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(@JsonKey(name: 'routerName') String routername,
+            PagerParams? params)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Pager() when $default != null:
+        return $default(_that.routername, _that.params);
+      case _:
+        return null;
+    }
   }
 }
 
@@ -244,6 +402,237 @@ mixin _$PagerParams {
 /// @nodoc
 class $PagerParamsCopyWith<$Res> {
   $PagerParamsCopyWith(PagerParams _, $Res Function(PagerParams) __);
+}
+
+/// Adds pattern-matching-related methods to [PagerParams].
+extension PagerParamsPatterns on PagerParams {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(DefaultPagerParams value)? $default, {
+    TResult Function(DynPageParams value)? dynListPageParam,
+    TResult Function(DynWriteParams value)? dynWritePageParam,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case DefaultPagerParams() when $default != null:
+        return $default(_that);
+      case DynPageParams() when dynListPageParam != null:
+        return dynListPageParam(_that);
+      case DynWriteParams() when dynWritePageParam != null:
+        return dynWritePageParam(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(DefaultPagerParams value) $default, {
+    required TResult Function(DynPageParams value) dynListPageParam,
+    required TResult Function(DynWriteParams value) dynWritePageParam,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case DefaultPagerParams():
+        return $default(_that);
+      case DynPageParams():
+        return dynListPageParam(_that);
+      case DynWriteParams():
+        return dynWritePageParam(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(DefaultPagerParams value)? $default, {
+    TResult? Function(DynPageParams value)? dynListPageParam,
+    TResult? Function(DynWriteParams value)? dynWritePageParam,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case DefaultPagerParams() when $default != null:
+        return $default(_that);
+      case DynPageParams() when dynListPageParam != null:
+        return dynListPageParam(_that);
+      case DynWriteParams() when dynWritePageParam != null:
+        return dynWritePageParam(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function()? $default, {
+    TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case DefaultPagerParams() when $default != null:
+        return $default();
+      case DynPageParams() when dynListPageParam != null:
+        return dynListPageParam(
+            _that.name, _that.emptyText, _that.style, _that.emptyChild);
+      case DynWriteParams() when dynWritePageParam != null:
+        return dynWritePageParam(_that.name, _that.productShare, _that.title,
+            _that.disableSelectOtherCategory, _that.hintText);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function() $default, {
+    required TResult Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)
+        dynListPageParam,
+    required TResult Function(String name, ProductShare? productShare,
+            String? title, bool disableSelectOtherCategory, String? hintText)
+        dynWritePageParam,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case DefaultPagerParams():
+        return $default();
+      case DynPageParams():
+        return dynListPageParam(
+            _that.name, _that.emptyText, _that.style, _that.emptyChild);
+      case DynWriteParams():
+        return dynWritePageParam(_that.name, _that.productShare, _that.title,
+            _that.disableSelectOtherCategory, _that.hintText);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function()? $default, {
+    TResult? Function(
+            String name,
+            String emptyText,
+            ResourceWidgetCardStyle style,
+            @JsonKey(
+                fromJson: null,
+                toJson: null,
+                includeToJson: false,
+                includeFromJson: false)
+            Widget? emptyChild)?
+        dynListPageParam,
+    TResult? Function(String name, ProductShare? productShare, String? title,
+            bool disableSelectOtherCategory, String? hintText)?
+        dynWritePageParam,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case DefaultPagerParams() when $default != null:
+        return $default();
+      case DynPageParams() when dynListPageParam != null:
+        return dynListPageParam(
+            _that.name, _that.emptyText, _that.style, _that.emptyChild);
+      case DynWriteParams() when dynWritePageParam != null:
+        return dynWritePageParam(_that.name, _that.productShare, _that.title,
+            _that.disableSelectOtherCategory, _that.hintText);
+      case _:
+        return null;
+    }
+  }
 }
 
 /// @nodoc

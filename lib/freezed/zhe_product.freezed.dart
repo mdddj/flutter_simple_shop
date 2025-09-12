@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -722,6 +721,537 @@ class _$ZheProductCopyWithImpl<$Res> implements $ZheProductCopyWith<$Res> {
           : presaleDeposit // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [ZheProduct].
+extension ZheProductPatterns on ZheProduct {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_ZheProduct value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ZheProduct() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_ZheProduct value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ZheProduct():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_ZheProduct value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ZheProduct() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'code') String code,
+            @JsonKey(name: 'type_one_id') String typeOneId,
+            @JsonKey(name: 'tao_id') String taoId,
+            @JsonKey(name: 'title') String title,
+            @JsonKey(name: 'jianjie') String jianjie,
+            @JsonKey(name: 'pict_url') String pictUrl,
+            @JsonKey(name: 'user_type') String userType,
+            @JsonKey(name: 'seller_id') String sellerId,
+            @JsonKey(name: 'shop_dsr') String shopDsr,
+            @JsonKey(name: 'volume') String volume,
+            @JsonKey(name: 'size') String size,
+            @JsonKey(name: 'quanhou_jiage') String quanhouJiage,
+            @JsonKey(name: 'date_time_yongjin') String dateTimeYongjin,
+            @JsonKey(name: 'tkrate3') String tkrate3,
+            @JsonKey(name: 'yongjin_type') String yongjinType,
+            @JsonKey(name: 'coupon_id') String couponId,
+            @JsonKey(name: 'coupon_start_time') String couponStartTime,
+            @JsonKey(name: 'coupon_end_time') String couponEndTime,
+            @JsonKey(name: 'coupon_info_money') String couponInfoMoney,
+            @JsonKey(name: 'coupon_total_count') String couponTotalCount,
+            @JsonKey(name: 'coupon_remain_count') String couponRemainCount,
+            @JsonKey(name: 'coupon_info') String couponInfo,
+            @JsonKey(name: 'juhuasuan') String juhuasuan,
+            @JsonKey(name: 'taoqianggou') String taoqianggou,
+            @JsonKey(name: 'haitao') String haitao,
+            @JsonKey(name: 'jiyoujia') String jiyoujia,
+            @JsonKey(name: 'jinpaimaijia') String jinpaimaijia,
+            @JsonKey(name: 'pinpai') String pinpai,
+            @JsonKey(name: 'pinpai_name') String pinpaiName,
+            @JsonKey(name: 'yunfeixian') String yunfeixian,
+            @JsonKey(name: 'nick') String nick,
+            @JsonKey(name: 'small_images') String smallImages,
+            @JsonKey(name: 'white_image') String whiteImage,
+            @JsonKey(name: 'tao_title') String taoTitle,
+            @JsonKey(name: 'provcity') String provcity,
+            @JsonKey(name: 'shop_title') String shopTitle,
+            @JsonKey(name: 'zhibo_url') String zhiboUrl,
+            @JsonKey(name: 'sellCount') String sellCount,
+            @JsonKey(name: 'commentCount') String commentCount,
+            @JsonKey(name: 'favcount') String favcount,
+            @JsonKey(name: 'score1') String score1,
+            @JsonKey(name: 'score2') String score2,
+            @JsonKey(name: 'score3') String score3,
+            @JsonKey(name: 'creditLevel') String creditLevel,
+            @JsonKey(name: 'shopIcon') String shopIcon,
+            @JsonKey(name: 'pcDescContent') String pcDescContent,
+            @JsonKey(name: 'item_url') String itemUrl,
+            @JsonKey(name: 'category_id') String categoryId,
+            @JsonKey(name: 'category_name') String categoryName,
+            @JsonKey(name: 'level_one_category_id') String levelOneCategoryId,
+            @JsonKey(name: 'level_one_category_name')
+            String levelOneCategoryName,
+            @JsonKey(name: 'tkfee3') String tkfee3,
+            @JsonKey(name: 'biaoqian') String biaoqian,
+            @JsonKey(name: 'tag') String tag,
+            @JsonKey(name: 'date_time') String dateTime,
+            @JsonKey(name: 'presale_discount_fee_text')
+            String presaleDiscountFeeText,
+            @JsonKey(name: 'presale_tail_end_time') String presaleTailEndTime,
+            @JsonKey(name: 'presale_tail_start_time')
+            String presaleTailStartTime,
+            @JsonKey(name: 'presale_end_time') String presaleEndTime,
+            @JsonKey(name: 'presale_start_time') String presaleStartTime,
+            @JsonKey(name: 'presale_deposit') String presaleDeposit)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _ZheProduct() when $default != null:
+        return $default(
+            _that.code,
+            _that.typeOneId,
+            _that.taoId,
+            _that.title,
+            _that.jianjie,
+            _that.pictUrl,
+            _that.userType,
+            _that.sellerId,
+            _that.shopDsr,
+            _that.volume,
+            _that.size,
+            _that.quanhouJiage,
+            _that.dateTimeYongjin,
+            _that.tkrate3,
+            _that.yongjinType,
+            _that.couponId,
+            _that.couponStartTime,
+            _that.couponEndTime,
+            _that.couponInfoMoney,
+            _that.couponTotalCount,
+            _that.couponRemainCount,
+            _that.couponInfo,
+            _that.juhuasuan,
+            _that.taoqianggou,
+            _that.haitao,
+            _that.jiyoujia,
+            _that.jinpaimaijia,
+            _that.pinpai,
+            _that.pinpaiName,
+            _that.yunfeixian,
+            _that.nick,
+            _that.smallImages,
+            _that.whiteImage,
+            _that.taoTitle,
+            _that.provcity,
+            _that.shopTitle,
+            _that.zhiboUrl,
+            _that.sellCount,
+            _that.commentCount,
+            _that.favcount,
+            _that.score1,
+            _that.score2,
+            _that.score3,
+            _that.creditLevel,
+            _that.shopIcon,
+            _that.pcDescContent,
+            _that.itemUrl,
+            _that.categoryId,
+            _that.categoryName,
+            _that.levelOneCategoryId,
+            _that.levelOneCategoryName,
+            _that.tkfee3,
+            _that.biaoqian,
+            _that.tag,
+            _that.dateTime,
+            _that.presaleDiscountFeeText,
+            _that.presaleTailEndTime,
+            _that.presaleTailStartTime,
+            _that.presaleEndTime,
+            _that.presaleStartTime,
+            _that.presaleDeposit);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'code') String code,
+            @JsonKey(name: 'type_one_id') String typeOneId,
+            @JsonKey(name: 'tao_id') String taoId,
+            @JsonKey(name: 'title') String title,
+            @JsonKey(name: 'jianjie') String jianjie,
+            @JsonKey(name: 'pict_url') String pictUrl,
+            @JsonKey(name: 'user_type') String userType,
+            @JsonKey(name: 'seller_id') String sellerId,
+            @JsonKey(name: 'shop_dsr') String shopDsr,
+            @JsonKey(name: 'volume') String volume,
+            @JsonKey(name: 'size') String size,
+            @JsonKey(name: 'quanhou_jiage') String quanhouJiage,
+            @JsonKey(name: 'date_time_yongjin') String dateTimeYongjin,
+            @JsonKey(name: 'tkrate3') String tkrate3,
+            @JsonKey(name: 'yongjin_type') String yongjinType,
+            @JsonKey(name: 'coupon_id') String couponId,
+            @JsonKey(name: 'coupon_start_time') String couponStartTime,
+            @JsonKey(name: 'coupon_end_time') String couponEndTime,
+            @JsonKey(name: 'coupon_info_money') String couponInfoMoney,
+            @JsonKey(name: 'coupon_total_count') String couponTotalCount,
+            @JsonKey(name: 'coupon_remain_count') String couponRemainCount,
+            @JsonKey(name: 'coupon_info') String couponInfo,
+            @JsonKey(name: 'juhuasuan') String juhuasuan,
+            @JsonKey(name: 'taoqianggou') String taoqianggou,
+            @JsonKey(name: 'haitao') String haitao,
+            @JsonKey(name: 'jiyoujia') String jiyoujia,
+            @JsonKey(name: 'jinpaimaijia') String jinpaimaijia,
+            @JsonKey(name: 'pinpai') String pinpai,
+            @JsonKey(name: 'pinpai_name') String pinpaiName,
+            @JsonKey(name: 'yunfeixian') String yunfeixian,
+            @JsonKey(name: 'nick') String nick,
+            @JsonKey(name: 'small_images') String smallImages,
+            @JsonKey(name: 'white_image') String whiteImage,
+            @JsonKey(name: 'tao_title') String taoTitle,
+            @JsonKey(name: 'provcity') String provcity,
+            @JsonKey(name: 'shop_title') String shopTitle,
+            @JsonKey(name: 'zhibo_url') String zhiboUrl,
+            @JsonKey(name: 'sellCount') String sellCount,
+            @JsonKey(name: 'commentCount') String commentCount,
+            @JsonKey(name: 'favcount') String favcount,
+            @JsonKey(name: 'score1') String score1,
+            @JsonKey(name: 'score2') String score2,
+            @JsonKey(name: 'score3') String score3,
+            @JsonKey(name: 'creditLevel') String creditLevel,
+            @JsonKey(name: 'shopIcon') String shopIcon,
+            @JsonKey(name: 'pcDescContent') String pcDescContent,
+            @JsonKey(name: 'item_url') String itemUrl,
+            @JsonKey(name: 'category_id') String categoryId,
+            @JsonKey(name: 'category_name') String categoryName,
+            @JsonKey(name: 'level_one_category_id') String levelOneCategoryId,
+            @JsonKey(name: 'level_one_category_name')
+            String levelOneCategoryName,
+            @JsonKey(name: 'tkfee3') String tkfee3,
+            @JsonKey(name: 'biaoqian') String biaoqian,
+            @JsonKey(name: 'tag') String tag,
+            @JsonKey(name: 'date_time') String dateTime,
+            @JsonKey(name: 'presale_discount_fee_text')
+            String presaleDiscountFeeText,
+            @JsonKey(name: 'presale_tail_end_time') String presaleTailEndTime,
+            @JsonKey(name: 'presale_tail_start_time')
+            String presaleTailStartTime,
+            @JsonKey(name: 'presale_end_time') String presaleEndTime,
+            @JsonKey(name: 'presale_start_time') String presaleStartTime,
+            @JsonKey(name: 'presale_deposit') String presaleDeposit)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ZheProduct():
+        return $default(
+            _that.code,
+            _that.typeOneId,
+            _that.taoId,
+            _that.title,
+            _that.jianjie,
+            _that.pictUrl,
+            _that.userType,
+            _that.sellerId,
+            _that.shopDsr,
+            _that.volume,
+            _that.size,
+            _that.quanhouJiage,
+            _that.dateTimeYongjin,
+            _that.tkrate3,
+            _that.yongjinType,
+            _that.couponId,
+            _that.couponStartTime,
+            _that.couponEndTime,
+            _that.couponInfoMoney,
+            _that.couponTotalCount,
+            _that.couponRemainCount,
+            _that.couponInfo,
+            _that.juhuasuan,
+            _that.taoqianggou,
+            _that.haitao,
+            _that.jiyoujia,
+            _that.jinpaimaijia,
+            _that.pinpai,
+            _that.pinpaiName,
+            _that.yunfeixian,
+            _that.nick,
+            _that.smallImages,
+            _that.whiteImage,
+            _that.taoTitle,
+            _that.provcity,
+            _that.shopTitle,
+            _that.zhiboUrl,
+            _that.sellCount,
+            _that.commentCount,
+            _that.favcount,
+            _that.score1,
+            _that.score2,
+            _that.score3,
+            _that.creditLevel,
+            _that.shopIcon,
+            _that.pcDescContent,
+            _that.itemUrl,
+            _that.categoryId,
+            _that.categoryName,
+            _that.levelOneCategoryId,
+            _that.levelOneCategoryName,
+            _that.tkfee3,
+            _that.biaoqian,
+            _that.tag,
+            _that.dateTime,
+            _that.presaleDiscountFeeText,
+            _that.presaleTailEndTime,
+            _that.presaleTailStartTime,
+            _that.presaleEndTime,
+            _that.presaleStartTime,
+            _that.presaleDeposit);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'code') String code,
+            @JsonKey(name: 'type_one_id') String typeOneId,
+            @JsonKey(name: 'tao_id') String taoId,
+            @JsonKey(name: 'title') String title,
+            @JsonKey(name: 'jianjie') String jianjie,
+            @JsonKey(name: 'pict_url') String pictUrl,
+            @JsonKey(name: 'user_type') String userType,
+            @JsonKey(name: 'seller_id') String sellerId,
+            @JsonKey(name: 'shop_dsr') String shopDsr,
+            @JsonKey(name: 'volume') String volume,
+            @JsonKey(name: 'size') String size,
+            @JsonKey(name: 'quanhou_jiage') String quanhouJiage,
+            @JsonKey(name: 'date_time_yongjin') String dateTimeYongjin,
+            @JsonKey(name: 'tkrate3') String tkrate3,
+            @JsonKey(name: 'yongjin_type') String yongjinType,
+            @JsonKey(name: 'coupon_id') String couponId,
+            @JsonKey(name: 'coupon_start_time') String couponStartTime,
+            @JsonKey(name: 'coupon_end_time') String couponEndTime,
+            @JsonKey(name: 'coupon_info_money') String couponInfoMoney,
+            @JsonKey(name: 'coupon_total_count') String couponTotalCount,
+            @JsonKey(name: 'coupon_remain_count') String couponRemainCount,
+            @JsonKey(name: 'coupon_info') String couponInfo,
+            @JsonKey(name: 'juhuasuan') String juhuasuan,
+            @JsonKey(name: 'taoqianggou') String taoqianggou,
+            @JsonKey(name: 'haitao') String haitao,
+            @JsonKey(name: 'jiyoujia') String jiyoujia,
+            @JsonKey(name: 'jinpaimaijia') String jinpaimaijia,
+            @JsonKey(name: 'pinpai') String pinpai,
+            @JsonKey(name: 'pinpai_name') String pinpaiName,
+            @JsonKey(name: 'yunfeixian') String yunfeixian,
+            @JsonKey(name: 'nick') String nick,
+            @JsonKey(name: 'small_images') String smallImages,
+            @JsonKey(name: 'white_image') String whiteImage,
+            @JsonKey(name: 'tao_title') String taoTitle,
+            @JsonKey(name: 'provcity') String provcity,
+            @JsonKey(name: 'shop_title') String shopTitle,
+            @JsonKey(name: 'zhibo_url') String zhiboUrl,
+            @JsonKey(name: 'sellCount') String sellCount,
+            @JsonKey(name: 'commentCount') String commentCount,
+            @JsonKey(name: 'favcount') String favcount,
+            @JsonKey(name: 'score1') String score1,
+            @JsonKey(name: 'score2') String score2,
+            @JsonKey(name: 'score3') String score3,
+            @JsonKey(name: 'creditLevel') String creditLevel,
+            @JsonKey(name: 'shopIcon') String shopIcon,
+            @JsonKey(name: 'pcDescContent') String pcDescContent,
+            @JsonKey(name: 'item_url') String itemUrl,
+            @JsonKey(name: 'category_id') String categoryId,
+            @JsonKey(name: 'category_name') String categoryName,
+            @JsonKey(name: 'level_one_category_id') String levelOneCategoryId,
+            @JsonKey(name: 'level_one_category_name')
+            String levelOneCategoryName,
+            @JsonKey(name: 'tkfee3') String tkfee3,
+            @JsonKey(name: 'biaoqian') String biaoqian,
+            @JsonKey(name: 'tag') String tag,
+            @JsonKey(name: 'date_time') String dateTime,
+            @JsonKey(name: 'presale_discount_fee_text')
+            String presaleDiscountFeeText,
+            @JsonKey(name: 'presale_tail_end_time') String presaleTailEndTime,
+            @JsonKey(name: 'presale_tail_start_time')
+            String presaleTailStartTime,
+            @JsonKey(name: 'presale_end_time') String presaleEndTime,
+            @JsonKey(name: 'presale_start_time') String presaleStartTime,
+            @JsonKey(name: 'presale_deposit') String presaleDeposit)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _ZheProduct() when $default != null:
+        return $default(
+            _that.code,
+            _that.typeOneId,
+            _that.taoId,
+            _that.title,
+            _that.jianjie,
+            _that.pictUrl,
+            _that.userType,
+            _that.sellerId,
+            _that.shopDsr,
+            _that.volume,
+            _that.size,
+            _that.quanhouJiage,
+            _that.dateTimeYongjin,
+            _that.tkrate3,
+            _that.yongjinType,
+            _that.couponId,
+            _that.couponStartTime,
+            _that.couponEndTime,
+            _that.couponInfoMoney,
+            _that.couponTotalCount,
+            _that.couponRemainCount,
+            _that.couponInfo,
+            _that.juhuasuan,
+            _that.taoqianggou,
+            _that.haitao,
+            _that.jiyoujia,
+            _that.jinpaimaijia,
+            _that.pinpai,
+            _that.pinpaiName,
+            _that.yunfeixian,
+            _that.nick,
+            _that.smallImages,
+            _that.whiteImage,
+            _that.taoTitle,
+            _that.provcity,
+            _that.shopTitle,
+            _that.zhiboUrl,
+            _that.sellCount,
+            _that.commentCount,
+            _that.favcount,
+            _that.score1,
+            _that.score2,
+            _that.score3,
+            _that.creditLevel,
+            _that.shopIcon,
+            _that.pcDescContent,
+            _that.itemUrl,
+            _that.categoryId,
+            _that.categoryName,
+            _that.levelOneCategoryId,
+            _that.levelOneCategoryName,
+            _that.tkfee3,
+            _that.biaoqian,
+            _that.tag,
+            _that.dateTime,
+            _that.presaleDiscountFeeText,
+            _that.presaleTailEndTime,
+            _that.presaleTailStartTime,
+            _that.presaleEndTime,
+            _that.presaleStartTime,
+            _that.presaleDeposit);
+      case _:
+        return null;
+    }
   }
 }
 

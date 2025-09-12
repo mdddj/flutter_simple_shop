@@ -1,6 +1,5 @@
-// dart format width=80
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -817,6 +816,591 @@ class _$UserOrderInfoCopyWithImpl<$Res>
           : zheUpdateTime // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+}
+
+/// Adds pattern-matching-related methods to [UserOrderInfo].
+extension UserOrderInfoPatterns on UserOrderInfo {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_UserOrderInfo value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UserOrderInfo() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_UserOrderInfo value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserOrderInfo():
+        return $default(_that);
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_UserOrderInfo value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserOrderInfo() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'adzoneName') String adzoneName,
+            @JsonKey(name: 'adzoneid') String adzoneid,
+            @JsonKey(name: 'alimamaRate') String alimamaRate,
+            @JsonKey(name: 'alimamaShareFee') String alimamaShareFee,
+            @JsonKey(name: 'alipayTotalPrice') String alipayTotalPrice,
+            @JsonKey(name: 'clickTime') String clickTime,
+            @JsonKey(name: 'depositPrice') String depositPrice,
+            @JsonKey(name: 'flowSource') String flowSource,
+            @JsonKey(name: 'id') int id,
+            @JsonKey(name: 'incomeRate') String incomeRate,
+            @JsonKey(name: 'itemCategoryName') String itemCategoryName,
+            @JsonKey(name: 'itemImg') String itemImg,
+            @JsonKey(name: 'itemLink') String itemLink,
+            @JsonKey(name: 'itemNum') int itemNum,
+            @JsonKey(name: 'itemPrice') String itemPrice,
+            @JsonKey(name: 'itemTitle') String itemTitle,
+            @JsonKey(name: 'itemid') String itemid,
+            @JsonKey(name: 'orderType') String orderType,
+            @JsonKey(name: 'pubShareFee') String pubShareFee,
+            @JsonKey(name: 'pubSharePreFee') String pubSharePreFee,
+            @JsonKey(name: 'pubShareRate') String pubShareRate,
+            @JsonKey(name: 'pubid') int pubid,
+            @JsonKey(name: 'refundTag') int refundTag,
+            @JsonKey(name: 'relationId', fromJson: _toString) String relationId,
+            @JsonKey(name: 'sellerNick') String sellerNick,
+            @JsonKey(name: 'sellerShopTitle') String sellerShopTitle,
+            @JsonKey(name: 'siteName') String siteName,
+            @JsonKey(name: 'siteid') int siteid,
+            @JsonKey(name: 'subsidyFee') String subsidyFee,
+            @JsonKey(name: 'subsidyRate') String subsidyRate,
+            @JsonKey(name: 'subsidyType') String subsidyType,
+            @JsonKey(name: 'tbDepositTime') String tbDepositTime,
+            @JsonKey(name: 'tbPaidTime') String tbPaidTime,
+            @JsonKey(name: 'terminalType') String terminalType,
+            @JsonKey(name: 'tkCommissionFeeForMediaPlatform')
+            String tkCommissionFeeForMediaPlatform,
+            @JsonKey(name: 'tkCommissionPreFeeForMediaPlatform')
+            String tkCommissionPreFeeForMediaPlatform,
+            @JsonKey(name: 'tkCommissionRateForMediaPlatform')
+            String tkCommissionRateForMediaPlatform,
+            @JsonKey(name: 'tkCreateTime') String tkCreateTime,
+            @JsonKey(name: 'tkDepositTime') String tkDepositTime,
+            @JsonKey(name: 'tkOrderRole') int tkOrderRole,
+            @JsonKey(name: 'tkPaidTime') String tkPaidTime,
+            @JsonKey(name: 'tkStatus') int tkStatus,
+            @JsonKey(name: 'tkTotalRate') String tkTotalRate,
+            @JsonKey(name: 'totalCommissionFee') String totalCommissionFee,
+            @JsonKey(name: 'totalCommissionRate') String totalCommissionRate,
+            @JsonKey(name: 'tradeParentid') String tradeParentid,
+            @JsonKey(name: 'tradeid') String tradeid,
+            @JsonKey(name: 'zheAccount') String zheAccount,
+            @JsonKey(name: 'zheActId') String zheActId,
+            @JsonKey(name: 'zheAppKey') String zheAppKey,
+            @JsonKey(name: 'zheCode') String zheCode,
+            @JsonKey(name: 'zheCustomerIdZtk') String zheCustomerIdZtk,
+            @JsonKey(name: 'zheIsJieSuan') String zheIsJieSuan,
+            @JsonKey(name: 'zheJieSuanProfit') String zheJieSuanProfit,
+            @JsonKey(name: 'zheJieSuanTime') String zheJieSuanTime,
+            @JsonKey(name: 'zheOrderId') String zheOrderId,
+            @JsonKey(name: 'zhePayPrice') String zhePayPrice,
+            @JsonKey(name: 'zhePayTime') String zhePayTime,
+            @JsonKey(name: 'zhePlatformZtk') String zhePlatformZtk,
+            @JsonKey(name: 'zheProfit') String zheProfit,
+            @JsonKey(name: 'zheRefundPrice') String zheRefundPrice,
+            @JsonKey(name: 'zheRefundTime') String zheRefundTime,
+            @JsonKey(name: 'zheSanPingTai') String zheSanPingTai,
+            @JsonKey(name: 'zheSanPingTaiId') String zheSanPingTaiId,
+            @JsonKey(name: 'zheSid') String zheSid,
+            @JsonKey(name: 'zheSidZtk') String zheSidZtk,
+            @JsonKey(name: 'zheSmsTitle') String zheSmsTitle,
+            @JsonKey(name: 'zheStatus') String zheStatus,
+            @JsonKey(name: 'zheType') String zheType,
+            @JsonKey(name: 'zheUpdateTime') String zheUpdateTime)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _UserOrderInfo() when $default != null:
+        return $default(
+            _that.adzoneName,
+            _that.adzoneid,
+            _that.alimamaRate,
+            _that.alimamaShareFee,
+            _that.alipayTotalPrice,
+            _that.clickTime,
+            _that.depositPrice,
+            _that.flowSource,
+            _that.id,
+            _that.incomeRate,
+            _that.itemCategoryName,
+            _that.itemImg,
+            _that.itemLink,
+            _that.itemNum,
+            _that.itemPrice,
+            _that.itemTitle,
+            _that.itemid,
+            _that.orderType,
+            _that.pubShareFee,
+            _that.pubSharePreFee,
+            _that.pubShareRate,
+            _that.pubid,
+            _that.refundTag,
+            _that.relationId,
+            _that.sellerNick,
+            _that.sellerShopTitle,
+            _that.siteName,
+            _that.siteid,
+            _that.subsidyFee,
+            _that.subsidyRate,
+            _that.subsidyType,
+            _that.tbDepositTime,
+            _that.tbPaidTime,
+            _that.terminalType,
+            _that.tkCommissionFeeForMediaPlatform,
+            _that.tkCommissionPreFeeForMediaPlatform,
+            _that.tkCommissionRateForMediaPlatform,
+            _that.tkCreateTime,
+            _that.tkDepositTime,
+            _that.tkOrderRole,
+            _that.tkPaidTime,
+            _that.tkStatus,
+            _that.tkTotalRate,
+            _that.totalCommissionFee,
+            _that.totalCommissionRate,
+            _that.tradeParentid,
+            _that.tradeid,
+            _that.zheAccount,
+            _that.zheActId,
+            _that.zheAppKey,
+            _that.zheCode,
+            _that.zheCustomerIdZtk,
+            _that.zheIsJieSuan,
+            _that.zheJieSuanProfit,
+            _that.zheJieSuanTime,
+            _that.zheOrderId,
+            _that.zhePayPrice,
+            _that.zhePayTime,
+            _that.zhePlatformZtk,
+            _that.zheProfit,
+            _that.zheRefundPrice,
+            _that.zheRefundTime,
+            _that.zheSanPingTai,
+            _that.zheSanPingTaiId,
+            _that.zheSid,
+            _that.zheSidZtk,
+            _that.zheSmsTitle,
+            _that.zheStatus,
+            _that.zheType,
+            _that.zheUpdateTime);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            @JsonKey(name: 'adzoneName') String adzoneName,
+            @JsonKey(name: 'adzoneid') String adzoneid,
+            @JsonKey(name: 'alimamaRate') String alimamaRate,
+            @JsonKey(name: 'alimamaShareFee') String alimamaShareFee,
+            @JsonKey(name: 'alipayTotalPrice') String alipayTotalPrice,
+            @JsonKey(name: 'clickTime') String clickTime,
+            @JsonKey(name: 'depositPrice') String depositPrice,
+            @JsonKey(name: 'flowSource') String flowSource,
+            @JsonKey(name: 'id') int id,
+            @JsonKey(name: 'incomeRate') String incomeRate,
+            @JsonKey(name: 'itemCategoryName') String itemCategoryName,
+            @JsonKey(name: 'itemImg') String itemImg,
+            @JsonKey(name: 'itemLink') String itemLink,
+            @JsonKey(name: 'itemNum') int itemNum,
+            @JsonKey(name: 'itemPrice') String itemPrice,
+            @JsonKey(name: 'itemTitle') String itemTitle,
+            @JsonKey(name: 'itemid') String itemid,
+            @JsonKey(name: 'orderType') String orderType,
+            @JsonKey(name: 'pubShareFee') String pubShareFee,
+            @JsonKey(name: 'pubSharePreFee') String pubSharePreFee,
+            @JsonKey(name: 'pubShareRate') String pubShareRate,
+            @JsonKey(name: 'pubid') int pubid,
+            @JsonKey(name: 'refundTag') int refundTag,
+            @JsonKey(name: 'relationId', fromJson: _toString) String relationId,
+            @JsonKey(name: 'sellerNick') String sellerNick,
+            @JsonKey(name: 'sellerShopTitle') String sellerShopTitle,
+            @JsonKey(name: 'siteName') String siteName,
+            @JsonKey(name: 'siteid') int siteid,
+            @JsonKey(name: 'subsidyFee') String subsidyFee,
+            @JsonKey(name: 'subsidyRate') String subsidyRate,
+            @JsonKey(name: 'subsidyType') String subsidyType,
+            @JsonKey(name: 'tbDepositTime') String tbDepositTime,
+            @JsonKey(name: 'tbPaidTime') String tbPaidTime,
+            @JsonKey(name: 'terminalType') String terminalType,
+            @JsonKey(name: 'tkCommissionFeeForMediaPlatform')
+            String tkCommissionFeeForMediaPlatform,
+            @JsonKey(name: 'tkCommissionPreFeeForMediaPlatform')
+            String tkCommissionPreFeeForMediaPlatform,
+            @JsonKey(name: 'tkCommissionRateForMediaPlatform')
+            String tkCommissionRateForMediaPlatform,
+            @JsonKey(name: 'tkCreateTime') String tkCreateTime,
+            @JsonKey(name: 'tkDepositTime') String tkDepositTime,
+            @JsonKey(name: 'tkOrderRole') int tkOrderRole,
+            @JsonKey(name: 'tkPaidTime') String tkPaidTime,
+            @JsonKey(name: 'tkStatus') int tkStatus,
+            @JsonKey(name: 'tkTotalRate') String tkTotalRate,
+            @JsonKey(name: 'totalCommissionFee') String totalCommissionFee,
+            @JsonKey(name: 'totalCommissionRate') String totalCommissionRate,
+            @JsonKey(name: 'tradeParentid') String tradeParentid,
+            @JsonKey(name: 'tradeid') String tradeid,
+            @JsonKey(name: 'zheAccount') String zheAccount,
+            @JsonKey(name: 'zheActId') String zheActId,
+            @JsonKey(name: 'zheAppKey') String zheAppKey,
+            @JsonKey(name: 'zheCode') String zheCode,
+            @JsonKey(name: 'zheCustomerIdZtk') String zheCustomerIdZtk,
+            @JsonKey(name: 'zheIsJieSuan') String zheIsJieSuan,
+            @JsonKey(name: 'zheJieSuanProfit') String zheJieSuanProfit,
+            @JsonKey(name: 'zheJieSuanTime') String zheJieSuanTime,
+            @JsonKey(name: 'zheOrderId') String zheOrderId,
+            @JsonKey(name: 'zhePayPrice') String zhePayPrice,
+            @JsonKey(name: 'zhePayTime') String zhePayTime,
+            @JsonKey(name: 'zhePlatformZtk') String zhePlatformZtk,
+            @JsonKey(name: 'zheProfit') String zheProfit,
+            @JsonKey(name: 'zheRefundPrice') String zheRefundPrice,
+            @JsonKey(name: 'zheRefundTime') String zheRefundTime,
+            @JsonKey(name: 'zheSanPingTai') String zheSanPingTai,
+            @JsonKey(name: 'zheSanPingTaiId') String zheSanPingTaiId,
+            @JsonKey(name: 'zheSid') String zheSid,
+            @JsonKey(name: 'zheSidZtk') String zheSidZtk,
+            @JsonKey(name: 'zheSmsTitle') String zheSmsTitle,
+            @JsonKey(name: 'zheStatus') String zheStatus,
+            @JsonKey(name: 'zheType') String zheType,
+            @JsonKey(name: 'zheUpdateTime') String zheUpdateTime)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserOrderInfo():
+        return $default(
+            _that.adzoneName,
+            _that.adzoneid,
+            _that.alimamaRate,
+            _that.alimamaShareFee,
+            _that.alipayTotalPrice,
+            _that.clickTime,
+            _that.depositPrice,
+            _that.flowSource,
+            _that.id,
+            _that.incomeRate,
+            _that.itemCategoryName,
+            _that.itemImg,
+            _that.itemLink,
+            _that.itemNum,
+            _that.itemPrice,
+            _that.itemTitle,
+            _that.itemid,
+            _that.orderType,
+            _that.pubShareFee,
+            _that.pubSharePreFee,
+            _that.pubShareRate,
+            _that.pubid,
+            _that.refundTag,
+            _that.relationId,
+            _that.sellerNick,
+            _that.sellerShopTitle,
+            _that.siteName,
+            _that.siteid,
+            _that.subsidyFee,
+            _that.subsidyRate,
+            _that.subsidyType,
+            _that.tbDepositTime,
+            _that.tbPaidTime,
+            _that.terminalType,
+            _that.tkCommissionFeeForMediaPlatform,
+            _that.tkCommissionPreFeeForMediaPlatform,
+            _that.tkCommissionRateForMediaPlatform,
+            _that.tkCreateTime,
+            _that.tkDepositTime,
+            _that.tkOrderRole,
+            _that.tkPaidTime,
+            _that.tkStatus,
+            _that.tkTotalRate,
+            _that.totalCommissionFee,
+            _that.totalCommissionRate,
+            _that.tradeParentid,
+            _that.tradeid,
+            _that.zheAccount,
+            _that.zheActId,
+            _that.zheAppKey,
+            _that.zheCode,
+            _that.zheCustomerIdZtk,
+            _that.zheIsJieSuan,
+            _that.zheJieSuanProfit,
+            _that.zheJieSuanTime,
+            _that.zheOrderId,
+            _that.zhePayPrice,
+            _that.zhePayTime,
+            _that.zhePlatformZtk,
+            _that.zheProfit,
+            _that.zheRefundPrice,
+            _that.zheRefundTime,
+            _that.zheSanPingTai,
+            _that.zheSanPingTaiId,
+            _that.zheSid,
+            _that.zheSidZtk,
+            _that.zheSmsTitle,
+            _that.zheStatus,
+            _that.zheType,
+            _that.zheUpdateTime);
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            @JsonKey(name: 'adzoneName') String adzoneName,
+            @JsonKey(name: 'adzoneid') String adzoneid,
+            @JsonKey(name: 'alimamaRate') String alimamaRate,
+            @JsonKey(name: 'alimamaShareFee') String alimamaShareFee,
+            @JsonKey(name: 'alipayTotalPrice') String alipayTotalPrice,
+            @JsonKey(name: 'clickTime') String clickTime,
+            @JsonKey(name: 'depositPrice') String depositPrice,
+            @JsonKey(name: 'flowSource') String flowSource,
+            @JsonKey(name: 'id') int id,
+            @JsonKey(name: 'incomeRate') String incomeRate,
+            @JsonKey(name: 'itemCategoryName') String itemCategoryName,
+            @JsonKey(name: 'itemImg') String itemImg,
+            @JsonKey(name: 'itemLink') String itemLink,
+            @JsonKey(name: 'itemNum') int itemNum,
+            @JsonKey(name: 'itemPrice') String itemPrice,
+            @JsonKey(name: 'itemTitle') String itemTitle,
+            @JsonKey(name: 'itemid') String itemid,
+            @JsonKey(name: 'orderType') String orderType,
+            @JsonKey(name: 'pubShareFee') String pubShareFee,
+            @JsonKey(name: 'pubSharePreFee') String pubSharePreFee,
+            @JsonKey(name: 'pubShareRate') String pubShareRate,
+            @JsonKey(name: 'pubid') int pubid,
+            @JsonKey(name: 'refundTag') int refundTag,
+            @JsonKey(name: 'relationId', fromJson: _toString) String relationId,
+            @JsonKey(name: 'sellerNick') String sellerNick,
+            @JsonKey(name: 'sellerShopTitle') String sellerShopTitle,
+            @JsonKey(name: 'siteName') String siteName,
+            @JsonKey(name: 'siteid') int siteid,
+            @JsonKey(name: 'subsidyFee') String subsidyFee,
+            @JsonKey(name: 'subsidyRate') String subsidyRate,
+            @JsonKey(name: 'subsidyType') String subsidyType,
+            @JsonKey(name: 'tbDepositTime') String tbDepositTime,
+            @JsonKey(name: 'tbPaidTime') String tbPaidTime,
+            @JsonKey(name: 'terminalType') String terminalType,
+            @JsonKey(name: 'tkCommissionFeeForMediaPlatform')
+            String tkCommissionFeeForMediaPlatform,
+            @JsonKey(name: 'tkCommissionPreFeeForMediaPlatform')
+            String tkCommissionPreFeeForMediaPlatform,
+            @JsonKey(name: 'tkCommissionRateForMediaPlatform')
+            String tkCommissionRateForMediaPlatform,
+            @JsonKey(name: 'tkCreateTime') String tkCreateTime,
+            @JsonKey(name: 'tkDepositTime') String tkDepositTime,
+            @JsonKey(name: 'tkOrderRole') int tkOrderRole,
+            @JsonKey(name: 'tkPaidTime') String tkPaidTime,
+            @JsonKey(name: 'tkStatus') int tkStatus,
+            @JsonKey(name: 'tkTotalRate') String tkTotalRate,
+            @JsonKey(name: 'totalCommissionFee') String totalCommissionFee,
+            @JsonKey(name: 'totalCommissionRate') String totalCommissionRate,
+            @JsonKey(name: 'tradeParentid') String tradeParentid,
+            @JsonKey(name: 'tradeid') String tradeid,
+            @JsonKey(name: 'zheAccount') String zheAccount,
+            @JsonKey(name: 'zheActId') String zheActId,
+            @JsonKey(name: 'zheAppKey') String zheAppKey,
+            @JsonKey(name: 'zheCode') String zheCode,
+            @JsonKey(name: 'zheCustomerIdZtk') String zheCustomerIdZtk,
+            @JsonKey(name: 'zheIsJieSuan') String zheIsJieSuan,
+            @JsonKey(name: 'zheJieSuanProfit') String zheJieSuanProfit,
+            @JsonKey(name: 'zheJieSuanTime') String zheJieSuanTime,
+            @JsonKey(name: 'zheOrderId') String zheOrderId,
+            @JsonKey(name: 'zhePayPrice') String zhePayPrice,
+            @JsonKey(name: 'zhePayTime') String zhePayTime,
+            @JsonKey(name: 'zhePlatformZtk') String zhePlatformZtk,
+            @JsonKey(name: 'zheProfit') String zheProfit,
+            @JsonKey(name: 'zheRefundPrice') String zheRefundPrice,
+            @JsonKey(name: 'zheRefundTime') String zheRefundTime,
+            @JsonKey(name: 'zheSanPingTai') String zheSanPingTai,
+            @JsonKey(name: 'zheSanPingTaiId') String zheSanPingTaiId,
+            @JsonKey(name: 'zheSid') String zheSid,
+            @JsonKey(name: 'zheSidZtk') String zheSidZtk,
+            @JsonKey(name: 'zheSmsTitle') String zheSmsTitle,
+            @JsonKey(name: 'zheStatus') String zheStatus,
+            @JsonKey(name: 'zheType') String zheType,
+            @JsonKey(name: 'zheUpdateTime') String zheUpdateTime)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _UserOrderInfo() when $default != null:
+        return $default(
+            _that.adzoneName,
+            _that.adzoneid,
+            _that.alimamaRate,
+            _that.alimamaShareFee,
+            _that.alipayTotalPrice,
+            _that.clickTime,
+            _that.depositPrice,
+            _that.flowSource,
+            _that.id,
+            _that.incomeRate,
+            _that.itemCategoryName,
+            _that.itemImg,
+            _that.itemLink,
+            _that.itemNum,
+            _that.itemPrice,
+            _that.itemTitle,
+            _that.itemid,
+            _that.orderType,
+            _that.pubShareFee,
+            _that.pubSharePreFee,
+            _that.pubShareRate,
+            _that.pubid,
+            _that.refundTag,
+            _that.relationId,
+            _that.sellerNick,
+            _that.sellerShopTitle,
+            _that.siteName,
+            _that.siteid,
+            _that.subsidyFee,
+            _that.subsidyRate,
+            _that.subsidyType,
+            _that.tbDepositTime,
+            _that.tbPaidTime,
+            _that.terminalType,
+            _that.tkCommissionFeeForMediaPlatform,
+            _that.tkCommissionPreFeeForMediaPlatform,
+            _that.tkCommissionRateForMediaPlatform,
+            _that.tkCreateTime,
+            _that.tkDepositTime,
+            _that.tkOrderRole,
+            _that.tkPaidTime,
+            _that.tkStatus,
+            _that.tkTotalRate,
+            _that.totalCommissionFee,
+            _that.totalCommissionRate,
+            _that.tradeParentid,
+            _that.tradeid,
+            _that.zheAccount,
+            _that.zheActId,
+            _that.zheAppKey,
+            _that.zheCode,
+            _that.zheCustomerIdZtk,
+            _that.zheIsJieSuan,
+            _that.zheJieSuanProfit,
+            _that.zheJieSuanTime,
+            _that.zheOrderId,
+            _that.zhePayPrice,
+            _that.zhePayTime,
+            _that.zhePlatformZtk,
+            _that.zheProfit,
+            _that.zheRefundPrice,
+            _that.zheRefundTime,
+            _that.zheSanPingTai,
+            _that.zheSanPingTaiId,
+            _that.zheSid,
+            _that.zheSidZtk,
+            _that.zheSmsTitle,
+            _that.zheStatus,
+            _that.zheType,
+            _that.zheUpdateTime);
+      case _:
+        return null;
+    }
   }
 }
 
