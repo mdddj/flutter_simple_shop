@@ -3,11 +3,10 @@
 //     final category = categoryFromJson(jsonString);
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hive/hive.dart';
-
-part 'category.g.dart';
+import 'package:hive_ce/hive.dart';
 
 part 'category.freezed.dart';
+part 'category.g.dart';
 
 @freezed
 @HiveType(typeId: 100)

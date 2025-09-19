@@ -14,7 +14,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_ce_flutter/adapters.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 
