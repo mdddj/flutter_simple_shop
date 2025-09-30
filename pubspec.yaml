@@ -9,7 +9,8 @@ dependencies:
   fbroadcast_nullsafety: 4.0.6
   loading_more_list_fast: 7.2.4
   loading_more_list_library_fast: 4.2.2
-  dd_js_util: ^7.0.0
+  dd_js_util: ^7.1.0
+  simple_ui_theme: any
   share_plus: 12.0.0
   path_provider: ^2.1.5
   hooks_riverpod: 3.0.0
@@ -24,8 +25,8 @@ dependencies:
   fsuper_nullsafety: 3.0.3
   connectivity_plus: 7.0.0
   shimmer: 3.0.0
-  flutter_slidable: 4.0.1
-  dd_check_plugin: ^5.0.0
+  flutter_slidable: ^4.0.3
+  dd_check_plugin: ^5.0.1
   image_picker: 1.2.0
   show_up_animation: 2.1.2
   pull_to_refresh_notification: 3.1.1
@@ -49,7 +50,7 @@ dependencies:
   flutter_markdown: 0.7.7+1
   logger: 2.6.1
   animate_do: 4.2.0
-  go_router: 16.2.1
+  go_router: ^16.2.4
   after_layout: 1.2.0
   hive_ce: any
   flutter_smart_dialog: 4.9.8+9

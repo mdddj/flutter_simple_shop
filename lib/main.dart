@@ -1,8 +1,8 @@
-import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/models.dart';
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:simple_ui_theme/model/theme.dart';
+import 'package:simple_ui_theme/simple_ui_theme.dart';
 
 import 'common/view.dart';
 import 'freezed/env_config.dart';

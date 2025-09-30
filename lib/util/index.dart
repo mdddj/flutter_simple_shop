@@ -4,8 +4,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dd_js_util/dd_js_util.dart';
-import 'package:dd_js_util/model/models.dart';
-import 'package:dd_js_util/theme/model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +14,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:palette_generator/palette_generator.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:simple_ui_theme/model/theme.dart';
+import 'package:simple_ui_theme/simple_ui_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../cache/index.dart';

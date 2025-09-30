@@ -7,7 +7,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/models.dart';
-import 'package:dd_js_util/theme/model.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/foundation.dart';
@@ -17,6 +16,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hive_ce_flutter/adapters.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:simple_ui_theme/simple_ui_theme.dart';
 
 import 'api/apis.dart';
 import 'api/new/part.dart';

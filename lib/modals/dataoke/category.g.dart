@@ -8,7 +8,7 @@ part of 'category.dart';
 
 class CategoryAdapter extends TypeAdapter<Category> {
   @override
-  final int typeId = 100;
+  final typeId = 100;
 
   @override
   Category read(BinaryReader reader) {
@@ -17,10 +17,11 @@ class CategoryAdapter extends TypeAdapter<Category> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Category(
-      cname: fields[0] as String,
-      cpic: fields[1] as String,
-      subcategories: (fields[2] as List).cast<Subcategory>(),
-      cid: fields[3] as int,
+      cname: fields[0] == null ? '' : fields[0] as String,
+      cpic: fields[1] == null ? '' : fields[1] as String,
+      subcategories:
+          fields[2] == null ? [] : (fields[2] as List).cast<Subcategory>(),
+      cid: fields[3] == null ? 0 : (fields[3] as num).toInt(),
     );
   }
 
@@ -51,7 +52,7 @@ class CategoryAdapter extends TypeAdapter<Category> {
 
 class SubcategoryAdapter extends TypeAdapter<Subcategory> {
   @override
-  final int typeId = 101;
+  final typeId = 101;
 
   @override
   Subcategory read(BinaryReader reader) {
@@ -60,9 +61,9 @@ class SubcategoryAdapter extends TypeAdapter<Subcategory> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Subcategory(
-      subcid: fields[0] as int,
-      scpic: fields[1] as String,
-      subcname: fields[2] as String,
+      subcid: fields[0] == null ? 0 : (fields[0] as num).toInt(),
+      scpic: fields[1] == null ? '' : fields[1] as String,
+      subcname: fields[2] == null ? '' : fields[2] as String,
     );
   }
 
@@ -91,7 +92,7 @@ class SubcategoryAdapter extends TypeAdapter<Subcategory> {
 
 class CategoryWrapperAdapter extends TypeAdapter<CategoryWrapper> {
   @override
-  final int typeId = 102;
+  final typeId = 102;
 
   @override
   CategoryWrapper read(BinaryReader reader) {
@@ -100,7 +101,7 @@ class CategoryWrapperAdapter extends TypeAdapter<CategoryWrapper> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return CategoryWrapper(
-      categorys: (fields[0] as List).cast<Category>(),
+      categorys: fields[0] == null ? [] : (fields[0] as List).cast<Category>(),
     );
   }
 
