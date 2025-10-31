@@ -429,10 +429,10 @@ packages:
     dependency: "direct main"
     description:
       name: fast_immutable_collections
-      sha256: d1aa3d7788fab06cce7f303f4969c7a16a10c865e1bd2478291a8ebcbee084e5
+      sha256: "19f70498af299cbce5ff919dbbecd5abfd9d0c28139004f68d3810ce23dedfb3"
       url: "https://pub.dev"
     source: hosted
-    version: "11.0.4"
+    version: "11.1.0"
   fbroadcast_nullsafety:
     dependency: "direct main"
     description:
@@ -590,10 +590,10 @@ packages:
     dependency: transitive
     description:
       name: flutter_riverpod
-      sha256: ca2480512a8e840291325249f4857e363ffa5d1b77b132e189c9313a9d9fb9e0
+      sha256: "9e2d6907f12cc7d23a846847615941bddee8709bf2bfd274acdf5e80bcf22fde"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.3"
   flutter_slidable:
     dependency: "direct main"
     description:
@@ -696,10 +696,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: c752e2d08d088bf83742cb05bf83003f3e9d276ff1519b5c92f9d5e60e5ddd23
+      sha256: d8f590a69729f719177ea68eb1e598295e8dbc41bbc247fed78b2c8a25660d7c
       url: "https://pub.dev"
     source: hosted
-    version: "16.2.4"
+    version: "16.3.0"
   graphs:
     dependency: transitive
     description:
@@ -736,10 +736,10 @@ packages:
     dependency: "direct main"
     description:
       name: hooks_riverpod
-      sha256: ef5b42bc912994283da7cc34cae2ec64842e3fbd7722525f749f07688f4ec7b6
+      sha256: ae4a2f6d82dd895379f9b95457e090ac2d2fef9446f9325f8d31b9c86cadc131
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.3"
   html:
     dependency: "direct main"
     description:
@@ -984,26 +984,26 @@ packages:
     dependency: "direct main"
     description:
       name: loading_more_list_fast
-      sha256: "32b1b16bd3450c6ff0ec3a7bf0bb8dc1e80be60069b9949fd6b397525f245eca"
+      sha256: "6e156b5a65cd2179f445efdeb393a264de5a1aaff9e993c6f92feb3e399eaf91"
       url: "https://pub.dev"
     source: hosted
-    version: "7.2.4"
+    version: "7.2.5"
   loading_more_list_library_fast:
     dependency: "direct main"
     description:
       name: loading_more_list_library_fast
-      sha256: "57e35b5fe007f75f03efc240658da0c156044615042806b4eaa72c59e6366093"
+      sha256: "318c159f14708444b30b854dd01bc011cf9f5f3f576034bcbb7e89216300a750"
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.2"
+    version: "4.2.3"
   logger:
     dependency: "direct main"
     description:
       name: logger
-      sha256: "55d6c23a6c15db14920e037fe7e0dc32e7cdaf3b64b4b25df2d541b5b6b81c0c"
+      sha256: a7967e31b703831a893bbc3c3dd11db08126fe5f369b5c648a36f821979f5be3
       url: "https://pub.dev"
     source: hosted
-    version: "2.6.1"
+    version: "2.6.2"
   logging:
     dependency: transitive
     description:
@@ -1344,10 +1344,10 @@ packages:
     dependency: transitive
     description:
       name: riverpod
-      sha256: "135723ec44dfba141bc4696224048a408336e794228a0117439e7ad0a8be6d05"
+      sha256: c406de02bff19d920b832bddfb8283548bfa05ce41c59afba57ce643e116aa59
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.3"
   rxdart:
     dependency: transitive
     description:
@@ -1376,10 +1376,10 @@ packages:
     dependency: "direct main"
     description:
       name: share_plus
-      sha256: "3424e9d5c22fd7f7590254ba09465febd6f8827c8b19a44350de4ac31d92d3a6"
+      sha256: "14c8860d4de93d3a7e53af51bff479598c4e999605290756bbbe45cf65b37840"
       url: "https://pub.dev"
     source: hosted
-    version: "12.0.0"
+    version: "12.0.1"
   share_plus_platform_interface:
     dependency: transitive
     description:
