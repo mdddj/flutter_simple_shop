@@ -11,13 +11,13 @@ dependencies:
   fbroadcast_nullsafety: 4.0.6
   loading_more_list_fast: ^7.2.5
   loading_more_list_library_fast: ^4.2.3
-  dd_js_util: ^7.1.0
+  dd_js_util: ^7.1.1
   simple_ui_theme: ^0.0.1
   share_plus: ^12.0.1
   path_provider: ^2.1.5
   hooks_riverpod: ^3.0.3
   fbutton_nullsafety: 5.0.0
-  crypto: 3.0.6
+  crypto: ^3.0.7
   encrypt: 5.0.3
   waterfall_flow: 3.1.1
   html: 0.15.6
@@ -28,7 +28,7 @@ dependencies:
   connectivity_plus: 7.0.0
   shimmer: 3.0.0
   flutter_slidable: ^4.0.3
-  dd_check_plugin: ^5.0.1
+  dd_check_plugin: ^5.1.0
   image_picker: ^1.2.0
   show_up_animation: 2.1.2
   pull_to_refresh_notification: 3.1.1
@@ -45,19 +45,19 @@ dependencies:
   url_launcher: ^6.3.2
   freezed_annotation: 3.1.0
   permission_handler: 12.0.1
-  get_it: 8.2.0
+  get_it: any
   package_info_plus: 9.0.0
   blurrycontainer: 2.1.0
   scoped_model: ^2.0.0
   flutter_markdown: 0.7.7+1
   logger: ^2.6.2
   animate_do: 4.2.0
-  go_router: ^16.3.0
+  go_router: ^17.0.0
   after_layout: 1.2.0
   hive_ce: any
   flutter_smart_dialog: 4.9.8+9
   json_annotation: 4.9.0
-  flutter_svg: 2.2.1
+  flutter_svg: ^2.2.2
   fast_immutable_collections: ^11.1.0
   extended_nested_scroll_view: 6.2.1
   keyboard_actions: 4.2.0
