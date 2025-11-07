@@ -10,8 +10,11 @@
     <a href="https://github.com/mdddj/flutter_simple_shop/network/members"><img src="https://badgen.net/github/forks/mdddj/flutter_simple_shop" /></a>
 </p>
 
+## 鸿蒙版本
 
-> 建议flutter版本: 3.32.0
+> 切换分支master-ohos, flutter版本:3.27.5-ohos-1.0.0
+>
+![img.png](images/img.png)
 
 ## 1 配套资源
 
