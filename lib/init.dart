@@ -2,7 +2,9 @@ part of 'index.dart';
 
 /// 初始化
 Future<void> appInit(VoidCallback start) async {
+  print("开始检测权限");
   await (Connectivity().checkConnectivity());
+  print("检测权限完成");
   initNetUtil();
   initInstanceObject();
   await initCaches();
