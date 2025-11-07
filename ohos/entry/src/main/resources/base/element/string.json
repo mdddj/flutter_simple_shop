@@ -10,7 +10,11 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "dd_simple_shop"
+      "value": "demo1"
+    },
+    {
+      "name": "network_reason",
+      "value": "使用网络"
     }
   ]
 }

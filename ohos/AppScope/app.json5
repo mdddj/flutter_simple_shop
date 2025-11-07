@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "shop.itbug.dd_simple_shop",
+    "bundleName": "shop.itbug.store",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

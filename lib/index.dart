@@ -4,7 +4,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/models.dart';
 import 'package:extended_image/extended_image.dart';
@@ -28,7 +27,6 @@ import 'freezed/application.dart';
 import 'freezed/pager.dart';
 import 'freezed/text_model.dart';
 import 'meet/add_new_meet.dart';
-import 'modals/dataoke/category.dart';
 import 'pages/index.dart';
 import 'pages/jiujiu_page/new/widget.dart';
 import 'pages/mianji/mianji/view.dart';

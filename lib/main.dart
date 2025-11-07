@@ -27,6 +27,11 @@ const useEnv = releaseEnvConfig;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // runApp(MaterialApp(
+  //   home: SizedBox(
+  //     child: Text("hello world"),
+  //   ),
+  // ));
   appInit(() {
     runApp(const ProviderScope(child: DdShop()));
   });

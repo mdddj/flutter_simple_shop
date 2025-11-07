@@ -2,7 +2,9 @@ part of 'index.dart';
 
 /// 初始化
 Future<void> appInit(VoidCallback start) async {
+  print("开始检测权限");
   await (Connectivity().checkConnectivity());
+  print("检测权限完成");
   initNetUtil();
   initInstanceObject();
   await initCaches();
@@ -67,13 +69,4 @@ class MyHttpOverrides extends HttpOverrides {
       ..badCertificateCallback =
           (X509Certificate cert, String host, int port) => true;
   }
-}
-
-class MyCategoryCache extends DdPluginHiveBox<CategoryWrapper> {
-  MyCategoryCache() : super("dd_category_box");
-
-  @override
-  Future<Box<CategoryWrapper>> get getBox => Hive.isBoxOpen(boxName)
-      ? Future.value(Hive.box(boxName))
-      : Hive.openBox(boxName);
 }

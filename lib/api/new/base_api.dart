@@ -1,7 +1,6 @@
 part of 'part.dart';
 
 const _timeout = Duration(seconds: 5);
-final dioCheckPlugin = DdCheckPlugin();
 
 class NewApiDioInstance {
   Dio? dio;
@@ -11,17 +10,6 @@ class NewApiDioInstance {
   Future<Dio> getDio(BaseOptions options) async {
     if (dio != null) return dio!;
     dio = Dio(options);
-    if (useEnv.debugMode) {
-      await dioCheckPlugin
-          .init(
-            dio!,
-            initHost: '192.168.199.60',
-            port: 9998,
-            projectName: '典典的小卖部',
-            timeOut: const Duration(milliseconds: 1200),
-          )
-          .catchError((e) => debugPrint('$e'));
-    }
     return dio!;
   }
 }

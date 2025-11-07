@@ -1,6 +1,5 @@
 library;
 
-import 'package:dd_check_plugin/dd_check_plugin.dart';
 import 'package:dd_js_util/dd_js_util.dart';
 import 'package:dd_js_util/model/models.dart';
 import 'package:dio/dio.dart';
