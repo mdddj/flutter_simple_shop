@@ -70,12 +70,3 @@ class MyHttpOverrides extends HttpOverrides {
           (X509Certificate cert, String host, int port) => true;
   }
 }
-
-class MyCategoryCache extends DdPluginHiveBox<CategoryWrapper> {
-  MyCategoryCache() : super("dd_category_box");
-
-  @override
-  Future<Box<CategoryWrapper>> get getBox => Hive.isBoxOpen(boxName)
-      ? Future.value(Hive.box(boxName))
-      : Hive.openBox(boxName);
-}
