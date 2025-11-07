@@ -34,7 +34,6 @@ import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart
 import 'package:fsuper_nullsafety/fsuper_nullsafety.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:hooks_riverpod/legacy.dart';
 import 'package:loading_more_list_fast/loading_more_list_fast.dart';
 import 'package:loading_more_list_library_fast/model/status.dart';
 import 'package:logger/logger.dart';
