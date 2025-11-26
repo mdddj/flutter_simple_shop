@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart' hide View;
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
+import 'package:hi_ohos/api/hello.dart';
+import 'package:hi_ohos/frb_generated.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:simple_ui_theme/model/theme.dart';
 import 'package:simple_ui_theme/simple_ui_theme.dart';
@@ -32,6 +34,13 @@ void main() async {
   //     child: Text("hello world"),
   //   ),
   // ));
+  await RustLib.init();
+
+  hello(hello: "test梁典典").then(
+    (value) {
+      print("rust返回了..:($value)");
+    },
+  );
   appInit(() {
     runApp(const ProviderScope(child: DdShop()));
   });

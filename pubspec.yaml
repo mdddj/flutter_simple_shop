@@ -64,6 +64,8 @@ dependencies:
   fast_immutable_collections: ^11.1.0
   extended_nested_scroll_view: 6.2.1
   keyboard_actions: 4.2.0
+  hi_ohos:
+    path: ../RustroverProjects/frb_plugin_tool/hi_ohos
 dev_dependencies:
   json_serializable: any
   freezed: any
